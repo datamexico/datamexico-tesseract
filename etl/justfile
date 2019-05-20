@@ -1,0 +1,43 @@
+extract-server = "mexico-db.datawheel.us"
+extract-user = "deploy"
+extract-db = "mexico"
+extract-schema = "data"
+
+extract-fact-psql data_dir:
+    # time psql -U {{extract-user}} -d {{extract-db}} -h {{extract-server}} -c "\copy (select * from {{extract-schema}}.fact_exp_imp) to stdout with (format csv)" > {{data_dir}}/fact.csv
+
+# for clickhouse, set extract-db and extract-schema to the same
+extract-fact-clickhouse data_dir:
+    # time clickhouse-client -d {{extract-db}} -h {{extract-server}} --query "select * from {{extract-schema}}.fact_exp_imp format CSV" > {{data_dir}}/fact.csv
+
+# Separate tables for fact and dim
+create-fact:
+    # clickhouse-client --query "`cat fact.sql`"
+
+drop-fact:
+    # clickhouse-client --query "drop table estonia_exp_imp_fact"
+
+import-fact data_dir:
+    # echo "mexico_fact" && time cat {{data_dir}}/fact.csv | clickhouse-client --query "INSERT INTO fact FORMAT CSV"
+
+extract-meta-psql data_dir:
+    time psql -U {{extract-user}} -d {{extract-db}} -h {{extract-server}} -c "\copy (select * from {{extract-schema}}.dim_geography) to stdout with (format csv)" > {{data_dir}}/dim_geography.csv
+    time psql -U {{extract-user}} -d {{extract-db}} -h {{extract-server}} -c "\copy (select * from {{extract-schema}}.dim_zone) to stdout with (format csv)" > {{data_dir}}/dim_zone.csv
+
+# for clickhouse, set extract-db and extract-schema to the same
+extract-meta-clickhouse data_dir:
+    time clickhouse-client -d {{extract-db}} -h {{extract-server}} --query "select * from {{extract-schema}}.dim_geography format CSV" > {{data_dir}}/dim_geography.csv
+    time clickhouse-client -d {{extract-db}} -h {{extract-server}} --query "select * from {{extract-schema}}.dim_zone format CSV" > {{data_dir}}/dim_zone.csv
+
+# For dimensions
+create-meta:
+    clickhouse-client --query "`cat dim/geography.sql`"
+    clickhouse-client --query "`cat dim/zone.sql`"
+
+drop-meta:
+    clickhouse-client --query "drop table dim_geography"
+    clickhouse-client --query "drop table dim_zone"
+
+import-meta data_dir:
+    time find {{data_dir}}/* -name "dim_geography.csv" -exec sh -c 'echo {} && cat {} | clickhouse-client --query "INSERT INTO dim_geography FORMAT CSV"' \;
+    time find {{data_dir}}/* -name "dim_zone.csv"     -exec sh -c 'echo {} && cat {} | clickhouse-client --query "INSERT INTO dim_zone FORMAT CSV"' \;
