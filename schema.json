@@ -1,0 +1,52 @@
+{
+  "name": "data_mexico",
+  "annotations": [],
+  "cubes": [
+    {
+      "name": "",
+      "table": {
+        "name": "",
+        "primary_key": ""
+      },
+      "dimensions": [
+        {
+          "name": "Geography",
+          "foreign_key": "",
+          "hierarchies": [
+            {
+              "table": { "name": "dim_geography", "primary_key": "geo_id" },
+              "name": "Geography",
+              "levels": [
+                {
+                  "name": "Nation",
+                  "key_column": "nation_id",
+                  "name_column": "nation_name",
+                  "key_type": "text"
+                },
+                {
+                  "name": "Entity",
+                  "key_column": "ent_cve",
+                  "name_column": "ent_name",
+                  "key_type": "text"
+                },
+                {
+                  "name": "Municipality",
+                  "key_column": "mun_cve_full",
+                  "name_column": "mun_name",
+                  "key_type": "text"
+                },
+                {
+                  "name": "Locality",
+                  "key_column": "loc_cve_full",
+                  "name_column": "loc_name",
+                  "key_type": "text"
+                }
+              ]
+            }
+          ],
+          "annotations": [{ "name": "dim_type", "text": "GEOGRAPHY" }]
+        }
+      ]
+    }
+  ]
+}
