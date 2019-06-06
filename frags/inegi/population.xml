@@ -15,7 +15,6 @@
                 </Level>
                 <Level name="Location" key_column="loc_id" name_column="loc_id" key_type="nontext">
                     <Property name="CVE Location" column="cve_loc" />
-                    <Property name="CVE Location Full" column="cve_loc_full" />
                 </Level>
             </Hierarchy>
         </Dimension>
