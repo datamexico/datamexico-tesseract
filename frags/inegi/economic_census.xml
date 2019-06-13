@@ -18,7 +18,7 @@
 
         <Dimension name="Year" foreign_key="year">
             <Hierarchy name="Year">
-                <Level name="Year" key_column="year" />
+                <Level name="Year" key_column="year" type="time" />
             </Hierarchy>
         </Dimension>
 
