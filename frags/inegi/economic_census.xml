@@ -4,7 +4,7 @@
 
         <Dimension name="Geography" foreign_key="mun_id">
             <Hierarchy name="Geography" primary_key="mun_id">
-                <Table name="dim_shared_geography" />
+                <Table name="dim_shared_geography_mun" />
 
                 <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
                     <Property name="CVE State" column="cve_ent" />

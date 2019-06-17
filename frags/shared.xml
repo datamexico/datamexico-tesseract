@@ -1,5 +1,5 @@
 <Schema name="datamexico">
-    <SharedDimension name="Geography">
+    <Dimension name="Geography">
         <Hierarchy name="Geography">
             <Table name="dim_shared_geography" />
 
@@ -10,14 +10,14 @@
                 <Property name="CVE Municipality" column="cve_mun" />
                 <Property name="CVE Municipality Full" column="cve_mun_full" />
             </Level>
-            <Level name="Location" key_column="loc_id" name_column="loc_id" key_type="nontext">
+            <Level name="Location" key_column="loc_id" name_column="loc_name" key_type="nontext">
                 <Property name="CVE Location" column="cve_loc" />
                 <Property name="CVE Location Full" column="cve_loc_full" />
             </Level>
         </Hierarchy>
-    </SharedDimension>
+    </Dimension>
 
-    <SharedDimension name="Sex">
+    <Dimension name="Sex">
         <Hierarchy name="Sex">
             <Table name="dim_shared_sex" />
 
@@ -25,5 +25,5 @@
                 <Property name="Sex ES" column="name_es" caption_set="es" />
             </Level>
         </Hierarchy>
-    </SharedDimension>
+    </Dimension>
 </Schema>
