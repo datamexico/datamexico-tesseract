@@ -17,7 +17,7 @@
         </Dimension>
 
         <Dimension name="Industry" foreign_key="national_industry_id">
-            <Hierarchy primary_key="national_industry_id">
+            <Hierarchy name="Industry" primary_key="national_industry_id">
                 <Table name="dim_shared_industry"/>
 
                 <Level name="sector" key_column="sector_id" name_column="sector_en">
