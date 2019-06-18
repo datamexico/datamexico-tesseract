@@ -64,6 +64,32 @@
             </Hierarchy>
         </Dimension>
 
+        <Dimension name="Industry" foreign_key="national_industry_id">
+            <Hierarchy name="Industry" primary_key="national_industry_id">
+                <Table name="dim_shared_industry"/>
+
+                <Level name="Sector" key_column="sector_id" name_column="sector_en">
+                    <Property name="sector_es" column="sector_es" caption_set="es"/>
+                </Level>
+
+                <Level name="Subsector" key_column="subsector_id" name_column="subsector_en">
+                    <Property name="subsector_es" column="subsector_es" caption_set="es"/>
+                </Level>
+
+                <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_en">
+                    <Property name="industry_group_es" column="industry_group_es" caption_set="es"/>
+                </Level>
+
+                <Level name="NAICS Industry" key_column="naics_industry_id" name_column="naics_industry_en">
+                    <Property name="naics_industry_es" column="naics_industry_es" caption_set="es"/>
+                </Level>
+
+                <Level name="National Industry" key_column="national_industry_id" name_column="national_industry_en">
+                    <Property name="national_industry_es" column="national_industry_es" caption_set="es"/>
+                </Level>
+            </Hierarchy>
+        </Dimension>
+
         <Dimension name="Year" foreign_key="year">
             <Hierarchy name="Year">
                 <Level name="Year" key_column="year" type="time" />
