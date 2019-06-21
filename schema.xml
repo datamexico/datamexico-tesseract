@@ -48,10 +48,10 @@
         <Measure name="Population" column="population" aggregator="sum" />
     </Cube>
 <Cube name="inegi_intercensal_survey">
-  <Table name="inegi_intercensal_survey" primary_key="loc_id" />
+  <Table name="inegi_economic_census" primary_key="mun_id" />
 
-    <Dimension name="Geography">
-      <Hierarchy name="Geography">
+    <Dimension name="Geography" foreign_key="mun_id">
+      <Hierarchy name="Geography" primary_key="loc_id">
         <Table name="dim_shared_geography" />
 
         <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
@@ -67,6 +67,8 @@
         </Level>
       </Hierarchy>
     </Dimension>
+
+    <Measure name="Economic Unit" column="ue" aggregator="sum" />
   </Cube>
 <Cube name="inegi_economic_census">
         <Table name="inegi_economic_census" primary_key="mun_id" />
