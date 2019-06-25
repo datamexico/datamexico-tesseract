@@ -1,0 +1,40 @@
+<Schema name="datamexico">
+  <Cube name="trade_balance">
+    <Table name="trade_balance_atlas" primary_key="mun_id" />
+    <Dimension name="Geography" foreign_key="mun_id">
+      <Hierarchy name="Geography" primary_key="mun_id">
+        <Table name="dim_shared_geography_mun" />
+
+        <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+          <Property name="CVE State" column="cve_ent" />
+        </Level>
+        <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
+          <Property name="CVE Municipality" column="cve_mun" />
+          <Property name="CVE Municipality Full" column="cve_mun_full" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Product" foreign_key="product_id">
+      <Hierarchy name="Product" primary_key="product_id">
+        <Table name="dim_shared_product" />
+
+        <Level name="HS4" key_column="product_id" name_column="product_name" key_type="nontext">
+          <Property name="HS4 ES" column="product_name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Year" foreign_key="year">
+      <Hierarchy name="Year">
+        <Level name="Year" key_column="year" type="time" />
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Exports" column="export_value" aggregator="sum" />
+    <Measure name="Imports" column="import_value" aggregator="sum" />
+    <Measure name="PCI" column="pci" aggregator="sum" />
+    <Measure name="Import Plants" column="import_num_plants" aggregator="sum" />
+    <Measure name="Export Plants" column="export_num_plants" aggregator="sum" />
+  </Cube>
+</Schema>
