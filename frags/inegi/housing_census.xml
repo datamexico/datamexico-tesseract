@@ -257,6 +257,129 @@
             </Hierarchy>
         </Dimension>
 
+        <Dimension name="Debt" foreign_key="debt">
+            <Hierarchy name="Debt" primary_key="id">
+
+                <InlineTable alias="dim_inline_housing_census">
+                    <Row>
+                        <Value column="id">1</Value>
+                        <Value column="name_en"><$10k</Value>
+                        <Value column="name_es"><$10k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">2</Value>
+                        <Value column="name_en">$10k-$15k</Value>
+                        <Value column="name_es">$10k-$15k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">3</Value>
+                        <Value column="name_en">$15k-$20k</Value>
+                        <Value column="name_es">$15k-$20k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">4</Value>
+                        <Value column="name_en">$20k-$25k</Value>
+                        <Value column="name_es">$20k-$25k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">5</Value>
+                        <Value column="name_en">$25k-$30k</Value>
+                        <Value column="name_es">$25k-$30k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">6</Value>
+                        <Value column="name_en">$30k-$35k</Value>
+                        <Value column="name_es">$30k-$35k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">7</Value>
+                        <Value column="name_en">$35k-$40k</Value>
+                        <Value column="name_es">$35k-$40k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">8</Value>
+                        <Value column="name_en">$40k-$45k</Value>
+                        <Value column="name_es">$40k-$45k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">9</Value>
+                        <Value column="name_en">$45k-$50k</Value>
+                        <Value column="name_es">$45k-$50k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">10</Value>
+                        <Value column="name_en">$50k-$55k</Value>
+                        <Value column="name_es">$50k-$55k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">11</Value>
+                        <Value column="name_en">$55k-$60k</Value>
+                        <Value column="name_es">$55k-$60k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">12</Value>
+                        <Value column="name_en">$60k-$65k</Value>
+                        <Value column="name_es">$60k-$65k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">13</Value>
+                        <Value column="name_en">$65k-$70k</Value>
+                        <Value column="name_es">$65k-$70k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">14</Value>
+                        <Value column="name_en">$70k-$75k</Value>
+                        <Value column="name_es">$70k-$75k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">15</Value>
+                        <Value column="name_en">$75k-$80k</Value>
+                        <Value column="name_es">$75k-$80k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">16</Value>
+                        <Value column="name_en">$80k-$85k</Value>
+                        <Value column="name_es">$80k-$85k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">17</Value>
+                        <Value column="name_en">$85k-$90k</Value>
+                        <Value column="name_es">$85k-$90k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">18</Value>
+                        <Value column="name_en">$90k-$95k</Value>
+                        <Value column="name_es">$90k-$95k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">19</Value>
+                        <Value column="name_en">$95k-$100k</Value>
+                        <Value column="name_es">$95k-$100k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">20</Value>
+                        <Value column="name_en">$100k-$125k</Value>
+                        <Value column="name_es">$100k-$125k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">21</Value>
+                        <Value column="name_en">$125k-$150k</Value>
+                        <Value column="name_es">$125k-$150k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">22</Value>
+                        <Value column="name_en">$150k-$200k</Value>
+                        <Value column="name_es">$150k-$200k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">23</Value>
+                        <Value column="name_en">$200k +</Value>
+                        <Value column="name_es">$200k +</Value>
+                    </Row>
+                </InlineTable>
+                <Level name="Debt" key_column="id" name_column="name_en"/>
+            </Hierarchy>
+        </Dimension>
+
         <Measure name="Inhabitants" column="inhabitants" aggregator="sum">
-        <Measure name="Income" column="income" aggregator="sum">
 </Schema>
