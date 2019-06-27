@@ -252,10 +252,10 @@
                         <Value column="name_es">No especificado</Value>
                     </Row>
                 </InlineTable>
+                <Level name="Debt" key_column="id" name_column="name_en"/>
 
             </Hierarchy>
         </Dimension>
-         <Level name="Debt" key_column="id" name_column="name_en"/>
 
         <Measure name="Inhabitants" column="inhabitants" aggregator="sum">
         <Measure name="Income" column="income" aggregator="sum">
