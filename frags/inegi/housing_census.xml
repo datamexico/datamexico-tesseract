@@ -1,0 +1,256 @@
+<Schema name="datamexico">
+    <Cube name="housing_census">
+        <Table name="inegi_housing">
+
+        <Dimension name="Coverage" foreign_key="coverage">
+            <Hierarchy name="Coverage" primary_key="id">
+
+                <InlineTable alias="dim_inline_housing_census">
+                    <Row>
+                        <Value column="id">1</Value>
+                        <Value column="name_en">Municipality Population</Value>
+                        <Value column="name_es">Municipio censado</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">2</Value>
+                        <Value column="name_en">Municipality Sampled</Value>
+                        <Value column="name_es">Municipio muestreado</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">3</Value>
+                        <Value column="name_en">Municipality with Insufficient Sample</Value>
+                        <Value column="name_es">Municipio con muestra insuficiente</Value>
+                    </Row>
+                </InlineTable>
+
+            </Hierarchy>
+        </Dimension>
+        
+        <Dimension name="Floor" foreign_key="floor">
+            <Hierarchy name="Floor" primary_key="id">
+
+                <InlineTable alias="dim_inline_housing_census">
+                    <Row>
+                        <Value column="id">1</Value>
+                        <Value column="name_en">Adobe Floor</Value>
+                        <Value column="name_es">Tierra</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">2</Value>
+                        <Value column="name_en">Cement</Value>
+                        <Value column="name_es">Cemento o firme</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">3</Value>
+                        <Value column="name_en">Wood, Tile or Other Coating</Value>
+                        <Value column="name_es">Madera, mosaico u otro recubrimiento</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">0</Value>
+                        <Value column="name_en">Not specified</Value>
+                        <Value column="name_es">No especificado</Value>
+                    </Row>
+                </InlineTable>
+
+            </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Roof" foreign_key="roof">
+            <Hierarchy name="Roof" primary_key="id">
+
+                <InlineTable alias="dim_inline_housing_census">
+                    <Row>
+                        <Value column="id">1</Value>
+                        <Value column="name_en">Waste Material</Value>
+                        <Value column="name_es">Material de desecho</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">2</Value>
+                        <Value column="name_en">Paperboard</Value>
+                        <Value column="name_es">Lámina de cartón</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">3</Value>
+                        <Value column="name_en">Metal</Value>
+                        <Value column="name_es">Lámina metálica</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">4</Value>
+                        <Value column="name_en">Asbestos</Value>
+                        <Value column="name_es">Lámina de asbesto</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">5</Value>
+                        <Value column="name_en">Fiber Cement</Value>
+                        <Value column="name_es">Lámina de fibrocemento</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">6</Value>
+                        <Value column="name_en">Thatch</Value>
+                        <Value column="name_es">Palma o paja</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">7</Value>
+                        <Value column="name_en">Wood</Value>
+                        <Value column="name_es">Madera o tejamanil</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">8</Value>
+                        <Value column="name_en">Logs of Woods, Woven of reeds, Oleanders, Clay</Value>
+                        <Value column="name_es">Terrado con viguería</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">9</Value>
+                        <Value column="name_en">Roof Tile</Value>
+                        <Value column="name_es">Teja</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">10</Value>
+                        <Value column="name_en">Concrete Slab or Slab Joists</Value>
+                        <Value column="name_es">Losa de concreto o viguetas con bovedilla</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">0</Value>
+                        <Value column="name_en">Not specified</Value>
+                        <Value column="name_es">No especificado</Value>
+                    </Row>
+                </InlineTable>
+
+            </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Wall" foreign_key="wall">
+            <Hierarchy name="Wall" primary_key="id">
+
+                <InlineTable alias="dim_inline_housing_census">
+                    <Row>
+                        <Value column="id">1</Value>
+                        <Value column="name_en">Waste material</Value>
+                        <Value column="name_es">Material de desecho</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">2</Value>
+                        <Value column="name_en">Paperboard</Value>
+                        <Value column="name_es">Lámina de cartón</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">3</Value>
+                        <Value column="name_en">Asbestos or Metal Sheet</Value>
+                        <Value column="name_es">Lámina de asbesto o metálica</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">4</Value>
+                        <Value column="name_en">Reeds or Bamboo</Value>
+                        <Value column="name_es">Carrizo, bambú o palma</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">5</Value>
+                        <Value column="name_en">Mud</Value>
+                        <Value column="name_es">Embarro o bajareque</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">6</Value>
+                        <Value column="name_en">Wood</Value>
+                        <Value column="name_es">Madera</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">7</Value>
+                        <Value column="name_en">Adobe</Value>
+                        <Value column="name_es">Adobe</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">8</Value>
+                        <Value column="name_en">Brick, Stone, Quarry, Cement or Concrete</Value>
+                        <Value column="name_es">Tabique, ladrillo, block, piedra, cantera, cemento o concreto</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">0</Value>
+                        <Value column="name_en">Not specified</Value>
+                        <Value column="name_es">No especificado</Value>
+                    </Row>
+                </InlineTable>
+
+            </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Acquisition" foreign_key="acquisition">
+            <Hierarchy name="Acquisition" primary_key="id">
+
+                <InlineTable alias="dim_inline_housing_census">
+                    <Row>
+                        <Value column="id">1</Value>
+                        <Value column="name_en">Bought the House</Value>
+                        <Value column="name_es">la compró hecha</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">2</Value>
+                        <Value column="name_en">Paid to Build the House</Value>
+                        <Value column="name_es">la mandó construir</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">3</Value>
+                        <Value column="name_en">Made the House</Value>
+                        <Value column="name_es">la construyó ella (él) misma(o) o familiares</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">4</Value>
+                        <Value column="name_en">Inherited the House</Value>
+                        <Value column="name_es">la heredó</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">5</Value>
+                        <Value column="name_en">Received the House from the Government</Value>
+                        <Value column="name_es">la recibió como apoyo del gobierno</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">6</Value>
+                        <Value column="name_en">Acquired the House in Another way</Value>
+                        <Value column="name_es">la obtuvo de otra manera</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">0</Value>
+                        <Value column="name_en">Not specified</Value>
+                        <Value column="name_es">No especificado</Value>
+                    </Row>
+                </InlineTable>
+
+            </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Debt" foreign_key="debt">
+            <Hierarchy name="Debt" primary_key="id">
+
+                <InlineTable alias="dim_inline_housing_census">
+                    <Row>
+                        <Value column="id">1</Value>
+                        <Value column="name_en">Fully Paid</Value>
+                        <Value column="name_es">está totalmente pagada</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">2</Value>
+                        <Value column="name_en">Paying the Debt</Value>
+                        <Value column="name_es">la están pagando</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">3</Value>
+                        <Value column="name_en">Stopped Paying</Value>
+                        <Value column="name_es">la dejaron de pagar</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">4</Value>
+                        <Value column="name_en">No Information</Value>
+                        <Value column="name_es">No sabe</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">0</Value>
+                        <Value column="name_en">Not specified</Value>
+                        <Value column="name_es">No especificado</Value>
+                    </Row>
+                </InlineTable>
+
+            </Hierarchy>
+        </Dimension>
+
+        <Measure name="Inhabitants" column="inhabitants" aggregator="sum">
+        <Measure name="Income" column="income" aggregator="sum">
+</Schema>
