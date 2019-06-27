@@ -22,6 +22,7 @@
                         <Value column="name_es">Municipio con muestra insuficiente</Value>
                     </Row>
                 </InlineTable>
+                <Level name="Coverage" key_column="id" name_column="name_en"/>
 
             </Hierarchy>
         </Dimension>
@@ -51,6 +52,7 @@
                         <Value column="name_es">No especificado</Value>
                     </Row>
                 </InlineTable>
+                <Level name="Floor" key_column="id" name_column="name_en"/>
 
             </Hierarchy>
         </Dimension>
@@ -115,6 +117,7 @@
                         <Value column="name_es">No especificado</Value>
                     </Row>
                 </InlineTable>
+                <Level name="Roof" key_column="id" name_column="name_en"/>
 
             </Hierarchy>
         </Dimension>
@@ -169,6 +172,7 @@
                         <Value column="name_es">No especificado</Value>
                     </Row>
                 </InlineTable>
+                <Level name="Wall" key_column="id" name_column="name_en"/>
 
             </Hierarchy>
         </Dimension>
@@ -213,6 +217,7 @@
                         <Value column="name_es">No especificado</Value>
                     </Row>
                 </InlineTable>
+                <Level name="Acquisition" key_column="id" name_column="name_en"/>
 
             </Hierarchy>
         </Dimension>
@@ -250,6 +255,7 @@
 
             </Hierarchy>
         </Dimension>
+         <Level name="Debt" key_column="id" name_column="name_en"/>
 
         <Measure name="Inhabitants" column="inhabitants" aggregator="sum">
         <Measure name="Income" column="income" aggregator="sum">
