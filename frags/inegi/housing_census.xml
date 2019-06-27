@@ -257,8 +257,8 @@
             </Hierarchy>
         </Dimension>
 
-        <Dimension name="Debt" foreign_key="debt">
-            <Hierarchy name="Debt" primary_key="id">
+        <Dimension name="Income" foreign_key="income">
+            <Hierarchy name="Income" primary_key="id">
 
                 <InlineTable alias="dim_inline_housing_census">
                     <Row>
@@ -377,7 +377,7 @@
                         <Value column="name_es">$200k +</Value>
                     </Row>
                 </InlineTable>
-                <Level name="Debt" key_column="id" name_column="name_en"/>
+                <Level name="Income" key_column="id" name_column="name_en"/>
             </Hierarchy>
         </Dimension>
 
