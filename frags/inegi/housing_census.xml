@@ -1,0 +1,421 @@
+<Schema name="datamexico">
+    <Cube name="housing_census">
+        <Table name="inegi_housing" />
+
+        <Dimension name="Coverage" foreign_key="coverage">
+            <Hierarchy name="Coverage" primary_key="id">
+
+                <InlineTable alias="dim_inline_housing_census">
+                    <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+                    <ColumnDef name="name_en" key_type="text" />
+                    <ColumnDef name="name_es" key_type="text" />
+                    <Row>
+                        <Value column="id">1</Value>
+                        <Value column="name_en">Municipality Population</Value>
+                        <Value column="name_es">Municipio Censado</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">2</Value>
+                        <Value column="name_en">Municipality Sampled</Value>
+                        <Value column="name_es">Municipio Muestreado</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">3</Value>
+                        <Value column="name_en">Municipality with Insufficient Sample</Value>
+                        <Value column="name_es">Municipio con Muestra Insuficiente</Value>
+                    </Row>
+                </InlineTable>
+                <Level name="Coverage EN" key_column="id" name_column="name_en">
+                    <Property name="Coverage ES" column="name_es" caption_set="es"/>
+                </Level>
+
+            </Hierarchy>
+        </Dimension>
+        
+        <Dimension name="Floor" foreign_key="floor">
+            <Hierarchy name="Floor" primary_key="id">
+
+                <InlineTable alias="dim_inline_housing_census">
+                    <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+                    <ColumnDef name="name_en" key_type="text" />
+                    <ColumnDef name="name_es" key_type="text" />
+                    <Row>
+                        <Value column="id">1</Value>
+                        <Value column="name_en">Adobe Floor</Value>
+                        <Value column="name_es">Tierra</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">2</Value>
+                        <Value column="name_en">Cement</Value>
+                        <Value column="name_es">Cemento o Firme</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">3</Value>
+                        <Value column="name_en">Wood, Tile or Other Coating</Value>
+                        <Value column="name_es">Madera, Mosaico u Otro Recubrimiento</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">0</Value>
+                        <Value column="name_en">Not Specified</Value>
+                        <Value column="name_es">No Especificado</Value>
+                    </Row>
+                </InlineTable>
+                <Level name="Floor EN" key_column="id" name_column="name_en">
+                    <Property name="Floor ES" column="name_es" caption_set="es"/>
+                </Level>
+
+            </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Roof" foreign_key="roof">
+            <Hierarchy name="Roof" primary_key="id">
+
+                <InlineTable alias="dim_inline_housing_census">
+                    <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+                    <ColumnDef name="name_en" key_type="text" />
+                    <ColumnDef name="name_es" key_type="text" />
+                    <Row>
+                        <Value column="id">1</Value>
+                        <Value column="name_en">Waste Material</Value>
+                        <Value column="name_es">Material de Desecho</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">2</Value>
+                        <Value column="name_en">Paperboard</Value>
+                        <Value column="name_es">Lámina de Cartón</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">3</Value>
+                        <Value column="name_en">Metal</Value>
+                        <Value column="name_es">Lámina Metálica</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">4</Value>
+                        <Value column="name_en">Asbestos</Value>
+                        <Value column="name_es">Lámina de Asbesto</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">5</Value>
+                        <Value column="name_en">Fiber Cement</Value>
+                        <Value column="name_es">Lámina de Fibrocemento</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">6</Value>
+                        <Value column="name_en">Thatch</Value>
+                        <Value column="name_es">Palma o Paja</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">7</Value>
+                        <Value column="name_en">Wood</Value>
+                        <Value column="name_es">Madera o Tejamanil</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">8</Value>
+                        <Value column="name_en">Logs of Woods, Woven of reeds, Oleanders, Clay</Value>
+                        <Value column="name_es">Terrado con Viguería</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">9</Value>
+                        <Value column="name_en">Roof Tile</Value>
+                        <Value column="name_es">Teja</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">10</Value>
+                        <Value column="name_en">Concrete Slab or Slab Joists</Value>
+                        <Value column="name_es">Losa de Concreto o Viguetas con Bovedilla</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">0</Value>
+                        <Value column="name_en">Not Specified</Value>
+                        <Value column="name_es">No Especificado</Value>
+                    </Row>
+                </InlineTable>
+                <Level name="Roof EN" key_column="id" name_column="name_en">
+                    <Property name="Roof ES" column="name_es" caption_set="es"/>
+                </Level>
+
+            </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Wall" foreign_key="wall">
+            <Hierarchy name="Wall" primary_key="id">
+
+                <InlineTable alias="dim_inline_housing_census">
+                    <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+                    <ColumnDef name="name_en" key_type="text" />
+                    <ColumnDef name="name_es" key_type="text" />
+                    <Row>
+                        <Value column="id">1</Value>
+                        <Value column="name_en">Waste Material</Value>
+                        <Value column="name_es">Material de desecho</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">2</Value>
+                        <Value column="name_en">Paperboard</Value>
+                        <Value column="name_es">Lámina de Cartón</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">3</Value>
+                        <Value column="name_en">Asbestos or Metal Sheet</Value>
+                        <Value column="name_es">Lámina de Asbesto o Metálica</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">4</Value>
+                        <Value column="name_en">Reeds or Bamboo</Value>
+                        <Value column="name_es">Carrizo, Bambú o Palma</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">5</Value>
+                        <Value column="name_en">Mud</Value>
+                        <Value column="name_es">Embarro o Bajareque</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">6</Value>
+                        <Value column="name_en">Wood</Value>
+                        <Value column="name_es">Madera</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">7</Value>
+                        <Value column="name_en">Adobe</Value>
+                        <Value column="name_es">Adobe</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">8</Value>
+                        <Value column="name_en">Brick, Stone, Quarry, Cement or Concrete</Value>
+                        <Value column="name_es">Tabique, Ladrillo, Block, Piedra, Cantera, Cemento o Concreto</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">0</Value>
+                        <Value column="name_en">Not Specified</Value>
+                        <Value column="name_es">No Especificado</Value>
+                    </Row>
+                </InlineTable>
+                <Level name="Wall EN" key_column="id" name_column="name_en">
+                    <Property name="Wall ES" column="name_es" caption_set="es"/>
+                </Level>
+
+            </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Acquisition" foreign_key="acquisition">
+            <Hierarchy name="Acquisition" primary_key="id">
+
+                <InlineTable alias="dim_inline_housing_census">
+                    <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+                    <ColumnDef name="name_en" key_type="text" />
+                    <ColumnDef name="name_es" key_type="text" />
+                    <Row>
+                        <Value column="id">1</Value>
+                        <Value column="name_en">Bought the House</Value>
+                        <Value column="name_es">La Compró Hecha</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">2</Value>
+                        <Value column="name_en">Paid to Build the House</Value>
+                        <Value column="name_es">La Mandó Construir</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">3</Value>
+                        <Value column="name_en">Made the House</Value>
+                        <Value column="name_es">La Construyó Ella (él) Misma(o) o Familiares</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">4</Value>
+                        <Value column="name_en">Inherited the House</Value>
+                        <Value column="name_es">La Heredó</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">5</Value>
+                        <Value column="name_en">Received the House from the Government</Value>
+                        <Value column="name_es">La Recibió como Apoyo del Gobierno</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">6</Value>
+                        <Value column="name_en">Acquired the House in Another Way</Value>
+                        <Value column="name_es">La Obtuvo de Otra Manera</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">0</Value>
+                        <Value column="name_en">Not Specified</Value>
+                        <Value column="name_es">No Especificado</Value>
+                    </Row>
+                </InlineTable>
+                <Level name="Acquisition EN" key_column="id" name_column="name_en">
+                    <Property name="Acquisition ES" column="name_es" caption_set="es"/>
+                </Level>
+
+            </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Debt" foreign_key="debt">
+            <Hierarchy name="Debt" primary_key="id">
+
+                <InlineTable alias="dim_inline_housing_census">
+                    <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+                    <ColumnDef name="name_en" key_type="text" />
+                    <ColumnDef name="name_es" key_type="text" />
+                    <Row>
+                        <Value column="id">1</Value>
+                        <Value column="name_en">Fully Paid</Value>
+                        <Value column="name_es">Está Totalmente Pagada</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">2</Value>
+                        <Value column="name_en">Paying the Debt</Value>
+                        <Value column="name_es">La Están Pagando</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">3</Value>
+                        <Value column="name_en">Stopped Paying</Value>
+                        <Value column="name_es">La Dejaron de Pagar</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">4</Value>
+                        <Value column="name_en">No Information</Value>
+                        <Value column="name_es">No sabe</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">0</Value>
+                        <Value column="name_en">Not Specified</Value>
+                        <Value column="name_es">No Especificado</Value>
+                    </Row>
+                </InlineTable>
+                <Level name="Debt EN" key_column="id" name_column="name_en">
+                    <Property name="Debt ES" column="name_es" caption_set="es"/>
+                </Level>
+
+            </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Income" foreign_key="income">
+            <Hierarchy name="Income" primary_key="id">
+
+                <InlineTable alias="dim_inline_housing_census">
+                    <ColumnDef name="id" key_type="nontext" key_column_type="UInt32" />
+                    <ColumnDef name="name_en" key_type="text" />
+                    <ColumnDef name="name_es" key_type="text" />
+                    <Row>
+                        <Value column="id">1</Value>
+                        <Value column="name_en">&lt;$10k</Value>
+                        <Value column="name_es">&lt;$10k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">2</Value>
+                        <Value column="name_en">$10k-$15k</Value>
+                        <Value column="name_es">$10k-$15k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">3</Value>
+                        <Value column="name_en">$15k-$20k</Value>
+                        <Value column="name_es">$15k-$20k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">4</Value>
+                        <Value column="name_en">$20k-$25k</Value>
+                        <Value column="name_es">$20k-$25k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">5</Value>
+                        <Value column="name_en">$25k-$30k</Value>
+                        <Value column="name_es">$25k-$30k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">6</Value>
+                        <Value column="name_en">$30k-$35k</Value>
+                        <Value column="name_es">$30k-$35k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">7</Value>
+                        <Value column="name_en">$35k-$40k</Value>
+                        <Value column="name_es">$35k-$40k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">8</Value>
+                        <Value column="name_en">$40k-$45k</Value>
+                        <Value column="name_es">$40k-$45k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">9</Value>
+                        <Value column="name_en">$45k-$50k</Value>
+                        <Value column="name_es">$45k-$50k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">10</Value>
+                        <Value column="name_en">$50k-$55k</Value>
+                        <Value column="name_es">$50k-$55k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">11</Value>
+                        <Value column="name_en">$55k-$60k</Value>
+                        <Value column="name_es">$55k-$60k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">12</Value>
+                        <Value column="name_en">$60k-$65k</Value>
+                        <Value column="name_es">$60k-$65k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">13</Value>
+                        <Value column="name_en">$65k-$70k</Value>
+                        <Value column="name_es">$65k-$70k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">14</Value>
+                        <Value column="name_en">$70k-$75k</Value>
+                        <Value column="name_es">$70k-$75k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">15</Value>
+                        <Value column="name_en">$75k-$80k</Value>
+                        <Value column="name_es">$75k-$80k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">16</Value>
+                        <Value column="name_en">$80k-$85k</Value>
+                        <Value column="name_es">$80k-$85k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">17</Value>
+                        <Value column="name_en">$85k-$90k</Value>
+                        <Value column="name_es">$85k-$90k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">18</Value>
+                        <Value column="name_en">$90k-$95k</Value>
+                        <Value column="name_es">$90k-$95k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">19</Value>
+                        <Value column="name_en">$95k-$100k</Value>
+                        <Value column="name_es">$95k-$100k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">20</Value>
+                        <Value column="name_en">$100k-$125k</Value>
+                        <Value column="name_es">$100k-$125k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">21</Value>
+                        <Value column="name_en">$125k-$150k</Value>
+                        <Value column="name_es">$125k-$150k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">22</Value>
+                        <Value column="name_en">$150k-$200k</Value>
+                        <Value column="name_es">$150k-$200k</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">23</Value>
+                        <Value column="name_en">$200k +</Value>
+                        <Value column="name_es">$200k +</Value>
+                    </Row>
+                </InlineTable>
+                <Level name="Income EN" key_column="id" name_column="name_en">
+                    <Property name="Income ES" column="name_es" caption_set="es"/>
+                </Level>
+
+            </Hierarchy>
+        </Dimension>
+
+        <Measure name="Inhabitants" column="inhabitants" aggregator="sum" />
+</Schema>
