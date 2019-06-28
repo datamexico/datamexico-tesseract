@@ -1,227 +1,244 @@
 <Schema name="datamexico">
-    <Cube name="inegi_population">
-        <Table name="inegi_population" primary_key="loc_id" />
+  <Cube name="inegi_population">
+    <Table name="inegi_population" primary_key="loc_id" />
 
-        <Dimension name="Related" foreign_key="parent">
-            <Hierarchy name="Related" primary_key="id">
-              <InlineTable alias="dim_inline_relatep">
-                <Row>
-                  <Value column="id">0</Value>
-                  <Value column="name_en">Not Specified</Value>
-                  <Value column="name_es">No especificado</Value>
-                </Row>
-                <Row>
-                  <Value column="id">1</Value>
-                  <Value column="name_en">Home Leader</Value>
-                  <Value column="name_es">Jefa(e) de Hogar</Value>
-                </Row>
-                <Row>
-                  <Value column="id">2</Value>
-                  <Value column="name_en">Spouse or Partner</Value>
-                  <Value column="name_es">Esposa(o) o pareja</Value>
-                </Row>
-                <Row>
-                  <Value column="id">3</Value>
-                  <Value column="name_en">Child</Value>
-                  <Value column="name_es">Hija(o)</Value>
-                </Row>
-                <Row>
-                  <Value column="id">4</Value>
-                  <Value column="name_en">Grandchild</Value>
-                  <Value column="name_es">Nieta(o)</Value>
-                </Row>
-                <Row>
-                  <Value column="id">5</Value>
-                  <Value column="name_en">Daughter/Son in Law</Value>
-                  <Value column="name_es">Nuera o yerno</Value>
-                </Row>
-                <Row>
-                  <Value column="id">6</Value>
-                  <Value column="name_en">Mother or Father</Value>
-                  <Value column="name_es">Madre o padre</Value>
-                </Row>
-                <Row>
-                  <Value column="id">7</Value>
-                  <Value column="name_en">Mother/Father in Law</Value>
-                  <Value column="name_es">Suegra(o)</Value>
-                </Row>
-                <Row>
-                  <Value column="id">8</Value>
-                  <Value column="name_en">Another Family Relationship</Value>
-                  <Value column="name_es">Otro parentesco</Value>
-                </Row>
-                <Row>
-                  <Value column="id">9</Value>
-                  <Value column="name_en">No Family Relationship</Value>
-                  <Value column="name_es">Sin parentesco</Value>
-                </Row>
-              </InlineTable>
-              <Level name="Related" key_column="id" name_column="name_en">
-                <Property name="Related ES" column="name_es" caption_set="es" />
-              </Level>
-            </Hierarchy>
-        </Dimension>
+    <Dimension name="Geography" foreign_key="loc_id">
+      <Hierarchy name="Geography" primary_key="loc_id">
+        <Table name="dim_shared_geography_mun" />
 
-        <Dimension name="Sex" foreign_key="sex">
-          <Hierarchy name="Sex" primary_key="id">
-            <InlineTable alias="dim_inline_sex">
-              <Row>
-                <Value column="id">1</Value>
-                <Value column="name_en">Male</Value>
-                <Value column="name_es">Hombre</Value>
-              </Row>
-              <Row>
-                <Value column="id">2</Value>
-                <Value column="name_en">Female</Value>
-                <Value column="name_es">Mujer</Value>
-              </Row>
-            </InlineTable>
-            <Level name="Sex" key_column="id" name_column="name_en">
-              <Property name="Sex ES" column="name_es" caption_set="es" />
-            </Level>
-          </Hierarchy>
-        </Dimension>
+        <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+          <Property name="CVE State" column="cve_ent" />
+        </Level>
+        <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
+          <Property name="CVE Municipality" column="cve_mun" />
+          <Property name="CVE Municipality Full" column="cve_mun_full" />
+        </Level>
+        <Level name="Location" key_column="loc_id" name_column="loc_name" key_type="nontext">
+          <Property name="CVE Location" column="cve_loc" />
+          <Property name="CVE Location Full" column="cve_loc_full" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Related" foreign_key="parent">
+      <Hierarchy name="Related" primary_key="id">
+        <InlineTable alias="dim_inline_relatep">
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Home Leader</Value>
+            <Value column="name_es">Jefa(e) de Hogar</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Spouse or Partner</Value>
+            <Value column="name_es">Esposa(o) o pareja</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Child</Value>
+            <Value column="name_es">Hija(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Grandchild</Value>
+            <Value column="name_es">Nieta(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Daughter/Son in Law</Value>
+            <Value column="name_es">Nuera o yerno</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Mother or Father</Value>
+            <Value column="name_es">Madre o padre</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Mother/Father in Law</Value>
+            <Value column="name_es">Suegra(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">Another Family Relationship</Value>
+            <Value column="name_es">Otro parentesco</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No Family Relationship</Value>
+            <Value column="name_es">Sin parentesco</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Related" key_column="id" name_column="name_en">
+          <Property name="Related ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
 
-        <Dimension name="Nationality" foreign_key="nacionality">
-          <Hierarchy name="Nationality" primary_key="id">
-            <InlineTable alias="dim_inline_nationality">
-              <Row>
-                <Value column="id">0</Value>
-                <Value column="name_en">No Specified</Value>
-                <Value column="name_es">No especificado</Value>
-              </Row>
-              <Row>
-                <Value column="id">1</Value>
-                <Value column="name_en">Yes</Value>
-                <Value column="name_es">Sí</Value>
-              </Row>
-              <Row>
-                <Value column="id">2</Value>
-                <Value column="name_en">No</Value>
-                <Value column="name_es">No</Value>
-              </Row>
-            </InlineTable>
-            <Level name="Nationality" key_column="id" name_column="name_en">
-              <Property name="Nationality ES" column="name_es" caption_set="es" />
-            </Level>
-          </Hierarchy>
-        </Dimension>
+    <Dimension name="Sex" foreign_key="sex">
+      <Hierarchy name="Sex" primary_key="id">
+        <InlineTable alias="dim_inline_sex">
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Male</Value>
+            <Value column="name_es">Hombre</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Female</Value>
+            <Value column="name_es">Mujer</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Sex" key_column="id" name_column="name_en">
+          <Property name="Sex ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
 
-        <Dimension name="HealthCare" foreign_key="sersalud">
-          <Hierarchy name="HealthCare" primary_key="id">
-            <InlineTable alias="dim_inline_sersalud">
-              <Row>
-                <Value column="id">0</Value>
-                <Value column="name_en">nan</Value>
-                <Value column="name_es">No especificado</Value>
-              </Row>
-              <Row>
-                <Value column="id">1</Value>
-                <Value column="name_en">nan</Value>
-                <Value column="name_es">IMSS (Seguro social)</Value>
-              </Row>
-              <Row>
-                <Value column="id">2</Value>
-                <Value column="name_en">ISSSTE</Value>
-                <Value column="name_es">ISSSTE</Value>
-              </Row>
-              <Row>
-                <Value column="id">3</Value>
-                <Value column="name_en">nan</Value>
-                <Value column="name_es">ISSSTE estatal</Value>
-              </Row>
-              <Row>
-                <Value column="id">4</Value>
-                <Value column="name_en">nan</Value>
-                <Value column="name_es">Pemex, Defensa o Marina</Value>
-              </Row>
-              <Row>
-                <Value column="id">5</Value>
-                <Value column="name_en">nan</Value>
-                <Value column="name_es">Centro de Salud u Hospital de la SSA (Seguro Popular)</Value>
-              </Row>
-              <Row>
-                <Value column="id">6</Value>
-                <Value column="name_en">nan</Value>
-                <Value column="name_es">Consultorio, clínica u hospital privado</Value>
-              </Row>
-              <Row>
-                <Value column="id">7</Value>
-                <Value column="name_en">nan</Value>
-                <Value column="name_es">Consultorio de farmacia</Value>
-              </Row>
-              <Row>
-                <Value column="id">8</Value>
-                <Value column="name_en">nan</Value>
-                <Value column="name_es">Otro lugar</Value>
-              </Row>
-              <Row>
-                <Value column="id">9</Value>
-                <Value column="name_en">nan</Value>
-                <Value column="name_es">No se atiende</Value>
-              </Row>
-            </InlineTable>
-            <Level name="HealthCare" key_column="id" name_column="name_en">
-              <Property name="HealthCare ES" column="name_es" caption_set="es" />
-            </Level>
-          </Hierarchy>
-        </Dimension>
+    <Dimension name="Nationality" foreign_key="nacionality">
+      <Hierarchy name="Nationality" primary_key="id">
+        <InlineTable alias="dim_inline_nationality">
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">No Specified</Value>
+            <Value column="name_es">No especificado</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Nationality" key_column="id" name_column="name_en">
+          <Property name="Nationality ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
 
-        <Dimension name="HealthOptions" foreign_key="dhsersal1">
-          <Hierarchy name="HealthOptions" primary_key="id">
-            <InlineTable alias="dim_inline_dhsersal1">
-              <Row>
-                <Value column="id">0</Value>
-                <Value column="name_en">Not Specified</Value>
-                <Value column="name_es">No especificado</Value>
-              </Row>
-              <Row>
-                <Value column="id">1</Value>
-                <Value column="name_en">Popular Insurance or New Generation (XXI Century Health Insurance)</Value>
-                <Value column="name_es">Seguro Popular o para una Nueva Generación (Siglo XXI)</Value>
-              </Row>
-              <Row>
-                <Value column="id">2</Value>
-                <Value column="name_en">IMSS (Social Security)</Value>
-                <Value column="name_es">IMSS (Seguro social)</Value>
-              </Row>
-              <Row>
-                <Value column="id">3</Value>
-                <Value column="name_en">ISSSTE</Value>
-                <Value column="name_es">ISSSTE</Value>
-              </Row>
-              <Row>
-                <Value column="id">4</Value>
-                <Value column="name_en">State ISSSTE</Value>
-                <Value column="name_es">ISSSTE estatal</Value>
-              </Row>
-              <Row>
-                <Value column="id">5</Value>
-                <Value column="name_en">Pemex, Defense or Marine</Value>
-                <Value column="name_es">Pemex, Defensa o Marina</Value>
-              </Row>
-              <Row>
-                <Value column="id">6</Value>
-                <Value column="name_en">Private Insurance</Value>
-                <Value column="name_es">Seguro privado</Value>
-              </Row>
-              <Row>
-                <Value column="id">7</Value>
-                <Value column="name_en">Other Institution</Value>
-                <Value column="name_es">Otra institución</Value>
-              </Row>
-              <Row>
-                <Value column="id">8</Value>
-                <Value column="name_en">No Affiliated to Medical Services</Value>
-                <Value column="name_es">No está afiliada(o) a servicios médicos</Value>
-              </Row>
-            </InlineTable>
-            <Level name="HealthOptions" key_column="id" name_column="name_en">
-              <Property name="HealthOptions ES" column="name_es" caption_set="es" />
-            </Level>
-          </Hierarchy>
-        </Dimension>
+    <Dimension name="HealthCare" foreign_key="sersalud">
+      <Hierarchy name="HealthCare" primary_key="id">
+        <InlineTable alias="dim_inline_sersalud">
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">nan</Value>
+            <Value column="name_es">No especificado</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">nan</Value>
+            <Value column="name_es">IMSS (Seguro social)</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">ISSSTE</Value>
+            <Value column="name_es">ISSSTE</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">nan</Value>
+            <Value column="name_es">ISSSTE estatal</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">nan</Value>
+            <Value column="name_es">Pemex, Defensa o Marina</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">nan</Value>
+            <Value column="name_es">Centro de Salud u Hospital de la SSA (Seguro Popular)</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">nan</Value>
+            <Value column="name_es">Consultorio, clínica u hospital privado</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">nan</Value>
+            <Value column="name_es">Consultorio de farmacia</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">nan</Value>
+            <Value column="name_es">Otro lugar</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">nan</Value>
+            <Value column="name_es">No se atiende</Value>
+          </Row>
+        </InlineTable>
+        <Level name="HealthCare" key_column="id" name_column="name_en">
+          <Property name="HealthCare ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
 
-        <Measure name="Population" column="population" aggregator="sum" />
-    </Cube>
+    <Dimension name="HealthOptions" foreign_key="dhsersal1">
+      <Hierarchy name="HealthOptions" primary_key="id">
+        <InlineTable alias="dim_inline_dhsersal1">
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Popular Insurance or New Generation (XXI Century Health Insurance)</Value>
+            <Value column="name_es">Seguro Popular o para una Nueva Generación (Siglo XXI)</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">IMSS (Social Security)</Value>
+            <Value column="name_es">IMSS (Seguro social)</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">ISSSTE</Value>
+            <Value column="name_es">ISSSTE</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">State ISSSTE</Value>
+            <Value column="name_es">ISSSTE estatal</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Pemex, Defense or Marine</Value>
+            <Value column="name_es">Pemex, Defensa o Marina</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Private Insurance</Value>
+            <Value column="name_es">Seguro privado</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Other Institution</Value>
+            <Value column="name_es">Otra institución</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">No Affiliated to Medical Services</Value>
+            <Value column="name_es">No está afiliada(o) a servicios médicos</Value>
+          </Row>
+        </InlineTable>
+        <Level name="HealthOptions" key_column="id" name_column="name_en">
+          <Property name="HealthOptions ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Population" column="population" aggregator="sum" />
+  </Cube>
 </Schema>
