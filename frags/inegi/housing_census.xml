@@ -275,8 +275,8 @@
                 <InlineTable alias="dim_inline_housing_census">
                     <Row>
                         <Value column="id">1</Value>
-                        <Value column="name_en"><$10k</Value>
-                        <Value column="name_es"><$10k</Value>
+                        <Value column="name_en">&lt;$10k</Value>
+                        <Value column="name_es">&lt;$10k</Value>
                     </Row>
                     <Row>
                         <Value column="id">2</Value>
