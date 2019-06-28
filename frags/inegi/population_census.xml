@@ -2,9 +2,9 @@
     <Cube name="inegi_population">
         <Table name="inegi_population"  primary_key="loc_id"   />
 
-        <Dimension name="Related_to" foreign_key="parent">
-            <Hierarchy name="Related" primary_key="id">
-              <InlineTable alias="dim_inline_related_to">
+        <Dimension name="Kinship" foreign_key="parent">
+            <Hierarchy name="Kinship" primary_key="id">
+              <InlineTable alias="dim_inline_kinship">
                 <Row>
                   <Value column="id">0</Value>
                   <Value column="name_en">Not Specified</Value>
@@ -56,7 +56,9 @@
                   <Value column="name_es">Sin parentesco</Value>
                 </Row>
               </InlineTable>
-              <Level name="Related_to" key_column="id" name_column="name_en" />
+              <Level name="Kinship" key_column="id" name_column="name_en">
+                <Property name="Kinship ES" column="name_es" caption-set="es" />
+              </Level>
             </Hierarchy>
         </Dimension>
 
@@ -74,7 +76,9 @@
                 <Value column="name_es">Mujer</Value>
               </Row>
             </InlineTable>
-            <Level name="Sex" key_column="id" name_column="name_en" />
+            <Level name="Sex" key_column="id" name_column="name_en">
+              <Property name="Sex ES" column="name_es" caption-set="es" />
+            </Level>
           </Hierarchy>
         </Dimension>
 
@@ -97,7 +101,9 @@
                 <Value column="name_es">No</Value>
               </Row>
             </InlineTable>
-            <Level name="Nationality" key_column="id" name_column="name_en" />
+            <Level name="Nationality" key_column="id" name_column="name_en">
+              <Property name="Nationality ES" column="name_es" caption-set="es" />
+            </Level>
           </Hierarchy>
         </Dimension>
 
@@ -155,7 +161,9 @@
                 <Value column="name_es">No se atiende</Value>
               </Row>
             </InlineTable>
-            <Level name="HealthCare" key_column="id" name_column="name_en" />
+            <Level name="HealthCare" key_column="id" name_column="name_en">
+              <Property name="HealthCare ES" column="name_es" caption-set="es" />
+            </Level>
           </Hierarchy>
         </Dimension>
 
@@ -208,7 +216,9 @@
                 <Value column="name_es">No está afiliada(o) a servicios médicos</Value>
               </Row>
             </InlineTable>
-            <Level name="HealthOptions" key_column="id" name_column="name_en" />
+            <Level name="HealthOptions" key_column="id" name_column="name_en">
+              <Property name="HealthOptions ES" column="name_es" caption-set="es" />
+            </Level>
           </Hierarchy>
         </Dimension>
 
