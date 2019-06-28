@@ -27,7 +27,7 @@
         </Hierarchy>
     </Dimension>
 <Cube name="housing_census">
-        <Table name="inegi_housing">
+        <Table name="inegi_housing" />
 
         <Dimension name="Coverage" foreign_key="coverage">
             <Hierarchy name="Coverage" primary_key="id">
