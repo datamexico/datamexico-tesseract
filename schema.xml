@@ -33,6 +33,9 @@
             <Hierarchy name="Coverage" primary_key="id">
 
                 <InlineTable alias="dim_inline_housing_census">
+                    <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+                    <ColumnDef name="name_en" key_type="text" />
+                    <ColumnDef name="name_es" key_type="text" />
                     <Row>
                         <Value column="id">1</Value>
                         <Value column="name_en">Municipality Population</Value>
@@ -60,6 +63,9 @@
             <Hierarchy name="Floor" primary_key="id">
 
                 <InlineTable alias="dim_inline_housing_census">
+                    <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+                    <ColumnDef name="name_en" key_type="text" />
+                    <ColumnDef name="name_es" key_type="text" />
                     <Row>
                         <Value column="id">1</Value>
                         <Value column="name_en">Adobe Floor</Value>
@@ -92,6 +98,9 @@
             <Hierarchy name="Roof" primary_key="id">
 
                 <InlineTable alias="dim_inline_housing_census">
+                    <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+                    <ColumnDef name="name_en" key_type="text" />
+                    <ColumnDef name="name_es" key_type="text" />
                     <Row>
                         <Value column="id">1</Value>
                         <Value column="name_en">Waste Material</Value>
@@ -159,6 +168,9 @@
             <Hierarchy name="Wall" primary_key="id">
 
                 <InlineTable alias="dim_inline_housing_census">
+                    <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+                    <ColumnDef name="name_en" key_type="text" />
+                    <ColumnDef name="name_es" key_type="text" />
                     <Row>
                         <Value column="id">1</Value>
                         <Value column="name_en">Waste Material</Value>
@@ -216,6 +228,9 @@
             <Hierarchy name="Acquisition" primary_key="id">
 
                 <InlineTable alias="dim_inline_housing_census">
+                    <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+                    <ColumnDef name="name_en" key_type="text" />
+                    <ColumnDef name="name_es" key_type="text" />
                     <Row>
                         <Value column="id">1</Value>
                         <Value column="name_en">Bought the House</Value>
@@ -263,6 +278,9 @@
             <Hierarchy name="Debt" primary_key="id">
 
                 <InlineTable alias="dim_inline_housing_census">
+                    <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+                    <ColumnDef name="name_en" key_type="text" />
+                    <ColumnDef name="name_es" key_type="text" />
                     <Row>
                         <Value column="id">1</Value>
                         <Value column="name_en">Fully Paid</Value>
@@ -300,6 +318,9 @@
             <Hierarchy name="Income" primary_key="id">
 
                 <InlineTable alias="dim_inline_housing_census">
+                    <ColumnDef name="id" key_type="nontext" key_column_type="UInt32" />
+                    <ColumnDef name="name_en" key_type="text" />
+                    <ColumnDef name="name_es" key_type="text" />
                     <Row>
                         <Value column="id">1</Value>
                         <Value column="name_en">&lt;$10k</Value>
@@ -447,6 +468,9 @@
     <Dimension name="Related" foreign_key="parent">
       <Hierarchy name="Related" primary_key="id">
         <InlineTable alias="dim_inline_relatep">
+          <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
             <Value column="name_en">Not Specified</Value>
@@ -507,6 +531,9 @@
     <Dimension name="Sex" foreign_key="sex">
       <Hierarchy name="Sex" primary_key="id">
         <InlineTable alias="dim_inline_sex">
+          <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Male</Value>
@@ -527,6 +554,9 @@
     <Dimension name="Nationality" foreign_key="nacionality">
       <Hierarchy name="Nationality" primary_key="id">
         <InlineTable alias="dim_inline_nationality">
+          <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
             <Value column="name_en">No Specified</Value>
@@ -552,6 +582,9 @@
     <Dimension name="HealthCare" foreign_key="sersalud">
       <Hierarchy name="HealthCare" primary_key="id">
         <InlineTable alias="dim_inline_sersalud">
+          <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
             <Value column="name_en">nan</Value>
@@ -612,6 +645,9 @@
     <Dimension name="HealthOptions" foreign_key="dhsersal1">
       <Hierarchy name="HealthOptions" primary_key="id">
         <InlineTable alias="dim_inline_dhsersal1">
+          <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
             <Value column="name_en">Not Specified</Value>
