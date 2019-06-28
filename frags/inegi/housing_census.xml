@@ -396,5 +396,5 @@
             </Hierarchy>
         </Dimension>
 
-        <Measure name="Inhabitants" column="inhabitants" aggregator="sum">
+        <Measure name="Inhabitants" column="inhabitants" aggregator="sum" />
 </Schema>

@@ -423,7 +423,7 @@
             </Hierarchy>
         </Dimension>
 
-        <Measure name="Inhabitants" column="inhabitants" aggregator="sum">
+        <Measure name="Inhabitants" column="inhabitants" aggregator="sum" />
 <Cube name="inegi_population">
     <Table name="inegi_population" primary_key="loc_id" />
 
