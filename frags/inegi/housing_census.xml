@@ -31,7 +31,7 @@
 
             </Hierarchy>
         </Dimension>
-        
+
         <Dimension name="Floor" foreign_key="floor">
             <Hierarchy name="Floor" primary_key="id">
 
@@ -418,4 +418,5 @@
         </Dimension>
 
         <Measure name="Inhabitants" column="inhabitants" aggregator="sum" />
+    </Cube>
 </Schema>
