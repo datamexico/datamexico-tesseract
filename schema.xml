@@ -552,7 +552,7 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Nationality" foreign_key="nacionality">
+    <Dimension name="Nationality" foreign_key="nationality">
       <Hierarchy name="Nationality" primary_key="id">
         <InlineTable alias="dim_inline_nationality">
           <ColumnDef name="id" key_type="nontext" />

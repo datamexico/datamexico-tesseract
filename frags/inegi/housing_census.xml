@@ -6,7 +6,7 @@
             <Hierarchy name="Coverage" primary_key="id">
 
                 <InlineTable alias="dim_inline_housing_census">
-                    <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+                    <ColumnDef name="id" key_type="nontext" />
                     <ColumnDef name="name_en" key_type="text" />
                     <ColumnDef name="name_es" key_type="text" />
                     <Row>
@@ -36,7 +36,7 @@
             <Hierarchy name="Floor" primary_key="id">
 
                 <InlineTable alias="dim_inline_housing_census">
-                    <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+                    <ColumnDef name="id" key_type="nontext" />
                     <ColumnDef name="name_en" key_type="text" />
                     <ColumnDef name="name_es" key_type="text" />
                     <Row>
@@ -71,7 +71,7 @@
             <Hierarchy name="Roof" primary_key="id">
 
                 <InlineTable alias="dim_inline_housing_census">
-                    <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+                    <ColumnDef name="id" key_type="nontext" />
                     <ColumnDef name="name_en" key_type="text" />
                     <ColumnDef name="name_es" key_type="text" />
                     <Row>
@@ -141,7 +141,7 @@
             <Hierarchy name="Wall" primary_key="id">
 
                 <InlineTable alias="dim_inline_housing_census">
-                    <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+                    <ColumnDef name="id" key_type="nontext" />
                     <ColumnDef name="name_en" key_type="text" />
                     <ColumnDef name="name_es" key_type="text" />
                     <Row>
@@ -201,7 +201,7 @@
             <Hierarchy name="Acquisition" primary_key="id">
 
                 <InlineTable alias="dim_inline_housing_census">
-                    <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+                    <ColumnDef name="id" key_type="nontext" />
                     <ColumnDef name="name_en" key_type="text" />
                     <ColumnDef name="name_es" key_type="text" />
                     <Row>
@@ -251,7 +251,7 @@
             <Hierarchy name="Debt" primary_key="id">
 
                 <InlineTable alias="dim_inline_housing_census">
-                    <ColumnDef name="id" key_type="nontext" key_column_type="UInt8" />
+                    <ColumnDef name="id" key_type="nontext" />
                     <ColumnDef name="name_en" key_type="text" />
                     <ColumnDef name="name_es" key_type="text" />
                     <Row>
@@ -291,7 +291,7 @@
             <Hierarchy name="Income" primary_key="id">
 
                 <InlineTable alias="dim_inline_housing_census">
-                    <ColumnDef name="id" key_type="nontext" key_column_type="UInt32" />
+                    <ColumnDef name="id" key_type="nontext" />
                     <ColumnDef name="name_en" key_type="text" />
                     <ColumnDef name="name_es" key_type="text" />
                     <Row>
