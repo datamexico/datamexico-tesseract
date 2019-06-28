@@ -25,7 +25,7 @@
                         <Value column="name_es">Municipio con Muestra Insuficiente</Value>
                     </Row>
                 </InlineTable>
-                <Level name="Coverage EN" key_column="id" name_column="name_en">
+                <Level name="Coverage" key_column="id" name_column="name_en">
                     <Property name="Coverage ES" column="name_es" caption_set="es"/>
                 </Level>
 
@@ -60,7 +60,7 @@
                         <Value column="name_es">No Especificado</Value>
                     </Row>
                 </InlineTable>
-                <Level name="Floor EN" key_column="id" name_column="name_en">
+                <Level name="Floor" key_column="id" name_column="name_en">
                     <Property name="Floor ES" column="name_es" caption_set="es"/>
                 </Level>
 
@@ -130,7 +130,7 @@
                         <Value column="name_es">No Especificado</Value>
                     </Row>
                 </InlineTable>
-                <Level name="Roof EN" key_column="id" name_column="name_en">
+                <Level name="Roof" key_column="id" name_column="name_en">
                     <Property name="Roof ES" column="name_es" caption_set="es"/>
                 </Level>
 
@@ -190,7 +190,7 @@
                         <Value column="name_es">No Especificado</Value>
                     </Row>
                 </InlineTable>
-                <Level name="Wall EN" key_column="id" name_column="name_en">
+                <Level name="Wall" key_column="id" name_column="name_en">
                     <Property name="Wall ES" column="name_es" caption_set="es"/>
                 </Level>
 
@@ -240,7 +240,7 @@
                         <Value column="name_es">No Especificado</Value>
                     </Row>
                 </InlineTable>
-                <Level name="Acquisition EN" key_column="id" name_column="name_en">
+                <Level name="Acquisition" key_column="id" name_column="name_en">
                     <Property name="Acquisition ES" column="name_es" caption_set="es"/>
                 </Level>
 
@@ -280,7 +280,7 @@
                         <Value column="name_es">No Especificado</Value>
                     </Row>
                 </InlineTable>
-                <Level name="Debt EN" key_column="id" name_column="name_en">
+                <Level name="Debt" key_column="id" name_column="name_en">
                     <Property name="Debt ES" column="name_es" caption_set="es"/>
                 </Level>
 
@@ -410,7 +410,7 @@
                         <Value column="name_es">$200k +</Value>
                     </Row>
                 </InlineTable>
-                <Level name="Income EN" key_column="id" name_column="name_en">
+                <Level name="Income" key_column="id" name_column="name_en">
                     <Property name="Income ES" column="name_es" caption_set="es"/>
                 </Level>
 
