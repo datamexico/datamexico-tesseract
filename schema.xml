@@ -58,7 +58,7 @@
 
             </Hierarchy>
         </Dimension>
-        
+
         <Dimension name="Floor" foreign_key="floor">
             <Hierarchy name="Floor" primary_key="id">
 
@@ -445,6 +445,7 @@
         </Dimension>
 
         <Measure name="Inhabitants" column="inhabitants" aggregator="sum" />
+    </Cube>
 <Cube name="inegi_population">
     <Table name="inegi_population" primary_key="loc_id" />
 
