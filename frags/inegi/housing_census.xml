@@ -1,5 +1,5 @@
 <Schema name="datamexico">
-    <Cube name="housing_census">
+    <Cube name="inegi_housing">
         <Table name="inegi_housing" />
 
         <Dimension name="Coverage" foreign_key="coverage">
