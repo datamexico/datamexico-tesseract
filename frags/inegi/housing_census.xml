@@ -9,20 +9,22 @@
                     <Row>
                         <Value column="id">1</Value>
                         <Value column="name_en">Municipality Population</Value>
-                        <Value column="name_es">Municipio censado</Value>
+                        <Value column="name_es">Municipio Censado</Value>
                     </Row>
                     <Row>
                         <Value column="id">2</Value>
                         <Value column="name_en">Municipality Sampled</Value>
-                        <Value column="name_es">Municipio muestreado</Value>
+                        <Value column="name_es">Municipio Muestreado</Value>
                     </Row>
                     <Row>
                         <Value column="id">3</Value>
                         <Value column="name_en">Municipality with Insufficient Sample</Value>
-                        <Value column="name_es">Municipio con muestra insuficiente</Value>
+                        <Value column="name_es">Municipio con Muestra Insuficiente</Value>
                     </Row>
                 </InlineTable>
-                <Level name="Coverage" key_column="id" name_column="name_en"/>
+                <Level name="Coverage EN" key_column="id" name_column="name_en">
+                    <Property name="Coverage ES" column="name_es" caption_set="es"/>
+                </Level>
 
             </Hierarchy>
         </Dimension>
@@ -39,20 +41,22 @@
                     <Row>
                         <Value column="id">2</Value>
                         <Value column="name_en">Cement</Value>
-                        <Value column="name_es">Cemento o firme</Value>
+                        <Value column="name_es">Cemento o Firme</Value>
                     </Row>
                     <Row>
                         <Value column="id">3</Value>
                         <Value column="name_en">Wood, Tile or Other Coating</Value>
-                        <Value column="name_es">Madera, mosaico u otro recubrimiento</Value>
+                        <Value column="name_es">Madera, Mosaico u Otro Recubrimiento</Value>
                     </Row>
                     <Row>
                         <Value column="id">0</Value>
-                        <Value column="name_en">Not specified</Value>
-                        <Value column="name_es">No especificado</Value>
+                        <Value column="name_en">Not Specified</Value>
+                        <Value column="name_es">No Especificado</Value>
                     </Row>
                 </InlineTable>
-                <Level name="Floor" key_column="id" name_column="name_en"/>
+                <Level name="Floor EN" key_column="id" name_column="name_en">
+                    <Property name="Floor ES" column="name_es" caption_set="es"/>
+                </Level>
 
             </Hierarchy>
         </Dimension>
@@ -64,42 +68,42 @@
                     <Row>
                         <Value column="id">1</Value>
                         <Value column="name_en">Waste Material</Value>
-                        <Value column="name_es">Material de desecho</Value>
+                        <Value column="name_es">Material de Desecho</Value>
                     </Row>
                     <Row>
                         <Value column="id">2</Value>
                         <Value column="name_en">Paperboard</Value>
-                        <Value column="name_es">Lámina de cartón</Value>
+                        <Value column="name_es">Lámina de Cartón</Value>
                     </Row>
                     <Row>
                         <Value column="id">3</Value>
                         <Value column="name_en">Metal</Value>
-                        <Value column="name_es">Lámina metálica</Value>
+                        <Value column="name_es">Lámina Metálica</Value>
                     </Row>
                     <Row>
                         <Value column="id">4</Value>
                         <Value column="name_en">Asbestos</Value>
-                        <Value column="name_es">Lámina de asbesto</Value>
+                        <Value column="name_es">Lámina de Asbesto</Value>
                     </Row>
                     <Row>
                         <Value column="id">5</Value>
                         <Value column="name_en">Fiber Cement</Value>
-                        <Value column="name_es">Lámina de fibrocemento</Value>
+                        <Value column="name_es">Lámina de Fibrocemento</Value>
                     </Row>
                     <Row>
                         <Value column="id">6</Value>
                         <Value column="name_en">Thatch</Value>
-                        <Value column="name_es">Palma o paja</Value>
+                        <Value column="name_es">Palma o Paja</Value>
                     </Row>
                     <Row>
                         <Value column="id">7</Value>
                         <Value column="name_en">Wood</Value>
-                        <Value column="name_es">Madera o tejamanil</Value>
+                        <Value column="name_es">Madera o Tejamanil</Value>
                     </Row>
                     <Row>
                         <Value column="id">8</Value>
                         <Value column="name_en">Logs of Woods, Woven of reeds, Oleanders, Clay</Value>
-                        <Value column="name_es">Terrado con viguería</Value>
+                        <Value column="name_es">Terrado con Viguería</Value>
                     </Row>
                     <Row>
                         <Value column="id">9</Value>
@@ -109,15 +113,17 @@
                     <Row>
                         <Value column="id">10</Value>
                         <Value column="name_en">Concrete Slab or Slab Joists</Value>
-                        <Value column="name_es">Losa de concreto o viguetas con bovedilla</Value>
+                        <Value column="name_es">Losa de Concreto o Viguetas con Bovedilla</Value>
                     </Row>
                     <Row>
                         <Value column="id">0</Value>
-                        <Value column="name_en">Not specified</Value>
-                        <Value column="name_es">No especificado</Value>
+                        <Value column="name_en">Not Specified</Value>
+                        <Value column="name_es">No Especificado</Value>
                     </Row>
                 </InlineTable>
-                <Level name="Roof" key_column="id" name_column="name_en"/>
+                <Level name="Roof EN" key_column="id" name_column="name_en">
+                    <Property name="Roof ES" column="name_es" caption_set="es"/>
+                </Level>
 
             </Hierarchy>
         </Dimension>
@@ -128,28 +134,28 @@
                 <InlineTable alias="dim_inline_housing_census">
                     <Row>
                         <Value column="id">1</Value>
-                        <Value column="name_en">Waste material</Value>
+                        <Value column="name_en">Waste Material</Value>
                         <Value column="name_es">Material de desecho</Value>
                     </Row>
                     <Row>
                         <Value column="id">2</Value>
                         <Value column="name_en">Paperboard</Value>
-                        <Value column="name_es">Lámina de cartón</Value>
+                        <Value column="name_es">Lámina de Cartón</Value>
                     </Row>
                     <Row>
                         <Value column="id">3</Value>
                         <Value column="name_en">Asbestos or Metal Sheet</Value>
-                        <Value column="name_es">Lámina de asbesto o metálica</Value>
+                        <Value column="name_es">Lámina de Asbesto o Metálica</Value>
                     </Row>
                     <Row>
                         <Value column="id">4</Value>
                         <Value column="name_en">Reeds or Bamboo</Value>
-                        <Value column="name_es">Carrizo, bambú o palma</Value>
+                        <Value column="name_es">Carrizo, Bambú o Palma</Value>
                     </Row>
                     <Row>
                         <Value column="id">5</Value>
                         <Value column="name_en">Mud</Value>
-                        <Value column="name_es">Embarro o bajareque</Value>
+                        <Value column="name_es">Embarro o Bajareque</Value>
                     </Row>
                     <Row>
                         <Value column="id">6</Value>
@@ -164,15 +170,17 @@
                     <Row>
                         <Value column="id">8</Value>
                         <Value column="name_en">Brick, Stone, Quarry, Cement or Concrete</Value>
-                        <Value column="name_es">Tabique, ladrillo, block, piedra, cantera, cemento o concreto</Value>
+                        <Value column="name_es">Tabique, Ladrillo, Block, Piedra, Cantera, Cemento o Concreto</Value>
                     </Row>
                     <Row>
                         <Value column="id">0</Value>
-                        <Value column="name_en">Not specified</Value>
-                        <Value column="name_es">No especificado</Value>
+                        <Value column="name_en">Not Specified</Value>
+                        <Value column="name_es">No Especificado</Value>
                     </Row>
                 </InlineTable>
-                <Level name="Wall" key_column="id" name_column="name_en"/>
+                <Level name="Wall EN" key_column="id" name_column="name_en">
+                    <Property name="Wall ES" column="name_es" caption_set="es"/>
+                </Level>
 
             </Hierarchy>
         </Dimension>
@@ -184,40 +192,42 @@
                     <Row>
                         <Value column="id">1</Value>
                         <Value column="name_en">Bought the House</Value>
-                        <Value column="name_es">la compró hecha</Value>
+                        <Value column="name_es">La Compró Hecha</Value>
                     </Row>
                     <Row>
                         <Value column="id">2</Value>
                         <Value column="name_en">Paid to Build the House</Value>
-                        <Value column="name_es">la mandó construir</Value>
+                        <Value column="name_es">La Mandó Construir</Value>
                     </Row>
                     <Row>
                         <Value column="id">3</Value>
                         <Value column="name_en">Made the House</Value>
-                        <Value column="name_es">la construyó ella (él) misma(o) o familiares</Value>
+                        <Value column="name_es">La Construyó Ella (él) Misma(o) o Familiares</Value>
                     </Row>
                     <Row>
                         <Value column="id">4</Value>
                         <Value column="name_en">Inherited the House</Value>
-                        <Value column="name_es">la heredó</Value>
+                        <Value column="name_es">La Heredó</Value>
                     </Row>
                     <Row>
                         <Value column="id">5</Value>
                         <Value column="name_en">Received the House from the Government</Value>
-                        <Value column="name_es">la recibió como apoyo del gobierno</Value>
+                        <Value column="name_es">La Recibió como Apoyo del Gobierno</Value>
                     </Row>
                     <Row>
                         <Value column="id">6</Value>
-                        <Value column="name_en">Acquired the House in Another way</Value>
-                        <Value column="name_es">la obtuvo de otra manera</Value>
+                        <Value column="name_en">Acquired the House in Another Way</Value>
+                        <Value column="name_es">La Obtuvo de Otra Manera</Value>
                     </Row>
                     <Row>
                         <Value column="id">0</Value>
-                        <Value column="name_en">Not specified</Value>
-                        <Value column="name_es">No especificado</Value>
+                        <Value column="name_en">Not Specified</Value>
+                        <Value column="name_es">No Especificado</Value>
                     </Row>
                 </InlineTable>
-                <Level name="Acquisition" key_column="id" name_column="name_en"/>
+                <Level name="Acquisition EN" key_column="id" name_column="name_en">
+                    <Property name="Acquisition ES" column="name_es" caption_set="es"/>
+                </Level>
 
             </Hierarchy>
         </Dimension>
@@ -229,17 +239,17 @@
                     <Row>
                         <Value column="id">1</Value>
                         <Value column="name_en">Fully Paid</Value>
-                        <Value column="name_es">está totalmente pagada</Value>
+                        <Value column="name_es">Está Totalmente Pagada</Value>
                     </Row>
                     <Row>
                         <Value column="id">2</Value>
                         <Value column="name_en">Paying the Debt</Value>
-                        <Value column="name_es">la están pagando</Value>
+                        <Value column="name_es">La Están Pagando</Value>
                     </Row>
                     <Row>
                         <Value column="id">3</Value>
                         <Value column="name_en">Stopped Paying</Value>
-                        <Value column="name_es">la dejaron de pagar</Value>
+                        <Value column="name_es">La Dejaron de Pagar</Value>
                     </Row>
                     <Row>
                         <Value column="id">4</Value>
@@ -248,11 +258,13 @@
                     </Row>
                     <Row>
                         <Value column="id">0</Value>
-                        <Value column="name_en">Not specified</Value>
-                        <Value column="name_es">No especificado</Value>
+                        <Value column="name_en">Not Specified</Value>
+                        <Value column="name_es">No Especificado</Value>
                     </Row>
                 </InlineTable>
-                <Level name="Debt" key_column="id" name_column="name_en"/>
+                <Level name="Debt EN" key_column="id" name_column="name_en">
+                    <Property name="Debt ES" column="name_es" caption_set="es"/>
+                </Level>
 
             </Hierarchy>
         </Dimension>
@@ -377,7 +389,10 @@
                         <Value column="name_es">$200k +</Value>
                     </Row>
                 </InlineTable>
-                <Level name="Income" key_column="id" name_column="name_en"/>
+                <Level name="Income EN" key_column="id" name_column="name_en">
+                    <Property name="Income ES" column="name_es" caption_set="es"/>
+                </Level>
+
             </Hierarchy>
         </Dimension>
 
