@@ -1003,6 +1003,7 @@
                 <Level name="Bedrooms" key_column="id" name_column="name_en">
                     <Property name="Bedrooms ES" column="name_es" caption_set="es"/>
                 </Level>
+
             </Hierarchy>
         </Dimension>
 
