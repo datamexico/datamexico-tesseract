@@ -19,6 +19,7 @@
         </Level>
       </Hierarchy>
     </Dimension>
+
     <Dimension name="Related" foreign_key="parent">
       <Hierarchy name="Related" primary_key="id">
         <InlineTable alias="dim_inline_relatep">
@@ -250,6 +251,201 @@
         </InlineTable>
         <Level name="HealthOptions" key_column="id" name_column="name_en">
           <Property name="HealthOptions ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="WorkMean" foreign_key="transport_mean_work">
+      <Hierarchy name="WorkMean" primary_key="id">
+        <InlineTable alias="dim_inline_time_to_work">
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Bus, taxi, or similar</Value>
+            <Value column="name_es">Camión, taxi, combi o colectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Train, subway or similar</Value>
+            <Value column="name_es">Metro, metrobús o tren ligero</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Own vehicle (car, truck or motorcycle)</Value>
+            <Value column="name_es">Vehículo particular (automóvil, camioneta o motocicleta)</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Labor transportation</Value>
+            <Value column="name_es">Transporte laboral</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Bike</Value>
+            <Value column="name_es">Bicicleta</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Walking</Value>
+            <Value column="name_es">Caminando</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Other</Value>
+            <Value column="name_es">Otro</Value>
+          </Row>
+        </InlineTable>
+        <Level name="WorkMean" key_column="id" name_column="name_en">
+          <Property name="WorkMean ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="TimetoWork" foreign_key="time_to_work">
+      <Hierarchy name="TimetoWork" primary_key="id">
+        <InlineTable alias="dim_inline_time_to_work">
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Up to 15 minutes</Value>
+            <Value column="name_es">Hasta 15 minutos</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">From 16 to 30 minutes</Value>
+            <Value column="name_es">16 a 30 minutos</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">From 31 minutes to 1 hour</Value>
+            <Value column="name_es">31 minutos a 1 hora</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Between 1 to 2 hours</Value>
+            <Value column="name_es">Más de 1 hora y hasta 2</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">More than 2 hours</Value>
+            <Value column="name_es">Más de 2 horas</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">No way to know</Value>
+            <Value column="name_es">No es posible determinarlo</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Doesn´t move to work</Value>
+            <Value column="name_es">No se traslada</Value>
+          </Row>
+        </InlineTable>
+        <Level name="TimetoWork" key_column="id" name_column="name_en">
+          <Property name="TimetoWork ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="JobSituation" foreign_key="laboral_condition">
+      <Hierarchy name="JobSituation" primary_key="id">
+        <InlineTable alias="dim_inline_laboral_condition">
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">99</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Work</Value>
+            <Value column="name_es">Trabajó</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Did or sold a product</Value>
+            <Value column="name_es">Hizo o vendió algún producto</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Help in some business</Value>
+            <Value column="name_es">Ayudó en algún negocio</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Raise livestock or grow crops</Value>
+            <Value column="name_es">Crio animales o cultivó algo</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Offer a service for a payment</Value>
+            <Value column="name_es">Ofreció algún servicio por un pago</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Work in her/his own business</Value>
+            <Value column="name_es">Atendió su propio negocio</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Had work, but didn't work</Value>
+            <Value column="name_es">Tenía trabajo, pero no trabajó</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">Search for a job</Value>
+            <Value column="name_es">Buscó trabajo</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Currently a student</Value>
+            <Value column="name_es">Es estudiante</Value>
+          </Row>
+          <Row>
+            <Value column="id">10</Value>
+            <Value column="name_en">Retired or pensioned</Value>
+            <Value column="name_es">Es jubilada(o) o pensionada(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">11</Value>
+            <Value column="name_en">Devoted to the home chores</Value>
+            <Value column="name_es">Se dedica a los quehaceres de su hogar</Value>
+          </Row>
+          <Row>
+            <Value column="id">12</Value>
+            <Value column="name_en">Has some physical or mental limitation that prevents him/her from working</Value>
+            <Value column="name_es">Tiene alguna limitación física o mental que le impide trabajar</Value>
+          </Row>
+          <Row>
+            <Value column="id">13</Value>
+            <Value column="name_en">Didn´t work</Value>
+            <Value column="name_es">No trabajó</Value>
+          </Row>
+        </InlineTable>
+        <Level name="JobSituation" key_column="id" name_column="name_en">
+          <Property name="JobSituation ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
