@@ -1,11 +1,9 @@
 <Schema name="datamexico">
   <Cube name="inegi_population">
     <Table name="inegi_population" primary_key="loc_id" />
-
     <Dimension name="Geography" foreign_key="loc_id">
       <Hierarchy name="Geography" primary_key="loc_id">
         <Table name="dim_shared_geography" />
-
         <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
           <Property name="CVE State" column="cve_ent" />
         </Level>
@@ -19,7 +17,6 @@
         </Level>
       </Hierarchy>
     </Dimension>
-
     <Dimension name="Related" foreign_key="parent">
       <Hierarchy name="Related" primary_key="id">
         <InlineTable alias="dim_inline_relatep">
@@ -82,7 +79,6 @@
         </Level>
       </Hierarchy>
     </Dimension>
-
     <Dimension name="Sex" foreign_key="sex">
       <Hierarchy name="Sex" primary_key="id">
         <InlineTable alias="dim_inline_sex">
@@ -105,7 +101,6 @@
         </Level>
       </Hierarchy>
     </Dimension>
-
     <Dimension name="Nationality" foreign_key="nationality">
       <Hierarchy name="Nationality" primary_key="id">
         <InlineTable alias="dim_inline_nationality">
@@ -133,7 +128,6 @@
         </Level>
       </Hierarchy>
     </Dimension>
-
     <Dimension name="HealthCare" foreign_key="sersalud">
       <Hierarchy name="HealthCare" primary_key="id">
         <InlineTable alias="dim_inline_sersalud">
@@ -196,7 +190,6 @@
         </Level>
       </Hierarchy>
     </Dimension>
-
     <Dimension name="HealthOptions" foreign_key="dhsersal1">
       <Hierarchy name="HealthOptions" primary_key="id">
         <InlineTable alias="dim_inline_dhsersal1">
@@ -254,7 +247,6 @@
         </Level>
       </Hierarchy>
     </Dimension>
-
     <Dimension name="WorkMean" foreign_key="transport_mean_work">
       <Hierarchy name="WorkMean" primary_key="id">
         <InlineTable alias="dim_inline_time_to_work">
@@ -309,7 +301,6 @@
         </Level>
       </Hierarchy>
     </Dimension>
-
     <Dimension name="TimetoWork" foreign_key="time_to_work">
       <Hierarchy name="TimetoWork" primary_key="id">
         <InlineTable alias="dim_inline_time_to_work">
@@ -364,7 +355,6 @@
         </Level>
       </Hierarchy>
     </Dimension>
-
     <Dimension name="JobSituation" foreign_key="laboral_condition">
       <Hierarchy name="JobSituation" primary_key="id">
         <InlineTable alias="dim_inline_laboral_condition">
@@ -449,7 +439,6 @@
         </Level>
       </Hierarchy>
     </Dimension>
-
     <Measure name="Population" column="population" aggregator="sum" />
   </Cube>
 </Schema>
