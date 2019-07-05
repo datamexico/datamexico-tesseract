@@ -1304,7 +1304,10 @@
     </Dimension>
     <Dimension name="WorkMean" foreign_key="transport_mean_work">
       <Hierarchy name="WorkMean" primary_key="id">
-        <InlineTable alias="dim_inline_time_to_work">
+        <InlineTable alias="dim_transport_mean_work">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
             <Value column="name_en">Undefined</Value>
@@ -1359,6 +1362,9 @@
     <Dimension name="TimetoWork" foreign_key="time_to_work">
       <Hierarchy name="TimetoWork" primary_key="id">
         <InlineTable alias="dim_inline_time_to_work">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
             <Value column="name_en">Undefined</Value>
@@ -1413,6 +1419,9 @@
     <Dimension name="JobSituation" foreign_key="laboral_condition">
       <Hierarchy name="JobSituation" primary_key="id">
         <InlineTable alias="dim_inline_laboral_condition">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
             <Value column="name_en">Undefined</Value>
