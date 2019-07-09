@@ -1,0 +1,94 @@
+<Schema name="datamexico">
+    <Cube name="foreign_trade">
+        <Table name="foreign_trade" primary_key="date_id" />
+
+        <Dimension name="Document Code" foreign_key="document_code">
+            <Hierarchy name="Document Code">
+                <Table name="foreign_trade" />
+                <Level name="Document Code" key_column="document_code" />
+            </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Operation Code" foreign_key="operation_code">
+            <Hierarchy name="Operation Code">
+                <Table name="foreign_trade" />
+                <Level name="Operation Code" key_column="operation_code" />
+            </Hierarchy>
+        </Dimension>
+
+        <Dimension name="State Code Taxpayer" foreign_key="state_code_taxpayer">
+            <Hierarchy name="State Code Taxpayer">
+                <Table name="foreign_trade" />
+                <Level name="State Code Taxpayer" key_column="state_code_taxpayer" />
+            </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Country Taxpayer" foreign_key="country_taxpayer">
+            <Hierarchy name="Country Taxpayer">
+                <Table name="foreign_trade" />
+                <Level name="Country Taxpayer" key_column="country_taxpayer" />
+            </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Country Origin Destiny" foreign_key="country_origin_destiny">
+            <Hierarchy name="Country Origin Destiny">
+                <Table name="foreign_trade" />
+                <Level name="Country Origin Destiny" key_column="country_origin_destiny" />
+            </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Custom Patent" foreign_key="customs_patent">
+            <Hierarchy name="Custom Patent">
+                <Table name="foreign_trade" />
+                <Level name="Custom Patent" key_column="customs_patent" />
+            </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Number of Petition" foreign_key="number_of_petition">
+            <Hierarchy name="Number of Petition">
+                <Table name="foreign_trade" />
+                <Level name="Number of Petition" key_column="number_of_petition" />
+            </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Commercial Measure Code" foreign_key="commercial_measure_code">
+            <Hierarchy name="Commercial Measure Code">
+                <Table name="foreign_trade" />
+                <Level name="Commercial Measure Code" key_column="commercial_measure_code" />
+            </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Code of Dispatch Custom Section" foreign_key="code_of_dispatch_customs_section">
+            <Hierarchy name="Code of Dispatch Custom Section">
+                <Table name="foreign_trade" />
+                <Level name="Code of Dispatch Custom Section" key_column="code_of_dispatch_customs_section" />
+            </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Sequence of Tariff Fractions" foreign_key="sequence_of_tariff_fractions">
+            <Hierarchy name="Sequence of Tariff Fractions">
+                <Table name="foreign_trade" />
+                <Level name="Sequence of Tariff Fractions" key_column="sequence_of_tariff_fractions" />
+            </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Code of Entry Customs Section" foreign_key="code_of_entry_customs_section">
+            <Hierarchy name="Code of Entry Customs Section">
+                <Table name="foreign_trade" />
+                <Level name="Code of Entry Customs Section" key_column="code_of_entry_customs_section" />
+            </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Postal Code Address" foreign_key="postal_code_taxpayer_address">
+            <Hierarchy name="Postal Code Address">
+                <Table name="foreign_trade" />
+                <Level name="Postal Code Address" key_column="postal_code_taxpayer_address" />
+            </Hierarchy>
+        </Dimension>
+
+        <Measure name="Tariff Fraction" column="tariff_fraction" aggregator="sum"/>
+        <Measure name="Unitary Price" column="unitary_price" aggregator="sum" />
+        <Measure name="Commercial Value" column="commercial_value" aggregator="sum"/>
+
+    </Cube>
+</Schema>
