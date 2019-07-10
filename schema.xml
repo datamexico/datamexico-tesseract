@@ -1074,7 +1074,7 @@
     </Dimension>
     <Dimension name="Related" foreign_key="parent">
       <Hierarchy name="Related" primary_key="id">
-        <InlineTable alias="dim_inline_relatep">
+        <InlineTable alias="dim_inline_related">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
@@ -1494,7 +1494,7 @@
           </Row>
           <Row>
             <Value column="id">13</Value>
-            <Value column="name_en">Didn´t work</Value>
+            <Value column="name_en">Didn't work</Value>
             <Value column="name_es">No trabajó</Value>
           </Row>
         </InlineTable>
