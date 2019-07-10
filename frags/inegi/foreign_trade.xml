@@ -37,38 +37,10 @@
             </Hierarchy>
         </Dimension>
 
-        <Dimension name="Custom Patent" foreign_key="customs_patent">
-            <Hierarchy name="Custom Patent">
-                <Table name="foreign_trade" />
-                <Level name="Custom Patent" key_column="customs_patent" />
-            </Hierarchy>
-        </Dimension>
-
-        <Dimension name="Number of Petition" foreign_key="number_of_petition">
-            <Hierarchy name="Number of Petition">
-                <Table name="foreign_trade" />
-                <Level name="Number of Petition" key_column="number_of_petition" />
-            </Hierarchy>
-        </Dimension>
-
         <Dimension name="Commercial Measure Code" foreign_key="commercial_measure_code">
             <Hierarchy name="Commercial Measure Code">
                 <Table name="foreign_trade" />
                 <Level name="Commercial Measure Code" key_column="commercial_measure_code" />
-            </Hierarchy>
-        </Dimension>
-
-        <Dimension name="Code of Dispatch Custom Section" foreign_key="code_of_dispatch_customs_section">
-            <Hierarchy name="Code of Dispatch Custom Section">
-                <Table name="foreign_trade" />
-                <Level name="Code of Dispatch Custom Section" key_column="code_of_dispatch_customs_section" />
-            </Hierarchy>
-        </Dimension>
-
-        <Dimension name="Sequence of Tariff Fractions" foreign_key="sequence_of_tariff_fractions">
-            <Hierarchy name="Sequence of Tariff Fractions">
-                <Table name="foreign_trade" />
-                <Level name="Sequence of Tariff Fractions" key_column="sequence_of_tariff_fractions" />
             </Hierarchy>
         </Dimension>
 
