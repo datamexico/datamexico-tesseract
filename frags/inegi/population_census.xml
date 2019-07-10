@@ -352,7 +352,7 @@
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">Doesn´t move to work</Value>
+            <Value column="name_en">Doesn\'t move to work</Value>
             <Value column="name_es">No se traslada</Value>
           </Row>
         </InlineTable>
@@ -409,7 +409,7 @@
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">Had work, but didn't work</Value>
+            <Value column="name_en">Had work, but didn\'t work</Value>
             <Value column="name_es">Tenía trabajo, pero no trabajó</Value>
           </Row>
           <Row>
@@ -439,7 +439,7 @@
           </Row>
           <Row>
             <Value column="id">13</Value>
-            <Value column="name_en">Didn't work</Value>
+            <Value column="name_en">Didn\'t work</Value>
             <Value column="name_es">No trabajó</Value>
           </Row>
         </InlineTable>
