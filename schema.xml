@@ -1561,12 +1561,12 @@
           </Row>
           <Row>
             <Value column="id">10</Value>
-            <Value column="name_en">Normal Bachelor's degree</Value>
+            <Value column="name_en">Normal Bachelor\'s degree</Value>
             <Value column="name_es">Normal de licenciatura</Value>
           </Row>
           <Row>
             <Value column="id">11</Value>
-            <Value column="name_en">Bachelor's degree</Value>
+            <Value column="name_en">Bachelor\'s degree</Value>
             <Value column="name_es">Licenciatura</Value>
           </Row>
           <Row>
@@ -1602,8 +1602,8 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Age Group" foreign_key="mun_id">
-      <Hierarchy name="Age Group" primary_key="mun_id">
+    <Dimension name="Age Group" foreign_key="age">
+      <Hierarchy name="Age Group" primary_key="age">
         <Table name="dim_shared_age" />
 
         <Level name="Age Range" key_column="age_range_id" name_column="name_en" key_type="nontext">
