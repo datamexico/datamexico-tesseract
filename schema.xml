@@ -1596,8 +1596,8 @@
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension name="Date" foreign_key="year">
-      <Hierarchy name="Date">
+    <Dimension name="Year" foreign_key="year">
+      <Hierarchy name="Year">
           <Level name="Year" key_column="year" type="time" />
       </Hierarchy>
     </Dimension>
@@ -1682,8 +1682,8 @@
             </Hierarchy>
         </Dimension>
 
-        <Dimension name="Date" foreign_key="year">
-            <Hierarchy name="Date">
+        <Dimension name="Year" foreign_key="year">
+            <Hierarchy name="Year">
                 <Level name="Year" key_column="year" type="time" />
             </Hierarchy>
         </Dimension>
@@ -1813,8 +1813,8 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Date" foreign_key="year">
-      <Hierarchy name="Date">
+    <Dimension name="Year" foreign_key="year">
+      <Hierarchy name="Year">
         <Level name="Year" key_column="year" type="time" />
       </Hierarchy>
     </Dimension>

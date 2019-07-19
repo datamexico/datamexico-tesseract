@@ -506,12 +506,12 @@
           </Row>
           <Row>
             <Value column="id">10</Value>
-            <Value column="name_en">Normal Bachelor's degree</Value>
+            <Value column="name_en">Normal Bachelor\'s degree</Value>
             <Value column="name_es">Normal de licenciatura</Value>
           </Row>
           <Row>
             <Value column="id">11</Value>
-            <Value column="name_en">Bachelor's degree</Value>
+            <Value column="name_en">Bachelor\'s degree</Value>
             <Value column="name_es">Licenciatura</Value>
           </Row>
           <Row>
@@ -541,8 +541,8 @@
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension name="Date" foreign_key="year">
-      <Hierarchy name="Date">
+    <Dimension name="Year" foreign_key="year">
+      <Hierarchy name="Year">
           <Level name="Year" key_column="year" type="time" />
       </Hierarchy>
     </Dimension>
