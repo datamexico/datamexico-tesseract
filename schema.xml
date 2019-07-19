@@ -1190,13 +1190,13 @@
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
           <Row>
-            <Value column="id">0</Value>
-            <Value column="name_en">nan</Value>
+            <Value column="id">99</Value>
+            <Value column="name_en">Not Specified</Value>
             <Value column="name_es">No especificado</Value>
           </Row>
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">nan</Value>
+            <Value column="name_en">IMSS (Social Security)</Value>
             <Value column="name_es">IMSS (Seguro social)</Value>
           </Row>
           <Row>
@@ -1206,37 +1206,37 @@
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">nan</Value>
+            <Value column="name_en">State ISSSTE</Value>
             <Value column="name_es">ISSSTE estatal</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">nan</Value>
+            <Value column="name_en">Pemex, Defense or Marine</Value>
             <Value column="name_es">Pemex, Defensa o Marina</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
-            <Value column="name_en">nan</Value>
+            <Value column="name_en">SSAs Health Care Center or Hospital</Value>
             <Value column="name_es">Centro de Salud u Hospital de la SSA (Seguro Popular)</Value>
           </Row>
           <Row>
             <Value column="id">6</Value>
-            <Value column="name_en">nan</Value>
+            <Value column="name_en">Medical Office, clinic or private hospital</Value>
             <Value column="name_es">Consultorio, clínica u hospital privado</Value>
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">nan</Value>
+            <Value column="name_en">Pharmacy Office</Value>
             <Value column="name_es">Consultorio de farmacia</Value>
           </Row>
           <Row>
             <Value column="id">8</Value>
-            <Value column="name_en">nan</Value>
+            <Value column="name_en">Another place</Value>
             <Value column="name_es">Otro lugar</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">nan</Value>
+            <Value column="name_en">Doesn\'t seek attention</Value>
             <Value column="name_es">No se atiende</Value>
           </Row>
         </InlineTable>
@@ -1407,7 +1407,7 @@
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">Doesn´t move to work</Value>
+            <Value column="name_en">Doesn\'t move to work</Value>
             <Value column="name_es">No se traslada</Value>
           </Row>
         </InlineTable>
@@ -1464,7 +1464,7 @@
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">Had work, but didn't work</Value>
+            <Value column="name_en">Had work, but didn\'t work</Value>
             <Value column="name_es">Tenía trabajo, pero no trabajó</Value>
           </Row>
           <Row>
@@ -1494,7 +1494,7 @@
           </Row>
           <Row>
             <Value column="id">13</Value>
-            <Value column="name_en">Didn't work</Value>
+            <Value column="name_en">Didn\'t work</Value>
             <Value column="name_es">No trabajó</Value>
           </Row>
         </InlineTable>
@@ -1549,23 +1549,23 @@
             <Hierarchy name="Industry" primary_key="national_industry_id">
                 <Table name="dim_shared_industry"/>
 
-                <Level name="Sector" key_column="sector_id" name_column="sector_en">
+                <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
                     <Property name="sector_es" column="sector_es" caption_set="es"/>
                 </Level>
 
-                <Level name="Subsector" key_column="subsector_id" name_column="subsector_en">
+                <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="text">
                     <Property name="subsector_es" column="subsector_es" caption_set="es"/>
                 </Level>
 
-                <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_en">
+                <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_en" key_type="text">
                     <Property name="industry_group_es" column="industry_group_es" caption_set="es"/>
                 </Level>
 
-                <Level name="NAICS Industry" key_column="naics_industry_id" name_column="naics_industry_en">
+                <Level name="NAICS Industry" key_column="naics_industry_id" name_column="naics_industry_en" key_type="text">
                     <Property name="naics_industry_es" column="naics_industry_es" caption_set="es"/>
                 </Level>
 
-                <Level name="National Industry" key_column="national_industry_id" name_column="national_industry_en">
+                <Level name="National Industry" key_column="national_industry_id" name_column="national_industry_en" key_type="text">
                     <Property name="national_industry_es" column="national_industry_es" caption_set="es"/>
                 </Level>
             </Hierarchy>
