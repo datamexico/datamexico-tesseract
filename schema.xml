@@ -231,7 +231,7 @@
           </Row>
           <Row>
             <Value column="id">5</Value>
-            <Value column="name_en">Mud</Value>
+            <Value column="name_en">Mud Base Wall</Value>
             <Value column="name_es">Embarro o Bajareque</Value>
           </Row>
           <Row>
@@ -1503,6 +1503,117 @@
         </Level>
       </Hierarchy>
     </Dimension>
+    <Dimension name="AcademicDegree" foreign_key="academic_degree">
+      <Hierarchy name="AcademicDegree" primary_key="id">
+        <InlineTable alias="dim_inline_academic_degree">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Ninguno</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Preschool or Kindergarden</Value>
+            <Value column="name_es">Preescolar o kínder</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Primary School</Value>
+            <Value column="name_es">Primaria</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Middle School</Value>
+            <Value column="name_es">Secundaria</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">High School  or General Baccalaureate</Value>
+            <Value column="name_es">Preparatoria o bachillerato general</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Technical Baccalaureate</Value>
+            <Value column="name_es">Bachillerato tecnológico</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Technical or Comercial Studies, and finished Primary School</Value>
+            <Value column="name_es">Estudios técnicos o comerciales con primaria terminada</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Technical or Comercial Studies, and finished Middle School</Value>
+            <Value column="name_es">Estudios técnicos o comerciales con secundaria terminada</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">Technical or Comercial Studies, and finished High School</Value>
+            <Value column="name_es">Estudios técnicos o comerciales con preparatoria terminada</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Normal Studies, and finished Primary or Middle School</Value>
+            <Value column="name_es">Normal con primaria o secundaria terminada</Value>
+          </Row>
+          <Row>
+            <Value column="id">10</Value>
+            <Value column="name_en">Normal Bachelor's degree</Value>
+            <Value column="name_es">Normal de licenciatura</Value>
+          </Row>
+          <Row>
+            <Value column="id">11</Value>
+            <Value column="name_en">Bachelor's degree</Value>
+            <Value column="name_es">Licenciatura</Value>
+          </Row>
+          <Row>
+            <Value column="id">12</Value>
+            <Value column="name_en">Specialty</Value>
+            <Value column="name_es">Especialidad</Value>
+          </Row>
+          <Row>
+            <Value column="id">13</Value>
+            <Value column="name_en">Master Degree</Value>
+            <Value column="name_es">Maestría</Value>
+          </Row>
+          <Row>
+            <Value column="id">14</Value>
+            <Value column="name_en">PhD</Value>
+            <Value column="name_es">Doctorado</Value>
+          </Row>
+          <Row>
+            <Value column="id">99</Value>
+            <Value column="name_en">No Specified</Value>
+            <Value column="name_es">No especificado</Value>
+          </Row>
+        </InlineTable>
+
+        <Level name="AcademicDegree" key_column="id" name_column="name_en">
+          <Property name="AcademicDegree ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Date" foreign_key="year">
+      <Hierarchy name="Date">
+          <Level name="Year" key_column="year" type="time" />
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Age Group" foreign_key="mun_id">
+      <Hierarchy name="Age Group" primary_key="mun_id">
+        <Table name="dim_shared_age" />
+
+        <Level name="Age Range" key_column="age_range_id" name_column="name_en" key_type="nontext">
+          <Property name="name_es" column="name_es" caption_set="es"/>
+        </Level>
+        <Level name="Age" key_column="age" name_column="age" key_type="nontext" />
+
+      </Hierarchy>
+    </Dimension>
+
     <Measure name="Population" column="population" aggregator="sum" />
   </Cube>
 <Cube name="inegi_intercensal_survey">
@@ -1571,8 +1682,8 @@
             </Hierarchy>
         </Dimension>
 
-        <Dimension name="Year" foreign_key="year">
-            <Hierarchy name="Year">
+        <Dimension name="Date" foreign_key="year">
+            <Hierarchy name="Date">
                 <Level name="Year" key_column="year" type="time" />
             </Hierarchy>
         </Dimension>
@@ -1702,8 +1813,8 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Year" foreign_key="year">
-      <Hierarchy name="Year">
+    <Dimension name="Date" foreign_key="year">
+      <Hierarchy name="Date">
         <Level name="Year" key_column="year" type="time" />
       </Hierarchy>
     </Dimension>

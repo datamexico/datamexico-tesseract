@@ -549,7 +549,7 @@
 
     <Dimension name="Age Group" foreign_key="mun_id">
       <Hierarchy name="Age Group" primary_key="mun_id">
-        <Table name="dim_shared_geography_mun" />
+        <Table name="dim_shared_age" />
 
         <Level name="Age Range" key_column="age_range_id" name_column="name_en" key_type="nontext">
           <Property name="name_es" column="name_es" caption_set="es"/>
