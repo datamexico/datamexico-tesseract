@@ -1052,6 +1052,12 @@
       </Hierarchy>
     </Dimension>
 
+    <Dimension name="Year" foreign_key="year">
+      <Hierarchy name="Year">
+        <Level name="Year" key_column="year" type="time" />
+      </Hierarchy>
+    </Dimension>
+
     <Measure name="Inhabitants" column="inhabitants" aggregator="sum" />
   </Cube>
 <Cube name="inegi_population">
@@ -1727,7 +1733,7 @@
         <Measure name="Hours Worked by Employees not Dependent on the Economic Unit" column="i000d" aggregator="sum"/>
         <Measure name="Employees Provided by Another Economic Unit, Total" column="i100a" aggregator="sum"/>
         <Measure name="Male Employees Provided by Another Economic Unit" column="i100b" aggregator="sum"/>
-        <Measure name="Female SEmployees Provided by Another Economic Unit" column="i100c" aggregator="sum"/>
+        <Measure name="Female Employees Provided by Another Economic Unit" column="i100c" aggregator="sum"/>
         <Measure name="Hours Worked by Employees Provided by Another Economic Unit" column="i100d" aggregator="sum"/>
         <Measure name="Total Independent Contractors" column="i200a" aggregator="sum"/>
         <Measure name="Male Independent Contractors" column="i200b" aggregator="sum"/>
