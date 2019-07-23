@@ -1031,6 +1031,6 @@
       </Hierarchy>
     </Dimension>
 
-    <Measure name="Inhabitants" column="inhabitants" aggregator="sum" />
+    <Measure name="Households" column="inhabitants" aggregator="sum" />
   </Cube>
 </Schema>
