@@ -446,11 +446,11 @@
           </Hierarchy>
         </Dimension>
 
-        <Measure name="Worked Hours Week" column="actual_job_hrs_worked_lastweek" aggregator="sum" />
-        <Measure name="Worked Days Week" column="actual_job_days_worked_lastweek" aggregator="sum" />
-        <Measure name="Income" column="actual_amount_pesos" aggregator="sum" />
+        <Measure name="Worked Hours Week" column="actual_job_hrs_worked_lastweek" aggregator="avg" />
+        <Measure name="Worked Days Week" column="actual_job_days_worked_lastweek" aggregator="avg" />
+        <Measure name="Income" column="actual_amount_pesos" aggregator="avg" />
         <Measure name="Population" column="population" aggregator="sum" />
-        <Measure name="Last Year Searching Job" column="search_job_year" aggregator="sum" />
+        <Measure name="Last Year Searching Job" column="search_job_year" aggregator="avg" />
 
     </Cube>
 </Schema>
