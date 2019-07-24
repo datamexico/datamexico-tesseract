@@ -1628,6 +1628,9 @@
         <Dimension name="JobSituation" foreign_key="job_or_business">
           <Hierarchy name="JobSituation" primary_key="id">
             <InlineTable alias="dim_inline_job_or_business">
+              <ColumnDef name="id" key_type="nontext" />
+              <ColumnDef name="name_en" key_type="text" />
+              <ColumnDef name="name_es" key_type="text" />
               <Row>
                 <Value column="id">1</Value>
                 <Value column="name_en">Has a job or a business</Value>
@@ -1647,6 +1650,9 @@
         <Dimension name="JobOverseas" foreign_key="job_overseas">
           <Hierarchy name="JobOverseas" primary_key="id">
             <InlineTable alias="dim_inline_job_overseas">
+              <ColumnDef name="id" key_type="nontext" />
+              <ColumnDef name="name_en" key_type="text" />
+              <ColumnDef name="name_es" key_type="text" />
               <Row>
                 <Value column="id">1</Value>
                 <Value column="name_en">Has search in another country or is preparing to travel overseas</Value>
@@ -1661,6 +1667,9 @@
         <Dimension name="JobMexico" foreign_key="job_mexico">
           <Hierarchy name="JobMexico" primary_key="id">
             <InlineTable alias="dim_inline_job_mexico">
+              <ColumnDef name="id" key_type="nontext" />
+              <ColumnDef name="name_en" key_type="text" />
+              <ColumnDef name="name_es" key_type="text" />
               <Row>
                 <Value column="id">1</Value>
                 <Value column="name_en">Search for a job inside the country</Value>
@@ -1675,6 +1684,9 @@
         <Dimension name="StartBusiness" foreign_key="start_business">
           <Hierarchy name="StartBusiness" primary_key="id">
             <InlineTable alias="dim_inline_start_business">
+              <ColumnDef name="id" key_type="nontext" />
+              <ColumnDef name="name_en" key_type="text" />
+              <ColumnDef name="name_es" key_type="text" />
               <Row>
                 <Value column="id">1</Value>
                 <Value column="name_en">Wants to start a new business</Value>
@@ -1689,6 +1701,9 @@
         <Dimension name="NoSearchJob" foreign_key="no_search">
           <Hierarchy name="NoSearchJob" primary_key="id">
             <InlineTable alias="dim_inline_no_search">
+              <ColumnDef name="id" key_type="nontext" />
+              <ColumnDef name="name_en" key_type="text" />
+              <ColumnDef name="name_es" key_type="text" />
               <Row>
                 <Value column="id">1</Value>
                 <Value column="name_en">Has not search for a job</Value>
@@ -1703,6 +1718,9 @@
         <Dimension name="NoKnowledgeJob" foreign_key="no_knowledge">
           <Hierarchy name="NoKnowledgeJob" primary_key="id">
             <InlineTable alias="dim_inline_no_knowledge">
+              <ColumnDef name="id" key_type="nontext" />
+              <ColumnDef name="name_en" key_type="text" />
+              <ColumnDef name="name_es" key_type="text" />
               <Row>
                 <Value column="id">1</Value>
                 <Value column="name_en">No knowledge</Value>
@@ -1717,6 +1735,9 @@
         <Dimension name="TimeSearchingJob" foreign_key="time_looking_job">
           <Hierarchy name="TimeSearchingJob" primary_key="id">
             <InlineTable alias="dim_inline_time_looking_job">
+              <ColumnDef name="id" key_type="nontext" />
+              <ColumnDef name="name_en" key_type="text" />
+              <ColumnDef name="name_es" key_type="text" />
               <Row>
                 <Value column="id">1</Value>
                 <Value column="name_en">Up to 1 month</Value>
@@ -1751,6 +1772,9 @@
         <Dimension name="PaymentFrecuency" foreign_key="actual_frecuency_payments">
           <Hierarchy name="PaymentFrecuency" primary_key="id">
             <InlineTable alias="dim_inline_payment_frecuency">
+              <ColumnDef name="id" key_type="nontext" />
+              <ColumnDef name="name_en" key_type="text" />
+              <ColumnDef name="name_es" key_type="text" />
               <Row>
                 <Value column="id">1</Value>
                 <Value column="name_en">Monthly</Value>
@@ -1800,6 +1824,9 @@
         <Dimension name="MinimalWageProportion" foreign_key="actual_minimal_wages_proportion">
           <Hierarchy name="MinimalWageProportion" primary_key="id">
             <InlineTable alias="dim_inline_minimal_wages_proportion">
+              <ColumnDef name="id" key_type="nontext" />
+              <ColumnDef name="name_en" key_type="text" />
+              <ColumnDef name="name_es" key_type="text" />
               <Row>
                 <Value column="id">1</Value>
                 <Value column="name_en">Less</Value>
@@ -1854,6 +1881,9 @@
         <Dimension name="JobHealthcare" foreign_key="actual_healthcare_attention">
           <Hierarchy name="JobHealthcare" primary_key="id">
             <InlineTable alias="dim_inline_healthcare_attention">
+              <ColumnDef name="id" key_type="nontext" />
+              <ColumnDef name="name_en" key_type="text" />
+              <ColumnDef name="name_es" key_type="text" />
               <Row>
                 <Value column="id">1</Value>
                 <Value column="name_en">IMSS (Social Security)</Value>
@@ -1898,6 +1928,9 @@
         <Dimension name="SecondJob" foreign_key="second_activity">
           <Hierarchy name="SecondJob" primary_key="id">
             <InlineTable alias="dim_inline_second_activity">
+              <ColumnDef name="id" key_type="nontext" />
+              <ColumnDef name="name_en" key_type="text" />
+              <ColumnDef name="name_es" key_type="text" />
               <Row>
                 <Value column="id">1</Value>
                 <Value column="name_en">Sell or make products</Value>
