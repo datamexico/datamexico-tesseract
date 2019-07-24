@@ -554,7 +554,7 @@
         <Level name="Age Range" key_column="age_range_id" name_column="name_en" key_type="nontext">
           <Property name="name_es" column="name_es" caption_set="es"/>
         </Level>
-        <Level name="Age" key_column="age" name_column="age" key_type="nontext" />
+        <Level name="Age" key_column="age" key_type="nontext" />
 
       </Hierarchy>
     </Dimension>
