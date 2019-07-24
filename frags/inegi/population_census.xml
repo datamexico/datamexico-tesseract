@@ -506,12 +506,12 @@
           </Row>
           <Row>
             <Value column="id">10</Value>
-            <Value column="name_en">Normal Bachelor's degree</Value>
+            <Value column="name_en">Normal Bachelor\'s degree</Value>
             <Value column="name_es">Normal de licenciatura</Value>
           </Row>
           <Row>
             <Value column="id">11</Value>
-            <Value column="name_en">Bachelor's degree</Value>
+            <Value column="name_en">Bachelor\'s degree</Value>
             <Value column="name_es">Licenciatura</Value>
           </Row>
           <Row>
@@ -546,6 +546,19 @@
           <Level name="Year" key_column="year" type="time" />
       </Hierarchy>
     </Dimension>
+
+    <Dimension name="Age Group" foreign_key="age">
+      <Hierarchy name="Age Group" primary_key="age">
+        <Table name="dim_shared_age" />
+
+        <Level name="Age Range" key_column="age_range_id" name_column="name_en" key_type="nontext">
+          <Property name="name_es" column="name_es" caption_set="es"/>
+        </Level>
+        <Level name="Age" key_column="age" key_type="nontext" />
+
+      </Hierarchy>
+    </Dimension>
+
     <Measure name="Population" column="population" aggregator="sum" />
   </Cube>
 </Schema>

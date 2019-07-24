@@ -322,9 +322,18 @@
           </Hierarchy>
         </Dimension>
 
-        <Dimension name="Year" foreign_key="year">
-          <Hierarchy name="Year">
-              <Level name="Year" key_column="year" type="time" />
+        <Dimension name="Geography" foreign_key="ent_id">
+          <Hierarchy name="Geography" primary_key="ent_id">
+            <Table name="dim_shared_geography_ent" />
+            <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext" />
+          </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Date" foreign_key="time">
+          <Hierarchy name="Date" primary_key="time">
+            <Table name="dim_shared_time_enoe" />
+            <Level name="Year" key_column="year" key_type="nontext" type="time" />
+            <Level name="Quarter" key_column="time" name_column="quarter" key_type="nontext" type="time" />
           </Hierarchy>
         </Dimension>
 
