@@ -337,6 +337,82 @@
           </Hierarchy>
         </Dimension>
 
+        <Dimension name="Age Group" foreign_key="age">
+          <Hierarchy name="Age Group" primary_key="age">
+            <Table name="dim_shared_age" />
+            <Level name="Age Range" key_column="age_range_id" name_column="name_en" key_type="nontext">
+              <Property name="name_es" column="name_es" caption_set="es"/>
+            </Level>
+            <Level name="Age" key_column="age" key_type="nontext" />
+          </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Occupation Actual Job" foreign_key="actual_job_position">
+          <Hierarchy name="Occupation" primary_key="occupation_id">
+            <Table name="dim_shared_occupations_enoe"/>
+            <Level name="Category" key_column="category_id" name_column="category_en" key_type="text">
+              <Property name="category_es" column="category_es" caption_set="es"/>
+            </Level>
+            <Level name="Group" key_column="group_id" name_column="group_en" key_type="text">
+              <Property name="group_es" column="group_es" caption_set="es"/>
+            </Level>
+            <Level name="Subgroup" key_column="subgroup_id" name_column="subgroup_en" key_type="text">
+              <Property name="subgroup_es" column="subgroup_es" caption_set="es"/>
+            </Level>
+            <Level name="Occupation" key_column="occupation_id" name_column="occupation_en" key_type="text">
+              <Property name="occupation_es" column="occupation_es" caption_set="es"/>
+            </Level>
+          </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Occupation Secondary Activity" foreign_key="second_activity_task">
+          <Hierarchy name="Occupation" primary_key="occupation_id">
+            <Table name="dim_shared_occupations_enoe"/>
+            <Level name="Category" key_column="category_id" name_column="category_en" key_type="text">
+              <Property name="category_es" column="category_es" caption_set="es"/>
+            </Level>
+            <Level name="Group" key_column="group_id" name_column="group_en" key_type="text">
+              <Property name="group_es" column="group_es" caption_set="es"/>
+            </Level>
+            <Level name="Subgroup" key_column="subgroup_id" name_column="subgroup_en" key_type="text">
+              <Property name="subgroup_es" column="subgroup_es" caption_set="es"/>
+            </Level>
+            <Level name="Occupation" key_column="occupation_id" name_column="occupation_en" key_type="text">
+              <Property name="occupation_es" column="occupation_es" caption_set="es"/>
+            </Level>
+          </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Industry Actual Job" foreign_key="actual_job_industry_group_id">
+          <Hierarchy name="Industry" primary_key="national_industry_id">
+            <Table name="dim_shared_industry_enoe"/>
+            <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
+              <Property name="sector_es" column="sector_es" caption_set="es"/>
+            </Level>
+            <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="text">
+              <Property name="subsector_es" column="subsector_es" caption_set="es"/>
+            </Level>
+            <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_en" key_type="text">
+              <Property name="industry_group_es" column="industry_group_es" caption_set="es"/>
+            </Level>
+          </Hierarchy>
+        </Dimension>
+
+        <Dimension name="Industry Secondary Activity" foreign_key="second_activity_group_id">
+          <Hierarchy name="Industry" primary_key="national_industry_id">
+            <Table name="dim_shared_industry_enoe"/>
+            <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
+              <Property name="sector_es" column="sector_es" caption_set="es"/>
+            </Level>
+            <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="text">
+              <Property name="subsector_es" column="subsector_es" caption_set="es"/>
+            </Level>
+            <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_en" key_type="text">
+              <Property name="industry_group_es" column="industry_group_es" caption_set="es"/>
+            </Level>
+          </Hierarchy>
+        </Dimension>
+
         <Measure name="Worked Hours Week" column="actual_job_hrs_worked_lastweek" aggregator="sum" />
         <Measure name="Worked Days Week" column="actual_job_days_worked_lastweek" aggregator="sum" />
         <Measure name="Income" column="actual_amount_pesos" aggregator="sum" />
