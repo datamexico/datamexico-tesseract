@@ -2,7 +2,7 @@
     <Cube name="inegi_enoe">
         <Table name="inegi_enoe" primary_key="ent_id" />
 
-        <Dimension name="JobSituation" foreign_key="job_or_business">
+        <Dimension name="JobSituation" foreign_key="has_job_or_business">
           <Hierarchy name="JobSituation" primary_key="id">
             <InlineTable alias="dim_inline_job_or_business">
               <ColumnDef name="id" key_type="nontext" />
@@ -24,7 +24,7 @@
             </Level>
           </Hierarchy>
         </Dimension>
-        <Dimension name="JobOverseas" foreign_key="job_overseas">
+        <Dimension name="JobOverseas" foreign_key="search_job_overseas">
           <Hierarchy name="JobOverseas" primary_key="id">
             <InlineTable alias="dim_inline_job_overseas">
               <ColumnDef name="id" key_type="nontext" />
@@ -41,7 +41,7 @@
             </Level>
           </Hierarchy>
         </Dimension>
-        <Dimension name="JobMexico" foreign_key="job_mexico">
+        <Dimension name="JobMexico" foreign_key="search_job_mexico">
           <Hierarchy name="JobMexico" primary_key="id">
             <InlineTable alias="dim_inline_job_mexico">
               <ColumnDef name="id" key_type="nontext" />
@@ -58,7 +58,7 @@
             </Level>
           </Hierarchy>
         </Dimension>
-        <Dimension name="StartBusiness" foreign_key="start_business">
+        <Dimension name="StartBusiness" foreign_key="search_start_business">
           <Hierarchy name="StartBusiness" primary_key="id">
             <InlineTable alias="dim_inline_start_business">
               <ColumnDef name="id" key_type="nontext" />
@@ -75,7 +75,7 @@
             </Level>
           </Hierarchy>
         </Dimension>
-        <Dimension name="NoSearchJob" foreign_key="no_search">
+        <Dimension name="NoSearchJob" foreign_key="search_no_search">
           <Hierarchy name="NoSearchJob" primary_key="id">
             <InlineTable alias="dim_inline_no_search">
               <ColumnDef name="id" key_type="nontext" />
@@ -92,7 +92,7 @@
             </Level>
           </Hierarchy>
         </Dimension>
-        <Dimension name="NoKnowledgeJob" foreign_key="no_knowledge">
+        <Dimension name="NoKnowledgeJob" foreign_key="search_no_knowledge">
           <Hierarchy name="NoKnowledgeJob" primary_key="id">
             <InlineTable alias="dim_inline_no_knowledge">
               <ColumnDef name="id" key_type="nontext" />
