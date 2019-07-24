@@ -2004,7 +2004,7 @@
         </Dimension>
 
         <Dimension name="Occupation Actual Job" foreign_key="actual_job_position">
-          <Hierarchy name="Occupation" primary_key="actual_job_position">
+          <Hierarchy name="Occupation" primary_key="occupation_id">
             <Table name="dim_shared_occupations_enoe"/>
             <Level name="Category" key_column="category_id" name_column="category_en" key_type="text">
               <Property name="category_es" column="category_es" caption_set="es"/>
@@ -2022,7 +2022,7 @@
         </Dimension>
 
         <Dimension name="Occupation Secondary Activity" foreign_key="second_activity_task">
-          <Hierarchy name="Occupation" primary_key="second_activity_task">
+          <Hierarchy name="Occupation" primary_key="occupation_id">
             <Table name="dim_shared_occupations_enoe"/>
             <Level name="Category" key_column="category_id" name_column="category_en" key_type="text">
               <Property name="category_es" column="category_es" caption_set="es"/>
@@ -2040,7 +2040,7 @@
         </Dimension>
 
         <Dimension name="Industry Actual Job" foreign_key="actual_job_industry_group_id">
-          <Hierarchy name="Industry" primary_key="actual_job_industry_group_id">
+          <Hierarchy name="Industry" primary_key="industry_group_id">
             <Table name="dim_shared_industry_enoe"/>
             <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
               <Property name="sector_es" column="sector_es" caption_set="es"/>
@@ -2055,7 +2055,7 @@
         </Dimension>
 
         <Dimension name="Industry Secondary Activity" foreign_key="second_activity_group_id">
-          <Hierarchy name="Industry" primary_key="second_activity_group_id">
+          <Hierarchy name="Industry" primary_key="industry_group_id">
             <Table name="dim_shared_industry_enoe"/>
             <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
               <Property name="sector_es" column="sector_es" caption_set="es"/>
