@@ -44,6 +44,76 @@
       </Hierarchy>
     </Dimension>
 
+    <Dimension name="Company Size" foreign_key="n_workers">
+      <Hierarchy name="Company Size" primary_key="id">
+
+        <InlineTable alias="dim_inline_company_size">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name">0 - 5</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name">6 - 10</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name">11 - 30</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name">31 - 50</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name">51 - 100</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name">101 - 250</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name">251+</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Company Size" key_column="id" name_column="name" />
+      </Hierarchy>
+    </Dimension>
+
+
+    <Dimension name="Establishment" foreign_key="establishment">
+      <Hierarchy name="Establishment" primary_key="id">
+
+        <InlineTable alias="dim_inline_company_size">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Fijo</Value>
+            <Value column="name_es">0 - 5</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Semifijo</Value>
+            <Value column="name_es">0 - 5</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Actividad en vivienda</Value>
+            <Value column="name_es">0 - 5</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Establishment" key_column="id" name_column="name_en">
+          <Property name="Establishment ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
     <Measure name="Number of Companies" column="name" aggregator="count" />
   </Cube>
 </Schema>
