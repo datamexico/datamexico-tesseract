@@ -21,23 +21,23 @@
                 <Table name="dim_shared_industry"/>
 
                 <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
-                    <Property name="sector_es" column="sector_es" caption_set="es"/>
+                    <Property name="Sector ES" column="sector_es" caption_set="es"/>
                 </Level>
 
                 <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="text">
-                    <Property name="subsector_es" column="subsector_es" caption_set="es"/>
+                    <Property name="Subsector ES" column="subsector_es" caption_set="es"/>
                 </Level>
 
                 <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_en" key_type="text">
-                    <Property name="industry_group_es" column="industry_group_es" caption_set="es"/>
+                    <Property name="Industry Group ES" column="industry_group_es" caption_set="es"/>
                 </Level>
 
                 <Level name="NAICS Industry" key_column="naics_industry_id" name_column="naics_industry_en" key_type="text">
-                    <Property name="naics_industry_es" column="naics_industry_es" caption_set="es"/>
+                    <Property name="NAICS Industry ES" column="naics_industry_es" caption_set="es"/>
                 </Level>
 
                 <Level name="National Industry" key_column="national_industry_id" name_column="national_industry_en" key_type="text">
-                    <Property name="national_industry_es" column="national_industry_es" caption_set="es"/>
+                    <Property name="National Industry ES" column="national_industry_es" caption_set="es"/>
                 </Level>
             </Hierarchy>
         </Dimension>

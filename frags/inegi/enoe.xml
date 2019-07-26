@@ -384,16 +384,16 @@
           <Hierarchy name="Occupation" primary_key="occupation_id">
             <Table name="dim_shared_occupations_enoe"/>
             <Level name="Category" key_column="category_id" name_column="category_en" key_type="text">
-              <Property name="category_es" column="category_es" caption_set="es"/>
+              <Property name="Category ES" column="category_es" caption_set="es"/>
             </Level>
             <Level name="Group" key_column="group_id" name_column="group_en" key_type="text">
-              <Property name="group_es" column="group_es" caption_set="es"/>
+              <Property name="Group ES" column="group_es" caption_set="es"/>
             </Level>
             <Level name="Subgroup" key_column="subgroup_id" name_column="subgroup_en" key_type="text">
-              <Property name="subgroup_es" column="subgroup_es" caption_set="es"/>
+              <Property name="Subgroup ES" column="subgroup_es" caption_set="es"/>
             </Level>
             <Level name="Occupation" key_column="occupation_id" name_column="occupation_en" key_type="text">
-              <Property name="occupation_es" column="occupation_es" caption_set="es"/>
+              <Property name="Occupation ES" column="occupation_es" caption_set="es"/>
             </Level>
           </Hierarchy>
         </Dimension>
@@ -402,16 +402,16 @@
           <Hierarchy name="Occupation Secondary Activity" primary_key="occupation_id">
             <Table name="dim_shared_occupations_enoe"/>
             <Level name="Category Secondary Activity" key_column="category_id" name_column="category_en" key_type="text">
-              <Property name="category_es" column="category_es" caption_set="es"/>
+              <Property name="Category Secondary Activity ES" column="category_es" caption_set="es"/>
             </Level>
             <Level name="Group Secondary Activity" key_column="group_id" name_column="group_en" key_type="text">
-              <Property name="group_es" column="group_es" caption_set="es"/>
+              <Property name="Group Secondary Activity ES" column="group_es" caption_set="es"/>
             </Level>
             <Level name="Subgroup Secondary Activity" key_column="subgroup_id" name_column="subgroup_en" key_type="text">
-              <Property name="subgroup_es" column="subgroup_es" caption_set="es"/>
+              <Property name="Subgroup Secondary Activity ES" column="subgroup_es" caption_set="es"/>
             </Level>
             <Level name="Occupation Secondary Activity" key_column="occupation_id" name_column="occupation_en" key_type="text">
-              <Property name="occupation_es" column="occupation_es" caption_set="es"/>
+              <Property name="Occupation Secondary Activity ES" column="occupation_es" caption_set="es"/>
             </Level>
           </Hierarchy>
         </Dimension>
@@ -420,13 +420,13 @@
           <Hierarchy name="Industry" primary_key="industry_group_id">
             <Table name="dim_shared_industry_enoe"/>
             <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
-              <Property name="sector_es" column="sector_es" caption_set="es"/>
+              <Property name="Sector ES" column="sector_es" caption_set="es"/>
             </Level>
             <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="text">
-              <Property name="subsector_es" column="subsector_es" caption_set="es"/>
+              <Property name="Subsector ES" column="subsector_es" caption_set="es"/>
             </Level>
             <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_en" key_type="text">
-              <Property name="industry_group_es" column="industry_group_es" caption_set="es"/>
+              <Property name="Industry Group ES" column="industry_group_es" caption_set="es"/>
             </Level>
           </Hierarchy>
         </Dimension>
@@ -435,13 +435,13 @@
           <Hierarchy name="Industry Secondary Activity" primary_key="industry_group_id">
             <Table name="dim_shared_industry_enoe"/>
             <Level name="Sector Secondary Activity" key_column="sector_id" name_column="sector_en" key_type="text">
-              <Property name="sector_es" column="sector_es" caption_set="es"/>
+              <Property name="Sector Secondary Activity ES" column="sector_es" caption_set="es"/>
             </Level>
             <Level name="Subsector Secondary Activity" key_column="subsector_id" name_column="subsector_en" key_type="text">
-              <Property name="subsector_es" column="subsector_es" caption_set="es"/>
+              <Property name="Subsector Secondary Activity ES" column="subsector_es" caption_set="es"/>
             </Level>
             <Level name="Industry Group Secondary Activity" key_column="industry_group_id" name_column="industry_group_en" key_type="text">
-              <Property name="industry_group_es" column="industry_group_es" caption_set="es"/>
+              <Property name="Industry Group Secondary Activity ES" column="industry_group_es" caption_set="es"/>
             </Level>
           </Hierarchy>
         </Dimension>

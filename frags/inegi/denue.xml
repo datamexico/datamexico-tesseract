@@ -44,6 +44,6 @@
       </Hierarchy>
     </Dimension>
 
-    <Measure name="Number of companies" column="name" aggregator="count" />
+    <Measure name="Number of Companies" column="name" aggregator="count" />
   </Cube>
 </Schema>
