@@ -2241,7 +2241,7 @@
 
     <Measure name="Number of Employees Informed" column="n_workers" aggregator="sum" />
     <Measure name="Number of Employees LCI" column="lower" aggregator="sum" />
-    <Measure name="Number of Employees VE" column="middle" aggregator="sum" />
+    <Measure name="Number of Employees Midpoint" column="middle" aggregator="sum" />
     <Measure name="Number of Employees UCI" column="upper" aggregator="sum" />
 
   </Cube>
