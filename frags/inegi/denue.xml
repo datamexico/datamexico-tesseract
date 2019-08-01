@@ -121,7 +121,7 @@
 
     <Dimension foreign_key="publication_date" source="Date" name="Date">
       <Hierarchy name="Date" primary_key="date_id">
-        <Table name="dim_date_month" />
+        <Table name="dim_shared_date" />
         <Level name="Year" key_column="year" />
         <Level name="Quarter" key_column="quarter" />
         <Level name="Month" key_column="date_id" name_column="month" />
