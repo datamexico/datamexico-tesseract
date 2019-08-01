@@ -44,6 +44,12 @@
       </Hierarchy>
     </Dimension>
 
+    <Dimension name="Company" foreign_key="id">
+      <Hierarchy name="Company">
+        <Level name="Company Name" key_column="id" name_column="name" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
+
     <Dimension name="Company Size" foreign_key="n_workers">
       <Hierarchy name="Company Size" primary_key="id">
 
@@ -115,5 +121,11 @@
     </Dimension>
 
     <Measure name="Number of Companies" column="name" aggregator="count" />
+
+    <Measure name="Number of Employees Informed" column="n_workers" aggregator="sum" />
+    <Measure name="Number of Employees LCI" column="lower" aggregator="sum" />
+    <Measure name="Number of Employees VE" column="middle" aggregator="sum" />
+    <Measure name="Number of Employees UCI" column="upper" aggregator="sum" />
+
   </Cube>
 </Schema>
