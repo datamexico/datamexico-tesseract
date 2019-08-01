@@ -2164,8 +2164,7 @@
 
         <InlineTable alias="dim_inline_company_size">
           <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
+          <ColumnDef name="name" key_type="text" />
           <Row>
             <Value column="id">1</Value>
             <Value column="name">0 - 5</Value>
