@@ -1,455 +1,465 @@
 <Schema name="datamexico">
-    <Cube name="inegi_enoe">
-        <Table name="inegi_enoe" primary_key="ent_id" />
+  <Cube name="inegi_enoe">
+    <Table name="inegi_enoe" primary_key="ent_id" />
 
-        <Dimension name="JobSituation" foreign_key="has_job_or_business">
-          <Hierarchy name="JobSituation" primary_key="id">
-            <InlineTable alias="dim_inline_job_or_business">
-              <ColumnDef name="id" key_type="nontext" />
-              <ColumnDef name="name_en" key_type="text" />
-              <ColumnDef name="name_es" key_type="text" />
-              <Row>
-                <Value column="id">1</Value>
-                <Value column="name_en">Has a job or a business</Value>
-                <Value column="name_es">Posee un trabajo o negocio</Value>
-              </Row>
-              <Row>
-                <Value column="id">2</Value>
-                <Value column="name_en">No</Value>
-                <Value column="name_es">No</Value>
-              </Row>
-            </InlineTable>
-            <Level name="JobSituation" key_column="id" name_column="name_en">
-              <Property name="JobSituation ES" column="name_es" caption_set="es" />
-            </Level>
-          </Hierarchy>
-        </Dimension>
-        <Dimension name="JobOverseas" foreign_key="search_job_overseas">
-          <Hierarchy name="JobOverseas" primary_key="id">
-            <InlineTable alias="dim_inline_job_overseas">
-              <ColumnDef name="id" key_type="nontext" />
-              <ColumnDef name="name_en" key_type="text" />
-              <ColumnDef name="name_es" key_type="text" />
-              <Row>
-                <Value column="id">1</Value>
-                <Value column="name_en">Has search in another country or is preparing to travel overseas</Value>
-                <Value column="name_es">Busco en otro pais o se prepara para viajar al extranjero </Value>
-              </Row>
-            </InlineTable>
-            <Level name="JobOverseas" key_column="id" name_column="name_en">
-              <Property name="JobOverseas ES" column="name_es" caption_set="es" />
-            </Level>
-          </Hierarchy>
-        </Dimension>
-        <Dimension name="JobMexico" foreign_key="search_job_mexico">
-          <Hierarchy name="JobMexico" primary_key="id">
-            <InlineTable alias="dim_inline_job_mexico">
-              <ColumnDef name="id" key_type="nontext" />
-              <ColumnDef name="name_en" key_type="text" />
-              <ColumnDef name="name_es" key_type="text" />
-              <Row>
-                <Value column="id">1</Value>
-                <Value column="name_en">Search for a job inside the country</Value>
-                <Value column="name_es">Busco trabajo en el pais</Value>
-              </Row>
-            </InlineTable>
-            <Level name="JobMexico" key_column="id" name_column="name_en">
-              <Property name="JobMexico ES" column="name_es" caption_set="es" />
-            </Level>
-          </Hierarchy>
-        </Dimension>
-        <Dimension name="StartBusiness" foreign_key="search_start_business">
-          <Hierarchy name="StartBusiness" primary_key="id">
-            <InlineTable alias="dim_inline_start_business">
-              <ColumnDef name="id" key_type="nontext" />
-              <ColumnDef name="name_en" key_type="text" />
-              <ColumnDef name="name_es" key_type="text" />
-              <Row>
-                <Value column="id">1</Value>
-                <Value column="name_en">Wants to start a new business</Value>
-                <Value column="name_es">Quiere empezar un nuevo negocio</Value>
-              </Row>
-            </InlineTable>
-            <Level name="StartBusiness" key_column="id" name_column="name_en">
-              <Property name="StartBusiness ES" column="name_es" caption_set="es" />
-            </Level>
-          </Hierarchy>
-        </Dimension>
-        <Dimension name="NoSearchJob" foreign_key="search_no_search">
-          <Hierarchy name="NoSearchJob" primary_key="id">
-            <InlineTable alias="dim_inline_no_search">
-              <ColumnDef name="id" key_type="nontext" />
-              <ColumnDef name="name_en" key_type="text" />
-              <ColumnDef name="name_es" key_type="text" />
-              <Row>
-                <Value column="id">1</Value>
-                <Value column="name_en">Has not search for a job</Value>
-                <Value column="name_es">No ha tratado de buscar</Value>
-              </Row>
-            </InlineTable>
-            <Level name="NoSearchJob" key_column="id" name_column="name_en">
-              <Property name="NoSearchJob ES" column="name_es" caption_set="es" />
-            </Level>
-          </Hierarchy>
-        </Dimension>
-        <Dimension name="NoKnowledgeJob" foreign_key="search_no_knowledge">
-          <Hierarchy name="NoKnowledgeJob" primary_key="id">
-            <InlineTable alias="dim_inline_no_knowledge">
-              <ColumnDef name="id" key_type="nontext" />
-              <ColumnDef name="name_en" key_type="text" />
-              <ColumnDef name="name_es" key_type="text" />
-              <Row>
-                <Value column="id">1</Value>
-                <Value column="name_en">No knowledge</Value>
-                <Value column="name_es">No sabe</Value>
-              </Row>
-            </InlineTable>
-            <Level name="NoKnowledgeJob" key_column="id" name_column="name_en">
-              <Property name="NoKnowledgeJob ES" column="name_es" caption_set="es" />
-            </Level>
-          </Hierarchy>
-        </Dimension>
-        <Dimension name="TimeSearchingJob" foreign_key="time_looking_job">
-          <Hierarchy name="TimeSearchingJob" primary_key="id">
-            <InlineTable alias="dim_inline_time_looking_job">
-              <ColumnDef name="id" key_type="nontext" />
-              <ColumnDef name="name_en" key_type="text" />
-              <ColumnDef name="name_es" key_type="text" />
-              <Row>
-                <Value column="id">1</Value>
-                <Value column="name_en">Up to 1 month</Value>
-                <Value column="name_es">Hasta un mes</Value>
-              </Row>
-              <Row>
-                <Value column="id">2</Value>
-                <Value column="name_en">From 1 to 2 months</Value>
-                <Value column="name_es">Más de 1 hasta 2 meses</Value>
-              </Row>
-              <Row>
-                <Value column="id">3</Value>
-                <Value column="name_en">From 2 to 3 months</Value>
-                <Value column="name_es">Más de 2 hasta 3 meses</Value>
-              </Row>
-              <Row>
-                <Value column="id">4</Value>
-                <Value column="name_en">More than 3 months</Value>
-                <Value column="name_es">Más de 3 meses</Value>
-              </Row>
-              <Row>
-                <Value column="id">9</Value>
-                <Value column="name_en">No knowlegde how many months</Value>
-                <Value column="name_es">No sabe cuantos meses</Value>
-              </Row>
-            </InlineTable>
-            <Level name="TimeSearchingJob" key_column="id" name_column="name_en">
-              <Property name="TimeSearchingJob ES" column="name_es" caption_set="es" />
-            </Level>
-          </Hierarchy>
-        </Dimension>
-        <Dimension name="PaymentFrecuency" foreign_key="actual_frecuency_payments">
-          <Hierarchy name="PaymentFrecuency" primary_key="id">
-            <InlineTable alias="dim_inline_payment_frecuency">
-              <ColumnDef name="id" key_type="nontext" />
-              <ColumnDef name="name_en" key_type="text" />
-              <ColumnDef name="name_es" key_type="text" />
-              <Row>
-                <Value column="id">1</Value>
-                <Value column="name_en">Monthly</Value>
-                <Value column="name_es">Cada mes</Value>
-              </Row>
-              <Row>
-                <Value column="id">2</Value>
-                <Value column="name_en">Biweekly</Value>
-                <Value column="name_es">Cada 15 dias</Value>
-              </Row>
-              <Row>
-                <Value column="id">3</Value>
-                <Value column="name_en">Weekly</Value>
-                <Value column="name_es">Cada semana</Value>
-              </Row>
-              <Row>
-                <Value column="id">4</Value>
-                <Value column="name_en">Daily</Value>
-                <Value column="name_es">Diario</Value>
-              </Row>
-              <Row>
-                <Value column="id">5</Value>
-                <Value column="name_en">Different payments periods</Value>
-                <Value column="name_es">Otro periodo de pago</Value>
-              </Row>
-              <Row>
-                <Value column="id">6</Value>
-                <Value column="name_en">Payment by piecework, given service or work done</Value>
-                <Value column="name_es">Le pagan por pieza producida o vendida,servicio u obra realizada</Value>
-              </Row>
-              <Row>
-                <Value column="id">7</Value>
-                <Value column="name_en">Not sure</Value>
-                <Value column="name_es">No supo estimar</Value>
-              </Row>
-              <Row>
-                <Value column="id">8</Value>
-                <Value column="name_en">Refused to answer</Value>
-                <Value column="name_es">Se negó a contestar esta pregunta</Value>
-              </Row>
-            </InlineTable>
-            <Level name="PaymentFrecuency" key_column="id" name_column="name_en">
-              <Property name="PaymentFrecuency ES" column="name_es" caption_set="es" />
-            </Level>
-          </Hierarchy>
-        </Dimension>
-        <Dimension name="MinimalWageProportion" foreign_key="actual_minimal_wages_proportion">
-          <Hierarchy name="MinimalWageProportion" primary_key="id">
-            <InlineTable alias="dim_inline_minimal_wages_proportion">
-              <ColumnDef name="id" key_type="nontext" />
-              <ColumnDef name="name_en" key_type="text" />
-              <ColumnDef name="name_es" key_type="text" />
-              <Row>
-                <Value column="id">1</Value>
-                <Value column="name_en">Less</Value>
-                <Value column="name_es">Menor</Value>
-              </Row>
-              <Row>
-                <Value column="id">2</Value>
-                <Value column="name_en">Same as the minimun wage</Value>
-                <Value column="name_es">Igual al salario mínimo</Value>
-              </Row>
-              <Row>
-                <Value column="id">3</Value>
-                <Value column="name_en">More than 1 minimun wage, up to 2</Value>
-                <Value column="name_es">Más de 1 salario mínimo hasta 2</Value>
-              </Row>
-              <Row>
-                <Value column="id">4</Value>
-                <Value column="name_en">More than 2 minimun wage, up to 3</Value>
-                <Value column="name_es">Más de 2 salario mínimo hasta 3</Value>
-              </Row>
-              <Row>
-                <Value column="id">5</Value>
-                <Value column="name_en">More than 3 minimun wage, up to 5</Value>
-                <Value column="name_es">Más de 3 salario mínimo hasta 5</Value>
-              </Row>
-              <Row>
-                <Value column="id">6</Value>
-                <Value column="name_en">More than 5 minimun wage, up to 10</Value>
-                <Value column="name_es">Más de 5 salario mínimo hasta 10</Value>
-              </Row>
-              <Row>
-                <Value column="id">7</Value>
-                <Value column="name_en">More than 10 minimun wage</Value>
-                <Value column="name_es">Más de 10 salarios mínimos</Value>
-              </Row>
-              <Row>
-                <Value column="id">8</Value>
-                <Value column="name_en">Do not want to provide information</Value>
-                <Value column="name_es">No quiso dar información</Value>
-              </Row>
-              <Row>
-                <Value column="id">9</Value>
-                <Value column="name_en">No knowledge</Value>
-                <Value column="name_es">No sabe</Value>
-              </Row>
-            </InlineTable>
-            <Level name="MinimalWageProportion" key_column="id" name_column="name_en">
-              <Property name="MinimalWageProportion ES" column="name_es" caption_set="es" />
-            </Level>
-          </Hierarchy>
-        </Dimension>
-        <Dimension name="JobHealthcare" foreign_key="actual_healthcare_attention">
-          <Hierarchy name="JobHealthcare" primary_key="id">
-            <InlineTable alias="dim_inline_healthcare_attention">
-              <ColumnDef name="id" key_type="nontext" />
-              <ColumnDef name="name_en" key_type="text" />
-              <ColumnDef name="name_es" key_type="text" />
-              <Row>
-                <Value column="id">1</Value>
-                <Value column="name_en">IMSS (Social Security)</Value>
-                <Value column="name_es">Seguro Social (IMSS)</Value>
-              </Row>
-              <Row>
-                <Value column="id">2</Value>
-                <Value column="name_en">Pemex, Defense or Marine</Value>
-                <Value column="name_es">Hospital o clínica naval, militar o de Pemex</Value>
-              </Row>
-              <Row>
-                <Value column="id">3</Value>
-                <Value column="name_en">ISSSTE</Value>
-                <Value column="name_es">ISSSTE</Value>
-              </Row>
-              <Row>
-                <Value column="id">4</Value>
-                <Value column="name_en">State ISSSTE (ISSSTELEÓN,ISSEMYM)</Value>
-                <Value column="name_es">ISSSTE estatal (ISSSTELEÓN,ISSEMYM)</Value>
-              </Row>
-              <Row>
-                <Value column="id">5</Value>
-                <Value column="name_en">Other medical institution</Value>
-                <Value column="name_es">Otra institución médica</Value>
-              </Row>
-              <Row>
-                <Value column="id">6</Value>
-                <Value column="name_en">Does not seek attention</Value>
-                <Value column="name_es">No recibe atención médica</Value>
-              </Row>
-              <Row>
-                <Value column="id">9</Value>
-                <Value column="name_en">No knowledge</Value>
-                <Value column="name_es">No sabe</Value>
-              </Row>
-            </InlineTable>
-            <Level name="JobHealthcare" key_column="id" name_column="name_en">
-              <Property name="JobHealthcare ES" column="name_es" caption_set="es" />
-            </Level>
-          </Hierarchy>
-        </Dimension>
-        <Dimension name="SecondJob" foreign_key="second_activity">
-          <Hierarchy name="SecondJob" primary_key="id">
-            <InlineTable alias="dim_inline_second_activity">
-              <ColumnDef name="id" key_type="nontext" />
-              <ColumnDef name="name_en" key_type="text" />
-              <ColumnDef name="name_es" key_type="text" />
-              <Row>
-                <Value column="id">1</Value>
-                <Value column="name_en">Sell or make products</Value>
-                <Value column="name_es">Vender o hacer productos para la venta</Value>
-              </Row>
-              <Row>
-                <Value column="id">2</Value>
-                <Value column="name_en">Services provider</Value>
-                <Value column="name_es">Prestar servicios</Value>
-              </Row>
-              <Row>
-                <Value column="id">3</Value>
-                <Value column="name_en">Working the soil and/or raising livestock</Value>
-                <Value column="name_es">Trabajar su tierra o parcela y/o crianza de animales</Value>
-              </Row>
-              <Row>
-                <Value column="id">4</Value>
-                <Value column="name_en">Work for tips, commission or piecework</Value>
-                <Value column="name_es">Trabajar por propinas, comisión o destajo</Value>
-              </Row>
-              <Row>
-                <Value column="id">5</Value>
-                <Value column="name_en">Work as a salaried employee</Value>
-                <Value column="name_es">Trabajar como asalariado</Value>
-              </Row>
-              <Row>
-                <Value column="id">6</Value>
-                <Value column="name_en">Helps in some business, family lands or someone else lands</Value>
-                <Value column="name_es">Ayudar en algún negocio o en las tierras de un familiar o de otra persona</Value>
-              </Row>
-              <Row>
-                <Value column="id">7</Value>
-                <Value column="name_en">Does not have another job</Value>
-                <Value column="name_es">No tiene otro trabajo</Value>
-              </Row>
-              <Row>
-                <Value column="id">9</Value>
-                <Value column="name_en">No knowlegde</Value>
-                <Value column="name_es">No sabe</Value>
-              </Row>
-            </InlineTable>
-            <Level name="SecondJob" key_column="id" name_column="name_en">
-              <Property name="SecondJob ES" column="name_es" caption_set="es" />
-            </Level>
-          </Hierarchy>
-        </Dimension>
+    <Dimension name="JobSituation" foreign_key="has_job_or_business">
+      <Hierarchy name="JobSituation" primary_key="id">
+        <InlineTable alias="dim_inline_job_or_business">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Has a job or a business</Value>
+            <Value column="name_es">Posee un trabajo o negocio</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+        </InlineTable>
+        <Level name="JobSituation" key_column="id" name_column="name_en">
+          <Property name="JobSituation ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="JobOverseas" foreign_key="search_job_overseas">
+      <Hierarchy name="JobOverseas" primary_key="id">
+        <InlineTable alias="dim_inline_job_overseas">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Has search in another country or is preparing to travel overseas</Value>
+            <Value column="name_es">Busco en otro pais o se prepara para viajar al extranjero </Value>
+          </Row>
+        </InlineTable>
+        <Level name="JobOverseas" key_column="id" name_column="name_en">
+          <Property name="JobOverseas ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="JobMexico" foreign_key="search_job_mexico">
+      <Hierarchy name="JobMexico" primary_key="id">
+        <InlineTable alias="dim_inline_job_mexico">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Search for a job inside the country</Value>
+            <Value column="name_es">Busco trabajo en el pais</Value>
+          </Row>
+        </InlineTable>
+        <Level name="JobMexico" key_column="id" name_column="name_en">
+          <Property name="JobMexico ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="StartBusiness" foreign_key="search_start_business">
+      <Hierarchy name="StartBusiness" primary_key="id">
+        <InlineTable alias="dim_inline_start_business">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Wants to start a new business</Value>
+            <Value column="name_es">Quiere empezar un nuevo negocio</Value>
+          </Row>
+        </InlineTable>
+        <Level name="StartBusiness" key_column="id" name_column="name_en">
+          <Property name="StartBusiness ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="NoSearchJob" foreign_key="search_no_search">
+      <Hierarchy name="NoSearchJob" primary_key="id">
+        <InlineTable alias="dim_inline_no_search">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Has not search for a job</Value>
+            <Value column="name_es">No ha tratado de buscar</Value>
+          </Row>
+        </InlineTable>
+        <Level name="NoSearchJob" key_column="id" name_column="name_en">
+          <Property name="NoSearchJob ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="NoKnowledgeJob" foreign_key="search_no_knowledge">
+      <Hierarchy name="NoKnowledgeJob" primary_key="id">
+        <InlineTable alias="dim_inline_no_knowledge">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">No knowledge</Value>
+            <Value column="name_es">No sabe</Value>
+          </Row>
+        </InlineTable>
+        <Level name="NoKnowledgeJob" key_column="id" name_column="name_en">
+          <Property name="NoKnowledgeJob ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="TimeSearchingJob" foreign_key="time_looking_job">
+      <Hierarchy name="TimeSearchingJob" primary_key="id">
+        <InlineTable alias="dim_inline_time_looking_job">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Up to 1 month</Value>
+            <Value column="name_es">Hasta un mes</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">From 1 to 2 months</Value>
+            <Value column="name_es">Más de 1 hasta 2 meses</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">From 2 to 3 months</Value>
+            <Value column="name_es">Más de 2 hasta 3 meses</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">More than 3 months</Value>
+            <Value column="name_es">Más de 3 meses</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowlegde how many months</Value>
+            <Value column="name_es">No sabe cuantos meses</Value>
+          </Row>
+        </InlineTable>
+        <Level name="TimeSearchingJob" key_column="id" name_column="name_en">
+          <Property name="TimeSearchingJob ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="PaymentFrecuency" foreign_key="actual_frecuency_payments">
+      <Hierarchy name="PaymentFrecuency" primary_key="id">
+        <InlineTable alias="dim_inline_payment_frecuency">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Monthly</Value>
+            <Value column="name_es">Cada mes</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Biweekly</Value>
+            <Value column="name_es">Cada 15 dias</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Weekly</Value>
+            <Value column="name_es">Cada semana</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Daily</Value>
+            <Value column="name_es">Diario</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Different payments periods</Value>
+            <Value column="name_es">Otro periodo de pago</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Payment by piecework, given service or work done</Value>
+            <Value column="name_es">Le pagan por pieza producida o vendida,servicio u obra realizada</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Not sure</Value>
+            <Value column="name_es">No supo estimar</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">Refused to answer</Value>
+            <Value column="name_es">Se negó a contestar esta pregunta</Value>
+          </Row>
+        </InlineTable>
+        <Level name="PaymentFrecuency" key_column="id" name_column="name_en">
+          <Property name="PaymentFrecuency ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="MinimalWageProportion" foreign_key="actual_minimal_wages_proportion">
+      <Hierarchy name="MinimalWageProportion" primary_key="id">
+        <InlineTable alias="dim_inline_minimal_wages_proportion">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Less</Value>
+            <Value column="name_es">Menor</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Same as the minimun wage</Value>
+            <Value column="name_es">Igual al salario mínimo</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">More than 1 minimun wage, up to 2</Value>
+            <Value column="name_es">Más de 1 salario mínimo hasta 2</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">More than 2 minimun wage, up to 3</Value>
+            <Value column="name_es">Más de 2 salario mínimo hasta 3</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">More than 3 minimun wage, up to 5</Value>
+            <Value column="name_es">Más de 3 salario mínimo hasta 5</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">More than 5 minimun wage, up to 10</Value>
+            <Value column="name_es">Más de 5 salario mínimo hasta 10</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">More than 10 minimun wage</Value>
+            <Value column="name_es">Más de 10 salarios mínimos</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">Do not want to provide information</Value>
+            <Value column="name_es">No quiso dar información</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowledge</Value>
+            <Value column="name_es">No sabe</Value>
+          </Row>
+        </InlineTable>
+        <Level name="MinimalWageProportion" key_column="id" name_column="name_en">
+          <Property name="MinimalWageProportion ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="JobHealthcare" foreign_key="actual_healthcare_attention">
+      <Hierarchy name="JobHealthcare" primary_key="id">
+        <InlineTable alias="dim_inline_healthcare_attention">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">IMSS (Social Security)</Value>
+            <Value column="name_es">Seguro Social (IMSS)</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Pemex, Defense or Marine</Value>
+            <Value column="name_es">Hospital o clínica naval, militar o de Pemex</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">ISSSTE</Value>
+            <Value column="name_es">ISSSTE</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">State ISSSTE (ISSSTELEÓN,ISSEMYM)</Value>
+            <Value column="name_es">ISSSTE estatal (ISSSTELEÓN,ISSEMYM)</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Other medical institution</Value>
+            <Value column="name_es">Otra institución médica</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Does not seek attention</Value>
+            <Value column="name_es">No recibe atención médica</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowledge</Value>
+            <Value column="name_es">No sabe</Value>
+          </Row>
+        </InlineTable>
+        <Level name="JobHealthcare" key_column="id" name_column="name_en">
+          <Property name="JobHealthcare ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="SecondJob" foreign_key="second_activity">
+      <Hierarchy name="SecondJob" primary_key="id">
+        <InlineTable alias="dim_inline_second_activity">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Sell or make products</Value>
+            <Value column="name_es">Vender o hacer productos para la venta</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Services provider</Value>
+            <Value column="name_es">Prestar servicios</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Working the soil and/or raising livestock</Value>
+            <Value column="name_es">Trabajar su tierra o parcela y/o crianza de animales</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Work for tips, commission or piecework</Value>
+            <Value column="name_es">Trabajar por propinas, comisión o destajo</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Work as a salaried employee</Value>
+            <Value column="name_es">Trabajar como asalariado</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Helps in some business, family lands or someone else lands</Value>
+            <Value column="name_es">Ayudar en algún negocio o en las tierras de un familiar o de otra persona</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Does not have another job</Value>
+            <Value column="name_es">No tiene otro trabajo</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowlegde</Value>
+            <Value column="name_es">No sabe</Value>
+          </Row>
+        </InlineTable>
+        <Level name="SecondJob" key_column="id" name_column="name_en">
+          <Property name="SecondJob ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
 
-        <Dimension name="Geography" foreign_key="ent_id">
-          <Hierarchy name="Geography" primary_key="ent_id">
-            <Table name="dim_shared_geography_ent" />
-            <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext" />
-          </Hierarchy>
-        </Dimension>
+    <Dimension name="Geography" foreign_key="loc_id">
+      <Hierarchy name="Geography" primary_key="loc_id">
+        <Table name="dim_shared_geography" />
+        <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+          <Property name="CVE State" column="cve_ent" />
+        </Level>
+        <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
+          <Property name="CVE Municipality" column="cve_mun" />
+          <Property name="CVE Municipality Full" column="cve_mun_full" />
+        </Level>
+        <Level name="Location" key_column="loc_id" name_column="loc_name" key_type="nontext">
+          <Property name="CVE Location" column="cve_loc" />
+          <Property name="CVE Location Full" column="cve_loc_full" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
 
-        <Dimension name="Date" foreign_key="time">
-          <Hierarchy name="Date" primary_key="time">
-            <Table name="dim_shared_time_enoe" />
-            <Level name="Year" key_column="year" key_type="nontext" type="time" />
-            <Level name="Quarter" key_column="time" name_column="quarter" key_type="nontext" type="time" />
-          </Hierarchy>
-        </Dimension>
+    <Dimension name="Date" foreign_key="time">
+      <Hierarchy name="Date" primary_key="time">
+        <Table name="dim_shared_time_enoe" />
+        <Level name="Year" key_column="year" key_type="nontext" type="time" />
+        <Level name="Quarter" key_column="time" name_column="quarter" key_type="nontext" type="time" />
+      </Hierarchy>
+    </Dimension>
 
-        <Dimension name="Age Group" foreign_key="age">
-          <Hierarchy name="Age Group" primary_key="age">
-            <Table name="dim_shared_age" />
-            <Level name="Age Range" key_column="age_range_id" name_column="name_en" key_type="nontext">
-              <Property name="name_es" column="name_es" caption_set="es"/>
-            </Level>
-            <Level name="Age" key_column="age" key_type="nontext" />
-          </Hierarchy>
-        </Dimension>
+    <Dimension name="Age Group" foreign_key="age">
+      <Hierarchy name="Age Group" primary_key="age">
+        <Table name="dim_shared_age" />
+        <Level name="Age Range" key_column="age_range_id" name_column="name_en" key_type="nontext">
+          <Property name="name_es" column="name_es" caption_set="es"/>
+        </Level>
+        <Level name="Age" key_column="age" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
 
-        <Dimension name="Occupation Actual Job" foreign_key="actual_job_position">
-          <Hierarchy name="Occupation" primary_key="occupation_id">
-            <Table name="dim_shared_occupations_enoe"/>
-            <Level name="Category" key_column="category_id" name_column="category_en" key_type="text">
-              <Property name="Category ES" column="category_es" caption_set="es"/>
-            </Level>
-            <Level name="Group" key_column="group_id" name_column="group_en" key_type="text">
-              <Property name="Group ES" column="group_es" caption_set="es"/>
-            </Level>
-            <Level name="Subgroup" key_column="subgroup_id" name_column="subgroup_en" key_type="text">
-              <Property name="Subgroup ES" column="subgroup_es" caption_set="es"/>
-            </Level>
-            <Level name="Occupation" key_column="occupation_id" name_column="occupation_en" key_type="text">
-              <Property name="Occupation ES" column="occupation_es" caption_set="es"/>
-            </Level>
-          </Hierarchy>
-        </Dimension>
+    <Dimension name="Occupation Actual Job" foreign_key="actual_job_position">
+      <Hierarchy name="Occupation" primary_key="occupation_id">
+        <Table name="dim_shared_occupations_enoe"/>
+        <Level name="Category" key_column="category_id" name_column="category_en" key_type="text">
+          <Property name="Category ES" column="category_es" caption_set="es"/>
+        </Level>
+        <Level name="Group" key_column="group_id" name_column="group_en" key_type="text">
+          <Property name="Group ES" column="group_es" caption_set="es"/>
+        </Level>
+        <Level name="Subgroup" key_column="subgroup_id" name_column="subgroup_en" key_type="text">
+          <Property name="Subgroup ES" column="subgroup_es" caption_set="es"/>
+        </Level>
+        <Level name="Occupation" key_column="occupation_id" name_column="occupation_en" key_type="text">
+          <Property name="Occupation ES" column="occupation_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
 
-        <Dimension name="Occupation Secondary Activity" foreign_key="second_activity_task">
-          <Hierarchy name="Occupation Secondary Activity" primary_key="occupation_id">
-            <Table name="dim_shared_occupations_enoe"/>
-            <Level name="Category Secondary Activity" key_column="category_id" name_column="category_en" key_type="text">
-              <Property name="Category Secondary Activity ES" column="category_es" caption_set="es"/>
-            </Level>
-            <Level name="Group Secondary Activity" key_column="group_id" name_column="group_en" key_type="text">
-              <Property name="Group Secondary Activity ES" column="group_es" caption_set="es"/>
-            </Level>
-            <Level name="Subgroup Secondary Activity" key_column="subgroup_id" name_column="subgroup_en" key_type="text">
-              <Property name="Subgroup Secondary Activity ES" column="subgroup_es" caption_set="es"/>
-            </Level>
-            <Level name="Occupation Secondary Activity" key_column="occupation_id" name_column="occupation_en" key_type="text">
-              <Property name="Occupation Secondary Activity ES" column="occupation_es" caption_set="es"/>
-            </Level>
-          </Hierarchy>
-        </Dimension>
+    <Dimension name="Occupation Secondary Activity" foreign_key="second_activity_task">
+      <Hierarchy name="Occupation Secondary Activity" primary_key="occupation_id">
+        <Table name="dim_shared_occupations_enoe"/>
+        <Level name="Category Secondary Activity" key_column="category_id" name_column="category_en" key_type="text">
+          <Property name="Category Secondary Activity ES" column="category_es" caption_set="es"/>
+        </Level>
+        <Level name="Group Secondary Activity" key_column="group_id" name_column="group_en" key_type="text">
+          <Property name="Group Secondary Activity ES" column="group_es" caption_set="es"/>
+        </Level>
+        <Level name="Subgroup Secondary Activity" key_column="subgroup_id" name_column="subgroup_en" key_type="text">
+          <Property name="Subgroup Secondary Activity ES" column="subgroup_es" caption_set="es"/>
+        </Level>
+        <Level name="Occupation Secondary Activity" key_column="occupation_id" name_column="occupation_en" key_type="text">
+          <Property name="Occupation Secondary Activity ES" column="occupation_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
 
-        <Dimension name="Industry Actual Job" foreign_key="actual_job_industry_group_id">
-          <Hierarchy name="Industry" primary_key="industry_group_id">
-            <Table name="dim_shared_industry_enoe"/>
-            <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
-              <Property name="Sector ES" column="sector_es" caption_set="es"/>
-            </Level>
-            <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="text">
-              <Property name="Subsector ES" column="subsector_es" caption_set="es"/>
-            </Level>
-            <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_en" key_type="text">
-              <Property name="Industry Group ES" column="industry_group_es" caption_set="es"/>
-            </Level>
-          </Hierarchy>
-        </Dimension>
+    <Dimension name="Industry Actual Job" foreign_key="actual_job_industry_group_id">
+      <Hierarchy name="Industry" primary_key="industry_group_id">
+        <Table name="dim_shared_industry_enoe"/>
+        <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
+          <Property name="Sector ES" column="sector_es" caption_set="es"/>
+        </Level>
+        <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="text">
+          <Property name="Subsector ES" column="subsector_es" caption_set="es"/>
+        </Level>
+        <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_en" key_type="text">
+          <Property name="Industry Group ES" column="industry_group_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
 
-        <Dimension name="Industry Secondary Activity" foreign_key="second_activity_group_id">
-          <Hierarchy name="Industry Secondary Activity" primary_key="industry_group_id">
-            <Table name="dim_shared_industry_enoe"/>
-            <Level name="Sector Secondary Activity" key_column="sector_id" name_column="sector_en" key_type="text">
-              <Property name="Sector Secondary Activity ES" column="sector_es" caption_set="es"/>
-            </Level>
-            <Level name="Subsector Secondary Activity" key_column="subsector_id" name_column="subsector_en" key_type="text">
-              <Property name="Subsector Secondary Activity ES" column="subsector_es" caption_set="es"/>
-            </Level>
-            <Level name="Industry Group Secondary Activity" key_column="industry_group_id" name_column="industry_group_en" key_type="text">
-              <Property name="Industry Group Secondary Activity ES" column="industry_group_es" caption_set="es"/>
-            </Level>
-          </Hierarchy>
-        </Dimension>
+    <Dimension name="Industry Secondary Activity" foreign_key="second_activity_group_id">
+      <Hierarchy name="Industry Secondary Activity" primary_key="industry_group_id">
+        <Table name="dim_shared_industry_enoe"/>
+        <Level name="Sector Secondary Activity" key_column="sector_id" name_column="sector_en" key_type="text">
+          <Property name="Sector Secondary Activity ES" column="sector_es" caption_set="es"/>
+        </Level>
+        <Level name="Subsector Secondary Activity" key_column="subsector_id" name_column="subsector_en" key_type="text">
+          <Property name="Subsector Secondary Activity ES" column="subsector_es" caption_set="es"/>
+        </Level>
+        <Level name="Industry Group Secondary Activity" key_column="industry_group_id" name_column="industry_group_en" key_type="text">
+          <Property name="Industry Group Secondary Activity ES" column="industry_group_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
 
-        <Measure name="Worked Hours Week" column="actual_job_hrs_worked_lastweek" aggregator="avg" />
-        <Measure name="Worked Days Week" column="actual_job_days_worked_lastweek" aggregator="avg" />
-        <Measure name="Wage" column="actual_amount_pesos" aggregator="avg" />
-        <Measure name="Workforce" column="population" aggregator="sum" />
+    <Measure name="Worked Hours Week" column="actual_job_hrs_worked_lastweek" aggregator="avg" />
+    <Measure name="Worked Days Week" column="actual_job_days_worked_lastweek" aggregator="avg" />
+    <Measure name="Wage" column="actual_amount_pesos" aggregator="avg" />
+    <Measure name="Workforce" column="population" aggregator="sum" />
 
-    </Cube>
+  </Cube>
 </Schema>
