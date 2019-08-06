@@ -9,13 +9,31 @@
             </Hierarchy>
         </Dimension>
 
-        <Dimension name="Operation Code" foreign_key="operation_code">
-            <Hierarchy name="Operation Code">
-                <Table name="foreign_trade" />
-                <Level name="Operation Code" key_column="operation_code" />
+        <Dimension name="Operation" foreign_key="operation_code">
+            <Hierarchy name="Operation" primary_key="id">
+
+                <InlineTable alias="dim_inline_coperation_code">
+                    <ColumnDef name="id" key_type="nontext" />
+                    <ColumnDef name="name_en" key_type="text" />
+                    <ColumnDef name="name_es" key_type="text" />
+                    <Row>
+                        <Value column="id">1</Value>
+                        <Value column="name_en">Imports</Value>
+                        <Value column="name_es">Importacion</Value>
+                    </Row>
+                    <Row>
+                        <Value column="id">2</Value>
+                        <Value column="name_en">Exports</Value>
+                        <Value column="name_es">Exportacion</Value>
+                    </Row>
+                </InlineTable>
+                <Level name="Operation" key_column="id" name_column="name_en">
+                    <Property name="Operation ES" column="name_es" caption_set="es"/>
+                </Level>
             </Hierarchy>
         </Dimension>
 
+        // codes range(1,32)
         <Dimension name="State Code Taxpayer" foreign_key="state_code_taxpayer">
             <Hierarchy name="State Code Taxpayer">
                 <Table name="foreign_trade" />
