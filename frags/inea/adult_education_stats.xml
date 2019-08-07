@@ -1,0 +1,32 @@
+<Schema name="datamexico">
+  <Cube name="inea_adult_education_stats">
+    <Table name="inea_adult_education_stats" primary_key="ent_id" />
+
+    <Dimension name="Geography" foreign_key="ent_id">
+      <Hierarchy name="Geography" primary_key="ent_id">
+        <Table name="dim_shared_geography_ent" />
+
+        <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+          <Property name="CVE State" column="cve_ent" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension foreign_key="month_id" source="Date" name="Date">
+      <Hierarchy name="Date" primary_key="date_id">
+        <Table name="dim_shared_date" />
+        <Level name="Year" key_column="year" />
+        <Level name="Quarter" key_column="quarter" />
+        <Level name="Month" key_column="date_id" name_column="month" />
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Active advisors" column="n_advisors" aggregator="sum" />
+    <Measure name="Active technical professors" column="n_tech_professors" aggregator="sum" />
+    <Measure name="Coordinations in operation zones" column="n_zone_coordinations" aggregator="sum" />
+    <Measure name="Community places in operation" column="n_community_places" aggregator="sum" />
+    <Measure name="Study zones" column="n_study_zones" aggregator="sum" />
+    <Measure name="Meeting zones" column="n_meeting_zones" aggregator="sum" />
+
+  </Cube>
+</Schema>
