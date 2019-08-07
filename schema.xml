@@ -2461,8 +2461,8 @@
     <Measure name="Meeting zones" column="n_meeting_zones" aggregator="sum" />
 
   </Cube>
-<Cube name="inea_adult_education_origins">
-    <Table name="inea_adult_education_origins" primary_key="ent_id" />
+<Cube name="inea_adult_education_origin">
+    <Table name="inea_adult_education_origin" primary_key="ent_id" />
 
     <Dimension name="Geography" foreign_key="ent_id">
       <Hierarchy name="Geography" primary_key="ent_id">
