@@ -1,29 +1,70 @@
 <Schema name="datamexico">
-    <Dimension name="Geography">
-        <Hierarchy name="Geography">
-            <Table name="dim_shared_geography" />
 
-            <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-                <Property name="CVE State" column="cve_ent" />
-            </Level>
-            <Level name="Municipality" key_column="mun_id" name_column="mun_id" key_type="nontext">
-                <Property name="CVE Municipality" column="cve_mun" />
-                <Property name="CVE Municipality Full" column="cve_mun_full" />
-            </Level>
-            <Level name="Location" key_column="loc_id" name_column="loc_name" key_type="nontext">
-                <Property name="CVE Location" column="cve_loc" />
-                <Property name="CVE Location Full" column="cve_loc_full" />
-            </Level>
-        </Hierarchy>
-    </Dimension>
+  <Dimension name="Geography State">
+    <Hierarchy name="Geography">
+      <Table name="dim_shared_geography" />
+      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext" />
+      <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+        <Property name="CVE State" column="cve_ent" />
+      </Level>
+    </Hierarchy>
+  </Dimension>
 
-    <Dimension name="Sex">
-        <Hierarchy name="Sex">
-            <Table name="dim_shared_sex" />
+  <Dimension name="Geography Municipality">
+    <Hierarchy name="Geography">
+      <Table name="dim_shared_geography" />
+      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext" />
+      <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+        <Property name="CVE State" column="cve_ent" />
+      </Level>
+      <Level name="Municipality" key_column="mun_id" name_column="mun_id" key_type="nontext">
+        <Property name="CVE Municipality" column="cve_mun" />
+        <Property name="CVE Municipality Full" column="cve_mun_full" />
+      </Level>
+    </Hierarchy>
+  </Dimension>
 
-            <Level name="Sex" key_column="id" name_column="name_en" key_type="nontext">
-                <Property name="Sex ES" column="name_es" caption_set="es" />
-            </Level>
-        </Hierarchy>
-    </Dimension>
+  <Dimension name="Geography Location">
+    <Hierarchy name="Geography">
+      <Table name="dim_shared_geography" />
+      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext" />
+      <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+        <Property name="CVE State" column="cve_ent" />
+      </Level>
+      <Level name="Municipality" key_column="mun_id" name_column="mun_id" key_type="nontext">
+        <Property name="CVE Municipality" column="cve_mun" />
+        <Property name="CVE Municipality Full" column="cve_mun_full" />
+      </Level>
+      <Level name="Location" key_column="loc_id" name_column="loc_name" key_type="nontext">
+        <Property name="CVE Location" column="cve_loc" />
+        <Property name="CVE Location Full" column="cve_loc_full" />
+      </Level>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="Sex">
+    <Hierarchy name="Sex">
+      <Table name="dim_shared_sex" />
+      <Level name="Sex" key_column="id" name_column="name_en" key_type="nontext">
+        <Property name="Sex ES" column="name_es" caption_set="es" />
+      </Level>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="Age Group">
+    <Hierarchy name="Age Group" primary_key="age">
+      <Table name="dim_shared_age" />
+      <Level name="Age Range" key_column="age_range_id" name_column="name_en" key_type="nontext">
+        <Property name="name_es" column="name_es" caption_set="es"/>
+      </Level>
+      <Level name="Age" key_column="age" key_type="nontext" />
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="Year" foreign_key="year">
+    <Hierarchy name="Year">
+      <Level name="Year" key_column="year" type="time" />
+    </Hierarchy>
+  </Dimension>
+
 </Schema>
