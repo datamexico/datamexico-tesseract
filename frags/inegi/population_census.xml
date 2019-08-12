@@ -1,22 +1,7 @@
 <Schema name="datamexico">
   <Cube name="inegi_population">
     <Table name="inegi_population" primary_key="loc_id" />
-    <Dimension name="Geography" foreign_key="loc_id">
-      <Hierarchy name="Geography" primary_key="loc_id">
-        <Table name="dim_shared_geography" />
-        <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-          <Property name="CVE State" column="cve_ent" />
-        </Level>
-        <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
-          <Property name="CVE Municipality" column="cve_mun" />
-          <Property name="CVE Municipality Full" column="cve_mun_full" />
-        </Level>
-        <Level name="Location" key_column="loc_id" name_column="loc_name" key_type="nontext">
-          <Property name="CVE Location" column="cve_loc" />
-          <Property name="CVE Location Full" column="cve_loc_full" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
+
     <Dimension name="Related" foreign_key="parent">
       <Hierarchy name="Related" primary_key="id">
         <InlineTable alias="dim_inline_related">
@@ -79,28 +64,7 @@
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension name="Sex" foreign_key="sex">
-      <Hierarchy name="Sex" primary_key="id">
-        <InlineTable alias="dim_inline_sex">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">Male</Value>
-            <Value column="name_es">Hombre</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">Female</Value>
-            <Value column="name_es">Mujer</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Sex" key_column="id" name_column="name_en">
-          <Property name="Sex ES" column="name_es" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
+
     <Dimension name="Nationality" foreign_key="nationality">
       <Hierarchy name="Nationality" primary_key="id">
         <InlineTable alias="dim_inline_nationality">
@@ -541,23 +505,11 @@
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension name="Year" foreign_key="year">
-      <Hierarchy name="Year">
-          <Level name="Year" key_column="year" type="time" />
-      </Hierarchy>
-    </Dimension>
 
-    <Dimension name="Age Group" foreign_key="age">
-      <Hierarchy name="Age Group" primary_key="age">
-        <Table name="dim_shared_age" />
-
-        <Level name="Age Range" key_column="age_range_id" name_column="name_en" key_type="nontext">
-          <Property name="name_es" column="name_es" caption_set="es"/>
-        </Level>
-        <Level name="Age" key_column="age" key_type="nontext" />
-
-      </Hierarchy>
-    </Dimension>
+    <DimensionUsage foreignKey="loc_id" source="Geography Location" name="Geography" />
+    <DimensionUsage foreignKey="age" source="Age Group" name="Age Group" />
+    <DimensionUsage foreignKey="sex" source="Sex" name="Sex" />
+    <DimensionUsage foreignKey="year" source="Year" name="Year" />
 
     <Measure name="Population" column="population" aggregator="sum" />
   </Cube>
