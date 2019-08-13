@@ -320,8 +320,8 @@
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Working the soil and/or raising livestock</Value>
-            <Value column="name_es">Trabajar su tierra o parcela y/o crianza de animales</Value>
+            <Value column="name_en">Working the soil and\/or raising livestock</Value>
+            <Value column="name_es">Trabajar su tierra o parcela y\/o crianza de animales</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
@@ -363,10 +363,6 @@
       </Hierarchy>
     </Dimension>
 
-    <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
-    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
-    <DimensionUsage source="Occupation" name="Occupation Actual Job" foreign_key="actual_job_position" />
-
     <Dimension name="Occupation Secondary Activity" foreign_key="second_activity_task">
       <Hierarchy name="Occupation Secondary Activity" primary_key="occupation_id">
         <Table name="dim_shared_occupations_enoe"/>
@@ -385,8 +381,6 @@
       </Hierarchy>
     </Dimension>
 
-    <DimensionUsage source="Industry 4 Digit" name="Industry Actual Job" foreign_key="actual_job_industry_group_id" />
-
     <Dimension name="Industry Secondary Activity" foreign_key="second_activity_group_id">
       <Hierarchy name="Industry Secondary Activity" primary_key="industry_group_id">
         <Table name="dim_shared_industry_enoe"/>
@@ -401,6 +395,11 @@
         </Level>
       </Hierarchy>
     </Dimension>
+
+    <DimensionUsage foreign_key="actual_job_industry_group_id" source="Industry 4 Digit" name="Industry Actual Job" />
+    <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
+    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
+    <DimensionUsage foreign_key="actual_job_position" source="Occupation" name="Occupation Actual Job" />
 
     <Measure name="Worked Hours Week" column="actual_job_hrs_worked_lastweek" aggregator="avg" />
     <Measure name="Worked Days Week" column="actual_job_days_worked_lastweek" aggregator="avg" />
