@@ -2,8 +2,8 @@
   <Cube name="inea_adult_education_stats">
     <Table name="inea_adult_education_stats" primary_key="ent_id" />
 
-    <DimensionUsage foreignKey="ent_id" source="Geography State" name="Geography" />
-    <DimensionUsage foreignKey="month_id" source="Date Month" name="Date" />
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
 
     <Measure name="Active advisors" column="n_advisors" aggregator="sum" />
     <Measure name="Active technical professors" column="n_tech_professors" aggregator="sum" />
