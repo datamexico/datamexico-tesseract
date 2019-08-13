@@ -1332,10 +1332,6 @@
       </Hierarchy>
     </Dimension>
 
-    <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
-    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
-    <DimensionUsage source="Occupation" name="Occupation Actual Job" foreign_key="actual_job_position" />
-
     <Dimension name="Occupation Secondary Activity" foreign_key="second_activity_task">
       <Hierarchy name="Occupation Secondary Activity" primary_key="occupation_id">
         <Table name="dim_shared_occupations_enoe"/>
@@ -1353,8 +1349,6 @@
         </Level>
       </Hierarchy>
     </Dimension>
-
-    <DimensionUsage source="Industry 4 Digit" name="Industry Actual Job" foreign_key="actual_job_industry_group_id" />
 
     <Dimension name="Industry Secondary Activity" foreign_key="second_activity_group_id">
       <Hierarchy name="Industry Secondary Activity" primary_key="industry_group_id">
