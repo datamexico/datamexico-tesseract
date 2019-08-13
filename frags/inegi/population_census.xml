@@ -325,6 +325,115 @@
         </Level>
       </Hierarchy>
     </Dimension>
+    <Dimension name="Ed Facility Mean" foreign_key="transport_mean_ed_facilities">
+      <Hierarchy name="Ed Facility Mean" primary_key="id">
+        <InlineTable alias="dim_transport_mean_ed_facilities">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Bus, taxi, or similar</Value>
+            <Value column="name_es">Camión, taxi, combi o colectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Train, subway or similar</Value>
+            <Value column="name_es">Metro, metrobús o tren ligero</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Own vehicle (car, truck or motorcycle)</Value>
+            <Value column="name_es">Vehículo particular (automóvil, camioneta o motocicleta)</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">School transportation</Value>
+            <Value column="name_es">Transporte escolar</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Bike</Value>
+            <Value column="name_es">Bicicleta</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Walking</Value>
+            <Value column="name_es">Caminando</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Other</Value>
+            <Value column="name_es">Otro</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Ed Facility Mean" key_column="id" name_column="name_en">
+          <Property name="Ed Facility Mean ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Time to Ed Facility" foreign_key="time_to_ed_facility">
+      <Hierarchy name="Time to Ed Facility" primary_key="id">
+        <InlineTable alias="dim_inline_time_to_ed_facility">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Up to 15 minutes</Value>
+            <Value column="name_es">Hasta 15 minutos</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">From 16 to 30 minutes</Value>
+            <Value column="name_es">16 a 30 minutos</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">From 31 minutes to 1 hour</Value>
+            <Value column="name_es">31 minutos a 1 hora</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Between 1 to 2 hours</Value>
+            <Value column="name_es">Más de 1 hora y hasta 2</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">More than 2 hours</Value>
+            <Value column="name_es">Más de 2 horas</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Does not mobilize</Value>
+            <Value column="name_es">No se traslada</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Time to Ed Facility" key_column="id" name_column="name_en">
+          <Property name="Time to Ed Facility ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
     <Dimension name="Job Situation" foreign_key="laboral_condition">
       <Hierarchy name="Job Situation" primary_key="id">
         <InlineTable alias="dim_inline_laboral_condition">
