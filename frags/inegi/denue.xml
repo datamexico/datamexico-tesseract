@@ -2,8 +2,8 @@
   <Cube name="inegi_denue">
     <Table name="inegi_denue" primary_key="loc_id" />
 
-    <DimensionUsage source="Industry 6 Digit" name="Industry" foreignKey="national_industry_id" />
-    <DimensionUsage foreignKey="loc_id" source="Geography Location" name="Geography" />
+    <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
+    <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
 
     <Dimension name="Company" foreign_key="id">
       <Hierarchy name="Company">

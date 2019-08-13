@@ -2,8 +2,8 @@
   <Cube name="inea_adult_education_origin">
     <Table name="inea_adult_education_origin" primary_key="ent_id" />
 
-    <DimensionUsage foreignKey="ent_id" source="Geography State" name="Geography" />
-    <DimensionUsage foreignKey="month_id" source="Date Month" name="Date" />
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
 
     <Dimension name="Origin" foreign_key="n_workers">
       <Hierarchy name="Origin" primary_key="id">
