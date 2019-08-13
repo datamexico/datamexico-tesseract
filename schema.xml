@@ -1289,8 +1289,8 @@
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Working the soil and/or raising livestock</Value>
-            <Value column="name_es">Trabajar su tierra o parcela y/o crianza de animales</Value>
+            <Value column="name_en">Working the soil and\/or raising livestock</Value>
+            <Value column="name_es">Trabajar su tierra o parcela y\/o crianza de animales</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
