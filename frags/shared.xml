@@ -115,13 +115,21 @@
     </Hierarchy>
   </SharedDimension>
 
-  <SharedDimension name="Year">
+  <SharedDimension name="Year" dim_type="time">
     <Hierarchy name="Year">
-      <Level name="Year" key_column="year" type="time" />
+      <Level name="Year" key_column="year" />
     </Hierarchy>
   </SharedDimension>
 
-  <SharedDimension name="Date Month">
+  <SharedDimension name="Date Quarter" dim_type="time">
+    <Hierarchy name="Date" primary_key="date_id">
+      <Table name="dim_shared_date_quarter" />
+      <Level name="Year" key_column="year" />
+      <Level name="Quarter" key_column="quarter_id" name_column="quarter_name" />
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Date Month" dim_type="time">
     <Hierarchy name="Date" primary_key="date_id">
       <Table name="dim_shared_date" />
       <Level name="Year" key_column="year" />
