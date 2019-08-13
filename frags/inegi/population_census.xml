@@ -92,8 +92,8 @@
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension name="HealthCare" foreign_key="sersalud">
-      <Hierarchy name="HealthCare" primary_key="id">
+    <Dimension name="Health Care" foreign_key="sersalud">
+      <Hierarchy name="Health Care" primary_key="id">
         <InlineTable alias="dim_inline_sersalud">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -149,13 +149,13 @@
             <Value column="name_es">No se atiende</Value>
           </Row>
         </InlineTable>
-        <Level name="HealthCare" key_column="id" name_column="name_en">
-          <Property name="HealthCare ES" column="name_es" caption_set="es" />
+        <Level name="Health Care" key_column="id" name_column="name_en">
+          <Property name="Health Care ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension name="HealthOptions" foreign_key="dhsersal1">
-      <Hierarchy name="HealthOptions" primary_key="id">
+    <Dimension name="Health Options" foreign_key="dhsersal1">
+      <Hierarchy name="Health Options" primary_key="id">
         <InlineTable alias="dim_inline_dhsersal1">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -206,13 +206,13 @@
             <Value column="name_es">No está afiliada(o) a servicios médicos</Value>
           </Row>
         </InlineTable>
-        <Level name="HealthOptions" key_column="id" name_column="name_en">
-          <Property name="HealthOptions ES" column="name_es" caption_set="es" />
+        <Level name="Health Options" key_column="id" name_column="name_en">
+          <Property name="Health Options ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension name="WorkMean" foreign_key="transport_mean_work">
-      <Hierarchy name="WorkMean" primary_key="id">
+    <Dimension name="Work Mean" foreign_key="transport_mean_work">
+      <Hierarchy name="Work Mean" primary_key="id">
         <InlineTable alias="dim_transport_mean_work">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -263,13 +263,13 @@
             <Value column="name_es">Otro</Value>
           </Row>
         </InlineTable>
-        <Level name="WorkMean" key_column="id" name_column="name_en">
-          <Property name="WorkMean ES" column="name_es" caption_set="es" />
+        <Level name="Work Mean" key_column="id" name_column="name_en">
+          <Property name="Work Mean ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension name="TimetoWork" foreign_key="time_to_work">
-      <Hierarchy name="TimetoWork" primary_key="id">
+    <Dimension name="Time to Work" foreign_key="time_to_work">
+      <Hierarchy name="Time to Work" primary_key="id">
         <InlineTable alias="dim_inline_time_to_work">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -320,13 +320,13 @@
             <Value column="name_es">No se traslada</Value>
           </Row>
         </InlineTable>
-        <Level name="TimetoWork" key_column="id" name_column="name_en">
-          <Property name="TimetoWork ES" column="name_es" caption_set="es" />
+        <Level name="Time to Work" key_column="id" name_column="name_en">
+          <Property name="Time to Work ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension name="JobSituation" foreign_key="laboral_condition">
-      <Hierarchy name="JobSituation" primary_key="id">
+    <Dimension name="Job Situation" foreign_key="laboral_condition">
+      <Hierarchy name="Job Situation" primary_key="id">
         <InlineTable alias="dim_inline_laboral_condition">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -407,13 +407,13 @@
             <Value column="name_es">No trabajó</Value>
           </Row>
         </InlineTable>
-        <Level name="JobSituation" key_column="id" name_column="name_en">
-          <Property name="JobSituation ES" column="name_es" caption_set="es" />
+        <Level name="Job Situation" key_column="id" name_column="name_en">
+          <Property name="Job Situation ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension name="AcademicDegree" foreign_key="academic_degree">
-      <Hierarchy name="AcademicDegree" primary_key="id">
+    <Dimension name="Academic Degree" foreign_key="academic_degree">
+      <Hierarchy name="Academic Degree" primary_key="id">
         <InlineTable alias="dim_inline_academic_degree">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -500,8 +500,8 @@
           </Row>
         </InlineTable>
 
-        <Level name="AcademicDegree" key_column="id" name_column="name_en">
-          <Property name="AcademicDegree ES" column="name_es" caption_set="es" />
+        <Level name="Academic Degree" key_column="id" name_column="name_en">
+          <Property name="Academic Degree ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
