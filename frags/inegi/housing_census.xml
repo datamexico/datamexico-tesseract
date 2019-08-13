@@ -708,7 +708,7 @@
     </Dimension>
 
     <Dimension name="Fridge" foreign_key="fridge">
-      <Hierarchy name="Fridge">
+      <Hierarchy name="Fridge" primary_key="id">
         <InlineTable alias="dim_inline_housing_census">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -741,7 +741,7 @@
     </Dimension>
 
     <Dimension name="Washing Machine" foreign_key="washing_machine">
-      <Hierarchy name="Washing Machine">
+      <Hierarchy name="Washing Machine" primary_key="id">
         <InlineTable alias="dim_inline_housing_census">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -775,7 +775,7 @@
     </Dimension>
 
     <Dimension name="Vehicle" foreign_key="vehicle">
-      <Hierarchy name="Vehicle">
+      <Hierarchy name="Vehicle" primary_key="id">
         <InlineTable alias="dim_inline_housing_census">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -809,7 +809,7 @@
     </Dimension>
 
     <Dimension name="Television" foreign_key="tv">
-      <Hierarchy name="Television">
+      <Hierarchy name="Television" primary_key="id">
         <InlineTable alias="dim_inline_housing_census">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -843,7 +843,7 @@
     </Dimension>
 
     <Dimension name="Internet" foreign_key="internet">
-      <Hierarchy name="Internet">
+      <Hierarchy name="Internet" primary_key="id">
         <InlineTable alias="dim_inline_housing_census">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -877,7 +877,7 @@
     </Dimension>
 
     <Dimension name="Computer" foreign_key="computer">
-      <Hierarchy name="Computer">
+      <Hierarchy name="Computer" primary_key="id">
         <InlineTable alias="dim_inline_housing_census">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -911,7 +911,7 @@
     </Dimension>
 
     <Dimension name="Phone" foreign_key="mobile_phone">
-      <Hierarchy name="Phone">
+      <Hierarchy name="Phone" primary_key="id">
         <InlineTable alias="dim_inline_housing_census">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -945,7 +945,7 @@
     </Dimension>
 
     <Dimension name="Bedrooms" foreign_key="bedrooms">
-      <Hierarchy name="Bedrooms">
+      <Hierarchy name="Bedrooms" primary_key="id">
         <InlineTable alias="dim_inline_housing_census">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
