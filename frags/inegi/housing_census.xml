@@ -912,7 +912,7 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Phone" foreign_key="movile_phone">
+    <Dimension name="Phone" foreign_key="mobile_phone">
       <Hierarchy name="Phone">
         <InlineTable alias="dim_inline_housing_census">
           <ColumnDef name="id" key_type="nontext" />
