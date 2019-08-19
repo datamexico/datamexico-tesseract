@@ -1,0 +1,27 @@
+<Schema name="datamexico">
+  <Cube name="coneval_poverty">
+
+    <Table name="coneval_poverty" primary_key="mun_id" />
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Measure name="Population" column="population" visible="false" aggregator="sum" />
+    <Measure name="Poverty" column="poverty" aggregator="sum" />
+    <Measure name="Extreme Poverty" column="extreme_poverty" aggregator="sum" />
+    <Measure name="Moderate Poverty" column="moderate_poverty" aggregator="sum" />
+    <Measure name="Vulnerable Population by Lacks" column="vulnerable_lacks" aggregator="sum" />
+    <Measure name="Vulnerable Population by Income" column="vulnerable_income" aggregator="sum" />
+    <Measure name="Population No Vulnerable" column="no_vulnerable" aggregator="sum" />
+    <Measure name="Educational Backwardness" column="educational_backwardness" aggregator="sum" />
+    <Measure name="Deprivation Quality Housing Spaces" column="deprivation_quality_housing_spaces" aggregator="sum" />
+    <Measure name="Deprivation Health Services" column="deprivation_health_services" aggregator="sum" />
+    <Measure name="Deprivation Social Security" column="deprivation_social_security" aggregator="sum" />
+    <Measure name="Deprivation Basic Services Housing" column="deprivation_basic_services_housing" aggregator="sum" />
+    <Measure name="Deprivation Food Access" column="deprivation_food_access" aggregator="sum" />
+    <Measure name="Population with at least 1 Social Lack" column="at_least_one_lack" aggregator="sum" />
+    <Measure name="Population with at least 3 Social Lacks" column="at_least_three_lacks" aggregator="sum" />
+    <Measure name="Income below Welfare Line" column="income_below_welfare_line" aggregator="sum" />
+    <Measure name="Income below Min Welfare Line" column="income_below_min_welfare_line" aggregator="sum" />
+  </Cube>
+</Schema>
