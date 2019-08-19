@@ -1,5 +1,4 @@
 <Schema name="datamexico">
-
   <SharedDimension name="Geography State">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography_ent" />
@@ -115,13 +114,21 @@
     </Hierarchy>
   </SharedDimension>
 
-  <SharedDimension name="Year">
+  <SharedDimension name="Year" dim_type="time">
     <Hierarchy name="Year">
-      <Level name="Year" key_column="year" type="time" />
+      <Level name="Year" key_column="year" />
     </Hierarchy>
   </SharedDimension>
 
-  <SharedDimension name="Date Month">
+  <SharedDimension name="Date Quarter" dim_type="time">
+    <Hierarchy name="Date" primary_key="date_id">
+      <Table name="dim_shared_date_quarter" />
+      <Level name="Year" key_column="year" />
+      <Level name="Quarter" key_column="quarter_id" name_column="quarter_name" />
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Date Month" dim_type="time">
     <Hierarchy name="Date" primary_key="date_id">
       <Table name="dim_shared_date" />
       <Level name="Year" key_column="year" />
@@ -129,8 +136,7 @@
       <Level name="Month" key_column="date_id" name_column="month" />
     </Hierarchy>
   </SharedDimension>
-
-  <Cube name="inegi_housing">
+<Cube name="inegi_housing">
     <Table name="inegi_housing" />
 
     <Dimension name="Income" foreign_key="income">
@@ -1259,7 +1265,7 @@
 
     <Measure name="Households" column="households" aggregator="sum" />
   </Cube>
-  <Cube name="inegi_population">
+<Cube name="inegi_population">
     <Table name="inegi_population" primary_key="loc_id" />
 
     <Dimension name="Related" foreign_key="parent">
@@ -1882,7 +1888,7 @@
 
     <Measure name="Population" column="population" aggregator="sum" />
   </Cube>
-  <Cube name="inegi_enoe">
+<Cube name="inegi_enoe">
     <Table name="inegi_enoe" primary_key="ent_id" />
 
     <Dimension name="Job Situation" foreign_key="has_job_or_business">
@@ -2290,30 +2296,30 @@
     <Measure name="Workforce" column="population" aggregator="sum" />
 
   </Cube>
-  <Cube name="inegi_intercensal_survey">
-    <Table name="inegi_economic_census" primary_key="mun_id" />
+<Cube name="inegi_intercensal_survey">
+  <Table name="inegi_economic_census" primary_key="mun_id" />
 
     <Dimension name="Geography" foreign_key="mun_id">
       <Hierarchy name="Geography" primary_key="loc_id">
         <Table name="dim_shared_geography" />
 
         <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-          <Property name="CVE State" column="cve_ent" />
+            <Property name="CVE State" column="cve_ent" />
         </Level>
         <Level name="Municipality" key_column="mun_id" name_column="mun_id" key_type="nontext">
-          <Property name="CVE Municipality" column="cve_mun" />
-          <Property name="CVE Municipality Full" column="cve_mun_full" />
+            <Property name="CVE Municipality" column="cve_mun" />
+            <Property name="CVE Municipality Full" column="cve_mun_full" />
         </Level>
         <Level name="Location" key_column="loc_id" name_column="loc_name" key_type="nontext">
-          <Property name="CVE Location" column="cve_loc" />
-          <Property name="CVE Location Full" column="cve_loc_full" />
+            <Property name="CVE Location" column="cve_loc" />
+            <Property name="CVE Location Full" column="cve_loc_full" />
         </Level>
       </Hierarchy>
     </Dimension>
 
     <Measure name="Economic Unit" column="ue" aggregator="sum" />
   </Cube>
-  <Cube name="inegi_denue">
+<Cube name="inegi_denue">
     <Table name="inegi_denue" primary_key="loc_id" />
 
     <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
@@ -2411,7 +2417,7 @@
     <Measure name="Number of Employees UCI" column="upper" aggregator="sum" />
 
   </Cube>
-  <Cube name="inegi_economic_census">
+<Cube name="inegi_economic_census">
     <Table name="inegi_economic_census" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
@@ -2518,7 +2524,31 @@
     <Measure name="Total Stock of Computer Equipment and Peripherals" column="q400a" aggregator="sum"/>
     <Measure name="Total Stock of Furniture, office Equipment and Other Fixed Assets" column="q900a" aggregator="sum"/>
   </Cube>
-  <Cube name="trade_balance">
+<Cube name="coneval_poverty">
+    <Table name="coneval_poverty" primary_key="mun_id" />
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Measure name="Population" column="population" visible="false" aggregator="sum" />
+    <Measure name="Poverty" column="poverty" aggregator="sum" />
+    <Measure name="Extreme Poverty" column="extreme_poverty" aggregator="sum" />
+    <Measure name="Moderate Poverty" column="moderate_poverty" aggregator="sum" />
+    <Measure name="Vulnerable Population by Lacks" column="vulnerable_lacks" aggregator="sum" />
+    <Measure name="Vulnerable Population by Income" column="vulnerable_income" aggregator="sum" />
+    <Measure name="Population No Vulnerable" column="no_vulnerable" aggregator="sum" />
+    <Measure name="Educational Backwardness" column="educational_backwardness" aggregator="sum" />
+    <Measure name="Deprivation Quality Housing Spaces" column="deprivation_quality_housing_spaces" aggregator="sum" />
+    <Measure name="Deprivation Health Services" column="deprivation_health_services" aggregator="sum" />
+    <Measure name="Deprivation Social Security" column="deprivation_social_security" aggregator="sum" />
+    <Measure name="Deprivation Basic Services Housing" column="deprivation_basic_services_housing" aggregator="sum" />
+    <Measure name="Deprivation Food Access" column="deprivation_food_access" aggregator="sum" />
+    <Measure name="Population with at least 1 Social Lack" column="at_least_one_lack" aggregator="sum" />
+    <Measure name="Population with at least 3 Social Lacks" column="at_least_three_lacks" aggregator="sum" />
+    <Measure name="Income below Welfare Line" column="income_below_welfare_line" aggregator="sum" />
+    <Measure name="Income below Min Welfare Line" column="income_below_min_welfare_line" aggregator="sum" />
+  </Cube>
+<Cube name="trade_balance">
     <Table name="trade_balance_atlas" primary_key="mun_id" />
     <Dimension name="Geography" foreign_key="mun_id">
       <Hierarchy name="Geography" primary_key="mun_id">
@@ -2556,7 +2586,7 @@
     <Measure name="Import Plants" column="import_num_plants" aggregator="sum" />
     <Measure name="Export Plants" column="export_num_plants" aggregator="sum" />
   </Cube>
-  <Cube name="inea_adult_education_stats">
+<Cube name="inea_adult_education_stats">
     <Table name="inea_adult_education_stats" primary_key="ent_id" />
 
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
@@ -2570,7 +2600,7 @@
     <Measure name="Meeting zones" column="n_meeting_zones" aggregator="sum" />
 
   </Cube>
-  <Cube name="inea_adult_education_origin">
+<Cube name="inea_adult_education_origin">
     <Table name="inea_adult_education_origin" primary_key="ent_id" />
 
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />

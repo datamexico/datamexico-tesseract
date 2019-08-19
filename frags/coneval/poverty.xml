@@ -1,6 +1,5 @@
 <Schema name="datamexico">
   <Cube name="coneval_poverty">
-
     <Table name="coneval_poverty" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
