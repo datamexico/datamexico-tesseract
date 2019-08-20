@@ -81,16 +81,16 @@
   <SharedDimension name="Occupation">
     <Hierarchy name="Occupation" primary_key="occupation_id">
       <Table name="dim_shared_occupations_enoe"/>
-      <Level name="Category" key_column="category_id" name_column="category_en" key_type="text">
+      <Level name="Category" key_column="category_id" name_column="category_en" key_type="nontext">
         <Property name="Category ES" column="category_es" caption_set="es"/>
       </Level>
-      <Level name="Group" key_column="group_id" name_column="group_en" key_type="text">
+      <Level name="Group" key_column="group_id" name_column="group_en" key_type="nontext">
         <Property name="Group ES" column="group_es" caption_set="es"/>
       </Level>
-      <Level name="Subgroup" key_column="subgroup_id" name_column="subgroup_en" key_type="text">
+      <Level name="Subgroup" key_column="subgroup_id" name_column="subgroup_en" key_type="nontext">
         <Property name="Subgroup ES" column="subgroup_es" caption_set="es"/>
       </Level>
-      <Level name="Occupation" key_column="occupation_id" name_column="occupation_en" key_type="text">
+      <Level name="Occupation" key_column="occupation_id" name_column="occupation_en" key_type="nontext">
         <Property name="Occupation ES" column="occupation_es" caption_set="es"/>
       </Level>
     </Hierarchy>
@@ -115,13 +115,13 @@
     </Hierarchy>
   </SharedDimension>
 
-  <SharedDimension name="Year" dim_type="time">
+  <SharedDimension name="Year" type="time">
     <Hierarchy name="Year">
       <Level name="Year" key_column="year" />
     </Hierarchy>
   </SharedDimension>
 
-  <SharedDimension name="Date Quarter" dim_type="time">
+  <SharedDimension name="Date Quarter" type="time">
     <Hierarchy name="Date" primary_key="date_id">
       <Table name="dim_shared_date_quarter" />
       <Level name="Year" key_column="year" />
@@ -129,7 +129,7 @@
     </Hierarchy>
   </SharedDimension>
 
-  <SharedDimension name="Date Month" dim_type="time">
+  <SharedDimension name="Date Month" type="time">
     <Hierarchy name="Date" primary_key="date_id">
       <Table name="dim_shared_date" />
       <Level name="Year" key_column="year" />
