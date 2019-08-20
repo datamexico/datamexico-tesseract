@@ -138,4 +138,42 @@
     </Hierarchy>
   </SharedDimension>
 
+  <SharedDimension name="Social Lag Degree">
+    <Hierarchy name="Social Lag Degree" primary_key="id">
+      <InlineTable alias="dim_inline_social_lag_degree">
+        <ColumnDef name="id" key_type="nontext" />
+        <ColumnDef name="name_en" key_type="text" />
+        <ColumnDef name="name_es" key_type="text" />
+        <Row>
+          <Value column="id">1</Value>
+          <Value column="name_en">Very low</Value>
+          <Value column="name_es">Muy bajo</Value>
+        </Row>
+        <Row>
+          <Value column="id">2</Value>
+          <Value column="name_en">Low</Value>
+          <Value column="name_es">Bajo</Value>
+        </Row>
+        <Row>
+          <Value column="id">3</Value>
+          <Value column="name_en">Medium</Value>
+          <Value column="name_es">Medio</Value>
+        </Row>
+        <Row>
+          <Value column="id">4</Value>
+          <Value column="name_en">High</Value>
+          <Value column="name_es">Alto</Value>
+        </Row>
+        <Row>
+          <Value column="id">5</Value>
+          <Value column="name_en">Very high</Value>
+          <Value column="name_es">Muy alto</Value>
+        </Row>
+      </InlineTable>
+      <Level name="Social Lag Degree" key_column="id" name_column="name_en">
+        <Property name="Social Lag Degree ES" column="name_es" caption_set="es" />
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
 </Schema>

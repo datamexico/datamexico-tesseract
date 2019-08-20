@@ -1,5 +1,6 @@
 <Schema name="datamexico">
-  <SharedDimension name="Geography State">
+
+<SharedDimension name="Geography State">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography_ent" />
       <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext" />
@@ -136,6 +137,45 @@
       <Level name="Month" key_column="date_id" name_column="month" />
     </Hierarchy>
   </SharedDimension>
+
+  <SharedDimension name="Social Lag Degree">
+    <Hierarchy name="Social Lag Degree" primary_key="id">
+      <InlineTable alias="dim_inline_social_lag_degree">
+        <ColumnDef name="id" key_type="nontext" />
+        <ColumnDef name="name_en" key_type="text" />
+        <ColumnDef name="name_es" key_type="text" />
+        <Row>
+          <Value column="id">1</Value>
+          <Value column="name_en">Very low</Value>
+          <Value column="name_es">Muy bajo</Value>
+        </Row>
+        <Row>
+          <Value column="id">2</Value>
+          <Value column="name_en">Low</Value>
+          <Value column="name_es">Bajo</Value>
+        </Row>
+        <Row>
+          <Value column="id">3</Value>
+          <Value column="name_en">Medium</Value>
+          <Value column="name_es">Medio</Value>
+        </Row>
+        <Row>
+          <Value column="id">4</Value>
+          <Value column="name_en">High</Value>
+          <Value column="name_es">Alto</Value>
+        </Row>
+        <Row>
+          <Value column="id">5</Value>
+          <Value column="name_en">Very high</Value>
+          <Value column="name_es">Muy alto</Value>
+        </Row>
+      </InlineTable>
+      <Level name="Social Lag Degree" key_column="id" name_column="name_en">
+        <Property name="Social Lag Degree ES" column="name_es" caption_set="es" />
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
 <Cube name="inegi_housing">
     <Table name="inegi_housing" />
 
@@ -2519,6 +2559,27 @@
     <Measure name="Total Stock of Computer Equipment and Peripherals" column="q400a" aggregator="sum"/>
     <Measure name="Total Stock of Furniture, office Equipment and Other Fixed Assets" column="q900a" aggregator="sum"/>
   </Cube>
+<Cube name="coneval_social_lag_ent">
+    <Table name="coneval_social_lag_ent" primary_key="mun_id" />
+
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="social_lag_degree" source="Social Lag Degree" name="Social Lag Degree" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Measure name="Population" column="population" aggregator="avg" />
+    <Measure name="Illiterate 15+ Years" column="population_illiterate" aggregator="avg" />
+    <Measure name="No Attend School 6-14 Years" column="population_6_14_school" aggregator="avg" />
+    <Measure name="Incomplete School 15+ Years" column="population_15_incomplete_school" aggregator="avg" />
+    <Measure name="No Health Services" column="no_health_services" aggregator="avg" />
+    <Measure name="Dirt Floor" column="dirt_floor" aggregator="avg" />
+    <Measure name="No Toilet" column="dirt_floor" aggregator="avg" />
+    <Measure name="No Water Supply Network" column="no_water_supply_network" aggregator="avg" />
+    <Measure name="No Sewer System" column="no_sewer_system" aggregator="avg" />
+    <Measure name="No Electrical Energy" column="no_electrical_energy" aggregator="avg" />
+    <Measure name="No Washing Machine" column="no_washing_machine" aggregator="avg" />
+    <Measure name="No Fridge" column="no_fridge" aggregator="avg" />
+    <Measure name="Social Lag Index" column="no_fridge" aggregator="avg" />
+  </Cube>
 <Cube name="coneval_poverty">
     <Table name="coneval_poverty" primary_key="mun_id" />
 
@@ -2542,6 +2603,36 @@
     <Measure name="Population with at least 3 Social Lacks" column="at_least_three_lacks" aggregator="sum" />
     <Measure name="Income below Welfare Line" column="income_below_welfare_line" aggregator="sum" />
     <Measure name="Income below Min Welfare Line" column="income_below_min_welfare_line" aggregator="sum" />
+  </Cube>
+<Cube name="coneval_social_lag_mun">
+    <Table name="coneval_social_lag_mun" primary_key="mun_id" />
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="social_lag_degree" source="Social Lag Degree" name="Social Lag Degree" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Measure name="Population" column="population" aggregator="avg" />
+    <Measure name="Illiterate 15+ Years" column="population_illiterate" aggregator="avg" />
+    <Measure name="No Attend School 6-14 Years" column="population_6_14_school" aggregator="avg" />
+    <Measure name="Incomplete School 15+ Years" column="population_15_incomplete_school" aggregator="avg" />
+    <Measure name="No Health Services" column="no_health_services" aggregator="avg" />
+    <Measure name="Dirt Floor" column="dirt_floor" aggregator="avg" />
+    <Measure name="No Toilet" column="dirt_floor" aggregator="avg" />
+    <Measure name="No Water Supply Network" column="no_water_supply_network" aggregator="avg" />
+    <Measure name="No Sewer System" column="no_sewer_system" aggregator="avg" />
+    <Measure name="No Electrical Energy" column="no_electrical_energy" aggregator="avg" />
+    <Measure name="No Washing Machine" column="no_washing_machine" aggregator="avg" />
+    <Measure name="No Fridge" column="no_fridge" aggregator="avg" />
+    <Measure name="Social Lag Index" column="no_fridge" aggregator="avg" />
+  </Cube>
+<Cube name="coneval_gini_mun">
+    <Table name="coneval_gini_mun" primary_key="mun_id" />
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Measure name="GINI" column="gini" aggregator="avg" />
+    <Measure name="Income Rate" column="income_rate" aggregator="avg" />
+
   </Cube>
 <Cube name="trade_balance">
     <Table name="trade_balance_atlas" primary_key="mun_id" />

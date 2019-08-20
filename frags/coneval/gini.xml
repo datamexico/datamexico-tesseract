@@ -1,0 +1,11 @@
+<Schema name="datamexico">
+  <Cube name="coneval_gini_mun">
+    <Table name="coneval_gini_mun" primary_key="mun_id" />
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Measure name="GINI" column="gini" aggregator="avg" />
+    <Measure name="Income Rate" column="income_rate" aggregator="avg" />
+
+  </Cube>
+</Schema>

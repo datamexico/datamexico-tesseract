@@ -1,0 +1,23 @@
+<Schema name="datamexico">
+  <Cube name="coneval_social_lag_mun">
+    <Table name="coneval_social_lag_mun" primary_key="mun_id" />
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="social_lag_degree" source="Social Lag Degree" name="Social Lag Degree" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Measure name="Population" column="population" aggregator="avg" />
+    <Measure name="Illiterate 15+ Years" column="population_illiterate" aggregator="avg" />
+    <Measure name="No Attend School 6-14 Years" column="population_6_14_school" aggregator="avg" />
+    <Measure name="Incomplete School 15+ Years" column="population_15_incomplete_school" aggregator="avg" />
+    <Measure name="No Health Services" column="no_health_services" aggregator="avg" />
+    <Measure name="Dirt Floor" column="dirt_floor" aggregator="avg" />
+    <Measure name="No Toilet" column="dirt_floor" aggregator="avg" />
+    <Measure name="No Water Supply Network" column="no_water_supply_network" aggregator="avg" />
+    <Measure name="No Sewer System" column="no_sewer_system" aggregator="avg" />
+    <Measure name="No Electrical Energy" column="no_electrical_energy" aggregator="avg" />
+    <Measure name="No Washing Machine" column="no_washing_machine" aggregator="avg" />
+    <Measure name="No Fridge" column="no_fridge" aggregator="avg" />
+    <Measure name="Social Lag Index" column="no_fridge" aggregator="avg" />
+  </Cube>
+</Schema>
