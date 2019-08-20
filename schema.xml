@@ -1,11 +1,29 @@
 <Schema name="datamexico">
-
 <SharedDimension name="Geography State">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography_ent" />
       <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext" />
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
         <Property name="CVE State" column="cve_ent" />
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Geography State Lite">
+    <Hierarchy name="Geography">
+      <Table name="dim_shared_geography_ent" />
+      <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+        <Property name="CVE State" column="cve_ent" />
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Geography Municipality Lite">
+    <Hierarchy name="Geography">
+      <Table name="dim_shared_geography_mun" />
+      <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
+        <Property name="CVE Municipality" column="cve_mun" />
+        <Property name="CVE Municipality Full" column="cve_mun_full" />
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -17,7 +35,7 @@
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
         <Property name="CVE State" column="cve_ent" />
       </Level>
-      <Level name="Municipality" key_column="mun_id" name_column="mun_id" key_type="nontext">
+      <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
         <Property name="CVE Municipality" column="cve_mun" />
         <Property name="CVE Municipality Full" column="cve_mun_full" />
       </Level>
@@ -175,7 +193,6 @@
       </Level>
     </Hierarchy>
   </SharedDimension>
-
 <Cube name="inegi_housing">
     <Table name="inegi_housing" />
 
@@ -2562,7 +2579,7 @@
 <Cube name="coneval_social_lag_ent">
     <Table name="coneval_social_lag_ent" primary_key="mun_id" />
 
-    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="ent_id" source="Geography State Lite" name="Geography" />
     <DimensionUsage foreign_key="social_lag_degree" source="Social Lag Degree" name="Social Lag Degree" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
@@ -2607,7 +2624,7 @@
 <Cube name="coneval_social_lag_mun">
     <Table name="coneval_social_lag_mun" primary_key="mun_id" />
 
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality Lite" name="Geography" />
     <DimensionUsage foreign_key="social_lag_degree" source="Social Lag Degree" name="Social Lag Degree" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
@@ -2627,7 +2644,7 @@
   </Cube>
 <Cube name="coneval_gini_mun">
     <Table name="coneval_gini_mun" primary_key="mun_id" />
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality Lite" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
     <Measure name="GINI" column="gini" aggregator="avg" />
