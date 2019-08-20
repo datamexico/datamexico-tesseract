@@ -42,7 +42,7 @@
   </SharedDimension>
 
   <SharedDimension name="Industry 4 Digit">
-    <Hierarchy name="Industry" primary_key="national_industry_id">
+    <Hierarchy name="Industry" primary_key="industry_group_id">
       <Table name="dim_shared_industry_enoe"/>
       <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
         <Property name="Sector ES" column="sector_es" caption_set="es"/>
