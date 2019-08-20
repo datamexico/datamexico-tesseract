@@ -2,7 +2,7 @@
   <Cube name="coneval_social_lag_ent">
     <Table name="coneval_social_lag_ent" primary_key="mun_id" />
 
-    <DimensionUsage foreign_key="ent_id" source="Geography State Lite" name="Geography" />
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
     <DimensionUsage foreign_key="social_lag_degree" source="Social Lag Degree" name="Social Lag Degree" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 

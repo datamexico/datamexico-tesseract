@@ -2579,7 +2579,7 @@
 <Cube name="coneval_social_lag_ent">
     <Table name="coneval_social_lag_ent" primary_key="mun_id" />
 
-    <DimensionUsage foreign_key="ent_id" source="Geography State Lite" name="Geography" />
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
     <DimensionUsage foreign_key="social_lag_degree" source="Social Lag Degree" name="Social Lag Degree" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
@@ -2624,7 +2624,7 @@
 <Cube name="coneval_social_lag_mun">
     <Table name="coneval_social_lag_mun" primary_key="mun_id" />
 
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality Lite" name="Geography" />
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="social_lag_degree" source="Social Lag Degree" name="Social Lag Degree" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
@@ -2644,7 +2644,7 @@
   </Cube>
 <Cube name="coneval_gini_mun">
     <Table name="coneval_gini_mun" primary_key="mun_id" />
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality Lite" name="Geography" />
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
     <Measure name="GINI" column="gini" aggregator="avg" />
