@@ -2,28 +2,11 @@
   <Cube name="inea_adult_education_origin">
     <Table name="inea_adult_education_origin" primary_key="ent_id" />
 
-    <Dimension name="Geography" foreign_key="ent_id">
-      <Hierarchy name="Geography" primary_key="ent_id">
-        <Table name="dim_shared_geography_ent" />
-
-        <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-          <Property name="CVE State" column="cve_ent" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <Dimension foreign_key="month_id" source="Date" name="Date">
-      <Hierarchy name="Date" primary_key="date_id">
-        <Table name="dim_shared_date" />
-        <Level name="Year" key_column="year" />
-        <Level name="Quarter" key_column="quarter" />
-        <Level name="Month" key_column="date_id" name_column="month" />
-      </Hierarchy>
-    </Dimension>
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
 
     <Dimension name="Origin" foreign_key="n_workers">
       <Hierarchy name="Origin" primary_key="id">
-
         <InlineTable alias="dim_inline_company_size">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />

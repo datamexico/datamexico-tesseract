@@ -2,20 +2,11 @@
   <Cube name="inegi_housing">
     <Table name="inegi_housing" />
 
-    <Dimension name="Geography" foreign_key="loc_id">
-      <Hierarchy name="Geography" primary_key="loc_id">
-        <Table name="dim_shared_geography" />
-
-        <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-          <Property name="CVE State" column="cve_ent" />
-        </Level>
-        <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
-          <Property name="CVE Municipality" column="cve_mun" />
-          <Property name="CVE Municipality Full" column="cve_mun_full" />
-        </Level>
-        <Level name="Location" key_column="loc_id" name_column="loc_name" key_type="nontext">
-          <Property name="CVE Location" column="cve_loc" />
-          <Property name="CVE Location Full" column="cve_loc_full" />
+    <Dimension name="Income" foreign_key="income">
+      <Hierarchy name="Income" primary_key="id">
+        <Table name="dim_shared_income" />
+        <Level name="Income" key_column="id" name_column="name_en">
+          <Property name="Income ES" column="name_es" caption_set="es"/>
         </Level>
       </Hierarchy>
     </Dimension>
@@ -335,136 +326,6 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Income" foreign_key="income">
-      <Hierarchy name="Income" primary_key="id">
-
-        <InlineTable alias="dim_inline_housing_census">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">&lt;$10k</Value>
-            <Value column="name_es">&lt;$10k</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">$10k-$15k</Value>
-            <Value column="name_es">$10k-$15k</Value>
-          </Row>
-          <Row>
-            <Value column="id">3</Value>
-            <Value column="name_en">$15k-$20k</Value>
-            <Value column="name_es">$15k-$20k</Value>
-          </Row>
-          <Row>
-            <Value column="id">4</Value>
-            <Value column="name_en">$20k-$25k</Value>
-            <Value column="name_es">$20k-$25k</Value>
-          </Row>
-          <Row>
-            <Value column="id">5</Value>
-            <Value column="name_en">$25k-$30k</Value>
-            <Value column="name_es">$25k-$30k</Value>
-          </Row>
-          <Row>
-            <Value column="id">6</Value>
-            <Value column="name_en">$30k-$35k</Value>
-            <Value column="name_es">$30k-$35k</Value>
-          </Row>
-          <Row>
-            <Value column="id">7</Value>
-            <Value column="name_en">$35k-$40k</Value>
-            <Value column="name_es">$35k-$40k</Value>
-          </Row>
-          <Row>
-            <Value column="id">8</Value>
-            <Value column="name_en">$40k-$45k</Value>
-            <Value column="name_es">$40k-$45k</Value>
-          </Row>
-          <Row>
-            <Value column="id">9</Value>
-            <Value column="name_en">$45k-$50k</Value>
-            <Value column="name_es">$45k-$50k</Value>
-          </Row>
-          <Row>
-            <Value column="id">10</Value>
-            <Value column="name_en">$50k-$55k</Value>
-            <Value column="name_es">$50k-$55k</Value>
-          </Row>
-          <Row>
-            <Value column="id">11</Value>
-            <Value column="name_en">$55k-$60k</Value>
-            <Value column="name_es">$55k-$60k</Value>
-          </Row>
-          <Row>
-            <Value column="id">12</Value>
-            <Value column="name_en">$60k-$65k</Value>
-            <Value column="name_es">$60k-$65k</Value>
-          </Row>
-          <Row>
-            <Value column="id">13</Value>
-            <Value column="name_en">$65k-$70k</Value>
-            <Value column="name_es">$65k-$70k</Value>
-          </Row>
-          <Row>
-            <Value column="id">14</Value>
-            <Value column="name_en">$70k-$75k</Value>
-            <Value column="name_es">$70k-$75k</Value>
-          </Row>
-          <Row>
-            <Value column="id">15</Value>
-            <Value column="name_en">$75k-$80k</Value>
-            <Value column="name_es">$75k-$80k</Value>
-          </Row>
-          <Row>
-            <Value column="id">16</Value>
-            <Value column="name_en">$80k-$85k</Value>
-            <Value column="name_es">$80k-$85k</Value>
-          </Row>
-          <Row>
-            <Value column="id">17</Value>
-            <Value column="name_en">$85k-$90k</Value>
-            <Value column="name_es">$85k-$90k</Value>
-          </Row>
-          <Row>
-            <Value column="id">18</Value>
-            <Value column="name_en">$90k-$95k</Value>
-            <Value column="name_es">$90k-$95k</Value>
-          </Row>
-          <Row>
-            <Value column="id">19</Value>
-            <Value column="name_en">$95k-$100k</Value>
-            <Value column="name_es">$95k-$100k</Value>
-          </Row>
-          <Row>
-            <Value column="id">20</Value>
-            <Value column="name_en">$100k-$125k</Value>
-            <Value column="name_es">$100k-$125k</Value>
-          </Row>
-          <Row>
-            <Value column="id">21</Value>
-            <Value column="name_en">$125k-$150k</Value>
-            <Value column="name_es">$125k-$150k</Value>
-          </Row>
-          <Row>
-            <Value column="id">22</Value>
-            <Value column="name_en">$150k-$200k</Value>
-            <Value column="name_es">$150k-$200k</Value>
-          </Row>
-          <Row>
-            <Value column="id">23</Value>
-            <Value column="name_en">$200k +</Value>
-            <Value column="name_es">$200k +</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Income" key_column="id" name_column="name_en">
-          <Property name="Income ES" column="name_es" caption_set="es"/>
-        </Level>
-
-      </Hierarchy>
-    </Dimension>
-
     <Dimension name="Home Type" foreign_key="home_type">
       <Hierarchy name="Home Type" primary_key="id">
 
@@ -573,133 +434,133 @@
           </Row>
           <Row>
             <Value column="id">6</Value>
-            <Value column="name_en">6</Value>
-            <Value column="name_es">6</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">7</Value>
-            <Value column="name_es">7</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">8</Value>
-            <Value column="name_es">8</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">9</Value>
-            <Value column="name_es">9</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">10</Value>
-            <Value column="name_en">10</Value>
-            <Value column="name_es">10</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">11</Value>
-            <Value column="name_en">11</Value>
-            <Value column="name_es">11</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">12</Value>
-            <Value column="name_en">12</Value>
-            <Value column="name_es">12</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">13</Value>
-            <Value column="name_en">13</Value>
-            <Value column="name_es">13</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">14</Value>
-            <Value column="name_en">14</Value>
-            <Value column="name_es">14</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">15</Value>
-            <Value column="name_en">15</Value>
-            <Value column="name_es">15</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">16</Value>
-            <Value column="name_en">16</Value>
-            <Value column="name_es">16</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">17</Value>
-            <Value column="name_en">17</Value>
-            <Value column="name_es">17</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">18</Value>
-            <Value column="name_en">18</Value>
-            <Value column="name_es">18</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">19</Value>
-            <Value column="name_en">19</Value>
-            <Value column="name_es">19</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">20</Value>
-            <Value column="name_en">20</Value>
-            <Value column="name_es">20</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">21</Value>
-            <Value column="name_en">21</Value>
-            <Value column="name_es">21</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">22</Value>
-            <Value column="name_en">22</Value>
-            <Value column="name_es">22</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">23</Value>
-            <Value column="name_en">23</Value>
-            <Value column="name_es">23</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">24</Value>
-            <Value column="name_en">24</Value>
-            <Value column="name_es">24</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">25</Value>
-            <Value column="name_en">25</Value>
-            <Value column="name_es">25</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">26</Value>
-            <Value column="name_en">26</Value>
-            <Value column="name_es">26</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">27</Value>
-            <Value column="name_en">27</Value>
-            <Value column="name_es">27</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">28</Value>
-            <Value column="name_en">28</Value>
-            <Value column="name_es">28</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">29</Value>
-            <Value column="name_en">29</Value>
-            <Value column="name_es">29</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">30</Value>
-            <Value column="name_en">30</Value>
-            <Value column="name_es">30</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">31</Value>
-            <Value column="name_en">31</Value>
-            <Value column="name_es">31</Value>
+            <Value column="name_en">6+</Value>
+            <Value column="name_es">6+</Value>
           </Row>
           <Row>
             <Value column="id">99</Value>
@@ -846,8 +707,245 @@
       </Hierarchy>
     </Dimension>
 
+    <Dimension name="Fridge" foreign_key="fridge">
+      <Hierarchy name="Fridge" primary_key="id">
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Fridge" key_column="id" name_column="name_en">
+          <Property name="Fridge ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Washing Machine" foreign_key="washing_machine">
+      <Hierarchy name="Washing Machine" primary_key="id">
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Washing Machine" key_column="id" name_column="name_en">
+          <Property name="Washing Machine ES" column="name_es" caption_set="es"/>
+        </Level>
+
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Vehicle" foreign_key="vehicle">
+      <Hierarchy name="Vehicle" primary_key="id">
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Vehicle" key_column="id" name_column="name_en">
+          <Property name="Vehicle ES" column="name_es" caption_set="es"/>
+        </Level>
+
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Television" foreign_key="tv">
+      <Hierarchy name="Television" primary_key="id">
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Television" key_column="id" name_column="name_en">
+          <Property name="Television ES" column="name_es" caption_set="es"/>
+        </Level>
+
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Internet" foreign_key="internet">
+      <Hierarchy name="Internet" primary_key="id">
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Internet" key_column="id" name_column="name_en">
+          <Property name="Internet ES" column="name_es" caption_set="es"/>
+        </Level>
+
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Computer" foreign_key="computer">
+      <Hierarchy name="Computer" primary_key="id">
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Computer" key_column="id" name_column="name_en">
+          <Property name="Computer ES" column="name_es" caption_set="es"/>
+        </Level>
+
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Phone" foreign_key="mobile_phone">
+      <Hierarchy name="Phone" primary_key="id">
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Phone" key_column="id" name_column="name_en">
+          <Property name="Phone ES" column="name_es" caption_set="es"/>
+        </Level>
+
+      </Hierarchy>
+    </Dimension>
+
     <Dimension name="Bedrooms" foreign_key="bedrooms">
-      <Hierarchy name="Bedrooms">
+      <Hierarchy name="Bedrooms" primary_key="id">
         <InlineTable alias="dim_inline_housing_census">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -1025,12 +1123,9 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Year" foreign_key="year">
-      <Hierarchy name="Year">
-        <Level name="Year" key_column="year" type="time" />
-      </Hierarchy>
-    </Dimension>
+    <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
-    <Measure name="Households" column="inhabitants" aggregator="sum" />
+    <Measure name="Households" column="households" aggregator="sum" />
   </Cube>
 </Schema>

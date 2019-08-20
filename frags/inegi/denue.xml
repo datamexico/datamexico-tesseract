@@ -1,48 +1,9 @@
 <Schema name="datamexico">
   <Cube name="inegi_denue">
     <Table name="inegi_denue" primary_key="loc_id" />
-    <Dimension name="Industry" foreign_key="national_industry_id">
-      <Hierarchy name="Industry" primary_key="national_industry_id">
-        <Table name="dim_shared_industry"/>
 
-        <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
-          <Property name="sector_es" column="sector_es" caption_set="es"/>
-        </Level>
-
-        <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="text">
-          <Property name="subsector_es" column="subsector_es" caption_set="es"/>
-        </Level>
-
-        <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_en" key_type="text">
-          <Property name="industry_group_es" column="industry_group_es" caption_set="es"/>
-        </Level>
-
-        <Level name="NAICS Industry" key_column="naics_industry_id" name_column="naics_industry_en" key_type="text">
-          <Property name="naics_industry_es" column="naics_industry_es" caption_set="es"/>
-        </Level>
-
-        <Level name="National Industry" key_column="national_industry_id" name_column="national_industry_en" key_type="text">
-          <Property name="national_industry_es" column="national_industry_es" caption_set="es"/>
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <Dimension name="Geography" foreign_key="loc_id">
-      <Hierarchy name="Geography" primary_key="loc_id">
-        <Table name="dim_shared_geography" />
-        <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-          <Property name="CVE State" column="cve_ent" />
-        </Level>
-        <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
-          <Property name="CVE Municipality" column="cve_mun" />
-          <Property name="CVE Municipality Full" column="cve_mun_full" />
-        </Level>
-        <Level name="Location" key_column="loc_id" name_column="loc_name" key_type="nontext">
-          <Property name="CVE Location" column="cve_loc" />
-          <Property name="CVE Location Full" column="cve_loc_full" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
+    <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
+    <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
 
     <Dimension name="Company" foreign_key="id">
       <Hierarchy name="Company">
