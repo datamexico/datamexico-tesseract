@@ -148,11 +148,11 @@
   </SharedDimension>
 
   <SharedDimension name="Date Month" type="time">
-    <Hierarchy name="Date" primary_key="date_id">
-      <Table name="dim_shared_date" />
+    <Hierarchy name="Date" primary_key="month_id">
+      <Table name="dim_shared_date_month" />
       <Level name="Year" key_column="year" />
-      <Level name="Quarter" key_column="quarter" />
-      <Level name="Month" key_column="date_id" name_column="month" />
+      <Level name="Quarter" key_column="quarter_id" name_column="quarter_id" />
+      <Level name="Month" key_column="month_id" name_column="month_name" />
     </Hierarchy>
   </SharedDimension>
 
