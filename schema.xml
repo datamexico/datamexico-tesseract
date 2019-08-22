@@ -2338,14 +2338,15 @@
 
     <Dimension name="Income" foreign_key="income_id">
       <Hierarchy name="Income" primary_key="id">
+        <Table name="dim_shared_money" />
         <Level name="Income Group" key_column="enoe_group_id" name_column="enoe_group" key_type="nontext" />
         <Level name="Income" key_column="id" name_column="name" key_type="nontext" />
       </Hierarchy>
     </Dimension>
 
     <Dimension name="Geography Self Represented" foreign_key="mun_id">
-    <Hierarchy name="Geography" primary_key="mun_id">
-      <Table name="dim_shared_geography_self_city" />
+    <Hierarchy name="Geography Self Represented" primary_key="mun_id">
+      
       <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext" />
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
         <Property name="CVE State" column="cve_ent" />
