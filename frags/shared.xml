@@ -195,4 +195,33 @@
     </Hierarchy>
   </SharedDimension>
 
+  <SharedDimension name="Academic Degree">
+    <Hierarchy name="Academic Degree" primary_key="id">
+
+      <InlineTable alias="dim_inline_degree">
+        <ColumnDef name="id" key_type="nontext" />
+        <ColumnDef name="name_en" key_type="text" />
+        <ColumnDef name="name_es" key_type="text" />
+        <Row>
+          <Value column="id">1</Value>
+          <Value column="name_en">Master</Value>
+          <Value column="name_es">Maestría</Value>
+        </Row>
+        <Row>
+          <Value column="id">2</Value>
+          <Value column="name_en">Speciality</Value>
+          <Value column="name_es">Especialidad</Value>
+        </Row>
+        <Row>
+          <Value column="id">3</Value>
+          <Value column="name_en">PhD</Value>
+          <Value column="name_es">Doctorado</Value>
+        </Row>
+      </InlineTable>
+      <Level name="Academic Degree" key_column="id" name_column="name_en">
+        <Property name="Academic Degree ES" column="name_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
 </Schema>
