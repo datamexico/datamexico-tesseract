@@ -50,7 +50,7 @@
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
         <Property name="CVE State" column="cve_ent" />
       </Level>
-      <Level name="Municipality" key_column="mun_id" name_column="mun_id" key_type="nontext">
+      <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
         <Property name="CVE Municipality" column="cve_mun" />
         <Property name="CVE Municipality Full" column="cve_mun_full" />
       </Level>
