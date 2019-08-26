@@ -73,7 +73,7 @@
 
     <Dimension name="Career" foreign_key="program">
       <Hierarchy name="Career" primary_key="code">
-        <Table name="dim_careers_anuies"/>
+        <Table name="dim_shared_careers_anuies"/>
         <Level name="Career" key_column="code" name_column="name_en" key_type="nontext">
           <Property name="Career ES" column="name_es" caption_set="es"/>
         </Level>
