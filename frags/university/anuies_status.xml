@@ -66,7 +66,7 @@
     
     <Dimension name="Institution" foreign_key="institution">
       <Hierarchy name="Institution" primary_key="work_center_id">
-        <Table name="dim_work_centers"/>
+        <Table name="dim_shared_work_centers"/>
         <Level name="Institution" key_column="work_center_id" name_column="campus" key_type="text"/>
       </Hierarchy>
     </Dimension>
