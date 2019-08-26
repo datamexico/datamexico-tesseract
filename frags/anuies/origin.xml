@@ -1,5 +1,5 @@
 <Schema name="datamexico">
-  <Cube name="anuies_postgrade">
+  <Cube name="anuies_postgraduate_origin">
     <Table name="anuies_postgraduate_origin" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="origin" source="Geography State" name="Geography State" />

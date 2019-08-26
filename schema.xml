@@ -254,13 +254,6 @@
       <Level name="Period" key_column="period" key_type="text"/>
     </Hierarchy>
   </SharedDimension>
-<Dimension name="Period">
-    <Hierarchy name="Period">
-      <Table name="anuies_postgraduate_origin" />
-      <Level name="Period" key_column="period" key_type="text"/>
-    </Hierarchy>
-  </Dimension>
-
 <Cube name="inegi_housing">
     <Table name="inegi_housing" />
 
@@ -2742,7 +2735,7 @@
     <Measure name="Income Rate" column="income_rate" aggregator="avg" />
 
   </Cube>
-<Cube name="anuies_postgrade">
+<Cube name="anuies_postgraduate_enrollment">
     <Table name="anuies_postgraduate_enrollment" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
@@ -2754,7 +2747,7 @@
 
     <Measure name="Students" column="value" aggregator="sum" />
   </Cube>
-<Cube name="anuies_postgrade">
+<Cube name="anuies_postgraduate_origin">
     <Table name="anuies_postgraduate_origin" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="origin" source="Geography State" name="Geography State" />
@@ -2765,7 +2758,7 @@
 
     <Measure name="Students" column="value" aggregator="sum" />
   </Cube>
-<Cube name="anuies_postgrade">
+<Cube name="anuies_postgraduate_status">
     <Table name="anuies_postgraduate_status" primary_key="mun_id" />
 
     <Dimension name="Status" foreign_key="stat">

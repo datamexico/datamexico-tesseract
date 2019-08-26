@@ -1,5 +1,5 @@
 <Schema name="datamexico">
-  <Cube name="anuies_postgrade">
+  <Cube name="anuies_postgraduate_status">
     <Table name="anuies_postgraduate_status" primary_key="mun_id" />
 
     <Dimension name="Status" foreign_key="stat">

@@ -1,5 +1,5 @@
 <Schema name="datamexico">
-  <Cube name="anuies_postgrade">
+  <Cube name="anuies_postgraduate_enrollment">
     <Table name="anuies_postgraduate_enrollment" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
