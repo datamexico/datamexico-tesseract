@@ -390,11 +390,11 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Income" foreign_key="income_id">
-      <Hierarchy name="Income" primary_key="id">
+    <Dimension name="Salary" foreign_key="income_id">
+      <Hierarchy name="Salary" primary_key="id">
         <Table name="dim_shared_money" />
-        <Level name="Income Group" key_column="enoe_group_id" name_column="enoe_group" key_type="nontext" />
-        <Level name="Income" key_column="id" name_column="name" key_type="nontext" />
+        <Level name="Salary Group" key_column="enoe_group_id" name_column="enoe_group" key_type="nontext" />
+        <Level name="Salary" key_column="id" name_column="name" key_type="nontext" />
       </Hierarchy>
     </Dimension>
 
