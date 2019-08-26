@@ -4,32 +4,10 @@
 
     <DimensionUsage foreign_key="origin" source="Geography State" name="Geography State" />
     <DimensionUsage foreign_key="type" source="Academic Degree" name="Academic Degree" />
+    <DimensionUsage foreign_key="program" source="Career Fields" name="Career Fields" />
+    <DimensionUsage foreign_key="institution" source="Institution" name="Institution" />
+    <DimensionUsage foreign_key="period" source="Period" name="Period" />
 
-
-    <Dimension name="Period" foreign_key="period">
-      <Hierarchy name="Period">
-        <Table name="anuies_postgraduate_origin" />
-        <Level name="Period" key_column="period" key_type="text"/>
-      </Hierarchy>
-    </Dimension>
-
-    <Dimension name="Institution" foreign_key="institution">
-      <Hierarchy name="Institution" primary_key="work_center_id">
-        <Table name="dim_work_centers"/>
-        <Level name="Institution" key_column="work_center_id" name_column="work_center_name" key_type="text"/>
-      </Hierarchy>
-    </Dimension>
-
-    <Dimension name="Career" foreign_key="program">
-      <Hierarchy name="Career" primary_key="code">
-        <Table name="dim_careers_anuies"/>
-        <Level name="Career" key_column="code" name_column="name_en" key_type="nontext">
-          <Property name="Career ES" column="name_es" caption_set="es"/>
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <Measure name="Value" column="value" aggregator="sum" />
-
+    <Measure name="Students" column="value" aggregator="sum" />
   </Cube>
 </Schema>

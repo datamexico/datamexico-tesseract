@@ -224,4 +224,36 @@
     </Hierarchy>
   </SharedDimension>
 
+  <SharedDimension name="Career Fields">
+    <Hierarchy name="Career Fields" primary_key="code">
+      <Table name="dim_shared_careers_anuies" />
+      <Level name="Area" key_column="area_id" name_column="area_en" key_type="nontext">
+        <Property name="Area ES" column="area_es" caption_set="es"/>
+      </Level>
+      <Level name="Field" key_column="field_id" name_column="field_en" key_type="nontext">
+        <Property name="Field ES" column="field_es" caption_set="es"/>
+      </Level>
+      <Level name="Subfield" key_column="subfield_id" name_column="subfield_en" key_type="nontext">
+        <Property name="Subfield ES" column="subfield_es" caption_set="es"/>
+      </Level>
+      <Level name="Career" key_column="code" name_column="name_en" key_type="nontext">
+        <Property name="Career ES" column="name_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Institution">
+    <Hierarchy name="Institution" primary_key="work_center_id">
+      <Table name="dim_shared_work_centers"/>
+      <Level name="Institution" key_column="work_center_id" name_column="work_center_name" key_type="text"/>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Period">
+    <Hierarchy name="Period">
+      <Table name="anuies_postgraduate_origin" />
+      <Level name="Period" key_column="period" key_type="text"/>
+    </Hierarchy>
+  </SharedDimension>
+
 </Schema>
