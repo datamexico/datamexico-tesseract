@@ -2,7 +2,6 @@
   <Cube name="inegi_economic_census">
     <Table name="inegi_economic_census" primary_key="mun_id" />
 
-    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
     <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
