@@ -204,16 +204,31 @@
         <ColumnDef name="name_es" key_type="text" />
         <Row>
           <Value column="id">1</Value>
+          <Value column="name_en">Superior Technical</Value>
+          <Value column="name_es">Técnico Superior</Value>
+        </Row>
+        <Row>
+          <Value column="id">2</Value>
+          <Value column="name_en">Degree in Normal Education</Value>
+          <Value column="name_es">Licenciatura en Educación Normal</Value>
+        </Row>
+        <Row>
+          <Value column="id">3</Value>
+          <Value column="name_en">University and Technological Degree</Value>
+          <Value column="name_es">Licenciatura Universitaria y Tecnológica</Value>
+        </Row>
+        <Row>
+          <Value column="id">4</Value>
           <Value column="name_en">Master</Value>
           <Value column="name_es">Maestría</Value>
         </Row>
         <Row>
-          <Value column="id">2</Value>
+          <Value column="id">5</Value>
           <Value column="name_en">Speciality</Value>
           <Value column="name_es">Especialidad</Value>
         </Row>
         <Row>
-          <Value column="id">3</Value>
+          <Value column="id">6</Value>
           <Value column="name_en">PhD</Value>
           <Value column="name_es">Doctorado</Value>
         </Row>
