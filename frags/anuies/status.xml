@@ -19,6 +19,11 @@
             <Value column="name_en">Graduate</Value>
             <Value column="name_es">Graduado</Value>
           </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Bachelors Degree</Value>
+            <Value column="name_es">Titulado</Value>
+          </Row>
         </InlineTable>
         <Level name="Status" key_column="id" name_column="name_en">
           <Property name="Status ES" column="name_es" caption_set="es"/>
@@ -26,6 +31,7 @@
       </Hierarchy>
     </Dimension>
 
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography Municipality" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="type" source="Academic Degree" name="Academic Degree" />
     <DimensionUsage foreign_key="period" source="Period" name="Period" />
