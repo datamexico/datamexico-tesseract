@@ -21,7 +21,7 @@
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Bachelors Degree</Value>
+            <Value column="name_en">Bachelor\'s Degree</Value>
             <Value column="name_es">Titulado</Value>
           </Row>
         </InlineTable>

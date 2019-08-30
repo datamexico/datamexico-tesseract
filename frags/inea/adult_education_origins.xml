@@ -7,7 +7,7 @@
 
     <Dimension name="Origin" foreign_key="n_workers">
       <Hierarchy name="Origin" primary_key="id">
-        <InlineTable alias="dim_inline_company_size">
+        <InlineTable alias="dim_inline_n_workers">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />

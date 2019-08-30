@@ -1,5 +1,5 @@
 <Schema name="datamexico">
-  <SharedDimension name="Geography State">
+<SharedDimension name="Geography State">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography_ent" />
       <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext" />
@@ -203,16 +203,31 @@
         <ColumnDef name="name_es" key_type="text" />
         <Row>
           <Value column="id">1</Value>
+          <Value column="name_en">Superior Technical</Value>
+          <Value column="name_es">Técnico Superior</Value>
+        </Row>
+        <Row>
+          <Value column="id">2</Value>
+          <Value column="name_en">Degree in Normal Education</Value>
+          <Value column="name_es">Licenciatura en Educación Normal</Value>
+        </Row>
+        <Row>
+          <Value column="id">3</Value>
+          <Value column="name_en">University and Technological Degree</Value>
+          <Value column="name_es">Licenciatura Universitaria y Tecnológica</Value>
+        </Row>
+        <Row>
+          <Value column="id">4</Value>
           <Value column="name_en">Master</Value>
           <Value column="name_es">Maestría</Value>
         </Row>
         <Row>
-          <Value column="id">2</Value>
+          <Value column="id">5</Value>
           <Value column="name_en">Speciality</Value>
           <Value column="name_es">Especialidad</Value>
         </Row>
         <Row>
-          <Value column="id">3</Value>
+          <Value column="id">6</Value>
           <Value column="name_en">PhD</Value>
           <Value column="name_es">Doctorado</Value>
         </Row>
@@ -2735,6 +2750,7 @@
 <Cube name="anuies_postgraduate_enrollment">
     <Table name="anuies_postgraduate_enrollment" primary_key="mun_id" />
 
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography Municipality" />
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="type" source="Academic Degree" name="Academic Degree" />
@@ -2747,6 +2763,7 @@
 <Cube name="anuies_postgraduate_origin">
     <Table name="anuies_postgraduate_origin" primary_key="mun_id" />
 
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography Municipality" />
     <DimensionUsage foreign_key="origin" source="Geography State" name="Geography State" />
     <DimensionUsage foreign_key="type" source="Academic Degree" name="Academic Degree" />
     <DimensionUsage foreign_key="program" source="Career Fields" name="Career Fields" />
@@ -2775,6 +2792,11 @@
             <Value column="name_en">Graduate</Value>
             <Value column="name_es">Graduado</Value>
           </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Bachelor\'s Degree</Value>
+            <Value column="name_es">Titulado</Value>
+          </Row>
         </InlineTable>
         <Level name="Status" key_column="id" name_column="name_en">
           <Property name="Status ES" column="name_es" caption_set="es"/>
@@ -2782,6 +2804,7 @@
       </Hierarchy>
     </Dimension>
 
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography Municipality" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="type" source="Academic Degree" name="Academic Degree" />
     <DimensionUsage foreign_key="period" source="Period" name="Period" />
@@ -2789,211 +2812,6 @@
     <DimensionUsage foreign_key="institution" source="Institution" name="Institution" />
 
     <Measure name="Students" column="value" aggregator="sum" />
-
-  </Cube>
-<Cube name="anuies_postgrade">
-    <Table name="anuies_postgraduate_status" primary_key="mun_id" />
-
-    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
-
-    <Dimension name="Type" foreign_key="type">
-      <Hierarchy name="Type" primary_key="id">
-
-        <InlineTable alias="dim_inline">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">Master</Value>
-            <Value column="name_es">Maestría</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">Speciality</Value>
-            <Value column="name_es">Especialidad</Value>
-          </Row>
-          <Row>
-            <Value column="id">3</Value>
-            <Value column="name_en">PhD</Value>
-            <Value column="name_es">Doctorado</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Type" key_column="id" name_column="name_en">
-          <Property name="Type ES" column="name_es" caption_set="es"/>
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <Dimension name="Status" foreign_key="stat">
-      <Hierarchy name="Status" primary_key="id">
-
-        <InlineTable alias="dim_inline">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">Cleared to Graduate</Value>
-            <Value column="name_es">Egresado</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">Graduate</Value>
-            <Value column="name_es">Graduado</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Status" key_column="id" name_column="name_en">
-          <Property name="Status ES" column="name_es" caption_set="es"/>
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <Dimension name="Period" foreign_key="period">
-        <Hierarchy name="Period">
-            <Table name="anuies_postgraduate_status" />
-            <Level name="Period" key_column="period" key_type="text"/>
-        </Hierarchy>
-    </Dimension>
-    
-    <Dimension name="Institution" foreign_key="institution">
-      <Hierarchy name="Institution" primary_key="work_center_id">
-        <Table name="dim_shared_work_centers"/>
-        <Level name="Institution" key_column="work_center_id" name_column="campus" key_type="text"/>
-      </Hierarchy>
-    </Dimension>
-
-    <Dimension name="Career" foreign_key="program">
-      <Hierarchy name="Career" primary_key="code">
-        <Table name="dim_shared_careers_anuies"/>
-        <Level name="Career" key_column="code" name_column="name_en" key_type="nontext">
-          <Property name="Career ES" column="name_es" caption_set="es"/>
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <Measure name="Value" column="value" aggregator="sum" />
-
-  </Cube>
-<Cube name="anuies_postgrade">
-    <Table name="anuies_postgraduate_enrollment" primary_key="mun_id" />
-
-    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
-    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
-
-    <Dimension name="Type" foreign_key="type">
-      <Hierarchy name="Type" primary_key="id">
-
-        <InlineTable alias="dim_inline">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">Master</Value>
-            <Value column="name_es">Maestría</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">Speciality</Value>
-            <Value column="name_es">Especialidad</Value>
-          </Row>
-          <Row>
-            <Value column="id">3</Value>
-            <Value column="name_en">PhD</Value>
-            <Value column="name_es">Doctorado</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Type" key_column="id" name_column="name_en">
-          <Property name="Type ES" column="name_es" caption_set="es"/>
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <Dimension name="Period" foreign_key="period">
-        <Hierarchy name="Period">
-            <Table name="anuies_postgraduate_enrollment" />
-            <Level name="Period" key_column="period" key_type="text"/>
-        </Hierarchy>
-    </Dimension>
-
-    <Dimension name="Institution" foreign_key="institution">
-      <Hierarchy name="Institution" primary_key="work_center_id">
-        <Table name="dim_shared_work_centers"/>
-        <Level name="Institution" key_column="work_center_id" name_column="work_center_name" key_type="text"/>
-      </Hierarchy>
-    </Dimension>
-
-    <Dimension name="Career" foreign_key="program">
-      <Hierarchy name="Career" primary_key="code">
-        <Table name="dim_shared_careers_anuies"/>
-        <Level name="Career" key_column="code" name_column="name_en" key_type="nontext">
-          <Property name="Career ES" column="name_es" caption_set="es"/>
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <Measure name="Value" column="value" aggregator="sum" />
-
-  </Cube>
-<Cube name="anuies_postgrade">
-    <Table name="anuies_postgraduate_origin" primary_key="mun_id" />
-
-    <DimensionUsage foreign_key="origin" source="Geography State" name="Geography State" />
-
-    <Dimension name="Type" foreign_key="type">
-      <Hierarchy name="Type" primary_key="id">
-
-        <InlineTable alias="dim_inline">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">Master</Value>
-            <Value column="name_es">Maestría</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">Speciality</Value>
-            <Value column="name_es">Especialidad</Value>
-          </Row>
-          <Row>
-            <Value column="id">3</Value>
-            <Value column="name_en">PhD</Value>
-            <Value column="name_es">Doctorado</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Type" key_column="id" name_column="name_en">
-          <Property name="Type ES" column="name_es" caption_set="es"/>
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <Dimension name="Period" foreign_key="period">
-        <Hierarchy name="Period">
-            <Table name="anuies_postgraduate_origin" />
-            <Level name="Period" key_column="period" key_type="text"/>
-        </Hierarchy>
-    </Dimension>
-
-    <Dimension name="Institution" foreign_key="institution">
-      <Hierarchy name="Institution" primary_key="work_center_id">
-        <Table name="dim_shared_work_centers"/>
-        <Level name="Institution" key_column="work_center_id" name_column="work_center_name" key_type="text"/>
-      </Hierarchy>
-    </Dimension>
-
-    <Dimension name="Career" foreign_key="program">
-      <Hierarchy name="Career" primary_key="code">
-        <Table name="dim_shared_careers_anuies"/>
-        <Level name="Career" key_column="code" name_column="name_en" key_type="nontext">
-          <Property name="Career ES" column="name_es" caption_set="es"/>
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <Measure name="Value" column="value" aggregator="sum" />
 
   </Cube>
 <Cube name="trade_balance">
@@ -3056,7 +2874,7 @@
 
     <Dimension name="Origin" foreign_key="n_workers">
       <Hierarchy name="Origin" primary_key="id">
-        <InlineTable alias="dim_inline_company_size">
+        <InlineTable alias="dim_inline_n_workers">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
