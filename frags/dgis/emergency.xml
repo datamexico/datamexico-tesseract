@@ -5,7 +5,7 @@
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
     <DimensionUsage foreign_key="sex_id" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
-    <DimensionUsage foreign_key="date_id" source="Date Month" name="Date" />
+    <DimensionUsage foreign_key="date_id" source="Date Day" name="Date" />
 
     <Measure name="Average Attention Time" column="attention_time" aggregator="avg" />
     <Measure name="Total" column="count" aggregator="sum" />

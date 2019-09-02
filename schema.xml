@@ -155,6 +155,16 @@
       <Level name="Month" key_column="month_id" name_column="month" />
     </Hierarchy>
   </SharedDimension>
+  
+  <SharedDimension name="Date Day" type="time">
+    <Hierarchy name="Date" primary_key="date_id">
+      <Table name="dim_shared_date_month_day" />
+      <Level name="Year" key_column="year" />
+      <Level name="Quarter" key_column="quarter_id" name_column="quarter" />
+      <Level name="Month" key_column="month_id" name_column="month" />
+      <Level name="Date" key_column="date_id" name_column="date" />
+    </Hierarchy>
+  </SharedDimension>
 
   <SharedDimension name="Social Lag Degree">
     <Hierarchy name="Social Lag Degree" primary_key="id">
@@ -2914,7 +2924,7 @@
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
     <DimensionUsage foreign_key="sex_id" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
-    <DimensionUsage foreign_key="date_id" source="Date Month" name="Date" />
+    <DimensionUsage foreign_key="date_id" source="Date Day" name="Date" />
 
     <Measure name="Average Attention Time" column="attention_time" aggregator="avg" />
     <Measure name="Total" column="count" aggregator="sum" />
