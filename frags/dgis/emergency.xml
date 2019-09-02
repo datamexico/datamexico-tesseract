@@ -1,0 +1,13 @@
+<Schema name="datamexico">
+  <Cube name="dgis_emergency">
+    <Table name="dgis_emergency" primary_key="mun_id" />
+    <!-- TODO social_security,cie10 -->
+    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
+    <DimensionUsage foreign_key="sex_id" source="Sex" name="Sex" />
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="date_id" source="Date Month" name="Date" />
+
+    <Measure name="Average Attention Time" column="attention_time" aggregator="avg" />
+    <Measure name="Total" column="count" aggregator="sum" />
+  </Cube>
+</Schema> 
