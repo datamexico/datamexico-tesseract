@@ -2810,7 +2810,7 @@
 <Cube name="anuies_postgraduate_enrollment">
     <Table name="anuies_postgraduate_enrollment" primary_key="mun_id" />
 
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography Municipality" />
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="type" source="Academic Degree" name="Academic Degree" />
@@ -2979,15 +2979,4 @@
     <Measure name="Average Attention Time" column="attention_time" aggregator="avg" />
     <Measure name="Total" column="count" aggregator="sum" />
   </Cube>
-<Cube name="dgis_pregnancy_mortality">
-    <Table name="dgis_pregnancy_mortality" primary_key="mun_residence_id" />
-    <!-- TODO year_of_register,cie10,social_security,academic_degree,occupation,marital_status,medical_center,mun_happening_id-->
-    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
-    <DimensionUsage foreign_key="year_decease" source="Geography Municipality" name="Geography" />
-    <DimensionUsage foreign_key="date_id" source="Date Day" name="Date" />
-    <DimensionUsage foreign_key="mun_residence_id" source="Geography Municipality" name="Geography" />
-
-    <Measure name="Total" column="count" aggregator="sum" />
-  </Cube>
-
 </Schema>
