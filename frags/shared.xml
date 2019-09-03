@@ -61,6 +61,16 @@
     </Hierarchy>
   </SharedDimension>
 
+  <SharedDimension name="Country">
+    <Hierarchy name="Country" primary_key="iso3">
+      <Table name="dim_shared_country"/>
+      <Level name="Country" key_column="iso3" name_column="country_name" key_type="text">
+        <Property name="Country ES" column="country_name_es" caption_set="es"/>
+        <Property name="ISO 2" column="iso2"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
   <SharedDimension name="Industry 4 Digit">
     <Hierarchy name="Industry" primary_key="industry_group_id">
       <Table name="dim_shared_industry_enoe"/>

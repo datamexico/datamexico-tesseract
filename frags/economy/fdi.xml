@@ -1,0 +1,42 @@
+<Schema name="datamexico">
+  <Cube name="economy_fdi">
+    <Table name="economy_fdi" primary_key="quarter_id" />
+
+    <!--area_id,origin_id-->
+    <Dimension name="Generic Investment">
+      <Hierarchy name="Generic Investment" primary_key="id">
+
+        <InlineTable alias="dim_inline_generic_investment">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Accounts between companies</Value>
+            <Value column="name_es">Cuentas entre compañías</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">New investments</Value>
+            <Value column="name_es">Nuevas inversiones</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Reinvestment of profits</Value>
+            <Value column="name_es">Reinversión de utilidades</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Generic Investment" key_column="id" name_column="name_en">
+          <Property name="Generic Investment ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="area_id" source="Industry 4 Digit" name="Industry" />
+    <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
+
+    <Measure name="Count" column="count" aggregator="sum" />
+    <Measure name="Investment (Million)" column="value_million" aggregator="sum" />
+  </Cube>
+</Schema>
