@@ -1,6 +1,6 @@
 <Schema name="datamexico">
-  <Cube name="anuies_postgraduate_status">
-    <Table name="anuies_postgraduate_status" primary_key="mun_id" />
+  <Cube name="anuies_status">
+    <Table name="anuies_status" primary_key="mun_id" />
 
     <Dimension name="Status" foreign_key="stat">
       <Hierarchy name="Status" primary_key="id">
