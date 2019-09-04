@@ -286,7 +286,7 @@
 
   <SharedDimension name="Period">
     <Hierarchy name="Period">
-      <Table name="anuies_postgraduate_origin" />
+      <Table name="anuies_origin" />
       <Level name="Period" key_column="period" key_type="text"/>
     </Hierarchy>
   </SharedDimension>
