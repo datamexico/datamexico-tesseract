@@ -6,8 +6,9 @@
     <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
 
     <Dimension name="Company" foreign_key="id">
-      <Hierarchy name="Company">
-        <Level name="Company" key_column="id" name_column="name" key_type="nontext" />
+      <Hierarchy name="Company" primary_key="id">
+      <Table name="inegi_denue_companies" />
+        <Level name="Company" key_column="id" name_column="nom_estab" key_type="nontext" />
       </Hierarchy>
     </Dimension>
 
