@@ -3,8 +3,7 @@
     <Table name="dgis_pregnancy_mortality" primary_key="mun_residence_id" />
     <!--TODO year_of_register,cie10,social_security,academic_degree,occupation,marital_status,medical_center,mun_happening_id-->
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
-    <DimensionUsage foreign_key="year_decease" source="Geography Municipality" name="Geography" />
-    <DimensionUsage foreign_key="date_id" source="Date Day" name="Date" />
+    <DimensionUsage foreign_key="year_decease" source="Year" name="Year" />
     <DimensionUsage foreign_key="mun_residence_id" source="Geography Municipality" name="Geography" />
 
     <Measure name="Total" column="count" aggregator="sum" />
