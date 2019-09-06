@@ -262,12 +262,12 @@
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
           <Row>
-            <Value column="id">1</Value>
+            <Value column="id">2</Value>
             <Value column="name_en">IMSS (Social Security)</Value>
             <Value column="name_es">Seguro Social (IMSS)</Value>
           </Row>
           <Row>
-            <Value column="id">2</Value>
+            <Value column="id">5</Value>
             <Value column="name_en">Pemex, Defense or Marine</Value>
             <Value column="name_es">Hospital o clínica naval, militar o de Pemex</Value>
           </Row>
@@ -282,17 +282,17 @@
             <Value column="name_es">ISSSTE estatal (ISSSTELEÓN,ISSEMYM)</Value>
           </Row>
           <Row>
-            <Value column="id">5</Value>
+            <Value column="id">7</Value>
             <Value column="name_en">Other medical institution</Value>
             <Value column="name_es">Otra institución médica</Value>
           </Row>
           <Row>
-            <Value column="id">6</Value>
+            <Value column="id">8</Value>
             <Value column="name_en">Does not seek attention</Value>
             <Value column="name_es">No recibe atención médica</Value>
           </Row>
           <Row>
-            <Value column="id">9</Value>
+            <Value column="id">0</Value>
             <Value column="name_en">No knowledge</Value>
             <Value column="name_es">No sabe</Value>
           </Row>
