@@ -285,7 +285,7 @@
 
   <SharedDimension name="Period">
     <Hierarchy name="Period">
-      <Table name="anuies_postgraduate_origin" />
+      <Table name="anuies_origin" />
       <Level name="Period" key_column="period" key_type="text"/>
     </Hierarchy>
   </SharedDimension>
@@ -2342,12 +2342,12 @@
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
           <Row>
-            <Value column="id">1</Value>
+            <Value column="id">2</Value>
             <Value column="name_en">IMSS (Social Security)</Value>
             <Value column="name_es">Seguro Social (IMSS)</Value>
           </Row>
           <Row>
-            <Value column="id">2</Value>
+            <Value column="id">5</Value>
             <Value column="name_en">Pemex, Defense or Marine</Value>
             <Value column="name_es">Hospital o clínica naval, militar o de Pemex</Value>
           </Row>
@@ -2362,17 +2362,17 @@
             <Value column="name_es">ISSSTE estatal (ISSSTELEÓN,ISSEMYM)</Value>
           </Row>
           <Row>
-            <Value column="id">5</Value>
+            <Value column="id">7</Value>
             <Value column="name_en">Other medical institution</Value>
             <Value column="name_es">Otra institución médica</Value>
           </Row>
           <Row>
-            <Value column="id">6</Value>
+            <Value column="id">8</Value>
             <Value column="name_en">Does not seek attention</Value>
             <Value column="name_es">No recibe atención médica</Value>
           </Row>
           <Row>
-            <Value column="id">9</Value>
+            <Value column="id">0</Value>
             <Value column="name_en">No knowledge</Value>
             <Value column="name_es">No sabe</Value>
           </Row>
@@ -2535,8 +2535,9 @@
     <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
 
     <Dimension name="Company" foreign_key="id">
-      <Hierarchy name="Company">
-        <Level name="Company" key_column="id" name_column="name" key_type="nontext" />
+      <Hierarchy name="Company" primary_key="id">
+      <Table name="inegi_denue_companies" />
+        <Level name="Company" key_column="id" name_column="nom_estab" key_type="nontext" />
       </Hierarchy>
     </Dimension>
 
@@ -2617,8 +2618,6 @@
         <Level name="Month" key_column="date_id" name_column="month" />
       </Hierarchy>
     </Dimension>
-
-    <Measure name="Number of Companies" column="name" aggregator="count" />
 
     <Measure name="Number of Employees Informed" column="n_workers" aggregator="sum" />
     <Measure name="Number of Employees LCI" column="lower" aggregator="sum" />
@@ -2807,8 +2806,8 @@
     <Measure name="Income Rate" column="income_rate" aggregator="avg" />
 
   </Cube>
-<Cube name="anuies_postgraduate_enrollment">
-    <Table name="anuies_postgraduate_enrollment" primary_key="mun_id" />
+<Cube name="anuies_enrollment">
+    <Table name="anuies_enrollment" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
@@ -2820,8 +2819,8 @@
 
     <Measure name="Students" column="value" aggregator="sum" />
   </Cube>
-<Cube name="anuies_postgraduate_origin">
-    <Table name="anuies_postgraduate_origin" primary_key="mun_id" />
+<Cube name="anuies_origin">
+    <Table name="anuies_origin" primary_key="mun_id" />
 
     <!--<DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography Municipality" />-->
     <DimensionUsage foreign_key="origin" source="Geography State" name="Geography State" />
@@ -2832,8 +2831,8 @@
 
     <Measure name="Students" column="value" aggregator="sum" />
   </Cube>
-<Cube name="anuies_postgraduate_status">
-    <Table name="anuies_postgraduate_status" primary_key="mun_id" />
+<Cube name="anuies_status">
+    <Table name="anuies_status" primary_key="mun_id" />
 
     <Dimension name="Status" foreign_key="stat">
       <Hierarchy name="Status" primary_key="id">
@@ -2977,6 +2976,16 @@
     <DimensionUsage foreign_key="date_id" source="Date Day" name="Date" />
 
     <Measure name="Average Attention Time" column="attention_time" aggregator="avg" />
+    <Measure name="Total" column="count" aggregator="sum" />
+  </Cube>
+<Cube name="dgis_pregnancy_mortality">
+    <Table name="dgis_pregnancy_mortality" primary_key="mun_residence_id" />
+    <!--TODO year_of_register,cie10,social_security,academic_degree,occupation,marital_status,medical_center,mun_happening_id-->
+    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
+    <DimensionUsage foreign_key="year_decease" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="date_id" source="Date Day" name="Date" />
+    <DimensionUsage foreign_key="mun_residence_id" source="Geography Municipality" name="Geography" />
+
     <Measure name="Total" column="count" aggregator="sum" />
   </Cube>
 
