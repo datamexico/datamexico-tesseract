@@ -86,16 +86,34 @@
     </Hierarchy>
   </SharedDimension>
 
+  <SharedDimension name="Social Security">
+    <Hierarchy name="Social Security" primary_key="id">
+      <Table name="dim_shared_social_security"/>
+      <Level name="Social Security" key_column="id" name_column="social_security_en" key_type="nontext">
+        <Property name="Social Security ES" column="social_security_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Academic Degree">
+    <Hierarchy name="Academic Degree" primary_key="id">
+      <Table name="dim_shared_academic_degree"/>
+      <Level name="Academic Degree" key_column="id" name_column="academic_degree_en" key_type="nontext">
+        <Property name="Academic Degree ES" column="academic_degree_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
   <SharedDimension name="Industry 4 Digit">
     <Hierarchy name="Industry" primary_key="industry_group_id">
       <Table name="dim_shared_industry_enoe"/>
-      <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
+      <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="nontext">
         <Property name="Sector ES" column="sector_es" caption_set="es"/>
       </Level>
-      <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="text">
+      <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="nontext">
         <Property name="Subsector ES" column="subsector_es" caption_set="es"/>
       </Level>
-      <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_en" key_type="text">
+      <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_en" key_type="nontext">
         <Property name="Industry Group ES" column="industry_group_es" caption_set="es"/>
       </Level>
     </Hierarchy>
@@ -226,50 +244,6 @@
       </InlineTable>
       <Level name="Social Lag Degree" key_column="id" name_column="name_en">
         <Property name="Social Lag Degree ES" column="name_es" caption_set="es" />
-      </Level>
-    </Hierarchy>
-  </SharedDimension>
-
-  <SharedDimension name="Academic Degree">
-    <Hierarchy name="Academic Degree" primary_key="id">
-
-      <InlineTable alias="dim_inline_degree">
-        <ColumnDef name="id" key_type="nontext" />
-        <ColumnDef name="name_en" key_type="text" />
-        <ColumnDef name="name_es" key_type="text" />
-        <Row>
-          <Value column="id">1</Value>
-          <Value column="name_en">Superior Technical</Value>
-          <Value column="name_es">Técnico Superior</Value>
-        </Row>
-        <Row>
-          <Value column="id">2</Value>
-          <Value column="name_en">Degree in Normal Education</Value>
-          <Value column="name_es">Licenciatura en Educación Normal</Value>
-        </Row>
-        <Row>
-          <Value column="id">3</Value>
-          <Value column="name_en">University and Technological Degree</Value>
-          <Value column="name_es">Licenciatura Universitaria y Tecnológica</Value>
-        </Row>
-        <Row>
-          <Value column="id">4</Value>
-          <Value column="name_en">Master</Value>
-          <Value column="name_es">Maestría</Value>
-        </Row>
-        <Row>
-          <Value column="id">5</Value>
-          <Value column="name_en">Speciality</Value>
-          <Value column="name_es">Especialidad</Value>
-        </Row>
-        <Row>
-          <Value column="id">6</Value>
-          <Value column="name_en">PhD</Value>
-          <Value column="name_es">Doctorado</Value>
-        </Row>
-      </InlineTable>
-      <Level name="Academic Degree" key_column="id" name_column="name_en">
-        <Property name="Academic Degree ES" column="name_es" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>

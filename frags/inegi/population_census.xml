@@ -92,68 +92,7 @@
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension name="Health Care" foreign_key="sersalud">
-      <Hierarchy name="Health Care" primary_key="id">
-        <InlineTable alias="dim_inline_sersalud">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">99</Value>
-            <Value column="name_en">Not Specified</Value>
-            <Value column="name_es">No especificado</Value>
-          </Row>
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">IMSS (Social Security)</Value>
-            <Value column="name_es">IMSS (Seguro social)</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">ISSSTE</Value>
-            <Value column="name_es">ISSSTE</Value>
-          </Row>
-          <Row>
-            <Value column="id">3</Value>
-            <Value column="name_en">State ISSSTE</Value>
-            <Value column="name_es">ISSSTE estatal</Value>
-          </Row>
-          <Row>
-            <Value column="id">4</Value>
-            <Value column="name_en">Pemex, Defense or Marine</Value>
-            <Value column="name_es">Pemex, Defensa o Marina</Value>
-          </Row>
-          <Row>
-            <Value column="id">5</Value>
-            <Value column="name_en">SSAs Health Care Center or Hospital</Value>
-            <Value column="name_es">Centro de Salud u Hospital de la SSA (Seguro Popular)</Value>
-          </Row>
-          <Row>
-            <Value column="id">6</Value>
-            <Value column="name_en">Medical Office, clinic or private hospital</Value>
-            <Value column="name_es">Consultorio, clínica u hospital privado</Value>
-          </Row>
-          <Row>
-            <Value column="id">7</Value>
-            <Value column="name_en">Pharmacy Office</Value>
-            <Value column="name_es">Consultorio de farmacia</Value>
-          </Row>
-          <Row>
-            <Value column="id">8</Value>
-            <Value column="name_en">Another place</Value>
-            <Value column="name_es">Otro lugar</Value>
-          </Row>
-          <Row>
-            <Value column="id">9</Value>
-            <Value column="name_en">Doesn\'t seek attention</Value>
-            <Value column="name_es">No se atiende</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Health Care" key_column="id" name_column="name_en">
-          <Property name="Health Care ES" column="name_es" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
+
     <Dimension name="Health Options" foreign_key="dhsersal1">
       <Hierarchy name="Health Options" primary_key="id">
         <InlineTable alias="dim_inline_dhsersal1">
@@ -521,100 +460,72 @@
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension name="Academic Degree" foreign_key="academic_degree">
-      <Hierarchy name="Academic Degree" primary_key="id">
-        <InlineTable alias="dim_inline_academic_degree">
+
+    <Dimension name="Health Care" foreign_key="sersalud">
+      <Hierarchy name="Health Care" primary_key="id">
+        <InlineTable alias="dim_inline_sersalud">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
           <Row>
-            <Value column="id">0</Value>
-            <Value column="name_en">Undefined</Value>
-            <Value column="name_es">Ninguno</Value>
+            <Value column="id">99</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
           </Row>
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Preschool or Kindergarden</Value>
-            <Value column="name_es">Preescolar o kínder</Value>
+            <Value column="name_en">IMSS (Social Security)</Value>
+            <Value column="name_es">IMSS (Seguro social)</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Primary School</Value>
-            <Value column="name_es">Primaria</Value>
+            <Value column="name_en">ISSSTE</Value>
+            <Value column="name_es">ISSSTE</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Middle School</Value>
-            <Value column="name_es">Secundaria</Value>
+            <Value column="name_en">State ISSSTE</Value>
+            <Value column="name_es">ISSSTE estatal</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">High School  or General Baccalaureate</Value>
-            <Value column="name_es">Preparatoria o bachillerato general</Value>
+            <Value column="name_en">Pemex, Defense or Marine</Value>
+            <Value column="name_es">Pemex, Defensa o Marina</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
-            <Value column="name_en">Technical Baccalaureate</Value>
-            <Value column="name_es">Bachillerato tecnológico</Value>
+            <Value column="name_en">SSAs Health Care Center or Hospital</Value>
+            <Value column="name_es">Centro de Salud u Hospital de la SSA (Seguro Popular)</Value>
           </Row>
           <Row>
             <Value column="id">6</Value>
-            <Value column="name_en">Technical or Comercial Studies, and finished Primary School</Value>
-            <Value column="name_es">Estudios técnicos o comerciales con primaria terminada</Value>
+            <Value column="name_en">Medical Office, clinic or private hospital</Value>
+            <Value column="name_es">Consultorio, clínica u hospital privado</Value>
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">Technical or Comercial Studies, and finished Middle School</Value>
-            <Value column="name_es">Estudios técnicos o comerciales con secundaria terminada</Value>
+            <Value column="name_en">Pharmacy Office</Value>
+            <Value column="name_es">Consultorio de farmacia</Value>
           </Row>
           <Row>
             <Value column="id">8</Value>
-            <Value column="name_en">Technical or Comercial Studies, and finished High School</Value>
-            <Value column="name_es">Estudios técnicos o comerciales con preparatoria terminada</Value>
+            <Value column="name_en">Another place</Value>
+            <Value column="name_es">Otro lugar</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">Normal Studies, and finished Primary or Middle School</Value>
-            <Value column="name_es">Normal con primaria o secundaria terminada</Value>
-          </Row>
-          <Row>
-            <Value column="id">10</Value>
-            <Value column="name_en">Normal Bachelor\'s degree</Value>
-            <Value column="name_es">Normal de licenciatura</Value>
-          </Row>
-          <Row>
-            <Value column="id">11</Value>
-            <Value column="name_en">Bachelor\'s degree</Value>
-            <Value column="name_es">Licenciatura</Value>
-          </Row>
-          <Row>
-            <Value column="id">12</Value>
-            <Value column="name_en">Specialty</Value>
-            <Value column="name_es">Especialidad</Value>
-          </Row>
-          <Row>
-            <Value column="id">13</Value>
-            <Value column="name_en">Master Degree</Value>
-            <Value column="name_es">Maestría</Value>
-          </Row>
-          <Row>
-            <Value column="id">14</Value>
-            <Value column="name_en">PhD</Value>
-            <Value column="name_es">Doctorado</Value>
-          </Row>
-          <Row>
-            <Value column="id">99</Value>
-            <Value column="name_en">No Specified</Value>
-            <Value column="name_es">No especificado</Value>
+            <Value column="name_en">Doesn\'t seek attention</Value>
+            <Value column="name_es">No se atiende</Value>
           </Row>
         </InlineTable>
-
-        <Level name="Academic Degree" key_column="id" name_column="name_en">
-          <Property name="Academic Degree ES" column="name_es" caption_set="es" />
+        <Level name="Health Care" key_column="id" name_column="name_en">
+          <Property name="Health Care ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
 
+    <DimensionUsage foreign_key="academic_degree" source="Academic Degree" name="Academic Degree" />
+    <DimensionUsage foreign_key="dhsersal1" source="Social Security" name="Social Security" />
     <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />

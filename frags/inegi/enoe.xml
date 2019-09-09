@@ -255,53 +255,6 @@
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension name="Job Healthcare" foreign_key="actual_healthcare_attention">
-      <Hierarchy name="Job Healthcare" primary_key="id">
-        <InlineTable alias="dim_inline_healthcare_attention">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">IMSS (Social Security)</Value>
-            <Value column="name_es">Seguro Social (IMSS)</Value>
-          </Row>
-          <Row>
-            <Value column="id">5</Value>
-            <Value column="name_en">Pemex, Defense or Marine</Value>
-            <Value column="name_es">Hospital o clínica naval, militar o de Pemex</Value>
-          </Row>
-          <Row>
-            <Value column="id">3</Value>
-            <Value column="name_en">ISSSTE</Value>
-            <Value column="name_es">ISSSTE</Value>
-          </Row>
-          <Row>
-            <Value column="id">4</Value>
-            <Value column="name_en">State ISSSTE (ISSSTELEÓN,ISSEMYM)</Value>
-            <Value column="name_es">ISSSTE estatal (ISSSTELEÓN,ISSEMYM)</Value>
-          </Row>
-          <Row>
-            <Value column="id">7</Value>
-            <Value column="name_en">Other medical institution</Value>
-            <Value column="name_es">Otra institución médica</Value>
-          </Row>
-          <Row>
-            <Value column="id">8</Value>
-            <Value column="name_en">Does not seek attention</Value>
-            <Value column="name_es">No recibe atención médica</Value>
-          </Row>
-          <Row>
-            <Value column="id">0</Value>
-            <Value column="name_en">No knowledge</Value>
-            <Value column="name_es">No sabe</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Job Healthcare" key_column="id" name_column="name_en">
-          <Property name="Job Healthcare ES" column="name_es" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
     <Dimension name="Second Job" foreign_key="second_activity">
       <Hierarchy name="Second Job" primary_key="id">
         <InlineTable alias="dim_inline_second_activity">
@@ -413,6 +366,7 @@
       </Hierarchy>
     </Dimension>
 
+    <DimensionUsage foreign_key="actual_healthcare_attention" source="Social Security" name="Social Security" />
     <DimensionUsage foreign_key="actual_job_industry_group_id" source="Industry 4 Digit" name="Industry Actual Job" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
