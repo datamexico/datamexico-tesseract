@@ -1,5 +1,5 @@
 <Schema name="datamexico">
-  <SharedDimension name="Geography State">
+  <SharedDimension name="Geography State" type="geo">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography_ent" />
       <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext" />
@@ -9,7 +9,7 @@
     </Hierarchy>
   </SharedDimension>
 
-  <SharedDimension name="Geography State Lite">
+  <SharedDimension name="Geography State Lite" type="geo">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography_ent" />
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
@@ -18,7 +18,7 @@
     </Hierarchy>
   </SharedDimension>
 
-  <SharedDimension name="Geography Municipality Lite">
+  <SharedDimension name="Geography Municipality Lite" type="geo">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography_mun" />
       <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
@@ -28,7 +28,7 @@
     </Hierarchy>
   </SharedDimension>
 
-  <SharedDimension name="Geography Municipality">
+  <SharedDimension name="Geography Municipality" type="geo">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography_mun" />
       <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext" />
@@ -42,7 +42,7 @@
     </Hierarchy>
   </SharedDimension>
 
-  <SharedDimension name="Geography Location">
+  <SharedDimension name="Geography Location" type="geo">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography" />
       <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext" />
