@@ -1,13 +1,14 @@
 <Schema name="datamexico">
   <Cube name="dgis_pregnancy_mortality">
     <Table name="dgis_pregnancy_mortality" primary_key="mun_residence_id" />
-    <!--TODO year_of_register,cie10,social_security,academic_degree,occupation,marital_status,medical_center,mun_happening_id-->
+    <!--TODO year_of_register,social_security,academic_degree,occupation,marital_status,medical_center,mun_happening_id-->
     <Dimension name="Year" foreign_key="year_decease">
       <Hierarchy name="Year">
         <Level name="Year" key_column="year_decease" type="time" />
       </Hierarchy>
     </Dimension>
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
+    <DimensionUsage foreign_key="cie10" source="CIE-10" name="CIE-10" />
     <DimensionUsage foreign_key="mun_residence_id" source="Geography Municipality" name="Geography" />
 
     <Measure name="Total" column="count" aggregator="sum" />
