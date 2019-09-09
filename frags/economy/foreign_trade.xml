@@ -26,7 +26,7 @@
     </Dimension>
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
-    <DimensionUsage foreign_key="date_id" source="Date Month" name="Date" />
+    <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
     <DimensionUsage foreign_key="partner_country" source="Country" name="Country" />
     <!--<DimensionUsage foreign_key="product" source="Product" name="Product" />-->
 
