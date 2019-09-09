@@ -2,7 +2,7 @@
   <Cube name="economy_foreign_trade">
     <Table name="economy_foreign_trade" primary_key="loc_id" />
 
-    <Dimension name="Flow">
+    <Dimension name="Flow" foreign_key="flow_id">
       <Hierarchy name="Flow" primary_key="id">
         <InlineTable alias="dim_inline_flow">
           <ColumnDef name="id" key_type="nontext" />
