@@ -1,0 +1,11 @@
+<Schema name="datamexico">
+  <Cube name="inegi_enigh_population">
+    <Table name="inegi_enigh_population" primary_key="ent_id" />
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
+    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
+
+    <Measure name="Population" column="population" aggregator="sum" />
+  </Cube>
+</Schema>

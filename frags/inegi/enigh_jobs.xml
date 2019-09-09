@@ -1,0 +1,48 @@
+<Schema name="datamexico">
+  <Cube name="inegi_enigh_jobs">
+    <Table name="inegi_enigh_jobs" primary_key="mun_id" />
+
+    <Dimension name="Business Type" foreign_key="business_type">
+      <Hierarchy name="Business Type" primary_key="id">
+        <InlineTable alias="dim_inline_business_type">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Independent, personal or familiar</Value>
+            <Value column="name_es">Independiente, personal o familiar</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Company private sector</Value>
+            <Value column="name_es">Compañia o empresa del sector privado</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Government institution</Value>
+            <Value column="name_es">Institución de gobierno</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">No government institution</Value>
+            <Value column="name_es">Institución no administrada por el gobierno</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Business Type" key_column="id" name_column="name_en">
+          <Property name="Business Type ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
+    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
+    <DimensionUsage foreign_key="scian_id" source="Industry 4 Digit" name="Industry" />
+    <DimensionUsage foreign_key="sinco_id" source="Occupation" name="Occupation" />
+
+    <Measure name="Population" column="population" aggregator="sum" />
+    <Measure name="Average Worked Hours" column="worked_hours" aggregator="avg" />
+    
+  </Cube>
+</Schema>
