@@ -71,8 +71,8 @@
     </Hierarchy>
   </SharedDimension>
 
-  <SharedDimension name="CIE-10">
-    <Hierarchy name="CIE-10" primary_key="cie10_4digit">
+  <SharedDimension name="CIE10">
+    <Hierarchy name="CIE10" primary_key="cie10_4digit">
       <Table name="dim_shared_cie10"/>
       <Level name="Chapter" key_column="chapter_id" name_column="category_en" key_type="text">
         <Property name="Chapter ES" column="category_es" caption_set="es"/>

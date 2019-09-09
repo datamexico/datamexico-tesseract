@@ -4,7 +4,7 @@
     <!-- TODO social_security -->
 
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
-    <DimensionUsage foreign_key="cie10" source="CIE-10" name="CIE-10" />
+    <DimensionUsage foreign_key="cie10" source="CIE10" name="CIE10" />
     <DimensionUsage foreign_key="date_id" source="Date Day" name="Date" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="sex_id" source="Sex" name="Sex" />

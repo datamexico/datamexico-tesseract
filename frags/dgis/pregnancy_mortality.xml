@@ -8,7 +8,7 @@
       </Hierarchy>
     </Dimension>
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
-    <DimensionUsage foreign_key="cie10" source="CIE-10" name="CIE-10" />
+    <DimensionUsage foreign_key="cie10" source="CIE10" name="CIE10" />
     <DimensionUsage foreign_key="mun_residence_id" source="Geography Municipality" name="Geography" />
 
     <Measure name="Total" column="count" aggregator="sum" />
