@@ -2915,6 +2915,38 @@
     <Measure name="Students" column="value" aggregator="sum" />
 
   </Cube>
+<Cube name="sesnsp_crimes">
+    <Table name="sesnsp_crimes" primary_key="mun_id" />
+
+    <Dimension name="Type" foreign_key="crime_subtype_id">
+      <Hierarchy name="Type" primary_key="crime_subtype_id">
+        <Table name="dim_shared_crimes_subtype"/>
+        <Level name="Affected Legal Good" key_column="affected_legal_good_id" name_column="affected_legal_good_en" key_type="nontext">
+          <Property name="Affected Legal Good ES" column="affected_legal_good_es" caption_set="es"/>
+        </Level>
+        <Level name="Crime Type" key_column="crime_type_id" name_column="crime_type_en" key_type="nontext">
+          <Property name="Crime Type ES" column="crime_type_es" caption_set="es"/>
+        </Level>
+        <Level name="Crime Subtype" key_column="crime_subtype_id" name_column="crime_subtype_en" key_type="nontext">
+          <Property name="Crime Subtype ES" column="crime_subtype_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Modality" foreign_key="crime_modality_id">
+      <Hierarchy name="Modality" primary_key="crime_modality_id">
+        <Table name="dim_shared_crimes_modality"/>
+        <Level name="Modality" key_column="crime_modality_id" name_column="crime_modality_en" key_type="nontext">
+          <Property name="Modality ES" column="crime_modality_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
+
+    <Measure name="Value" column="value" aggregator="sum" />
+  </Cube>
 <Cube name="trade_balance">
     <Table name="trade_balance_atlas" primary_key="mun_id" />
     <Dimension name="Geography" foreign_key="mun_id">
