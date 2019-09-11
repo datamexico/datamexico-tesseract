@@ -35,7 +35,7 @@
     <DimensionUsage foreign_key="hs4_id" source="Product 4 Digit" name="Product 4 Digit" />
     <DimensionUsage foreign_key="hs6_id" source="Product" name="Product" />
 
-    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
     <DimensionUsage foreign_key="partner_country" source="Country" name="Country" />
 
