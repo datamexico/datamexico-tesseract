@@ -278,6 +278,90 @@
       <Level name="Period" key_column="period" key_type="text"/>
     </Hierarchy>
   </SharedDimension>
+
+  <SharedDimension name="Product">
+    <Hierarchy name="Product" primary_key="hs6_id">
+      <Table name="dim_shared_hs12" />
+      <Level name="Chapter" key_column="chapter" name_column="chapter_en" key_type="nontext">
+        <Property name="Chapter ES" column="chapter_es" caption_set="es"/>
+      </Level>
+      <Level name="HS2" key_column="hs2_id" name_column="hs2_en" key_type="nontext">
+        <Property name="HS2 ES" column="hs2_es" caption_set="es"/>
+      </Level>
+      <Level name="HS4" key_column="hs4_id" name_column="hs4_en" key_type="nontext">
+        <Property name="HS04 ES" column="hs4_es" caption_set="es"/>
+      </Level>
+      <Level name="HS6" key_column="hs6_id" name_column="hs6_en" key_type="nontext">
+        <Property name="HS6 ES" column="hs6_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Product 4 Digit">
+    <Hierarchy name="Product 4 Digit" primary_key="hs4_id">
+      <Table name="dim_shared_hs12" />
+      <Level name="Chapter 4 Digit" key_column="chapter" name_column="chapter_en" key_type="nontext">
+        <Property name="Chapter 4 Digit ES" column="chapter_es" caption_set="es"/>
+      </Level>
+      <Level name="HS2 4 Digit" key_column="hs2_id" name_column="hs2_en" key_type="nontext">
+        <Property name="HS2 4 Digit ES" column="hs2_es" caption_set="es"/>
+      </Level>
+      <Level name="HS4 4 Digit" key_column="hs4_id" name_column="hs4_en" key_type="nontext">
+        <Property name="HS04 4 Digit ES" column="hs4_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Product 2 Digit">
+    <Hierarchy name="Product 2 Digit" primary_key="hs2_id">
+      <Table name="dim_shared_hs12" />
+      <Level name="Chapter 2 Digit" key_column="chapter" name_column="chapter_en" key_type="nontext">
+        <Property name="Chapter 2 Digit ES" column="chapter_es" caption_set="es"/>
+      </Level>
+      <Level name="HS2 2 Digit" key_column="hs2_id" name_column="hs2_en" key_type="nontext">
+        <Property name="HS2 2 Digit ES" column="hs2_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+<Cube name="economy_foreign_trade_mun">
+    <Table name="economy_foreign_trade_mun" primary_key="mun_id" />
+
+    <Dimension name="Flow" foreign_key="flow_id">
+      <Hierarchy name="Flow" primary_key="id">
+        <InlineTable alias="dim_inline_flow">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Imports</Value>
+            <Value column="name_es">Importaciones</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Exports</Value>
+            <Value column="name_es">Exportaciones</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Flow" key_column="id" name_column="name_en">
+          <Property name="Flow ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+
+    <DimensionUsage foreign_key="hs2_id" source="Product 2 Digit" name="Product 2 Digit" />
+    <DimensionUsage foreign_key="hs4_id" source="Product 4 Digit" name="Product 4 Digit" />
+    <DimensionUsage foreign_key="hs6_id" source="Product" name="Product" />
+
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
+    <DimensionUsage foreign_key="partner_country" source="Country" name="Country" />
+
+    <Measure name="Trade Value" column="value" aggregator="sum" />
+    <Measure name="Number of Firms" column="firms" aggregator="sum" />
+
+  </Cube>
 <Cube name="economy_fdi">
     <Table name="economy_fdi" primary_key="quarter_id" />
 
@@ -318,8 +402,8 @@
     <Measure name="Count" column="count" aggregator="sum" />
     <Measure name="Investment (Million)" column="value_million" aggregator="sum" />
   </Cube>
-<Cube name="economy_foreign_trade">
-    <Table name="economy_foreign_trade" primary_key="loc_id" />
+<Cube name="economy_foreign_trade_ent">
+    <Table name="economy_foreign_trade_ent" primary_key="ent_id" />
 
     <Dimension name="Flow" foreign_key="flow_id">
       <Hierarchy name="Flow" primary_key="id">
@@ -344,10 +428,14 @@
       </Hierarchy>
     </Dimension>
 
+
+    <DimensionUsage foreign_key="hs2_id" source="Product 2 Digit" name="Product 2 Digit" />
+    <DimensionUsage foreign_key="hs4_id" source="Product 4 Digit" name="Product 4 Digit" />
+    <DimensionUsage foreign_key="hs6_id" source="Product" name="Product" />
+
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
     <DimensionUsage foreign_key="partner_country" source="Country" name="Country" />
-    <!--<DimensionUsage foreign_key="product" source="Product" name="Product" />-->
 
     <Measure name="Trade Value" column="value" aggregator="sum" />
     <Measure name="Number of Firms" column="firms" aggregator="sum" />

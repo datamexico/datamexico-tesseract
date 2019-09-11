@@ -1,0 +1,41 @@
+<Schema name="datamexico">
+  <Cube name="economy_foreign_trade_mun">
+    <Table name="economy_foreign_trade_mun" primary_key="mun_id" />
+
+    <Dimension name="Flow" foreign_key="flow_id">
+      <Hierarchy name="Flow" primary_key="id">
+        <InlineTable alias="dim_inline_flow">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Imports</Value>
+            <Value column="name_es">Importaciones</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Exports</Value>
+            <Value column="name_es">Exportaciones</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Flow" key_column="id" name_column="name_en">
+          <Property name="Flow ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+
+    <DimensionUsage foreign_key="hs2_id" source="Product 2 Digit" name="Product 2 Digit" />
+    <DimensionUsage foreign_key="hs4_id" source="Product 4 Digit" name="Product 4 Digit" />
+    <DimensionUsage foreign_key="hs6_id" source="Product" name="Product" />
+
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
+    <DimensionUsage foreign_key="partner_country" source="Country" name="Country" />
+
+    <Measure name="Trade Value" column="value" aggregator="sum" />
+    <Measure name="Number of Firms" column="firms" aggregator="sum" />
+
+  </Cube>
+</Schema>
