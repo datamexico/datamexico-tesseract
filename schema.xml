@@ -349,6 +349,11 @@
       </Hierarchy>
     </Dimension>
 
+    <Dimension name="Date Year" type="time" foreign_key="year">
+      <Hierarchy name="Date Year">
+        <Level name="Date Year" key_column="year" />
+      </Hierarchy>
+    </Dimension>
 
     <DimensionUsage foreign_key="hs2_id" source="Product 2 Digit" name="Product 2 Digit" />
     <DimensionUsage foreign_key="hs4_id" source="Product 4 Digit" name="Product 4 Digit" />
@@ -428,6 +433,11 @@
       </Hierarchy>
     </Dimension>
 
+    <Dimension name="Date Year" type="time" foreign_key="year">
+      <Hierarchy name="Date Year">
+        <Level name="Date Year" key_column="year" />
+      </Hierarchy>
+    </Dimension>
 
     <DimensionUsage foreign_key="hs2_id" source="Product 2 Digit" name="Product 2 Digit" />
     <DimensionUsage foreign_key="hs4_id" source="Product 4 Digit" name="Product 4 Digit" />
