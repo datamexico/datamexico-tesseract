@@ -36,7 +36,7 @@
     <DimensionUsage foreign_key="type" source="Academic Degree" name="Academic Degree" />
     <DimensionUsage foreign_key="period" source="Period" name="Period" />
     <DimensionUsage foreign_key="program" source="Career Fields" name="Career Fields" />
-    <DimensionUsage foreign_key="campus_id" source="Institution" name="Institution" />
+    <DimensionUsage foreign_key="campus_id" source="Campus" name="Campus" />
 
     <Measure name="Students" column="value" aggregator="sum" />
 

@@ -6,7 +6,7 @@
     <DimensionUsage foreign_key="origin" source="Geography State" name="Geography State" />
     <DimensionUsage foreign_key="type" source="Academic Degree" name="Academic Degree" />
     <DimensionUsage foreign_key="program" source="Career Fields" name="Career Fields" />
-    <DimensionUsage foreign_key="campus_id" source="Institution" name="Institution" />
+    <DimensionUsage foreign_key="campus_id" source="Campus" name="Campus" />
     <DimensionUsage foreign_key="period" source="Period" name="Period" />
 
     <Measure name="Students" column="value" aggregator="sum" />
