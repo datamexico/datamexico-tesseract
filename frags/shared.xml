@@ -270,6 +270,7 @@
     <Hierarchy name="Institution" primary_key="work_center_id">
       <Table name="dim_shared_work_centers"/>
       <Level name="Institution" key_column="work_center_id" name_column="work_center_name" key_type="text"/>
+      <Level name="Campus" key_column="campus_id" name_column="campus_name" key_type="nontext"/>
     </Hierarchy>
   </SharedDimension>
 
