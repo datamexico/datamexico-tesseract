@@ -41,6 +41,13 @@
         <Property name="CVE Municipality Full" column="cve_mun_full" />
       </Level>
     </Hierarchy>
+
+    <Hierarchy name="Metro Area">
+      <Table name="dim_shared_geography_zm" />
+      <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext" />
+
+      <Level name="Municipality MA" key_column="mun_id" name_column="mun_name" key_type="nontext" />
+    </Hierarchy>
   </SharedDimension>
 
   <SharedDimension name="Geography Location" type="geo">
