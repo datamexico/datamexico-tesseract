@@ -50,7 +50,7 @@
     </Hierarchy>
     <Hierarchy name="National Urban System">
       <Table name="dim_shared_geography_sun" />
-      <Level name="National Urban System" key_column="sun_id" name_column="sun_name" key_type="nontext" />
+      <Level name="National Urban System" key_column="sun_id" name_column="sun_name" key_type="text" />
 
       <Level name="Municipality SUN" key_column="mun_id" name_column="mun_name" key_type="nontext" />
     </Hierarchy>
@@ -82,7 +82,7 @@
 
     <Hierarchy name="National Urban System">
       <Table name="dim_shared_geography_sun_loc" />
-      <Level name="National Urban System" key_column="sun_id" name_column="sun_name" key_type="nontext" />
+      <Level name="National Urban System" key_column="sun_id" name_column="sun_name" key_type="text" />
 
       <Level name="Municipality SUN" key_column="mun_id" name_column="mun_name" key_type="nontext" />
       <Level name="Location SUN" key_column="loc_id" name_column="loc_name" key_type="nontext" />
