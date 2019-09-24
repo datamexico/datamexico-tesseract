@@ -326,4 +326,80 @@
     </Hierarchy>
   </SharedDimension>
 
+  <SharedDimension name="Trust">
+      <Hierarchy name="Trust">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">A lot of</Value>
+                <Value column="name_es">Mucha</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some</Value>
+                <Value column="name_es">Alguna</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Very little</Value>
+                <Value column="name_es">Poca</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">None</Value>
+                <Value column="name_es">Nada</Value>
+            </Row>
+            <Row>
+                <Value column="id">5</Value>
+                <Value column="name_en">Does not apply</Value>
+                <Value column="name_es">No Aplica</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Trust" key_column="id" name_column="name_en">
+          <Property name="Trust ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </SharedDimension>  
+
+    <SharedDimension name="Confidence">
+      <Hierarchy name="Confidence">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Much trust</Value>
+                <Value column="name_es">Mucha Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some confidence</Value>
+                <Value column="name_es">Algo de Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Some distrust</Value>
+                <Value column="name_es">Algo de Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">Much distrust</Value>
+                <Value column="name_es">Mucha Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">9</Value>
+                <Value column="name_en">Does not know / does not answer</Value>
+                <Value column="name_es">No Sabe / No Responde</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Confidence" key_column="id" name_column="name_en">
+          <Property name="Confidence ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </SharedDimension> 
+
 </Schema>
