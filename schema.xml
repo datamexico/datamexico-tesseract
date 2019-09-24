@@ -352,49 +352,383 @@
       </Level>
     </Hierarchy>
   </SharedDimension>
-<Cube name="economy_foreign_trade_mun">
-    <Table name="economy_foreign_trade_mun" primary_key="mun_id" />
 
-    <Dimension name="Flow" foreign_key="flow_id">
-      <Hierarchy name="Flow" primary_key="id">
-        <InlineTable alias="dim_inline_flow">
+  <SharedDimension name="Trust">
+      <Hierarchy name="Trust">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">A lot of</Value>
+                <Value column="name_es">Mucha</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some</Value>
+                <Value column="name_es">Alguna</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Very little</Value>
+                <Value column="name_es">Poca</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">None</Value>
+                <Value column="name_es">Nada</Value>
+            </Row>
+            <Row>
+                <Value column="id">5</Value>
+                <Value column="name_en">Does not apply</Value>
+                <Value column="name_es">No Aplica</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Trust" key_column="id" name_column="name_en">
+          <Property name="Trust ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </SharedDimension>  
+
+    <SharedDimension name="Confidence">
+      <Hierarchy name="Confidence">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Much trust</Value>
+                <Value column="name_es">Mucha Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some confidence</Value>
+                <Value column="name_es">Algo de Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Some distrust</Value>
+                <Value column="name_es">Algo de Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">Much distrust</Value>
+                <Value column="name_es">Mucha Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">9</Value>
+                <Value column="name_en">Does not know / does not answer</Value>
+                <Value column="name_es">No Sabe / No Responde</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Confidence" key_column="id" name_column="name_en">
+          <Property name="Confidence ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </SharedDimension> 
+
+<Cube name="anuies_enrollment">
+    <Table name="anuies_enrollment" primary_key="mun_id" />
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
+    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
+    <DimensionUsage foreign_key="type" source="Academic Degree" name="Academic Degree" />
+    <DimensionUsage foreign_key="program" source="Career Fields" name="Career Fields" />
+    <DimensionUsage foreign_key="campus_id" source="Campus" name="Campus" />
+    <DimensionUsage foreign_key="period" source="Period" name="Period" />
+
+    <Measure name="Students" column="value" aggregator="sum" />
+  </Cube>
+<Cube name="anuies_origin">
+    <Table name="anuies_origin" primary_key="mun_id" />
+
+    <!--<DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography Municipality" />-->
+    <DimensionUsage foreign_key="origin" source="Geography State" name="Geography State" />
+    <DimensionUsage foreign_key="type" source="Academic Degree" name="Academic Degree" />
+    <DimensionUsage foreign_key="program" source="Career Fields" name="Career Fields" />
+    <DimensionUsage foreign_key="campus_id" source="Campus" name="Campus" />
+    <DimensionUsage foreign_key="period" source="Period" name="Period" />
+
+    <Measure name="Students" column="value" aggregator="sum" />
+  </Cube>
+<Cube name="anuies_status">
+    <Table name="anuies_status" primary_key="mun_id" />
+
+    <Dimension name="Status" foreign_key="stat">
+      <Hierarchy name="Status" primary_key="id">
+
+        <InlineTable alias="dim_inline">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Imports</Value>
-            <Value column="name_es">Importaciones</Value>
+            <Value column="name_en">Cleared to Graduate</Value>
+            <Value column="name_es">Egresado</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Exports</Value>
-            <Value column="name_es">Exportaciones</Value>
+            <Value column="name_en">Graduate</Value>
+            <Value column="name_es">Graduado</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Bachelor\'s Degree</Value>
+            <Value column="name_es">Titulado</Value>
           </Row>
         </InlineTable>
-        <Level name="Flow" key_column="id" name_column="name_en">
-          <Property name="Flow ES" column="name_es" caption_set="es" />
+        <Level name="Status" key_column="id" name_column="name_en">
+          <Property name="Status ES" column="name_es" caption_set="es"/>
         </Level>
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Date Year" type="time" foreign_key="year">
-      <Hierarchy name="Date Year">
-        <Level name="Date Year" key_column="year" />
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography Municipality" />
+    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
+    <DimensionUsage foreign_key="type" source="Academic Degree" name="Academic Degree" />
+    <DimensionUsage foreign_key="period" source="Period" name="Period" />
+    <DimensionUsage foreign_key="program" source="Career Fields" name="Career Fields" />
+    <DimensionUsage foreign_key="campus_id" source="Campus" name="Campus" />
+
+    <Measure name="Students" column="value" aggregator="sum" />
+
+  </Cube>
+<Cube name="coneval_gini_mun">
+    <Table name="coneval_gini_mun" primary_key="mun_id" />
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Measure name="GINI" column="gini" aggregator="avg" />
+    <Measure name="Income Rate" column="income_rate" aggregator="avg" />
+
+  </Cube>
+<Cube name="coneval_poverty">
+    <Table name="coneval_poverty" primary_key="mun_id" />
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Measure name="Population" column="population" visible="false" aggregator="sum" />
+    <Measure name="Poverty" column="poverty" aggregator="sum" />
+    <Measure name="Extreme Poverty" column="extreme_poverty" aggregator="sum" />
+    <Measure name="Moderate Poverty" column="moderate_poverty" aggregator="sum" />
+    <Measure name="Vulnerable Population by Lacks" column="vulnerable_lacks" aggregator="sum" />
+    <Measure name="Vulnerable Population by Income" column="vulnerable_income" aggregator="sum" />
+    <Measure name="Population No Vulnerable" column="no_vulnerable" aggregator="sum" />
+    <Measure name="Educational Backwardness" column="educational_backwardness" aggregator="sum" />
+    <Measure name="Deprivation Quality Housing Spaces" column="deprivation_quality_housing_spaces" aggregator="sum" />
+    <Measure name="Deprivation Health Services" column="deprivation_health_services" aggregator="sum" />
+    <Measure name="Deprivation Social Security" column="deprivation_social_security" aggregator="sum" />
+    <Measure name="Deprivation Basic Services Housing" column="deprivation_basic_services_housing" aggregator="sum" />
+    <Measure name="Deprivation Food Access" column="deprivation_food_access" aggregator="sum" />
+    <Measure name="Population with at least 1 Social Lack" column="at_least_one_lack" aggregator="sum" />
+    <Measure name="Population with at least 3 Social Lacks" column="at_least_three_lacks" aggregator="sum" />
+    <Measure name="Income below Welfare Line" column="income_below_welfare_line" aggregator="sum" />
+    <Measure name="Income below Min Welfare Line" column="income_below_min_welfare_line" aggregator="sum" />
+  </Cube>
+<Cube name="coneval_social_lag_ent">
+    <Table name="coneval_social_lag_ent" primary_key="mun_id" />
+
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="social_lag_degree" source="Social Lag Degree" name="Social Lag Degree" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Measure name="Population" column="population" aggregator="avg" />
+    <Measure name="Illiterate 15+ Years" column="population_illiterate" aggregator="avg" />
+    <Measure name="No Attend School 6-14 Years" column="population_6_14_school" aggregator="avg" />
+    <Measure name="Incomplete School 15+ Years" column="population_15_incomplete_school" aggregator="avg" />
+    <Measure name="No Health Services" column="no_health_services" aggregator="avg" />
+    <Measure name="Dirt Floor" column="dirt_floor" aggregator="avg" />
+    <Measure name="No Toilet" column="dirt_floor" aggregator="avg" />
+    <Measure name="No Water Supply Network" column="no_water_supply_network" aggregator="avg" />
+    <Measure name="No Sewer System" column="no_sewer_system" aggregator="avg" />
+    <Measure name="No Electrical Energy" column="no_electrical_energy" aggregator="avg" />
+    <Measure name="No Washing Machine" column="no_washing_machine" aggregator="avg" />
+    <Measure name="No Fridge" column="no_fridge" aggregator="avg" />
+    <Measure name="Social Lag Index" column="no_fridge" aggregator="avg" />
+  </Cube>
+<Cube name="coneval_social_lag_mun">
+    <Table name="coneval_social_lag_mun" primary_key="mun_id" />
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="social_lag_degree" source="Social Lag Degree" name="Social Lag Degree" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Measure name="Population" column="population" aggregator="avg" />
+    <Measure name="Illiterate 15+ Years" column="population_illiterate" aggregator="avg" />
+    <Measure name="No Attend School 6-14 Years" column="population_6_14_school" aggregator="avg" />
+    <Measure name="Incomplete School 15+ Years" column="population_15_incomplete_school" aggregator="avg" />
+    <Measure name="No Health Services" column="no_health_services" aggregator="avg" />
+    <Measure name="Dirt Floor" column="dirt_floor" aggregator="avg" />
+    <Measure name="No Toilet" column="dirt_floor" aggregator="avg" />
+    <Measure name="No Water Supply Network" column="no_water_supply_network" aggregator="avg" />
+    <Measure name="No Sewer System" column="no_sewer_system" aggregator="avg" />
+    <Measure name="No Electrical Energy" column="no_electrical_energy" aggregator="avg" />
+    <Measure name="No Washing Machine" column="no_washing_machine" aggregator="avg" />
+    <Measure name="No Fridge" column="no_fridge" aggregator="avg" />
+    <Measure name="Social Lag Index" column="no_fridge" aggregator="avg" />
+  </Cube>
+<Cube name="sesnsp_crimes">
+    <Table name="sesnsp_crimes" primary_key="mun_id" />
+
+    <Dimension name="Type" foreign_key="crime_subtype_id">
+      <Hierarchy name="Type" primary_key="crime_subtype_id">
+        <Table name="dim_shared_crimes_subtype"/>
+        <Level name="Affected Legal Good" key_column="affected_legal_good_id" name_column="affected_legal_good_en" key_type="nontext">
+          <Property name="Affected Legal Good ES" column="affected_legal_good_es" caption_set="es"/>
+        </Level>
+        <Level name="Crime Type" key_column="crime_type_id" name_column="crime_type_en" key_type="nontext">
+          <Property name="Crime Type ES" column="crime_type_es" caption_set="es"/>
+        </Level>
+        <Level name="Crime Subtype" key_column="crime_subtype_id" name_column="crime_subtype_en" key_type="nontext">
+          <Property name="Crime Subtype ES" column="crime_subtype_es" caption_set="es"/>
+        </Level>
       </Hierarchy>
     </Dimension>
 
-    <DimensionUsage foreign_key="hs2_id" source="Product 2 Digit" name="Product 2 Digit" />
-    <DimensionUsage foreign_key="hs4_id" source="Product 4 Digit" name="Product 4 Digit" />
-    <DimensionUsage foreign_key="hs6_id" source="Product" name="Product" />
+    <Dimension name="Modality" foreign_key="crime_modality_id">
+      <Hierarchy name="Modality" primary_key="crime_modality_id">
+        <Table name="dim_shared_crimes_modality"/>
+        <Level name="Modality" key_column="crime_modality_id" name_column="crime_modality_en" key_type="nontext">
+          <Property name="Modality ES" column="crime_modality_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
-    <DimensionUsage foreign_key="partner_country" source="Country" name="Country" />
 
-    <Measure name="Trade Value" column="value" aggregator="sum" />
-    <Measure name="Number of Firms" column="firms" aggregator="sum" />
+    <Measure name="Value" column="value" aggregator="sum" />
+  </Cube>
+<Cube name="envipe">
+    <Table name="inegi_envipe" primary_key="mun_id" />
 
+    <Dimension name="Security Perception in their State" foreign_key="security_perception_in_their_state">
+      <Hierarchy name="Security Perception in their State" primary_key="id">
+
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Safe Place</Value>
+                <Value column="name_es">Seguro</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Unsafe Place</Value>
+                <Value column="name_es">Inseguro</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Does not know / does not answer</Value>
+                <Value column="name_es">No Sabe / No Responde</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Security Perception in their State" key_column="id" name_column="name_en">
+          <Property name="Security Perception in their State ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Sociodemographic Stratum" foreign_key="sociodemographic_stratum">
+      <Hierarchy name="Sociodemographic Stratum" primary_key="id">
+
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Low</Value>
+                <Value column="name_es">Bajo</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Lower middle</Value>
+                <Value column="name_es">Medio Bajo</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Upper middle</Value>
+                <Value column="name_es">Medio Alto</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">High</Value>
+                <Value column="name_es">Alto</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Sociodemographic Stratum" key_column="id" name_column="name_en">
+          <Property name="Sociodemographic Stratum ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Expenses in Protection Against Crime" foreign_key="expenses_in_protection_against_crime">
+      <Hierarchy name="Expenses in Protection Against Crime" primary_key="id">
+        <Table name="dim_shared_money" />
+        <Level name="Expenses in Protection Against Crime" key_column="id" name_column="name" />
+      </Hierarchy>
+    </Dimension>
+
+    <DimensionUsage foreign_key="neighbors_trust" source="Trust" name="Trust in Neighborhood" />
+    <DimensionUsage foreign_key="coworkers_trust" source="Trust" name="Trust in Coworkers" />
+    <DimensionUsage foreign_key="family_trust" source="Trust" name="Trust in Family" />
+    <DimensionUsage foreign_key="friends_trust" source="Trust" name="Trust in Friends" />
+
+    <DimensionUsage foreign_key="traffic_police_trust" source="Confidence" name="Confidence in Traffic Police" />
+    <DimensionUsage foreign_key="municipal_preventive_police_trust" source="Confidence" name="Confidence in Municipal Preventive Police" />
+    <DimensionUsage foreign_key="state_police_trust" source="Confidence" name="Confidence in State Police" />
+    <DimensionUsage foreign_key="federal_police_trust" source="Confidence" name="Confidence in Federal Police" />
+    <DimensionUsage foreign_key="ministerial_or_judicial_police_trust" source="Confidence" name="Confidence in Ministerial or Judicial Police" />
+    <DimensionUsage foreign_key="public_ministry_and_state_prosecutors_trust" source="Confidence" name="Confidence in Public Ministry and State Prosecutors" />
+    <DimensionUsage foreign_key="state_prosecutor_of_the_republic_trust" source="Confidence" name="Confidence in State Prosecutor of the Republic" />
+    <DimensionUsage foreign_key="army_trust" source="Confidence" name="Confidence in Army" />
+    <DimensionUsage foreign_key="navy_trust" source="Confidence" name="Confidence in Navy" />
+    <DimensionUsage foreign_key="judges_trust" source="Confidence" name="Confidence in Judges" />
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography Municipality" />
+    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
+    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
+
+    <Measure name="Homes" column="homes_factor" aggregator="sum" />
+    <Measure name="People" column="people_factor" aggregator="sum" />
+
+  </Cube>
+<Cube name="dgis_emergency">
+    <Table name="dgis_emergency" primary_key="mun_id" />
+    <!-- TODO social_security -->
+
+    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
+    <DimensionUsage foreign_key="cie10" source="CIE10" name="CIE10" />
+    <DimensionUsage foreign_key="date_id" source="Date Day" name="Date" />
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="sex_id" source="Sex" name="Sex" />
+
+    <Measure name="Average Attention Time" column="attention_time" aggregator="avg" />
+    <Measure name="Total" column="count" aggregator="sum" />
+  </Cube>
+<Cube name="dgis_pregnancy_mortality">
+    <Table name="dgis_pregnancy_mortality" primary_key="mun_residence_id" />
+    <!--TODO year_of_register,occupation,marital_status,medical_center,mun_happening_id-->
+    <Dimension name="Year" foreign_key="year_decease">
+      <Hierarchy name="Year">
+        <Level name="Year" key_column="year_decease" type="time" />
+      </Hierarchy>
+    </Dimension>
+
+    <DimensionUsage foreign_key="social_security" source="Social Security" name="Social Security" />
+    <DimensionUsage foreign_key="academic_degree" source="Academic Degree" name="Academic Degree" />
+    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
+    <DimensionUsage foreign_key="cie10" source="CIE10" name="CIE10" />
+    <DimensionUsage foreign_key="mun_residence_id" source="Geography Municipality" name="Geography" />
+
+    <Measure name="Total" column="count" aggregator="sum" />
   </Cube>
 <Cube name="economy_fdi">
     <Table name="economy_fdi" primary_key="quarter_id" />
@@ -478,6 +812,744 @@
 
     <Measure name="Trade Value" column="value" aggregator="sum" />
     <Measure name="Number of Firms" column="firms" aggregator="sum" />
+
+  </Cube>
+<Cube name="economy_foreign_trade_mun">
+    <Table name="economy_foreign_trade_mun" primary_key="mun_id" />
+
+    <Dimension name="Flow" foreign_key="flow_id">
+      <Hierarchy name="Flow" primary_key="id">
+        <InlineTable alias="dim_inline_flow">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Imports</Value>
+            <Value column="name_es">Importaciones</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Exports</Value>
+            <Value column="name_es">Exportaciones</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Flow" key_column="id" name_column="name_en">
+          <Property name="Flow ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Date Year" type="time" foreign_key="year">
+      <Hierarchy name="Date Year">
+        <Level name="Date Year" key_column="year" />
+      </Hierarchy>
+    </Dimension>
+
+    <DimensionUsage foreign_key="hs2_id" source="Product 2 Digit" name="Product 2 Digit" />
+    <DimensionUsage foreign_key="hs4_id" source="Product 4 Digit" name="Product 4 Digit" />
+    <DimensionUsage foreign_key="hs6_id" source="Product" name="Product" />
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
+    <DimensionUsage foreign_key="partner_country" source="Country" name="Country" />
+
+    <Measure name="Trade Value" column="value" aggregator="sum" />
+    <Measure name="Number of Firms" column="firms" aggregator="sum" />
+
+  </Cube>
+<Cube name="inea_adult_education_origin">
+    <Table name="inea_adult_education_origin" primary_key="ent_id" />
+
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
+
+    <Dimension name="Origin" foreign_key="origin_id">
+      <Hierarchy name="Origin" primary_key="id">
+        <InlineTable alias="dim_inline_origin_id">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Spanish Speakers</Value>
+            <Value column="name_es">Hispanohablante</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Indigenous</Value>
+            <Value column="name_es">0 - 5</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Origin" key_column="id" name_column="name_en">
+          <Property name="Origin ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Students Served on Alphabetization" column="student_served" aggregator="sum" />
+    <Measure name="Students Served on Alphabetization (Initial Level)" column="student_served_initial" aggregator="sum" />
+    <Measure name="Students Served on Alphabetization (Intermediate Level)" column="student_served_intermediate" aggregator="sum" />
+    <Measure name="Students Served on Alphabetization (Advanced Level)" column="student_served_advanced" aggregator="sum" />
+    <Measure name="Students Literated" column="student_literate" aggregator="sum" />
+    <Measure name="Students Literated (Initial Level)" column="student_literate_initial" aggregator="sum" />
+    <Measure name="Students Literated (Intermediate Level)" column="student_literate_intermediate" aggregator="sum" />
+    <Measure name="Students Literated (Advanced Level)" column="student_literate_advanced" aggregator="sum" />
+    <Measure name="Students Incorporated" column="student_incorporated" aggregator="sum" />
+    <Measure name="Students Inscribed" column="student_inscribed" aggregator="sum" />
+    <Measure name="Students Registered" column="student_registered" aggregator="sum" />
+
+  </Cube>
+<Cube name="inea_adult_education_stats">
+    <Table name="inea_adult_education_stats" primary_key="ent_id" />
+
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
+
+    <Measure name="Active advisors" column="n_advisors" aggregator="sum" />
+    <Measure name="Active technical professors" column="n_tech_professors" aggregator="sum" />
+    <Measure name="Coordinations in operation zones" column="n_zone_coordinations" aggregator="sum" />
+    <Measure name="Community places in operation" column="n_community_places" aggregator="sum" />
+    <Measure name="Study zones" column="n_study_zones" aggregator="sum" />
+    <Measure name="Meeting zones" column="n_meeting_zones" aggregator="sum" />
+
+  </Cube>
+<Cube name="inegi_denue">
+    <Table name="inegi_denue" primary_key="loc_id" />
+
+    <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
+    <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
+
+    <Dimension name="Company" foreign_key="id">
+      <Hierarchy name="Company" primary_key="id">
+      <Table name="inegi_denue_companies" />
+        <Level name="Company" key_column="id" name_column="nom_estab" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Company Size" foreign_key="n_workers">
+      <Hierarchy name="Company Size" primary_key="id">
+
+        <InlineTable alias="dim_inline_company_size">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name">0 - 5</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name">6 - 10</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name">11 - 30</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name">31 - 50</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name">51 - 100</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name">101 - 250</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name">251+</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Company Size" key_column="id" name_column="name" />
+      </Hierarchy>
+    </Dimension>
+
+
+    <Dimension name="Establishment" foreign_key="establishment">
+      <Hierarchy name="Establishment" primary_key="id">
+
+        <InlineTable alias="dim_inline_company_size">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Fijo</Value>
+            <Value column="name_es">0 - 5</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Semifijo</Value>
+            <Value column="name_es">0 - 5</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Actividad en vivienda</Value>
+            <Value column="name_es">0 - 5</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Establishment" key_column="id" name_column="name_en">
+          <Property name="Establishment ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension foreign_key="publication_date" source="Date" name="Date">
+      <Hierarchy name="Date" primary_key="date_id">
+        <Table name="dim_shared_date" />
+        <Level name="Year" key_column="year" />
+        <Level name="Quarter" key_column="quarter" />
+        <Level name="Month" key_column="date_id" name_column="month" />
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Number of Employees Informed" column="n_workers" aggregator="sum" />
+    <Measure name="Number of Employees LCI" column="lower" aggregator="sum" />
+    <Measure name="Number of Employees Midpoint" column="middle" aggregator="sum" />
+    <Measure name="Number of Employees UCI" column="upper" aggregator="sum" />
+
+  </Cube>
+<Cube name="inegi_economic_census">
+    <Table name="inegi_economic_census" primary_key="mun_id" />
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
+
+    <Measure name="Economic Unit" column="ue" aggregator="sum" />
+    <Measure name="Total Gross Production" column="a111a" aggregator="sum"/>
+    <Measure name="Intermediate Consumption" column="a121a" aggregator="sum"/>
+    <Measure name="Census Gross Value Added" column="a131a" aggregator="sum"/>
+    <Measure name="Total Investment" column="a211a" aggregator="sum"/>
+    <Measure name="Gross Fixed Capital Formation" column="a221a" aggregator="sum"/>
+    <Measure name="Merchandising Margin" column="a511a" aggregator="sum"/>
+    <Measure name="Total Expenses" column="a700a" aggregator="sum"/>
+    <Measure name="Total Income" column="a800a" aggregator="sum"/>
+    <Measure name="Total Employees Depends on the Economic Unit" column="h000a" aggregator="sum"/>
+    <Measure name="Total Male Employees Depends on the Economic Unit" column="h000b" aggregator="sum"/>
+    <Measure name="Total Female Employees Depends on the Economic Unit" column="h000c" aggregator="sum"/>
+    <Measure name="Hours Worked by Employees" column="h000d" aggregator="sum"/>
+    <Measure name="Total Employees with or without a Contract with the Economic Unit" column="h001a" aggregator="sum"/>
+    <Measure name="Total Male Employees with or without a Contract with the Economic Unit" column="h001b" aggregator="sum"/>
+    <Measure name="Total Female Employees with or without a Contract with the Economic Unit" column="h001c" aggregator="sum"/>
+    <Measure name="Hours Worked by Workforce" column="h001d" aggregator="sum"/>
+    <Measure name="Salaried Employees; Total" column="h010a" aggregator="sum"/>
+    <Measure name="Male Salaried Employees" column="h010b" aggregator="sum"/>
+    <Measure name="Female Salaried Employees" column="h010c" aggregator="sum"/>
+    <Measure name="Hours Worked by Salaried Employees" column="h010d" aggregator="sum"/>
+    <Measure name="Total Owners; Family Members and other unpaid workers" column="h020a" aggregator="sum"/>
+    <Measure name="Total Male Owners; Family Members and other unpaid workers" column="h020b" aggregator="sum"/>
+    <Measure name="Total Female Owners; Family Members and other unpaid workers" column="h020c" aggregator="sum"/>
+    <Measure name="Hours Worked by Owners; Family Members and other unpaid workers" column="h020d" aggregator="sum"/>
+    <Measure name="Employees of Production; Sales and Services; Total" column="h101a" aggregator="sum"/>
+    <Measure name="Male Employees of Production; Sales and Services" column="h101b" aggregator="sum"/>
+    <Measure name="Female Employees of Production; Sales and Services" column="h101c" aggregator="sum"/>
+    <Measure name="Hours Worked by Production; Sales and Services Employees" column="h101d" aggregator="sum"/>
+    <Measure name="Administrative; Accounting and Management Employees; Total" column="h203a" aggregator="sum"/>
+    <Measure name="Female Administrative; Accounting and Management Employees" column="h203b" aggregator="sum"/>
+    <Measure name="Male Administrative; Accounting and Management Employees" column="h203c" aggregator="sum"/>
+    <Measure name="Hours Worked by Administrative; Accounting and Management Salaried Employees" column="h203d" aggregator="sum"/>
+    <Measure name="Employees not Dependent on the Economic Unit; Total" column="i000a" aggregator="sum"/>
+    <Measure name="Male Employees not Dependent on the Economic Unit" column="i000b" aggregator="sum"/>
+    <Measure name="Female Employees not Dependent on the Economic Unit" column="i000c" aggregator="sum"/>
+    <Measure name="Hours Worked by Employees not Dependent on the Economic Unit" column="i000d" aggregator="sum"/>
+    <Measure name="Employees Provided by Another Economic Unit; Total" column="i100a" aggregator="sum"/>
+    <Measure name="Male Employees Provided by Another Economic Unit" column="i100b" aggregator="sum"/>
+    <Measure name="Female Employees Provided by Another Economic Unit" column="i100c" aggregator="sum"/>
+    <Measure name="Hours Worked by Employees Provided by Another Economic Unit" column="i100d" aggregator="sum"/>
+    <Measure name="Total Independent Contractors" column="i200a" aggregator="sum"/>
+    <Measure name="Male Independent Contractors" column="i200b" aggregator="sum"/>
+    <Measure name="Female Independent Contractors" column="i200c" aggregator="sum"/>
+    <Measure name="Hours Worked by Independent Contractors" column="i200d" aggregator="sum"/>
+    <Measure name="Total Remuneration" column="j000a" aggregator="sum"/>
+    <Measure name="Total Salary of Production; Sales and Services Employees" column="j010a" aggregator="sum"/>
+    <Measure name="Total Salary of Administrative; Accounting and Management Salaried Employees" column="j203a" aggregator="sum"/>
+    <Measure name="Employer Social Security Contributions" column="j300a" aggregator="sum"/>
+    <Measure name="Other Social Benefits" column="j400a" aggregator="sum"/>
+    <Measure name="Profit Sharing" column="j500a" aggregator="sum"/>
+    <Measure name="Severance Pay" column="j600a" aggregator="sum"/>
+    <Measure name="Total Expenses for Consumption of Goods and Services" column="k000a" aggregator="sum"/>
+    <Measure name="Goods Acquired to Commercialize" column="k010a" aggregator="sum"/>
+    <Measure name="Materials and Supplies Consumed for Provision of Services" column="k020a" aggregator="sum"/>
+    <Measure name="Raw and Procesed Material that are Integrated into Production" column="k030a" aggregator="sum"/>
+    <Measure name="Consumption of Fuels; Lubricants and Energy for the Operation of Machinery; Equipment and Vehicles" column="k040a" aggregator="sum"/>
+    <Measure name="Electricity Consumption" column="k041a" aggregator="sum"/>
+    <Measure name="Rent and Lease of Movable and Immovable Property" column="k050a" aggregator="sum"/>
+    <Measure name="Professional; Scientific and Technical Services Hired" column="k060a" aggregator="sum"/>
+    <Measure name="Maquila and Services for the Production of Goods by Contract" column="k070a" aggregator="sum"/>
+    <Measure name="Consumption of Other Goods and Services" column="k090a" aggregator="sum"/>
+    <Measure name="Freight out Expenses" column="k096a" aggregator="sum"/>
+    <Measure name="Expenses for Consumption of Stationery and Office Supplies" column="k311a" aggregator="sum"/>
+    <Measure name="Payments to Another Company that Hired and Provided Workers" column="k610a" aggregator="sum"/>
+    <Measure name="Expenses in Independent Contractors" column="k620a" aggregator="sum"/>
+    <Measure name="Advertising Expenses" column="k810a" aggregator="sum"/>
+    <Measure name="Comunication Expenses" column="k820a" aggregator="sum"/>
+    <Measure name="Expenses for Consumption of Containers and Packaging" column="k910a" aggregator="sum"/>
+    <Measure name="Expenditures for Repair; Spare Parts and Maintenance of Fixed Assets" column="k950a" aggregator="sum"/>
+    <Measure name="Water Consumption" column="k976a" aggregator="sum"/>
+    <Measure name="Total Income for Supplying Goods and Services" column="m000a" aggregator="sum"/>
+    <Measure name="Revenue from Commercialization of goods" column="m010a" aggregator="sum"/>
+    <Measure name="Revenue from the Provision of Professional; Scientific and Technical Services" column="m020a" aggregator="sum"/>
+    <Measure name="Revenue from Sales of Processed; Generated or Extracted Products" column="m030a" aggregator="sum"/>
+    <Measure name="Revenue from Rental of Movable and Immovable Property" column="m050a" aggregator="sum"/>
+    <Measure name="Other Revenue for Providing Goods and Services" column="m090a" aggregator="sum"/>
+    <Measure name="Other Components of Production" column="m091a" aggregator="sum"/>
+    <Measure name="Revenue from the Processing or Transformation of Raw Materials Owned by Third Parties" column="m700a" aggregator="sum"/>
+    <Measure name="Value of Processed Products; Generated Goods and Extracted" column="o010a" aggregator="sum"/>
+    <Measure name="Fixed Assets Produced for Own Use" column="o020a" aggregator="sum"/>
+    <Measure name="Total Initial Inventory" column="p000a" aggregator="sum"/>
+    <Measure name="Total Ending Inventory" column="p000b" aggregator="sum"/>
+    <Measure name="Total Stock Variation" column="p000c" aggregator="sum"/>
+    <Measure name="Total Initial Inventory of In-Process Products" column="p030a" aggregator="sum"/>
+    <Measure name="Total Final Inventory of In-Process Products" column="p030b" aggregator="sum"/>
+    <Measure name="Variation of Inventories of In-Process Products" column="p030c" aggregator="sum"/>
+    <Measure name="Total Initial Inventory of Goods Purchased for Merchandising" column="p100a" aggregator="sum"/>
+    <Measure name="Total Final Inventory of Goods Purchased for Merchandising" column="p100b" aggregator="sum"/>
+    <Measure name="Total Fixed Assets" column="q000a" aggregator="sum"/>
+    <Measure name="Total Deprecation of Fixed Assets" column="q000b" aggregator="sum"/>
+    <Measure name="Total Purchases of Fixed Assets" column="q000c" aggregator="sum"/>
+    <Measure name="Total Sales of Fixed Assets" column="q000d" aggregator="sum"/>
+    <Measure name="Total Stock of Machinery and Production Equipment" column="q010a" aggregator="sum"/>
+    <Measure name="Total Stock of Real Estate" column="q020a" aggregator="sum"/>
+    <Measure name="Total Stock of Units and Transport Equipment" column="q030a" aggregator="sum"/>
+    <Measure name="Total Stock of Computer Equipment and Peripherals" column="q400a" aggregator="sum"/>
+    <Measure name="Total Stock of Furniture; office Equipment and Other Fixed Assets" column="q900a" aggregator="sum"/>
+  </Cube>
+<Cube name="inegi_enigh_jobs">
+    <Table name="inegi_enigh_jobs" primary_key="mun_id" />
+
+    <Dimension name="Business Type" foreign_key="business_type">
+      <Hierarchy name="Business Type" primary_key="id">
+        <InlineTable alias="dim_inline_business_type">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Independent, personal or familiar</Value>
+            <Value column="name_es">Independiente, personal o familiar</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Company private sector</Value>
+            <Value column="name_es">Compañia o empresa del sector privado</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Government institution</Value>
+            <Value column="name_es">Institución de gobierno</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">No government institution</Value>
+            <Value column="name_es">Institución no administrada por el gobierno</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Business Type" key_column="id" name_column="name_en">
+          <Property name="Business Type ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
+    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
+    <DimensionUsage foreign_key="scian_id" source="Industry 4 Digit" name="Industry" />
+    <DimensionUsage foreign_key="sinco_id" source="Occupation" name="Occupation" />
+
+    <Measure name="Population" column="population" aggregator="sum" />
+    <Measure name="Average Worked Hours" column="worked_hours" aggregator="avg" />
+    
+  </Cube>
+<Cube name="inegi_enigh_population">
+    <Table name="inegi_enigh_population" primary_key="ent_id" />
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
+    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
+
+    <Measure name="Population" column="population" aggregator="sum" />
+  </Cube>
+<Cube name="inegi_enoe">
+    <Table name="inegi_enoe" primary_key="ent_id" />
+
+    <Dimension name="Job Situation" foreign_key="has_job_or_business">
+      <Hierarchy name="Job Situation" primary_key="id">
+        <InlineTable alias="dim_inline_job_or_business">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Has a job or a business</Value>
+            <Value column="name_es">Posee un trabajo o negocio</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Job Situation" key_column="id" name_column="name_en">
+          <Property name="Job Situation ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Job Overseas" foreign_key="search_job_overseas">
+      <Hierarchy name="Job Overseas" primary_key="id">
+        <InlineTable alias="dim_inline_job_overseas">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Has search in another country or is preparing to travel overseas</Value>
+            <Value column="name_es">Busco en otro pais o se prepara para viajar al extranjero </Value>
+          </Row>
+        </InlineTable>
+        <Level name="Job Overseas" key_column="id" name_column="name_en">
+          <Property name="JobOverseas ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Job Mexico" foreign_key="search_job_mexico">
+      <Hierarchy name="Job Mexico" primary_key="id">
+        <InlineTable alias="dim_inline_job_mexico">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Search for a job inside the country</Value>
+            <Value column="name_es">Busco trabajo en el pais</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Job Mexico" key_column="id" name_column="name_en">
+          <Property name="Job Mexico ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Start Business" foreign_key="search_start_business">
+      <Hierarchy name="Start Business" primary_key="id">
+        <InlineTable alias="dim_inline_start_business">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Wants to start a new business</Value>
+            <Value column="name_es">Quiere empezar un nuevo negocio</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Start Business" key_column="id" name_column="name_en">
+          <Property name="StartBusiness ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="No Search Job" foreign_key="search_no_search">
+      <Hierarchy name="No Search Job" primary_key="id">
+        <InlineTable alias="dim_inline_no_search">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Has not search for a job</Value>
+            <Value column="name_es">No ha tratado de buscar</Value>
+          </Row>
+        </InlineTable>
+        <Level name="No Search Job" key_column="id" name_column="name_en">
+          <Property name="No Search Job ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="No Knowledge Job" foreign_key="search_no_knowledge">
+      <Hierarchy name="No Knowledge Job" primary_key="id">
+        <InlineTable alias="dim_inline_no_knowledge">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">No knowledge</Value>
+            <Value column="name_es">No sabe</Value>
+          </Row>
+        </InlineTable>
+        <Level name="No Knowledge Job" key_column="id" name_column="name_en">
+          <Property name="No Knowledge Job ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Time Searching Job" foreign_key="time_looking_job">
+      <Hierarchy name="Time Searching Job" primary_key="id">
+        <InlineTable alias="dim_inline_time_looking_job">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Up to 1 month</Value>
+            <Value column="name_es">Hasta un mes</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">From 1 to 2 months</Value>
+            <Value column="name_es">Más de 1 hasta 2 meses</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">From 2 to 3 months</Value>
+            <Value column="name_es">Más de 2 hasta 3 meses</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">More than 3 months</Value>
+            <Value column="name_es">Más de 3 meses</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowlegde how many months</Value>
+            <Value column="name_es">No sabe cuantos meses</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Time Searching Job" key_column="id" name_column="name_en">
+          <Property name="Time Searching Job ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Payment Frecuency" foreign_key="actual_frecuency_payments">
+      <Hierarchy name="Payment Frecuency" primary_key="id">
+        <InlineTable alias="dim_inline_payment_frecuency">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Monthly</Value>
+            <Value column="name_es">Cada mes</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Biweekly</Value>
+            <Value column="name_es">Cada 15 dias</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Weekly</Value>
+            <Value column="name_es">Cada semana</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Daily</Value>
+            <Value column="name_es">Diario</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Different payments periods</Value>
+            <Value column="name_es">Otro periodo de pago</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Payment by piecework, given service or work done</Value>
+            <Value column="name_es">Le pagan por pieza producida o vendida,servicio u obra realizada</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Not sure</Value>
+            <Value column="name_es">No supo estimar</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">Refused to answer</Value>
+            <Value column="name_es">Se negó a contestar esta pregunta</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Payment Frecuency" key_column="id" name_column="name_en">
+          <Property name="Payment Frecuency ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Minimal Wage Proportion" foreign_key="actual_minimal_wages_proportion">
+      <Hierarchy name="Minimal Wage Proportion" primary_key="id">
+        <InlineTable alias="dim_inline_minimal_wages_proportion">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Less</Value>
+            <Value column="name_es">Menor</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Same as the minimun wage</Value>
+            <Value column="name_es">Igual al salario mínimo</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">More than 1 minimun wage, up to 2</Value>
+            <Value column="name_es">Más de 1 salario mínimo hasta 2</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">More than 2 minimun wage, up to 3</Value>
+            <Value column="name_es">Más de 2 salario mínimo hasta 3</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">More than 3 minimun wage, up to 5</Value>
+            <Value column="name_es">Más de 3 salario mínimo hasta 5</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">More than 5 minimun wage, up to 10</Value>
+            <Value column="name_es">Más de 5 salario mínimo hasta 10</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">More than 10 minimun wage</Value>
+            <Value column="name_es">Más de 10 salarios mínimos</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">Do not want to provide information</Value>
+            <Value column="name_es">No quiso dar información</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowledge</Value>
+            <Value column="name_es">No sabe</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Minimal Wage Proportion" key_column="id" name_column="name_en">
+          <Property name="Minimal Wage Proportion ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Second Job" foreign_key="second_activity">
+      <Hierarchy name="Second Job" primary_key="id">
+        <InlineTable alias="dim_inline_second_activity">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Sell or make products</Value>
+            <Value column="name_es">Vender o hacer productos para la venta</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Services provider</Value>
+            <Value column="name_es">Prestar servicios</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Working the soil and\/or raising livestock</Value>
+            <Value column="name_es">Trabajar su tierra o parcela y\/o crianza de animales</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Work for tips, commission or piecework</Value>
+            <Value column="name_es">Trabajar por propinas, comisión o destajo</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Work as a salaried employee</Value>
+            <Value column="name_es">Trabajar como asalariado</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Helps in some business, family lands or someone else lands</Value>
+            <Value column="name_es">Ayudar en algún negocio o en las tierras de un familiar o de otra persona</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Does not have another job</Value>
+            <Value column="name_es">No tiene otro trabajo</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowlegde</Value>
+            <Value column="name_es">No sabe</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Second Job" key_column="id" name_column="name_en">
+          <Property name="Second Job ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+
+
+    <Dimension name="Occupation Secondary Activity" foreign_key="second_activity_task">
+      <Hierarchy name="Occupation Secondary Activity" primary_key="occupation_id">
+        <Table name="dim_shared_occupations_enoe"/>
+        <Level name="Category Secondary Activity" key_column="category_id" name_column="category_en" key_type="nontext">
+          <Property name="Category Secondary Activity ES" column="category_es" caption_set="es"/>
+        </Level>
+        <Level name="Group Secondary Activity" key_column="group_id" name_column="group_en" key_type="nontext">
+          <Property name="Group Secondary Activity ES" column="group_es" caption_set="es"/>
+        </Level>
+        <Level name="Subgroup Secondary Activity" key_column="subgroup_id" name_column="subgroup_en" key_type="nontext">
+          <Property name="Subgroup Secondary Activity ES" column="subgroup_es" caption_set="es"/>
+        </Level>
+        <Level name="Occupation Secondary Activity" key_column="occupation_id" name_column="occupation_en" key_type="nontext">
+          <Property name="Occupation Secondary Activity ES" column="occupation_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Industry Secondary Activity" foreign_key="second_activity_group_id">
+      <Hierarchy name="Industry Secondary Activity" primary_key="industry_group_id">
+        <Table name="dim_shared_industry_enoe"/>
+        <Level name="Sector Secondary Activity" key_column="sector_id" name_column="sector_en" key_type="nontext">
+          <Property name="Sector Secondary Activity ES" column="sector_es" caption_set="es"/>
+        </Level>
+        <Level name="Subsector Secondary Activity" key_column="subsector_id" name_column="subsector_en" key_type="nontext">
+          <Property name="Subsector Secondary Activity ES" column="subsector_es" caption_set="es"/>
+        </Level>
+        <Level name="Industry Group Secondary Activity" key_column="industry_group_id" name_column="industry_group_en" key_type="nontext">
+          <Property name="Industry Group Secondary Activity ES" column="industry_group_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Salary" foreign_key="income_id">
+      <Hierarchy name="Salary" primary_key="id">
+        <Table name="dim_shared_money" />
+        <Level name="Salary Group" key_column="enoe_group_id" name_column="enoe_group" key_type="nontext" />
+        <Level name="Salary" key_column="id" name_column="name" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Geography Self Represented" foreign_key="mun_id">
+      <Hierarchy name="Geography Self Represented" primary_key="mun_id">
+        <Table name="dim_shared_geography_self_city" />
+        <Level name="Nation ENOE" key_column="nation_id" name_column="nation_name" key_type="nontext" />
+        <Level name="State ENOE" key_column="ent_id" name_column="ent_name" key_type="nontext">
+          <Property name="CVE State ENOE" column="cve_ent" />
+        </Level>
+        <Level name="Self Represented City" key_column="self_city_id" name_column="self_city_name" key_type="nontext" />
+        <Level name="Municipality ENOE" key_column="mun_id" name_column="mun_name" key_type="nontext">
+          <Property name="CVE Municipality ENOE" column="cve_mun" />
+          <Property name="CVE Municipality Full ENOE" column="cve_mun_full" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <DimensionUsage foreign_key="actual_healthcare_attention" source="Social Security" name="Social Security" />
+    <DimensionUsage foreign_key="actual_job_industry_group_id" source="Industry 4 Digit" name="Industry Actual Job" />
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
+    <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
+    <DimensionUsage foreign_key="actual_job_position" source="Occupation" name="Occupation Actual Job" />
+
+    <Measure name="Worked Hours Week" column="actual_job_hrs_worked_lastweek" aggregator="avg" />
+    <Measure name="Worked Days Week" column="actual_job_days_worked_lastweek" aggregator="avg" />
+    <Measure name="Wage" column="actual_amount_pesos" aggregator="avg" />
+    <Measure name="Workforce" column="population" aggregator="sum" />
 
   </Cube>
 <Cube name="inegi_housing">
@@ -1607,6 +2679,29 @@
 
     <Measure name="Households" column="households" aggregator="sum" />
   </Cube>
+<Cube name="inegi_intercensal_survey">
+  <Table name="inegi_economic_census" primary_key="mun_id" />
+
+    <Dimension name="Geography" foreign_key="mun_id">
+      <Hierarchy name="Geography" primary_key="loc_id">
+        <Table name="dim_shared_geography" />
+
+        <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+            <Property name="CVE State" column="cve_ent" />
+        </Level>
+        <Level name="Municipality" key_column="mun_id" name_column="mun_id" key_type="nontext">
+            <Property name="CVE Municipality" column="cve_mun" />
+            <Property name="CVE Municipality Full" column="cve_mun_full" />
+        </Level>
+        <Level name="Location" key_column="loc_id" name_column="loc_name" key_type="nontext">
+            <Property name="CVE Location" column="cve_loc" />
+            <Property name="CVE Location Full" column="cve_loc_full" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Economic Unit" column="ue" aggregator="sum" />
+  </Cube>
 <Cube name="inegi_population">
     <Table name="inegi_population" primary_key="loc_id" />
 
@@ -2141,841 +3236,6 @@
 
     <Measure name="Population" column="population" aggregator="sum" />
   </Cube>
-<Cube name="inegi_enigh_jobs">
-    <Table name="inegi_enigh_jobs" primary_key="mun_id" />
-
-    <Dimension name="Business Type" foreign_key="business_type">
-      <Hierarchy name="Business Type" primary_key="id">
-        <InlineTable alias="dim_inline_business_type">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">Independent, personal or familiar</Value>
-            <Value column="name_es">Independiente, personal o familiar</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">Company private sector</Value>
-            <Value column="name_es">Compañia o empresa del sector privado</Value>
-          </Row>
-          <Row>
-            <Value column="id">3</Value>
-            <Value column="name_en">Government institution</Value>
-            <Value column="name_es">Institución de gobierno</Value>
-          </Row>
-          <Row>
-            <Value column="id">4</Value>
-            <Value column="name_en">No government institution</Value>
-            <Value column="name_es">Institución no administrada por el gobierno</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Business Type" key_column="id" name_column="name_en">
-          <Property name="Business Type ES" column="name_es" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
-    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
-    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
-    <DimensionUsage foreign_key="scian_id" source="Industry 4 Digit" name="Industry" />
-    <DimensionUsage foreign_key="sinco_id" source="Occupation" name="Occupation" />
-
-    <Measure name="Population" column="population" aggregator="sum" />
-    <Measure name="Average Worked Hours" column="worked_hours" aggregator="avg" />
-    
-  </Cube>
-<Cube name="inegi_enoe">
-    <Table name="inegi_enoe" primary_key="ent_id" />
-
-    <Dimension name="Job Situation" foreign_key="has_job_or_business">
-      <Hierarchy name="Job Situation" primary_key="id">
-        <InlineTable alias="dim_inline_job_or_business">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">Has a job or a business</Value>
-            <Value column="name_es">Posee un trabajo o negocio</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">No</Value>
-            <Value column="name_es">No</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Job Situation" key_column="id" name_column="name_en">
-          <Property name="Job Situation ES" column="name_es" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
-    <Dimension name="Job Overseas" foreign_key="search_job_overseas">
-      <Hierarchy name="Job Overseas" primary_key="id">
-        <InlineTable alias="dim_inline_job_overseas">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">Has search in another country or is preparing to travel overseas</Value>
-            <Value column="name_es">Busco en otro pais o se prepara para viajar al extranjero </Value>
-          </Row>
-        </InlineTable>
-        <Level name="Job Overseas" key_column="id" name_column="name_en">
-          <Property name="JobOverseas ES" column="name_es" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
-    <Dimension name="Job Mexico" foreign_key="search_job_mexico">
-      <Hierarchy name="Job Mexico" primary_key="id">
-        <InlineTable alias="dim_inline_job_mexico">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">Search for a job inside the country</Value>
-            <Value column="name_es">Busco trabajo en el pais</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Job Mexico" key_column="id" name_column="name_en">
-          <Property name="Job Mexico ES" column="name_es" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
-    <Dimension name="Start Business" foreign_key="search_start_business">
-      <Hierarchy name="Start Business" primary_key="id">
-        <InlineTable alias="dim_inline_start_business">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">Wants to start a new business</Value>
-            <Value column="name_es">Quiere empezar un nuevo negocio</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Start Business" key_column="id" name_column="name_en">
-          <Property name="StartBusiness ES" column="name_es" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
-    <Dimension name="No Search Job" foreign_key="search_no_search">
-      <Hierarchy name="No Search Job" primary_key="id">
-        <InlineTable alias="dim_inline_no_search">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">Has not search for a job</Value>
-            <Value column="name_es">No ha tratado de buscar</Value>
-          </Row>
-        </InlineTable>
-        <Level name="No Search Job" key_column="id" name_column="name_en">
-          <Property name="No Search Job ES" column="name_es" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
-    <Dimension name="No Knowledge Job" foreign_key="search_no_knowledge">
-      <Hierarchy name="No Knowledge Job" primary_key="id">
-        <InlineTable alias="dim_inline_no_knowledge">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">No knowledge</Value>
-            <Value column="name_es">No sabe</Value>
-          </Row>
-        </InlineTable>
-        <Level name="No Knowledge Job" key_column="id" name_column="name_en">
-          <Property name="No Knowledge Job ES" column="name_es" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
-    <Dimension name="Time Searching Job" foreign_key="time_looking_job">
-      <Hierarchy name="Time Searching Job" primary_key="id">
-        <InlineTable alias="dim_inline_time_looking_job">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">Up to 1 month</Value>
-            <Value column="name_es">Hasta un mes</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">From 1 to 2 months</Value>
-            <Value column="name_es">Más de 1 hasta 2 meses</Value>
-          </Row>
-          <Row>
-            <Value column="id">3</Value>
-            <Value column="name_en">From 2 to 3 months</Value>
-            <Value column="name_es">Más de 2 hasta 3 meses</Value>
-          </Row>
-          <Row>
-            <Value column="id">4</Value>
-            <Value column="name_en">More than 3 months</Value>
-            <Value column="name_es">Más de 3 meses</Value>
-          </Row>
-          <Row>
-            <Value column="id">9</Value>
-            <Value column="name_en">No knowlegde how many months</Value>
-            <Value column="name_es">No sabe cuantos meses</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Time Searching Job" key_column="id" name_column="name_en">
-          <Property name="Time Searching Job ES" column="name_es" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
-    <Dimension name="Payment Frecuency" foreign_key="actual_frecuency_payments">
-      <Hierarchy name="Payment Frecuency" primary_key="id">
-        <InlineTable alias="dim_inline_payment_frecuency">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">Monthly</Value>
-            <Value column="name_es">Cada mes</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">Biweekly</Value>
-            <Value column="name_es">Cada 15 dias</Value>
-          </Row>
-          <Row>
-            <Value column="id">3</Value>
-            <Value column="name_en">Weekly</Value>
-            <Value column="name_es">Cada semana</Value>
-          </Row>
-          <Row>
-            <Value column="id">4</Value>
-            <Value column="name_en">Daily</Value>
-            <Value column="name_es">Diario</Value>
-          </Row>
-          <Row>
-            <Value column="id">5</Value>
-            <Value column="name_en">Different payments periods</Value>
-            <Value column="name_es">Otro periodo de pago</Value>
-          </Row>
-          <Row>
-            <Value column="id">6</Value>
-            <Value column="name_en">Payment by piecework, given service or work done</Value>
-            <Value column="name_es">Le pagan por pieza producida o vendida,servicio u obra realizada</Value>
-          </Row>
-          <Row>
-            <Value column="id">7</Value>
-            <Value column="name_en">Not sure</Value>
-            <Value column="name_es">No supo estimar</Value>
-          </Row>
-          <Row>
-            <Value column="id">8</Value>
-            <Value column="name_en">Refused to answer</Value>
-            <Value column="name_es">Se negó a contestar esta pregunta</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Payment Frecuency" key_column="id" name_column="name_en">
-          <Property name="Payment Frecuency ES" column="name_es" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
-    <Dimension name="Minimal Wage Proportion" foreign_key="actual_minimal_wages_proportion">
-      <Hierarchy name="Minimal Wage Proportion" primary_key="id">
-        <InlineTable alias="dim_inline_minimal_wages_proportion">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">Less</Value>
-            <Value column="name_es">Menor</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">Same as the minimun wage</Value>
-            <Value column="name_es">Igual al salario mínimo</Value>
-          </Row>
-          <Row>
-            <Value column="id">3</Value>
-            <Value column="name_en">More than 1 minimun wage, up to 2</Value>
-            <Value column="name_es">Más de 1 salario mínimo hasta 2</Value>
-          </Row>
-          <Row>
-            <Value column="id">4</Value>
-            <Value column="name_en">More than 2 minimun wage, up to 3</Value>
-            <Value column="name_es">Más de 2 salario mínimo hasta 3</Value>
-          </Row>
-          <Row>
-            <Value column="id">5</Value>
-            <Value column="name_en">More than 3 minimun wage, up to 5</Value>
-            <Value column="name_es">Más de 3 salario mínimo hasta 5</Value>
-          </Row>
-          <Row>
-            <Value column="id">6</Value>
-            <Value column="name_en">More than 5 minimun wage, up to 10</Value>
-            <Value column="name_es">Más de 5 salario mínimo hasta 10</Value>
-          </Row>
-          <Row>
-            <Value column="id">7</Value>
-            <Value column="name_en">More than 10 minimun wage</Value>
-            <Value column="name_es">Más de 10 salarios mínimos</Value>
-          </Row>
-          <Row>
-            <Value column="id">8</Value>
-            <Value column="name_en">Do not want to provide information</Value>
-            <Value column="name_es">No quiso dar información</Value>
-          </Row>
-          <Row>
-            <Value column="id">9</Value>
-            <Value column="name_en">No knowledge</Value>
-            <Value column="name_es">No sabe</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Minimal Wage Proportion" key_column="id" name_column="name_en">
-          <Property name="Minimal Wage Proportion ES" column="name_es" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
-    <Dimension name="Second Job" foreign_key="second_activity">
-      <Hierarchy name="Second Job" primary_key="id">
-        <InlineTable alias="dim_inline_second_activity">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">Sell or make products</Value>
-            <Value column="name_es">Vender o hacer productos para la venta</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">Services provider</Value>
-            <Value column="name_es">Prestar servicios</Value>
-          </Row>
-          <Row>
-            <Value column="id">3</Value>
-            <Value column="name_en">Working the soil and\/or raising livestock</Value>
-            <Value column="name_es">Trabajar su tierra o parcela y\/o crianza de animales</Value>
-          </Row>
-          <Row>
-            <Value column="id">4</Value>
-            <Value column="name_en">Work for tips, commission or piecework</Value>
-            <Value column="name_es">Trabajar por propinas, comisión o destajo</Value>
-          </Row>
-          <Row>
-            <Value column="id">5</Value>
-            <Value column="name_en">Work as a salaried employee</Value>
-            <Value column="name_es">Trabajar como asalariado</Value>
-          </Row>
-          <Row>
-            <Value column="id">6</Value>
-            <Value column="name_en">Helps in some business, family lands or someone else lands</Value>
-            <Value column="name_es">Ayudar en algún negocio o en las tierras de un familiar o de otra persona</Value>
-          </Row>
-          <Row>
-            <Value column="id">7</Value>
-            <Value column="name_en">Does not have another job</Value>
-            <Value column="name_es">No tiene otro trabajo</Value>
-          </Row>
-          <Row>
-            <Value column="id">9</Value>
-            <Value column="name_en">No knowlegde</Value>
-            <Value column="name_es">No sabe</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Second Job" key_column="id" name_column="name_en">
-          <Property name="Second Job ES" column="name_es" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-
-
-    <Dimension name="Occupation Secondary Activity" foreign_key="second_activity_task">
-      <Hierarchy name="Occupation Secondary Activity" primary_key="occupation_id">
-        <Table name="dim_shared_occupations_enoe"/>
-        <Level name="Category Secondary Activity" key_column="category_id" name_column="category_en" key_type="nontext">
-          <Property name="Category Secondary Activity ES" column="category_es" caption_set="es"/>
-        </Level>
-        <Level name="Group Secondary Activity" key_column="group_id" name_column="group_en" key_type="nontext">
-          <Property name="Group Secondary Activity ES" column="group_es" caption_set="es"/>
-        </Level>
-        <Level name="Subgroup Secondary Activity" key_column="subgroup_id" name_column="subgroup_en" key_type="nontext">
-          <Property name="Subgroup Secondary Activity ES" column="subgroup_es" caption_set="es"/>
-        </Level>
-        <Level name="Occupation Secondary Activity" key_column="occupation_id" name_column="occupation_en" key_type="nontext">
-          <Property name="Occupation Secondary Activity ES" column="occupation_es" caption_set="es"/>
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <Dimension name="Industry Secondary Activity" foreign_key="second_activity_group_id">
-      <Hierarchy name="Industry Secondary Activity" primary_key="industry_group_id">
-        <Table name="dim_shared_industry_enoe"/>
-        <Level name="Sector Secondary Activity" key_column="sector_id" name_column="sector_en" key_type="nontext">
-          <Property name="Sector Secondary Activity ES" column="sector_es" caption_set="es"/>
-        </Level>
-        <Level name="Subsector Secondary Activity" key_column="subsector_id" name_column="subsector_en" key_type="nontext">
-          <Property name="Subsector Secondary Activity ES" column="subsector_es" caption_set="es"/>
-        </Level>
-        <Level name="Industry Group Secondary Activity" key_column="industry_group_id" name_column="industry_group_en" key_type="nontext">
-          <Property name="Industry Group Secondary Activity ES" column="industry_group_es" caption_set="es"/>
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <Dimension name="Salary" foreign_key="income_id">
-      <Hierarchy name="Salary" primary_key="id">
-        <Table name="dim_shared_money" />
-        <Level name="Salary Group" key_column="enoe_group_id" name_column="enoe_group" key_type="nontext" />
-        <Level name="Salary" key_column="id" name_column="name" key_type="nontext" />
-      </Hierarchy>
-    </Dimension>
-
-    <Dimension name="Geography Self Represented" foreign_key="mun_id">
-      <Hierarchy name="Geography Self Represented" primary_key="mun_id">
-        <Table name="dim_shared_geography_self_city" />
-        <Level name="Nation ENOE" key_column="nation_id" name_column="nation_name" key_type="nontext" />
-        <Level name="State ENOE" key_column="ent_id" name_column="ent_name" key_type="nontext">
-          <Property name="CVE State ENOE" column="cve_ent" />
-        </Level>
-        <Level name="Self Represented City" key_column="self_city_id" name_column="self_city_name" key_type="nontext" />
-        <Level name="Municipality ENOE" key_column="mun_id" name_column="mun_name" key_type="nontext">
-          <Property name="CVE Municipality ENOE" column="cve_mun" />
-          <Property name="CVE Municipality Full ENOE" column="cve_mun_full" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <DimensionUsage foreign_key="actual_healthcare_attention" source="Social Security" name="Social Security" />
-    <DimensionUsage foreign_key="actual_job_industry_group_id" source="Industry 4 Digit" name="Industry Actual Job" />
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
-    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
-    <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
-    <DimensionUsage foreign_key="actual_job_position" source="Occupation" name="Occupation Actual Job" />
-
-    <Measure name="Worked Hours Week" column="actual_job_hrs_worked_lastweek" aggregator="avg" />
-    <Measure name="Worked Days Week" column="actual_job_days_worked_lastweek" aggregator="avg" />
-    <Measure name="Wage" column="actual_amount_pesos" aggregator="avg" />
-    <Measure name="Workforce" column="population" aggregator="sum" />
-
-  </Cube>
-<Cube name="inegi_enigh_population">
-    <Table name="inegi_enigh_population" primary_key="ent_id" />
-
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
-    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
-    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
-
-    <Measure name="Population" column="population" aggregator="sum" />
-  </Cube>
-<Cube name="inegi_intercensal_survey">
-  <Table name="inegi_economic_census" primary_key="mun_id" />
-
-    <Dimension name="Geography" foreign_key="mun_id">
-      <Hierarchy name="Geography" primary_key="loc_id">
-        <Table name="dim_shared_geography" />
-
-        <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-            <Property name="CVE State" column="cve_ent" />
-        </Level>
-        <Level name="Municipality" key_column="mun_id" name_column="mun_id" key_type="nontext">
-            <Property name="CVE Municipality" column="cve_mun" />
-            <Property name="CVE Municipality Full" column="cve_mun_full" />
-        </Level>
-        <Level name="Location" key_column="loc_id" name_column="loc_name" key_type="nontext">
-            <Property name="CVE Location" column="cve_loc" />
-            <Property name="CVE Location Full" column="cve_loc_full" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <Measure name="Economic Unit" column="ue" aggregator="sum" />
-  </Cube>
-<Cube name="inegi_denue">
-    <Table name="inegi_denue" primary_key="loc_id" />
-
-    <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
-    <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
-
-    <Dimension name="Company" foreign_key="id">
-      <Hierarchy name="Company" primary_key="id">
-      <Table name="inegi_denue_companies" />
-        <Level name="Company" key_column="id" name_column="nom_estab" key_type="nontext" />
-      </Hierarchy>
-    </Dimension>
-
-    <Dimension name="Company Size" foreign_key="n_workers">
-      <Hierarchy name="Company Size" primary_key="id">
-
-        <InlineTable alias="dim_inline_company_size">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name">0 - 5</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name">6 - 10</Value>
-          </Row>
-          <Row>
-            <Value column="id">3</Value>
-            <Value column="name">11 - 30</Value>
-          </Row>
-          <Row>
-            <Value column="id">4</Value>
-            <Value column="name">31 - 50</Value>
-          </Row>
-          <Row>
-            <Value column="id">5</Value>
-            <Value column="name">51 - 100</Value>
-          </Row>
-          <Row>
-            <Value column="id">6</Value>
-            <Value column="name">101 - 250</Value>
-          </Row>
-          <Row>
-            <Value column="id">7</Value>
-            <Value column="name">251+</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Company Size" key_column="id" name_column="name" />
-      </Hierarchy>
-    </Dimension>
-
-
-    <Dimension name="Establishment" foreign_key="establishment">
-      <Hierarchy name="Establishment" primary_key="id">
-
-        <InlineTable alias="dim_inline_company_size">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">Fijo</Value>
-            <Value column="name_es">0 - 5</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">Semifijo</Value>
-            <Value column="name_es">0 - 5</Value>
-          </Row>
-          <Row>
-            <Value column="id">3</Value>
-            <Value column="name_en">Actividad en vivienda</Value>
-            <Value column="name_es">0 - 5</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Establishment" key_column="id" name_column="name_en">
-          <Property name="Establishment ES" column="name_es" caption_set="es"/>
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <Dimension foreign_key="publication_date" source="Date" name="Date">
-      <Hierarchy name="Date" primary_key="date_id">
-        <Table name="dim_shared_date" />
-        <Level name="Year" key_column="year" />
-        <Level name="Quarter" key_column="quarter" />
-        <Level name="Month" key_column="date_id" name_column="month" />
-      </Hierarchy>
-    </Dimension>
-
-    <Measure name="Number of Employees Informed" column="n_workers" aggregator="sum" />
-    <Measure name="Number of Employees LCI" column="lower" aggregator="sum" />
-    <Measure name="Number of Employees Midpoint" column="middle" aggregator="sum" />
-    <Measure name="Number of Employees UCI" column="upper" aggregator="sum" />
-
-  </Cube>
-<Cube name="inegi_economic_census">
-    <Table name="inegi_economic_census" primary_key="mun_id" />
-
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
-    <DimensionUsage foreign_key="year" source="Year" name="Year" />
-    <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
-
-    <Measure name="Economic Unit" column="ue" aggregator="sum" />
-    <Measure name="Total Gross Production" column="a111a" aggregator="sum"/>
-    <Measure name="Intermediate Consumption" column="a121a" aggregator="sum"/>
-    <Measure name="Census Gross Value Added" column="a131a" aggregator="sum"/>
-    <Measure name="Total Investment" column="a211a" aggregator="sum"/>
-    <Measure name="Gross Fixed Capital Formation" column="a221a" aggregator="sum"/>
-    <Measure name="Merchandising Margin" column="a511a" aggregator="sum"/>
-    <Measure name="Total Expenses" column="a700a" aggregator="sum"/>
-    <Measure name="Total Income" column="a800a" aggregator="sum"/>
-    <Measure name="Total Employees Depends on the Economic Unit" column="h000a" aggregator="sum"/>
-    <Measure name="Total Male Employees Depends on the Economic Unit" column="h000b" aggregator="sum"/>
-    <Measure name="Total Female Employees Depends on the Economic Unit" column="h000c" aggregator="sum"/>
-    <Measure name="Hours Worked by Employees" column="h000d" aggregator="sum"/>
-    <Measure name="Total Employees with or without a Contract with the Economic Unit" column="h001a" aggregator="sum"/>
-    <Measure name="Total Male Employees with or without a Contract with the Economic Unit" column="h001b" aggregator="sum"/>
-    <Measure name="Total Female Employees with or without a Contract with the Economic Unit" column="h001c" aggregator="sum"/>
-    <Measure name="Hours Worked by Workforce" column="h001d" aggregator="sum"/>
-    <Measure name="Salaried Employees; Total" column="h010a" aggregator="sum"/>
-    <Measure name="Male Salaried Employees" column="h010b" aggregator="sum"/>
-    <Measure name="Female Salaried Employees" column="h010c" aggregator="sum"/>
-    <Measure name="Hours Worked by Salaried Employees" column="h010d" aggregator="sum"/>
-    <Measure name="Total Owners; Family Members and other unpaid workers" column="h020a" aggregator="sum"/>
-    <Measure name="Total Male Owners; Family Members and other unpaid workers" column="h020b" aggregator="sum"/>
-    <Measure name="Total Female Owners; Family Members and other unpaid workers" column="h020c" aggregator="sum"/>
-    <Measure name="Hours Worked by Owners; Family Members and other unpaid workers" column="h020d" aggregator="sum"/>
-    <Measure name="Employees of Production; Sales and Services; Total" column="h101a" aggregator="sum"/>
-    <Measure name="Male Employees of Production; Sales and Services" column="h101b" aggregator="sum"/>
-    <Measure name="Female Employees of Production; Sales and Services" column="h101c" aggregator="sum"/>
-    <Measure name="Hours Worked by Production; Sales and Services Employees" column="h101d" aggregator="sum"/>
-    <Measure name="Administrative; Accounting and Management Employees; Total" column="h203a" aggregator="sum"/>
-    <Measure name="Female Administrative; Accounting and Management Employees" column="h203b" aggregator="sum"/>
-    <Measure name="Male Administrative; Accounting and Management Employees" column="h203c" aggregator="sum"/>
-    <Measure name="Hours Worked by Administrative; Accounting and Management Salaried Employees" column="h203d" aggregator="sum"/>
-    <Measure name="Employees not Dependent on the Economic Unit; Total" column="i000a" aggregator="sum"/>
-    <Measure name="Male Employees not Dependent on the Economic Unit" column="i000b" aggregator="sum"/>
-    <Measure name="Female Employees not Dependent on the Economic Unit" column="i000c" aggregator="sum"/>
-    <Measure name="Hours Worked by Employees not Dependent on the Economic Unit" column="i000d" aggregator="sum"/>
-    <Measure name="Employees Provided by Another Economic Unit; Total" column="i100a" aggregator="sum"/>
-    <Measure name="Male Employees Provided by Another Economic Unit" column="i100b" aggregator="sum"/>
-    <Measure name="Female Employees Provided by Another Economic Unit" column="i100c" aggregator="sum"/>
-    <Measure name="Hours Worked by Employees Provided by Another Economic Unit" column="i100d" aggregator="sum"/>
-    <Measure name="Total Independent Contractors" column="i200a" aggregator="sum"/>
-    <Measure name="Male Independent Contractors" column="i200b" aggregator="sum"/>
-    <Measure name="Female Independent Contractors" column="i200c" aggregator="sum"/>
-    <Measure name="Hours Worked by Independent Contractors" column="i200d" aggregator="sum"/>
-    <Measure name="Total Remuneration" column="j000a" aggregator="sum"/>
-    <Measure name="Total Salary of Production; Sales and Services Employees" column="j010a" aggregator="sum"/>
-    <Measure name="Total Salary of Administrative; Accounting and Management Salaried Employees" column="j203a" aggregator="sum"/>
-    <Measure name="Employer Social Security Contributions" column="j300a" aggregator="sum"/>
-    <Measure name="Other Social Benefits" column="j400a" aggregator="sum"/>
-    <Measure name="Profit Sharing" column="j500a" aggregator="sum"/>
-    <Measure name="Severance Pay" column="j600a" aggregator="sum"/>
-    <Measure name="Total Expenses for Consumption of Goods and Services" column="k000a" aggregator="sum"/>
-    <Measure name="Goods Acquired to Commercialize" column="k010a" aggregator="sum"/>
-    <Measure name="Materials and Supplies Consumed for Provision of Services" column="k020a" aggregator="sum"/>
-    <Measure name="Raw and Procesed Material that are Integrated into Production" column="k030a" aggregator="sum"/>
-    <Measure name="Consumption of Fuels; Lubricants and Energy for the Operation of Machinery; Equipment and Vehicles" column="k040a" aggregator="sum"/>
-    <Measure name="Electricity Consumption" column="k041a" aggregator="sum"/>
-    <Measure name="Rent and Lease of Movable and Immovable Property" column="k050a" aggregator="sum"/>
-    <Measure name="Professional; Scientific and Technical Services Hired" column="k060a" aggregator="sum"/>
-    <Measure name="Maquila and Services for the Production of Goods by Contract" column="k070a" aggregator="sum"/>
-    <Measure name="Consumption of Other Goods and Services" column="k090a" aggregator="sum"/>
-    <Measure name="Freight out Expenses" column="k096a" aggregator="sum"/>
-    <Measure name="Expenses for Consumption of Stationery and Office Supplies" column="k311a" aggregator="sum"/>
-    <Measure name="Payments to Another Company that Hired and Provided Workers" column="k610a" aggregator="sum"/>
-    <Measure name="Expenses in Independent Contractors" column="k620a" aggregator="sum"/>
-    <Measure name="Advertising Expenses" column="k810a" aggregator="sum"/>
-    <Measure name="Comunication Expenses" column="k820a" aggregator="sum"/>
-    <Measure name="Expenses for Consumption of Containers and Packaging" column="k910a" aggregator="sum"/>
-    <Measure name="Expenditures for Repair; Spare Parts and Maintenance of Fixed Assets" column="k950a" aggregator="sum"/>
-    <Measure name="Water Consumption" column="k976a" aggregator="sum"/>
-    <Measure name="Total Income for Supplying Goods and Services" column="m000a" aggregator="sum"/>
-    <Measure name="Revenue from Commercialization of goods" column="m010a" aggregator="sum"/>
-    <Measure name="Revenue from the Provision of Professional; Scientific and Technical Services" column="m020a" aggregator="sum"/>
-    <Measure name="Revenue from Sales of Processed; Generated or Extracted Products" column="m030a" aggregator="sum"/>
-    <Measure name="Revenue from Rental of Movable and Immovable Property" column="m050a" aggregator="sum"/>
-    <Measure name="Other Revenue for Providing Goods and Services" column="m090a" aggregator="sum"/>
-    <Measure name="Other Components of Production" column="m091a" aggregator="sum"/>
-    <Measure name="Revenue from the Processing or Transformation of Raw Materials Owned by Third Parties" column="m700a" aggregator="sum"/>
-    <Measure name="Value of Processed Products; Generated Goods and Extracted" column="o010a" aggregator="sum"/>
-    <Measure name="Fixed Assets Produced for Own Use" column="o020a" aggregator="sum"/>
-    <Measure name="Total Initial Inventory" column="p000a" aggregator="sum"/>
-    <Measure name="Total Ending Inventory" column="p000b" aggregator="sum"/>
-    <Measure name="Total Stock Variation" column="p000c" aggregator="sum"/>
-    <Measure name="Total Initial Inventory of In-Process Products" column="p030a" aggregator="sum"/>
-    <Measure name="Total Final Inventory of In-Process Products" column="p030b" aggregator="sum"/>
-    <Measure name="Variation of Inventories of In-Process Products" column="p030c" aggregator="sum"/>
-    <Measure name="Total Initial Inventory of Goods Purchased for Merchandising" column="p100a" aggregator="sum"/>
-    <Measure name="Total Final Inventory of Goods Purchased for Merchandising" column="p100b" aggregator="sum"/>
-    <Measure name="Total Fixed Assets" column="q000a" aggregator="sum"/>
-    <Measure name="Total Deprecation of Fixed Assets" column="q000b" aggregator="sum"/>
-    <Measure name="Total Purchases of Fixed Assets" column="q000c" aggregator="sum"/>
-    <Measure name="Total Sales of Fixed Assets" column="q000d" aggregator="sum"/>
-    <Measure name="Total Stock of Machinery and Production Equipment" column="q010a" aggregator="sum"/>
-    <Measure name="Total Stock of Real Estate" column="q020a" aggregator="sum"/>
-    <Measure name="Total Stock of Units and Transport Equipment" column="q030a" aggregator="sum"/>
-    <Measure name="Total Stock of Computer Equipment and Peripherals" column="q400a" aggregator="sum"/>
-    <Measure name="Total Stock of Furniture; office Equipment and Other Fixed Assets" column="q900a" aggregator="sum"/>
-  </Cube>
-<Cube name="coneval_social_lag_ent">
-    <Table name="coneval_social_lag_ent" primary_key="mun_id" />
-
-    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
-    <DimensionUsage foreign_key="social_lag_degree" source="Social Lag Degree" name="Social Lag Degree" />
-    <DimensionUsage foreign_key="year" source="Year" name="Year" />
-
-    <Measure name="Population" column="population" aggregator="avg" />
-    <Measure name="Illiterate 15+ Years" column="population_illiterate" aggregator="avg" />
-    <Measure name="No Attend School 6-14 Years" column="population_6_14_school" aggregator="avg" />
-    <Measure name="Incomplete School 15+ Years" column="population_15_incomplete_school" aggregator="avg" />
-    <Measure name="No Health Services" column="no_health_services" aggregator="avg" />
-    <Measure name="Dirt Floor" column="dirt_floor" aggregator="avg" />
-    <Measure name="No Toilet" column="dirt_floor" aggregator="avg" />
-    <Measure name="No Water Supply Network" column="no_water_supply_network" aggregator="avg" />
-    <Measure name="No Sewer System" column="no_sewer_system" aggregator="avg" />
-    <Measure name="No Electrical Energy" column="no_electrical_energy" aggregator="avg" />
-    <Measure name="No Washing Machine" column="no_washing_machine" aggregator="avg" />
-    <Measure name="No Fridge" column="no_fridge" aggregator="avg" />
-    <Measure name="Social Lag Index" column="no_fridge" aggregator="avg" />
-  </Cube>
-<Cube name="coneval_poverty">
-    <Table name="coneval_poverty" primary_key="mun_id" />
-
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
-    <DimensionUsage foreign_key="year" source="Year" name="Year" />
-
-    <Measure name="Population" column="population" visible="false" aggregator="sum" />
-    <Measure name="Poverty" column="poverty" aggregator="sum" />
-    <Measure name="Extreme Poverty" column="extreme_poverty" aggregator="sum" />
-    <Measure name="Moderate Poverty" column="moderate_poverty" aggregator="sum" />
-    <Measure name="Vulnerable Population by Lacks" column="vulnerable_lacks" aggregator="sum" />
-    <Measure name="Vulnerable Population by Income" column="vulnerable_income" aggregator="sum" />
-    <Measure name="Population No Vulnerable" column="no_vulnerable" aggregator="sum" />
-    <Measure name="Educational Backwardness" column="educational_backwardness" aggregator="sum" />
-    <Measure name="Deprivation Quality Housing Spaces" column="deprivation_quality_housing_spaces" aggregator="sum" />
-    <Measure name="Deprivation Health Services" column="deprivation_health_services" aggregator="sum" />
-    <Measure name="Deprivation Social Security" column="deprivation_social_security" aggregator="sum" />
-    <Measure name="Deprivation Basic Services Housing" column="deprivation_basic_services_housing" aggregator="sum" />
-    <Measure name="Deprivation Food Access" column="deprivation_food_access" aggregator="sum" />
-    <Measure name="Population with at least 1 Social Lack" column="at_least_one_lack" aggregator="sum" />
-    <Measure name="Population with at least 3 Social Lacks" column="at_least_three_lacks" aggregator="sum" />
-    <Measure name="Income below Welfare Line" column="income_below_welfare_line" aggregator="sum" />
-    <Measure name="Income below Min Welfare Line" column="income_below_min_welfare_line" aggregator="sum" />
-  </Cube>
-<Cube name="coneval_social_lag_mun">
-    <Table name="coneval_social_lag_mun" primary_key="mun_id" />
-
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
-    <DimensionUsage foreign_key="social_lag_degree" source="Social Lag Degree" name="Social Lag Degree" />
-    <DimensionUsage foreign_key="year" source="Year" name="Year" />
-
-    <Measure name="Population" column="population" aggregator="avg" />
-    <Measure name="Illiterate 15+ Years" column="population_illiterate" aggregator="avg" />
-    <Measure name="No Attend School 6-14 Years" column="population_6_14_school" aggregator="avg" />
-    <Measure name="Incomplete School 15+ Years" column="population_15_incomplete_school" aggregator="avg" />
-    <Measure name="No Health Services" column="no_health_services" aggregator="avg" />
-    <Measure name="Dirt Floor" column="dirt_floor" aggregator="avg" />
-    <Measure name="No Toilet" column="dirt_floor" aggregator="avg" />
-    <Measure name="No Water Supply Network" column="no_water_supply_network" aggregator="avg" />
-    <Measure name="No Sewer System" column="no_sewer_system" aggregator="avg" />
-    <Measure name="No Electrical Energy" column="no_electrical_energy" aggregator="avg" />
-    <Measure name="No Washing Machine" column="no_washing_machine" aggregator="avg" />
-    <Measure name="No Fridge" column="no_fridge" aggregator="avg" />
-    <Measure name="Social Lag Index" column="no_fridge" aggregator="avg" />
-  </Cube>
-<Cube name="coneval_gini_mun">
-    <Table name="coneval_gini_mun" primary_key="mun_id" />
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
-    <DimensionUsage foreign_key="year" source="Year" name="Year" />
-
-    <Measure name="GINI" column="gini" aggregator="avg" />
-    <Measure name="Income Rate" column="income_rate" aggregator="avg" />
-
-  </Cube>
-<Cube name="anuies_enrollment">
-    <Table name="anuies_enrollment" primary_key="mun_id" />
-
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
-    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
-    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
-    <DimensionUsage foreign_key="type" source="Academic Degree" name="Academic Degree" />
-    <DimensionUsage foreign_key="program" source="Career Fields" name="Career Fields" />
-    <DimensionUsage foreign_key="campus_id" source="Campus" name="Campus" />
-    <DimensionUsage foreign_key="period" source="Period" name="Period" />
-
-    <Measure name="Students" column="value" aggregator="sum" />
-  </Cube>
-<Cube name="anuies_origin">
-    <Table name="anuies_origin" primary_key="mun_id" />
-
-    <!--<DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography Municipality" />-->
-    <DimensionUsage foreign_key="origin" source="Geography State" name="Geography State" />
-    <DimensionUsage foreign_key="type" source="Academic Degree" name="Academic Degree" />
-    <DimensionUsage foreign_key="program" source="Career Fields" name="Career Fields" />
-    <DimensionUsage foreign_key="campus_id" source="Campus" name="Campus" />
-    <DimensionUsage foreign_key="period" source="Period" name="Period" />
-
-    <Measure name="Students" column="value" aggregator="sum" />
-  </Cube>
-<Cube name="anuies_status">
-    <Table name="anuies_status" primary_key="mun_id" />
-
-    <Dimension name="Status" foreign_key="stat">
-      <Hierarchy name="Status" primary_key="id">
-
-        <InlineTable alias="dim_inline">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">Cleared to Graduate</Value>
-            <Value column="name_es">Egresado</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">Graduate</Value>
-            <Value column="name_es">Graduado</Value>
-          </Row>
-          <Row>
-            <Value column="id">3</Value>
-            <Value column="name_en">Bachelor\'s Degree</Value>
-            <Value column="name_es">Titulado</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Status" key_column="id" name_column="name_en">
-          <Property name="Status ES" column="name_es" caption_set="es"/>
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography Municipality" />
-    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
-    <DimensionUsage foreign_key="type" source="Academic Degree" name="Academic Degree" />
-    <DimensionUsage foreign_key="period" source="Period" name="Period" />
-    <DimensionUsage foreign_key="program" source="Career Fields" name="Career Fields" />
-    <DimensionUsage foreign_key="campus_id" source="Campus" name="Campus" />
-
-    <Measure name="Students" column="value" aggregator="sum" />
-
-  </Cube>
-<Cube name="sesnsp_crimes">
-    <Table name="sesnsp_crimes" primary_key="mun_id" />
-
-    <Dimension name="Type" foreign_key="crime_subtype_id">
-      <Hierarchy name="Type" primary_key="crime_subtype_id">
-        <Table name="dim_shared_crimes_subtype"/>
-        <Level name="Affected Legal Good" key_column="affected_legal_good_id" name_column="affected_legal_good_en" key_type="nontext">
-          <Property name="Affected Legal Good ES" column="affected_legal_good_es" caption_set="es"/>
-        </Level>
-        <Level name="Crime Type" key_column="crime_type_id" name_column="crime_type_en" key_type="nontext">
-          <Property name="Crime Type ES" column="crime_type_es" caption_set="es"/>
-        </Level>
-        <Level name="Crime Subtype" key_column="crime_subtype_id" name_column="crime_subtype_en" key_type="nontext">
-          <Property name="Crime Subtype ES" column="crime_subtype_es" caption_set="es"/>
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <Dimension name="Modality" foreign_key="crime_modality_id">
-      <Hierarchy name="Modality" primary_key="crime_modality_id">
-        <Table name="dim_shared_crimes_modality"/>
-        <Level name="Modality" key_column="crime_modality_id" name_column="crime_modality_en" key_type="nontext">
-          <Property name="Modality ES" column="crime_modality_es" caption_set="es"/>
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
-    <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
-
-    <Measure name="Value" column="value" aggregator="sum" />
-  </Cube>
 <Cube name="trade_balance">
     <Table name="trade_balance_atlas" primary_key="mun_id" />
     <Dimension name="Geography" foreign_key="mun_id">
@@ -3013,92 +3273,6 @@
     <Measure name="PCI" column="pci" aggregator="sum" />
     <Measure name="Import Plants" column="import_num_plants" aggregator="sum" />
     <Measure name="Export Plants" column="export_num_plants" aggregator="sum" />
-  </Cube>
-<Cube name="inea_adult_education_stats">
-    <Table name="inea_adult_education_stats" primary_key="ent_id" />
-
-    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
-    <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
-
-    <Measure name="Active advisors" column="n_advisors" aggregator="sum" />
-    <Measure name="Active technical professors" column="n_tech_professors" aggregator="sum" />
-    <Measure name="Coordinations in operation zones" column="n_zone_coordinations" aggregator="sum" />
-    <Measure name="Community places in operation" column="n_community_places" aggregator="sum" />
-    <Measure name="Study zones" column="n_study_zones" aggregator="sum" />
-    <Measure name="Meeting zones" column="n_meeting_zones" aggregator="sum" />
-
-  </Cube>
-<Cube name="inea_adult_education_origin">
-    <Table name="inea_adult_education_origin" primary_key="ent_id" />
-
-    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
-    <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
-
-    <Dimension name="Origin" foreign_key="origin_id">
-      <Hierarchy name="Origin" primary_key="id">
-        <InlineTable alias="dim_inline_origin_id">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">Spanish Speakers</Value>
-            <Value column="name_es">Hispanohablante</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">Indigenous</Value>
-            <Value column="name_es">0 - 5</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Origin" key_column="id" name_column="name_en">
-          <Property name="Origin ES" column="name_es" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <Measure name="Students Served on Alphabetization" column="student_served" aggregator="sum" />
-    <Measure name="Students Served on Alphabetization (Initial Level)" column="student_served_initial" aggregator="sum" />
-    <Measure name="Students Served on Alphabetization (Intermediate Level)" column="student_served_intermediate" aggregator="sum" />
-    <Measure name="Students Served on Alphabetization (Advanced Level)" column="student_served_advanced" aggregator="sum" />
-    <Measure name="Students Literated" column="student_literate" aggregator="sum" />
-    <Measure name="Students Literated (Initial Level)" column="student_literate_initial" aggregator="sum" />
-    <Measure name="Students Literated (Intermediate Level)" column="student_literate_intermediate" aggregator="sum" />
-    <Measure name="Students Literated (Advanced Level)" column="student_literate_advanced" aggregator="sum" />
-    <Measure name="Students Incorporated" column="student_incorporated" aggregator="sum" />
-    <Measure name="Students Inscribed" column="student_inscribed" aggregator="sum" />
-    <Measure name="Students Registered" column="student_registered" aggregator="sum" />
-
-  </Cube>
-<Cube name="dgis_emergency">
-    <Table name="dgis_emergency" primary_key="mun_id" />
-    <!-- TODO social_security -->
-
-    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
-    <DimensionUsage foreign_key="cie10" source="CIE10" name="CIE10" />
-    <DimensionUsage foreign_key="date_id" source="Date Day" name="Date" />
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
-    <DimensionUsage foreign_key="sex_id" source="Sex" name="Sex" />
-
-    <Measure name="Average Attention Time" column="attention_time" aggregator="avg" />
-    <Measure name="Total" column="count" aggregator="sum" />
-  </Cube>
-<Cube name="dgis_pregnancy_mortality">
-    <Table name="dgis_pregnancy_mortality" primary_key="mun_residence_id" />
-    <!--TODO year_of_register,occupation,marital_status,medical_center,mun_happening_id-->
-    <Dimension name="Year" foreign_key="year_decease">
-      <Hierarchy name="Year">
-        <Level name="Year" key_column="year_decease" type="time" />
-      </Hierarchy>
-    </Dimension>
-
-    <DimensionUsage foreign_key="social_security" source="Social Security" name="Social Security" />
-    <DimensionUsage foreign_key="academic_degree" source="Academic Degree" name="Academic Degree" />
-    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
-    <DimensionUsage foreign_key="cie10" source="CIE10" name="CIE10" />
-    <DimensionUsage foreign_key="mun_residence_id" source="Geography Municipality" name="Geography" />
-
-    <Measure name="Total" column="count" aggregator="sum" />
   </Cube>
 
 </Schema>
