@@ -1,6 +1,6 @@
 <Schema name="datamexico">
 
-  <Cube name="envipe">
+  <Cube name="inegi_envipe">
     <Table name="inegi_envipe" primary_key="mun_id" />
 
     <Dimension name="Security Perception in their State" foreign_key="security_perception_in_their_state">
