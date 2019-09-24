@@ -603,6 +603,7 @@
 
     <Measure name="Value" column="value" aggregator="sum" />
   </Cube>
+<!--
 <Cube name="inegi_envipe">
     <Table name="inegi_envipe" primary_key="mun_id" />
 
@@ -700,6 +701,7 @@
     <Measure name="People" column="people_factor" aggregator="sum" />
 
   </Cube>
+-->
 <Cube name="dgis_emergency">
     <Table name="dgis_emergency" primary_key="mun_id" />
     <!-- TODO social_security -->
