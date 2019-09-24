@@ -29,7 +29,7 @@
     </Hierarchy>
   </SharedDimension>
 
-  <SharedDimension name="Geography Municipality" type="geo">
+  <SharedDimension name="Geography Municipality" type="geo" default_hierarchy="Geography">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography_mun" />
       <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext" />
@@ -41,9 +41,22 @@
         <Property name="CVE Municipality Full" column="cve_mun_full" />
       </Level>
     </Hierarchy>
+
+    <Hierarchy name="Metro Area">
+      <Table name="dim_shared_geography_zm" />
+      <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext" />
+
+      <Level name="Municipality MA" key_column="mun_id" name_column="mun_name" key_type="nontext" />
+    </Hierarchy>
+    <Hierarchy name="National Urban System">
+      <Table name="dim_shared_geography_sun" />
+      <Level name="National Urban System" key_column="sun_id" name_column="sun_name" key_type="text" />
+
+      <Level name="Municipality SUN" key_column="mun_id" name_column="mun_name" key_type="nontext" />
+    </Hierarchy>
   </SharedDimension>
 
-  <SharedDimension name="Geography Location" type="geo">
+  <SharedDimension name="Geography Location" type="geo" default_hierarchy="Geography">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography" />
       <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext" />
@@ -58,6 +71,21 @@
         <Property name="CVE Location" column="cve_loc" />
         <Property name="CVE Location Full" column="cve_loc_full" />
       </Level>
+    </Hierarchy>
+    <Hierarchy name="Metro Area">
+      <Table name="dim_shared_geography_zm_loc" />
+      <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext" />
+
+      <Level name="Municipality MA" key_column="mun_id" name_column="mun_name" key_type="nontext" />
+      <Level name="Location MA" key_column="loc_id" name_column="loc_name" key_type="nontext" />
+    </Hierarchy>
+
+    <Hierarchy name="National Urban System">
+      <Table name="dim_shared_geography_sun_loc" />
+      <Level name="National Urban System" key_column="sun_id" name_column="sun_name" key_type="text" />
+
+      <Level name="Municipality SUN" key_column="mun_id" name_column="mun_name" key_type="nontext" />
+      <Level name="Location SUN" key_column="loc_id" name_column="loc_name" key_type="nontext" />
     </Hierarchy>
   </SharedDimension>
 
