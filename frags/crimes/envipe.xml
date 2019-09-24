@@ -1,0 +1,100 @@
+<Schema name="datamexico">
+
+  <Cube name="envipe">
+    <Table name="envipe" primary_key="mun_id" />
+
+    <Dimension name="Security Perception in their State" foreign_key="security_perception_in_their_state">
+      <Hierarchy name="Security Perception in their State" primary_key="id">
+
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Safe Place</Value>
+                <Value column="name_es">Seguro</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Unsafe Place</Value>
+                <Value column="name_es">Inseguro</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Does not know / does not answer</Value>
+                <Value column="name_es">No Sabe / No Responde</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Security Perception in their State" key_column="id" name_column="name_en">
+          <Property name="Security Perception in their State ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Sociodemographic Stratum" foreign_key="sociodemographic_stratum">
+      <Hierarchy name="Sociodemographic Stratum" primary_key="id">
+
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Low</Value>
+                <Value column="name_es">Bajo</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Lower middle</Value>
+                <Value column="name_es">Medio Bajo</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Upper middle</Value>
+                <Value column="name_es">Medio Alto</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">High</Value>
+                <Value column="name_es">Alto</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Sociodemographic Stratum" key_column="id" name_column="name_en">
+          <Property name="Sociodemographic Stratum ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Expenses in Protection Against Crime" foreign_key="expenses_in_protection_against_crime">
+      <Hierarchy name="Expenses in Protection Against Crime" primary_key="id">
+        <Table name="dim_shared_money" />
+        <Level name="Expenses in Protection Against Crime" key_column="id" name_column="name" />
+      </Hierarchy>
+    </Dimension>
+
+    <DimensionUsage foreign_key="neighbors_trust" source="Trust" name="Trust in Neighborhood" />
+    <DimensionUsage foreign_key="coworkers_trust" source="Trust" name="Trust in Coworkers" />
+    <DimensionUsage foreign_key="family_trust" source="Trust" name="Trust in Family" />
+    <DimensionUsage foreign_key="friends_trust" source="Trust" name="Trust in Friends" />
+
+    <DimensionUsage foreign_key="traffic_police_trust" source="Confidence" name="Confidence in Traffic Police" />
+    <DimensionUsage foreign_key="municipal_preventive_police_trust" source="Confidence" name="Confidence in Municipal Preventive Police" />
+    <DimensionUsage foreign_key="state_police_trust" source="Confidence" name="Confidence in State Police" />
+    <DimensionUsage foreign_key="federal_police_trust" source="Confidence" name="Confidence in Federal Police" />
+    <DimensionUsage foreign_key="ministerial_or_judicial_police_trust" source="Confidence" name="Confidence in Ministerial or Judicial Police" />
+    <DimensionUsage foreign_key="public_ministry_and_state_prosecutors_trust" source="Confidence" name="Confidence in Public Ministry and State Prosecutors" />
+    <DimensionUsage foreign_key="state_prosecutor_of_the_republic_trust" source="Confidence" name="Confidence in State Prosecutor of the Republic" />
+    <DimensionUsage foreign_key="army_trust" source="Confidence" name="Confidence in Army" />
+    <DimensionUsage foreign_key="navy_trust" source="Confidence" name="Confidence in Navy" />
+    <DimensionUsage foreign_key="judges_trust" source="Confidence" name="Confidence in Judges" />
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography Municipality" />
+    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
+    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
+
+    <Measure name="Homes" column="homes_factor" aggregator="sum" />
+    <Measure name="People" column="people_factor" aggregator="sum" />
+
+  </Cube>
+</Schema>
