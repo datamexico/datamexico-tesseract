@@ -1207,6 +1207,12 @@
       </Hierarchy>
     </Dimension>
 
+    <Dimension name="Year" foreign_key="year">
+      <Hierarchy name="Year">
+        <Level name="Year" key_column="year" type="time" />
+      </Hierarchy>
+    </Dimension>
+
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography Municipality" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
