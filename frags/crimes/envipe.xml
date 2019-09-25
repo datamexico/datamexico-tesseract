@@ -1,4 +1,4 @@
-<Schema name="datamexico">
+<Schema name="datamexico"> 
 
   <Cube name="inegi_envipe">
     <Table name="inegi_envipe" primary_key="mun_id" />
@@ -73,21 +73,537 @@
       </Hierarchy>
     </Dimension>
 
-    <DimensionUsage foreign_key="neighbors_trust" source="Trust" name="Trust in Neighborhood" />
-    <DimensionUsage foreign_key="coworkers_trust" source="Trust" name="Trust in Coworkers" />
-    <DimensionUsage foreign_key="family_trust" source="Trust" name="Trust in Family" />
-    <DimensionUsage foreign_key="friends_trust" source="Trust" name="Trust in Friends" />
+    <Dimension name="Trust in Neighborhood" foreign_key="neighbors_trust">
+      <Hierarchy name="Trust in Neighborhood" primary_key="id">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">A lot of</Value>
+                <Value column="name_es">Mucha</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some</Value>
+                <Value column="name_es">Alguna</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Very little</Value>
+                <Value column="name_es">Poca</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">None</Value>
+                <Value column="name_es">Nada</Value>
+            </Row>
+            <Row>
+                <Value column="id">5</Value>
+                <Value column="name_en">Does not apply</Value>
+                <Value column="name_es">No Aplica</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Trust in Neighborhood" key_column="id" name_column="name_en">
+          <Property name="Trust in Neighborhood ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension> 
 
-    <DimensionUsage foreign_key="traffic_police_trust" source="Confidence" name="Confidence in Traffic Police" />
-    <DimensionUsage foreign_key="municipal_preventive_police_trust" source="Confidence" name="Confidence in Municipal Preventive Police" />
-    <DimensionUsage foreign_key="state_police_trust" source="Confidence" name="Confidence in State Police" />
-    <DimensionUsage foreign_key="federal_police_trust" source="Confidence" name="Confidence in Federal Police" />
-    <DimensionUsage foreign_key="ministerial_or_judicial_police_trust" source="Confidence" name="Confidence in Ministerial or Judicial Police" />
-    <DimensionUsage foreign_key="public_ministry_and_state_prosecutors_trust" source="Confidence" name="Confidence in Public Ministry and State Prosecutors" />
-    <DimensionUsage foreign_key="state_prosecutor_of_the_republic_trust" source="Confidence" name="Confidence in State Prosecutor of the Republic" />
-    <DimensionUsage foreign_key="army_trust" source="Confidence" name="Confidence in Army" />
-    <DimensionUsage foreign_key="navy_trust" source="Confidence" name="Confidence in Navy" />
-    <DimensionUsage foreign_key="judges_trust" source="Confidence" name="Confidence in Judges" />
+    <Dimension name="Trust in Coworkers" foreign_key="coworkers_trust">
+      <Hierarchy name="Trust in Coworkers" primary_key="id">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">A lot of</Value>
+                <Value column="name_es">Mucha</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some</Value>
+                <Value column="name_es">Alguna</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Very little</Value>
+                <Value column="name_es">Poca</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">None</Value>
+                <Value column="name_es">Nada</Value>
+            </Row>
+            <Row>
+                <Value column="id">5</Value>
+                <Value column="name_en">Does not apply</Value>
+                <Value column="name_es">No Aplica</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Trust in Coworkers" key_column="id" name_column="name_en">
+          <Property name="Trust in Coworkers ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension> 
+
+    <Dimension name="Trust in Family" foreign_key="family_trust">
+      <Hierarchy name="Trust in Family" primary_key="id">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">A lot of</Value>
+                <Value column="name_es">Mucha</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some</Value>
+                <Value column="name_es">Alguna</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Very little</Value>
+                <Value column="name_es">Poca</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">None</Value>
+                <Value column="name_es">Nada</Value>
+            </Row>
+            <Row>
+                <Value column="id">5</Value>
+                <Value column="name_en">Does not apply</Value>
+                <Value column="name_es">No Aplica</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Trust in Family" key_column="id" name_column="name_en">
+          <Property name="Trust in Family ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension> 
+
+        <Dimension name="Trust in Friends" foreign_key="friends_trust">
+      <Hierarchy name="Trust in Friends" primary_key="id">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">A lot of</Value>
+                <Value column="name_es">Mucha</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some</Value>
+                <Value column="name_es">Alguna</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Very little</Value>
+                <Value column="name_es">Poca</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">None</Value>
+                <Value column="name_es">Nada</Value>
+            </Row>
+            <Row>
+                <Value column="id">5</Value>
+                <Value column="name_en">Does not apply</Value>
+                <Value column="name_es">No Aplica</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Trust in Friends" key_column="id" name_column="name_en">
+          <Property name="Trust in Friends ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension> 
+
+    <Dimension name="Confidence in Traffic Police" foreign_key="traffic_police_trust">
+      <Hierarchy name="Confidence in Traffic Police" primary_key="id">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Much trust</Value>
+                <Value column="name_es">Mucha Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some confidence</Value>
+                <Value column="name_es">Algo de Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Some distrust</Value>
+                <Value column="name_es">Algo de Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">Much distrust</Value>
+                <Value column="name_es">Mucha Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">9</Value>
+                <Value column="name_en">Does not know / does not answer</Value>
+                <Value column="name_es">No Sabe / No Responde</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Confidence in Traffic Police" key_column="id" name_column="name_en">
+          <Property name="Confidence in Traffic Police ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension> 
+
+    <Dimension name="Confidence in Municipal Preventive Police" foreign_key="municipal_preventive_police_trust">
+      <Hierarchy name="Confidence in Municipal Preventive Police" primary_key="id">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Much trust</Value>
+                <Value column="name_es">Mucha Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some confidence</Value>
+                <Value column="name_es">Algo de Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Some distrust</Value>
+                <Value column="name_es">Algo de Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">Much distrust</Value>
+                <Value column="name_es">Mucha Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">9</Value>
+                <Value column="name_en">Does not know / does not answer</Value>
+                <Value column="name_es">No Sabe / No Responde</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Confidence in Municipal Preventive Police" key_column="id" name_column="name_en">
+          <Property name="Confidence in Municipal Preventive Police ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension> 
+
+    <Dimension name="Confidence in State Police" foreign_key="state_police_trust">
+      <Hierarchy name="Confidence in State Police" primary_key="id">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Much trust</Value>
+                <Value column="name_es">Mucha Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some confidence</Value>
+                <Value column="name_es">Algo de Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Some distrust</Value>
+                <Value column="name_es">Algo de Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">Much distrust</Value>
+                <Value column="name_es">Mucha Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">9</Value>
+                <Value column="name_en">Does not know / does not answer</Value>
+                <Value column="name_es">No Sabe / No Responde</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Confidence in State Police" key_column="id" name_column="name_en">
+          <Property name="Confidence in State Police ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Confidence in Federal Police" foreign_key="federal_police_trust">
+      <Hierarchy name="Confidence in Federal Police" primary_key="id">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Much trust</Value>
+                <Value column="name_es">Mucha Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some confidence</Value>
+                <Value column="name_es">Algo de Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Some distrust</Value>
+                <Value column="name_es">Algo de Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">Much distrust</Value>
+                <Value column="name_es">Mucha Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">9</Value>
+                <Value column="name_en">Does not know / does not answer</Value>
+                <Value column="name_es">No Sabe / No Responde</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Confidence in Federal Police" key_column="id" name_column="name_en">
+          <Property name="Confidence in Federal Police ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Confidence in Ministerial or Judicial Police" foreign_key="ministerial_or_judicial_police_trust">
+      <Hierarchy name="Confidence in Ministerial or Judicial Police" primary_key="id">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Much trust</Value>
+                <Value column="name_es">Mucha Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some confidence</Value>
+                <Value column="name_es">Algo de Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Some distrust</Value>
+                <Value column="name_es">Algo de Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">Much distrust</Value>
+                <Value column="name_es">Mucha Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">9</Value>
+                <Value column="name_en">Does not know / does not answer</Value>
+                <Value column="name_es">No Sabe / No Responde</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Confidence in Ministerial or Judicial Police" key_column="id" name_column="name_en">
+          <Property name="Confidence in Ministerial or Judicial Police ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Confidence in Public Ministry and State Prosecutors" foreign_key="public_ministry_and_state_prosecutors_trust">
+      <Hierarchy name="Confidence in Public Ministry and State Prosecutors" primary_key="id">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Much trust</Value>
+                <Value column="name_es">Mucha Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some confidence</Value>
+                <Value column="name_es">Algo de Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Some distrust</Value>
+                <Value column="name_es">Algo de Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">Much distrust</Value>
+                <Value column="name_es">Mucha Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">9</Value>
+                <Value column="name_en">Does not know / does not answer</Value>
+                <Value column="name_es">No Sabe / No Responde</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Confidence in Public Ministry and State Prosecutors" key_column="id" name_column="name_en">
+          <Property name="Confidence in Public Ministry and State Prosecutors ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+        <Dimension name="Confidence in State Prosecutor of the Republic" foreign_key="state_prosecutor_of_the_republic_trust">
+      <Hierarchy name="Confidence in State Prosecutor of the Republic" primary_key="id">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Much trust</Value>
+                <Value column="name_es">Mucha Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some confidence</Value>
+                <Value column="name_es">Algo de Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Some distrust</Value>
+                <Value column="name_es">Algo de Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">Much distrust</Value>
+                <Value column="name_es">Mucha Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">9</Value>
+                <Value column="name_en">Does not know / does not answer</Value>
+                <Value column="name_es">No Sabe / No Responde</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Confidence in State Prosecutor of the Republic" key_column="id" name_column="name_en">
+          <Property name="Confidence in State Prosecutor of the Republic ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Confidence in Army" foreign_key="army_trust">
+      <Hierarchy name="Confidence in Army" primary_key="id">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Much trust</Value>
+                <Value column="name_es">Mucha Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some confidence</Value>
+                <Value column="name_es">Algo de Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Some distrust</Value>
+                <Value column="name_es">Algo de Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">Much distrust</Value>
+                <Value column="name_es">Mucha Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">9</Value>
+                <Value column="name_en">Does not know / does not answer</Value>
+                <Value column="name_es">No Sabe / No Responde</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Confidence in Army" key_column="id" name_column="name_en">
+          <Property name="Confidence in Army ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Confidence in Navy" foreign_key="navy_trust">
+      <Hierarchy name="Confidence in Navy" primary_key="id">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Much trust</Value>
+                <Value column="name_es">Mucha Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some confidence</Value>
+                <Value column="name_es">Algo de Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Some distrust</Value>
+                <Value column="name_es">Algo de Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">Much distrust</Value>
+                <Value column="name_es">Mucha Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">9</Value>
+                <Value column="name_en">Does not know / does not answer</Value>
+                <Value column="name_es">No Sabe / No Responde</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Confidence in Navy" key_column="id" name_column="name_en">
+          <Property name="Confidence in Navy ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Confidence in Judges" foreign_key="judges_trust">
+      <Hierarchy name="Confidence in Judges" primary_key="id">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Much trust</Value>
+                <Value column="name_es">Mucha Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some confidence</Value>
+                <Value column="name_es">Algo de Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Some distrust</Value>
+                <Value column="name_es">Algo de Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">Much distrust</Value>
+                <Value column="name_es">Mucha Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">9</Value>
+                <Value column="name_en">Does not know / does not answer</Value>
+                <Value column="name_es">No Sabe / No Responde</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Confidence in Judges" key_column="id" name_column="name_en">
+          <Property name="Confidence in Judges ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography Municipality" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
