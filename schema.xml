@@ -92,10 +92,8 @@
   <SharedDimension name="Country">
     <Hierarchy name="Country" primary_key="iso3">
       <Table name="dim_shared_country"/>
-      <Level name="Country" key_column="iso3" name_column="country_name" key_type="text">
-        <Property name="Country ES" column="country_name_es" caption_set="es"/>
-        <Property name="ISO 2" column="iso2"/>
-      </Level>
+      <Level name="Continent" key_column="continent_id" name_column="continent" key_type="text" />
+      <Level name="Country" key_column="iso3" name_column="country_name" key_type="text" />
     </Hierarchy>
   </SharedDimension>
 
