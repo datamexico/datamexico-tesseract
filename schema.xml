@@ -1,6 +1,6 @@
 <Schema name="datamexico">
 
-<SharedDimension name="Geography State" type="geo">
+  <SharedDimension name="Geography State" type="geo">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography_ent" />
       <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext" />
@@ -1657,8 +1657,8 @@
 <Cube name="inegi_enigh_jobs">
     <Table name="inegi_enigh_jobs" primary_key="mun_id" />
 
-    <Dimension name="Kind of Business" foreign_key="business_size">
-      <Hierarchy name="Kind of Business" primary_key="id">
+    <Dimension name="Size of Business" foreign_key="business_size">
+      <Hierarchy name="Size of Business" primary_key="id">
         <InlineTable alias="dim_inline_business_size">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -1724,8 +1724,8 @@
             <Value column="name_es">No sabe</Value>
           </Row>
         </InlineTable>
-        <Level name="Kind of Business" key_column="id" name_column="name_en">
-          <Property name="Kind of Business ES" column="name_es" caption_set="es" />
+        <Level name="Size of Business" key_column="id" name_column="name_en">
+          <Property name="Size of Business ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
