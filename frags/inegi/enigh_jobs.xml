@@ -2,6 +2,257 @@
   <Cube name="inegi_enigh_jobs">
     <Table name="inegi_enigh_jobs" primary_key="mun_id" />
 
+    <Dimension name="Kind of Business" foreign_key="business_size">
+      <Hierarchy name="Kind of Business" primary_key="id">
+        <InlineTable alias="dim_inline_business_size">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">just 1 person</Value>
+            <Value column="name_es">De 1 persona</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">From 2 to 5 people</Value>
+            <Value column="name_es">De 2 a 5 personas</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">From 6 to 10 people</Value>
+            <Value column="name_es">De 6 a 10 personas</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">From 11 to 15 people</Value>
+            <Value column="name_es">De 11 a 15 personas</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">From 16 to 20 people</Value>
+            <Value column="name_es">De 16 a 20 personas</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">From 21 to 30 people</Value>
+            <Value column="name_es">De 21 a 30 personas</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">From 31 to 50 people</Value>
+            <Value column="name_es">De 31 a 50 personas</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">From 51 to 100 people</Value>
+            <Value column="name_es">De 51 a 100 personas</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">From 101 to 250 people</Value>
+            <Value column="name_es">De 101 a 250 personas</Value>
+          </Row>
+          <Row>
+            <Value column="id">10</Value>
+            <Value column="name_en">From 251 to 500 people</Value>
+            <Value column="name_es">De 251 a 500 personas</Value>
+          </Row>
+          <Row>
+            <Value column="id">11</Value>
+            <Value column="name_en">From 501 and more people</Value>
+            <Value column="name_es">De 501 a más personas</Value>
+          </Row>
+          <Row>
+            <Value column="id">12</Value>
+            <Value column="name_en">Does not know</Value>
+            <Value column="name_es">No sabe</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Kind of Business" key_column="id" name_column="name_en">
+          <Property name="Kind of Business ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Kind of Business" foreign_key="business_type">
+      <Hierarchy name="Kind of Business" primary_key="id">
+        <InlineTable alias="dim_inline_business_type">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Independent, personal or the familiar kind</Value>
+            <Value column="name_es">De tipo independiente, personal o familiar</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Company or enterprise from the private sector</Value>
+            <Value column="name_es">Una compañía o empresa del sector privado</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Government institution</Value>
+            <Value column="name_es">Una institución de gobierno</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Institution non related to the government</Value>
+            <Value column="name_es">Una institución no administrada por el gobierno</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Kind of Business" key_column="id" name_column="name_en">
+          <Property name="Kind of Business ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Payment mode" foreign_key="pay_mode">
+      <Hierarchy name="Payment mode" primary_key="id">
+        <InlineTable alias="dim_inline_pay_mode">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Does get a payment</Value>
+            <Value column="name_es">Recibe un pago</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Worker without payment in a home business</Value>
+            <Value column="name_es">Es un trabajador(a) sin pago en un negocio del hogar</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Worker without payment in a non home business</Value>
+            <Value column="name_es">Es un trabajador(a) sin pago en un negocio que no es del hogar</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Payment mode" key_column="id" name_column="name_en">
+          <Property name="Payment mode ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="National Job" foreign_key="national_job">
+      <Hierarchy name="National Job" primary_key="id">
+        <InlineTable alias="dim_inline_national_job">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+        </InlineTable>
+        <Level name="National Job" key_column="id" name_column="name_en">
+          <Property name="National Job ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Job ID" foreign_key="job_id">
+      <Hierarchy name="Job ID" primary_key="id">
+        <InlineTable alias="dim_inline_job_id">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Main Job</Value>
+            <Value column="name_es">Trabajo principal</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Secondary Job</Value>
+            <Value column="name_es">Trabajo secundario</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Job ID" key_column="id" name_column="name_en">
+          <Property name="Job ID ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Contract" foreign_key="contract">
+      <Hierarchy name="Contract" primary_key="id">
+        <InlineTable alias="dim_inline_contract">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Contract" key_column="id" name_column="name_en">
+          <Property name="Contract ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Contract Type" foreign_key="contract_type">
+      <Hierarchy name="Contract Type" primary_key="id">
+        <InlineTable alias="dim_inline_contract_type">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">It is temporal, or by specific work </Value>
+            <Value column="name_es">Es temporal o por obra determinada</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Main workforce, employee or indefinitely time</Value>
+            <Value column="name_es">Es de base, planta o por tiempo indeterminado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Contract Type" key_column="id" name_column="name_en">
+          <Property name="Contract Type ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Socioeconomic Status" foreign_key="eco_stratum">
+      <Hierarchy name="Socioeconomic Status" primary_key="id">
+        <InlineTable alias="dim_inline_eco_stratum">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Lower Class</Value>
+            <Value column="name_es">Clase Baja</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Lower middle</Value>
+            <Value column="name_es">Clase Media Baja</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Upper middle</Value>
+            <Value column="name_es">Clase Media Alta</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Upper</Value>
+            <Value column="name_es">Clase Alta</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Socioeconomic Status" key_column="id" name_column="name_en">
+          <Property name="Socioeconomic Status ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
     <Dimension name="Business Type" foreign_key="business_type">
       <Hierarchy name="Business Type" primary_key="id">
         <InlineTable alias="dim_inline_business_type">
@@ -34,6 +285,11 @@
         </Level>
       </Hierarchy>
     </Dimension>
+    <Dimension name="Year" foreign_key="year">
+      <Hierarchy name="Year">
+        <Level name="Year" key_column="year" type="time" />
+      </Hierarchy>
+    </Dimension>
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
@@ -43,6 +299,6 @@
 
     <Measure name="Population" column="population" aggregator="sum" />
     <Measure name="Average Worked Hours" column="worked_hours" aggregator="avg" />
-    
+
   </Cube>
 </Schema>

@@ -2,10 +2,886 @@
   <Cube name="inegi_enigh_population">
     <Table name="inegi_enigh_population" primary_key="ent_id" />
 
+    <Dimension name="Socioeconomic Status" foreign_key="eco_stratum">
+      <Hierarchy name="Socioeconomic Status" primary_key="id">
+        <InlineTable alias="dim_inline_eco_stratum">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Lower Class</Value>
+            <Value column="name_es">Clase Baja</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Lower middle</Value>
+            <Value column="name_es">Clase Media Baja</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Upper middle</Value>
+            <Value column="name_es">Clase Media Alta</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Upper</Value>
+            <Value column="name_es">Clase Alta</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Socioeconomic Status" key_column="id" name_column="name_en">
+          <Property name="Socioeconomic Status ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Number of Jobs" foreign_key="number_jobs">
+      <Hierarchy name="Number of Jobs" primary_key="id">
+        <InlineTable alias="dim_inline_number_jobs">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Just 1</Value>
+            <Value column="name_es">Sólo 1</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">2 or more</Value>
+            <Value column="name_es">Dos o más</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Number of Jobs" key_column="id" name_column="name_en">
+          <Property name="Number of Jobs ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Second Reason Not Economically Active" foreign_key="act_pnea2">
+      <Hierarchy name="Second Reason Not Economically Active" primary_key="id">
+        <InlineTable alias="dim_inline_act_pnea2">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Pensioner or Retired</Value>
+            <Value column="name_es">Es pensionado o jubilado</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Dedicated to house chores</Value>
+            <Value column="name_es">Se dedicó a los quehaceres del hogar</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Dedicated to studies</Value>
+            <Value column="name_es">Se dedicó a estudiar</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Is a person with some physical or mental limitation that prevents work for a lifetime</Value>
+            <Value column="name_es">Es una persona con alguna limitación física o mental que le impide trabajar por el resto de su vida</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Second Reason Not Economically Active" key_column="id" name_column="name_en">
+          <Property name="Second Reason Not Economically Active ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="First Reason Not Economically Active" foreign_key="act_pnea1">
+      <Hierarchy name="First Reason Not Economically Active" primary_key="id">
+        <InlineTable alias="dim_inline_act_pnea1">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Was looking for a job</Value>
+            <Value column="name_es">Estuvo buscando trabajo</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Pensioner or Retired</Value>
+            <Value column="name_es">Es pensionado o jubilado</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Dedicated to house chores</Value>
+            <Value column="name_es">Se dedicó a los quehaceres del hogar</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Dedicated to studies</Value>
+            <Value column="name_es">Se dedicó a estudiar</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Is a person with some physical or mental limitation that prevents work for a lifetime</Value>
+            <Value column="name_es">Es una persona con alguna limitación física o mental que le impide trabajar por el resto de su vida</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Is in a situation different from the above</Value>
+            <Value column="name_es">Está en otra situación diferente a las anteriores</Value>
+          </Row>
+        </InlineTable>
+        <Level name="First Reason Not Economically Active" key_column="id" name_column="name_en">
+          <Property name="First Reason Not Economically Active ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Job Absence" foreign_key="job_absence">
+      <Hierarchy name="Job Absence" primary_key="id">
+        <InlineTable alias="dim_inline_job_absence">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Strike or unemployment</Value>
+            <Value column="name_es">Huelga o paro laboral</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Technical stop</Value>
+            <Value column="name_es">Paro técnico</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Temporary suspension of their duties</Value>
+            <Value column="name_es">Suspensión temporal de sus funciones</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Assistance to training courses</Value>
+            <Value column="name_es">Asistencia a cursos de capacitación</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Vacations</Value>
+            <Value column="name_es">Vacaciones</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Permission, illness or settlement of personal matters</Value>
+            <Value column="name_es">Permiso, enfermedad o arreglo de asuntos personales</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Lack of vehicle or machine breakdown</Value>
+            <Value column="name_es">Falta de vehículo o descompostura de máquina</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">Lack of raw materials, financing or customers</Value>
+            <Value column="name_es">Falta de materias primas, financiamiento o clientes</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Bad weather or natural phenomenon</Value>
+            <Value column="name_es">Mal tiempo o fenómeno natural</Value>
+          </Row>
+          <Row>
+            <Value column="id">10</Value>
+            <Value column="name_en">Term of work or cultivation season</Value>
+            <Value column="name_es">Término de temporada de trabajo o cultivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">11</Value>
+            <Value column="name_en">Start a new job or business</Value>
+            <Value column="name_es">Comenzará un trabajo o negocio nuevo</Value>
+          </Row>
+          <Row>
+            <Value column="id">12</Value>
+            <Value column="name_en">Another reason</Value>
+            <Value column="name_es">Otra razón</Value>
+          </Row>
+          <Row>
+            <Value column="id">13</Value>
+            <Value column="name_en">None of the above</Value>
+            <Value column="name_es">Ninguna de las anteriores</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Job Absence" key_column="id" name_column="name_en">
+          <Property name="Job Absence ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Work Last Month" foreign_key="work_last_month">
+      <Hierarchy name="Work Last Month" primary_key="id">
+        <InlineTable alias="dim_inline_work_last_month">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Worked the past month</Value>
+            <Value column="name_es">Trabajó el mes pasado</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Did not work the past month</Value>
+            <Value column="name_es">No trabajó el mes pasado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Work Last Month" key_column="id" name_column="name_en">
+          <Property name="Work Last Month ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Another Option" foreign_key="inst_6">
+      <Hierarchy name="Another Option" primary_key="id">
+        <InlineTable alias="dim_inline_inst_6">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Another Option</Value>
+            <Value column="name_es">Otra Opcion</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Another Option" key_column="id" name_column="name_en">
+          <Property name="Another Option ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="IMSS-Prospera" foreign_key="inst_5">
+      <Hierarchy name="IMSS-Prospera" primary_key="id">
+        <InlineTable alias="dim_inline_inst_5">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">IMSS-Prospera</Value>
+            <Value column="name_es">IMSS-Prospera</Value>
+          </Row>
+        </InlineTable>
+        <Level name="IMSS-Prospera" key_column="id" name_column="name_en">
+          <Property name="IMSS-Prospera ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Pemex, Defense or Marine" foreign_key="inst_4">
+      <Hierarchy name="Pemex, Defense or Marine" primary_key="id">
+        <InlineTable alias="dim_inline_inst_4">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Pemex, Defense or Marine</Value>
+            <Value column="name_es">Pemex, Defensa o Marina</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Pemex, Defense or Marine" key_column="id" name_column="name_en">
+          <Property name="Pemex, Defense or Marine ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="State ISSTE" foreign_key="inst_3">
+      <Hierarchy name="State ISSTE" primary_key="id">
+        <InlineTable alias="dim_inline_inst_3">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">State ISSSTE</Value>
+            <Value column="name_es">ISSTE estatal</Value>
+          </Row>
+        </InlineTable>
+        <Level name="State ISSTE" key_column="id" name_column="name_en">
+          <Property name="State ISSTE ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="ISSTE" foreign_key="inst_2">
+      <Hierarchy name="ISSTE" primary_key="id">
+        <InlineTable alias="dim_inline_inst_2">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">ISSTE</Value>
+            <Value column="name_es">ISSTE</Value>
+          </Row>
+        </InlineTable>
+        <Level name="ISSTE" key_column="id" name_column="name_en">
+          <Property name="ISSTE ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="IMSS" foreign_key="inst_1">
+      <Hierarchy name="IMSS" primary_key="id">
+        <InlineTable alias="dim_inline_inst_1">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">IMSS</Value>
+            <Value column="name_es">IMSS</Value>
+          </Row>
+        </InlineTable>
+        <Level name="IMSS" key_column="id" name_column="name_en">
+          <Property name="IMSS ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Health Attention" foreign_key="health_attention">
+      <Hierarchy name="Health Attention" primary_key="id">
+        <InlineTable alias="dim_inline_health_attention">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Health Attention" key_column="id" name_column="name_en">
+          <Property name="Health Attention ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Popular Insurance" foreign_key="popular_insurance">
+      <Hierarchy name="Popular Insurance" primary_key="id">
+        <InlineTable alias="dim_inline_popular_insurance">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Popular Insurance" key_column="id" name_column="name_en">
+          <Property name="Popular Insurance ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Social Security" foreign_key="social_security">
+      <Hierarchy name="Social Security" primary_key="id">
+        <InlineTable alias="dim_inline_social_security">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Social Security" key_column="id" name_column="name_en">
+          <Property name="Social Security ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Speaks Native" foreign_key="speaks_native">
+      <Hierarchy name="Speaks Native" primary_key="id">
+        <InlineTable alias="dim_inline_speaks_native">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Speaks Native" key_column="id" name_column="name_en">
+          <Property name="Speaks Native ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Ethnicity" foreign_key="ethnicity">
+      <Hierarchy name="Ethnicity" primary_key="id">
+        <InlineTable alias="dim_inline_ethnicity">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Ethnicity" key_column="id" name_column="name_en">
+          <Property name="Ethnicity ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Near Children Support" foreign_key="near_support_children">
+      <Hierarchy name="Near Children Support" primary_key="id">
+        <InlineTable alias="dim_inline_near_support_children">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Imposible get/obtain</Value>
+            <Value column="name_es">Imposible conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Hard to get/obtain</Value>
+            <Value column="name_es">Difícil conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Easy to get/obtain</Value>
+            <Value column="name_es">Fácil conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Very easy to get/obtain</Value>
+            <Value column="name_es">Muy fácil conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">No hard or easy get/obtain (spontaneous)</Value>
+            <Value column="name_es">Ni fácil ni difícil conseguirla (espontánea)</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Near Children Support" key_column="id" name_column="name_en">
+          <Property name="Near Children Support ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Neighborhood Support" foreign_key="near_support_neighborhood">
+      <Hierarchy name="Neighborhood Support" primary_key="id">
+        <InlineTable alias="dim_inline_near_support_neighborhood">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Imposible get/obtain</Value>
+            <Value column="name_es">Imposible conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Hard to get/obtain</Value>
+            <Value column="name_es">Difícil conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Easy to get/obtain</Value>
+            <Value column="name_es">Fácil conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Very easy to get/obtain</Value>
+            <Value column="name_es">Muy fácil conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">No hard or easy get/obtain (spontaneous)</Value>
+            <Value column="name_es">Ni fácil ni difícil conseguirla (espontánea)</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Neighborhood Support" key_column="id" name_column="name_en">
+          <Property name="Neighborhood Support ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Near Doctor Support" foreign_key="near_support_doctor">
+      <Hierarchy name="Near Doctor Support" primary_key="id">
+        <InlineTable alias="dim_inline_near_support_doctor">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Imposible get/obtain</Value>
+            <Value column="name_es">Imposible conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Hard to get/obtain</Value>
+            <Value column="name_es">Difícil conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Easy to get/obtain</Value>
+            <Value column="name_es">Fácil conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Very easy to get/obtain</Value>
+            <Value column="name_es">Muy fácil conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">No hard or easy get/obtain (spontaneous)</Value>
+            <Value column="name_es">Ni fácil ni difícil conseguirla (espontánea)</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Near Doctor Support" key_column="id" name_column="name_en">
+          <Property name="Near Doctor Support ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Near Work Support" foreign_key="near_support_work">
+      <Hierarchy name="Near Work Support" primary_key="id">
+        <InlineTable alias="dim_inline_near_support_work">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Imposible get/obtain</Value>
+            <Value column="name_es">Imposible conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Hard to get/obtain</Value>
+            <Value column="name_es">Difícil conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Easy to get/obtain</Value>
+            <Value column="name_es">Fácil conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Very easy to get/obtain</Value>
+            <Value column="name_es">Muy fácil conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">No hard or easy get/obtain (spontaneous)</Value>
+            <Value column="name_es">Ni fácil ni difícil conseguirla (espontánea)</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Near Work Support" key_column="id" name_column="name_en">
+          <Property name="Near Work Support ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Near Sickness Support" foreign_key="near_support_sickness">
+      <Hierarchy name="Near Sickness Support" primary_key="id">
+        <InlineTable alias="dim_inline_near_support_sickness">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Imposible get/obtain</Value>
+            <Value column="name_es">Imposible conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Hard to get/obtain</Value>
+            <Value column="name_es">Difícil conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Easy to get/obtain</Value>
+            <Value column="name_es">Fácil conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Very easy to get/obtain</Value>
+            <Value column="name_es">Muy fácil conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">No hard or easy get/obtain (spontaneous)</Value>
+            <Value column="name_es">Ni fácil ni difícil conseguirla (espontánea)</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Near Sickness Support" key_column="id" name_column="name_en">
+          <Property name="Near Sickness Support ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Near Money Support" foreign_key="near_support_money">
+      <Hierarchy name="Near Money Support" primary_key="id">
+        <InlineTable alias="dim_inline_near_support_money">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Imposible get/obtain</Value>
+            <Value column="name_es">Imposible conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Hard to get/obtain</Value>
+            <Value column="name_es">Difícil conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Easy to get/obtain</Value>
+            <Value column="name_es">Fácil conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Very easy to get/obtain</Value>
+            <Value column="name_es">Muy fácil conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">No hard or easy get/obtain (spontaneous)</Value>
+            <Value column="name_es">Ni fácil ni difícil conseguirla (espontánea)</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Near Money Support" key_column="id" name_column="name_en">
+          <Property name="Near Money Support ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Previous Ent 5 Years" foreign_key="previous_entity_5_years">
+      <Hierarchy name="Previous Ent 5 Years" primary_key="id">
+        <InlineTable alias="dim_inline_previous_entity_5_years">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Aguascalientes</Value>
+            <Value column="name_es">Aguascalientes</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Baja California</Value>
+            <Value column="name_es">Baja California</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Baja California Sur</Value>
+            <Value column="name_es">Baja California Sur</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Campeche</Value>
+            <Value column="name_es">Campeche</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Coahuila de Zaragoza</Value>
+            <Value column="name_es">Coahuila de Zaragoza</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Colima</Value>
+            <Value column="name_es">Colima</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Chiapas</Value>
+            <Value column="name_es">Chiapas</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">Chihuahua</Value>
+            <Value column="name_es">Chihuahua</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Ciudad de México</Value>
+            <Value column="name_es">Ciudad de México</Value>
+          </Row>
+          <Row>
+            <Value column="id">10</Value>
+            <Value column="name_en">Durango</Value>
+            <Value column="name_es">Durango</Value>
+          </Row>
+          <Row>
+            <Value column="id">11</Value>
+            <Value column="name_en">Guanajuato</Value>
+            <Value column="name_es">Guanajuato</Value>
+          </Row>
+          <Row>
+            <Value column="id">12</Value>
+            <Value column="name_en">Guerrero</Value>
+            <Value column="name_es">Guerrero</Value>
+          </Row>
+          <Row>
+            <Value column="id">13</Value>
+            <Value column="name_en">Hidalgo</Value>
+            <Value column="name_es">Hidalgo</Value>
+          </Row>
+          <Row>
+            <Value column="id">14</Value>
+            <Value column="name_en">Jalisco</Value>
+            <Value column="name_es">Jalisco</Value>
+          </Row>
+          <Row>
+            <Value column="id">15</Value>
+            <Value column="name_en">México</Value>
+            <Value column="name_es">México</Value>
+          </Row>
+          <Row>
+            <Value column="id">16</Value>
+            <Value column="name_en">Michoacán de Ocampo</Value>
+            <Value column="name_es">Michoacán de Ocampo</Value>
+          </Row>
+          <Row>
+            <Value column="id">17</Value>
+            <Value column="name_en">Morelos</Value>
+            <Value column="name_es">Morelos</Value>
+          </Row>
+          <Row>
+            <Value column="id">18</Value>
+            <Value column="name_en">Nayarit</Value>
+            <Value column="name_es">Nayarit</Value>
+          </Row>
+          <Row>
+            <Value column="id">19</Value>
+            <Value column="name_en">Nuevo León</Value>
+            <Value column="name_es">Nuevo León</Value>
+          </Row>
+          <Row>
+            <Value column="id">20</Value>
+            <Value column="name_en">Oaxaca</Value>
+            <Value column="name_es">Oaxaca</Value>
+          </Row>
+          <Row>
+            <Value column="id">21</Value>
+            <Value column="name_en">Puebla</Value>
+            <Value column="name_es">Puebla</Value>
+          </Row>
+          <Row>
+            <Value column="id">22</Value>
+            <Value column="name_en">Querétaro</Value>
+            <Value column="name_es">Querétaro</Value>
+          </Row>
+          <Row>
+            <Value column="id">23</Value>
+            <Value column="name_en">Quintana Roo</Value>
+            <Value column="name_es">Quintana Roo</Value>
+          </Row>
+          <Row>
+            <Value column="id">24</Value>
+            <Value column="name_en">San Luis Potosí</Value>
+            <Value column="name_es">San Luis Potosí</Value>
+          </Row>
+          <Row>
+            <Value column="id">25</Value>
+            <Value column="name_en">Sinaloa</Value>
+            <Value column="name_es">Sinaloa</Value>
+          </Row>
+          <Row>
+            <Value column="id">26</Value>
+            <Value column="name_en">Sonora</Value>
+            <Value column="name_es">Sonora</Value>
+          </Row>
+          <Row>
+            <Value column="id">27</Value>
+            <Value column="name_en">Tabasco</Value>
+            <Value column="name_es">Tabasco</Value>
+          </Row>
+          <Row>
+            <Value column="id">28</Value>
+            <Value column="name_en">Tamaulipas</Value>
+            <Value column="name_es">Tamaulipas</Value>
+          </Row>
+          <Row>
+            <Value column="id">29</Value>
+            <Value column="name_en">Tlaxcala</Value>
+            <Value column="name_es">Tlaxcala</Value>
+          </Row>
+          <Row>
+            <Value column="id">30</Value>
+            <Value column="name_en">Veracruz de Ignacio de la Llave</Value>
+            <Value column="name_es">Veracruz de Ignacio de la Llave</Value>
+          </Row>
+          <Row>
+            <Value column="id">31</Value>
+            <Value column="name_en">Yucatán</Value>
+            <Value column="name_es">Yucatán</Value>
+          </Row>
+          <Row>
+            <Value column="id">32</Value>
+            <Value column="name_en">Zacatecas</Value>
+            <Value column="name_es">Zacatecas</Value>
+          </Row>
+          <Row>
+            <Value column="id">33</Value>
+            <Value column="name_en">United States of America</Value>
+            <Value column="name_es">Estados Unidos de América</Value>
+          </Row>
+          <Row>
+            <Value column="id">34</Value>
+            <Value column="name_en">Another country</Value>
+            <Value column="name_es">Otro país</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Previous Ent 5 Years" key_column="id" name_column="name_en">
+          <Property name="Previous Ent 5 Years ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Year" foreign_key="year">
+      <Hierarchy name="Year">
+        <Level name="Year" key_column="year" type="time" />
+      </Hierarchy>
+    </Dimension>
+
+    <DimensionUsage foreign_key="academic_degree" source="Academic Degree" name="Academic Degree" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
 
     <Measure name="Population" column="population" aggregator="sum" />
+    <Measure name="Months Social Security" column="months_social_security" aggregator="avg" />
+
   </Cube>
 </Schema>
