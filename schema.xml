@@ -92,9 +92,9 @@
   <SharedDimension name="Country">
     <Hierarchy name="Country" primary_key="iso3">
       <Table name="dim_shared_country"/>
-      <Level name="Country" key_column="iso3" name_column="country_name" key_type="text">
-        <Property name="Country ES" column="country_name_es" caption_set="es"/>
-        <Property name="ISO 2" column="iso2"/>
+      <Level name="Continent" key_column="continent_id" name_column="continent" key_type="text" />
+      <Level name="Country" key_column="iso3" name_column="country_name" key_type="text" >
+        <Property name="ISO 2" column="iso2" />
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -354,6 +354,82 @@
     </Hierarchy>
   </SharedDimension>
 
+  <SharedDimension name="Trust">
+      <Hierarchy name="Trust">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">A lot of</Value>
+                <Value column="name_es">Mucha</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some</Value>
+                <Value column="name_es">Alguna</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Very little</Value>
+                <Value column="name_es">Poca</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">None</Value>
+                <Value column="name_es">Nada</Value>
+            </Row>
+            <Row>
+                <Value column="id">5</Value>
+                <Value column="name_en">Does not apply</Value>
+                <Value column="name_es">No Aplica</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Trust" key_column="id" name_column="name_en">
+          <Property name="Trust ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </SharedDimension>  
+
+    <SharedDimension name="Confidence">
+      <Hierarchy name="Confidence">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Much trust</Value>
+                <Value column="name_es">Mucha Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some confidence</Value>
+                <Value column="name_es">Algo de Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Some distrust</Value>
+                <Value column="name_es">Algo de Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">Much distrust</Value>
+                <Value column="name_es">Mucha Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">9</Value>
+                <Value column="name_en">Does not know / does not answer</Value>
+                <Value column="name_es">No Sabe / No Responde</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Confidence" key_column="id" name_column="name_en">
+          <Property name="Confidence ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </SharedDimension> 
+
 <Cube name="anuies_enrollment">
     <Table name="anuies_enrollment" primary_key="mun_id" />
 
@@ -533,6 +609,7 @@
 
     <Dimension name="Security Perception in their State" foreign_key="security_perception_in_their_state">
       <Hierarchy name="Security Perception in their State" primary_key="id">
+
         <InlineTable alias="dim_inline_envipe">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -561,6 +638,7 @@
 
     <Dimension name="Sociodemographic Stratum" foreign_key="sociodemographic_stratum">
       <Hierarchy name="Sociodemographic Stratum" primary_key="id">
+
         <InlineTable alias="dim_inline_envipe">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -1128,6 +1206,12 @@
         <Level name="Confidence in Judges" key_column="id" name_column="name_en">
           <Property name="Confidence in Judges ES" column="name_es" caption_set="es"/>
         </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Year" foreign_key="year">
+      <Hierarchy name="Year">
+        <Level name="Year" key_column="year" type="time" />
       </Hierarchy>
     </Dimension>
 
@@ -1989,6 +2073,880 @@
     <Measure name="Worked Days Week" column="actual_job_days_worked_lastweek" aggregator="avg" />
     <Measure name="Wage" column="actual_amount_pesos" aggregator="avg" />
     <Measure name="Workforce" column="population" aggregator="sum" />
+
+  </Cube>
+<Cube name="inegi_ensu">
+    <Table name="inegi_ensu" primary_key="ent_id" />
+
+    <Dimension name="City Perception" foreign_key="perception_city">
+      <Hierarchy name="City Perception" primary_key="id">
+        <InlineTable alias="dim_inline_perception_city">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Safe</Value>
+            <Value column="name_es">Segura</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Unsafe</Value>
+            <Value column="name_es">Insegura</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowledge / no answer</Value>
+            <Value column="name_es">No sabe / no responde</Value>
+          </Row>
+        </InlineTable>
+        <Level name="City Perception" key_column="id" name_column="name_en">
+          <Property name="City Perception ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="City Perception at Home" foreign_key="perception_city_home">
+      <Hierarchy name="City Perception at Home" primary_key="id">
+        <InlineTable alias="dim_inline_perception_city_home">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Safe</Value>
+            <Value column="name_es">Segura</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Unsafe</Value>
+            <Value column="name_es">Insegura</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">No apply</Value>
+            <Value column="name_es">No aplica</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowledge / no answer</Value>
+            <Value column="name_es">No sabe / no responde</Value>
+          </Row>
+        </InlineTable>
+        <Level name="City Perception at Home" key_column="id" name_column="name_en">
+          <Property name="City Perception at Home ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="City Perception at Work" foreign_key="perception_city_at_work">
+      <Hierarchy name="City Perception at Work" primary_key="id">
+        <InlineTable alias="dim_inline_perception_city_at_work">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Safe</Value>
+            <Value column="name_es">Segura</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Unsafe</Value>
+            <Value column="name_es">Insegura</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">No apply</Value>
+            <Value column="name_es">No aplica</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowledge / no answer</Value>
+            <Value column="name_es">No sabe / no responde</Value>
+          </Row>
+        </InlineTable>
+        <Level name="City Perception at Work" key_column="id" name_column="name_en">
+          <Property name="City Perception at Work ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="City Perception Streets" foreign_key="perception_city_streets">
+      <Hierarchy name="City Perception Streets" primary_key="id">
+        <InlineTable alias="dim_inline_perception_city_streets">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Safe</Value>
+            <Value column="name_es">Segura</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Unsafe</Value>
+            <Value column="name_es">Insegura</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">No apply</Value>
+            <Value column="name_es">No aplica</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowledge / no answer</Value>
+            <Value column="name_es">No sabe / no responde</Value>
+          </Row>
+        </InlineTable>
+        <Level name="City Perception Streets" key_column="id" name_column="name_en">
+          <Property name="City Perception Streets ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="City Perception at Public Transport" foreign_key="perception_city_transport">
+      <Hierarchy name="City Perception at Public Transport" primary_key="id">
+        <InlineTable alias="dim_inline_perception_city_transport">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Safe</Value>
+            <Value column="name_es">Segura</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Unsafe</Value>
+            <Value column="name_es">Insegura</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">No apply</Value>
+            <Value column="name_es">No aplica</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowledge / no answer</Value>
+            <Value column="name_es">No sabe / no responde</Value>
+          </Row>
+        </InlineTable>
+        <Level name="City Perception at Public Transport" key_column="id" name_column="name_en">
+          <Property name="City Perception at Public Transport ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="City Safety Improvements" foreign_key="city_improves">
+      <Hierarchy name="City Safety Improvements" primary_key="id">
+        <InlineTable alias="dim_inline_city_improves">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Will improve</Value>
+            <Value column="name_es">Mejorara</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">It will remain safe</Value>
+            <Value column="name_es">Seguira igual de bien</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">It will remain unsafe</Value>
+            <Value column="name_es">Seguira igual de mal</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Will get worse</Value>
+            <Value column="name_es">Empeorara</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowledge / no answer</Value>
+            <Value column="name_es">No sabe / no responde</Value>
+          </Row>
+        </InlineTable>
+        <Level name="City Safety Improvements" key_column="id" name_column="name_en">
+          <Property name="City Safety Improvements ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Witness Thefts Last 3 Months" foreign_key="thefts_3_months">
+      <Hierarchy name="Witness Thefts Last 3 Months" primary_key="id">
+        <InlineTable alias="dim_inline_thefts_3_months">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Will improve</Value>
+            <Value column="name_es">Mejorara</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">It will remain safe</Value>
+            <Value column="name_es">Seguira igual de bien</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowledge / no answer</Value>
+            <Value column="name_es">No sabe / no responde</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Witness Thefts Last 3 Months" key_column="id" name_column="name_en">
+          <Property name="Witness Thefts Last 3 Months ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Witness Gangs Last 3 Months" foreign_key="gangs_3_months">
+      <Hierarchy name="Witness Gangs Last 3 Months" primary_key="id">
+        <InlineTable alias="dim_inline_gangs_3_months">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Will improve</Value>
+            <Value column="name_es">Mejorara</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">It will remain safe</Value>
+            <Value column="name_es">Seguira igual de bien</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowledge / no answer</Value>
+            <Value column="name_es">No sabe / no responde</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Witness Gangs Last 3 Months" key_column="id" name_column="name_en">
+          <Property name="Witness Gangs Last 3 Months ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Witness Drugs Last 3 Months" foreign_key="drugs_3_months">
+      <Hierarchy name="Witness Drugs Last 3 Months" primary_key="id">
+        <InlineTable alias="dim_inline_drugs_3_months">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Will improve</Value>
+            <Value column="name_es">Mejorara</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">It will remain safe</Value>
+            <Value column="name_es">Seguira igual de bien</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowledge / no answer</Value>
+            <Value column="name_es">No sabe / no responde</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Witness Drugs Last 3 Months" key_column="id" name_column="name_en">
+          <Property name="Witness Drugs Last 3 Months ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Witness Gunshots Last 3 Months" foreign_key="gunshots_3_months">
+      <Hierarchy name="Witness Gunshots Last 3 Months" primary_key="id">
+        <InlineTable alias="dim_inline_gunshots_3_months">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Will improve</Value>
+            <Value column="name_es">Mejorara</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">It will remain safe</Value>
+            <Value column="name_es">Seguira igual de bien</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowledge / no answer</Value>
+            <Value column="name_es">No sabe / no responde</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Witness Gunshots Last 3 Months" key_column="id" name_column="name_en">
+          <Property name="Witness Gunshots Last 3 Months ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Carrying Goods or Money" foreign_key="carrying_goods">
+      <Hierarchy name="Carrying Goods or Money" primary_key="id">
+        <InlineTable alias="dim_inline_carrying_goods">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">No apply</Value>
+            <Value column="name_es">No aplica</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowledge / no answer</Value>
+            <Value column="name_es">No sabe / no responde</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Carrying Goods or Money" key_column="id" name_column="name_en">
+          <Property name="Carrying Goods or Money ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Walking at night" foreign_key="walks_night">
+      <Hierarchy name="Walking at night" primary_key="id">
+        <InlineTable alias="dim_inline_walks_night">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">No apply</Value>
+            <Value column="name_es">No aplica</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowledge / no answer</Value>
+            <Value column="name_es">No sabe / no responde</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Walking at night" key_column="id" name_column="name_en">
+          <Property name="Walking at night ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Identify Municipal Preventive Police" foreign_key="preventive_police">
+      <Hierarchy name="Identify Municipal Preventive Police" primary_key="id">
+        <InlineTable alias="dim_inline_preventive_police">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">No apply</Value>
+            <Value column="name_es">No aplica</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowledge / no answer</Value>
+            <Value column="name_es">No sabe / no responde</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Identify Municipal Preventive Police" key_column="id" name_column="name_en">
+          <Property name="Identify Municipal Preventive Police ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Identify State Police" foreign_key="state_police">
+      <Hierarchy name="Identify State Police" primary_key="id">
+        <InlineTable alias="dim_inline_state_police">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">No apply</Value>
+            <Value column="name_es">No aplica</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowledge / no answer</Value>
+            <Value column="name_es">No sabe / no responde</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Identify State Police" key_column="id" name_column="name_en">
+          <Property name="Identify State Police ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Identify Federal Police" foreign_key="federal_police">
+      <Hierarchy name="Identify Federal Police" primary_key="id">
+        <InlineTable alias="dim_inline_federal_police">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">No apply</Value>
+            <Value column="name_es">No aplica</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowledge / no answer</Value>
+            <Value column="name_es">No sabe / no responde</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Identify Federal Police" key_column="id" name_column="name_en">
+          <Property name="Identify Federal Police ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Identify Gendarmerie Police" foreign_key="gendarmerie_police">
+      <Hierarchy name="Identify Gendarmerie Police" primary_key="id">
+        <InlineTable alias="dim_inline_gendarmerie_police">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">No apply</Value>
+            <Value column="name_es">No aplica</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No knowledge / no answer</Value>
+            <Value column="name_es">No sabe / no responde</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Identify Gendarmerie Police" key_column="id" name_column="name_en">
+          <Property name="Identify Gendarmerie Police ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Direct Figths Gangs Last 3 Months" foreign_key="fights_gangs_3_months">
+      <Hierarchy name="Direct Figths Gangs Last 3 Months" primary_key="id">
+        <InlineTable alias="dim_inline_fights_gangs_3_months">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">It was not declare as a possitive answer</Value>
+            <Value column="name_es">No se declaro como opcion afirmativa</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Direct Figths Gangs Last 3 Months" key_column="id" name_column="name_en">
+          <Property name="Direct Figths Gangs Last 3 Months ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Police Abuses Last 3 Months" foreign_key="police_abuse_3_months">
+      <Hierarchy name="Police Abuses Last 3 Months" primary_key="id">
+        <InlineTable alias="dim_inline_police_abuse_3_months">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">It was not declare as a possitive answer</Value>
+            <Value column="name_es">No se declaro como opcion afirmativa</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Police Abuses Last 3 Months" key_column="id" name_column="name_en">
+          <Property name="Police Abuses Last 3 Months ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Conflicts with Screams" foreign_key="conflict_screams">
+      <Hierarchy name="Conflicts with Screams" primary_key="id">
+        <InlineTable alias="dim_inline_conflict_screams">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">It was not declare as a possitive answer</Value>
+            <Value column="name_es">No se declaro como opcion afirmativa</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Conflicts with Screams" key_column="id" name_column="name_en">
+          <Property name="Conflicts with Screams ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Conflicts with Hits" foreign_key="conflict_hits">
+      <Hierarchy name="Conflicts with Hits" primary_key="id">
+        <InlineTable alias="dim_inline_conflict_hits">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">It was not declare as a possitive answer</Value>
+            <Value column="name_es">No se declaro como opcion afirmativa</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Conflicts with Hits" key_column="id" name_column="name_en">
+          <Property name="Conflicts with Hits ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Conflicts with Blunt Objects" foreign_key="conflict_with_obj">
+      <Hierarchy name="Conflicts with Blunt Objects" primary_key="id">
+        <InlineTable alias="dim_inline_conflict_with_obj">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">It was not declare as a possitive answer</Value>
+            <Value column="name_es">No se declaro como opcion afirmativa</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Conflicts with Blunt Objects" key_column="id" name_column="name_en">
+          <Property name="Conflicts with Blunt Objects ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Conflicts with Sharp Objects" foreign_key="conflict_sharp_obj">
+      <Hierarchy name="Conflicts with Sharp Objects" primary_key="id">
+        <InlineTable alias="dim_inline_conflict_sharp_obj">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">It was not declare as a possitive answer</Value>
+            <Value column="name_es">No se declaro como opcion afirmativa</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Conflicts with Sharp Objects" key_column="id" name_column="name_en">
+          <Property name="Conflicts with Sharp Objects ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Conflicts with Guns" foreign_key="conflict_guns">
+      <Hierarchy name="Conflicts with Guns" primary_key="id">
+        <InlineTable alias="dim_inline_conflict_guns">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">It was not declare as a possitive answer</Value>
+            <Value column="name_es">No se declaro como opcion afirmativa</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Conflicts with Guns" key_column="id" name_column="name_en">
+          <Property name="Conflicts with Guns ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="City Government Efficiency" foreign_key="goverment_actions">
+      <Hierarchy name="City Government Efficiency" primary_key="id">
+        <InlineTable alias="dim_inline_goverment_actions">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Algo efectivo</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+        </InlineTable>
+        <Level name="City Government Efficiency" key_column="id" name_column="name_en">
+          <Property name="City Government Efficiency ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Perception of Preventive Police" foreign_key="preventive_police_perception">
+      <Hierarchy name="Perception of Preventive Police" primary_key="id">
+        <InlineTable alias="dim_inline_preventive_police_perception">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Algo efectivo</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Perception of Preventive Police" key_column="id" name_column="name_en">
+          <Property name="Perception of Preventive Police ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Perception of State Police" foreign_key="state_police_perception">
+      <Hierarchy name="Perception of State Police" primary_key="id">
+        <InlineTable alias="dim_inline_state_police_perception">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Algo efectivo</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Perception of State Police" key_column="id" name_column="name_en">
+          <Property name="Perception of State Police ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Perception of Federal Police" foreign_key="federal_police_perception">
+      <Hierarchy name="Perception of Federal Police" primary_key="id">
+        <InlineTable alias="dim_inline_federal_police_perception">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Algo efectivo</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Perception of Federal Police" key_column="id" name_column="name_en">
+          <Property name="Perception of Federal Police ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Perception of Gendarmerie Police" foreign_key="gendarmerie_police_perception">
+      <Hierarchy name="Perception of Gendarmerie Police" primary_key="id">
+        <InlineTable alias="dim_inline_gendarmerie_police_perception">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Algo efectivo</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Perception of Gendarmerie Police" key_column="id" name_column="name_en">
+          <Property name="Perception of Gendarmerie Police ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Geography Self Represented" foreign_key="reference_city">
+      <Hierarchy name="Geography Self Represented" primary_key="reference_city_id">
+        <Table name="dim_shared_ensu_cities" />
+        <Level name="Self Represented City" key_column="reference_city_id" name_column="reference_city_name" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
+
+    <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
+    <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
+    <Measure name="Population" column="population" aggregator="sum" />
 
   </Cube>
 <Cube name="inegi_housing">

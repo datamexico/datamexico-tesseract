@@ -1,0 +1,126 @@
+{
+    "aliases": {
+        "cubes": [
+            {
+                "name": "inegi_envipe",
+                "alternatives": ["ENVIPE INEGI"],
+                "levels": [
+                    {
+                        "current_name": "Trust in Neighborhood.Trust.Trust",
+                        "unique_name": "Trust in Neighborhood"
+                    },
+                    {
+                        "current_name": "Trust in Coworkers.Trust.Trust",
+                        "unique_name": "Trust in Coworkers"
+                    },
+                    {
+                        "current_name": "Trust in Family.Trust.Trust",
+                        "unique_name": "Trust in Family"
+                    },
+                    {
+                        "current_name": "Trust in Friends.Trust.Trust",
+                        "unique_name": "Trust in Friends"
+                    },
+                    {
+                        "current_name": "Confidence in Traffic Police.Confidence.Confidence",
+                        "unique_name": "Confidence in Traffic Police"
+                    },
+                    {
+                        "current_name": "Confidence in Municipal Preventive Police.Confidence.Confidence",
+                        "unique_name": "Confidence in Municipal Preventive Police"
+                    },
+                    {
+                        "current_name": "Confidence in State Police.Confidence.Confidence",
+                        "unique_name": "Confidence in State Police"
+                    },
+                    {
+                        "current_name": "Confidence in Federal Police.Confidence.Confidence",
+                        "unique_name": "Confidence in Federal Police"
+                    },
+                    {
+                        "current_name": "Confidence in Ministerial or Judicial Police.Confidence.Confidence",
+                        "unique_name": "Confidence in Ministerial or Judicial Police"
+                    },
+                    {
+                        "current_name": "Confidence in Public Ministry and State Prosecutors.Confidence.Confidence",
+                        "unique_name": "Confidence in Public Ministry and State Prosecutors"
+                    },
+                    {
+                        "current_name": "Confidence in State Prosecutor of the Republic.Confidence.Confidence",
+                        "unique_name": "Confidence in State Prosecutor of the Republic"
+                    },
+                    {
+                        "current_name": "Confidence in Army.Confidence.Confidence",
+                        "unique_name": "Confidence in Army"
+                    },
+                    {
+                        "current_name": "Confidence in Navy.Confidence.Confidence",
+                        "unique_name": "Confidence in Navy"
+                    },
+                    {
+                        "current_name": "Confidence in Judges.Confidence.Confidence",
+                        "unique_name": "Confidence in Judges"
+                    }
+                ],
+                "properties": [
+                    {
+                        "current_name": "Trust in Neighborhood.Trust.Trust.Trust ES",
+                        "unique_name": "Trust in Neighborhood ES"
+                    },
+                    {
+                        "current_name": "Trust in Coworkers.Trust.Trust.Trust ES",
+                        "unique_name": "Trust in Coworkers ES"
+                    },
+                    {
+                        "current_name": "Trust in Family.Trust.Trust.Trust ES",
+                        "unique_name": "Trust in Family ES"
+                    },
+                    {
+                        "current_name": "Trust in Friends.Trust.Trust.Trust ES",
+                        "unique_name": "Trust in Friends ES"
+                    },
+                    {
+                        "current_name": "Confidence in Traffic Police.Confidence.Confidence",
+                        "unique_name": "Confidence in Traffic Police"
+                    },
+                    {
+                        "current_name": "Confidence in Municipal Preventive Police.Confidence.Confidence",
+                        "unique_name": "Confidence in Municipal Preventive Police"
+                    },
+                    {
+                        "current_name": "Confidence in State Police.Confidence.Confidence",
+                        "unique_name": "Confidence in State Police"
+                    },
+                    {
+                        "current_name": "Confidence in Federal Police.Confidence.Confidence",
+                        "unique_name": "Confidence in Federal Police"
+                    },
+                    {
+                        "current_name": "Confidence in Ministerial or Judicial Police.Confidence.Confidence",
+                        "unique_name": "Confidence in Ministerial or Judicial Police"
+                    },
+                    {
+                        "current_name": "Confidence in Public Ministry and State Prosecutors.Confidence.Confidence",
+                        "unique_name": "Confidence in Public Ministry and State Prosecutors"
+                    },
+                    {
+                        "current_name": "Confidence in State Prosecutor of the Republic.Confidence.Confidence",
+                        "unique_name": "Confidence in State Prosecutor of the Republic"
+                    },
+                    {
+                        "current_name": "Confidence in Army.Confidence.Confidence",
+                        "unique_name": "Confidence in Army"
+                    },
+                    {
+                        "current_name": "Confidence in Navy.Confidence.Confidence",
+                        "unique_name": "Confidence in Navy"
+                    },
+                    {
+                        "current_name": "Confidence in Judges.Confidence.Confidence",
+                        "unique_name": "Confidence in Judges"
+                    }
+                ]
+            }
+        ]
+    }
+}

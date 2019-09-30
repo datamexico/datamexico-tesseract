@@ -864,7 +864,7 @@
     <Dimension name="Geography Self Represented" foreign_key="reference_city">
       <Hierarchy name="Geography Self Represented" primary_key="reference_city_id">
         <Table name="dim_shared_ensu_cities" />
-        <Level name="Self Represented City" key_column="self_city_id" name_column="self_city_name" key_type="nontext" />
+        <Level name="Self Represented City" key_column="reference_city_id" name_column="reference_city_name" key_type="nontext" />
       </Hierarchy>
     </Dimension>
 
