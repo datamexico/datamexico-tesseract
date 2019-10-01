@@ -21,7 +21,7 @@
                 <Value column="name_es">Inseguro</Value>
             </Row>
             <Row>
-                <Value column="id">3</Value>
+                <Value column="id">9</Value>
                 <Value column="name_en">Does not know / does not answer</Value>
                 <Value column="name_es">No Sabe / No Responde</Value>
             </Row>
@@ -104,6 +104,11 @@
                 <Value column="name_en">Does not apply</Value>
                 <Value column="name_es">No Aplica</Value>
             </Row>
+            <Row>
+                <Value column="id">9</Value>
+                <Value column="name_en">Does not know / does not answer</Value>
+                <Value column="name_es">No Sabe / No Responde</Value>
+            </Row>
         </InlineTable>
         <Level name="Trust in Neighborhood" key_column="id" name_column="name_en">
           <Property name="Trust in Neighborhood ES" column="name_es" caption_set="es"/>
@@ -141,6 +146,11 @@
                 <Value column="id">5</Value>
                 <Value column="name_en">Does not apply</Value>
                 <Value column="name_es">No Aplica</Value>
+            </Row>
+            <Row>
+                <Value column="id">9</Value>
+                <Value column="name_en">Does not know / does not answer</Value>
+                <Value column="name_es">No Sabe / No Responde</Value>
             </Row>
         </InlineTable>
         <Level name="Trust in Coworkers" key_column="id" name_column="name_en">
@@ -180,6 +190,11 @@
                 <Value column="name_en">Does not apply</Value>
                 <Value column="name_es">No Aplica</Value>
             </Row>
+            <Row>
+                <Value column="id">9</Value>
+                <Value column="name_en">Does not know / does not answer</Value>
+                <Value column="name_es">No Sabe / No Responde</Value>
+            </Row>
         </InlineTable>
         <Level name="Trust in Family" key_column="id" name_column="name_en">
           <Property name="Trust in Family ES" column="name_es" caption_set="es"/>
@@ -217,6 +232,11 @@
                 <Value column="id">5</Value>
                 <Value column="name_en">Does not apply</Value>
                 <Value column="name_es">No Aplica</Value>
+            </Row>
+            <Row>
+                <Value column="id">9</Value>
+                <Value column="name_en">Does not know / does not answer</Value>
+                <Value column="name_es">No Sabe / No Responde</Value>
             </Row>
         </InlineTable>
         <Level name="Trust in Friends" key_column="id" name_column="name_en">
