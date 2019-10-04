@@ -5462,7 +5462,7 @@
 <Cube name="inegi_suicides_over_mortality">
     <Table name="inegi_suicides_over_mortality" primary_key="ent_id" />
 
-    <DimensionUsage foreign_key="ent_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
     <Measure name="Suicides" column="suicides" aggregator="sum" />
