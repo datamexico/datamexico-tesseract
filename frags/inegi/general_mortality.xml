@@ -1,0 +1,12 @@
+<Schema name="datamexico">
+  <Cube name="inegi_general_mortality">
+    <Table name="inegi_general_mortality" primary_key="ent_id" />
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Measure name="General Deaths Over 1 year" column="general_deaths" aggregator="sum" />
+    <Measure name="General Deaths 1 Year Olds" column="one_year_deaths" aggregator="sum" />
+  </Cube>
+</Schema>
