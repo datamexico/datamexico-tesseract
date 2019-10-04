@@ -15,17 +15,17 @@
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Lower middle</Value>
+            <Value column="name_en">Lower middle Class</Value>
             <Value column="name_es">Clase Media Baja</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Upper middle</Value>
+            <Value column="name_en">Upper middle Class</Value>
             <Value column="name_es">Clase Media Alta</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">Upper</Value>
+            <Value column="name_en">Upper Class</Value>
             <Value column="name_es">Clase Alta</Value>
           </Row>
         </InlineTable>
