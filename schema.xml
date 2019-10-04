@@ -428,7 +428,7 @@
           <Property name="Confidence ES" column="name_es" caption_set="es"/>
         </Level>
       </Hierarchy>
-    </SharedDimension> 
+    </SharedDimension>
 
 <Cube name="anuies_enrollment">
     <Table name="anuies_enrollment" primary_key="mun_id" />
