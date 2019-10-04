@@ -6,8 +6,8 @@
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
     <Measure name="Suicides" column="suicides" aggregator="sum" />
-    <Measure name="Rate of Violent Deaths" column="rate_violent_deaths" aggregator="sum" />
-    <Measure name="Overmortality Index" column="male_overmortality_index" aggregator="sum" />
+    <Measure name="Rate of Violent Deaths" column="rate_violent_deaths" aggregator="avg" />
+    <Measure name="Overmortality Index" column="male_overmortality_index" aggregator="avg" />
 
   </Cube>
 </Schema>
