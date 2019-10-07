@@ -319,10 +319,13 @@
         <Property name="HS2 ES" column="hs2_es" caption_set="es"/>
       </Level>
       <Level name="HS4" key_column="hs4_id" name_column="hs4_en" key_type="nontext">
-        <Property name="HS04 ES" column="hs4_es" caption_set="es"/>
+        <Property name="HS4 ES" column="hs4_es" caption_set="es"/>
       </Level>
       <Level name="HS6" key_column="hs6_id" name_column="hs6_en" key_type="nontext">
         <Property name="HS6 ES" column="hs6_es" caption_set="es"/>
+      </Level>
+      <Level name="Short HS6" key_column="hs6_id" name_column="hs6_en_short" key_type="nontext">
+        <Property name="Short HS6 ES" column="hs6_es_short" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -337,7 +340,10 @@
         <Property name="HS2 4 Digit ES" column="hs2_es" caption_set="es"/>
       </Level>
       <Level name="HS4 4 Digit" key_column="hs4_id" name_column="hs4_en" key_type="nontext">
-        <Property name="HS04 4 Digit ES" column="hs4_es" caption_set="es"/>
+        <Property name="HS4 4 Digit ES" column="hs4_es" caption_set="es"/>
+      </Level>
+      <Level name="Short HS4 4 Digit" key_column="hs4_id" name_column="hs4_en_short" key_type="nontext">
+        <Property name="Short HS4 4 Digit ES" column="hs4_es_short" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -429,6 +435,7 @@
         </Level>
       </Hierarchy>
     </SharedDimension> 
+
 
 <Cube name="anuies_enrollment">
     <Table name="anuies_enrollment" primary_key="mun_id" />
