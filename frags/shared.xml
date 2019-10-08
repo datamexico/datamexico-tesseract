@@ -95,6 +95,7 @@
       <Level name="Continent" key_column="continent_id" name_column="continent" key_type="text" />
       <Level name="Country" key_column="iso3" name_column="country_name" key_type="text" >
         <Property name="ISO 2" column="iso2" />
+        <Property name="OECD" column="oecd" />
       </Level>
     </Hierarchy>
   </SharedDimension>
