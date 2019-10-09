@@ -2,6 +2,11 @@
   <Cube name="inegi_economic_census_sex">
     <Table name="inegi_economic_census_sexr" primary_key="mun_id" />
 
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
+    <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
+
     <Measure name="Employed workers" column="employed_workers" aggregator="sum" />
     <Measure name="Personal dependent on the social reason" column="personal_dependent_on_the_social_reason" aggregator="sum"/>
     <Measure name="Paid staff" column="paid staff" aggregator="sum"/>
@@ -11,12 +16,6 @@
     <Measure name="Staff not dependent on the social reason" column="staff_not_dependent_on_the_social_reason" aggregator="sum"/>
     <Measure name="Personnel provided by another company name" column="personnel_provided_by_another_company_name" aggregator="sum"/>
     <Measure name="Staff for fees or commissions without basic salary" column="staff_for_fees_or_commissions_without_basic_salary" aggregator="sum"/>
-
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
-    <DimensionUsage foreign_key="year" source="Year" name="Year" />
-    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
-    <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
-
     <Measure name="Total" column="count" aggregator="sum" />
 
   </Cube>
