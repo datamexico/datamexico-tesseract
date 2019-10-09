@@ -1726,7 +1726,7 @@
     <Measure name="Total Stock of Furniture; office Equipment and Other Fixed Assets" column="q900a" aggregator="sum"/>
   </Cube>
 <Cube name="inegi_economic_census_sex">
-    <Table name="inegi_economic_census_sexr" primary_key="mun_id" />
+    <Table name="inegi_economic_census_sex" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
