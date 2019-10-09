@@ -8,7 +8,9 @@
     <Dimension name="Company" foreign_key="id">
       <Hierarchy name="Company" primary_key="id">
       <Table name="inegi_denue_companies" />
-        <Level name="Company" key_column="id" name_column="nom_estab" key_type="nontext" />
+        <Level name="Company" key_column="id" name_column="nom_estab" key_type="nontext">
+          <Property name="Company ES" column="nom_estab" caption_set="es"/>
+        </Level>
       </Hierarchy>
     </Dimension>
 
@@ -47,7 +49,9 @@
             <Value column="name">251+</Value>
           </Row>
         </InlineTable>
-        <Level name="Company Size" key_column="id" name_column="name" />
+        <Level name="Company Size" key_column="id" name_column="name">
+          <Property name="Company Size ES" column="name" caption_set="es"/>
+        </Level>
       </Hierarchy>
     </Dimension>
 

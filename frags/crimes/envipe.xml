@@ -69,7 +69,9 @@
     <Dimension name="Expenses in Protection Against Crime" foreign_key="expenses_in_protection_against_crime">
       <Hierarchy name="Expenses in Protection Against Crime" primary_key="id">
         <Table name="dim_shared_money" />
-        <Level name="Expenses in Protection Against Crime" key_column="id" name_column="name" />
+        <Level name="Expenses in Protection Against Crime" key_column="id" name_column="name">
+          <Property name="Expenses in Protection Against Crime ES" column="name" caption_set="es"/>
+        </Level>
       </Hierarchy>
     </Dimension>
 
