@@ -487,7 +487,7 @@
           <Property name="Confidence ES" column="name_es" caption_set="es"/>
         </Level>
       </Hierarchy>
-    </SharedDimension> 
+    </SharedDimension>
 
 <Cube name="anuies_enrollment">
     <Table name="anuies_enrollment" primary_key="mun_id" />
@@ -3304,19 +3304,19 @@
       <Hierarchy name="Geography Self Represented" primary_key="mun_id">
         <Table name="dim_shared_geography_self_city" />
         <Level name="Nation ENOE" key_column="nation_id" name_column="nation_name" key_type="nontext" >
-          <Property name="Nation ENOE ES" column="nation_name" caption_set="es">
+          <Property name="Nation ENOE ES" column="nation_name" caption_set="es"/>
         </Level>
         <Level name="State ENOE" key_column="ent_id" name_column="ent_name" key_type="nontext">
           <Property name="CVE State ENOE" column="cve_ent" />
-          <Property name="State ENOE ES" column="ent_name" caption_set="es">
+          <Property name="State ENOE ES" column="ent_name" caption_set="es"/>
         </Level>
         <Level name="Self Represented City" key_column="self_city_id" name_column="self_city_name" key_type="nontext">
-          <Property name="Self Represented City ES" column="self_city_name" caption_set="es">
+          <Property name="Self Represented City ES" column="self_city_name" caption_set="es"/>
         </Level>
         <Level name="Municipality ENOE" key_column="mun_id" name_column="mun_name" key_type="nontext">
           <Property name="CVE Municipality ENOE" column="cve_mun" />
           <Property name="CVE Municipality Full ENOE" column="cve_mun_full" />
-          <Property name="Municipality ENOE ES" column="mun_name" caption_set="es">
+          <Property name="Municipality ENOE ES" column="mun_name" caption_set="es"/>
         </Level>
       </Hierarchy>
     </Dimension>
