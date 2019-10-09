@@ -347,7 +347,7 @@
         <Level name="Salary Group" key_column="enoe_group_id" name_column="enoe_group" key_type="nontext">
           <Property name="Salary Group ES" column="enoe_group" caption_set="es"/>
         </Level>
-        <Level name="Salary" key_column="id" name_column="name" key_type="nontext" />
+        <Level name="Salary" key_column="id" name_column="name" key_type="nontext" >
           <Property name="Salary ES" column="name" caption_set="es"/>
         </Level>
       </Hierarchy>
@@ -356,7 +356,7 @@
     <Dimension name="Geography Self Represented" foreign_key="mun_id">
       <Hierarchy name="Geography Self Represented" primary_key="mun_id">
         <Table name="dim_shared_geography_self_city" />
-        <Level name="Nation ENOE" key_column="nation_id" name_column="nation_name" key_type="nontext" />
+        <Level name="Nation ENOE" key_column="nation_id" name_column="nation_name" key_type="nontext" >
           <Property name="Nation ENOE ES" column="nation_name" caption_set="es">
         </Level>
         <Level name="State ENOE" key_column="ent_id" name_column="ent_name" key_type="nontext">
