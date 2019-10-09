@@ -1,0 +1,70 @@
+<Schema name="datamexico">
+  <Cube name="inegi_economic_census_gender">
+    <Table name="inegi_economic_census_gender" primary_key="mun_id" />
+
+    <Dimension name="Classification" foreign_key="classification">
+      <Hierarchy name="Classification" primary_key="id">
+        <InlineTable alias="dim_inline_classification">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Employed workers</Value>
+            <Value column="name_es">Personal ocupado</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Personal dependent on the social reason</Value>
+            <Value column="name_es">Personal dependiente de la razón social</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Paid staff</Value>
+            <Value column="name_es">Personal remunerado</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Production personnel, sales and service</Value>
+            <Value column="name_es">Personal de producción, ventas y servicios</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Administrative, accounting and managerial staff</Value>
+            <Value column="name_es">Personal administrativo, contable y de dirección</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Owners, family and other unpaid workers</Value>
+            <Value column="name_es">Propietarios, familiares y otros trabajadores no remunerados</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Staff not dependent on the social reason</Value>
+            <Value column="name_es">Personal no dependiente de la razón social</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">Personnel provided by another company name</Value>
+            <Value column="name_es">Personal suministrado por otra razón social</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Staff for fees or commissions without basic salary</Value>
+            <Value column="name_es">Personal por honorarios o comisiones sin sueldo base</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Classification" key_column="id" name_column="name_en">
+          <Property name="Classification ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
+    <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
+
+    <Measure name="Total" column="count" aggregator="sum" />
+
+  </Cube>
+</Schema>
