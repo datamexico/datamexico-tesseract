@@ -3,9 +3,12 @@
   <SharedDimension name="Geography State" type="geo">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography_ent" />
-      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext" />
+      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext">
+        <Property name="Nation ES" column="nation_name" caption_set="es"/>
+      </Level>
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
         <Property name="CVE State" column="cve_ent" />
+        <Property name="State ES" column="ent_name" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -15,6 +18,7 @@
       <Table name="dim_shared_geography_ent" />
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
         <Property name="CVE State" column="cve_ent" />
+        <Property name="State ES" column="ent_name" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -25,6 +29,7 @@
       <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
         <Property name="CVE Municipality" column="cve_mun" />
         <Property name="CVE Municipality Full" column="cve_mun_full" />
+        <Property name="Municipality ES" column="mun_name" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -32,70 +37,101 @@
   <SharedDimension name="Geography Municipality" type="geo" default_hierarchy="Geography">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography_mun" />
-      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext" />
+      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext">
+        <Property name="Nation ES" column="nation_name" caption_set="es"/>
+      </Level>
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
         <Property name="CVE State" column="cve_ent" />
+        <Property name="State ES" column="ent_name" caption_set="es"/>
       </Level>
       <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
         <Property name="CVE Municipality" column="cve_mun" />
         <Property name="CVE Municipality Full" column="cve_mun_full" />
+        <Property name="Municipality ES" column="mun_name" caption_set="es"/>
       </Level>
     </Hierarchy>
 
     <Hierarchy name="Metro Area">
       <Table name="dim_shared_geography_zm" />
-      <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext" />
-
-      <Level name="Municipality MA" key_column="mun_id" name_column="mun_name" key_type="nontext" />
+      <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext">
+        <Property name="Metro Area ES" column="zm_name" caption_set="es"/>
+      </Level>
+      <Level name="Municipality MA" key_column="mun_id" name_column="mun_name" key_type="nontext">
+        <Property name="Municipality ES" column="mun_name" caption_set="es"/>
+      </Level>
     </Hierarchy>
     <Hierarchy name="National Urban System">
       <Table name="dim_shared_geography_sun" />
-      <Level name="National Urban System" key_column="sun_id" name_column="sun_name" key_type="text" />
+      <Level name="National Urban System" key_column="sun_id" name_column="sun_name" key_type="text">
+        <Property name="National Urban System ES" column="sun_name" caption_set="es"/>
+      </Level>
 
-      <Level name="Municipality SUN" key_column="mun_id" name_column="mun_name" key_type="nontext" />
+      <Level name="Municipality SUN" key_column="mun_id" name_column="mun_name" key_type="nontext">
+        <Property name="Municipality SUN ES" column="mun_name" caption_set="es"/>
+      </Level>
     </Hierarchy>
   </SharedDimension>
 
   <SharedDimension name="Geography Location" type="geo" default_hierarchy="Geography">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography" />
-      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext" />
+      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext">
+        <Property name="Nation ES" column="nation_name" caption_set="es"/>
+      </Level>
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
         <Property name="CVE State" column="cve_ent" />
+        <Property name="State ES" column="ent_name" caption_set="es"/>
       </Level>
       <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
         <Property name="CVE Municipality" column="cve_mun" />
         <Property name="CVE Municipality Full" column="cve_mun_full" />
+        <Property name="Municipality ES" column="mun_name" caption_set="es"/>
       </Level>
       <Level name="Location" key_column="loc_id" name_column="loc_name" key_type="nontext">
         <Property name="CVE Location" column="cve_loc" />
         <Property name="CVE Location Full" column="cve_loc_full" />
+        <Property name="Location ES" column="loc_name" caption_set="es"/>
       </Level>
     </Hierarchy>
     <Hierarchy name="Metro Area">
       <Table name="dim_shared_geography_zm_loc" />
-      <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext" />
+      <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext">
+        <Property name="Metro Area ES" column="zm_name" caption_set="es"/>
+      </Level>
 
-      <Level name="Municipality MA" key_column="mun_id" name_column="mun_name" key_type="nontext" />
-      <Level name="Location MA" key_column="loc_id" name_column="loc_name" key_type="nontext" />
+      <Level name="Municipality MA" key_column="mun_id" name_column="mun_name" key_type="nontext">
+        <Property name="Municipality MA ES" column="mun_name" caption_set="es"/>
+      </Level>
+      <Level name="Location MA" key_column="loc_id" name_column="loc_name" key_type="nontext">
+        <Property name="Location MA ES" column="loc_name" caption_set="es"/>
+      </Level>
     </Hierarchy>
 
     <Hierarchy name="National Urban System">
       <Table name="dim_shared_geography_sun_loc" />
-      <Level name="National Urban System" key_column="sun_id" name_column="sun_name" key_type="text" />
+      <Level name="National Urban System" key_column="sun_id" name_column="sun_name" key_type="text">
+        <Property name="National Urban System ES" column="sun_name" caption_set="es"/>
+      </Level>
 
-      <Level name="Municipality SUN" key_column="mun_id" name_column="mun_name" key_type="nontext" />
-      <Level name="Location SUN" key_column="loc_id" name_column="loc_name" key_type="nontext" />
+      <Level name="Municipality SUN" key_column="mun_id" name_column="mun_name" key_type="nontext">
+        <Property name="Municipality SUN ES" column="mun_name" caption_set="es"/>
+      </Level>
+      <Level name="Location SUN" key_column="loc_id" name_column="loc_name" key_type="nontext">
+        <Property name="Location SUN ES" column="loc_name" caption_set="es"/>
+      </Level>
     </Hierarchy>
   </SharedDimension>
 
   <SharedDimension name="Country">
     <Hierarchy name="Country" primary_key="iso3">
       <Table name="dim_shared_country"/>
-      <Level name="Continent" key_column="continent_id" name_column="continent" key_type="text" />
+      <Level name="Continent" key_column="continent_id" name_column="continent" key_type="text">
+        <Property name="Continent ES" column="continent" caption_set="es"/>
+      </Level>
       <Level name="Country" key_column="iso3" name_column="country_name" key_type="text" >
         <Property name="ISO 2" column="iso2" />
         <Property name="OECD" column="oecd" />
+        <Property name="Country ES" column="country_name" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -216,7 +252,9 @@
     <Hierarchy name="Date" primary_key="quarter_id">
       <Table name="dim_shared_date_quarter" />
       <Level name="Year" key_column="year" />
-      <Level name="Quarter" key_column="quarter_id" name_column="quarter_name" />
+      <Level name="Quarter" key_column="quarter_id" name_column="quarter_name">
+        <Property name="Quarter ES" column="quarter_name" caption_set="es" />
+      </Level>
     </Hierarchy>
   </SharedDimension>
 
@@ -224,8 +262,12 @@
     <Hierarchy name="Date" primary_key="month_id">
       <Table name="dim_shared_date_month" />
       <Level name="Year" key_column="year" />
-      <Level name="Quarter" key_column="quarter_id" name_column="quarter" />
-      <Level name="Month" key_column="month_id" name_column="month" />
+      <Level name="Quarter" key_column="quarter_id" name_column="quarter">
+        <Property name="Quarter ES" column="quarter" caption_set="es" />
+      </Level>
+      <Level name="Month" key_column="month_id" name_column="month">
+        <Property name="Month ES" column="month" caption_set="es" />
+      </Level>
     </Hierarchy>
   </SharedDimension>
 
@@ -233,9 +275,15 @@
     <Hierarchy name="Date" primary_key="date_id">
       <Table name="dim_shared_date_month_day" />
       <Level name="Year" key_column="year" />
-      <Level name="Quarter" key_column="quarter_id" name_column="quarter" />
-      <Level name="Month" key_column="month_id" name_column="month" />
-      <Level name="Date" key_column="date_id" name_column="date" />
+      <Level name="Quarter" key_column="quarter_id" name_column="quarter">
+        <Property name="Quarter ES" column="quarter" caption_set="es" />
+      </Level>
+      <Level name="Month" key_column="month_id" name_column="month">
+        <Property name="Month ES" column="month" caption_set="es" />
+      </Level>
+      <Level name="Date" key_column="date_id" name_column="date">
+        <Property name="Date ES" column="date" caption_set="es" />
+      </Level>
     </Hierarchy>
   </SharedDimension>
 
@@ -298,8 +346,12 @@
   <SharedDimension name="Campus">
     <Hierarchy name="Campus" primary_key="campus_id">
       <Table name="dim_shared_work_centers"/>
-      <Level name="Institution" key_column="institution_id" name_column="institution_name" key_type="nontext"/>
-      <Level name="Campus" key_column="campus_id" name_column="campus_name" key_type="text"/>
+      <Level name="Institution" key_column="institution_id" name_column="institution_name" key_type="nontext">
+        <Property name="Institution ES" column="institution_name" caption_set="es"/>
+      </Level>
+      <Level name="Campus" key_column="campus_id" name_column="campus_name" key_type="text">
+        <Property name="Campus ES" column="campus_name" caption_set="es"/>
+      </Level>
     </Hierarchy>
   </SharedDimension>
 
@@ -680,7 +732,9 @@
     <Dimension name="Expenses in Protection Against Crime" foreign_key="expenses_in_protection_against_crime">
       <Hierarchy name="Expenses in Protection Against Crime" primary_key="id">
         <Table name="dim_shared_money" />
-        <Level name="Expenses in Protection Against Crime" key_column="id" name_column="name" />
+        <Level name="Expenses in Protection Against Crime" key_column="id" name_column="name">
+          <Property name="Expenses in Protection Against Crime ES" column="name" caption_set="es"/>
+        </Level>
       </Hierarchy>
     </Dimension>
 
@@ -1473,7 +1527,9 @@
     <Dimension name="Company" foreign_key="id">
       <Hierarchy name="Company" primary_key="id">
       <Table name="inegi_denue_companies" />
-        <Level name="Company" key_column="id" name_column="nom_estab" key_type="nontext" />
+        <Level name="Company" key_column="id" name_column="nom_estab" key_type="nontext">
+          <Property name="Company ES" column="nom_estab" caption_set="es"/>
+        </Level>
       </Hierarchy>
     </Dimension>
 
@@ -1512,7 +1568,9 @@
             <Value column="name">251+</Value>
           </Row>
         </InlineTable>
-        <Level name="Company Size" key_column="id" name_column="name" />
+        <Level name="Company Size" key_column="id" name_column="name">
+          <Property name="Company Size ES" column="name" caption_set="es"/>
+        </Level>
       </Hierarchy>
     </Dimension>
 
@@ -1667,66 +1725,19 @@
     <Measure name="Total Stock of Computer Equipment and Peripherals" column="q400a" aggregator="sum"/>
     <Measure name="Total Stock of Furniture; office Equipment and Other Fixed Assets" column="q900a" aggregator="sum"/>
   </Cube>
-<Cube name="inegi_economic_census_gender">
-    <Table name="inegi_economic_census_gender" primary_key="mun_id" />
+<Cube name="inegi_economic_census_sex">
+    <Table name="inegi_economic_census_sexr" primary_key="mun_id" />
 
-    <Dimension name="Classification" foreign_key="classification">
-      <Hierarchy name="Classification" primary_key="id">
-        <InlineTable alias="dim_inline_classification">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">Employed workers</Value>
-            <Value column="name_es">Personal ocupado</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">Personal dependent on the social reason</Value>
-            <Value column="name_es">Personal dependiente de la razón social</Value>
-          </Row>
-          <Row>
-            <Value column="id">3</Value>
-            <Value column="name_en">Paid staff</Value>
-            <Value column="name_es">Personal remunerado</Value>
-          </Row>
-          <Row>
-            <Value column="id">4</Value>
-            <Value column="name_en">Production personnel, sales and service</Value>
-            <Value column="name_es">Personal de producción, ventas y servicios</Value>
-          </Row>
-          <Row>
-            <Value column="id">5</Value>
-            <Value column="name_en">Administrative, accounting and managerial staff</Value>
-            <Value column="name_es">Personal administrativo, contable y de dirección</Value>
-          </Row>
-          <Row>
-            <Value column="id">6</Value>
-            <Value column="name_en">Owners, family and other unpaid workers</Value>
-            <Value column="name_es">Propietarios, familiares y otros trabajadores no remunerados</Value>
-          </Row>
-          <Row>
-            <Value column="id">7</Value>
-            <Value column="name_en">Staff not dependent on the social reason</Value>
-            <Value column="name_es">Personal no dependiente de la razón social</Value>
-          </Row>
-          <Row>
-            <Value column="id">8</Value>
-            <Value column="name_en">Personnel provided by another company name</Value>
-            <Value column="name_es">Personal suministrado por otra razón social</Value>
-          </Row>
-          <Row>
-            <Value column="id">9</Value>
-            <Value column="name_en">Staff for fees or commissions without basic salary</Value>
-            <Value column="name_es">Personal por honorarios o comisiones sin sueldo base</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Classification" key_column="id" name_column="name_en">
-          <Property name="Classification ES" column="name_es" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
+    <Measure name="Employed workers" column="employed_workers" aggregator="sum" />
+    <Measure name="Personal dependent on the social reason" column="personal_dependent_on_the_social_reason" aggregator="sum"/>
+    <Measure name="Paid staff" column="paid staff" aggregator="sum"/>
+    <Measure name="Production personnel, sales and service" column="production_personnel_sales_and_service" aggregator="sum"/>
+    <Measure name="Administrative, accounting and managerial staff" column="administrative_accounting_and_managerial_staff" aggregator="sum"/>
+    <Measure name="Owners, family and other unpaid workers" column="owners_family_and_other_unpaid_workers" aggregator="sum"/>
+    <Measure name="Staff not dependent on the social reason" column="staff_not_dependent_on_the_social_reason" aggregator="sum"/>
+    <Measure name="Personnel provided by another company name" column="personnel_provided_by_another_company_name" aggregator="sum"/>
+    <Measure name="Staff for fees or commissions without basic salary" column="staff_for_fees_or_commissions_without_basic_salary" aggregator="sum"/>
+
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
@@ -3281,8 +3292,12 @@
     <Dimension name="Salary" foreign_key="income_id">
       <Hierarchy name="Salary" primary_key="id">
         <Table name="dim_shared_money" />
-        <Level name="Salary Group" key_column="enoe_group_id" name_column="enoe_group" key_type="nontext" />
+        <Level name="Salary Group" key_column="enoe_group_id" name_column="enoe_group" key_type="nontext">
+          <Property name="Salary Group ES" column="enoe_group" caption_set="es"/>
+        </Level>
         <Level name="Salary" key_column="id" name_column="name" key_type="nontext" />
+          <Property name="Salary ES" column="name" caption_set="es"/>
+        </Level>
       </Hierarchy>
     </Dimension>
 
@@ -3290,13 +3305,19 @@
       <Hierarchy name="Geography Self Represented" primary_key="mun_id">
         <Table name="dim_shared_geography_self_city" />
         <Level name="Nation ENOE" key_column="nation_id" name_column="nation_name" key_type="nontext" />
+          <Property name="Nation ENOE ES" column="nation_name" caption_set="es">
+        </Level>
         <Level name="State ENOE" key_column="ent_id" name_column="ent_name" key_type="nontext">
           <Property name="CVE State ENOE" column="cve_ent" />
+          <Property name="State ENOE ES" column="ent_name" caption_set="es">
         </Level>
-        <Level name="Self Represented City" key_column="self_city_id" name_column="self_city_name" key_type="nontext" />
+        <Level name="Self Represented City" key_column="self_city_id" name_column="self_city_name" key_type="nontext">
+          <Property name="Self Represented City ES" column="self_city_name" caption_set="es">
+        </Level>
         <Level name="Municipality ENOE" key_column="mun_id" name_column="mun_name" key_type="nontext">
           <Property name="CVE Municipality ENOE" column="cve_mun" />
           <Property name="CVE Municipality Full ENOE" column="cve_mun_full" />
+          <Property name="Municipality ENOE ES" column="mun_name" caption_set="es">
         </Level>
       </Hierarchy>
     </Dimension>
@@ -4365,7 +4386,9 @@
     <Dimension name="Geography Self Represented" foreign_key="reference_city">
       <Hierarchy name="Geography Self Represented" primary_key="reference_city_id">
         <Table name="dim_shared_ensu_cities" />
-        <Level name="Self Represented City" key_column="reference_city_id" name_column="reference_city_name" key_type="nontext" />
+        <Level name="Self Represented City" key_column="reference_city_id" name_column="reference_city_name" key_type="nontext">
+          <Property name="Self Represented City ES" column="reference_city_name" caption_set="es" />
+        </Level>
       </Hierarchy>
     </Dimension>
 
@@ -4390,7 +4413,9 @@
     <Dimension name="Income" foreign_key="income">
       <Hierarchy name="Income" primary_key="id">
         <Table name="dim_shared_money" />
-        <Level name="Income" key_column="id" name_column="name" />
+        <Level name="Income" key_column="id" name_column="name">
+          <Property name="Income ES" column="name" caption_set="es" />
+        </Level>
       </Hierarchy>
     </Dimension>
 
@@ -5520,14 +5545,17 @@
 
         <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
             <Property name="CVE State" column="cve_ent" />
+            <Property name="State ES" column="ent_name" caption_set="es" />
         </Level>
         <Level name="Municipality" key_column="mun_id" name_column="mun_id" key_type="nontext">
             <Property name="CVE Municipality" column="cve_mun" />
             <Property name="CVE Municipality Full" column="cve_mun_full" />
+            <Property name="Municipality ES" column="mun_id" caption_set="es" />
         </Level>
         <Level name="Location" key_column="loc_id" name_column="loc_name" key_type="nontext">
             <Property name="CVE Location" column="cve_loc" />
             <Property name="CVE Location Full" column="cve_loc_full" />
+            <Property name="Location ES" column="loc_name" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
