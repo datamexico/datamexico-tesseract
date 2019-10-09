@@ -344,8 +344,12 @@
     <Dimension name="Salary" foreign_key="income_id">
       <Hierarchy name="Salary" primary_key="id">
         <Table name="dim_shared_money" />
-        <Level name="Salary Group" key_column="enoe_group_id" name_column="enoe_group" key_type="nontext" />
+        <Level name="Salary Group" key_column="enoe_group_id" name_column="enoe_group" key_type="nontext">
+          <Property name="Salary Group ES" column="enoe_group" caption_set="es"/>
+        </Level>
         <Level name="Salary" key_column="id" name_column="name" key_type="nontext" />
+          <Property name="Salary ES" column="name" caption_set="es"/>
+        </Level>
       </Hierarchy>
     </Dimension>
 
@@ -353,13 +357,19 @@
       <Hierarchy name="Geography Self Represented" primary_key="mun_id">
         <Table name="dim_shared_geography_self_city" />
         <Level name="Nation ENOE" key_column="nation_id" name_column="nation_name" key_type="nontext" />
+          <Property name="Nation ENOE ES" column="nation_name" caption_set="es">
+        </Level>
         <Level name="State ENOE" key_column="ent_id" name_column="ent_name" key_type="nontext">
           <Property name="CVE State ENOE" column="cve_ent" />
+          <Property name="State ENOE ES" column="ent_name" caption_set="es">
         </Level>
-        <Level name="Self Represented City" key_column="self_city_id" name_column="self_city_name" key_type="nontext" />
+        <Level name="Self Represented City" key_column="self_city_id" name_column="self_city_name" key_type="nontext">
+          <Property name="Self Represented City ES" column="self_city_name" caption_set="es">
+        </Level>
         <Level name="Municipality ENOE" key_column="mun_id" name_column="mun_name" key_type="nontext">
           <Property name="CVE Municipality ENOE" column="cve_mun" />
           <Property name="CVE Municipality Full ENOE" column="cve_mun_full" />
+          <Property name="Municipality ENOE ES" column="mun_name" caption_set="es">
         </Level>
       </Hierarchy>
     </Dimension>

@@ -5,7 +5,9 @@
     <Dimension name="Income" foreign_key="income">
       <Hierarchy name="Income" primary_key="id">
         <Table name="dim_shared_money" />
-        <Level name="Income" key_column="id" name_column="name" />
+        <Level name="Income" key_column="id" name_column="name">
+          <Property name="Income ES" column="name" caption_set="es" />
+        </Level>
       </Hierarchy>
     </Dimension>
 
