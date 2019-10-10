@@ -1,4 +1,4 @@
-<Schema name="datamexico">
+<Schema name="datamexico" default_locale="en">
   <Cube name="inegi_enigh_household_income">
     <Table name="inegi_enigh_household_income" primary_key="mun_id" />
 

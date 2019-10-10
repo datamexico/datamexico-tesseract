@@ -1,4 +1,4 @@
-<Schema name="datamexico">
+<Schema name="datamexico" default_locale="en">
   <Cube name="coneval_social_lag_ent">
     <Table name="coneval_social_lag_ent" primary_key="mun_id" />
 

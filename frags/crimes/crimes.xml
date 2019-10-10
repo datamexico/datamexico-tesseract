@@ -1,4 +1,4 @@
-<Schema name="datamexico">
+<Schema name="datamexico" default_locale="en">
   <Cube name="sesnsp_crimes">
     <Table name="sesnsp_crimes" primary_key="mun_id" />
 

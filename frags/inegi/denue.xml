@@ -1,4 +1,4 @@
-<Schema name="datamexico">
+<Schema name="datamexico" default_locale="en">
   <Cube name="inegi_denue">
     <Table name="inegi_denue" primary_key="loc_id" />
 

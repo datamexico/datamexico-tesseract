@@ -1,4 +1,4 @@
-<Schema name="datamexico">
+<Schema name="datamexico" default_locale="en">
   <Cube name="coneval_gini_mun">
     <Table name="coneval_gini_mun" primary_key="mun_id" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />

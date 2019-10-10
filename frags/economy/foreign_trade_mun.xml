@@ -1,4 +1,4 @@
-<Schema name="datamexico">
+<Schema name="datamexico" default_locale="en">
   <Cube name="economy_foreign_trade_mun">
     <Table name="economy_foreign_trade_mun" primary_key="mun_id" />
 

@@ -1,4 +1,4 @@
-<Schema name="datamexico">
+<Schema name="datamexico" default_locale="en">
   <Cube name="inegi_general_mortality">
     <Table name="inegi_general_mortality" primary_key="ent_id" />
 

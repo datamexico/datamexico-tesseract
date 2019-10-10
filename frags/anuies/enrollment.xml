@@ -1,4 +1,4 @@
-<Schema name="datamexico">
+<Schema name="datamexico" default_locale="en">
   <Cube name="anuies_enrollment">
     <Table name="anuies_enrollment" primary_key="mun_id" />
 
