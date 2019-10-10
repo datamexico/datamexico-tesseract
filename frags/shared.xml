@@ -57,7 +57,7 @@
         <Property name="Metro Area ES" column="zm_name" caption_set="es"/>
       </Level>
       <Level name="Municipality MA" key_column="mun_id" name_column="mun_name" key_type="nontext">
-        <Property name="Municipality ES" column="mun_name" caption_set="es"/>
+        <Property name="Municipality MA ES" column="mun_name" caption_set="es"/>
       </Level>
     </Hierarchy>
     <Hierarchy name="National Urban System">
