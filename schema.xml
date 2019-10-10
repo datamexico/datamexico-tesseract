@@ -1735,10 +1735,10 @@
 
     <Measure name="Employed workers" column="employed_workers" aggregator="sum" />
     <Measure name="Personal dependent on the social reason" column="personal_dependent_on_the_social_reason" aggregator="sum"/>
-    <Measure name="Paid staff" column="paid staff" aggregator="sum"/>
-    <Measure name="Production personnel, sales and service" column="production_personnel_sales_and_service" aggregator="sum"/>
-    <Measure name="Administrative, accounting and managerial staff" column="administrative_accounting_and_managerial_staff" aggregator="sum"/>
-    <Measure name="Owners, family and other unpaid workers" column="owners_family_and_other_unpaid_workers" aggregator="sum"/>
+    <Measure name="Paid staff" column="paid_staff" aggregator="sum"/>
+    <Measure name="Production personnel sales and service" column="production_personnel_sales_and_service" aggregator="sum"/>
+    <Measure name="Administrative accounting and managerial staff" column="administrative_accounting_and_managerial_staff" aggregator="sum"/>
+    <Measure name="Owners family and other unpaid workers" column="owners_family_and_other_unpaid_workers" aggregator="sum"/>
     <Measure name="Staff not dependent on the social reason" column="staff_not_dependent_on_the_social_reason" aggregator="sum"/>
     <Measure name="Personnel provided by another company name" column="personnel_provided_by_another_company_name" aggregator="sum"/>
     <Measure name="Staff for fees or commissions without basic salary" column="staff_for_fees_or_commissions_without_basic_salary" aggregator="sum"/>
