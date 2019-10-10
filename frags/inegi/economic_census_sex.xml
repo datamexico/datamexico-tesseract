@@ -16,7 +16,6 @@
     <Measure name="Staff not dependent on the social reason" column="staff_not_dependent_on_the_social_reason" aggregator="sum"/>
     <Measure name="Personnel provided by another company name" column="personnel_provided_by_another_company_name" aggregator="sum"/>
     <Measure name="Staff for fees or commissions without basic salary" column="staff_for_fees_or_commissions_without_basic_salary" aggregator="sum"/>
-    <Measure name="Total" column="count" aggregator="sum" />
 
   </Cube>
 </Schema>
