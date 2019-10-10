@@ -1,4 +1,4 @@
-<Schema name="datamexico">
+<Schema name="datamexico" default_locale="en">
   <Cube name="trade_balance">
     <Table name="trade_balance_atlas" primary_key="mun_id" />
     <Dimension name="Geography" foreign_key="mun_id">

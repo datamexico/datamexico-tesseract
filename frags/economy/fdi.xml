@@ -1,4 +1,4 @@
-<Schema name="datamexico">
+<Schema name="datamexico" default_locale="en">
   <Cube name="economy_fdi">
     <Table name="economy_fdi" primary_key="quarter_id" />
 

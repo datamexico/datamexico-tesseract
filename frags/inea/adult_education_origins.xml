@@ -1,4 +1,4 @@
-<Schema name="datamexico">
+<Schema name="datamexico" default_locale="en">
   <Cube name="inea_adult_education_origin">
     <Table name="inea_adult_education_origin" primary_key="ent_id" />
 

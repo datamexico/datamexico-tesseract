@@ -1,4 +1,4 @@
-<Schema name="datamexico">
+<Schema name="datamexico" default_locale="en">
   <Cube name="dgis_emergency">
     <Table name="dgis_emergency" primary_key="mun_id" />
     <!-- TODO social_security -->
