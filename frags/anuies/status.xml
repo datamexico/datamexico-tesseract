@@ -45,7 +45,11 @@
     <DimensionUsage foreign_key="program" source="Career Fields" name="Career Fields" />
     <DimensionUsage foreign_key="campus_id" source="Campus" name="Campus" />
 
-    <Measure name="Students" column="value" aggregator="sum" />
+    <Measure name="Students" column="value" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of Students</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 </Schema>

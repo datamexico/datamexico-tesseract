@@ -16,6 +16,10 @@
     <DimensionUsage foreign_key="campus_id" source="Campus" name="Campus" />
     <DimensionUsage foreign_key="period" source="Period" name="Period" />
 
-    <Measure name="Students" column="value" aggregator="sum" />
+    <Measure name="Students" column="value" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of Students</Annotation>
+      </Annotations>
+    </Measure>
   </Cube>
 </Schema>
