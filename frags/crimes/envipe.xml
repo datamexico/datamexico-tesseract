@@ -2,7 +2,7 @@
   <Cube name="inegi_envipe">
     <Annotations>
       <Annotation name="topic">Safety</Annotation>
-      <Annotation name="subtopic">Victimization \& Perception</Annotation>
+      <Annotation name="subtopic">Victimization and Perception</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/programas/envipe/2019/</Annotation>

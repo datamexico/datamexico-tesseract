@@ -1,7 +1,7 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inegi_housing">
     <Annotations>
-      <Annotation name="topic">Housing \& Living</Annotation>
+      <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Housing</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>

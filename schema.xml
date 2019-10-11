@@ -591,7 +591,7 @@
   </Cube>
 <Cube name="coneval_gini_mun">
     <Annotations>
-      <Annotation name="topic">Housing \& Living</Annotation>
+      <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Income</Annotation>
       <Annotation name="source_name">Consejo Nacional de Evaluación de la Política de Desarrollo Social (CONEVAL)</Annotation>
       <Annotation name="source_name_en">National Council for the Evaluation of Social Development Policy (CONEVAL)</Annotation>
@@ -615,7 +615,7 @@
   </Cube>
 <Cube name="coneval_poverty">
     <Annotations>
-      <Annotation name="topic">Housing \& Living</Annotation>
+      <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Poverty</Annotation>
       <Annotation name="source_name">Consejo Nacional de Evaluación de la Política de Desarrollo Social (CONEVAL)</Annotation>
       <Annotation name="source_name_en">National Council for the Evaluation of Social Development Policy (CONEVAL)</Annotation>
@@ -714,7 +714,7 @@
   </Cube>
 <Cube name="coneval_social_lag_ent">
     <Annotations>
-      <Annotation name="topic">Housing \& Living</Annotation>
+      <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Poverty</Annotation>
       <Annotation name="source_name">Consejo Nacional de Evaluación de la Política de Desarrollo Social (CONEVAL)</Annotation>
       <Annotation name="source_name_en">National Council for the Evaluation of Social Development Policy (CONEVAL)</Annotation>
@@ -794,7 +794,7 @@
   </Cube>
 <Cube name="coneval_social_lag_mun">
     <Annotations>
-      <Annotation name="topic">Housing \& Living</Annotation>
+      <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Poverty</Annotation>
       <Annotation name="source_name">Consejo Nacional de Evaluación de la Política de Desarrollo Social (CONEVAL)</Annotation>
       <Annotation name="source_name_en">National Council for the Evaluation of Social Development Policy (CONEVAL)</Annotation>
@@ -907,7 +907,7 @@
 <Cube name="inegi_envipe">
     <Annotations>
       <Annotation name="topic">Safety</Annotation>
-      <Annotation name="subtopic">Victimization \& Perception</Annotation>
+      <Annotation name="subtopic">Victimization and Perception</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/programas/envipe/2019/</Annotation>
@@ -2610,7 +2610,7 @@
   </Cube>
 <Cube name="inegi_enigh_household_income">
     <Annotations>
-      <Annotation name="topic">Housing \& Living</Annotation>
+      <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Income</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
@@ -2640,7 +2640,7 @@
   </Cube>
 <Cube name="inegi_enigh_jobs">
     <Annotations>
-      <Annotation name="topic">Housing \& Living</Annotation>
+      <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Income</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
@@ -2958,7 +2958,7 @@
   </Cube>
 <Cube name="inegi_enigh_population">
     <Annotations>
-      <Annotation name="topic">Housing \& Living</Annotation>
+      <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Income</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
@@ -5371,7 +5371,7 @@
   </Cube>
 <Cube name="inegi_housing">
     <Annotations>
-      <Annotation name="topic">Housing \& Living</Annotation>
+      <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Housing</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
@@ -6542,7 +6542,7 @@
   </Cube>
 <Cube name="inegi_population">
     <Annotations>
-      <Annotation name="topic">Housing \& Living</Annotation>
+      <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Housing</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>

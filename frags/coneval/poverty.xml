@@ -1,7 +1,7 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="coneval_poverty">
     <Annotations>
-      <Annotation name="topic">Housing \& Living</Annotation>
+      <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Poverty</Annotation>
       <Annotation name="source_name">Consejo Nacional de Evaluación de la Política de Desarrollo Social (CONEVAL)</Annotation>
       <Annotation name="source_name_en">National Council for the Evaluation of Social Development Policy (CONEVAL)</Annotation>
