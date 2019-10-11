@@ -1,26 +1,101 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="coneval_poverty">
+    <Annotations>
+      <Annotation name="topic">Housing & Living</Annotation>
+      <Annotation name="subtopic">Income</Annotation>
+      <Annotation name="source_name">Consejo Nacional de Evaluación de la Política de Desarrollo Social (CONEVAL)</Annotation>
+      <Annotation name="source_name_en">National Council for the Evaluation of Social Development Policy (CONEVAL)</Annotation>
+      <Annotation name="source_link">https://www.coneval.org.mx/Paginas/principal.aspx</Annotation>
+    </Annotations>
     <Table name="coneval_poverty" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
-    <Measure name="Population" column="population" visible="false" aggregator="sum" />
-    <Measure name="Poverty" column="poverty" aggregator="sum" />
-    <Measure name="Extreme Poverty" column="extreme_poverty" aggregator="sum" />
-    <Measure name="Moderate Poverty" column="moderate_poverty" aggregator="sum" />
-    <Measure name="Vulnerable Population by Lacks" column="vulnerable_lacks" aggregator="sum" />
-    <Measure name="Vulnerable Population by Income" column="vulnerable_income" aggregator="sum" />
-    <Measure name="Population No Vulnerable" column="no_vulnerable" aggregator="sum" />
-    <Measure name="Educational Backwardness" column="educational_backwardness" aggregator="sum" />
-    <Measure name="Deprivation Quality Housing Spaces" column="deprivation_quality_housing_spaces" aggregator="sum" />
-    <Measure name="Deprivation Health Services" column="deprivation_health_services" aggregator="sum" />
-    <Measure name="Deprivation Social Security" column="deprivation_social_security" aggregator="sum" />
-    <Measure name="Deprivation Basic Services Housing" column="deprivation_basic_services_housing" aggregator="sum" />
-    <Measure name="Deprivation Food Access" column="deprivation_food_access" aggregator="sum" />
-    <Measure name="Population with at least 1 Social Lack" column="at_least_one_lack" aggregator="sum" />
-    <Measure name="Population with at least 3 Social Lacks" column="at_least_three_lacks" aggregator="sum" />
-    <Measure name="Income below Welfare Line" column="income_below_welfare_line" aggregator="sum" />
-    <Measure name="Income below Min Welfare Line" column="income_below_min_welfare_line" aggregator="sum" />
+    <Measure name="Population" column="population" visible="false" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Population</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Poverty" column="poverty" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Poverty</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Extreme Poverty" column="extreme_poverty" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Extreme Poverty</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Moderate Poverty" column="moderate_poverty" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Moderate Poverty</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Vulnerable Population by Lacks" column="vulnerable_lacks" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Vulnerable Population by Lacks</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Vulnerable Population by Income" column="vulnerable_income" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Vulnerable Population by Income</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Population No Vulnerable" column="no_vulnerable" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Non-Vulnerable Population</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Educational Backwardness" column="educational_backwardness" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Educational Backwardness</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Deprivation Quality Housing Spaces" column="deprivation_quality_housing_spaces" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Deprivation Quality Housing Spaces</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Deprivation Health Services" column="deprivation_health_services" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Deprivation Health Services</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Deprivation Social Security" column="deprivation_social_security" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Deprivation Social Security</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Deprivation Basic Services Housing" column="deprivation_basic_services_housing" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Deprivation Basic Services Housing</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Deprivation Food Access" column="deprivation_food_access" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Deprivation Food Access</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Population with at least 1 Social Lack" column="at_least_one_lack" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Population with at least 1 Social Lack</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Population with at least 3 Social Lacks" column="at_least_three_lacks" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Population with at least 3 Social Lacks</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Income below Welfare Line" column="income_below_welfare_line" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Income below Welfare Line</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Income below Min Welfare Line" column="income_below_min_welfare_line" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Income below Min Welfare Line</Annotation>
+      </Annotations>
+    </Measure>
   </Cube>
 </Schema>
