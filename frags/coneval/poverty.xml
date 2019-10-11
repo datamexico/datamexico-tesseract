@@ -2,7 +2,7 @@
   <Cube name="coneval_poverty">
     <Annotations>
       <Annotation name="topic">Housing & Living</Annotation>
-      <Annotation name="subtopic">Income</Annotation>
+      <Annotation name="subtopic">Poverty</Annotation>
       <Annotation name="source_name">Consejo Nacional de Evaluación de la Política de Desarrollo Social (CONEVAL)</Annotation>
       <Annotation name="source_name_en">National Council for the Evaluation of Social Development Policy (CONEVAL)</Annotation>
       <Annotation name="source_link">https://www.coneval.org.mx/Paginas/principal.aspx</Annotation>
@@ -19,17 +19,17 @@
     </Measure>
     <Measure name="Poverty" column="poverty" aggregator="sum">
       <Annotations>
-        <Annotation name="details">Poverty</Annotation>
+        <Annotation name="details">Poverty Population</Annotation>
       </Annotations>
     </Measure>
     <Measure name="Extreme Poverty" column="extreme_poverty" aggregator="sum">
       <Annotations>
-        <Annotation name="details">Extreme Poverty</Annotation>
+        <Annotation name="details">Extreme Poverty Population</Annotation>
       </Annotations>
     </Measure>
     <Measure name="Moderate Poverty" column="moderate_poverty" aggregator="sum">
       <Annotations>
-        <Annotation name="details">Moderate Poverty</Annotation>
+        <Annotation name="details">Moderate Poverty Population</Annotation>
       </Annotations>
     </Measure>
     <Measure name="Vulnerable Population by Lacks" column="vulnerable_lacks" aggregator="sum">
@@ -49,7 +49,7 @@
     </Measure>
     <Measure name="Educational Backwardness" column="educational_backwardness" aggregator="sum">
       <Annotations>
-        <Annotation name="details">Educational Backwardness</Annotation>
+        <Annotation name="details">People with Educational Backwardness</Annotation>
       </Annotations>
     </Measure>
     <Measure name="Deprivation Quality Housing Spaces" column="deprivation_quality_housing_spaces" aggregator="sum">
