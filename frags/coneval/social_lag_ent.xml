@@ -1,23 +1,82 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="coneval_social_lag_ent">
+    <Annotations>
+      <Annotation name="topic">Housing & Living</Annotation>
+      <Annotation name="subtopic">Poverty</Annotation>
+      <Annotation name="source_name">Consejo Nacional de Evaluación de la Política de Desarrollo Social (CONEVAL)</Annotation>
+      <Annotation name="source_name_en">National Council for the Evaluation of Social Development Policy (CONEVAL)</Annotation>
+      <Annotation name="source_link">https://www.coneval.org.mx/Paginas/principal.aspx</Annotation>
+    </Annotations>
     <Table name="coneval_social_lag_ent" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
     <DimensionUsage foreign_key="social_lag_degree" source="Social Lag Degree" name="Social Lag Degree" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
-    <Measure name="Population" column="population" aggregator="avg" />
-    <Measure name="Illiterate 15+ Years" column="population_illiterate" aggregator="avg" />
-    <Measure name="No Attend School 6-14 Years" column="population_6_14_school" aggregator="avg" />
-    <Measure name="Incomplete School 15+ Years" column="population_15_incomplete_school" aggregator="avg" />
-    <Measure name="No Health Services" column="no_health_services" aggregator="avg" />
-    <Measure name="Dirt Floor" column="dirt_floor" aggregator="avg" />
-    <Measure name="No Toilet" column="dirt_floor" aggregator="avg" />
-    <Measure name="No Water Supply Network" column="no_water_supply_network" aggregator="avg" />
-    <Measure name="No Sewer System" column="no_sewer_system" aggregator="avg" />
-    <Measure name="No Electrical Energy" column="no_electrical_energy" aggregator="avg" />
-    <Measure name="No Washing Machine" column="no_washing_machine" aggregator="avg" />
-    <Measure name="No Fridge" column="no_fridge" aggregator="avg" />
-    <Measure name="Social Lag Index" column="no_fridge" aggregator="avg" />
+    <Measure name="Population" column="population" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Illiterate 15+ Years" column="population_illiterate" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Illiterate 15\+ Years</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Attend School 6-14 Years" column="population_6_14_school" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population that does not Attend School Between 6 and 14 Years Old</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Incomplete School 15+ Years" column="population_15_incomplete_school" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population with Incomplete School 15\+ Years</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Health Services" column="no_health_services" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population without Healthcare</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Dirt Floor" column="dirt_floor" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population with Dirt Floor</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Toilet" column="dirt_floor" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population with Dirt Base Floor</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Water Supply Network" column="no_water_supply_network" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population without Network Water Supply</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Sewer System" column="no_sewer_system" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population without Sewer System</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Electrical Energy" column="no_electrical_energy" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population without Electrical Energy</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Washing Machine" column="no_washing_machine" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population without Washing Machine</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Fridge" column="no_fridge" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population without Fridge</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Social Lag Index" column="social_lag_index" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Social Lag Index</Annotation>
+      </Annotations>
+    </Measure>
   </Cube>
 </Schema>

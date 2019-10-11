@@ -1,7 +1,13 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="dgis_emergency">
+    <Annotations>
+      <Annotation name="topic">Health</Annotation>
+      <Annotation name="subtopic">Quality</Annotation>
+      <Annotation name="source_name">Dirección General de Información en Salud (DGIS)</Annotation>
+      <Annotation name="source_name_en">General Directorate of Health Information (DGIS)</Annotation>
+      <Annotation name="source_link">http://www.dgis.salud.gob.mx/contenidos/basesdedatos/BD_Cubos_gobmx.html</Annotation>
+    </Annotations>
     <Table name="dgis_emergency" primary_key="mun_id" />
-    <!-- TODO social_security -->
 
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
     <DimensionUsage foreign_key="cie10" source="CIE10" name="CIE10" />
@@ -9,7 +15,15 @@
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="sex_id" source="Sex" name="Sex" />
 
-    <Measure name="Average Attention Time" column="attention_time" aggregator="avg" />
-    <Measure name="Total" column="count" aggregator="sum" />
+    <Measure name="Average Attention Time" column="attention_time" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Average Attention Time</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total" column="count" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Patients</Annotation>
+      </Annotations>
+    </Measure>
   </Cube>
 </Schema> 

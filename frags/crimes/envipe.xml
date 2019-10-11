@@ -1,6 +1,12 @@
 <Schema name="datamexico" default_locale="en"> 
-
   <Cube name="inegi_envipe">
+    <Annotations>
+      <Annotation name="topic">Safety</Annotation>
+      <Annotation name="subtopic">Victimization & Perception</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/programas/envipe/2019/</Annotation>
+    </Annotations>
     <Table name="inegi_envipe" primary_key="mun_id" />
 
     <Dimension name="Security Perception in their State" foreign_key="security_perception_in_their_state">
@@ -637,8 +643,16 @@
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
 
-    <Measure name="Homes" column="homes_factor" aggregator="sum" />
-    <Measure name="People" column="people_factor" aggregator="sum" />
+    <Measure name="Homes" column="homes_factor" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Homes</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="People" column="people_factor" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">People</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 </Schema>

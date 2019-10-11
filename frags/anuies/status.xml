@@ -1,5 +1,12 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="anuies_status">
+    <Annotations>
+      <Annotation name="topic">Education</Annotation>
+      <Annotation name="subtopic">Graduation</Annotation>
+      <Annotation name="source_name">Asociación Nacional de Universidades e Instituciones de Educación Superior (ANUIES)</Annotation>
+      <Annotation name="source_name_en">National Association of Universities and Institutions of Higher Education (ANUIES)</Annotation>
+      <Annotation name="source_link">http://www.anuies.mx/informacion-y-servicios/informacion-estadistica-de-educacion-superior/anuario-estadistico-de-educacion-superior</Annotation>
+    </Annotations>
     <Table name="anuies_status" primary_key="mun_id" />
 
     <Dimension name="Status" foreign_key="stat">
@@ -38,7 +45,11 @@
     <DimensionUsage foreign_key="program" source="Career Fields" name="Career Fields" />
     <DimensionUsage foreign_key="campus_id" source="Campus" name="Campus" />
 
-    <Measure name="Students" column="value" aggregator="sum" />
+    <Measure name="Students" column="value" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of Students</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 </Schema>

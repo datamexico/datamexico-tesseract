@@ -1,5 +1,12 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="dgis_pregnancy_mortality">
+    <Annotations>
+      <Annotation name="topic">Health</Annotation>
+      <Annotation name="subtopic">Mortality</Annotation>
+      <Annotation name="source_name">Dirección General de Información en Salud (DGIS)</Annotation>
+      <Annotation name="source_name_en">General Directorate of Health Information (DGIS)</Annotation>
+      <Annotation name="source_link">http://www.dgis.salud.gob.mx/contenidos/basesdedatos/BD_Cubos_gobmx.html</Annotation>
+    </Annotations>
     <Table name="dgis_pregnancy_mortality" primary_key="mun_residence_id" />
     <!--TODO year_of_register,occupation,marital_status,medical_center,mun_happening_id-->
     <Dimension name="Year" foreign_key="year_decease">
@@ -14,6 +21,10 @@
     <DimensionUsage foreign_key="cie10" source="CIE10" name="CIE10" />
     <DimensionUsage foreign_key="mun_residence_id" source="Geography Municipality" name="Geography" />
 
-    <Measure name="Total" column="count" aggregator="sum" />
+    <Measure name="Total" column="count" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Patients</Annotation>
+      </Annotations>
+    </Measure>
   </Cube>
 </Schema>

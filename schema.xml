@@ -490,6 +490,13 @@
     </SharedDimension> 
 
 <Cube name="anuies_enrollment">
+    <Annotations>
+      <Annotation name="topic">Education</Annotation>
+      <Annotation name="subtopic">Enrollment</Annotation>
+      <Annotation name="source_name">Asociación Nacional de Universidades e Instituciones de Educación Superior (ANUIES)</Annotation>
+      <Annotation name="source_name_en">National Association of Universities and Institutions of Higher Education (ANUIES)</Annotation>
+      <Annotation name="source_link">http://www.anuies.mx/informacion-y-servicios/informacion-estadistica-de-educacion-superior/anuario-estadistico-de-educacion-superior</Annotation>
+    </Annotations>
     <Table name="anuies_enrollment" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
@@ -500,9 +507,20 @@
     <DimensionUsage foreign_key="campus_id" source="Campus" name="Campus" />
     <DimensionUsage foreign_key="period" source="Period" name="Period" />
 
-    <Measure name="Students" column="value" aggregator="sum" />
+    <Measure name="Students" column="value" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of Students</Annotation>
+      </Annotations>
+    </Measure>
   </Cube>
 <Cube name="anuies_origin">
+    <Annotations>
+      <Annotation name="topic">Education</Annotation>
+      <Annotation name="subtopic">Admissions</Annotation>
+      <Annotation name="source_name">Asociación Nacional de Universidades e Instituciones de Educación Superior (ANUIES)</Annotation>
+      <Annotation name="source_name_en">National Association of Universities and Institutions of Higher Education (ANUIES)</Annotation>
+      <Annotation name="source_link">http://www.anuies.mx/informacion-y-servicios/informacion-estadistica-de-educacion-superior/anuario-estadistico-de-educacion-superior</Annotation>
+    </Annotations>
     <Table name="anuies_origin" primary_key="mun_id" />
 
     <!--<DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography Municipality" />-->
@@ -512,9 +530,20 @@
     <DimensionUsage foreign_key="campus_id" source="Campus" name="Campus" />
     <DimensionUsage foreign_key="period" source="Period" name="Period" />
 
-    <Measure name="Students" column="value" aggregator="sum" />
+    <Measure name="Students" column="value" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of Students</Annotation>
+      </Annotations>
+    </Measure>
   </Cube>
 <Cube name="anuies_status">
+    <Annotations>
+      <Annotation name="topic">Education</Annotation>
+      <Annotation name="subtopic">Graduation</Annotation>
+      <Annotation name="source_name">Asociación Nacional de Universidades e Instituciones de Educación Superior (ANUIES)</Annotation>
+      <Annotation name="source_name_en">National Association of Universities and Institutions of Higher Education (ANUIES)</Annotation>
+      <Annotation name="source_link">http://www.anuies.mx/informacion-y-servicios/informacion-estadistica-de-educacion-superior/anuario-estadistico-de-educacion-superior</Annotation>
+    </Annotations>
     <Table name="anuies_status" primary_key="mun_id" />
 
     <Dimension name="Status" foreign_key="stat">
@@ -553,83 +582,295 @@
     <DimensionUsage foreign_key="program" source="Career Fields" name="Career Fields" />
     <DimensionUsage foreign_key="campus_id" source="Campus" name="Campus" />
 
-    <Measure name="Students" column="value" aggregator="sum" />
+    <Measure name="Students" column="value" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of Students</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 <Cube name="coneval_gini_mun">
+    <Annotations>
+      <Annotation name="topic">Housing & Living</Annotation>
+      <Annotation name="subtopic">Income</Annotation>
+      <Annotation name="source_name">Consejo Nacional de Evaluación de la Política de Desarrollo Social (CONEVAL)</Annotation>
+      <Annotation name="source_name_en">National Council for the Evaluation of Social Development Policy (CONEVAL)</Annotation>
+      <Annotation name="source_link">https://www.coneval.org.mx/Paginas/principal.aspx</Annotation>
+    </Annotations>
     <Table name="coneval_gini_mun" primary_key="mun_id" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
-    <Measure name="GINI" column="gini" aggregator="avg" />
-    <Measure name="Income Rate" column="income_rate" aggregator="avg" />
+    <Measure name="GINI" column="gini" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">GINI</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Income Rate" column="income_rate" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Income Rate</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 <Cube name="coneval_poverty">
+    <Annotations>
+      <Annotation name="topic">Housing & Living</Annotation>
+      <Annotation name="subtopic">Poverty</Annotation>
+      <Annotation name="source_name">Consejo Nacional de Evaluación de la Política de Desarrollo Social (CONEVAL)</Annotation>
+      <Annotation name="source_name_en">National Council for the Evaluation of Social Development Policy (CONEVAL)</Annotation>
+      <Annotation name="source_link">https://www.coneval.org.mx/Paginas/principal.aspx</Annotation>
+    </Annotations>
     <Table name="coneval_poverty" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
-    <Measure name="Population" column="population" visible="false" aggregator="sum" />
-    <Measure name="Poverty" column="poverty" aggregator="sum" />
-    <Measure name="Extreme Poverty" column="extreme_poverty" aggregator="sum" />
-    <Measure name="Moderate Poverty" column="moderate_poverty" aggregator="sum" />
-    <Measure name="Vulnerable Population by Lacks" column="vulnerable_lacks" aggregator="sum" />
-    <Measure name="Vulnerable Population by Income" column="vulnerable_income" aggregator="sum" />
-    <Measure name="Population No Vulnerable" column="no_vulnerable" aggregator="sum" />
-    <Measure name="Educational Backwardness" column="educational_backwardness" aggregator="sum" />
-    <Measure name="Deprivation Quality Housing Spaces" column="deprivation_quality_housing_spaces" aggregator="sum" />
-    <Measure name="Deprivation Health Services" column="deprivation_health_services" aggregator="sum" />
-    <Measure name="Deprivation Social Security" column="deprivation_social_security" aggregator="sum" />
-    <Measure name="Deprivation Basic Services Housing" column="deprivation_basic_services_housing" aggregator="sum" />
-    <Measure name="Deprivation Food Access" column="deprivation_food_access" aggregator="sum" />
-    <Measure name="Population with at least 1 Social Lack" column="at_least_one_lack" aggregator="sum" />
-    <Measure name="Population with at least 3 Social Lacks" column="at_least_three_lacks" aggregator="sum" />
-    <Measure name="Income below Welfare Line" column="income_below_welfare_line" aggregator="sum" />
-    <Measure name="Income below Min Welfare Line" column="income_below_min_welfare_line" aggregator="sum" />
+    <Measure name="Population" column="population" visible="false" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Population</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Poverty" column="poverty" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Poverty Population</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Extreme Poverty" column="extreme_poverty" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Extreme Poverty Population</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Moderate Poverty" column="moderate_poverty" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Moderate Poverty Population</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Vulnerable Population by Lacks" column="vulnerable_lacks" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Vulnerable Population by Lacks</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Vulnerable Population by Income" column="vulnerable_income" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Vulnerable Population by Income</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Population No Vulnerable" column="no_vulnerable" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Non-Vulnerable Population</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Educational Backwardness" column="educational_backwardness" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">People with Educational Backwardness</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Deprivation Quality Housing Spaces" column="deprivation_quality_housing_spaces" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Deprivation Quality Housing Spaces</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Deprivation Health Services" column="deprivation_health_services" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Deprivation Health Services</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Deprivation Social Security" column="deprivation_social_security" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Deprivation Social Security</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Deprivation Basic Services Housing" column="deprivation_basic_services_housing" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Deprivation Basic Services Housing</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Deprivation Food Access" column="deprivation_food_access" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Deprivation Food Access</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Population with at least 1 Social Lack" column="at_least_one_lack" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Population with at least 1 Social Lack</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Population with at least 3 Social Lacks" column="at_least_three_lacks" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Population with at least 3 Social Lacks</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Income below Welfare Line" column="income_below_welfare_line" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Income below Welfare Line</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Income below Min Welfare Line" column="income_below_min_welfare_line" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Income below Min Welfare Line</Annotation>
+      </Annotations>
+    </Measure>
   </Cube>
 <Cube name="coneval_social_lag_ent">
+    <Annotations>
+      <Annotation name="topic">Housing & Living</Annotation>
+      <Annotation name="subtopic">Poverty</Annotation>
+      <Annotation name="source_name">Consejo Nacional de Evaluación de la Política de Desarrollo Social (CONEVAL)</Annotation>
+      <Annotation name="source_name_en">National Council for the Evaluation of Social Development Policy (CONEVAL)</Annotation>
+      <Annotation name="source_link">https://www.coneval.org.mx/Paginas/principal.aspx</Annotation>
+    </Annotations>
     <Table name="coneval_social_lag_ent" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
     <DimensionUsage foreign_key="social_lag_degree" source="Social Lag Degree" name="Social Lag Degree" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
-    <Measure name="Population" column="population" aggregator="avg" />
-    <Measure name="Illiterate 15+ Years" column="population_illiterate" aggregator="avg" />
-    <Measure name="No Attend School 6-14 Years" column="population_6_14_school" aggregator="avg" />
-    <Measure name="Incomplete School 15+ Years" column="population_15_incomplete_school" aggregator="avg" />
-    <Measure name="No Health Services" column="no_health_services" aggregator="avg" />
-    <Measure name="Dirt Floor" column="dirt_floor" aggregator="avg" />
-    <Measure name="No Toilet" column="dirt_floor" aggregator="avg" />
-    <Measure name="No Water Supply Network" column="no_water_supply_network" aggregator="avg" />
-    <Measure name="No Sewer System" column="no_sewer_system" aggregator="avg" />
-    <Measure name="No Electrical Energy" column="no_electrical_energy" aggregator="avg" />
-    <Measure name="No Washing Machine" column="no_washing_machine" aggregator="avg" />
-    <Measure name="No Fridge" column="no_fridge" aggregator="avg" />
-    <Measure name="Social Lag Index" column="no_fridge" aggregator="avg" />
+    <Measure name="Population" column="population" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Illiterate 15+ Years" column="population_illiterate" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Illiterate 15\+ Years</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Attend School 6-14 Years" column="population_6_14_school" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population that does not Attend School Between 6 and 14 Years Old</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Incomplete School 15+ Years" column="population_15_incomplete_school" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population with Incomplete School 15\+ Years</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Health Services" column="no_health_services" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population without Healthcare</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Dirt Floor" column="dirt_floor" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population with Dirt Floor</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Toilet" column="dirt_floor" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population with Dirt Base Floor</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Water Supply Network" column="no_water_supply_network" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population without Network Water Supply</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Sewer System" column="no_sewer_system" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population without Sewer System</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Electrical Energy" column="no_electrical_energy" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population without Electrical Energy</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Washing Machine" column="no_washing_machine" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population without Washing Machine</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Fridge" column="no_fridge" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population without Fridge</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Social Lag Index" column="social_lag_index" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Social Lag Index</Annotation>
+      </Annotations>
+    </Measure>
   </Cube>
 <Cube name="coneval_social_lag_mun">
+    <Annotations>
+      <Annotation name="topic">Housing & Living</Annotation>
+      <Annotation name="subtopic">Poverty</Annotation>
+      <Annotation name="source_name">Consejo Nacional de Evaluación de la Política de Desarrollo Social (CONEVAL)</Annotation>
+      <Annotation name="source_name_en">National Council for the Evaluation of Social Development Policy (CONEVAL)</Annotation>
+      <Annotation name="source_link">https://www.coneval.org.mx/Paginas/principal.aspx</Annotation>
+    </Annotations>
     <Table name="coneval_social_lag_mun" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="social_lag_degree" source="Social Lag Degree" name="Social Lag Degree" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
-    <Measure name="Population" column="population" aggregator="avg" />
-    <Measure name="Illiterate 15+ Years" column="population_illiterate" aggregator="avg" />
-    <Measure name="No Attend School 6-14 Years" column="population_6_14_school" aggregator="avg" />
-    <Measure name="Incomplete School 15+ Years" column="population_15_incomplete_school" aggregator="avg" />
-    <Measure name="No Health Services" column="no_health_services" aggregator="avg" />
-    <Measure name="Dirt Floor" column="dirt_floor" aggregator="avg" />
-    <Measure name="No Toilet" column="dirt_floor" aggregator="avg" />
-    <Measure name="No Water Supply Network" column="no_water_supply_network" aggregator="avg" />
-    <Measure name="No Sewer System" column="no_sewer_system" aggregator="avg" />
-    <Measure name="No Electrical Energy" column="no_electrical_energy" aggregator="avg" />
-    <Measure name="No Washing Machine" column="no_washing_machine" aggregator="avg" />
-    <Measure name="No Fridge" column="no_fridge" aggregator="avg" />
-    <Measure name="Social Lag Index" column="no_fridge" aggregator="avg" />
+    <Measure name="Population" column="population" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Illiterate 15+ Years" column="population_illiterate" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Illiterate 15\+ Years</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Attend School 6-14 Years" column="population_6_14_school" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population that does not Attend School Between 6 and 14 Years Old</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Incomplete School 15+ Years" column="population_15_incomplete_school" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population with Incomplete School 15\+ Years</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Health Services" column="no_health_services" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population without Healthcare</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Dirt Floor" column="dirt_floor" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population with Dirt Floor</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Toilet" column="dirt_floor" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population with Dirt Base Floor</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Water Supply Network" column="no_water_supply_network" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population without Network Water Supply</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Sewer System" column="no_sewer_system" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population without Sewer System</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Electrical Energy" column="no_electrical_energy" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population without Electrical Energy</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Washing Machine" column="no_washing_machine" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population without Washing Machine</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="No Fridge" column="no_fridge" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Population without Fridge</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Social Lag Index" column="social_lag_index" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Social Lag Index</Annotation>
+      </Annotations>
+    </Measure>
   </Cube>
 <Cube name="sesnsp_crimes">
     <Table name="sesnsp_crimes" primary_key="mun_id" />
@@ -664,6 +905,13 @@
     <Measure name="Value" column="value" aggregator="sum" />
   </Cube>
 <Cube name="inegi_envipe">
+    <Annotations>
+      <Annotation name="topic">Safety</Annotation>
+      <Annotation name="subtopic">Victimization & Perception</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/programas/envipe/2019/</Annotation>
+    </Annotations>
     <Table name="inegi_envipe" primary_key="mun_id" />
 
     <Dimension name="Security Perception in their State" foreign_key="security_perception_in_their_state">
@@ -1300,13 +1548,27 @@
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
 
-    <Measure name="Homes" column="homes_factor" aggregator="sum" />
-    <Measure name="People" column="people_factor" aggregator="sum" />
+    <Measure name="Homes" column="homes_factor" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Homes</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="People" column="people_factor" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">People</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 <Cube name="dgis_emergency">
+    <Annotations>
+      <Annotation name="topic">Health</Annotation>
+      <Annotation name="subtopic">Quality</Annotation>
+      <Annotation name="source_name">Dirección General de Información en Salud (DGIS)</Annotation>
+      <Annotation name="source_name_en">General Directorate of Health Information (DGIS)</Annotation>
+      <Annotation name="source_link">http://www.dgis.salud.gob.mx/contenidos/basesdedatos/BD_Cubos_gobmx.html</Annotation>
+    </Annotations>
     <Table name="dgis_emergency" primary_key="mun_id" />
-    <!-- TODO social_security -->
 
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
     <DimensionUsage foreign_key="cie10" source="CIE10" name="CIE10" />
@@ -1314,10 +1576,25 @@
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="sex_id" source="Sex" name="Sex" />
 
-    <Measure name="Average Attention Time" column="attention_time" aggregator="avg" />
-    <Measure name="Total" column="count" aggregator="sum" />
+    <Measure name="Average Attention Time" column="attention_time" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Average Attention Time</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total" column="count" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Patients</Annotation>
+      </Annotations>
+    </Measure>
   </Cube>
 <Cube name="dgis_pregnancy_mortality">
+    <Annotations>
+      <Annotation name="topic">Health</Annotation>
+      <Annotation name="subtopic">Mortality</Annotation>
+      <Annotation name="source_name">Dirección General de Información en Salud (DGIS)</Annotation>
+      <Annotation name="source_name_en">General Directorate of Health Information (DGIS)</Annotation>
+      <Annotation name="source_link">http://www.dgis.salud.gob.mx/contenidos/basesdedatos/BD_Cubos_gobmx.html</Annotation>
+    </Annotations>
     <Table name="dgis_pregnancy_mortality" primary_key="mun_residence_id" />
     <!--TODO year_of_register,occupation,marital_status,medical_center,mun_happening_id-->
     <Dimension name="Year" foreign_key="year_decease">
@@ -1332,9 +1609,20 @@
     <DimensionUsage foreign_key="cie10" source="CIE10" name="CIE10" />
     <DimensionUsage foreign_key="mun_residence_id" source="Geography Municipality" name="Geography" />
 
-    <Measure name="Total" column="count" aggregator="sum" />
+    <Measure name="Total" column="count" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Patients</Annotation>
+      </Annotations>
+    </Measure>
   </Cube>
 <Cube name="economy_fdi">
+    <Annotations>
+      <Annotation name="topic">Economy</Annotation>
+      <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+      <Annotation name="source_name">Gobierno de México</Annotation>
+      <Annotation name="source_name_en">Mexico Government</Annotation>
+      <Annotation name="source_link">https://www.gob.mx/</Annotation>
+    </Annotations>
     <Table name="economy_fdi" primary_key="quarter_id" />
 
     <Dimension name="Generic Investment" foreign_key="generic_investment">
@@ -1371,10 +1659,26 @@
     <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
     <DimensionUsage foreign_key="origin_id" source="Country" name="Origin" />
 
-    <Measure name="Count" column="count" aggregator="sum" />
-    <Measure name="Investment (Million)" column="value_million" aggregator="sum" />
+    <Measure name="Count" column="count" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Investors</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Investment (Million)" column="value_million" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value Millions</Annotation>
+      </Annotations>
+    </Measure>
+
   </Cube>
 <Cube name="economy_foreign_trade_ent">
+    <Annotations>
+      <Annotation name="topic">Economy</Annotation>
+      <Annotation name="subtopic">Foreign Trade</Annotation>
+      <Annotation name="source_name">Gobierno de México</Annotation>
+      <Annotation name="source_name_en">Mexico Government</Annotation>
+      <Annotation name="source_link">https://www.gob.mx/</Annotation>
+    </Annotations>
     <Table name="economy_foreign_trade_ent" primary_key="ent_id" />
 
     <Dimension name="Flow" foreign_key="flow_id">
@@ -1414,11 +1718,26 @@
     <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
     <DimensionUsage foreign_key="partner_country" source="Country" name="Country" />
 
-    <Measure name="Trade Value" column="value" aggregator="sum" />
-    <Measure name="Number of Firms" column="firms" aggregator="sum" />
+    <Measure name="Trade Value" column="value" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Trade Value</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Number of Firms" column="firms" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of Firms</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 <Cube name="economy_foreign_trade_mun">
+    <Annotations>
+      <Annotation name="topic">Economy</Annotation>
+      <Annotation name="subtopic">Foreign Trade</Annotation>
+      <Annotation name="source_name">Gobierno de México</Annotation>
+      <Annotation name="source_name_en">Mexico Government</Annotation>
+      <Annotation name="source_link">https://www.gob.mx/</Annotation>
+    </Annotations>
     <Table name="economy_foreign_trade_mun" primary_key="mun_id" />
 
     <Dimension name="Flow" foreign_key="flow_id">
@@ -1458,11 +1777,26 @@
     <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
     <DimensionUsage foreign_key="partner_country" source="Country" name="Country" />
 
-    <Measure name="Trade Value" column="value" aggregator="sum" />
-    <Measure name="Number of Firms" column="firms" aggregator="sum" />
+    <Measure name="Trade Value" column="value" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Trade Value</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Number of Firms" column="firms" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of Firms</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 <Cube name="inea_adult_education_origin">
+    <Annotations>
+      <Annotation name="topic">Education</Annotation>
+      <Annotation name="subtopic">Adults</Annotation>
+      <Annotation name="source_name">Instituto Nacional para la Educación de los Adultos (INEA)</Annotation>
+      <Annotation name="source_name_en">National Institute for Adult Education (INEA)</Annotation>
+      <Annotation name="source_link">https://www.gob.mx/inea</Annotation>
+    </Annotations>
     <Table name="inea_adult_education_origin" primary_key="ent_id" />
 
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
@@ -1491,34 +1825,116 @@
       </Hierarchy>
     </Dimension>
 
-    <Measure name="Students Served on Alphabetization" column="student_served" aggregator="sum" />
-    <Measure name="Students Served on Alphabetization (Initial Level)" column="student_served_initial" aggregator="sum" />
-    <Measure name="Students Served on Alphabetization (Intermediate Level)" column="student_served_intermediate" aggregator="sum" />
-    <Measure name="Students Served on Alphabetization (Advanced Level)" column="student_served_advanced" aggregator="sum" />
-    <Measure name="Students Literated" column="student_literate" aggregator="sum" />
-    <Measure name="Students Literated (Initial Level)" column="student_literate_initial" aggregator="sum" />
-    <Measure name="Students Literated (Intermediate Level)" column="student_literate_intermediate" aggregator="sum" />
-    <Measure name="Students Literated (Advanced Level)" column="student_literate_advanced" aggregator="sum" />
-    <Measure name="Students Incorporated" column="student_incorporated" aggregator="sum" />
-    <Measure name="Students Inscribed" column="student_inscribed" aggregator="sum" />
-    <Measure name="Students Registered" column="student_registered" aggregator="sum" />
+    <Measure name="Students Served on Alphabetization" column="student_served" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Students Served on Alphabetization</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Students Served on Alphabetization (Initial Level)" column="student_served_initial" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Students Served on Alphabetization (Initial Level)</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Students Served on Alphabetization (Intermediate Level)" column="student_served_intermediate" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Students Served on Alphabetization (Intermediate Level)</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Students Served on Alphabetization (Advanced Level)" column="student_served_advanced" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Students Served on Alphabetization (Advanced Level)</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Students Literated" column="student_literate" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Students Literated</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Students Literated (Initial Level)" column="student_literate_initial" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Students Literated (Initial Level)</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Students Literated (Intermediate Level)" column="student_literate_intermediate" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Students Literated (Intermediate Level)</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Students Literated (Advanced Level)" column="student_literate_advanced" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Students Literated (Advanced Level)</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Students Incorporated" column="student_incorporated" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Students Incorporated"</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Students Inscribed" column="student_inscribed" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Students Inscribed"</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Students Registered" column="student_registered" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Students Registered"</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 <Cube name="inea_adult_education_stats">
+    <Annotations>
+      <Annotation name="topic">Education</Annotation>
+      <Annotation name="subtopic">Adults</Annotation>
+      <Annotation name="source_name">Instituto Nacional para la Educación de los Adultos (INEA)</Annotation>
+      <Annotation name="source_name_en">National Institute for Adult Education (INEA)</Annotation>
+      <Annotation name="source_link">https://www.gob.mx/inea</Annotation>
+    </Annotations>
     <Table name="inea_adult_education_stats" primary_key="ent_id" />
 
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
     <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
 
-    <Measure name="Active advisors" column="n_advisors" aggregator="sum" />
-    <Measure name="Active technical professors" column="n_tech_professors" aggregator="sum" />
-    <Measure name="Coordinations in operation zones" column="n_zone_coordinations" aggregator="sum" />
-    <Measure name="Community places in operation" column="n_community_places" aggregator="sum" />
-    <Measure name="Study zones" column="n_study_zones" aggregator="sum" />
-    <Measure name="Meeting zones" column="n_meeting_zones" aggregator="sum" />
+    <Measure name="Active advisors" column="n_advisors" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Number of Active Advisors"</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Active technical professors" column="n_tech_professors" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Number of Active Technical Professors"</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Coordinations in operation zones" column="n_zone_coordinations" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Coordinations in Operation Zones"</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Community places in operation" column="n_community_places" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Community Places in Operation"</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Study zones" column="n_study_zones" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Study Zones"</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Meeting zones" column="n_meeting_zones" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Meeting zones"</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 <Cube name="inegi_denue">
+    <Annotations>
+      <Annotation name="topic">Economy</Annotation>
+      <Annotation name="subtopic">Industries</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/temas/directorio/</Annotation>
+    </Annotations>
     <Table name="inegi_denue" primary_key="loc_id" />
 
     <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
@@ -1613,138 +2029,594 @@
       </Hierarchy>
     </Dimension>
 
-    <Measure name="Number of Employees Informed" column="n_workers" aggregator="sum" />
-    <Measure name="Number of Employees LCI" column="lower" aggregator="sum" />
-    <Measure name="Number of Employees Midpoint" column="middle" aggregator="sum" />
-    <Measure name="Number of Employees UCI" column="upper" aggregator="sum" />
+    <Measure name="Number of Employees Informed" column="n_workers" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Informed Number of Employees</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Number of Employees LCI" column="lower" aggregator="sum" visible="false" />
+    <Measure name="Number of Employees Midpoint" column="middle" aggregator="sum" visible="false" />
+    <Measure name="Number of Employees UCI" column="upper" aggregator="sum" visible="false" />
 
   </Cube>
 <Cube name="inegi_economic_census">
+    <Annotations>
+      <Annotation name="topic">Economy</Annotation>
+      <Annotation name="subtopic">Employment</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/app/saic/default.aspx</Annotation>
+    </Annotations>
+
     <Table name="inegi_economic_census" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
     <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
 
-    <Measure name="Economic Unit" column="ue" aggregator="sum" />
-    <Measure name="Total Gross Production" column="a111a" aggregator="sum"/>
-    <Measure name="Intermediate Consumption" column="a121a" aggregator="sum"/>
-    <Measure name="Census Gross Value Added" column="a131a" aggregator="sum"/>
-    <Measure name="Total Investment" column="a211a" aggregator="sum"/>
-    <Measure name="Gross Fixed Capital Formation" column="a221a" aggregator="sum"/>
-    <Measure name="Merchandising Margin" column="a511a" aggregator="sum"/>
-    <Measure name="Total Expenses" column="a700a" aggregator="sum"/>
-    <Measure name="Total Income" column="a800a" aggregator="sum"/>
-    <Measure name="Total Employees Depends on the Economic Unit" column="h000a" aggregator="sum"/>
-    <Measure name="Total Male Employees Depends on the Economic Unit" column="h000b" aggregator="sum"/>
-    <Measure name="Total Female Employees Depends on the Economic Unit" column="h000c" aggregator="sum"/>
-    <Measure name="Hours Worked by Employees" column="h000d" aggregator="sum"/>
-    <Measure name="Total Employees with or without a Contract with the Economic Unit" column="h001a" aggregator="sum"/>
-    <Measure name="Total Male Employees with or without a Contract with the Economic Unit" column="h001b" aggregator="sum"/>
-    <Measure name="Total Female Employees with or without a Contract with the Economic Unit" column="h001c" aggregator="sum"/>
-    <Measure name="Hours Worked by Workforce" column="h001d" aggregator="sum"/>
-    <Measure name="Salaried Employees; Total" column="h010a" aggregator="sum"/>
-    <Measure name="Male Salaried Employees" column="h010b" aggregator="sum"/>
-    <Measure name="Female Salaried Employees" column="h010c" aggregator="sum"/>
-    <Measure name="Hours Worked by Salaried Employees" column="h010d" aggregator="sum"/>
-    <Measure name="Total Owners; Family Members and other unpaid workers" column="h020a" aggregator="sum"/>
-    <Measure name="Total Male Owners; Family Members and other unpaid workers" column="h020b" aggregator="sum"/>
-    <Measure name="Total Female Owners; Family Members and other unpaid workers" column="h020c" aggregator="sum"/>
-    <Measure name="Hours Worked by Owners; Family Members and other unpaid workers" column="h020d" aggregator="sum"/>
-    <Measure name="Employees of Production; Sales and Services; Total" column="h101a" aggregator="sum"/>
-    <Measure name="Male Employees of Production; Sales and Services" column="h101b" aggregator="sum"/>
-    <Measure name="Female Employees of Production; Sales and Services" column="h101c" aggregator="sum"/>
-    <Measure name="Hours Worked by Production; Sales and Services Employees" column="h101d" aggregator="sum"/>
-    <Measure name="Administrative; Accounting and Management Employees; Total" column="h203a" aggregator="sum"/>
-    <Measure name="Female Administrative; Accounting and Management Employees" column="h203b" aggregator="sum"/>
-    <Measure name="Male Administrative; Accounting and Management Employees" column="h203c" aggregator="sum"/>
-    <Measure name="Hours Worked by Administrative; Accounting and Management Salaried Employees" column="h203d" aggregator="sum"/>
-    <Measure name="Employees not Dependent on the Economic Unit; Total" column="i000a" aggregator="sum"/>
-    <Measure name="Male Employees not Dependent on the Economic Unit" column="i000b" aggregator="sum"/>
-    <Measure name="Female Employees not Dependent on the Economic Unit" column="i000c" aggregator="sum"/>
-    <Measure name="Hours Worked by Employees not Dependent on the Economic Unit" column="i000d" aggregator="sum"/>
-    <Measure name="Employees Provided by Another Economic Unit; Total" column="i100a" aggregator="sum"/>
-    <Measure name="Male Employees Provided by Another Economic Unit" column="i100b" aggregator="sum"/>
-    <Measure name="Female Employees Provided by Another Economic Unit" column="i100c" aggregator="sum"/>
-    <Measure name="Hours Worked by Employees Provided by Another Economic Unit" column="i100d" aggregator="sum"/>
-    <Measure name="Total Independent Contractors" column="i200a" aggregator="sum"/>
-    <Measure name="Male Independent Contractors" column="i200b" aggregator="sum"/>
-    <Measure name="Female Independent Contractors" column="i200c" aggregator="sum"/>
-    <Measure name="Hours Worked by Independent Contractors" column="i200d" aggregator="sum"/>
-    <Measure name="Total Remuneration" column="j000a" aggregator="sum"/>
-    <Measure name="Total Salary of Production; Sales and Services Employees" column="j010a" aggregator="sum"/>
-    <Measure name="Total Salary of Administrative; Accounting and Management Salaried Employees" column="j203a" aggregator="sum"/>
-    <Measure name="Employer Social Security Contributions" column="j300a" aggregator="sum"/>
-    <Measure name="Other Social Benefits" column="j400a" aggregator="sum"/>
-    <Measure name="Profit Sharing" column="j500a" aggregator="sum"/>
-    <Measure name="Severance Pay" column="j600a" aggregator="sum"/>
-    <Measure name="Total Expenses for Consumption of Goods and Services" column="k000a" aggregator="sum"/>
-    <Measure name="Goods Acquired to Commercialize" column="k010a" aggregator="sum"/>
-    <Measure name="Materials and Supplies Consumed for Provision of Services" column="k020a" aggregator="sum"/>
-    <Measure name="Raw and Procesed Material that are Integrated into Production" column="k030a" aggregator="sum"/>
-    <Measure name="Consumption of Fuels; Lubricants and Energy for the Operation of Machinery; Equipment and Vehicles" column="k040a" aggregator="sum"/>
-    <Measure name="Electricity Consumption" column="k041a" aggregator="sum"/>
-    <Measure name="Rent and Lease of Movable and Immovable Property" column="k050a" aggregator="sum"/>
-    <Measure name="Professional; Scientific and Technical Services Hired" column="k060a" aggregator="sum"/>
-    <Measure name="Maquila and Services for the Production of Goods by Contract" column="k070a" aggregator="sum"/>
-    <Measure name="Consumption of Other Goods and Services" column="k090a" aggregator="sum"/>
-    <Measure name="Freight out Expenses" column="k096a" aggregator="sum"/>
-    <Measure name="Expenses for Consumption of Stationery and Office Supplies" column="k311a" aggregator="sum"/>
-    <Measure name="Payments to Another Company that Hired and Provided Workers" column="k610a" aggregator="sum"/>
-    <Measure name="Expenses in Independent Contractors" column="k620a" aggregator="sum"/>
-    <Measure name="Advertising Expenses" column="k810a" aggregator="sum"/>
-    <Measure name="Comunication Expenses" column="k820a" aggregator="sum"/>
-    <Measure name="Expenses for Consumption of Containers and Packaging" column="k910a" aggregator="sum"/>
-    <Measure name="Expenditures for Repair; Spare Parts and Maintenance of Fixed Assets" column="k950a" aggregator="sum"/>
-    <Measure name="Water Consumption" column="k976a" aggregator="sum"/>
-    <Measure name="Total Income for Supplying Goods and Services" column="m000a" aggregator="sum"/>
-    <Measure name="Revenue from Commercialization of goods" column="m010a" aggregator="sum"/>
-    <Measure name="Revenue from the Provision of Professional; Scientific and Technical Services" column="m020a" aggregator="sum"/>
-    <Measure name="Revenue from Sales of Processed; Generated or Extracted Products" column="m030a" aggregator="sum"/>
-    <Measure name="Revenue from Rental of Movable and Immovable Property" column="m050a" aggregator="sum"/>
-    <Measure name="Other Revenue for Providing Goods and Services" column="m090a" aggregator="sum"/>
-    <Measure name="Other Components of Production" column="m091a" aggregator="sum"/>
-    <Measure name="Revenue from the Processing or Transformation of Raw Materials Owned by Third Parties" column="m700a" aggregator="sum"/>
-    <Measure name="Value of Processed Products; Generated Goods and Extracted" column="o010a" aggregator="sum"/>
-    <Measure name="Fixed Assets Produced for Own Use" column="o020a" aggregator="sum"/>
-    <Measure name="Total Initial Inventory" column="p000a" aggregator="sum"/>
-    <Measure name="Total Ending Inventory" column="p000b" aggregator="sum"/>
-    <Measure name="Total Stock Variation" column="p000c" aggregator="sum"/>
-    <Measure name="Total Initial Inventory of In-Process Products" column="p030a" aggregator="sum"/>
-    <Measure name="Total Final Inventory of In-Process Products" column="p030b" aggregator="sum"/>
-    <Measure name="Variation of Inventories of In-Process Products" column="p030c" aggregator="sum"/>
-    <Measure name="Total Initial Inventory of Goods Purchased for Merchandising" column="p100a" aggregator="sum"/>
-    <Measure name="Total Final Inventory of Goods Purchased for Merchandising" column="p100b" aggregator="sum"/>
-    <Measure name="Total Fixed Assets" column="q000a" aggregator="sum"/>
-    <Measure name="Total Deprecation of Fixed Assets" column="q000b" aggregator="sum"/>
-    <Measure name="Total Purchases of Fixed Assets" column="q000c" aggregator="sum"/>
-    <Measure name="Total Sales of Fixed Assets" column="q000d" aggregator="sum"/>
-    <Measure name="Total Stock of Machinery and Production Equipment" column="q010a" aggregator="sum"/>
-    <Measure name="Total Stock of Real Estate" column="q020a" aggregator="sum"/>
-    <Measure name="Total Stock of Units and Transport Equipment" column="q030a" aggregator="sum"/>
-    <Measure name="Total Stock of Computer Equipment and Peripherals" column="q400a" aggregator="sum"/>
-    <Measure name="Total Stock of Furniture; office Equipment and Other Fixed Assets" column="q900a" aggregator="sum"/>
+    <Measure name="Economic Unit" column="ue" aggregator="sum" >
+      <Annotations>
+        <Annotation name="details">Number of units recording data</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Gross Production" column="a111a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Intermediate Consumption" column="a121a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Census Gross Value Added" column="a131a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Investment" column="a211a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Gross Fixed Capital Formation" column="a221a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Merchandising Margin" column="a511a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Expenses" column="a700a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Income" column="a800a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Employees Depends on the Economic Unit" column="h000a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Male Employees Depends on the Economic Unit" column="h000b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Female Employees Depends on the Economic Unit" column="h000c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Hours Worked by Employees" column="h000d" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in thousand hours</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Employees with or without a Contract with the Economic Unit" column="h001a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Male Employees with or without a Contract with the Economic Unit" column="h001b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Female Employees with or without a Contract with the Economic Unit" column="h001c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Hours Worked by Workforce" column="h001d" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in thousand hours</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Salaried Employees; Total" column="h010a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Male Salaried Employees" column="h010b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Female Salaried Employees" column="h010c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Hours Worked by Salaried Employees" column="h010d" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in thousand hours</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Owners; Family Members and other unpaid workers" column="h020a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Male Owners; Family Members and other unpaid workers" column="h020b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Female Owners; Family Members and other unpaid workers" column="h020c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Hours Worked by Owners; Family Members and other unpaid workers" column="h020d" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in thousand hours</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Employees of Production; Sales and Services; Total" column="h101a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Male Employees of Production; Sales and Services" column="h101b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Female Employees of Production; Sales and Services" column="h101c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Hours Worked by Production; Sales and Services Employees" column="h101d" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in thousand hours</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Administrative; Accounting and Management Employees; Total" column="h203a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Female Administrative; Accounting and Management Employees" column="h203b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Male Administrative; Accounting and Management Employees" column="h203c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Hours Worked by Administrative; Accounting and Management Salaried Employees" column="h203d" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in thousand hours</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Employees not Dependent on the Economic Unit; Total" column="i000a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Male Employees not Dependent on the Economic Unit" column="i000b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Female Employees not Dependent on the Economic Unit" column="i000c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Hours Worked by Employees not Dependent on the Economic Unit" column="i000d" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in thousand hours</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Employees Provided by Another Economic Unit; Total" column="i100a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Male Employees Provided by Another Economic Unit" column="i100b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Female Employees Provided by Another Economic Unit" column="i100c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Hours Worked by Employees Provided by Another Economic Unit" column="i100d" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in thousand hours</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Independent Contractors" column="i200a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Male Independent Contractors" column="i200b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Female Independent Contractors" column="i200c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Hours Worked by Independent Contractors" column="i200d" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in thousand hours</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Remuneration" column="j000a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Salary of Production; Sales and Services Employees" column="j010a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Salary of Administrative; Accounting and Management Salaried Employees" column="j203a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Employer Social Security Contributions" column="j300a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Other Social Benefits" column="j400a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Profit Sharing" column="j500a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Severance Pay" column="j600a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Expenses for Consumption of Goods and Services" column="k000a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Goods Acquired to Commercialize" column="k010a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Materials and Supplies Consumed for Provision of Services" column="k020a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Raw and Procesed Material that are Integrated into Production" column="k030a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Consumption of Fuels; Lubricants and Energy for the Operation of Machinery; Equipment and Vehicles" column="k040a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Electricity Consumption" column="k041a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Rent and Lease of Movable and Immovable Property" column="k050a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Professional; Scientific and Technical Services Hired" column="k060a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Maquila and Services for the Production of Goods by Contract" column="k070a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Consumption of Other Goods and Services" column="k090a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Freight out Expenses" column="k096a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Expenses for Consumption of Stationery and Office Supplies" column="k311a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Payments to Another Company that Hired and Provided Workers" column="k610a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Expenses in Independent Contractors" column="k620a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Advertising Expenses" column="k810a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Comunication Expenses" column="k820a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Expenses for Consumption of Containers and Packaging" column="k910a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Expenditures for Repair; Spare Parts and Maintenance of Fixed Assets" column="k950a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Water Consumption" column="k976a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Income for Supplying Goods and Services" column="m000a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Revenue from Commercialization of goods" column="m010a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Revenue from the Provision of Professional; Scientific and Technical Services" column="m020a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Revenue from Sales of Processed; Generated or Extracted Products" column="m030a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Revenue from Rental of Movable and Immovable Property" column="m050a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Other Revenue for Providing Goods and Services" column="m090a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Other Components of Production" column="m091a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of components</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Revenue from the Processing or Transformation of Raw Materials Owned by Third Parties" column="m700a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Value of Processed Products; Generated Goods and Extracted" column="o010a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Fixed Assets Produced for Own Use" column="o020a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Initial Inventory" column="p000a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Ending Inventory" column="p000b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Stock Variation" column="p000c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Initial Inventory of In-Process Products" column="p030a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Final Inventory of In-Process Products" column="p030b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Variation of Inventories of In-Process Products" column="p030c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Initial Inventory of Goods Purchased for Merchandising" column="p100a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Final Inventory of Goods Purchased for Merchandising" column="p100b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Fixed Assets" column="q000a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Deprecation of Fixed Assets" column="q000b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Purchases of Fixed Assets" column="q000c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Sales of Fixed Assets" column="q000d" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Stock of Machinery and Production Equipment" column="q010a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Stock of Real Estate" column="q020a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Stock of Units and Transport Equipment" column="q030a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Stock of Computer Equipment and Peripherals" column="q400a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Stock of Furniture; office Equipment and Other Fixed Assets" column="q900a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
   </Cube>
 <Cube name="inegi_economic_census_sex">
-    <Table name="inegi_economic_census_sex" primary_key="mun_id" />
+    <Annotations>
+      <Annotation name="topic">Economy</Annotation>
+      <Annotation name="subtopic">Employment</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/app/saic/default.aspx</Annotation>
+    </Annotations>
 
+    <Table name="inegi_economic_census_sex" primary_key="mun_id" />
+ 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
 
-    <Measure name="Employed workers" column="employed_workers" aggregator="sum" />
-    <Measure name="Personal dependent on the social reason" column="personal_dependent_on_the_social_reason" aggregator="sum"/>
-    <Measure name="Paid staff" column="paid_staff" aggregator="sum"/>
-    <Measure name="Production personnel sales and service" column="production_personnel_sales_and_service" aggregator="sum"/>
-    <Measure name="Administrative accounting and managerial staff" column="administrative_accounting_and_managerial_staff" aggregator="sum"/>
-    <Measure name="Owners family and other unpaid workers" column="owners_family_and_other_unpaid_workers" aggregator="sum"/>
-    <Measure name="Staff not dependent on the social reason" column="staff_not_dependent_on_the_social_reason" aggregator="sum"/>
-    <Measure name="Personnel provided by another company name" column="personnel_provided_by_another_company_name" aggregator="sum"/>
-    <Measure name="Staff for fees or commissions without basic salary" column="staff_for_fees_or_commissions_without_basic_salary" aggregator="sum"/>
+    <Measure name="Employed workers" column="employed_workers" aggregator="sum" >
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Personal dependent on the social reason" column="personal_dependent_on_the_social_reason" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Paid staff" column="paid_staff" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Production personnel sales and service" column="production_personnel_sales_and_service" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Administrative accounting and managerial staff" column="administrative_accounting_and_managerial_staff" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Owners family and other unpaid workers" column="owners_family_and_other_unpaid_workers" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Staff not dependent on the social reason" column="staff_not_dependent_on_the_social_reason" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Personnel provided by another company name" column="personnel_provided_by_another_company_name" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Staff for fees or commissions without basic salary" column="staff_for_fees_or_commissions_without_basic_salary" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 <Cube name="inegi_enigh_household_income">
+    <Annotations>
+      <Annotation name="topic">Housing & Living</Annotation>
+      <Annotation name="subtopic">Income</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/programas/enigh/nc/2018/</Annotation>
+    </Annotations>
+
     <Table name="inegi_enigh_household_income" primary_key="mun_id" />
 
     <Dimension name="Year" foreign_key="year">
@@ -1754,11 +2626,27 @@
     </Dimension>
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
-    <Measure name="Population" column="population" aggregator="sum" />
-    <Measure name="Monthly Average Income" column="monthly_average" aggregator="sum"/>
+    <Measure name="Population" column="population" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of people</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Monthly Average Income" column="monthly_average" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 <Cube name="inegi_enigh_jobs">
+    <Annotations>
+      <Annotation name="topic">Housing & Living</Annotation>
+      <Annotation name="subtopic">Income</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/programas/enigh/nc/2018/</Annotation>
+    </Annotations>
+
     <Table name="inegi_enigh_jobs" primary_key="mun_id" />
 
     <Dimension name="Size of Business" foreign_key="business_size">
@@ -1769,132 +2657,210 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">just 1 person</Value>
-            <Value column="name_es">De 1 persona</Value>
+            <Value column="name_en">Strike or unemployment</Value>
+            <Value column="name_es">Huelga o paro laboral</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">From 2 to 5 people</Value>
-            <Value column="name_es">De 2 a 5 personas</Value>
+            <Value column="name_en">Technical stop</Value>
+            <Value column="name_es">Paro técnico</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">From 6 to 10 people</Value>
-            <Value column="name_es">De 6 a 10 personas</Value>
+            <Value column="name_en">Temporary suspension of their duties</Value>
+            <Value column="name_es">Suspensión temporal de sus funciones</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">From 11 to 15 people</Value>
-            <Value column="name_es">De 11 a 15 personas</Value>
+            <Value column="name_en">Assistance to training courses</Value>
+            <Value column="name_es">Asistencia a cursos de capacitación</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
-            <Value column="name_en">From 16 to 20 people</Value>
-            <Value column="name_es">De 16 a 20 personas</Value>
+            <Value column="name_en">Vacations</Value>
+            <Value column="name_es">Vacaciones</Value>
           </Row>
           <Row>
             <Value column="id">6</Value>
-            <Value column="name_en">From 21 to 30 people</Value>
-            <Value column="name_es">De 21 a 30 personas</Value>
+            <Value column="name_en">Permission, illness or settlement of personal matters</Value>
+            <Value column="name_es">Permiso, enfermedad o arreglo de asuntos personales</Value>
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">From 31 to 50 people</Value>
-            <Value column="name_es">De 31 a 50 personas</Value>
+            <Value column="name_en">Lack of vehicle or machine breakdown</Value>
+            <Value column="name_es">Falta de vehículo o descompostura de máquina</Value>
           </Row>
           <Row>
             <Value column="id">8</Value>
-            <Value column="name_en">From 51 to 100 people</Value>
-            <Value column="name_es">De 51 a 100 personas</Value>
+            <Value column="name_en">Lack of raw materials, financing or customers</Value>
+            <Value column="name_es">Falta de materias primas, financiamiento o clientes</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">From 101 to 250 people</Value>
-            <Value column="name_es">De 101 a 250 personas</Value>
+            <Value column="name_en">Bad weather or natural phenomenon</Value>
+            <Value column="name_es">Mal tiempo o fenómeno natural</Value>
           </Row>
           <Row>
             <Value column="id">10</Value>
-            <Value column="name_en">From 251 to 500 people</Value>
-            <Value column="name_es">De 251 a 500 personas</Value>
+            <Value column="name_en">Term of work or cultivation season</Value>
+            <Value column="name_es">Término de temporada de trabajo o cultivo</Value>
           </Row>
           <Row>
             <Value column="id">11</Value>
-            <Value column="name_en">From 501 and more people</Value>
-            <Value column="name_es">De 501 a más personas</Value>
+            <Value column="name_en">Start a new job or business</Value>
+            <Value column="name_es">Comenzará un trabajo o negocio nuevo</Value>
           </Row>
           <Row>
             <Value column="id">12</Value>
-            <Value column="name_en">Does not know</Value>
-            <Value column="name_es">No sabe</Value>
+            <Value column="name_en">Another reason</Value>
+            <Value column="name_es">Otra razón</Value>
+          </Row>
+          <Row>
+            <Value column="id">13</Value>
+            <Value column="name_en">None of the above</Value>
+            <Value column="name_es">Ninguna de las anteriores</Value>
           </Row>
         </InlineTable>
-        <Level name="Size of Business" key_column="id" name_column="name_en">
-          <Property name="Size of Business ES" column="name_es" caption_set="es" />
+        <Level name="Job Absence" key_column="id" name_column="name_en">
+          <Property name="Job Absence ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension name="Kind of Business" foreign_key="business_type">
-      <Hierarchy name="Kind of Business" primary_key="id">
-        <InlineTable alias="dim_inline_business_type">
+
+    <Dimension name="Work Last Month" foreign_key="work_last_month">
+      <Hierarchy name="Work Last Month" primary_key="id">
+        <InlineTable alias="dim_inline_work_last_month">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Independent, personal or the familiar kind</Value>
-            <Value column="name_es">De tipo independiente, personal o familiar</Value>
+            <Value column="name_en">Worked the past month</Value>
+            <Value column="name_es">Trabajó el mes pasado</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Company or enterprise from the private sector</Value>
-            <Value column="name_es">Una compañía o empresa del sector privado</Value>
-          </Row>
-          <Row>
-            <Value column="id">3</Value>
-            <Value column="name_en">Government institution</Value>
-            <Value column="name_es">Una institución de gobierno</Value>
-          </Row>
-          <Row>
-            <Value column="id">4</Value>
-            <Value column="name_en">Institution non related to the government</Value>
-            <Value column="name_es">Una institución no administrada por el gobierno</Value>
+            <Value column="name_en">Did not work the past month</Value>
+            <Value column="name_es">No trabajó el mes pasado</Value>
           </Row>
         </InlineTable>
-        <Level name="Kind of Business" key_column="id" name_column="name_en">
-          <Property name="Kind of Business ES" column="name_es" caption_set="es" />
+        <Level name="Work Last Month" key_column="id" name_column="name_en">
+          <Property name="Work Last Month ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension name="Payment mode" foreign_key="pay_mode">
-      <Hierarchy name="Payment mode" primary_key="id">
-        <InlineTable alias="dim_inline_pay_mode">
+
+    <Dimension name="Another Option" foreign_key="inst_6">
+      <Hierarchy name="Another Option" primary_key="id">
+        <InlineTable alias="dim_inline_inst_6">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Does get a payment</Value>
-            <Value column="name_es">Recibe un pago</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">Worker without payment in a home business</Value>
-            <Value column="name_es">Es un trabajador(a) sin pago en un negocio del hogar</Value>
-          </Row>
-          <Row>
-            <Value column="id">3</Value>
-            <Value column="name_en">Worker without payment in a non home business</Value>
-            <Value column="name_es">Es un trabajador(a) sin pago en un negocio que no es del hogar</Value>
+            <Value column="name_en">Another Option</Value>
+            <Value column="name_es">Otra Opcion</Value>
           </Row>
         </InlineTable>
-        <Level name="Payment mode" key_column="id" name_column="name_en">
-          <Property name="Payment mode ES" column="name_es" caption_set="es" />
+        <Level name="Another Option" key_column="id" name_column="name_en">
+          <Property name="Another Option ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension name="National Job" foreign_key="national_job">
-      <Hierarchy name="National Job" primary_key="id">
-        <InlineTable alias="dim_inline_national_job">
+
+    <Dimension name="IMSS-Prospera" foreign_key="inst_5">
+      <Hierarchy name="IMSS-Prospera" primary_key="id">
+        <InlineTable alias="dim_inline_inst_5">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">IMSS-Prospera</Value>
+            <Value column="name_es">IMSS-Prospera</Value>
+          </Row>
+        </InlineTable>
+        <Level name="IMSS-Prospera" key_column="id" name_column="name_en">
+          <Property name="IMSS-Prospera ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Pemex, Defense or Marine" foreign_key="inst_4">
+      <Hierarchy name="Pemex, Defense or Marine" primary_key="id">
+        <InlineTable alias="dim_inline_inst_4">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Pemex, Defense or Marine</Value>
+            <Value column="name_es">Pemex, Defensa o Marina</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Pemex, Defense or Marine" key_column="id" name_column="name_en">
+          <Property name="Pemex, Defense or Marine ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="State ISSTE" foreign_key="inst_3">
+      <Hierarchy name="State ISSTE" primary_key="id">
+        <InlineTable alias="dim_inline_inst_3">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">State ISSSTE</Value>
+            <Value column="name_es">ISSTE estatal</Value>
+          </Row>
+        </InlineTable>
+        <Level name="State ISSTE" key_column="id" name_column="name_en">
+          <Property name="State ISSTE ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="ISSTE" foreign_key="inst_2">
+      <Hierarchy name="ISSTE" primary_key="id">
+        <InlineTable alias="dim_inline_inst_2">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">ISSTE</Value>
+            <Value column="name_es">ISSTE</Value>
+          </Row>
+        </InlineTable>
+        <Level name="ISSTE" key_column="id" name_column="name_en">
+          <Property name="ISSTE ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="IMSS" foreign_key="inst_1">
+      <Hierarchy name="IMSS" primary_key="id">
+        <InlineTable alias="dim_inline_inst_1">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">IMSS</Value>
+            <Value column="name_es">IMSS</Value>
+          </Row>
+        </InlineTable>
+        <Level name="IMSS" key_column="id" name_column="name_en">
+          <Property name="IMSS ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Health Attention" foreign_key="health_attention">
+      <Hierarchy name="Health Attention" primary_key="id">
+        <InlineTable alias="dim_inline_health_attention">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
@@ -1909,36 +2875,15 @@
             <Value column="name_es">No</Value>
           </Row>
         </InlineTable>
-        <Level name="National Job" key_column="id" name_column="name_en">
-          <Property name="National Job ES" column="name_es" caption_set="es" />
+        <Level name="Health Attention" key_column="id" name_column="name_en">
+          <Property name="Health Attention ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension name="Job ID" foreign_key="job_id">
-      <Hierarchy name="Job ID" primary_key="id">
-        <InlineTable alias="dim_inline_job_id">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">Main Job</Value>
-            <Value column="name_es">Trabajo principal</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">Secondary Job</Value>
-            <Value column="name_es">Trabajo secundario</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Job ID" key_column="id" name_column="name_en">
-          <Property name="Job ID ES" column="name_es" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
-    <Dimension name="Contract" foreign_key="contract">
-      <Hierarchy name="Contract" primary_key="id">
-        <InlineTable alias="dim_inline_contract">
+
+    <Dimension name="Popular Insurance" foreign_key="popular_insurance">
+      <Hierarchy name="Popular Insurance" primary_key="id">
+        <InlineTable alias="dim_inline_popular_insurance">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
@@ -1953,94 +2898,153 @@
             <Value column="name_es">No</Value>
           </Row>
         </InlineTable>
-        <Level name="Contract" key_column="id" name_column="name_en">
-          <Property name="Contract ES" column="name_es" caption_set="es" />
+        <Level name="Popular Insurance" key_column="id" name_column="name_en">
+          <Property name="Popular Insurance ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension name="Contract Type" foreign_key="contract_type">
-      <Hierarchy name="Contract Type" primary_key="id">
-        <InlineTable alias="dim_inline_contract_type">
+
+    <Dimension name="Social Security" foreign_key="social_security">
+      <Hierarchy name="Social Security" primary_key="id">
+        <InlineTable alias="dim_inline_social_security">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">It is temporal, or by specific work </Value>
-            <Value column="name_es">Es temporal o por obra determinada</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Main workforce, employee or indefinitely time</Value>
-            <Value column="name_es">Es de base, planta o por tiempo indeterminado</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
           </Row>
         </InlineTable>
-        <Level name="Contract Type" key_column="id" name_column="name_en">
-          <Property name="Contract Type ES" column="name_es" caption_set="es" />
+        <Level name="Social Security" key_column="id" name_column="name_en">
+          <Property name="Social Security ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension name="Socioeconomic Status" foreign_key="eco_stratum">
-      <Hierarchy name="Socioeconomic Status" primary_key="id">
-        <InlineTable alias="dim_inline_eco_stratum">
+
+    <Dimension name="Speaks Native" foreign_key="speaks_native">
+      <Hierarchy name="Speaks Native" primary_key="id">
+        <InlineTable alias="dim_inline_speaks_native">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Lower Class</Value>
-            <Value column="name_es">Clase Baja</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Lower middle Class</Value>
-            <Value column="name_es">Clase Media Baja</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Speaks Native" key_column="id" name_column="name_en">
+          <Property name="Speaks Native ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Ethnicity" foreign_key="ethnicity">
+      <Hierarchy name="Ethnicity" primary_key="id">
+        <InlineTable alias="dim_inline_ethnicity">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Ethnicity" key_column="id" name_column="name_en">
+          <Property name="Ethnicity ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Near Children Support" foreign_key="near_support_children">
+      <Hierarchy name="Near Children Support" primary_key="id">
+        <InlineTable alias="dim_inline_near_support_children">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Imposible get/obtain</Value>
+            <Value column="name_es">Imposible conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Hard to get/obtain</Value>
+            <Value column="name_es">Difícil conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Upper middle Class</Value>
-            <Value column="name_es">Clase Media Alta</Value>
+            <Value column="name_en">Easy to get/obtain</Value>
+            <Value column="name_es">Fácil conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">Upper Class</Value>
-            <Value column="name_es">Clase Alta</Value>
+            <Value column="name_en">Very easy to get/obtain</Value>
+            <Value column="name_es">Muy fácil conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">No hard or easy get/obtain (spontaneous)</Value>
+            <Value column="name_es">Ni fácil ni difícil conseguirla (espontánea)</Value>
           </Row>
         </InlineTable>
-        <Level name="Socioeconomic Status" key_column="id" name_column="name_en">
-          <Property name="Socioeconomic Status ES" column="name_es" caption_set="es" />
+        <Level name="Near Children Support" key_column="id" name_column="name_en">
+          <Property name="Near Children Support ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension name="Business Type" foreign_key="business_type">
-      <Hierarchy name="Business Type" primary_key="id">
-        <InlineTable alias="dim_inline_business_type">
+
+    <Dimension name="Neighborhood Support" foreign_key="near_support_neighborhood">
+      <Hierarchy name="Neighborhood Support" primary_key="id">
+        <InlineTable alias="dim_inline_near_support_neighborhood">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Independent, personal or familiar</Value>
-            <Value column="name_es">Independiente, personal o familiar</Value>
+            <Value column="name_en">Imposible get/obtain</Value>
+            <Value column="name_es">Imposible conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Company private sector</Value>
-            <Value column="name_es">Compañia o empresa del sector privado</Value>
+            <Value column="name_en">Hard to get/obtain</Value>
+            <Value column="name_es">Difícil conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Government institution</Value>
-            <Value column="name_es">Institución de gobierno</Value>
+            <Value column="name_en">Easy to get/obtain</Value>
+            <Value column="name_es">Fácil conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">No government institution</Value>
-            <Value column="name_es">Institución no administrada por el gobierno</Value>
+            <Value column="name_en">Very easy to get/obtain</Value>
+            <Value column="name_es">Muy fácil conseguirla</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">No hard or easy get/obtain (spontaneous)</Value>
+            <Value column="name_es">Ni fácil ni difícil conseguirla (espontánea)</Value>
           </Row>
         </InlineTable>
-        <Level name="Business Type" key_column="id" name_column="name_en">
-          <Property name="Business Type ES" column="name_es" caption_set="es" />
+        <Level name="Neighborhood Support" key_column="id" name_column="name_en">
+          <Property name="Neighborhood Support ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
@@ -2056,11 +3060,27 @@
     <DimensionUsage foreign_key="scian_id" source="Industry 4 Digit" name="Industry" />
     <DimensionUsage foreign_key="sinco_id" source="Occupation" name="Occupation" />
 
-    <Measure name="Population" column="population" aggregator="sum" />
-    <Measure name="Average Worked Hours" column="worked_hours" aggregator="avg" />
+    <Measure name="Population" column="population" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of people</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Average Worked Hours" column="worked_hours" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Value in thousand hours</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 <Cube name="inegi_enigh_population">
+    <Annotations>
+      <Annotation name="topic">Housing & Living</Annotation>
+      <Annotation name="subtopic">Income</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/programas/enigh/nc/2018/</Annotation>
+    </Annotations>
+
     <Table name="inegi_enigh_population" primary_key="ent_id" />
 
     <Dimension name="Socioeconomic Status" foreign_key="eco_stratum">
@@ -2611,11 +3631,35 @@
             <Value column="name_en">Hard to get/obtain</Value>
             <Value column="name_es">Difícil conseguirla</Value>
           </Row>
+        </InlineTable>
+        <Level name="Job Mexico" key_column="id" name_column="name_en">
+          <Property name="Job Mexico ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Start Business" foreign_key="search_start_business">
+      <Hierarchy name="Start Business" primary_key="id">
+        <InlineTable alias="dim_inline_start_business">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">3</Value>
             <Value column="name_en">Easy to get/obtain</Value>
             <Value column="name_es">Fácil conseguirla</Value>
           </Row>
+        </InlineTable>
+        <Level name="Start Business" key_column="id" name_column="name_en">
+          <Property name="StartBusiness ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="No Search Job" foreign_key="search_no_search">
+      <Hierarchy name="No Search Job" primary_key="id">
+        <InlineTable alias="dim_inline_no_search">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">4</Value>
             <Value column="name_en">Very easy to get/obtain</Value>
@@ -2941,11 +3985,27 @@
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
 
-    <Measure name="Population" column="population" aggregator="sum" />
-    <Measure name="Months Social Security" column="months_social_security" aggregator="avg" />
+    <Measure name="Population" column="population" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of people</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Months Social Security" column="months_social_security" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Number of months with social security</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 <Cube name="inegi_enoe">
+    <Annotations>
+      <Annotation name="topic">Economy</Annotation>
+      <Annotation name="subtopic">Employment</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/programas/enoe/15ymas/</Annotation>
+    </Annotations>
+
     <Table name="inegi_enoe" primary_key="ent_id" />
 
     <Dimension name="Job Situation" foreign_key="has_job_or_business">
@@ -3099,6 +4159,11 @@
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
           <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">No apply</Value>
+            <Value column="name_es">No aplica</Value>
+          </Row>
+          <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Monthly</Value>
             <Value column="name_es">Cada mes</Value>
@@ -3207,6 +4272,11 @@
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">No apply</Value>
+            <Value column="name_es">No aplica</Value>
+          </Row>
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Sell or make products</Value>
@@ -3513,13 +4583,37 @@
     <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
     <DimensionUsage foreign_key="actual_job_position" source="Occupation" name="Occupation Actual Job" />
 
-    <Measure name="Worked Hours Week" column="actual_job_hrs_worked_lastweek" aggregator="avg" />
-    <Measure name="Worked Days Week" column="actual_job_days_worked_lastweek" aggregator="avg" />
-    <Measure name="Wage" column="actual_amount_pesos" aggregator="avg" />
-    <Measure name="Workforce" column="population" aggregator="sum" />
+    <Measure name="Worked Hours Week" column="actual_job_hrs_worked_lastweek" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Value in hours</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Worked Days Week" column="actual_job_days_worked_lastweek" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Value in number of days</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Wage" column="actual_amount_pesos" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Value in mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Workforce" column="population" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of people</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 <Cube name="inegi_ensu">
+    <Annotations>
+      <Annotation name="topic">Safety</Annotation>
+      <Annotation name="subtopic">Crimes</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/programas/ensu/</Annotation>
+    </Annotations>
+
     <Table name="inegi_ensu" primary_key="ent_id" />
 
     <Dimension name="City Perception" foreign_key="perception_city">
@@ -3637,6 +4731,19 @@
             <Value column="name_en">No apply</Value>
             <Value column="name_es">No aplica</Value>
           </Row>
+        </InlineTable>
+        <Level name="City Safety Improvements" key_column="id" name_column="name_en">
+          <Property name="City Safety Improvements ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Witness Thefts Last 3 Months" foreign_key="thefts_3_months">
+      <Hierarchy name="Witness Thefts Last 3 Months" primary_key="id">
+        <InlineTable alias="dim_inline_thefts_3_months">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">9</Value>
             <Value column="name_en">No knowledge / no answer</Value>
@@ -3665,6 +4772,19 @@
             <Value column="name_en">Unsafe</Value>
             <Value column="name_es">Insegura</Value>
           </Row>
+        </InlineTable>
+        <Level name="Witness Thefts Last 3 Months" key_column="id" name_column="name_en">
+          <Property name="Witness Thefts Last 3 Months ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Witness Gangs Last 3 Months" foreign_key="gangs_3_months">
+      <Hierarchy name="Witness Gangs Last 3 Months" primary_key="id">
+        <InlineTable alias="dim_inline_gangs_3_months">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">3</Value>
             <Value column="name_en">No apply</Value>
@@ -3693,6 +4813,19 @@
             <Value column="name_en">Will improve</Value>
             <Value column="name_es">Mejorara</Value>
           </Row>
+        </InlineTable>
+        <Level name="Witness Gangs Last 3 Months" key_column="id" name_column="name_en">
+          <Property name="Witness Gangs Last 3 Months ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Witness Drugs Last 3 Months" foreign_key="drugs_3_months">
+      <Hierarchy name="Witness Drugs Last 3 Months" primary_key="id">
+        <InlineTable alias="dim_inline_drugs_3_months">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">It will remain safe</Value>
@@ -3708,6 +4841,19 @@
             <Value column="name_en">Will get worse</Value>
             <Value column="name_es">Empeorara</Value>
           </Row>
+        </InlineTable>
+        <Level name="Witness Drugs Last 3 Months" key_column="id" name_column="name_en">
+          <Property name="Witness Drugs Last 3 Months ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Witness Gunshots Last 3 Months" foreign_key="gunshots_3_months">
+      <Hierarchy name="Witness Gunshots Last 3 Months" primary_key="id">
+        <InlineTable alias="dim_inline_gunshots_3_months">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">9</Value>
             <Value column="name_en">No knowledge / no answer</Value>
@@ -3736,6 +4882,19 @@
             <Value column="name_en">It will remain safe</Value>
             <Value column="name_es">Seguira igual de bien</Value>
           </Row>
+        </InlineTable>
+        <Level name="Witness Gunshots Last 3 Months" key_column="id" name_column="name_en">
+          <Property name="Witness Gunshots Last 3 Months ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Carrying Goods or Money" foreign_key="carrying_goods">
+      <Hierarchy name="Carrying Goods or Money" primary_key="id">
+        <InlineTable alias="dim_inline_carrying_goods">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">9</Value>
             <Value column="name_en">No knowledge / no answer</Value>
@@ -3905,10 +5064,28 @@
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
           <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">It was not declare as a possitive answer</Value>
+            <Value column="name_es">No se declaro como opcion afirmativa</Value>
+          </Row>
+          <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
             <Value column="name_es">Si</Value>
           </Row>
+        </InlineTable>
+        <Level name="Conflicts with Hits" key_column="id" name_column="name_en">
+          <Property name="Conflicts with Hits ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Conflicts with Blunt Objects" foreign_key="conflict_with_obj">
+      <Hierarchy name="Conflicts with Blunt Objects" primary_key="id">
+        <InlineTable alias="dim_inline_conflict_with_obj">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">No</Value>
@@ -3920,9 +5097,9 @@
             <Value column="name_es">No aplica</Value>
           </Row>
           <Row>
-            <Value column="id">9</Value>
-            <Value column="name_en">No knowledge / no answer</Value>
-            <Value column="name_es">No sabe / no responde</Value>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
           </Row>
         </InlineTable>
         <Level name="Identify Municipal Preventive Police" key_column="id" name_column="name_en">
@@ -3947,15 +5124,28 @@
             <Value column="name_en">No</Value>
             <Value column="name_es">No</Value>
           </Row>
+        </InlineTable>
+        <Level name="Conflicts with Sharp Objects" key_column="id" name_column="name_en">
+          <Property name="Conflicts with Sharp Objects ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Conflicts with Guns" foreign_key="conflict_guns">
+      <Hierarchy name="Conflicts with Guns" primary_key="id">
+        <InlineTable alias="dim_inline_conflict_guns">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
           <Row>
-            <Value column="id">3</Value>
-            <Value column="name_en">No apply</Value>
-            <Value column="name_es">No aplica</Value>
+            <Value column="id">0</Value>
+            <Value column="name_en">It was not declare as a possitive answer</Value>
+            <Value column="name_es">No se declaro como opcion afirmativa</Value>
           </Row>
           <Row>
-            <Value column="id">9</Value>
-            <Value column="name_en">No knowledge / no answer</Value>
-            <Value column="name_es">No sabe / no responde</Value>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
           </Row>
         </InlineTable>
         <Level name="Identify State Police" key_column="id" name_column="name_en">
@@ -3982,13 +5172,18 @@
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">No apply</Value>
-            <Value column="name_es">No aplica</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No knowledge / no answer</Value>
-            <Value column="name_es">No sabe / no responde</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
           </Row>
         </InlineTable>
         <Level name="Identify Federal Police" key_column="id" name_column="name_en">
@@ -4015,13 +5210,18 @@
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">No apply</Value>
-            <Value column="name_es">No aplica</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No knowledge / no answer</Value>
-            <Value column="name_es">No sabe / no responde</Value>
+            <Value column="name_en">Very effective</Value>
+            <Value column="name_es">Muy efectivo</Value>
           </Row>
         </InlineTable>
         <Level name="Identify Gendarmerie Police" key_column="id" name_column="name_en">
@@ -4198,6 +5398,11 @@
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
           <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Very effective</Value>
             <Value column="name_es">Muy efectivo</Value>
@@ -4226,6 +5431,7 @@
         <Level name="City Government Efficiency" key_column="id" name_column="name_en">
           <Property name="City Government Efficiency ES" column="name_es" caption_set="es" />
         </Level>
+
       </Hierarchy>
     </Dimension>
 
@@ -4235,6 +5441,11 @@
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Very effective</Value>
@@ -4264,6 +5475,7 @@
         <Level name="Perception of Preventive Police" key_column="id" name_column="name_en">
           <Property name="Perception of Preventive Police ES" column="name_es" caption_set="es" />
         </Level>
+
       </Hierarchy>
     </Dimension>
 
@@ -4273,6 +5485,11 @@
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Very effective</Value>
@@ -4340,6 +5557,7 @@
         <Level name="Perception of Federal Police" key_column="id" name_column="name_en">
           <Property name="Perception of Federal Police ES" column="name_es" caption_set="es" />
         </Level>
+
       </Hierarchy>
     </Dimension>
 
@@ -4349,6 +5567,11 @@
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Very effective</Value>
@@ -4392,20 +5615,47 @@
 
     <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
     <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
-    <Measure name="Population" column="population" aggregator="sum" />
+    <Measure name="Population" column="population" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of people</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 <Cube name="inegi_general_mortality">
+    <Annotations>
+      <Annotation name="topic">Health</Annotation>
+      <Annotation name="subtopic">Mortality</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/temas/mortalidad/default.html#Informacion_general</Annotation>
+    </Annotations>
+
     <Table name="inegi_general_mortality" primary_key="ent_id" />
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
-    <Measure name="General Deaths Over 1 year" column="general_deaths" aggregator="sum" />
-    <Measure name="General Deaths 1 Year Olds" column="one_year_deaths" aggregator="sum" />
+    <Measure name="General Deaths Over 1 year" column="general_deaths" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of people older than 1 year old</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="General Deaths 1 Year Olds" column="one_year_deaths" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of people younger than 1 year old</Annotation>
+      </Annotations>
+    </Measure>
   </Cube>
 <Cube name="inegi_housing">
+    <Annotations>
+      <Annotation name="topic">Housing & Living</Annotation>
+      <Annotation name="subtopic">Housing</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/programas/intercensal/2015/</Annotation>
+    </Annotations>
     <Table name="inegi_housing" />
 
     <Dimension name="Income" foreign_key="income">
@@ -4414,6 +5664,7 @@
         <Level name="Income" key_column="id" name_column="name">
           <Property name="Income ES" column="name" caption_set="es" />
         </Level>
+
       </Hierarchy>
     </Dimension>
 
@@ -5143,6 +6394,7 @@
         <Level name="Fridge" key_column="id" name_column="name_en">
           <Property name="Fridge ES" column="name_es" caption_set="es"/>
         </Level>
+
       </Hierarchy>
     </Dimension>
 
@@ -5532,46 +6784,52 @@
     <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
-    <Measure name="Households" column="households" aggregator="sum" />
-  </Cube>
-<Cube name="inegi_intercensal_survey">
-  <Table name="inegi_economic_census" primary_key="mun_id" />
-
-    <Dimension name="Geography" foreign_key="mun_id">
-      <Hierarchy name="Geography" primary_key="loc_id">
-        <Table name="dim_shared_geography" />
-
-        <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-            <Property name="CVE State" column="cve_ent" />
-            <Property name="State ES" column="ent_name" caption_set="es" />
-        </Level>
-        <Level name="Municipality" key_column="mun_id" name_column="mun_id" key_type="nontext">
-            <Property name="CVE Municipality" column="cve_mun" />
-            <Property name="CVE Municipality Full" column="cve_mun_full" />
-            <Property name="Municipality ES" column="mun_id" caption_set="es" />
-        </Level>
-        <Level name="Location" key_column="loc_id" name_column="loc_name" key_type="nontext">
-            <Property name="CVE Location" column="cve_loc" />
-            <Property name="CVE Location Full" column="cve_loc_full" />
-            <Property name="Location ES" column="loc_name" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <Measure name="Economic Unit" column="ue" aggregator="sum" />
+    <Measure name="Households" column="households" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Households</Annotation>
+      </Annotations>
+    </Measure>
   </Cube>
 <Cube name="inegi_suicides_over_mortality">
+    <Annotations>
+      <Annotation name="topic">Health</Annotation>
+      <Annotation name="subtopic">Mortality</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/temas/mortalidad/default.html#Informacion_general</Annotation>
+    </Annotations>
+
     <Table name="inegi_suicides_over_mortality" primary_key="ent_id" />
 
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
-    <Measure name="Suicides" column="suicides" aggregator="sum" />
-    <Measure name="Rate of Violent Deaths" column="rate_violent_deaths" aggregator="avg" />
-    <Measure name="Overmortality Index" column="male_overmortality_index" aggregator="avg" />
+    <Measure name="Suicides" column="suicides" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of people</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Rate of Violent Deaths" column="rate_violent_deaths" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Number of people</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Overmortality Index" column="male_overmortality_index" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Number of people</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 <Cube name="inegi_population">
+    <Annotations>
+      <Annotation name="topic">Housing & Living</Annotation>
+      <Annotation name="subtopic">Housing</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/programas/intercensal/2015/</Annotation>
+    </Annotations>
+
     <Table name="inegi_population" primary_key="loc_id" />
 
     <Dimension name="Related" foreign_key="parent">
@@ -6103,7 +7361,10 @@
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
-    <Measure name="Population" column="population" aggregator="sum" />
+    <Measure name="Population" column="population" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of people</Annotation>
+      </Annotations>
   </Cube>
 <Cube name="trade_balance">
     <Table name="trade_balance_atlas" primary_key="mun_id" />

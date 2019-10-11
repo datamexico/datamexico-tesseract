@@ -1,5 +1,13 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inegi_enigh_population">
+    <Annotations>
+      <Annotation name="topic">Housing & Living</Annotation>
+      <Annotation name="subtopic">Income</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/programas/enigh/nc/2018/</Annotation>
+    </Annotations>
+
     <Table name="inegi_enigh_population" primary_key="ent_id" />
 
     <Dimension name="Socioeconomic Status" foreign_key="eco_stratum">
@@ -880,8 +888,16 @@
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
 
-    <Measure name="Population" column="population" aggregator="sum" />
-    <Measure name="Months Social Security" column="months_social_security" aggregator="avg" />
+    <Measure name="Population" column="population" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of people</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Months Social Security" column="months_social_security" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Number of months with social security</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 </Schema>

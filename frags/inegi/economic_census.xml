@@ -1,108 +1,508 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inegi_economic_census">
+    <Annotations>
+      <Annotation name="topic">Economy</Annotation>
+      <Annotation name="subtopic">Employment</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/app/saic/default.aspx</Annotation>
+    </Annotations>
+
     <Table name="inegi_economic_census" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
     <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
 
-    <Measure name="Economic Unit" column="ue" aggregator="sum" />
-    <Measure name="Total Gross Production" column="a111a" aggregator="sum"/>
-    <Measure name="Intermediate Consumption" column="a121a" aggregator="sum"/>
-    <Measure name="Census Gross Value Added" column="a131a" aggregator="sum"/>
-    <Measure name="Total Investment" column="a211a" aggregator="sum"/>
-    <Measure name="Gross Fixed Capital Formation" column="a221a" aggregator="sum"/>
-    <Measure name="Merchandising Margin" column="a511a" aggregator="sum"/>
-    <Measure name="Total Expenses" column="a700a" aggregator="sum"/>
-    <Measure name="Total Income" column="a800a" aggregator="sum"/>
-    <Measure name="Total Employees Depends on the Economic Unit" column="h000a" aggregator="sum"/>
-    <Measure name="Total Male Employees Depends on the Economic Unit" column="h000b" aggregator="sum"/>
-    <Measure name="Total Female Employees Depends on the Economic Unit" column="h000c" aggregator="sum"/>
-    <Measure name="Hours Worked by Employees" column="h000d" aggregator="sum"/>
-    <Measure name="Total Employees with or without a Contract with the Economic Unit" column="h001a" aggregator="sum"/>
-    <Measure name="Total Male Employees with or without a Contract with the Economic Unit" column="h001b" aggregator="sum"/>
-    <Measure name="Total Female Employees with or without a Contract with the Economic Unit" column="h001c" aggregator="sum"/>
-    <Measure name="Hours Worked by Workforce" column="h001d" aggregator="sum"/>
-    <Measure name="Salaried Employees; Total" column="h010a" aggregator="sum"/>
-    <Measure name="Male Salaried Employees" column="h010b" aggregator="sum"/>
-    <Measure name="Female Salaried Employees" column="h010c" aggregator="sum"/>
-    <Measure name="Hours Worked by Salaried Employees" column="h010d" aggregator="sum"/>
-    <Measure name="Total Owners; Family Members and other unpaid workers" column="h020a" aggregator="sum"/>
-    <Measure name="Total Male Owners; Family Members and other unpaid workers" column="h020b" aggregator="sum"/>
-    <Measure name="Total Female Owners; Family Members and other unpaid workers" column="h020c" aggregator="sum"/>
-    <Measure name="Hours Worked by Owners; Family Members and other unpaid workers" column="h020d" aggregator="sum"/>
-    <Measure name="Employees of Production; Sales and Services; Total" column="h101a" aggregator="sum"/>
-    <Measure name="Male Employees of Production; Sales and Services" column="h101b" aggregator="sum"/>
-    <Measure name="Female Employees of Production; Sales and Services" column="h101c" aggregator="sum"/>
-    <Measure name="Hours Worked by Production; Sales and Services Employees" column="h101d" aggregator="sum"/>
-    <Measure name="Administrative; Accounting and Management Employees; Total" column="h203a" aggregator="sum"/>
-    <Measure name="Female Administrative; Accounting and Management Employees" column="h203b" aggregator="sum"/>
-    <Measure name="Male Administrative; Accounting and Management Employees" column="h203c" aggregator="sum"/>
-    <Measure name="Hours Worked by Administrative; Accounting and Management Salaried Employees" column="h203d" aggregator="sum"/>
-    <Measure name="Employees not Dependent on the Economic Unit; Total" column="i000a" aggregator="sum"/>
-    <Measure name="Male Employees not Dependent on the Economic Unit" column="i000b" aggregator="sum"/>
-    <Measure name="Female Employees not Dependent on the Economic Unit" column="i000c" aggregator="sum"/>
-    <Measure name="Hours Worked by Employees not Dependent on the Economic Unit" column="i000d" aggregator="sum"/>
-    <Measure name="Employees Provided by Another Economic Unit; Total" column="i100a" aggregator="sum"/>
-    <Measure name="Male Employees Provided by Another Economic Unit" column="i100b" aggregator="sum"/>
-    <Measure name="Female Employees Provided by Another Economic Unit" column="i100c" aggregator="sum"/>
-    <Measure name="Hours Worked by Employees Provided by Another Economic Unit" column="i100d" aggregator="sum"/>
-    <Measure name="Total Independent Contractors" column="i200a" aggregator="sum"/>
-    <Measure name="Male Independent Contractors" column="i200b" aggregator="sum"/>
-    <Measure name="Female Independent Contractors" column="i200c" aggregator="sum"/>
-    <Measure name="Hours Worked by Independent Contractors" column="i200d" aggregator="sum"/>
-    <Measure name="Total Remuneration" column="j000a" aggregator="sum"/>
-    <Measure name="Total Salary of Production; Sales and Services Employees" column="j010a" aggregator="sum"/>
-    <Measure name="Total Salary of Administrative; Accounting and Management Salaried Employees" column="j203a" aggregator="sum"/>
-    <Measure name="Employer Social Security Contributions" column="j300a" aggregator="sum"/>
-    <Measure name="Other Social Benefits" column="j400a" aggregator="sum"/>
-    <Measure name="Profit Sharing" column="j500a" aggregator="sum"/>
-    <Measure name="Severance Pay" column="j600a" aggregator="sum"/>
-    <Measure name="Total Expenses for Consumption of Goods and Services" column="k000a" aggregator="sum"/>
-    <Measure name="Goods Acquired to Commercialize" column="k010a" aggregator="sum"/>
-    <Measure name="Materials and Supplies Consumed for Provision of Services" column="k020a" aggregator="sum"/>
-    <Measure name="Raw and Procesed Material that are Integrated into Production" column="k030a" aggregator="sum"/>
-    <Measure name="Consumption of Fuels; Lubricants and Energy for the Operation of Machinery; Equipment and Vehicles" column="k040a" aggregator="sum"/>
-    <Measure name="Electricity Consumption" column="k041a" aggregator="sum"/>
-    <Measure name="Rent and Lease of Movable and Immovable Property" column="k050a" aggregator="sum"/>
-    <Measure name="Professional; Scientific and Technical Services Hired" column="k060a" aggregator="sum"/>
-    <Measure name="Maquila and Services for the Production of Goods by Contract" column="k070a" aggregator="sum"/>
-    <Measure name="Consumption of Other Goods and Services" column="k090a" aggregator="sum"/>
-    <Measure name="Freight out Expenses" column="k096a" aggregator="sum"/>
-    <Measure name="Expenses for Consumption of Stationery and Office Supplies" column="k311a" aggregator="sum"/>
-    <Measure name="Payments to Another Company that Hired and Provided Workers" column="k610a" aggregator="sum"/>
-    <Measure name="Expenses in Independent Contractors" column="k620a" aggregator="sum"/>
-    <Measure name="Advertising Expenses" column="k810a" aggregator="sum"/>
-    <Measure name="Comunication Expenses" column="k820a" aggregator="sum"/>
-    <Measure name="Expenses for Consumption of Containers and Packaging" column="k910a" aggregator="sum"/>
-    <Measure name="Expenditures for Repair; Spare Parts and Maintenance of Fixed Assets" column="k950a" aggregator="sum"/>
-    <Measure name="Water Consumption" column="k976a" aggregator="sum"/>
-    <Measure name="Total Income for Supplying Goods and Services" column="m000a" aggregator="sum"/>
-    <Measure name="Revenue from Commercialization of goods" column="m010a" aggregator="sum"/>
-    <Measure name="Revenue from the Provision of Professional; Scientific and Technical Services" column="m020a" aggregator="sum"/>
-    <Measure name="Revenue from Sales of Processed; Generated or Extracted Products" column="m030a" aggregator="sum"/>
-    <Measure name="Revenue from Rental of Movable and Immovable Property" column="m050a" aggregator="sum"/>
-    <Measure name="Other Revenue for Providing Goods and Services" column="m090a" aggregator="sum"/>
-    <Measure name="Other Components of Production" column="m091a" aggregator="sum"/>
-    <Measure name="Revenue from the Processing or Transformation of Raw Materials Owned by Third Parties" column="m700a" aggregator="sum"/>
-    <Measure name="Value of Processed Products; Generated Goods and Extracted" column="o010a" aggregator="sum"/>
-    <Measure name="Fixed Assets Produced for Own Use" column="o020a" aggregator="sum"/>
-    <Measure name="Total Initial Inventory" column="p000a" aggregator="sum"/>
-    <Measure name="Total Ending Inventory" column="p000b" aggregator="sum"/>
-    <Measure name="Total Stock Variation" column="p000c" aggregator="sum"/>
-    <Measure name="Total Initial Inventory of In-Process Products" column="p030a" aggregator="sum"/>
-    <Measure name="Total Final Inventory of In-Process Products" column="p030b" aggregator="sum"/>
-    <Measure name="Variation of Inventories of In-Process Products" column="p030c" aggregator="sum"/>
-    <Measure name="Total Initial Inventory of Goods Purchased for Merchandising" column="p100a" aggregator="sum"/>
-    <Measure name="Total Final Inventory of Goods Purchased for Merchandising" column="p100b" aggregator="sum"/>
-    <Measure name="Total Fixed Assets" column="q000a" aggregator="sum"/>
-    <Measure name="Total Deprecation of Fixed Assets" column="q000b" aggregator="sum"/>
-    <Measure name="Total Purchases of Fixed Assets" column="q000c" aggregator="sum"/>
-    <Measure name="Total Sales of Fixed Assets" column="q000d" aggregator="sum"/>
-    <Measure name="Total Stock of Machinery and Production Equipment" column="q010a" aggregator="sum"/>
-    <Measure name="Total Stock of Real Estate" column="q020a" aggregator="sum"/>
-    <Measure name="Total Stock of Units and Transport Equipment" column="q030a" aggregator="sum"/>
-    <Measure name="Total Stock of Computer Equipment and Peripherals" column="q400a" aggregator="sum"/>
-    <Measure name="Total Stock of Furniture; office Equipment and Other Fixed Assets" column="q900a" aggregator="sum"/>
+    <Measure name="Economic Unit" column="ue" aggregator="sum" >
+      <Annotations>
+        <Annotation name="details">Number of units recording data</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Gross Production" column="a111a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Intermediate Consumption" column="a121a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Census Gross Value Added" column="a131a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Investment" column="a211a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Gross Fixed Capital Formation" column="a221a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Merchandising Margin" column="a511a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Expenses" column="a700a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Income" column="a800a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Employees Depends on the Economic Unit" column="h000a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Male Employees Depends on the Economic Unit" column="h000b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Female Employees Depends on the Economic Unit" column="h000c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Hours Worked by Employees" column="h000d" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in thousand hours</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Employees with or without a Contract with the Economic Unit" column="h001a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Male Employees with or without a Contract with the Economic Unit" column="h001b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Female Employees with or without a Contract with the Economic Unit" column="h001c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Hours Worked by Workforce" column="h001d" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in thousand hours</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Salaried Employees; Total" column="h010a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Male Salaried Employees" column="h010b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Female Salaried Employees" column="h010c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Hours Worked by Salaried Employees" column="h010d" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in thousand hours</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Owners; Family Members and other unpaid workers" column="h020a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Male Owners; Family Members and other unpaid workers" column="h020b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Female Owners; Family Members and other unpaid workers" column="h020c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Hours Worked by Owners; Family Members and other unpaid workers" column="h020d" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in thousand hours</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Employees of Production; Sales and Services; Total" column="h101a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Male Employees of Production; Sales and Services" column="h101b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Female Employees of Production; Sales and Services" column="h101c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Hours Worked by Production; Sales and Services Employees" column="h101d" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in thousand hours</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Administrative; Accounting and Management Employees; Total" column="h203a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Female Administrative; Accounting and Management Employees" column="h203b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Male Administrative; Accounting and Management Employees" column="h203c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Hours Worked by Administrative; Accounting and Management Salaried Employees" column="h203d" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in thousand hours</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Employees not Dependent on the Economic Unit; Total" column="i000a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Male Employees not Dependent on the Economic Unit" column="i000b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Female Employees not Dependent on the Economic Unit" column="i000c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Hours Worked by Employees not Dependent on the Economic Unit" column="i000d" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in thousand hours</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Employees Provided by Another Economic Unit; Total" column="i100a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Male Employees Provided by Another Economic Unit" column="i100b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Female Employees Provided by Another Economic Unit" column="i100c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Hours Worked by Employees Provided by Another Economic Unit" column="i100d" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in thousand hours</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Independent Contractors" column="i200a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Male Independent Contractors" column="i200b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Female Independent Contractors" column="i200c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of workforce</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Hours Worked by Independent Contractors" column="i200d" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in thousand hours</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Remuneration" column="j000a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Salary of Production; Sales and Services Employees" column="j010a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Salary of Administrative; Accounting and Management Salaried Employees" column="j203a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Employer Social Security Contributions" column="j300a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Other Social Benefits" column="j400a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Profit Sharing" column="j500a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Severance Pay" column="j600a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Expenses for Consumption of Goods and Services" column="k000a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Goods Acquired to Commercialize" column="k010a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Materials and Supplies Consumed for Provision of Services" column="k020a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Raw and Procesed Material that are Integrated into Production" column="k030a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Consumption of Fuels; Lubricants and Energy for the Operation of Machinery; Equipment and Vehicles" column="k040a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Electricity Consumption" column="k041a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Rent and Lease of Movable and Immovable Property" column="k050a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Professional; Scientific and Technical Services Hired" column="k060a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Maquila and Services for the Production of Goods by Contract" column="k070a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Consumption of Other Goods and Services" column="k090a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Freight out Expenses" column="k096a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Expenses for Consumption of Stationery and Office Supplies" column="k311a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Payments to Another Company that Hired and Provided Workers" column="k610a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Expenses in Independent Contractors" column="k620a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Advertising Expenses" column="k810a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Comunication Expenses" column="k820a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Expenses for Consumption of Containers and Packaging" column="k910a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Expenditures for Repair; Spare Parts and Maintenance of Fixed Assets" column="k950a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Water Consumption" column="k976a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Income for Supplying Goods and Services" column="m000a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Revenue from Commercialization of goods" column="m010a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Revenue from the Provision of Professional; Scientific and Technical Services" column="m020a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Revenue from Sales of Processed; Generated or Extracted Products" column="m030a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Revenue from Rental of Movable and Immovable Property" column="m050a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Other Revenue for Providing Goods and Services" column="m090a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Other Components of Production" column="m091a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Total value of components</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Revenue from the Processing or Transformation of Raw Materials Owned by Third Parties" column="m700a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Value of Processed Products; Generated Goods and Extracted" column="o010a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Fixed Assets Produced for Own Use" column="o020a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Initial Inventory" column="p000a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Ending Inventory" column="p000b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Stock Variation" column="p000c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Initial Inventory of In-Process Products" column="p030a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Final Inventory of In-Process Products" column="p030b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Variation of Inventories of In-Process Products" column="p030c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Initial Inventory of Goods Purchased for Merchandising" column="p100a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Final Inventory of Goods Purchased for Merchandising" column="p100b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Fixed Assets" column="q000a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Deprecation of Fixed Assets" column="q000b" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Purchases of Fixed Assets" column="q000c" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Sales of Fixed Assets" column="q000d" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Stock of Machinery and Production Equipment" column="q010a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Stock of Real Estate" column="q020a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Stock of Units and Transport Equipment" column="q030a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Stock of Computer Equipment and Peripherals" column="q400a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Total Stock of Furniture; office Equipment and Other Fixed Assets" column="q900a" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      </Annotations>
+    </Measure>
   </Cube>
 </Schema>
