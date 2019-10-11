@@ -3,9 +3,9 @@
     <Annotations>
       <Annotation name="topic">Housing & Living</Annotation>
       <Annotation name="subtopic">Income</Annotation>
-      <Annotation name="source_name">Asociación Nacional de Universidades e Instituciones de Educación Superior (ANUIES)</Annotation>
-      <Annotation name="source_name_en">National Association of Universities and Institutions of Higher Education (ANUIES)</Annotation>
-      <Annotation name="source_link">http://www.anuies.mx/informacion-y-servicios/informacion-estadistica-de-educacion-superior/anuario-estadistico-de-educacion-superior</Annotation>
+      <Annotation name="source_name">Consejo Nacional de Evaluación de la Política de Desarrollo Social (CONEVAL)</Annotation>
+      <Annotation name="source_name_en">National Council for the Evaluation of Social Development Policy (CONEVAL)</Annotation>
+      <Annotation name="source_link">https://www.coneval.org.mx/Paginas/principal.aspx</Annotation>
     </Annotations>
     <Table name="coneval_gini_mun" primary_key="mun_id" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
