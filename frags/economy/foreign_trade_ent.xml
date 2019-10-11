@@ -3,6 +3,9 @@
     <Annotations>
       <Annotation name="topic">Economy</Annotation>
       <Annotation name="subtopic">Foreign Trade</Annotation>
+      <Annotation name="source_name">Gobierno de México</Annotation>
+      <Annotation name="source_name_en">Mexico Government</Annotation>
+      <Annotation name="source_link">https://www.gob.mx/</Annotation>
     </Annotations>
     <Table name="economy_foreign_trade_ent" primary_key="ent_id" />
 
