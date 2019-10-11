@@ -1,16 +1,47 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inea_adult_education_stats">
+    <Annotations>
+      <Annotation name="topic">Education</Annotation>
+      <Annotation name="subtopic">Adults</Annotation>
+      <Annotation name="source_name">Instituto Nacional para la Educación de los Adultos (INEA)</Annotation>
+      <Annotation name="source_name_en">National Institute for Adult Education (INEA)</Annotation>
+      <Annotation name="source_link">https://www.gob.mx/inea</Annotation>
+    </Annotations>
     <Table name="inea_adult_education_stats" primary_key="ent_id" />
 
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
     <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
 
-    <Measure name="Active advisors" column="n_advisors" aggregator="sum" />
-    <Measure name="Active technical professors" column="n_tech_professors" aggregator="sum" />
-    <Measure name="Coordinations in operation zones" column="n_zone_coordinations" aggregator="sum" />
-    <Measure name="Community places in operation" column="n_community_places" aggregator="sum" />
-    <Measure name="Study zones" column="n_study_zones" aggregator="sum" />
-    <Measure name="Meeting zones" column="n_meeting_zones" aggregator="sum" />
+    <Measure name="Active advisors" column="n_advisors" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Number of Active Advisors"</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Active technical professors" column="n_tech_professors" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Number of Active Technical Professors"</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Coordinations in operation zones" column="n_zone_coordinations" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Coordinations in Operation Zones"</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Community places in operation" column="n_community_places" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Community Places in Operation"</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Study zones" column="n_study_zones" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Study Zones"</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Meeting zones" column="n_meeting_zones" aggregator="sum">
+     <Annotations>
+        <Annotation name="details">Meeting zones"</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 </Schema>
