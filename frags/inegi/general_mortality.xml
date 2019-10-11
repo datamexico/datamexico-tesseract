@@ -1,12 +1,28 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inegi_general_mortality">
+    <Annotations>
+      <Annotation name="topic">Health</Annotation>
+      <Annotation name="subtopic">Mortality</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/temas/mortalidad/default.html#Informacion_general</Annotation>
+    </Annotations>
+
     <Table name="inegi_general_mortality" primary_key="ent_id" />
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
-    <Measure name="General Deaths Over 1 year" column="general_deaths" aggregator="sum" />
-    <Measure name="General Deaths 1 Year Olds" column="one_year_deaths" aggregator="sum" />
+    <Measure name="General Deaths Over 1 year" column="general_deaths" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of people older than 1 year old</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="General Deaths 1 Year Olds" column="one_year_deaths" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of people younger than 1 year old</Annotation>
+      </Annotations>
+    </Measure>
   </Cube>
 </Schema>
