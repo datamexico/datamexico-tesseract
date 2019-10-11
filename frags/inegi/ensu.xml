@@ -1,5 +1,13 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inegi_ensu">
+    <Annotations>
+      <Annotation name="topic">Safety</Annotation>
+      <Annotation name="subtopic">Crimes</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/programas/ensu/</Annotation>
+    </Annotations>
+
     <Table name="inegi_ensu" primary_key="ent_id" />
 
     <Dimension name="City Perception" foreign_key="perception_city">
@@ -872,7 +880,11 @@
 
     <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
     <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
-    <Measure name="Population" column="population" aggregator="sum" />
+    <Measure name="Population" column="population" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of people</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 </Schema>
