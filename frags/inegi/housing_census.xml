@@ -3,8 +3,8 @@
     <Annotations>
       <Annotation name="topic">Housing & Living</Annotation>
       <Annotation name="subtopic">Housing</Annotation>
-      <Annotation name="source_name">Asociación Nacional de Universidades e Instituciones de Educación Superior (ANUIES)</Annotation>
-      <Annotation name="source_name_en">National Association of Universities and Institutions of Higher Education (ANUIES)</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/programas/intercensal/2015/</Annotation>
     </Annotations>
     <Table name="inegi_housing" />
