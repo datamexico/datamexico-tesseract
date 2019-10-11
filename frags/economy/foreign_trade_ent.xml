@@ -1,5 +1,9 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="economy_foreign_trade_ent">
+    <Annotations>
+      <Annotation name="topic">Economy</Annotation>
+      <Annotation name="subtopic">Foreign Trade</Annotation>
+    </Annotations>
     <Table name="economy_foreign_trade_ent" primary_key="ent_id" />
 
     <Dimension name="Flow" foreign_key="flow_id">
@@ -39,8 +43,16 @@
     <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
     <DimensionUsage foreign_key="partner_country" source="Country" name="Country" />
 
-    <Measure name="Trade Value" column="value" aggregator="sum" />
-    <Measure name="Number of Firms" column="firms" aggregator="sum" />
+    <Measure name="Trade Value" column="value" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Trade Value</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Number of Firms" column="firms" aggregator="sum">
+      <Annotations>
+        <Annotation name="details">Number of Firms</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 </Schema>
