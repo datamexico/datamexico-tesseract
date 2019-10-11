@@ -7084,6 +7084,7 @@
       <Annotations>
         <Annotation name="details">Number of people</Annotation>
       </Annotations>
+      </Measure>
   </Cube>
 <Cube name="trade_balance">
     <Table name="trade_balance_atlas" primary_key="mun_id" />

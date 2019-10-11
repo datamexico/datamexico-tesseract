@@ -543,5 +543,6 @@
       <Annotations>
         <Annotation name="details">Number of people</Annotation>
       </Annotations>
+    </Measure>
   </Cube>
 </Schema>
