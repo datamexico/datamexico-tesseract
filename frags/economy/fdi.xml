@@ -45,7 +45,7 @@
 
     <Measure name="Count" column="count" aggregator="sum">
       <Annotations>
-        <Annotation name="details">Count</Annotation>
+        <Annotation name="details">Investors</Annotation>
       </Annotations>
     </Measure>
     <Measure name="Investment (Million)" column="value_million" aggregator="sum">
