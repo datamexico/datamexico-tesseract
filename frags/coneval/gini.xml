@@ -1,11 +1,26 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="coneval_gini_mun">
+    <Annotations>
+      <Annotation name="topic">Housing & Living</Annotation>
+      <Annotation name="subtopic">Income</Annotation>
+      <Annotation name="source_name">Asociación Nacional de Universidades e Instituciones de Educación Superior (ANUIES)</Annotation>
+      <Annotation name="source_name_en">National Association of Universities and Institutions of Higher Education (ANUIES)</Annotation>
+      <Annotation name="source_link">http://www.anuies.mx/informacion-y-servicios/informacion-estadistica-de-educacion-superior/anuario-estadistico-de-educacion-superior</Annotation>
+    </Annotations>
     <Table name="coneval_gini_mun" primary_key="mun_id" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
-    <Measure name="GINI" column="gini" aggregator="avg" />
-    <Measure name="Income Rate" column="income_rate" aggregator="avg" />
+    <Measure name="GINI" column="gini" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">GINI</Annotation>
+      </Annotations>
+    </Measure>
+    <Measure name="Income Rate" column="income_rate" aggregator="avg">
+      <Annotations>
+        <Annotation name="details">Income Rate</Annotation>
+      </Annotations>
+    </Measure>
 
   </Cube>
 </Schema>
