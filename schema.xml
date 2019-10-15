@@ -4268,8 +4268,8 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Population Clasification" foreign_key="occ_unocc_pop">
-      <Hierarchy name="Population Clasification" primary_key="id">
+    <Dimension name="Population Classification" foreign_key="occ_unocc_pop">
+      <Hierarchy name="Population Classification" primary_key="id">
         <InlineTable alias="dim_inline_occ_unocc_pop">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -4300,14 +4300,14 @@
             <Value column="name_es">No disponibles</Value>
           </Row>
         </InlineTable>
-        <Level name="Population Clasification" key_column="id" name_column="name_en">
-          <Property name="Population Clasification ES" column="name_es" caption_set="es" />
+        <Level name="Population Classification" key_column="id" name_column="name_en">
+          <Property name="Population Classification ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Population Sub Clasification" foreign_key="eap_comp">
-      <Hierarchy name="Population Sub Clasification" primary_key="id">
+    <Dimension name="Population Sub Classification" foreign_key="eap_comp">
+      <Hierarchy name="Population Sub Classification" primary_key="id">
         <InlineTable alias="dim_inline_eap_comp">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -4353,8 +4353,8 @@
             <Value column="name_es">Desocupados ausentes sin ingreso y sin nexo laboral</Value>
           </Row>
         </InlineTable>
-        <Level name="Population Sub Clasification" key_column="id" name_column="name_en">
-          <Property name="Population Sub Clasification ES" column="name_es" caption_set="es" />
+        <Level name="Population Sub Classification" key_column="id" name_column="name_en">
+          <Property name="Population Sub Classification ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
