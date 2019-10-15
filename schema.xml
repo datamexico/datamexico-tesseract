@@ -490,13 +490,13 @@
     </SharedDimension> 
 
 <Cube name="anuies_enrollment">
-    <Annotations>
+    
       <Annotation name="topic">Education</Annotation>
       <Annotation name="subtopic">Enrollment</Annotation>
       <Annotation name="source_name">Asociación Nacional de Universidades e Instituciones de Educación Superior (ANUIES)</Annotation>
       <Annotation name="source_name_en">National Association of Universities and Institutions of Higher Education (ANUIES)</Annotation>
       <Annotation name="source_link">http://www.anuies.mx/informacion-y-servicios/informacion-estadistica-de-educacion-superior/anuario-estadistico-de-educacion-superior</Annotation>
-    </Annotations>
+    
     <Table name="anuies_enrollment" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
@@ -508,19 +508,19 @@
     <DimensionUsage foreign_key="period" source="Period" name="Period" />
 
     <Measure name="Students" column="value" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Number of Students</Annotation>
-      </Annotations>
+      
     </Measure>
   </Cube>
 <Cube name="anuies_origin">
-    <Annotations>
+    
       <Annotation name="topic">Education</Annotation>
       <Annotation name="subtopic">Admissions</Annotation>
       <Annotation name="source_name">Asociación Nacional de Universidades e Instituciones de Educación Superior (ANUIES)</Annotation>
       <Annotation name="source_name_en">National Association of Universities and Institutions of Higher Education (ANUIES)</Annotation>
       <Annotation name="source_link">http://www.anuies.mx/informacion-y-servicios/informacion-estadistica-de-educacion-superior/anuario-estadistico-de-educacion-superior</Annotation>
-    </Annotations>
+    
     <Table name="anuies_origin" primary_key="mun_id" />
 
     <!--<DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography Municipality" />-->
@@ -531,19 +531,19 @@
     <DimensionUsage foreign_key="period" source="Period" name="Period" />
 
     <Measure name="Students" column="value" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Number of Students</Annotation>
-      </Annotations>
+      
     </Measure>
   </Cube>
 <Cube name="anuies_status">
-    <Annotations>
+    
       <Annotation name="topic">Education</Annotation>
       <Annotation name="subtopic">Graduation</Annotation>
       <Annotation name="source_name">Asociación Nacional de Universidades e Instituciones de Educación Superior (ANUIES)</Annotation>
       <Annotation name="source_name_en">National Association of Universities and Institutions of Higher Education (ANUIES)</Annotation>
       <Annotation name="source_link">http://www.anuies.mx/informacion-y-servicios/informacion-estadistica-de-educacion-superior/anuario-estadistico-de-educacion-superior</Annotation>
-    </Annotations>
+    
     <Table name="anuies_status" primary_key="mun_id" />
 
     <Dimension name="Status" foreign_key="stat">
@@ -583,143 +583,143 @@
     <DimensionUsage foreign_key="campus_id" source="Campus" name="Campus" />
 
     <Measure name="Students" column="value" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Number of Students</Annotation>
-      </Annotations>
+      
     </Measure>
 
   </Cube>
 <Cube name="coneval_gini_mun">
-    <Annotations>
+    
       <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Income</Annotation>
       <Annotation name="source_name">Consejo Nacional de Evaluación de la Política de Desarrollo Social (CONEVAL)</Annotation>
       <Annotation name="source_name_en">National Council for the Evaluation of Social Development Policy (CONEVAL)</Annotation>
       <Annotation name="source_link">https://www.coneval.org.mx/Paginas/principal.aspx</Annotation>
-    </Annotations>
+    
     <Table name="coneval_gini_mun" primary_key="mun_id" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
     <Measure name="GINI" column="gini" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">GINI</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Income Rate" column="income_rate" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Income Rate</Annotation>
-      </Annotations>
+      
     </Measure>
 
   </Cube>
 <Cube name="coneval_poverty">
-    <Annotations>
+    
       <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Poverty</Annotation>
       <Annotation name="source_name">Consejo Nacional de Evaluación de la Política de Desarrollo Social (CONEVAL)</Annotation>
       <Annotation name="source_name_en">National Council for the Evaluation of Social Development Policy (CONEVAL)</Annotation>
       <Annotation name="source_link">https://www.coneval.org.mx/Paginas/principal.aspx</Annotation>
-    </Annotations>
+    
     <Table name="coneval_poverty" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
     <Measure name="Population" column="population" visible="false" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Population</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Poverty" column="poverty" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Poverty Population</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Extreme Poverty" column="extreme_poverty" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Extreme Poverty Population</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Moderate Poverty" column="moderate_poverty" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Moderate Poverty Population</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Vulnerable Population by Lacks" column="vulnerable_lacks" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Vulnerable Population by Lacks</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Vulnerable Population by Income" column="vulnerable_income" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Vulnerable Population by Income</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Population No Vulnerable" column="no_vulnerable" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Non-Vulnerable Population</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Educational Backwardness" column="educational_backwardness" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">People with Educational Backwardness</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Deprivation Quality Housing Spaces" column="deprivation_quality_housing_spaces" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Deprivation Quality Housing Spaces</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Deprivation Health Services" column="deprivation_health_services" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Deprivation Health Services</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Deprivation Social Security" column="deprivation_social_security" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Deprivation Social Security</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Deprivation Basic Services Housing" column="deprivation_basic_services_housing" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Deprivation Basic Services Housing</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Deprivation Food Access" column="deprivation_food_access" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Deprivation Food Access</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Population with at least 1 Social Lack" column="at_least_one_lack" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Population with at least 1 Social Lack</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Population with at least 3 Social Lacks" column="at_least_three_lacks" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Population with at least 3 Social Lacks</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Income below Welfare Line" column="income_below_welfare_line" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Income below Welfare Line</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Income below Min Welfare Line" column="income_below_min_welfare_line" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Income below Min Welfare Line</Annotation>
-      </Annotations>
+      
     </Measure>
   </Cube>
 <Cube name="coneval_social_lag_ent">
-    <Annotations>
+    
       <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Poverty</Annotation>
       <Annotation name="source_name">Consejo Nacional de Evaluación de la Política de Desarrollo Social (CONEVAL)</Annotation>
       <Annotation name="source_name_en">National Council for the Evaluation of Social Development Policy (CONEVAL)</Annotation>
       <Annotation name="source_link">https://www.coneval.org.mx/Paginas/principal.aspx</Annotation>
-    </Annotations>
+    
     <Table name="coneval_social_lag_ent" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
@@ -727,79 +727,79 @@
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
     <Measure name="Population" column="population" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Illiterate 15+ Years" column="population_illiterate" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Illiterate 15\+ Years</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="No Attend School 6-14 Years" column="population_6_14_school" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population that does not Attend School Between 6 and 14 Years Old</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Incomplete School 15+ Years" column="population_15_incomplete_school" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population with Incomplete School 15\+ Years</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="No Health Services" column="no_health_services" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population without Healthcare</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Dirt Floor" column="dirt_floor" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population with Dirt Floor</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="No Toilet" column="dirt_floor" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population with Dirt Base Floor</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="No Water Supply Network" column="no_water_supply_network" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population without Network Water Supply</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="No Sewer System" column="no_sewer_system" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population without Sewer System</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="No Electrical Energy" column="no_electrical_energy" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population without Electrical Energy</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="No Washing Machine" column="no_washing_machine" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population without Washing Machine</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="No Fridge" column="no_fridge" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population without Fridge</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Social Lag Index" column="social_lag_index" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Social Lag Index</Annotation>
-      </Annotations>
+      
     </Measure>
   </Cube>
 <Cube name="coneval_social_lag_mun">
-    <Annotations>
+    
       <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Poverty</Annotation>
       <Annotation name="source_name">Consejo Nacional de Evaluación de la Política de Desarrollo Social (CONEVAL)</Annotation>
       <Annotation name="source_name_en">National Council for the Evaluation of Social Development Policy (CONEVAL)</Annotation>
       <Annotation name="source_link">https://www.coneval.org.mx/Paginas/principal.aspx</Annotation>
-    </Annotations>
+    
     <Table name="coneval_social_lag_mun" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
@@ -807,69 +807,69 @@
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
     <Measure name="Population" column="population" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Illiterate 15+ Years" column="population_illiterate" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Illiterate 15\+ Years</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="No Attend School 6-14 Years" column="population_6_14_school" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population that does not Attend School Between 6 and 14 Years Old</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Incomplete School 15+ Years" column="population_15_incomplete_school" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population with Incomplete School 15\+ Years</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="No Health Services" column="no_health_services" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population without Healthcare</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Dirt Floor" column="dirt_floor" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population with Dirt Floor</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="No Toilet" column="dirt_floor" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population with Dirt Base Floor</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="No Water Supply Network" column="no_water_supply_network" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population without Network Water Supply</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="No Sewer System" column="no_sewer_system" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population without Sewer System</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="No Electrical Energy" column="no_electrical_energy" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population without Electrical Energy</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="No Washing Machine" column="no_washing_machine" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population without Washing Machine</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="No Fridge" column="no_fridge" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Population without Fridge</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Social Lag Index" column="social_lag_index" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Social Lag Index</Annotation>
-      </Annotations>
+      
     </Measure>
   </Cube>
 <Cube name="sesnsp_crimes">
@@ -905,13 +905,13 @@
     <Measure name="Value" column="value" aggregator="sum" />
   </Cube>
 <Cube name="inegi_envipe">
-    <Annotations>
+    
       <Annotation name="topic">Safety</Annotation>
       <Annotation name="subtopic">Victimization and Perception</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/programas/envipe/2019/</Annotation>
-    </Annotations>
+    
     <Table name="inegi_envipe" primary_key="mun_id" />
 
     <Dimension name="Security Perception in their State" foreign_key="security_perception_in_their_state">
@@ -1549,25 +1549,25 @@
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
 
     <Measure name="Homes" column="homes_factor" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Homes</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="People" column="people_factor" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">People</Annotation>
-      </Annotations>
+      
     </Measure>
 
   </Cube>
 <Cube name="dgis_emergency">
-    <Annotations>
+    
       <Annotation name="topic">Health</Annotation>
       <Annotation name="subtopic">Quality</Annotation>
       <Annotation name="source_name">Dirección General de Información en Salud (DGIS)</Annotation>
       <Annotation name="source_name_en">General Directorate of Health Information (DGIS)</Annotation>
       <Annotation name="source_link">http://www.dgis.salud.gob.mx/contenidos/basesdedatos/BD_Cubos_gobmx.html</Annotation>
-    </Annotations>
+    
     <Table name="dgis_emergency" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
@@ -1577,24 +1577,24 @@
     <DimensionUsage foreign_key="sex_id" source="Sex" name="Sex" />
 
     <Measure name="Average Attention Time" column="attention_time" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Average Attention Time</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total" column="count" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Patients</Annotation>
-      </Annotations>
+      
     </Measure>
   </Cube>
 <Cube name="dgis_pregnancy_mortality">
-    <Annotations>
+    
       <Annotation name="topic">Health</Annotation>
       <Annotation name="subtopic">Mortality</Annotation>
       <Annotation name="source_name">Dirección General de Información en Salud (DGIS)</Annotation>
       <Annotation name="source_name_en">General Directorate of Health Information (DGIS)</Annotation>
       <Annotation name="source_link">http://www.dgis.salud.gob.mx/contenidos/basesdedatos/BD_Cubos_gobmx.html</Annotation>
-    </Annotations>
+    
     <Table name="dgis_pregnancy_mortality" primary_key="mun_residence_id" />
     <!--TODO year_of_register,occupation,marital_status,medical_center,mun_happening_id-->
     <Dimension name="Year" foreign_key="year_decease">
@@ -1610,19 +1610,19 @@
     <DimensionUsage foreign_key="mun_residence_id" source="Geography Municipality" name="Geography" />
 
     <Measure name="Total" column="count" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Patients</Annotation>
-      </Annotations>
+      
     </Measure>
   </Cube>
 <Cube name="economy_fdi">
-    <Annotations>
+    
       <Annotation name="topic">Economy</Annotation>
       <Annotation name="subtopic">Foreign Direct Investment</Annotation>
       <Annotation name="source_name">Gobierno de México</Annotation>
       <Annotation name="source_name_en">Mexico Government</Annotation>
       <Annotation name="source_link">https://www.gob.mx/</Annotation>
-    </Annotations>
+    
     <Table name="economy_fdi" primary_key="quarter_id" />
 
     <Dimension name="Generic Investment" foreign_key="generic_investment">
@@ -1660,25 +1660,25 @@
     <DimensionUsage foreign_key="origin_id" source="Country" name="Origin" />
 
     <Measure name="Count" column="count" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Investors</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Investment (Million)" column="value_million" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value Millions</Annotation>
-      </Annotations>
+      
     </Measure>
 
   </Cube>
 <Cube name="economy_foreign_trade_ent">
-    <Annotations>
+    
       <Annotation name="topic">Economy</Annotation>
       <Annotation name="subtopic">Foreign Trade</Annotation>
       <Annotation name="source_name">Gobierno de México</Annotation>
       <Annotation name="source_name_en">Mexico Government</Annotation>
       <Annotation name="source_link">https://www.gob.mx/</Annotation>
-    </Annotations>
+    
     <Table name="economy_foreign_trade_ent" primary_key="ent_id" />
 
     <Dimension name="Flow" foreign_key="flow_id">
@@ -1719,25 +1719,25 @@
     <DimensionUsage foreign_key="partner_country" source="Country" name="Country" />
 
     <Measure name="Trade Value" column="value" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Trade Value</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Number of Firms" column="firms" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Number of Firms</Annotation>
-      </Annotations>
+      
     </Measure>
 
   </Cube>
 <Cube name="economy_foreign_trade_mun">
-    <Annotations>
+    
       <Annotation name="topic">Economy</Annotation>
       <Annotation name="subtopic">Foreign Trade</Annotation>
       <Annotation name="source_name">Gobierno de México</Annotation>
       <Annotation name="source_name_en">Mexico Government</Annotation>
       <Annotation name="source_link">https://www.gob.mx/</Annotation>
-    </Annotations>
+    
     <Table name="economy_foreign_trade_mun" primary_key="mun_id" />
 
     <Dimension name="Flow" foreign_key="flow_id">
@@ -1778,25 +1778,25 @@
     <DimensionUsage foreign_key="partner_country" source="Country" name="Country" />
 
     <Measure name="Trade Value" column="value" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Trade Value</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Number of Firms" column="firms" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Number of Firms</Annotation>
-      </Annotations>
+      
     </Measure>
 
   </Cube>
 <Cube name="inea_adult_education_origin">
-    <Annotations>
+    
       <Annotation name="topic">Education</Annotation>
       <Annotation name="subtopic">Adults</Annotation>
       <Annotation name="source_name">Instituto Nacional para la Educación de los Adultos (INEA)</Annotation>
       <Annotation name="source_name_en">National Institute for Adult Education (INEA)</Annotation>
       <Annotation name="source_link">https://www.gob.mx/inea</Annotation>
-    </Annotations>
+    
     <Table name="inea_adult_education_origin" primary_key="ent_id" />
 
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
@@ -1826,115 +1826,115 @@
     </Dimension>
 
     <Measure name="Students Served on Alphabetization" column="student_served" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Students Served on Alphabetization</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Students Served on Alphabetization (Initial Level)" column="student_served_initial" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Students Served on Alphabetization (Initial Level)</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Students Served on Alphabetization (Intermediate Level)" column="student_served_intermediate" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Students Served on Alphabetization (Intermediate Level)</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Students Served on Alphabetization (Advanced Level)" column="student_served_advanced" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Students Served on Alphabetization (Advanced Level)</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Students Literated" column="student_literate" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Students Literated</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Students Literated (Initial Level)" column="student_literate_initial" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Students Literated (Initial Level)</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Students Literated (Intermediate Level)" column="student_literate_intermediate" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Students Literated (Intermediate Level)</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Students Literated (Advanced Level)" column="student_literate_advanced" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Students Literated (Advanced Level)</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Students Incorporated" column="student_incorporated" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Students Incorporated"</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Students Inscribed" column="student_inscribed" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Students Inscribed"</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Students Registered" column="student_registered" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Students Registered"</Annotation>
-      </Annotations>
+      
     </Measure>
 
   </Cube>
 <Cube name="inea_adult_education_stats">
-    <Annotations>
+    
       <Annotation name="topic">Education</Annotation>
       <Annotation name="subtopic">Adults</Annotation>
       <Annotation name="source_name">Instituto Nacional para la Educación de los Adultos (INEA)</Annotation>
       <Annotation name="source_name_en">National Institute for Adult Education (INEA)</Annotation>
       <Annotation name="source_link">https://www.gob.mx/inea</Annotation>
-    </Annotations>
+    
     <Table name="inea_adult_education_stats" primary_key="ent_id" />
 
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
     <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
 
     <Measure name="Active advisors" column="n_advisors" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Number of Active Advisors"</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Active technical professors" column="n_tech_professors" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Number of Active Technical Professors"</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Coordinations in operation zones" column="n_zone_coordinations" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Coordinations in Operation Zones"</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Community places in operation" column="n_community_places" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Community Places in Operation"</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Study zones" column="n_study_zones" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Study Zones"</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Meeting zones" column="n_meeting_zones" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Meeting zones"</Annotation>
-      </Annotations>
+      
     </Measure>
 
   </Cube>
 <Cube name="inegi_denue">
-    <Annotations>
+    
       <Annotation name="topic">Economy</Annotation>
       <Annotation name="subtopic">Industries</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/temas/directorio/</Annotation>
-    </Annotations>
+    
     <Table name="inegi_denue" primary_key="loc_id" />
 
     <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
@@ -2030,9 +2030,9 @@
     </Dimension>
 
     <Measure name="Number of Employees Informed" column="n_workers" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Informed Number of Employees</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Number of Employees LCI" column="lower" aggregator="sum" visible="false" />
     <Measure name="Number of Employees Midpoint" column="middle" aggregator="sum" visible="false" />
@@ -2040,13 +2040,13 @@
 
   </Cube>
 <Cube name="inegi_economic_census">
-    <Annotations>
+    
       <Annotation name="topic">Economy</Annotation>
       <Annotation name="subtopic">Employment</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/app/saic/default.aspx</Annotation>
-    </Annotations>
+    
 
     <Table name="inegi_economic_census" primary_key="mun_id" />
 
@@ -2055,504 +2055,504 @@
     <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
 
     <Measure name="Economic Unit" column="ue" aggregator="sum" >
-      <Annotations>
+      
         <Annotation name="details">Number of units recording data</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Gross Production" column="a111a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Intermediate Consumption" column="a121a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Census Gross Value Added" column="a131a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Investment" column="a211a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Gross Fixed Capital Formation" column="a221a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Merchandising Margin" column="a511a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Expenses" column="a700a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Income" column="a800a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Employees Depends on the Economic Unit" column="h000a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Male Employees Depends on the Economic Unit" column="h000b" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Female Employees Depends on the Economic Unit" column="h000c" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Hours Worked by Employees" column="h000d" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in thousand hours</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Employees with or without a Contract with the Economic Unit" column="h001a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Male Employees with or without a Contract with the Economic Unit" column="h001b" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Female Employees with or without a Contract with the Economic Unit" column="h001c" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Hours Worked by Workforce" column="h001d" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in thousand hours</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Salaried Employees; Total" column="h010a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Male Salaried Employees" column="h010b" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Female Salaried Employees" column="h010c" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Hours Worked by Salaried Employees" column="h010d" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in thousand hours</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Owners; Family Members and other unpaid workers" column="h020a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Male Owners; Family Members and other unpaid workers" column="h020b" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Female Owners; Family Members and other unpaid workers" column="h020c" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Hours Worked by Owners; Family Members and other unpaid workers" column="h020d" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in thousand hours</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Employees of Production; Sales and Services; Total" column="h101a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Male Employees of Production; Sales and Services" column="h101b" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Female Employees of Production; Sales and Services" column="h101c" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Hours Worked by Production; Sales and Services Employees" column="h101d" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in thousand hours</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Administrative; Accounting and Management Employees; Total" column="h203a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Female Administrative; Accounting and Management Employees" column="h203b" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Male Administrative; Accounting and Management Employees" column="h203c" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Hours Worked by Administrative; Accounting and Management Salaried Employees" column="h203d" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in thousand hours</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Employees not Dependent on the Economic Unit; Total" column="i000a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Male Employees not Dependent on the Economic Unit" column="i000b" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Female Employees not Dependent on the Economic Unit" column="i000c" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Hours Worked by Employees not Dependent on the Economic Unit" column="i000d" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in thousand hours</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Employees Provided by Another Economic Unit; Total" column="i100a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Male Employees Provided by Another Economic Unit" column="i100b" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Female Employees Provided by Another Economic Unit" column="i100c" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Hours Worked by Employees Provided by Another Economic Unit" column="i100d" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in thousand hours</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Independent Contractors" column="i200a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Male Independent Contractors" column="i200b" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Female Independent Contractors" column="i200c" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Hours Worked by Independent Contractors" column="i200d" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in thousand hours</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Remuneration" column="j000a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Salary of Production; Sales and Services Employees" column="j010a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Salary of Administrative; Accounting and Management Salaried Employees" column="j203a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Employer Social Security Contributions" column="j300a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Other Social Benefits" column="j400a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Profit Sharing" column="j500a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Severance Pay" column="j600a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Expenses for Consumption of Goods and Services" column="k000a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Goods Acquired to Commercialize" column="k010a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Materials and Supplies Consumed for Provision of Services" column="k020a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Raw and Procesed Material that are Integrated into Production" column="k030a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Consumption of Fuels; Lubricants and Energy for the Operation of Machinery; Equipment and Vehicles" column="k040a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Electricity Consumption" column="k041a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Rent and Lease of Movable and Immovable Property" column="k050a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Professional; Scientific and Technical Services Hired" column="k060a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Maquila and Services for the Production of Goods by Contract" column="k070a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Consumption of Other Goods and Services" column="k090a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Freight out Expenses" column="k096a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Expenses for Consumption of Stationery and Office Supplies" column="k311a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Payments to Another Company that Hired and Provided Workers" column="k610a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Expenses in Independent Contractors" column="k620a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Advertising Expenses" column="k810a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Comunication Expenses" column="k820a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Expenses for Consumption of Containers and Packaging" column="k910a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Expenditures for Repair; Spare Parts and Maintenance of Fixed Assets" column="k950a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Water Consumption" column="k976a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Income for Supplying Goods and Services" column="m000a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Revenue from Commercialization of goods" column="m010a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Revenue from the Provision of Professional; Scientific and Technical Services" column="m020a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Revenue from Sales of Processed; Generated or Extracted Products" column="m030a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Revenue from Rental of Movable and Immovable Property" column="m050a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Other Revenue for Providing Goods and Services" column="m090a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Other Components of Production" column="m091a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of components</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Revenue from the Processing or Transformation of Raw Materials Owned by Third Parties" column="m700a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Value of Processed Products; Generated Goods and Extracted" column="o010a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Fixed Assets Produced for Own Use" column="o020a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Initial Inventory" column="p000a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Ending Inventory" column="p000b" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Stock Variation" column="p000c" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Initial Inventory of In-Process Products" column="p030a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Final Inventory of In-Process Products" column="p030b" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Variation of Inventories of In-Process Products" column="p030c" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Initial Inventory of Goods Purchased for Merchandising" column="p100a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Final Inventory of Goods Purchased for Merchandising" column="p100b" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Fixed Assets" column="q000a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Deprecation of Fixed Assets" column="q000b" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Purchases of Fixed Assets" column="q000c" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Sales of Fixed Assets" column="q000d" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Stock of Machinery and Production Equipment" column="q010a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Stock of Real Estate" column="q020a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Stock of Units and Transport Equipment" column="q030a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Stock of Computer Equipment and Peripherals" column="q400a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Total Stock of Furniture; office Equipment and Other Fixed Assets" column="q900a" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
   </Cube>
 <Cube name="inegi_economic_census_sex">
-    <Annotations>
+    
       <Annotation name="topic">Economy</Annotation>
       <Annotation name="subtopic">Employment</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/app/saic/default.aspx</Annotation>
-    </Annotations>
+    
 
     <Table name="inegi_economic_census_sex" primary_key="mun_id" />
  
@@ -2562,60 +2562,60 @@
     <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
 
     <Measure name="Employed workers" column="employed_workers" aggregator="sum" >
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Personal dependent on the social reason" column="personal_dependent_on_the_social_reason" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Paid staff" column="paid_staff" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Production personnel sales and service" column="production_personnel_sales_and_service" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Administrative accounting and managerial staff" column="administrative_accounting_and_managerial_staff" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Owners family and other unpaid workers" column="owners_family_and_other_unpaid_workers" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Staff not dependent on the social reason" column="staff_not_dependent_on_the_social_reason" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Personnel provided by another company name" column="personnel_provided_by_another_company_name" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Staff for fees or commissions without basic salary" column="staff_for_fees_or_commissions_without_basic_salary" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Total value of workforce</Annotation>
-      </Annotations>
+      
     </Measure>
 
   </Cube>
 <Cube name="inegi_enigh_household_income">
-    <Annotations>
+    
       <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Income</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/programas/enigh/nc/2018/</Annotation>
-    </Annotations>
+    
 
     <Table name="inegi_enigh_household_income" primary_key="mun_id" />
 
@@ -2627,25 +2627,25 @@
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <Measure name="Population" column="population" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Number of people</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Monthly Average Income" column="monthly_average" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
 
   </Cube>
 <Cube name="inegi_enigh_jobs">
-    <Annotations>
+    
       <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Income</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/programas/enigh/nc/2018/</Annotation>
-    </Annotations>
+    
 
     <Table name="inegi_enigh_jobs" primary_key="mun_id" />
 
@@ -2945,25 +2945,25 @@
     <DimensionUsage foreign_key="sinco_id" source="Occupation" name="Occupation" />
 
     <Measure name="Population" column="population" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Number of people</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Average Worked Hours" column="worked_hours" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Value in thousand hours</Annotation>
-      </Annotations>
+      
     </Measure>
 
   </Cube>
 <Cube name="inegi_enigh_population">
-    <Annotations>
+    
       <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Income</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/programas/enigh/nc/2018/</Annotation>
-    </Annotations>
+    
 
     <Table name="inegi_enigh_population" primary_key="ent_id" />
 
@@ -3846,25 +3846,25 @@
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
 
     <Measure name="Population" column="population" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Number of people</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Months Social Security" column="months_social_security" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Number of months with social security</Annotation>
-      </Annotations>
+      
     </Measure>
 
   </Cube>
 <Cube name="inegi_enoe">
-    <Annotations>
+    
       <Annotation name="topic">Economy</Annotation>
       <Annotation name="subtopic">Employment</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/programas/enoe/15ymas/</Annotation>
-    </Annotations>
+    
 
     <Table name="inegi_enoe" primary_key="ent_id" />
 
@@ -4434,35 +4434,35 @@
     <DimensionUsage foreign_key="actual_job_position" source="Occupation" name="Occupation Actual Job" />
 
     <Measure name="Worked Hours Week" column="actual_job_hrs_worked_lastweek" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Value in hours</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Worked Days Week" column="actual_job_days_worked_lastweek" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Value in number of days</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Wage" column="actual_amount_pesos" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Value in mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Workforce" column="population" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Number of people</Annotation>
-      </Annotations>
+      
     </Measure>
 
   </Cube>
 <Cube name="inegi_ensu">
-    <Annotations>
+    
       <Annotation name="topic">Safety</Annotation>
       <Annotation name="subtopic">Crimes</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/programas/ensu/</Annotation>
-    </Annotations>
+    
 
     <Table name="inegi_ensu" primary_key="ent_id" />
 
@@ -5337,20 +5337,20 @@
     <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
     <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
     <Measure name="Population" column="population" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Number of people</Annotation>
-      </Annotations>
+      
     </Measure>
 
   </Cube>
 <Cube name="inegi_general_mortality">
-    <Annotations>
+    
       <Annotation name="topic">Health</Annotation>
       <Annotation name="subtopic">Mortality</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/temas/mortalidad/default.html#Informacion_general</Annotation>
-    </Annotations>
+    
 
     <Table name="inegi_general_mortality" primary_key="ent_id" />
 
@@ -5359,24 +5359,24 @@
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
     <Measure name="General Deaths Over 1 year" column="general_deaths" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Number of people older than 1 year old</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="General Deaths 1 Year Olds" column="one_year_deaths" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Number of people younger than 1 year old</Annotation>
-      </Annotations>
+      
     </Measure>
   </Cube>
 <Cube name="inegi_housing">
-    <Annotations>
+    
       <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Housing</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/programas/intercensal/2015/</Annotation>
-    </Annotations>
+    
     <Table name="inegi_housing" />
 
     <Dimension name="Income" foreign_key="income">
@@ -6504,19 +6504,19 @@
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
     <Measure name="Households" column="households" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Households</Annotation>
-      </Annotations>
+      
     </Measure>
   </Cube>
 <Cube name="inegi_suicides_over_mortality">
-    <Annotations>
+    
       <Annotation name="topic">Health</Annotation>
       <Annotation name="subtopic">Mortality</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/temas/mortalidad/default.html#Informacion_general</Annotation>
-    </Annotations>
+    
 
     <Table name="inegi_suicides_over_mortality" primary_key="ent_id" />
 
@@ -6524,30 +6524,30 @@
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
     <Measure name="Suicides" column="suicides" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Number of people</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Rate of Violent Deaths" column="rate_violent_deaths" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Number of people</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Overmortality Index" column="male_overmortality_index" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Number of people</Annotation>
-      </Annotations>
+      
     </Measure>
 
   </Cube>
 <Cube name="inegi_population">
-    <Annotations>
+    
       <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Housing</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/programas/intercensal/2015/</Annotation>
-    </Annotations>
+    
 
     <Table name="inegi_population" primary_key="loc_id" />
 
@@ -7081,9 +7081,9 @@
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
     <Measure name="Population" column="population" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Number of people</Annotation>
-      </Annotations>
+      
       </Measure>
   </Cube>
 <Cube name="trade_balance">

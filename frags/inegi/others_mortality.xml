@@ -1,12 +1,12 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inegi_suicides_over_mortality">
-    <Annotations>
+    
       <Annotation name="topic">Health</Annotation>
       <Annotation name="subtopic">Mortality</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/temas/mortalidad/default.html#Informacion_general</Annotation>
-    </Annotations>
+    
 
     <Table name="inegi_suicides_over_mortality" primary_key="ent_id" />
 
@@ -14,19 +14,19 @@
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
     <Measure name="Suicides" column="suicides" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Number of people</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Rate of Violent Deaths" column="rate_violent_deaths" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Number of people</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Overmortality Index" column="male_overmortality_index" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Number of people</Annotation>
-      </Annotations>
+      
     </Measure>
 
   </Cube>

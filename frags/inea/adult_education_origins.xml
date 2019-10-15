@@ -1,12 +1,12 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inea_adult_education_origin">
-    <Annotations>
+    
       <Annotation name="topic">Education</Annotation>
       <Annotation name="subtopic">Adults</Annotation>
       <Annotation name="source_name">Instituto Nacional para la Educación de los Adultos (INEA)</Annotation>
       <Annotation name="source_name_en">National Institute for Adult Education (INEA)</Annotation>
       <Annotation name="source_link">https://www.gob.mx/inea</Annotation>
-    </Annotations>
+    
     <Table name="inea_adult_education_origin" primary_key="ent_id" />
 
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
@@ -36,59 +36,59 @@
     </Dimension>
 
     <Measure name="Students Served on Alphabetization" column="student_served" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Students Served on Alphabetization</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Students Served on Alphabetization (Initial Level)" column="student_served_initial" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Students Served on Alphabetization (Initial Level)</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Students Served on Alphabetization (Intermediate Level)" column="student_served_intermediate" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Students Served on Alphabetization (Intermediate Level)</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Students Served on Alphabetization (Advanced Level)" column="student_served_advanced" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Students Served on Alphabetization (Advanced Level)</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Students Literated" column="student_literate" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Students Literated</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Students Literated (Initial Level)" column="student_literate_initial" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Students Literated (Initial Level)</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Students Literated (Intermediate Level)" column="student_literate_intermediate" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Students Literated (Intermediate Level)</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Students Literated (Advanced Level)" column="student_literate_advanced" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Students Literated (Advanced Level)</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Students Incorporated" column="student_incorporated" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Students Incorporated"</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Students Inscribed" column="student_inscribed" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Students Inscribed"</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Students Registered" column="student_registered" aggregator="sum">
-     <Annotations>
+     
         <Annotation name="details">Students Registered"</Annotation>
-      </Annotations>
+      
     </Measure>
 
   </Cube>

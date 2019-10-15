@@ -1,12 +1,12 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="economy_fdi">
-    <Annotations>
+    
       <Annotation name="topic">Economy</Annotation>
       <Annotation name="subtopic">Foreign Direct Investment</Annotation>
       <Annotation name="source_name">Gobierno de México</Annotation>
       <Annotation name="source_name_en">Mexico Government</Annotation>
       <Annotation name="source_link">https://www.gob.mx/</Annotation>
-    </Annotations>
+    
     <Table name="economy_fdi" primary_key="quarter_id" />
 
     <Dimension name="Generic Investment" foreign_key="generic_investment">
@@ -44,14 +44,14 @@
     <DimensionUsage foreign_key="origin_id" source="Country" name="Origin" />
 
     <Measure name="Count" column="count" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Investors</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Investment (Million)" column="value_million" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value Millions</Annotation>
-      </Annotations>
+      
     </Measure>
 
   </Cube>

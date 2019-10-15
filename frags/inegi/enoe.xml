@@ -1,12 +1,12 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inegi_enoe">
-    <Annotations>
+    
       <Annotation name="topic">Economy</Annotation>
       <Annotation name="subtopic">Employment</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/programas/enoe/15ymas/</Annotation>
-    </Annotations>
+    
 
     <Table name="inegi_enoe" primary_key="ent_id" />
 
@@ -576,24 +576,24 @@
     <DimensionUsage foreign_key="actual_job_position" source="Occupation" name="Occupation Actual Job" />
 
     <Measure name="Worked Hours Week" column="actual_job_hrs_worked_lastweek" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Value in hours</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Worked Days Week" column="actual_job_days_worked_lastweek" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Value in number of days</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Wage" column="actual_amount_pesos" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Value in mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Workforce" column="population" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Number of people</Annotation>
-      </Annotations>
+      
     </Measure>
 
   </Cube>

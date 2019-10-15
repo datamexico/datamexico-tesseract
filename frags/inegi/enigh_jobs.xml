@@ -1,12 +1,12 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inegi_enigh_jobs">
-    <Annotations>
+    
       <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Income</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/programas/enigh/nc/2018/</Annotation>
-    </Annotations>
+    
 
     <Table name="inegi_enigh_jobs" primary_key="mun_id" />
 
@@ -306,14 +306,14 @@
     <DimensionUsage foreign_key="sinco_id" source="Occupation" name="Occupation" />
 
     <Measure name="Population" column="population" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Number of people</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Average Worked Hours" column="worked_hours" aggregator="avg">
-      <Annotations>
+      
         <Annotation name="details">Value in thousand hours</Annotation>
-      </Annotations>
+      
     </Measure>
 
   </Cube>

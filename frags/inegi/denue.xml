@@ -1,12 +1,12 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inegi_denue">
-    <Annotations>
+    
       <Annotation name="topic">Economy</Annotation>
       <Annotation name="subtopic">Industries</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/temas/directorio/</Annotation>
-    </Annotations>
+    
     <Table name="inegi_denue" primary_key="loc_id" />
 
     <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
@@ -102,9 +102,9 @@
     </Dimension>
 
     <Measure name="Number of Employees Informed" column="n_workers" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Informed Number of Employees</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Number of Employees LCI" column="lower" aggregator="sum" visible="false" />
     <Measure name="Number of Employees Midpoint" column="middle" aggregator="sum" visible="false" />

@@ -1,12 +1,12 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inegi_housing">
-    <Annotations>
+    
       <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Housing</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/programas/intercensal/2015/</Annotation>
-    </Annotations>
+    
     <Table name="inegi_housing" />
 
     <Dimension name="Income" foreign_key="income">
@@ -1134,9 +1134,9 @@
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
     <Measure name="Households" column="households" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Households</Annotation>
-      </Annotations>
+      
     </Measure>
   </Cube>
 </Schema>

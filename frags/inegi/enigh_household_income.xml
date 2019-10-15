@@ -1,12 +1,12 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inegi_enigh_household_income">
-    <Annotations>
+    
       <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Income</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/programas/enigh/nc/2018/</Annotation>
-    </Annotations>
+    
 
     <Table name="inegi_enigh_household_income" primary_key="mun_id" />
 
@@ -18,14 +18,14 @@
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <Measure name="Population" column="population" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Number of people</Annotation>
-      </Annotations>
+      
     </Measure>
     <Measure name="Monthly Average Income" column="monthly_average" aggregator="sum">
-      <Annotations>
+      
         <Annotation name="details">Value in mexican pesos</Annotation>
-      </Annotations>
+      
     </Measure>
 
   </Cube>
