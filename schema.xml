@@ -5336,10 +5336,14 @@
 
     <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
     <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
+    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
+    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
+
     <Measure name="Population" column="population" aggregator="sum">
-      
         <Annotation name="details">Number of people</Annotation>
-      
+    </Measure>
+    <Measure name="Households" column="households" aggregator="sum">
+        <Annotation name="details">Number of houses</Annotation>
     </Measure>
 
   </Cube>
