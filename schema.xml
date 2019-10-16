@@ -2029,7 +2029,7 @@
       </Hierarchy>
     </Dimension>
 
-    <Measure name="Companies" column="companies" aggregator="sum">
+    <Measure name="Companies" column="id" aggregator="count">
       
         <Annotation name="details">Number of Companies</Annotation>
       
