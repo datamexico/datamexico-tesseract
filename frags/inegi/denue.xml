@@ -101,7 +101,7 @@
       </Hierarchy>
     </Dimension>
 
-    <Measure name="Number of Employees Informed" column="n_workers" aggregator="sum">
+    <Measure name="Companies" column="companies" aggregator="sum">
       
         <Annotation name="details">Informed Number of Employees</Annotation>
       
