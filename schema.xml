@@ -2031,7 +2031,7 @@
 
     <Measure name="Companies" column="companies" aggregator="sum">
       
-        <Annotation name="details">Informed Number of Employees</Annotation>
+        <Annotation name="details">Number of Companies</Annotation>
       
     </Measure>
     <Measure name="Number of Employees LCI" column="lower" aggregator="sum" visible="false" />
