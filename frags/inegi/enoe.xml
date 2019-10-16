@@ -576,24 +576,16 @@
     <DimensionUsage foreign_key="actual_job_position" source="Occupation" name="Occupation Actual Job" />
 
     <Measure name="Worked Hours Week" column="actual_job_hrs_worked_lastweek" aggregator="avg">
-      
         <Annotation name="details">Value in hours</Annotation>
-      
     </Measure>
     <Measure name="Worked Days Week" column="actual_job_days_worked_lastweek" aggregator="avg">
-      
         <Annotation name="details">Value in number of days</Annotation>
-      
     </Measure>
     <Measure name="Wage" column="actual_amount_pesos" aggregator="avg">
-      
         <Annotation name="details">Value in mexican pesos</Annotation>
-      
     </Measure>
     <Measure name="Workforce" column="population" aggregator="sum">
-      
         <Annotation name="details">Number of people</Annotation>
-      
     </Measure>
 
   </Cube>
