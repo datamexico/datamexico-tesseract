@@ -41,7 +41,7 @@
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography Municipality" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="type" source="Academic Degree" name="Academic Degree" />
-    <DimensionUsage foreign_key="period" source="Period" name="Period" />
+    <DimensionUsage foreign_key="period" source="Year" name="Year" />
     <DimensionUsage foreign_key="program" source="Career Fields" name="Career Fields" />
     <DimensionUsage foreign_key="campus_id" source="Campus" name="Campus" />
 

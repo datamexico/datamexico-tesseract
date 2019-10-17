@@ -355,13 +355,6 @@
     </Hierarchy>
   </SharedDimension>
 
-  <SharedDimension name="Period">
-    <Hierarchy name="Period">
-      <Table name="anuies_origin" />
-      <Level name="Period" key_column="period" key_type="text"/>
-    </Hierarchy>
-  </SharedDimension>
-
   <SharedDimension name="Product">
     <Hierarchy name="Product" primary_key="hs6_id">
       <Table name="dim_shared_hs12_6digit" />

@@ -355,13 +355,6 @@
     </Hierarchy>
   </SharedDimension>
 
-  <SharedDimension name="Period">
-    <Hierarchy name="Period">
-      <Table name="anuies_origin" />
-      <Level name="Period" key_column="period" key_type="text"/>
-    </Hierarchy>
-  </SharedDimension>
-
   <SharedDimension name="Product">
     <Hierarchy name="Product" primary_key="hs6_id">
       <Table name="dim_shared_hs12_6digit" />
@@ -505,7 +498,7 @@
     <DimensionUsage foreign_key="type" source="Academic Degree" name="Academic Degree" />
     <DimensionUsage foreign_key="program" source="Career Fields" name="Career Fields" />
     <DimensionUsage foreign_key="campus_id" source="Campus" name="Campus" />
-    <DimensionUsage foreign_key="period" source="Period" name="Period" />
+    <DimensionUsage foreign_key="period" source="Year" name="Year" />
 
     <Measure name="Students" column="value" aggregator="sum">
       
@@ -528,7 +521,7 @@
     <DimensionUsage foreign_key="type" source="Academic Degree" name="Academic Degree" />
     <DimensionUsage foreign_key="program" source="Career Fields" name="Career Fields" />
     <DimensionUsage foreign_key="campus_id" source="Campus" name="Campus" />
-    <DimensionUsage foreign_key="period" source="Period" name="Period" />
+    <DimensionUsage foreign_key="period" source="Year" name="Year" />
 
     <Measure name="Students" column="value" aggregator="sum">
       
@@ -578,7 +571,7 @@
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography Municipality" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="type" source="Academic Degree" name="Academic Degree" />
-    <DimensionUsage foreign_key="period" source="Period" name="Period" />
+    <DimensionUsage foreign_key="period" source="Year" name="Year" />
     <DimensionUsage foreign_key="program" source="Career Fields" name="Career Fields" />
     <DimensionUsage foreign_key="campus_id" source="Campus" name="Campus" />
 
@@ -4434,24 +4427,16 @@
     <DimensionUsage foreign_key="actual_job_position" source="Occupation" name="Occupation Actual Job" />
 
     <Measure name="Worked Hours Week" column="actual_job_hrs_worked_lastweek" aggregator="avg">
-      
         <Annotation name="details">Value in hours</Annotation>
-      
     </Measure>
     <Measure name="Worked Days Week" column="actual_job_days_worked_lastweek" aggregator="avg">
-      
         <Annotation name="details">Value in number of days</Annotation>
-      
     </Measure>
     <Measure name="Wage" column="actual_amount_pesos" aggregator="avg">
-      
         <Annotation name="details">Value in mexican pesos</Annotation>
-      
     </Measure>
     <Measure name="Workforce" column="population" aggregator="sum">
-      
         <Annotation name="details">Number of people</Annotation>
-      
     </Measure>
 
   </Cube>
@@ -5345,6 +5330,7 @@
     <Measure name="Households" column="households" aggregator="sum">
         <Annotation name="details">Number of houses</Annotation>
     </Measure>
+
 
   </Cube>
 <Cube name="inegi_general_mortality">
@@ -7088,7 +7074,7 @@
       
         <Annotation name="details">Number of people</Annotation>
       
-      </Measure>
+    </Measure>
   </Cube>
 <Cube name="trade_balance">
     <Table name="trade_balance_atlas" primary_key="mun_id" />
