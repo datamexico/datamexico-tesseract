@@ -67,8 +67,8 @@ def create_dimension(data):
         print(df.columns)
         return df
     elif depth == 'month_id':
-        start = '{}-01-01'.format(str(data['min'])[:4], str(data['min'])[5:7])
-        end = '{}-12-31'.format(str(data['max'])[:4], str(data['max'])[5:7])
+        start = '{}-{}-01'.format(str(data['min'])[:4], str(data['min'])[5:7])
+        end = '{}-{}-31'.format(str(data['max'])[:4], str(data['max'])[5:7])
         df = pd.DataFrame({"date": pd.date_range(start, end)})
         df["month"] = df.date.dt.year.astype(str) + "-" + df.date.dt.month.astype(str).str.zfill(2)
         df["month_id"] = (df.date.dt.year.astype(str) + df.date.dt.month.astype(str).str.zfill(2)).astype(int)
