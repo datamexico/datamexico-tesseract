@@ -3,7 +3,7 @@
   <SharedDimension name="Geography State" type="geo">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography_ent" />
-      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext">
+      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
         <Property name="Nation ES" column="nation_name" caption_set="es"/>
       </Level>
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
@@ -37,7 +37,7 @@
   <SharedDimension name="Geography Municipality" type="geo" default_hierarchy="Geography">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography_mun" />
-      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext">
+      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
         <Property name="Nation ES" column="nation_name" caption_set="es"/>
       </Level>
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
@@ -75,7 +75,7 @@
   <SharedDimension name="Geography Location" type="geo" default_hierarchy="Geography">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography" />
-      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="nontext">
+      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
         <Property name="Nation ES" column="nation_name" caption_set="es"/>
       </Level>
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
