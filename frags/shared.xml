@@ -131,7 +131,7 @@
       <Level name="Country" key_column="iso3" name_column="country_name" key_type="text" >
         <Property name="ISO 2" column="iso2" />
         <Property name="OECD" column="oecd" />
-        <Property name="Country ES" column="country_name" caption_set="es"/>
+        <Property name="Country ES" column="country_name_es" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
