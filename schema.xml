@@ -361,8 +361,10 @@
       <Level name="Chapter" key_column="chapter" name_column="chapter_en" key_type="nontext">
         <Property name="Chapter ES" column="chapter_es" caption_set="es"/>
       </Level>
-      <Level name="HS2" key_column="hs2_id" name_column="hs2_en" key_type="nontext">
-        <Property name="HS2 ES" column="hs2_es" caption_set="es"/>
+      <Level name="HS2" key_column="hs2_id" name_column="hs2_en_short" key_type="nontext">
+        <Property name="HS2 ES" column="hs2_es_short" caption_set="es"/>
+        <Property name="Long HS2" column="hs2_en" caption_set="en"/>
+        <Property name="Long HS2 ES" column="hs2_es" caption_set="es"/>
       </Level>
       <Level name="HS4" key_column="hs4_id" name_column="hs4_en_short" key_type="nontext">
         <Property name="HS4 ES" column="hs4_es_short" caption_set="es"/>
@@ -383,8 +385,10 @@
       <Level name="Chapter 4 Digit" key_column="chapter" name_column="chapter_en" key_type="nontext">
         <Property name="Chapter 4 Digit ES" column="chapter_es" caption_set="es"/>
       </Level>
-      <Level name="HS2 4 Digit" key_column="hs2_id" name_column="hs2_en" key_type="nontext">
-        <Property name="HS2 4 Digit ES" column="hs2_es" caption_set="es"/>
+      <Level name="HS2 4 Digit" key_column="hs2_id" name_column="hs2_en_short" key_type="nontext">
+        <Property name="HS2 4 Digit ES" column="hs2_es_short" caption_set="es"/>
+        <Property name="Long HS2" column="hs2_en" caption_set="en"/>
+        <Property name="Long HS2 ES" column="hs2_es" caption_set="es"/>
       </Level>
       <Level name="HS4 4 Digit" key_column="hs4_id" name_column="hs4_en_short" key_type="nontext">
         <Property name="HS4 4 Digit ES" column="hs4_es_short" caption_set="es"/>
@@ -400,8 +404,10 @@
       <Level name="Chapter 2 Digit" key_column="chapter" name_column="chapter_en" key_type="nontext">
         <Property name="Chapter 2 Digit ES" column="chapter_es" caption_set="es"/>
       </Level>
-      <Level name="HS2 2 Digit" key_column="hs2_id" name_column="hs2_en" key_type="nontext">
-        <Property name="HS2 2 Digit ES" column="hs2_es" caption_set="es"/>
+      <Level name="HS2 2 Digit" key_column="hs2_id" name_column="hs2_en_short" key_type="nontext">
+        <Property name="HS2 2 Digit ES" column="hs2_es_short" caption_set="es"/>
+        <Property name="Long HS2" column="hs2_en" caption_set="en"/>
+        <Property name="Long HS2 ES" column="hs2_es" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
