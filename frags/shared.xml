@@ -400,7 +400,7 @@
 
   <SharedDimension name="Product 2 Digit">
     <Hierarchy name="Product 2 Digit" primary_key="hs2_id">
-      <Table name="dim_shared_hs12" />
+      <Table name="dim_shared_hs12_2digit" />
       <Level name="Chapter 2 Digit" key_column="chapter" name_column="chapter_en" key_type="nontext">
         <Property name="Chapter 2 Digit ES" column="chapter_es" caption_set="es"/>
       </Level>
