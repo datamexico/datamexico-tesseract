@@ -10,21 +10,28 @@
 
     <Table name="inegi_enigh_household_income" primary_key="mun_id" />
 
-    <Dimension name="Year" foreign_key="year">
-      <Hierarchy name="Year">
-        <Level name="Year" key_column="year" type="time" />
+    <Dimension name="Number of Inhabitants" foreign_key="n_people_home">
+      <Hierarchy name="Number of Inhabitants">
+        <Table name="inegi_housing" />
+        <Level name="Number of Inhabitants" key_column="n_people_home" />
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Income" foreign_key="monthly_wage">
+      <Hierarchy name="Income" primary_key="id">
+        <Table name="dim_shared_money" />
+        <Level name="Income" key_column="id" name_column="name">
+          <Property name="Income ES" column="name" caption_set="es" />
+        </Level>
       </Hierarchy>
     </Dimension>
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
-    <Measure name="Population" column="population" aggregator="sum">
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Measure name="Households" column="households" aggregator="sum">
       
-        <Annotation name="details">Number of people</Annotation>
-      
-    </Measure>
-    <Measure name="Monthly Average Income" column="monthly_average" aggregator="sum">
-      
-        <Annotation name="details">Value in mexican pesos</Annotation>
+        <Annotation name="details">Households</Annotation>
       
     </Measure>
 
