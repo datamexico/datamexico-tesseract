@@ -2620,7 +2620,7 @@
 
     <Dimension name="Number of Inhabitants" foreign_key="n_people_home">
       <Hierarchy name="Number of Inhabitants">
-        <Table name="inegi_housing" />
+        <Table name="inegi_enigh_household_income" />
         <Level name="Number of Inhabitants" key_column="n_people_home" />
       </Hierarchy>
     </Dimension>
