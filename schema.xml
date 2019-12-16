@@ -2625,11 +2625,14 @@
       </Hierarchy>
     </Dimension>
   
-    <Dimension name="Income" foreign_key="monthly_wage">
-      <Hierarchy name="Income" primary_key="id">
+    <Dimension name="Salary" foreign_key="monthly_wage">
+      <Hierarchy name="Salary" primary_key="id">
         <Table name="dim_shared_money" />
-        <Level name="Income" key_column="id" name_column="name">
-          <Property name="Income ES" column="name" caption_set="es" />
+        <Level name="Salary Group" key_column="enoe_group_id" name_column="enoe_group" key_type="nontext">
+          <Property name="Salary Group ES" column="enoe_group" caption_set="es"/>
+        </Level>
+        <Level name="Salary" key_column="id" name_column="name" key_type="nontext" >
+          <Property name="Salary ES" column="name" caption_set="es"/>
         </Level>
       </Hierarchy>
     </Dimension>
