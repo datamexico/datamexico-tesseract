@@ -6873,9 +6873,9 @@
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension name="Time to Ed Facility" foreign_key="time_to_ed_facility">
+    <Dimension name="Time to Ed Facility" foreign_key="time_to_ed_facilities">
       <Hierarchy name="Time to Ed Facility" primary_key="id">
-        <InlineTable alias="dim_inline_time_to_ed_facility">
+        <InlineTable alias="dim_inline_time_to_ed_facilities">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
