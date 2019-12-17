@@ -1,4 +1,505 @@
 <Schema name="datamexico">
+
+  <SharedDimension name="Geography State" type="geo">
+    <Hierarchy name="Geography">
+      <Table name="dim_shared_geography_ent" />
+      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
+        <Property name="Nation ES" column="nation_name" caption_set="es"/>
+      </Level>
+      <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+        <Property name="CVE State" column="cve_ent" />
+        <Property name="State ES" column="ent_name" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Geography State Lite" type="geo">
+    <Hierarchy name="Geography">
+      <Table name="dim_shared_geography_ent" />
+      <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+        <Property name="CVE State" column="cve_ent" />
+        <Property name="State ES" column="ent_name" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Geography Municipality Lite" type="geo">
+    <Hierarchy name="Geography">
+      <Table name="dim_shared_geography_mun" />
+      <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
+        <Property name="CVE Municipality" column="cve_mun" />
+        <Property name="CVE Municipality Full" column="cve_mun_full" />
+        <Property name="Municipality ES" column="mun_name" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Geography Municipality" type="geo" default_hierarchy="Geography">
+    <Hierarchy name="Geography">
+      <Table name="dim_shared_geography_mun" />
+      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
+        <Property name="Nation ES" column="nation_name" caption_set="es"/>
+      </Level>
+      <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+        <Property name="CVE State" column="cve_ent" />
+        <Property name="State ES" column="ent_name" caption_set="es"/>
+      </Level>
+      <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
+        <Property name="CVE Municipality" column="cve_mun" />
+        <Property name="CVE Municipality Full" column="cve_mun_full" />
+        <Property name="Municipality ES" column="mun_name" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+
+    <Hierarchy name="Metro Area">
+      <Table name="dim_shared_geography_zm" />
+      <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext">
+        <Property name="Metro Area ES" column="zm_name" caption_set="es"/>
+      </Level>
+      <Level name="Municipality MA" key_column="mun_id" name_column="mun_name" key_type="nontext">
+        <Property name="Municipality MA ES" column="mun_name" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+    <Hierarchy name="National Urban System">
+      <Table name="dim_shared_geography_sun" />
+      <Level name="National Urban System" key_column="sun_id" name_column="sun_name" key_type="text">
+        <Property name="National Urban System ES" column="sun_name" caption_set="es"/>
+      </Level>
+
+      <Level name="Municipality SUN" key_column="mun_id" name_column="mun_name" key_type="nontext">
+        <Property name="Municipality SUN ES" column="mun_name" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Geography Location" type="geo" default_hierarchy="Geography">
+    <Hierarchy name="Geography">
+      <Table name="dim_shared_geography" />
+      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
+        <Property name="Nation ES" column="nation_name" caption_set="es"/>
+      </Level>
+      <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+        <Property name="CVE State" column="cve_ent" />
+        <Property name="State ES" column="ent_name" caption_set="es"/>
+      </Level>
+      <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
+        <Property name="CVE Municipality" column="cve_mun" />
+        <Property name="CVE Municipality Full" column="cve_mun_full" />
+        <Property name="Municipality ES" column="mun_name" caption_set="es"/>
+      </Level>
+      <Level name="Location" key_column="loc_id" name_column="loc_name" key_type="nontext">
+        <Property name="CVE Location" column="cve_loc" />
+        <Property name="CVE Location Full" column="cve_loc_full" />
+        <Property name="Location ES" column="loc_name" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+    <Hierarchy name="Metro Area">
+      <Table name="dim_shared_geography_zm_loc" />
+      <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext">
+        <Property name="Metro Area ES" column="zm_name" caption_set="es"/>
+      </Level>
+
+      <Level name="Municipality MA" key_column="mun_id" name_column="mun_name" key_type="nontext">
+        <Property name="Municipality MA ES" column="mun_name" caption_set="es"/>
+      </Level>
+      <Level name="Location MA" key_column="loc_id" name_column="loc_name" key_type="nontext">
+        <Property name="Location MA ES" column="loc_name" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+
+    <Hierarchy name="National Urban System">
+      <Table name="dim_shared_geography_sun_loc" />
+      <Level name="National Urban System" key_column="sun_id" name_column="sun_name" key_type="text">
+        <Property name="National Urban System ES" column="sun_name" caption_set="es"/>
+      </Level>
+
+      <Level name="Municipality SUN" key_column="mun_id" name_column="mun_name" key_type="nontext">
+        <Property name="Municipality SUN ES" column="mun_name" caption_set="es"/>
+      </Level>
+      <Level name="Location SUN" key_column="loc_id" name_column="loc_name" key_type="nontext">
+        <Property name="Location SUN ES" column="loc_name" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Country">
+    <Hierarchy name="Country" primary_key="iso3">
+      <Table name="dim_shared_country"/>
+      <Level name="Continent" key_column="continent_id" name_column="continent" key_type="text">
+        <Property name="Continent ES" column="continent_es" caption_set="es"/>
+      </Level>
+      <Level name="Country" key_column="iso3" name_column="country_name" key_type="text" >
+        <Property name="ISO 2" column="iso2" />
+        <Property name="OECD" column="oecd" />
+        <Property name="Country ES" column="country_name_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="CIE10">
+    <Hierarchy name="CIE10" primary_key="cie10_4digit">
+      <Table name="dim_shared_cie10"/>
+      <Level name="Chapter" key_column="chapter_id" name_column="category_en" key_type="text">
+        <Property name="Chapter ES" column="category_es" caption_set="es"/>
+      </Level>
+      <Level name="Category" key_column="cie10_3digit" name_column="cie10_3digit_en" key_type="text">
+        <Property name="Category ES" column="cie10_3digit_es" caption_set="es"/>
+      </Level>
+      <Level name="Subcategory" key_column="cie10_4digit" name_column="cie10_4digit_en" key_type="text">
+        <Property name="Subcategory ES" column="cie10_4digit_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Social Security">
+    <Hierarchy name="Social Security" primary_key="id">
+      <Table name="dim_shared_social_security"/>
+      <Level name="Social Security" key_column="id" name_column="social_security_en" key_type="nontext">
+        <Property name="Social Security ES" column="social_security_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Academic Degree">
+    <Hierarchy name="Academic Degree" primary_key="id">
+      <Table name="dim_shared_academic_degree"/>
+      <Level name="Academic Degree" key_column="id" name_column="academic_degree_en" key_type="nontext">
+        <Property name="Academic Degree ES" column="academic_degree_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Industry 4 Digit">
+    <Hierarchy name="Industry" primary_key="industry_group_id">
+      <Table name="dim_shared_industry_enoe"/>
+      <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
+        <Property name="Sector ES" column="sector_es" caption_set="es"/>
+      </Level>
+      <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="nontext">
+        <Property name="Subsector ES" column="subsector_es" caption_set="es"/>
+      </Level>
+      <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_en" key_type="nontext">
+        <Property name="Industry Group ES" column="industry_group_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Industry 6 Digit">
+    <Hierarchy name="Industry" primary_key="national_industry_id">
+      <Table name="dim_shared_industry"/>
+      <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
+        <Property name="Sector ES" column="sector_es" caption_set="es"/>
+      </Level>
+      <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="text">
+        <Property name="Subsector ES" column="subsector_es" caption_set="es"/>
+      </Level>
+      <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_en" key_type="text">
+        <Property name="Industry Group ES" column="industry_group_es" caption_set="es"/>
+      </Level>
+      <Level name="NAICS Industry" key_column="naics_industry_id" name_column="naics_industry_en" key_type="text">
+        <Property name="NAICS Industry ES" column="naics_industry_es" caption_set="es"/>
+      </Level>
+      <Level name="National Industry" key_column="national_industry_id" name_column="national_industry_en" key_type="text">
+        <Property name="National Industry ES" column="national_industry_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Occupation">
+    <Hierarchy name="Occupation" primary_key="occupation_id">
+      <Table name="dim_shared_occupations_enoe"/>
+      <Level name="Category" key_column="category_id" name_column="category_en" key_type="nontext">
+        <Property name="Category ES" column="category_es" caption_set="es"/>
+      </Level>
+      <Level name="Group" key_column="group_id" name_column="group_en" key_type="nontext">
+        <Property name="Group ES" column="group_es" caption_set="es"/>
+      </Level>
+      <Level name="Subgroup" key_column="subgroup_id" name_column="subgroup_en" key_type="nontext">
+        <Property name="Subgroup ES" column="subgroup_es" caption_set="es"/>
+      </Level>
+      <Level name="Occupation" key_column="occupation_id" name_column="occupation_en" key_type="nontext">
+        <Property name="Occupation ES" column="occupation_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Sex">
+    <Hierarchy name="Sex">
+      <Table name="dim_shared_sex" />
+      <Level name="Sex" key_column="id" name_column="name_en" key_type="nontext">
+        <Property name="Sex ES" column="name_es" caption_set="es" />
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Age Group">
+    <Hierarchy name="Age Group" primary_key="age">
+      <Table name="dim_shared_age" />
+      <Level name="Age Range" key_column="age_range_id" name_column="name_en" key_type="nontext">
+        <Property name="name_es" column="name_es" caption_set="es"/>
+      </Level>
+      <Level name="Age" key_column="age" key_type="nontext" />
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Year" type="time">
+    <Hierarchy name="Year">
+      <Level name="Year" key_column="year" />
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Date Quarter" type="time">
+    <Hierarchy name="Date" primary_key="quarter_id">
+      <Table name="dim_shared_date_quarter" />
+      <Level name="Year" key_column="year" />
+      <Level name="Quarter" key_column="quarter_id" name_column="quarter_name">
+        <Property name="Quarter ES" column="quarter_name" caption_set="es" />
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Date Month" type="time">
+    <Hierarchy name="Date" primary_key="month_id">
+      <Table name="dim_shared_date_month" />
+      <Level name="Year" key_column="year" />
+      <Level name="Quarter" key_column="quarter_id" name_column="quarter">
+        <Property name="Quarter ES" column="quarter" caption_set="es" />
+      </Level>
+      <Level name="Month" key_column="month_id" name_column="month">
+        <Property name="Month ES" column="month" caption_set="es" />
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Date Day" type="time">
+    <Hierarchy name="Date" primary_key="date_id">
+      <Table name="dim_shared_date_month_day" />
+      <Level name="Year" key_column="year" />
+      <Level name="Quarter" key_column="quarter_id" name_column="quarter">
+        <Property name="Quarter ES" column="quarter" caption_set="es" />
+      </Level>
+      <Level name="Month" key_column="month_id" name_column="month">
+        <Property name="Month ES" column="month" caption_set="es" />
+      </Level>
+      <Level name="Date" key_column="date_id" name_column="date">
+        <Property name="Date ES" column="date" caption_set="es" />
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Social Lag Degree">
+    <Hierarchy name="Social Lag Degree" primary_key="id">
+      <InlineTable alias="dim_inline_social_lag_degree">
+        <ColumnDef name="id" key_type="nontext" />
+        <ColumnDef name="name_en" key_type="text" />
+        <ColumnDef name="name_es" key_type="text" />
+        <Row>
+          <Value column="id">1</Value>
+          <Value column="name_en">Very low</Value>
+          <Value column="name_es">Muy bajo</Value>
+        </Row>
+        <Row>
+          <Value column="id">2</Value>
+          <Value column="name_en">Low</Value>
+          <Value column="name_es">Bajo</Value>
+        </Row>
+        <Row>
+          <Value column="id">3</Value>
+          <Value column="name_en">Medium</Value>
+          <Value column="name_es">Medio</Value>
+        </Row>
+        <Row>
+          <Value column="id">4</Value>
+          <Value column="name_en">High</Value>
+          <Value column="name_es">Alto</Value>
+        </Row>
+        <Row>
+          <Value column="id">5</Value>
+          <Value column="name_en">Very high</Value>
+          <Value column="name_es">Muy alto</Value>
+        </Row>
+      </InlineTable>
+      <Level name="Social Lag Degree" key_column="id" name_column="name_en">
+        <Property name="Social Lag Degree ES" column="name_es" caption_set="es" />
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Career Fields">
+    <Hierarchy name="Career Fields" primary_key="code">
+      <Table name="dim_shared_careers_anuies" />
+      <Level name="Area" key_column="area_id" name_column="area_en" key_type="nontext">
+        <Property name="Area ES" column="area_es" caption_set="es"/>
+      </Level>
+      <Level name="Field" key_column="field_id" name_column="field_en" key_type="nontext">
+        <Property name="Field ES" column="field_es" caption_set="es"/>
+      </Level>
+      <Level name="Subfield" key_column="subfield_id" name_column="subfield_en" key_type="nontext">
+        <Property name="Subfield ES" column="subfield_es" caption_set="es"/>
+      </Level>
+      <Level name="Career" key_column="code" name_column="name_en" key_type="nontext">
+        <Property name="Career ES" column="name_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Campus">
+    <Hierarchy name="Campus" primary_key="campus_id">
+      <Table name="dim_shared_work_centers"/>
+      <Level name="Institution" key_column="institution_id" name_column="institution_name" key_type="nontext">
+        <Property name="Institution ES" column="institution_name" caption_set="es"/>
+      </Level>
+      <Level name="Campus" key_column="campus_id" name_column="campus_name" key_type="text">
+        <Property name="Campus ES" column="campus_name" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Product">
+    <Hierarchy name="Product" primary_key="hs6_id">
+      <Table name="dim_shared_hs12_6digit" />
+      <Level name="Chapter" key_column="chapter" name_column="chapter_en" key_type="nontext">
+        <Property name="Chapter ES" column="chapter_es" caption_set="es"/>
+      </Level>
+      <Level name="HS2" key_column="hs2_id" name_column="hs2_en_short" key_type="nontext">
+        <Property name="HS2 ES" column="hs2_es_short" caption_set="es"/>
+        <!--<Property name="Long HS2" column="hs2_en" caption_set="en"/>
+        <Property name="Long HS2 ES" column="hs2_es" caption_set="es"/>-->
+      </Level>
+      <Level name="HS4" key_column="hs4_id" name_column="hs4_en_short" key_type="nontext">
+        <Property name="HS4 ES" column="hs4_es_short" caption_set="es"/>
+        <Property name="Long HS4" column="hs4_en" caption_set="en"/>
+        <Property name="Long HS4 ES" column="hs4_es" caption_set="es"/>
+      </Level>
+      <Level name="HS6" key_column="hs6_id" name_column="hs6_en_short" key_type="nontext">
+        <Property name="HS6 ES" column="hs6_es_short" caption_set="es"/>
+        <Property name="Long HS6" column="hs6_en" caption_set="en"/>
+        <Property name="Long HS6 ES" column="hs6_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Product 4 Digit">
+    <Hierarchy name="Product 4 Digit" primary_key="hs4_id">
+      <Table name="dim_shared_hs12_4digit" />
+      <Level name="Chapter 4 Digit" key_column="chapter" name_column="chapter_en" key_type="nontext">
+        <Property name="Chapter 4 Digit ES" column="chapter_es" caption_set="es"/>
+      </Level>
+      <Level name="HS2 4 Digit" key_column="hs2_id" name_column="hs2_en_short" key_type="nontext">
+        <Property name="HS2 4 Digit ES" column="hs2_es_short" caption_set="es"/>
+        <!--<Property name="Long HS2" column="hs2_en" caption_set="en"/>
+        <Property name="Long HS2 ES" column="hs2_es" caption_set="es"/>-->
+      </Level>
+      <Level name="HS4 4 Digit" key_column="hs4_id" name_column="hs4_en_short" key_type="nontext">
+        <Property name="HS4 4 Digit ES" column="hs4_es_short" caption_set="es"/>
+        <Property name="Long HS4 4 Digit" column="hs4_en" caption_set="en"/>
+        <Property name="Long HS4 4 Digit ES" column="hs4_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Product 2 Digit">
+    <Hierarchy name="Product 2 Digit" primary_key="hs2_id">
+      <Table name="dim_shared_hs12_2digit" />
+      <Level name="Chapter 2 Digit" key_column="chapter" name_column="chapter_en" key_type="nontext">
+        <Property name="Chapter 2 Digit ES" column="chapter_es" caption_set="es"/>
+      </Level>
+      <Level name="HS2 2 Digit" key_column="hs2_id" name_column="hs2_en_short" key_type="nontext">
+        <Property name="HS2 2 Digit ES" column="hs2_es_short" caption_set="es"/>
+        <Property name="Long HS2" column="hs2_en" caption_set="en"/>
+        <Property name="Long HS2 ES" column="hs2_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Salary">
+    <Hierarchy name="Salary" primary_key="id">
+      <Table name="dim_shared_money" />
+      <Level name="Salary Group" key_column="enoe_group_id" name_column="enoe_group" key_type="nontext">
+        <Property name="Salary Group ES" column="enoe_group" caption_set="es"/>
+      </Level>
+      <Level name="Salary" key_column="id" name_column="name" key_type="nontext" >
+        <Property name="Salary ES" column="name" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Trust">
+      <Hierarchy name="Trust">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">A lot of</Value>
+                <Value column="name_es">Mucha</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some</Value>
+                <Value column="name_es">Alguna</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Very little</Value>
+                <Value column="name_es">Poca</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">None</Value>
+                <Value column="name_es">Nada</Value>
+            </Row>
+            <Row>
+                <Value column="id">5</Value>
+                <Value column="name_en">Does not apply</Value>
+                <Value column="name_es">No Aplica</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Trust" key_column="id" name_column="name_en">
+          <Property name="Trust ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </SharedDimension>  
+
+    <SharedDimension name="Confidence">
+      <Hierarchy name="Confidence">
+        <InlineTable alias="dim_inline_envipe">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Much trust</Value>
+                <Value column="name_es">Mucha Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Some confidence</Value>
+                <Value column="name_es">Algo de Confianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Some distrust</Value>
+                <Value column="name_es">Algo de Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">Much distrust</Value>
+                <Value column="name_es">Mucha Desconfianza</Value>
+            </Row>
+            <Row>
+                <Value column="id">9</Value>
+                <Value column="name_en">Does not know / does not answer</Value>
+                <Value column="name_es">No Sabe / No Responde</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Confidence" key_column="id" name_column="name_en">
+          <Property name="Confidence ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </SharedDimension> 
+
 <Cube name="anuies_enrollment">
     
       <Annotation name="topic">Education</Annotation>
