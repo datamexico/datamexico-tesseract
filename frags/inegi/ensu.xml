@@ -688,27 +688,27 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Very effective</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_es">Muy Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Algo efectivo</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_en">Somewhat effective</Value>
+            <Value column="name_es">Algo Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Very effective</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_en">Not very effective</Value>
+            <Value column="name_es">Poco Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">Very effective</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_en">Nothing Effective</Value>
+            <Value column="name_es">Nada Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">Very effective</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_en">Does not know / does not answer</Value>
+            <Value column="name_es">No Sabe / No Responde</Value>
           </Row>
         </InlineTable>
         <Level name="City Government Efficiency" key_column="id" name_column="name_en">
@@ -726,27 +726,27 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Very effective</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_es">Muy Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Algo efectivo</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_en">Somewhat effective</Value>
+            <Value column="name_es">Algo Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Very effective</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_en">Not very effective</Value>
+            <Value column="name_es">Poco Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">Very effective</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_en">Nothing Effective</Value>
+            <Value column="name_es">Nada Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">Very effective</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_en">Does not know / does not answer</Value>
+            <Value column="name_es">No Sabe / No Responde</Value>
           </Row>
         </InlineTable>
         <Level name="Perception of Preventive Police" key_column="id" name_column="name_en">
@@ -764,27 +764,27 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Very effective</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_es">Muy Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Algo efectivo</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_en">Somewhat effective</Value>
+            <Value column="name_es">Algo Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Very effective</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_en">Not very effective</Value>
+            <Value column="name_es">Poco Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">Very effective</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_en">Nothing Effective</Value>
+            <Value column="name_es">Nada Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">Very effective</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_en">Does not know / does not answer</Value>
+            <Value column="name_es">No Sabe / No Responde</Value>
           </Row>
         </InlineTable>
         <Level name="Perception of State Police" key_column="id" name_column="name_en">
@@ -802,27 +802,27 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Very effective</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_es">Muy Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Algo efectivo</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_en">Somewhat effective</Value>
+            <Value column="name_es">Algo Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Very effective</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_en">Not very effective</Value>
+            <Value column="name_es">Poco Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">Very effective</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_en">Nothing Effective</Value>
+            <Value column="name_es">Nada Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">Very effective</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_en">Does not know / does not answer</Value>
+            <Value column="name_es">No Sabe / No Responde</Value>
           </Row>
         </InlineTable>
         <Level name="Perception of Federal Police" key_column="id" name_column="name_en">
@@ -840,27 +840,27 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Very effective</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_es">Muy Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Algo efectivo</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_en">Somewhat effective</Value>
+            <Value column="name_es">Algo Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Very effective</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_en">Not very effective</Value>
+            <Value column="name_es">Poco Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">Very effective</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_en">Nothing Effective</Value>
+            <Value column="name_es">Nada Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">Very effective</Value>
-            <Value column="name_es">Muy efectivo</Value>
+            <Value column="name_en">Does not know / does not answer</Value>
+            <Value column="name_es">No Sabe / No Responde</Value>
           </Row>
         </InlineTable>
         <Level name="Perception of Gendarmerie Police" key_column="id" name_column="name_en">
