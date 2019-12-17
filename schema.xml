@@ -1645,18 +1645,18 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Accounts between companies</Value>
-            <Value column="name_es">Cuentas entre compañías</Value>
+            <Value column="name_en">Accounts between Companies</Value>
+            <Value column="name_es">Cuentas entre Compañías</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">New investments</Value>
-            <Value column="name_es">Nuevas inversiones</Value>
+            <Value column="name_en">New Investments</Value>
+            <Value column="name_es">Nuevas Inversiones</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Reinvestment of profits</Value>
-            <Value column="name_es">Reinversión de utilidades</Value>
+            <Value column="name_en">Reinvestment of Profits</Value>
+            <Value column="name_es">Reinversión de Utilidades</Value>
           </Row>
         </InlineTable>
         <Level name="Generic Investment" key_column="id" name_column="name_en">
