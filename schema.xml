@@ -2012,17 +2012,17 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Fijo</Value>
-            <Value column="name_es">0 - 5</Value>
+            <Value column="name_es">Established Business</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Semifijo</Value>
-            <Value column="name_es">0 - 5</Value>
+            <Value column="name_es">Semi-established Business</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Actividad en vivienda</Value>
-            <Value column="name_es">0 - 5</Value>
+            <Value column="name_en">Actividad en Vivienda</Value>
+            <Value column="name_es">Housing Business</Value>
           </Row>
         </InlineTable>
         <Level name="Establishment" key_column="id" name_column="name_en">
