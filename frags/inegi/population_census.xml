@@ -101,63 +101,6 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Health Options" foreign_key="dhsersal1">
-      <Hierarchy name="Health Options" primary_key="id">
-        <InlineTable alias="dim_inline_dhsersal1">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">0</Value>
-            <Value column="name_en">Not Specified</Value>
-            <Value column="name_es">No especificado</Value>
-          </Row>
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">Popular Insurance or New Generation (XXI Century Health Insurance)</Value>
-            <Value column="name_es">Seguro Popular o para una Nueva Generación (Siglo XXI)</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">IMSS (Social Security)</Value>
-            <Value column="name_es">IMSS (Seguro social)</Value>
-          </Row>
-          <Row>
-            <Value column="id">3</Value>
-            <Value column="name_en">ISSSTE</Value>
-            <Value column="name_es">ISSSTE</Value>
-          </Row>
-          <Row>
-            <Value column="id">4</Value>
-            <Value column="name_en">State ISSSTE</Value>
-            <Value column="name_es">ISSSTE estatal</Value>
-          </Row>
-          <Row>
-            <Value column="id">5</Value>
-            <Value column="name_en">Pemex, Defense or Marine</Value>
-            <Value column="name_es">Pemex, Defensa o Marina</Value>
-          </Row>
-          <Row>
-            <Value column="id">6</Value>
-            <Value column="name_en">Private Insurance</Value>
-            <Value column="name_es">Seguro privado</Value>
-          </Row>
-          <Row>
-            <Value column="id">7</Value>
-            <Value column="name_en">Other Institution</Value>
-            <Value column="name_es">Otra institución</Value>
-          </Row>
-          <Row>
-            <Value column="id">8</Value>
-            <Value column="name_en">No Affiliated to Medical Services</Value>
-            <Value column="name_es">No está afiliada(o) a servicios médicos</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Health Options" key_column="id" name_column="name_en">
-          <Property name="Health Options ES" column="name_es" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
     <Dimension name="Work Mean" foreign_key="transport_mean_work">
       <Hierarchy name="Work Mean" primary_key="id">
         <InlineTable alias="dim_transport_mean_work">
