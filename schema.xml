@@ -944,8 +944,8 @@
             </Row>
             <Row>
                 <Value column="id">9</Value>
-                <Value column="name_en">Does not know / does not answer</Value>
-                <Value column="name_es">No Sabe / No Responde</Value>
+                <Value column="name_en">Does not know / does not Answer</Value>
+                <Value column="name_es">No sabe / No Responde</Value>
             </Row>
         </InlineTable>
         <Level name="Security Perception in their State" key_column="id" name_column="name_en">
@@ -968,12 +968,12 @@
             </Row>
             <Row>
                 <Value column="id">2</Value>
-                <Value column="name_en">Lower middle</Value>
+                <Value column="name_en">Lower Middle</Value>
                 <Value column="name_es">Clase Media Baja</Value>
             </Row>
             <Row>
                 <Value column="id">3</Value>
-                <Value column="name_en">Upper middle</Value>
+                <Value column="name_en">Upper Middle</Value>
                 <Value column="name_es">Clase Media Alta</Value>
             </Row>
             <Row>
@@ -1015,7 +1015,7 @@
             </Row>
             <Row>
                 <Value column="id">3</Value>
-                <Value column="name_en">Very little</Value>
+                <Value column="name_en">Very Little</Value>
                 <Value column="name_es">Poca</Value>
             </Row>
             <Row>
@@ -1025,13 +1025,13 @@
             </Row>
             <Row>
                 <Value column="id">5</Value>
-                <Value column="name_en">Does not apply</Value>
+                <Value column="name_en">Does not Apply</Value>
                 <Value column="name_es">No Aplica</Value>
             </Row>
             <Row>
                 <Value column="id">9</Value>
-                <Value column="name_en">Does not know / does not answer</Value>
-                <Value column="name_es">No Sabe / No Responde</Value>
+                <Value column="name_en">Does not know / does not Answer</Value>
+                <Value column="name_es">No sabe / No Responde</Value>
             </Row>
         </InlineTable>
         <Level name="Trust in Neighborhood" key_column="id" name_column="name_en">
@@ -1058,7 +1058,7 @@
             </Row>
             <Row>
                 <Value column="id">3</Value>
-                <Value column="name_en">Very little</Value>
+                <Value column="name_en">Very Little</Value>
                 <Value column="name_es">Poca</Value>
             </Row>
             <Row>
@@ -1068,13 +1068,13 @@
             </Row>
             <Row>
                 <Value column="id">5</Value>
-                <Value column="name_en">Does not apply</Value>
+                <Value column="name_en">Does not Apply</Value>
                 <Value column="name_es">No Aplica</Value>
             </Row>
             <Row>
                 <Value column="id">9</Value>
-                <Value column="name_en">Does not know / does not answer</Value>
-                <Value column="name_es">No Sabe / No Responde</Value>
+                <Value column="name_en">Does not know / does not Answer</Value>
+                <Value column="name_es">No sabe / No Responde</Value>
             </Row>
         </InlineTable>
         <Level name="Trust in Coworkers" key_column="id" name_column="name_en">
@@ -1101,7 +1101,7 @@
             </Row>
             <Row>
                 <Value column="id">3</Value>
-                <Value column="name_en">Very little</Value>
+                <Value column="name_en">Very Little</Value>
                 <Value column="name_es">Poca</Value>
             </Row>
             <Row>
@@ -1111,13 +1111,13 @@
             </Row>
             <Row>
                 <Value column="id">5</Value>
-                <Value column="name_en">Does not apply</Value>
+                <Value column="name_en">Does not Apply</Value>
                 <Value column="name_es">No Aplica</Value>
             </Row>
             <Row>
                 <Value column="id">9</Value>
-                <Value column="name_en">Does not know / does not answer</Value>
-                <Value column="name_es">No Sabe / No Responde</Value>
+                <Value column="name_en">Does not know / does not Answer</Value>
+                <Value column="name_es">No sabe / No Responde</Value>
             </Row>
         </InlineTable>
         <Level name="Trust in Family" key_column="id" name_column="name_en">
@@ -1144,7 +1144,7 @@
             </Row>
             <Row>
                 <Value column="id">3</Value>
-                <Value column="name_en">Very little</Value>
+                <Value column="name_en">Very Little</Value>
                 <Value column="name_es">Poca</Value>
             </Row>
             <Row>
@@ -1154,13 +1154,13 @@
             </Row>
             <Row>
                 <Value column="id">5</Value>
-                <Value column="name_en">Does not apply</Value>
+                <Value column="name_en">Does not Apply</Value>
                 <Value column="name_es">No Aplica</Value>
             </Row>
             <Row>
                 <Value column="id">9</Value>
-                <Value column="name_en">Does not know / does not answer</Value>
-                <Value column="name_es">No Sabe / No Responde</Value>
+                <Value column="name_en">Does not know / does not Answer</Value>
+                <Value column="name_es">No sabe / No Responde</Value>
             </Row>
         </InlineTable>
         <Level name="Trust in Friends" key_column="id" name_column="name_en">
@@ -1177,28 +1177,28 @@
           <ColumnDef name="name_es" key_type="text" />
             <Row>
                 <Value column="id">1</Value>
-                <Value column="name_en">Much trust</Value>
+                <Value column="name_en">Much Trust</Value>
                 <Value column="name_es">Mucha Confianza</Value>
             </Row>
             <Row>
                 <Value column="id">2</Value>
-                <Value column="name_en">Some confidence</Value>
+                <Value column="name_en">Some Confidence</Value>
                 <Value column="name_es">Algo de Confianza</Value>
             </Row>
             <Row>
                 <Value column="id">3</Value>
-                <Value column="name_en">Some distrust</Value>
+                <Value column="name_en">Some Distrust</Value>
                 <Value column="name_es">Algo de Desconfianza</Value>
             </Row>
             <Row>
                 <Value column="id">4</Value>
-                <Value column="name_en">Much distrust</Value>
+                <Value column="name_en">Much Distrust</Value>
                 <Value column="name_es">Mucha Desconfianza</Value>
             </Row>
             <Row>
                 <Value column="id">9</Value>
-                <Value column="name_en">Does not know / does not answer</Value>
-                <Value column="name_es">No Sabe / No Responde</Value>
+                <Value column="name_en">Does not know / does not Answer</Value>
+                <Value column="name_es">No sabe / No Responde</Value>
             </Row>
         </InlineTable>
         <Level name="Confidence in Traffic Police" key_column="id" name_column="name_en">
@@ -1215,28 +1215,28 @@
           <ColumnDef name="name_es" key_type="text" />
             <Row>
                 <Value column="id">1</Value>
-                <Value column="name_en">Much trust</Value>
+                <Value column="name_en">Much Trust</Value>
                 <Value column="name_es">Mucha Confianza</Value>
             </Row>
             <Row>
                 <Value column="id">2</Value>
-                <Value column="name_en">Some confidence</Value>
+                <Value column="name_en">Some Confidence</Value>
                 <Value column="name_es">Algo de Confianza</Value>
             </Row>
             <Row>
                 <Value column="id">3</Value>
-                <Value column="name_en">Some distrust</Value>
+                <Value column="name_en">Some Distrust</Value>
                 <Value column="name_es">Algo de Desconfianza</Value>
             </Row>
             <Row>
                 <Value column="id">4</Value>
-                <Value column="name_en">Much distrust</Value>
+                <Value column="name_en">Much Distrust</Value>
                 <Value column="name_es">Mucha Desconfianza</Value>
             </Row>
             <Row>
                 <Value column="id">9</Value>
-                <Value column="name_en">Does not know / does not answer</Value>
-                <Value column="name_es">No Sabe / No Responde</Value>
+                <Value column="name_en">Does not know / does not Answer</Value>
+                <Value column="name_es">No sabe / No Responde</Value>
             </Row>
         </InlineTable>
         <Level name="Confidence in Municipal Preventive Police" key_column="id" name_column="name_en">
@@ -1253,28 +1253,28 @@
           <ColumnDef name="name_es" key_type="text" />
             <Row>
                 <Value column="id">1</Value>
-                <Value column="name_en">Much trust</Value>
+                <Value column="name_en">Much Trust</Value>
                 <Value column="name_es">Mucha Confianza</Value>
             </Row>
             <Row>
                 <Value column="id">2</Value>
-                <Value column="name_en">Some confidence</Value>
+                <Value column="name_en">Some Confidence</Value>
                 <Value column="name_es">Algo de Confianza</Value>
             </Row>
             <Row>
                 <Value column="id">3</Value>
-                <Value column="name_en">Some distrust</Value>
+                <Value column="name_en">Some Distrust</Value>
                 <Value column="name_es">Algo de Desconfianza</Value>
             </Row>
             <Row>
                 <Value column="id">4</Value>
-                <Value column="name_en">Much distrust</Value>
+                <Value column="name_en">Much Distrust</Value>
                 <Value column="name_es">Mucha Desconfianza</Value>
             </Row>
             <Row>
                 <Value column="id">9</Value>
-                <Value column="name_en">Does not know / does not answer</Value>
-                <Value column="name_es">No Sabe / No Responde</Value>
+                <Value column="name_en">Does not know / does not Answer</Value>
+                <Value column="name_es">No sabe / No Responde</Value>
             </Row>
         </InlineTable>
         <Level name="Confidence in State Police" key_column="id" name_column="name_en">
@@ -1291,28 +1291,28 @@
           <ColumnDef name="name_es" key_type="text" />
             <Row>
                 <Value column="id">1</Value>
-                <Value column="name_en">Much trust</Value>
+                <Value column="name_en">Much Trust</Value>
                 <Value column="name_es">Mucha Confianza</Value>
             </Row>
             <Row>
                 <Value column="id">2</Value>
-                <Value column="name_en">Some confidence</Value>
+                <Value column="name_en">Some Confidence</Value>
                 <Value column="name_es">Algo de Confianza</Value>
             </Row>
             <Row>
                 <Value column="id">3</Value>
-                <Value column="name_en">Some distrust</Value>
+                <Value column="name_en">Some Distrust</Value>
                 <Value column="name_es">Algo de Desconfianza</Value>
             </Row>
             <Row>
                 <Value column="id">4</Value>
-                <Value column="name_en">Much distrust</Value>
+                <Value column="name_en">Much Distrust</Value>
                 <Value column="name_es">Mucha Desconfianza</Value>
             </Row>
             <Row>
                 <Value column="id">9</Value>
-                <Value column="name_en">Does not know / does not answer</Value>
-                <Value column="name_es">No Sabe / No Responde</Value>
+                <Value column="name_en">Does not know / does not Answer</Value>
+                <Value column="name_es">No sabe / No Responde</Value>
             </Row>
         </InlineTable>
         <Level name="Confidence in Federal Police" key_column="id" name_column="name_en">
@@ -1329,28 +1329,28 @@
           <ColumnDef name="name_es" key_type="text" />
             <Row>
                 <Value column="id">1</Value>
-                <Value column="name_en">Much trust</Value>
+                <Value column="name_en">Much Trust</Value>
                 <Value column="name_es">Mucha Confianza</Value>
             </Row>
             <Row>
                 <Value column="id">2</Value>
-                <Value column="name_en">Some confidence</Value>
+                <Value column="name_en">Some Confidence</Value>
                 <Value column="name_es">Algo de Confianza</Value>
             </Row>
             <Row>
                 <Value column="id">3</Value>
-                <Value column="name_en">Some distrust</Value>
+                <Value column="name_en">Some Distrust</Value>
                 <Value column="name_es">Algo de Desconfianza</Value>
             </Row>
             <Row>
                 <Value column="id">4</Value>
-                <Value column="name_en">Much distrust</Value>
+                <Value column="name_en">Much Distrust</Value>
                 <Value column="name_es">Mucha Desconfianza</Value>
             </Row>
             <Row>
                 <Value column="id">9</Value>
-                <Value column="name_en">Does not know / does not answer</Value>
-                <Value column="name_es">No Sabe / No Responde</Value>
+                <Value column="name_en">Does not know / does not Answer</Value>
+                <Value column="name_es">No sabe / No Responde</Value>
             </Row>
         </InlineTable>
         <Level name="Confidence in Ministerial or Judicial Police" key_column="id" name_column="name_en">
@@ -1367,28 +1367,28 @@
           <ColumnDef name="name_es" key_type="text" />
             <Row>
                 <Value column="id">1</Value>
-                <Value column="name_en">Much trust</Value>
+                <Value column="name_en">Much Trust</Value>
                 <Value column="name_es">Mucha Confianza</Value>
             </Row>
             <Row>
                 <Value column="id">2</Value>
-                <Value column="name_en">Some confidence</Value>
+                <Value column="name_en">Some Confidence</Value>
                 <Value column="name_es">Algo de Confianza</Value>
             </Row>
             <Row>
                 <Value column="id">3</Value>
-                <Value column="name_en">Some distrust</Value>
+                <Value column="name_en">Some Distrust</Value>
                 <Value column="name_es">Algo de Desconfianza</Value>
             </Row>
             <Row>
                 <Value column="id">4</Value>
-                <Value column="name_en">Much distrust</Value>
+                <Value column="name_en">Much Distrust</Value>
                 <Value column="name_es">Mucha Desconfianza</Value>
             </Row>
             <Row>
                 <Value column="id">9</Value>
-                <Value column="name_en">Does not know / does not answer</Value>
-                <Value column="name_es">No Sabe / No Responde</Value>
+                <Value column="name_en">Does not know / does not Answer</Value>
+                <Value column="name_es">No sabe / No Responde</Value>
             </Row>
         </InlineTable>
         <Level name="Confidence in Public Ministry and State Prosecutors" key_column="id" name_column="name_en">
@@ -1405,28 +1405,28 @@
           <ColumnDef name="name_es" key_type="text" />
             <Row>
                 <Value column="id">1</Value>
-                <Value column="name_en">Much trust</Value>
+                <Value column="name_en">Much Trust</Value>
                 <Value column="name_es">Mucha Confianza</Value>
             </Row>
             <Row>
                 <Value column="id">2</Value>
-                <Value column="name_en">Some confidence</Value>
+                <Value column="name_en">Some Confidence</Value>
                 <Value column="name_es">Algo de Confianza</Value>
             </Row>
             <Row>
                 <Value column="id">3</Value>
-                <Value column="name_en">Some distrust</Value>
+                <Value column="name_en">Some Distrust</Value>
                 <Value column="name_es">Algo de Desconfianza</Value>
             </Row>
             <Row>
                 <Value column="id">4</Value>
-                <Value column="name_en">Much distrust</Value>
+                <Value column="name_en">Much Distrust</Value>
                 <Value column="name_es">Mucha Desconfianza</Value>
             </Row>
             <Row>
                 <Value column="id">9</Value>
-                <Value column="name_en">Does not know / does not answer</Value>
-                <Value column="name_es">No Sabe / No Responde</Value>
+                <Value column="name_en">Does not know / does not Answer</Value>
+                <Value column="name_es">No sabe / No Responde</Value>
             </Row>
         </InlineTable>
         <Level name="Confidence in State Prosecutor of the Republic" key_column="id" name_column="name_en">
@@ -1443,28 +1443,28 @@
           <ColumnDef name="name_es" key_type="text" />
             <Row>
                 <Value column="id">1</Value>
-                <Value column="name_en">Much trust</Value>
+                <Value column="name_en">Much Trust</Value>
                 <Value column="name_es">Mucha Confianza</Value>
             </Row>
             <Row>
                 <Value column="id">2</Value>
-                <Value column="name_en">Some confidence</Value>
+                <Value column="name_en">Some Confidence</Value>
                 <Value column="name_es">Algo de Confianza</Value>
             </Row>
             <Row>
                 <Value column="id">3</Value>
-                <Value column="name_en">Some distrust</Value>
+                <Value column="name_en">Some Distrust</Value>
                 <Value column="name_es">Algo de Desconfianza</Value>
             </Row>
             <Row>
                 <Value column="id">4</Value>
-                <Value column="name_en">Much distrust</Value>
+                <Value column="name_en">Much Distrust</Value>
                 <Value column="name_es">Mucha Desconfianza</Value>
             </Row>
             <Row>
                 <Value column="id">9</Value>
-                <Value column="name_en">Does not know / does not answer</Value>
-                <Value column="name_es">No Sabe / No Responde</Value>
+                <Value column="name_en">Does not know / does not Answer</Value>
+                <Value column="name_es">No sabe / No Responde</Value>
             </Row>
         </InlineTable>
         <Level name="Confidence in Army" key_column="id" name_column="name_en">
@@ -1481,28 +1481,28 @@
           <ColumnDef name="name_es" key_type="text" />
             <Row>
                 <Value column="id">1</Value>
-                <Value column="name_en">Much trust</Value>
+                <Value column="name_en">Much Trust</Value>
                 <Value column="name_es">Mucha Confianza</Value>
             </Row>
             <Row>
                 <Value column="id">2</Value>
-                <Value column="name_en">Some confidence</Value>
+                <Value column="name_en">Some Confidence</Value>
                 <Value column="name_es">Algo de Confianza</Value>
             </Row>
             <Row>
                 <Value column="id">3</Value>
-                <Value column="name_en">Some distrust</Value>
+                <Value column="name_en">Some Distrust</Value>
                 <Value column="name_es">Algo de Desconfianza</Value>
             </Row>
             <Row>
                 <Value column="id">4</Value>
-                <Value column="name_en">Much distrust</Value>
+                <Value column="name_en">Much Distrust</Value>
                 <Value column="name_es">Mucha Desconfianza</Value>
             </Row>
             <Row>
                 <Value column="id">9</Value>
-                <Value column="name_en">Does not know / does not answer</Value>
-                <Value column="name_es">No Sabe / No Responde</Value>
+                <Value column="name_en">Does not know / does not Answer</Value>
+                <Value column="name_es">No sabe / No Responde</Value>
             </Row>
         </InlineTable>
         <Level name="Confidence in Navy" key_column="id" name_column="name_en">
@@ -1519,28 +1519,28 @@
           <ColumnDef name="name_es" key_type="text" />
             <Row>
                 <Value column="id">1</Value>
-                <Value column="name_en">Much trust</Value>
+                <Value column="name_en">Much Trust</Value>
                 <Value column="name_es">Mucha Confianza</Value>
             </Row>
             <Row>
                 <Value column="id">2</Value>
-                <Value column="name_en">Some confidence</Value>
+                <Value column="name_en">Some Confidence</Value>
                 <Value column="name_es">Algo de Confianza</Value>
             </Row>
             <Row>
                 <Value column="id">3</Value>
-                <Value column="name_en">Some distrust</Value>
+                <Value column="name_en">Some Distrust</Value>
                 <Value column="name_es">Algo de Desconfianza</Value>
             </Row>
             <Row>
                 <Value column="id">4</Value>
-                <Value column="name_en">Much distrust</Value>
+                <Value column="name_en">Much Distrust</Value>
                 <Value column="name_es">Mucha Desconfianza</Value>
             </Row>
             <Row>
                 <Value column="id">9</Value>
-                <Value column="name_en">Does not know / does not answer</Value>
-                <Value column="name_es">No Sabe / No Responde</Value>
+                <Value column="name_en">Does not know / does not Answer</Value>
+                <Value column="name_es">No sabe / No Responde</Value>
             </Row>
         </InlineTable>
         <Level name="Confidence in Judges" key_column="id" name_column="name_en">
@@ -2667,58 +2667,58 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">just 1 person</Value>
-            <Value column="name_es">De 1 persona</Value>
+            <Value column="name_en">just 1 Person</Value>
+            <Value column="name_es">De 1 Persona</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">From 2 to 5 people</Value>
-            <Value column="name_es">De 2 a 5 personas</Value>
+            <Value column="name_en">From 2 to 5 People</Value>
+            <Value column="name_es">De 2 a 5 Personas</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">From 6 to 10 people</Value>
-            <Value column="name_es">De 6 a 10 personas</Value>
+            <Value column="name_en">From 6 to 10 People</Value>
+            <Value column="name_es">De 6 a 10 Personas</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">From 11 to 15 people</Value>
-            <Value column="name_es">De 11 a 15 personas</Value>
+            <Value column="name_en">From 11 to 15 People</Value>
+            <Value column="name_es">De 11 a 15 Personas</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
-            <Value column="name_en">From 16 to 20 people</Value>
-            <Value column="name_es">De 16 a 20 personas</Value>
+            <Value column="name_en">From 16 to 20 People</Value>
+            <Value column="name_es">De 16 a 20 Personas</Value>
           </Row>
           <Row>
             <Value column="id">6</Value>
-            <Value column="name_en">From 21 to 30 people</Value>
-            <Value column="name_es">De 21 a 30 personas</Value>
+            <Value column="name_en">From 21 to 30 People</Value>
+            <Value column="name_es">De 21 a 30 Personas</Value>
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">From 31 to 50 people</Value>
-            <Value column="name_es">De 31 a 50 personas</Value>
+            <Value column="name_en">From 31 to 50 People</Value>
+            <Value column="name_es">De 31 a 50 Personas</Value>
           </Row>
           <Row>
             <Value column="id">8</Value>
-            <Value column="name_en">From 51 to 100 people</Value>
-            <Value column="name_es">De 51 a 100 personas</Value>
+            <Value column="name_en">From 51 to 100 People</Value>
+            <Value column="name_es">De 51 a 100 Personas</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">From 101 to 250 people</Value>
-            <Value column="name_es">De 101 a 250 personas</Value>
+            <Value column="name_en">From 101 to 250 People</Value>
+            <Value column="name_es">De 101 a 250 Personas</Value>
           </Row>
           <Row>
             <Value column="id">10</Value>
-            <Value column="name_en">From 251 to 500 people</Value>
-            <Value column="name_es">De 251 a 500 personas</Value>
+            <Value column="name_en">From 251 to 500 People</Value>
+            <Value column="name_es">De 251 a 500 Personas</Value>
           </Row>
           <Row>
             <Value column="id">11</Value>
-            <Value column="name_en">From 501 and more people</Value>
-            <Value column="name_es">De 501 a más personas</Value>
+            <Value column="name_en">From 501 and more People</Value>
+            <Value column="name_es">De 501 a más Personas</Value>
           </Row>
           <Row>
             <Value column="id">12</Value>
@@ -2739,23 +2739,23 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Independent, personal or the familiar kind</Value>
-            <Value column="name_es">De tipo independiente, personal o familiar</Value>
+            <Value column="name_en">Independent, Personal or the Familiar Kind</Value>
+            <Value column="name_es">De Tipo Independiente, Personal o Familiar</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Company or enterprise from the private sector</Value>
-            <Value column="name_es">Una compañía o empresa del sector privado</Value>
+            <Value column="name_en">Company or Enterprise from the Private Sector</Value>
+            <Value column="name_es">Una Compañía o Empresa del Sector Privado</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Government institution</Value>
-            <Value column="name_es">Una institución de gobierno</Value>
+            <Value column="name_en">Government Institution</Value>
+            <Value column="name_es">Una Institución de Gobierno</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">Institution non related to the government</Value>
-            <Value column="name_es">Una institución no administrada por el gobierno</Value>
+            <Value column="name_en">Institution non Related to the Government</Value>
+            <Value column="name_es">Una Institución no Administrada por el Gobierno</Value>
           </Row>
         </InlineTable>
         <Level name="Kind of Business" key_column="id" name_column="name_en">
@@ -2771,18 +2771,18 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Does get a payment</Value>
-            <Value column="name_es">Recibe un pago</Value>
+            <Value column="name_en">Does get a Payment</Value>
+            <Value column="name_es">Recibe un Pago</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Worker without payment in a home business</Value>
-            <Value column="name_es">Es un trabajador(a) sin pago en un negocio del hogar</Value>
+            <Value column="name_en">Worker without Payment in a home Business</Value>
+            <Value column="name_es">Es un Trabajador(a) sin Pago en un Negocio del hogar</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Worker without payment in a non home business</Value>
-            <Value column="name_es">Es un trabajador(a) sin pago en un negocio que no es del hogar</Value>
+            <Value column="name_en">Worker without Payment in a non home Business</Value>
+            <Value column="name_es">Es un Trabajador(a) sin Pago en un Negocio que no es del hogar</Value>
           </Row>
         </InlineTable>
         <Level name="Payment mode" key_column="id" name_column="name_en">
@@ -2799,7 +2799,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -2821,12 +2821,12 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Main Job</Value>
-            <Value column="name_es">Trabajo principal</Value>
+            <Value column="name_es">Trabajo Principal</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Secondary Job</Value>
-            <Value column="name_es">Trabajo secundario</Value>
+            <Value column="name_es">Trabajo Secundario</Value>
           </Row>
         </InlineTable>
         <Level name="Job ID" key_column="id" name_column="name_en">
@@ -2843,7 +2843,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -2864,13 +2864,13 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">It is temporal, or by specific work </Value>
-            <Value column="name_es">Es temporal o por obra determinada</Value>
+            <Value column="name_en">It is Temporal, or by Specific Work </Value>
+            <Value column="name_es">Es Temporal o por Obra Determinada</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Main workforce, employee or indefinitely time</Value>
-            <Value column="name_es">Es de base, planta o por tiempo indeterminado</Value>
+            <Value column="name_en">Main Workforce, Employee or Indefinitely time</Value>
+            <Value column="name_es">Es de Base, Planta o por tiempo Indeterminado</Value>
           </Row>
         </InlineTable>
         <Level name="Contract Type" key_column="id" name_column="name_en">
@@ -2891,12 +2891,12 @@
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Lower middle Class</Value>
+            <Value column="name_en">Lower Middle Class</Value>
             <Value column="name_es">Clase Media Baja</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Upper middle Class</Value>
+            <Value column="name_en">Upper Middle Class</Value>
             <Value column="name_es">Clase Media Alta</Value>
           </Row>
           <Row>
@@ -2918,23 +2918,23 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Independent, personal or familiar</Value>
-            <Value column="name_es">Independiente, personal o familiar</Value>
+            <Value column="name_en">Independent, Personal or Familiar</Value>
+            <Value column="name_es">Independiente, Personal o Familiar</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Company private sector</Value>
-            <Value column="name_es">Compañia o empresa del sector privado</Value>
+            <Value column="name_en">Company Private Sector</Value>
+            <Value column="name_es">Compañía o Empresa del Sector Privado</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Government institution</Value>
-            <Value column="name_es">Institución de gobierno</Value>
+            <Value column="name_en">Government Institution</Value>
+            <Value column="name_es">Institución de Gobierno</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">No government institution</Value>
-            <Value column="name_es">Institución no administrada por el gobierno</Value>
+            <Value column="name_en">No Government Institution</Value>
+            <Value column="name_es">Institución no Administrada por el Gobierno</Value>
           </Row>
         </InlineTable>
         <Level name="Business Type" key_column="id" name_column="name_en">
@@ -2990,12 +2990,12 @@
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Lower middle Class</Value>
+            <Value column="name_en">Lower Middle Class</Value>
             <Value column="name_es">Clase Media Baja</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Upper middle Class</Value>
+            <Value column="name_en">Upper Middle Class</Value>
             <Value column="name_es">Clase Media Alta</Value>
           </Row>
           <Row>
@@ -3042,22 +3042,22 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Pensioner or Retired</Value>
-            <Value column="name_es">Es pensionado o jubilado</Value>
+            <Value column="name_es">Es Pensionado o Jubilado</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Dedicated to house chores</Value>
-            <Value column="name_es">Se dedicó a los quehaceres del hogar</Value>
+            <Value column="name_en">Dedicated to House Chores</Value>
+            <Value column="name_es">Se Dedicó a los Quehaceres del Hogar</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Dedicated to studies</Value>
-            <Value column="name_es">Se dedicó a estudiar</Value>
+            <Value column="name_en">Dedicated to Studies</Value>
+            <Value column="name_es">Se Dedicó a Estudiar</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">Is a person with some physical or mental limitation that prevents work for a lifetime</Value>
-            <Value column="name_es">Es una persona con alguna limitación física o mental que le impide trabajar por el resto de su vida</Value>
+            <Value column="name_en">Is a Person with some Physical or Mental Limitation that Prevents Work for a Lifetime</Value>
+            <Value column="name_es">Es una Persona con alguna Limitación Física o Mental que le Impide trabajar por el Resto de su Vida</Value>
           </Row>
         </InlineTable>
         <Level name="Second Reason Not Economically Active" key_column="id" name_column="name_en">
@@ -3074,33 +3074,33 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Was looking for a job</Value>
-            <Value column="name_es">Estuvo buscando trabajo</Value>
+            <Value column="name_en">Was looking for a Job</Value>
+            <Value column="name_es">Estuvo Buscando Trabajo</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Pensioner or Retired</Value>
-            <Value column="name_es">Es pensionado o jubilado</Value>
+            <Value column="name_es">Es Pensionado o Jubilado</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Dedicated to house chores</Value>
-            <Value column="name_es">Se dedicó a los quehaceres del hogar</Value>
+            <Value column="name_en">Dedicated to House Chores</Value>
+            <Value column="name_es">Se Dedicó a los Quehaceres del Hogar</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">Dedicated to studies</Value>
-            <Value column="name_es">Se dedicó a estudiar</Value>
+            <Value column="name_en">Dedicated to Studies</Value>
+            <Value column="name_es">Se Dedicó a Estudiar</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
-            <Value column="name_en">Is a person with some physical or mental limitation that prevents work for a lifetime</Value>
-            <Value column="name_es">Es una persona con alguna limitación física o mental que le impide trabajar por el resto de su vida</Value>
+            <Value column="name_en">Is a Person with some Physical or Mental Limitation that Prevents Work for a Lifetime</Value>
+            <Value column="name_es">Es una Persona con alguna Limitación Física o Mental que le Impide trabajar por el Resto de su Vida</Value>
           </Row>
           <Row>
             <Value column="id">6</Value>
-            <Value column="name_en">Is in a situation different from the above</Value>
-            <Value column="name_es">Está en otra situación diferente a las anteriores</Value>
+            <Value column="name_en">Is in a Situation Different from the above</Value>
+            <Value column="name_es">Está en una Situación Diferente a las Anteriores</Value>
           </Row>
         </InlineTable>
         <Level name="First Reason Not Economically Active" key_column="id" name_column="name_en">
@@ -3117,23 +3117,23 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Strike or unemployment</Value>
-            <Value column="name_es">Huelga o paro laboral</Value>
+            <Value column="name_en">Strike or Unemployment</Value>
+            <Value column="name_es">Huelga o Paro Laboral</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Technical stop</Value>
-            <Value column="name_es">Paro técnico</Value>
+            <Value column="name_en">Technical Stop</Value>
+            <Value column="name_es">Paro Técnico</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Temporary suspension of their duties</Value>
-            <Value column="name_es">Suspensión temporal de sus funciones</Value>
+            <Value column="name_en">Temporary Suspension of their Duties</Value>
+            <Value column="name_es">Suspensión Temporal de sus Funciones</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">Assistance to training courses</Value>
-            <Value column="name_es">Asistencia a cursos de capacitación</Value>
+            <Value column="name_en">Assistance to Training Courses</Value>
+            <Value column="name_es">Asistencia a Cursos de Capacitación</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
@@ -3142,43 +3142,43 @@
           </Row>
           <Row>
             <Value column="id">6</Value>
-            <Value column="name_en">Permission, illness or settlement of personal matters</Value>
-            <Value column="name_es">Permiso, enfermedad o arreglo de asuntos personales</Value>
+            <Value column="name_en">Permission, Illness or Settlement of Personal Matters</Value>
+            <Value column="name_es">Permiso, Enfermedad o Arreglo de Asuntos Personales</Value>
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">Lack of vehicle or machine breakdown</Value>
-            <Value column="name_es">Falta de vehículo o descompostura de máquina</Value>
+            <Value column="name_en">Lack of Vehicle or Machine Breakdown</Value>
+            <Value column="name_es">Falta de Vehículo o Descompostura de Máquina</Value>
           </Row>
           <Row>
             <Value column="id">8</Value>
-            <Value column="name_en">Lack of raw materials, financing or customers</Value>
-            <Value column="name_es">Falta de materias primas, financiamiento o clientes</Value>
+            <Value column="name_en">Lack of Raw Materials, Financing or Customers</Value>
+            <Value column="name_es">Falta de Materias Primas, Financiamiento o Clientes</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">Bad weather or natural phenomenon</Value>
-            <Value column="name_es">Mal tiempo o fenómeno natural</Value>
+            <Value column="name_en">Bad Weather or Natural Phenomenon</Value>
+            <Value column="name_es">Mal tiempo o Fenómeno Natural</Value>
           </Row>
           <Row>
             <Value column="id">10</Value>
-            <Value column="name_en">Term of work or cultivation season</Value>
-            <Value column="name_es">Término de temporada de trabajo o cultivo</Value>
+            <Value column="name_en">Term of Work or Cultivation Season</Value>
+            <Value column="name_es">Término de Temporada de trabajo o Cultivo</Value>
           </Row>
           <Row>
             <Value column="id">11</Value>
-            <Value column="name_en">Start a new job or business</Value>
-            <Value column="name_es">Comenzará un trabajo o negocio nuevo</Value>
+            <Value column="name_en">Start a new Job or Business</Value>
+            <Value column="name_es">Comenzará un Trabajo o Negocio nuevo</Value>
           </Row>
           <Row>
             <Value column="id">12</Value>
-            <Value column="name_en">Another reason</Value>
-            <Value column="name_es">Otra razón</Value>
+            <Value column="name_en">Another Reason</Value>
+            <Value column="name_es">Otra Razón</Value>
           </Row>
           <Row>
             <Value column="id">13</Value>
             <Value column="name_en">None of the above</Value>
-            <Value column="name_es">Ninguna de las anteriores</Value>
+            <Value column="name_es">Ninguna de las Anteriores</Value>
           </Row>
         </InlineTable>
         <Level name="Job Absence" key_column="id" name_column="name_en">
@@ -3195,13 +3195,13 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Worked the past month</Value>
-            <Value column="name_es">Trabajó el mes pasado</Value>
+            <Value column="name_en">Worked the past Month</Value>
+            <Value column="name_es">Trabajó el Mes pasado</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Did not work the past month</Value>
-            <Value column="name_es">No trabajó el mes pasado</Value>
+            <Value column="name_en">Did not Work the past Month</Value>
+            <Value column="name_es">No trabajó el Mes pasado</Value>
           </Row>
         </InlineTable>
         <Level name="Work Last Month" key_column="id" name_column="name_en">
@@ -3219,7 +3219,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Another Option</Value>
-            <Value column="name_es">Otra Opcion</Value>
+            <Value column="name_es">Otra Opción</Value>
           </Row>
         </InlineTable>
         <Level name="Another Option" key_column="id" name_column="name_en">
@@ -3228,8 +3228,8 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="IMSS-Prospera" foreign_key="inst_5">
-      <Hierarchy name="IMSS-Prospera" primary_key="id">
+    <Dimension name="IMSS Prospera" foreign_key="inst_5">
+      <Hierarchy name="IMSS Prospera" primary_key="id">
         <InlineTable alias="dim_inline_inst_5">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -3246,8 +3246,8 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Pemex, Defense or Marine" foreign_key="inst_4">
-      <Hierarchy name="Pemex, Defense or Marine" primary_key="id">
+    <Dimension name="Pemex Defense or Marine" foreign_key="inst_4">
+      <Hierarchy name="Pemex Defense or Marine" primary_key="id">
         <InlineTable alias="dim_inline_inst_4">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -3273,7 +3273,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">State ISSSTE</Value>
-            <Value column="name_es">ISSTE estatal</Value>
+            <Value column="name_es">ISSTE Estatal</Value>
           </Row>
         </InlineTable>
         <Level name="State ISSTE" key_column="id" name_column="name_en">
@@ -3327,7 +3327,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -3350,7 +3350,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -3373,7 +3373,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -3396,7 +3396,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -3419,7 +3419,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -3442,27 +3442,27 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Imposible get/obtain</Value>
-            <Value column="name_es">Imposible conseguirla</Value>
+            <Value column="name_es">Imposible Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Hard to get/obtain</Value>
-            <Value column="name_es">Difícil conseguirla</Value>
+            <Value column="name_es">Difícil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
             <Value column="name_en">Easy to get/obtain</Value>
-            <Value column="name_es">Fácil conseguirla</Value>
+            <Value column="name_es">Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
             <Value column="name_en">Very easy to get/obtain</Value>
-            <Value column="name_es">Muy fácil conseguirla</Value>
+            <Value column="name_es">Muy Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
             <Value column="name_en">No hard or easy get/obtain (spontaneous)</Value>
-            <Value column="name_es">Ni fácil ni difícil conseguirla (espontánea)</Value>
+            <Value column="name_es">Ni Fácil ni Difícil Conseguirla (espontánea)</Value>
           </Row>
         </InlineTable>
         <Level name="Near Children Support" key_column="id" name_column="name_en">
@@ -3480,27 +3480,27 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Imposible get/obtain</Value>
-            <Value column="name_es">Imposible conseguirla</Value>
+            <Value column="name_es">Imposible Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Hard to get/obtain</Value>
-            <Value column="name_es">Difícil conseguirla</Value>
+            <Value column="name_es">Difícil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
             <Value column="name_en">Easy to get/obtain</Value>
-            <Value column="name_es">Fácil conseguirla</Value>
+            <Value column="name_es">Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
             <Value column="name_en">Very easy to get/obtain</Value>
-            <Value column="name_es">Muy fácil conseguirla</Value>
+            <Value column="name_es">Muy Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
             <Value column="name_en">No hard or easy get/obtain (spontaneous)</Value>
-            <Value column="name_es">Ni fácil ni difícil conseguirla (espontánea)</Value>
+            <Value column="name_es">Ni Fácil ni Difícil Conseguirla (espontánea)</Value>
           </Row>
         </InlineTable>
         <Level name="Neighborhood Support" key_column="id" name_column="name_en">
@@ -3518,27 +3518,27 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Imposible get/obtain</Value>
-            <Value column="name_es">Imposible conseguirla</Value>
+            <Value column="name_es">Imposible Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Hard to get/obtain</Value>
-            <Value column="name_es">Difícil conseguirla</Value>
+            <Value column="name_es">Difícil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
             <Value column="name_en">Easy to get/obtain</Value>
-            <Value column="name_es">Fácil conseguirla</Value>
+            <Value column="name_es">Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
             <Value column="name_en">Very easy to get/obtain</Value>
-            <Value column="name_es">Muy fácil conseguirla</Value>
+            <Value column="name_es">Muy Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
             <Value column="name_en">No hard or easy get/obtain (spontaneous)</Value>
-            <Value column="name_es">Ni fácil ni difícil conseguirla (espontánea)</Value>
+            <Value column="name_es">Ni Fácil ni Difícil Conseguirla (espontánea)</Value>
           </Row>
         </InlineTable>
         <Level name="Near Doctor Support" key_column="id" name_column="name_en">
@@ -3556,27 +3556,27 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Imposible get/obtain</Value>
-            <Value column="name_es">Imposible conseguirla</Value>
+            <Value column="name_es">Imposible Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Hard to get/obtain</Value>
-            <Value column="name_es">Difícil conseguirla</Value>
+            <Value column="name_es">Difícil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
             <Value column="name_en">Easy to get/obtain</Value>
-            <Value column="name_es">Fácil conseguirla</Value>
+            <Value column="name_es">Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
             <Value column="name_en">Very easy to get/obtain</Value>
-            <Value column="name_es">Muy fácil conseguirla</Value>
+            <Value column="name_es">Muy Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
             <Value column="name_en">No hard or easy get/obtain (spontaneous)</Value>
-            <Value column="name_es">Ni fácil ni difícil conseguirla (espontánea)</Value>
+            <Value column="name_es">Ni Fácil ni Difícil Conseguirla (espontánea)</Value>
           </Row>
         </InlineTable>
         <Level name="Near Work Support" key_column="id" name_column="name_en">
@@ -3594,27 +3594,27 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Imposible get/obtain</Value>
-            <Value column="name_es">Imposible conseguirla</Value>
+            <Value column="name_es">Imposible Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Hard to get/obtain</Value>
-            <Value column="name_es">Difícil conseguirla</Value>
+            <Value column="name_es">Difícil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
             <Value column="name_en">Easy to get/obtain</Value>
-            <Value column="name_es">Fácil conseguirla</Value>
+            <Value column="name_es">Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
             <Value column="name_en">Very easy to get/obtain</Value>
-            <Value column="name_es">Muy fácil conseguirla</Value>
+            <Value column="name_es">Muy Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
             <Value column="name_en">No hard or easy get/obtain (spontaneous)</Value>
-            <Value column="name_es">Ni fácil ni difícil conseguirla (espontánea)</Value>
+            <Value column="name_es">Ni Fácil ni Difícil Conseguirla (espontánea)</Value>
           </Row>
         </InlineTable>
         <Level name="Near Sickness Support" key_column="id" name_column="name_en">
@@ -3632,27 +3632,27 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Imposible get/obtain</Value>
-            <Value column="name_es">Imposible conseguirla</Value>
+            <Value column="name_es">Imposible Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Hard to get/obtain</Value>
-            <Value column="name_es">Difícil conseguirla</Value>
+            <Value column="name_es">Difícil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
             <Value column="name_en">Easy to get/obtain</Value>
-            <Value column="name_es">Fácil conseguirla</Value>
+            <Value column="name_es">Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
             <Value column="name_en">Very easy to get/obtain</Value>
-            <Value column="name_es">Muy fácil conseguirla</Value>
+            <Value column="name_es">Muy Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
             <Value column="name_en">No hard or easy get/obtain (spontaneous)</Value>
-            <Value column="name_es">Ni fácil ni difícil conseguirla (espontánea)</Value>
+            <Value column="name_es">Ni Fácil ni Difícil Conseguirla (espontánea)</Value>
           </Row>
         </InlineTable>
         <Level name="Near Money Support" key_column="id" name_column="name_en">
@@ -3886,8 +3886,8 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Has a job or a business</Value>
-            <Value column="name_es">Posee un trabajo o negocio</Value>
+            <Value column="name_en">Has a Job or a Business</Value>
+            <Value column="name_es">Posee un Trabajo o Negocio</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -3908,8 +3908,8 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Has search in another country or is preparing to travel overseas</Value>
-            <Value column="name_es">Busco en otro pais o se prepara para viajar al extranjero </Value>
+            <Value column="name_en">Has Search in another Country or is Preparing to Travel Overseas</Value>
+            <Value column="name_es">Busco en otro País o se Prepara para Viajar al Extranjero </Value>
           </Row>
         </InlineTable>
         <Level name="Job Overseas" key_column="id" name_column="name_en">
@@ -3925,8 +3925,8 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Search for a job inside the country</Value>
-            <Value column="name_es">Busco trabajo en el pais</Value>
+            <Value column="name_en">Searched for a Job inside the Country</Value>
+            <Value column="name_es">Buscó trabajo en el País</Value>
           </Row>
         </InlineTable>
         <Level name="Job Mexico" key_column="id" name_column="name_en">
@@ -3942,8 +3942,8 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Wants to start a new business</Value>
-            <Value column="name_es">Quiere empezar un nuevo negocio</Value>
+            <Value column="name_en">Wants to Start a new Business</Value>
+            <Value column="name_es">Quiere Empezar un nuevo Negocio</Value>
           </Row>
         </InlineTable>
         <Level name="Start Business" key_column="id" name_column="name_en">
@@ -3959,8 +3959,8 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Has not search for a job</Value>
-            <Value column="name_es">No ha tratado de buscar</Value>
+            <Value column="name_en">Has not Search for a Job</Value>
+            <Value column="name_es">No ha Tratado de Buscar</Value>
           </Row>
         </InlineTable>
         <Level name="No Search Job" key_column="id" name_column="name_en">
@@ -3993,28 +3993,28 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Up to 1 month</Value>
-            <Value column="name_es">Hasta un mes</Value>
+            <Value column="name_en">Up to 1 Month</Value>
+            <Value column="name_es">Hasta un Mes</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">From 1 to 2 months</Value>
-            <Value column="name_es">Más de 1 hasta 2 meses</Value>
+            <Value column="name_en">From 1 to 2 Months</Value>
+            <Value column="name_es">Más de 1 hasta 2 Meses</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">From 2 to 3 months</Value>
-            <Value column="name_es">Más de 2 hasta 3 meses</Value>
+            <Value column="name_en">From 2 to 3 Months</Value>
+            <Value column="name_es">Más de 2 hasta 3 Meses</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">More than 3 months</Value>
-            <Value column="name_es">Más de 3 meses</Value>
+            <Value column="name_en">More than 3 Months</Value>
+            <Value column="name_es">Más de 3 Meses</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No knowlegde how many months</Value>
-            <Value column="name_es">No sabe cuantos meses</Value>
+            <Value column="name_en">No knowlegde how many Months</Value>
+            <Value column="name_es">No sabe cuantos Meses</Value>
           </Row>
         </InlineTable>
         <Level name="Time Searching Job" key_column="id" name_column="name_en">
@@ -4031,17 +4031,17 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Monthly</Value>
-            <Value column="name_es">Cada mes</Value>
+            <Value column="name_es">Cada Mes</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Biweekly</Value>
-            <Value column="name_es">Cada 15 dias</Value>
+            <Value column="name_es">Cada 15 Dias</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
             <Value column="name_en">Weekly</Value>
-            <Value column="name_es">Cada semana</Value>
+            <Value column="name_es">Cada Semana</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
@@ -4050,23 +4050,23 @@
           </Row>
           <Row>
             <Value column="id">5</Value>
-            <Value column="name_en">Different payments periods</Value>
-            <Value column="name_es">Otro periodo de pago</Value>
+            <Value column="name_en">Different Payments Periods</Value>
+            <Value column="name_es">Otro Periodo de Pago</Value>
           </Row>
           <Row>
             <Value column="id">6</Value>
-            <Value column="name_en">Payment by piecework, given service or work done</Value>
-            <Value column="name_es">Le pagan por pieza producida o vendida,servicio u obra realizada</Value>
+            <Value column="name_en">Payment by Piecework, given Service or Work done</Value>
+            <Value column="name_es">Le Pagan por Pieza Producida o Vendida, Servicio u Obra Realizada</Value>
           </Row>
           <Row>
             <Value column="id">7</Value>
             <Value column="name_en">Not sure</Value>
-            <Value column="name_es">No supo estimar</Value>
+            <Value column="name_es">No supo Estimar</Value>
           </Row>
           <Row>
             <Value column="id">8</Value>
-            <Value column="name_en">Refused to answer</Value>
-            <Value column="name_es">Se negó a contestar esta pregunta</Value>
+            <Value column="name_en">Refused to Answer</Value>
+            <Value column="name_es">Se Negó a Contestar esta Pregunta</Value>
           </Row>
         </InlineTable>
         <Level name="Payment Frecuency" key_column="id" name_column="name_en">
@@ -4087,38 +4087,38 @@
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Same as the minimun wage</Value>
-            <Value column="name_es">Igual al salario mínimo</Value>
+            <Value column="name_en">Same as the Minimun Wage</Value>
+            <Value column="name_es">Igual al Salario Mínimo</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">More than 1 minimun wage, up to 2</Value>
-            <Value column="name_es">Más de 1 salario mínimo hasta 2</Value>
+            <Value column="name_en">More than 1 Minimun Wage, up to 2</Value>
+            <Value column="name_es">Más de 1 Salario Mínimo hasta 2</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">More than 2 minimun wage, up to 3</Value>
-            <Value column="name_es">Más de 2 salario mínimo hasta 3</Value>
+            <Value column="name_en">More than 2 Minimun Wage, up to 3</Value>
+            <Value column="name_es">Más de 2 Salarios Mínimos hasta 3</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
             <Value column="name_en">More than 3 minimun wage, up to 5</Value>
-            <Value column="name_es">Más de 3 salario mínimo hasta 5</Value>
+            <Value column="name_es">Más de 3 Salarios Mínimos hasta 5</Value>
           </Row>
           <Row>
             <Value column="id">6</Value>
-            <Value column="name_en">More than 5 minimun wage, up to 10</Value>
-            <Value column="name_es">Más de 5 salario mínimo hasta 10</Value>
+            <Value column="name_en">More than 5 Minimun Wage, up to 10</Value>
+            <Value column="name_es">Más de 5 Salarios Mínimos hasta 10</Value>
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">More than 10 minimun wage</Value>
-            <Value column="name_es">Más de 10 salarios mínimos</Value>
+            <Value column="name_en">More than 10 Minimun Wage</Value>
+            <Value column="name_es">Más de 10 Salarios Mínimos</Value>
           </Row>
           <Row>
             <Value column="id">8</Value>
-            <Value column="name_en">Do not want to provide information</Value>
-            <Value column="name_es">No quiso dar información</Value>
+            <Value column="name_en">Do not want to Provide Information</Value>
+            <Value column="name_es">No Quiso dar Información</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
@@ -4139,38 +4139,38 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Sell or make products</Value>
-            <Value column="name_es">Vender o hacer productos para la venta</Value>
+            <Value column="name_en">Sell or make Products</Value>
+            <Value column="name_es">Vender o hacer Productos para la Venta</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Services provider</Value>
-            <Value column="name_es">Prestar servicios</Value>
+            <Value column="name_en">Services Provider</Value>
+            <Value column="name_es">Prestar Servicios</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Working the soil and\/or raising livestock</Value>
-            <Value column="name_es">Trabajar su tierra o parcela y\/o crianza de animales</Value>
+            <Value column="name_en">Working the Soil and\/or Raising Livestock</Value>
+            <Value column="name_es">Trabajar su Tierra o Parcela y\/o Crianza de Animales</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">Work for tips, commission or piecework</Value>
-            <Value column="name_es">Trabajar por propinas, comisión o destajo</Value>
+            <Value column="name_en">Work for Tips, Commission or Piecework</Value>
+            <Value column="name_es">Trabajar por Propinas, Comisión o Destajo</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
-            <Value column="name_en">Work as a salaried employee</Value>
-            <Value column="name_es">Trabajar como asalariado</Value>
+            <Value column="name_en">Work as a Salaried Employee</Value>
+            <Value column="name_es">Trabajar como Asalariado</Value>
           </Row>
           <Row>
             <Value column="id">6</Value>
-            <Value column="name_en">Helps in some business, family lands or someone else lands</Value>
-            <Value column="name_es">Ayudar en algún negocio o en las tierras de un familiar o de otra persona</Value>
+            <Value column="name_en">Helps in some Business, Family Lands or someone else Lands</Value>
+            <Value column="name_es">Ayudar en algún Negocio o en las Tierras de un Familiar o de otra Persona</Value>
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">Does not have another job</Value>
-            <Value column="name_es">No tiene otro trabajo</Value>
+            <Value column="name_en">Does not have Another Job</Value>
+            <Value column="name_es">No tiene Otro Trabajo</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
@@ -4246,8 +4246,8 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">No apply</Value>
-            <Value column="name_es">No aplica</Value>
+            <Value column="name_en">No Apply</Value>
+            <Value column="name_es">No Aplica</Value>
           </Row>
           <Row>
             <Value column="id">1</Value>
@@ -4256,8 +4256,8 @@
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Has not search for a job</Value>
-            <Value column="name_es">Población no económicamente activa</Value>
+            <Value column="name_en">Has not Search for a Job</Value>
+            <Value column="name_es">Población no Económicamente Activa</Value>
           </Row>
         </InlineTable>
         <Level name="Economically Active Population" key_column="id" name_column="name_en">
@@ -4274,18 +4274,18 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">No apply</Value>
-            <Value column="name_es">No aplica</Value>
+            <Value column="name_en">No Apply</Value>
+            <Value column="name_es">No Aplica</Value>
           </Row>
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Working Population</Value>
-            <Value column="name_es">Población ocupada</Value>
+            <Value column="name_es">Población Ocupada</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Non Working Population</Value>
-            <Value column="name_es">Población desocupada</Value>
+            <Value column="name_es">Población Desocupada</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
@@ -4295,7 +4295,7 @@
           <Row>
             <Value column="id">4</Value>
             <Value column="name_en">Non Available</Value>
-            <Value column="name_es">No disponibles</Value>
+            <Value column="name_es">No Disponibles</Value>
           </Row>
         </InlineTable>
         <Level name="Population Classification" key_column="id" name_column="name_en">
@@ -4312,43 +4312,43 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">No apply</Value>
-            <Value column="name_es">No aplica</Value>
+            <Value column="name_en">No Apply</Value>
+            <Value column="name_es">No Aplica</Value>
           </Row>
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Working full</Value>
-            <Value column="name_es">Ocupado pleno</Value>
+            <Value column="name_es">Ocupado Pleno</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Working without payment</Value>
-            <Value column="name_es">Ocupado sin pago</Value>
+            <Value column="name_en">Working without Payment</Value>
+            <Value column="name_es">Ocupado sin Pago</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Working absent with work relationship</Value>
-            <Value column="name_es">Ocupado ausente con nexo laboral</Value>
+            <Value column="name_en">Working Absent with Work Relationship</Value>
+            <Value column="name_es">Ocupado Ausente con Nexo Laboral</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">Working absent with guaranteed return</Value>
-            <Value column="name_es">Ocupado ausente con retorno asegurado</Value>
+            <Value column="name_en">Working Absent with Guaranteed Return</Value>
+            <Value column="name_es">Ocupado Ausente con Retorno Asegurado</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
-            <Value column="name_en">Non working starters</Value>
-            <Value column="name_es">Desocupados iniciadores</Value>
+            <Value column="name_en">Non Working Starters</Value>
+            <Value column="name_es">Desocupados Iniciadores</Value>
           </Row>
           <Row>
             <Value column="id">6</Value>
-            <Value column="name_en">Non working with searching</Value>
-            <Value column="name_es">Desocupados con búsqueda</Value>
+            <Value column="name_en">Non Working with Wearching</Value>
+            <Value column="name_es">Desocupados con Búsqueda</Value>
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">Unemployed absent without income and without employment relationship</Value>
-            <Value column="name_es">Desocupados ausentes sin ingreso y sin nexo laboral</Value>
+            <Value column="name_en">Unemployed Absent without Income and without Employment Relationship</Value>
+            <Value column="name_es">Desocupados Ausentes sin Ingreso y sin Nexo Laboral</Value>
           </Row>
         </InlineTable>
         <Level name="Population Sub Classification" key_column="id" name_column="name_en">
@@ -4365,13 +4365,13 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">No apply</Value>
-            <Value column="name_es">No aplica</Value>
+            <Value column="name_en">No Apply</Value>
+            <Value column="name_es">No Aplica</Value>
           </Row>
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Does work over 48 hours, and makes less than 1 minimum wage</Value>
-            <Value column="name_es">Si trabaja más de 48 hrs, y gana menos de 1 salario mínimo</Value>
+            <Value column="name_en">Does Work over 48 Hours, and makes less than 1 Minimum Wage</Value>
+            <Value column="name_es">Si Trabaja más de 48 hrs, y Gana menos de 1 Salario Mínimo</Value>
           </Row>
         </InlineTable>
         <Level name="Population Works 48 Less 1" key_column="id" name_column="name_en">
@@ -4388,33 +4388,33 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">No apply</Value>
-            <Value column="name_es">No aplica</Value>
+            <Value column="name_en">No Apply</Value>
+            <Value column="name_es">No Aplica</Value>
           </Row>
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Without children</Value>
-            <Value column="name_es">Sin hijos</Value>
+            <Value column="name_en">Without Children</Value>
+            <Value column="name_es">Sin Hijos</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">From 1 to 2 children</Value>
-            <Value column="name_es">De 1 a 2 hijos</Value>
+            <Value column="name_en">From 1 to 2 Children</Value>
+            <Value column="name_es">De 1 a 2 Hijos</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">From 3 to 5 children</Value>
-            <Value column="name_es">De 3 a 5 hijos</Value>
+            <Value column="name_en">From 3 to 5 Children</Value>
+            <Value column="name_es">De 3 a 5 Hijos</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">From 6 and more children</Value>
-            <Value column="name_es">De 6 hijos y más</Value>
+            <Value column="name_en">From 6 and more Children</Value>
+            <Value column="name_es">De 6 Hijos y más</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
             <Value column="name_en">Not Specified</Value>
-            <Value column="name_es">No especificado</Value>
+            <Value column="name_es">No Especificado</Value>
           </Row>
         </InlineTable>
         <Level name="Female Population Older 15 With Children" key_column="id" name_column="name_en">
@@ -4475,8 +4475,8 @@
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No knowledge / no answer</Value>
-            <Value column="name_es">No sabe / no responde</Value>
+            <Value column="name_en">No knowledge / no Answer</Value>
+            <Value column="name_es">No sabe / no Responde</Value>
           </Row>
         </InlineTable>
         <Level name="City Perception" key_column="id" name_column="name_en">
@@ -4508,8 +4508,8 @@
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No knowledge / no answer</Value>
-            <Value column="name_es">No sabe / no responde</Value>
+            <Value column="name_en">No knowledge / no Answer</Value>
+            <Value column="name_es">No sabe / no Responde</Value>
           </Row>
         </InlineTable>
         <Level name="City Perception at Home" key_column="id" name_column="name_en">
@@ -4541,8 +4541,8 @@
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No knowledge / no answer</Value>
-            <Value column="name_es">No sabe / no responde</Value>
+            <Value column="name_en">No knowledge / no Answer</Value>
+            <Value column="name_es">No sabe / no Responde</Value>
           </Row>
         </InlineTable>
         <Level name="City Perception at Work" key_column="id" name_column="name_en">
@@ -4574,8 +4574,8 @@
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No knowledge / no answer</Value>
-            <Value column="name_es">No sabe / no responde</Value>
+            <Value column="name_en">No knowledge / no Answer</Value>
+            <Value column="name_es">No sabe / no Responde</Value>
           </Row>
         </InlineTable>
         <Level name="City Perception Streets" key_column="id" name_column="name_en">
@@ -4607,8 +4607,8 @@
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No knowledge / no answer</Value>
-            <Value column="name_es">No sabe / no responde</Value>
+            <Value column="name_en">No knowledge / no Answer</Value>
+            <Value column="name_es">No sabe / no Responde</Value>
           </Row>
         </InlineTable>
         <Level name="City Perception at Public Transport" key_column="id" name_column="name_en">
@@ -4625,28 +4625,28 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Will improve</Value>
-            <Value column="name_es">Mejorara</Value>
+            <Value column="name_en">Will Improve</Value>
+            <Value column="name_es">Mejorará</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">It will remain safe</Value>
-            <Value column="name_es">Seguira igual de bien</Value>
+            <Value column="name_en">It will Remain Safe</Value>
+            <Value column="name_es">Seguirá igual de Bien</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">It will remain unsafe</Value>
-            <Value column="name_es">Seguira igual de mal</Value>
+            <Value column="name_en">It will Remain Unsafe</Value>
+            <Value column="name_es">Seguirá igual de Mal</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">Will get worse</Value>
-            <Value column="name_es">Empeorara</Value>
+            <Value column="name_en">Will get Worse</Value>
+            <Value column="name_es">Empeorará</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No knowledge / no answer</Value>
-            <Value column="name_es">No sabe / no responde</Value>
+            <Value column="name_en">No knowledge / no Answer</Value>
+            <Value column="name_es">No sabe / no Responde</Value>
           </Row>
         </InlineTable>
         <Level name="City Safety Improvements" key_column="id" name_column="name_en">
@@ -4663,18 +4663,18 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Will improve</Value>
-            <Value column="name_es">Mejorara</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">It will remain safe</Value>
-            <Value column="name_es">Seguira igual de bien</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No knowledge / no answer</Value>
-            <Value column="name_es">No sabe / no responde</Value>
+            <Value column="name_en">No knowledge / no Answer</Value>
+            <Value column="name_es">No sabe / no Responde</Value>
           </Row>
         </InlineTable>
         <Level name="Witness Thefts Last 3 Months" key_column="id" name_column="name_en">
@@ -4691,18 +4691,18 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Will improve</Value>
-            <Value column="name_es">Mejorara</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">It will remain safe</Value>
-            <Value column="name_es">Seguira igual de bien</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No knowledge / no answer</Value>
-            <Value column="name_es">No sabe / no responde</Value>
+            <Value column="name_en">No knowledge / no Answer</Value>
+            <Value column="name_es">No sabe / no Responde</Value>
           </Row>
         </InlineTable>
         <Level name="Witness Gangs Last 3 Months" key_column="id" name_column="name_en">
@@ -4719,18 +4719,18 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Will improve</Value>
-            <Value column="name_es">Mejorara</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">It will remain safe</Value>
-            <Value column="name_es">Seguira igual de bien</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No knowledge / no answer</Value>
-            <Value column="name_es">No sabe / no responde</Value>
+            <Value column="name_en">No knowledge / no Answer</Value>
+            <Value column="name_es">No sabe / no Responde</Value>
           </Row>
         </InlineTable>
         <Level name="Witness Drugs Last 3 Months" key_column="id" name_column="name_en">
@@ -4747,18 +4747,18 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Will improve</Value>
-            <Value column="name_es">Mejorara</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">It will remain safe</Value>
-            <Value column="name_es">Seguira igual de bien</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No knowledge / no answer</Value>
-            <Value column="name_es">No sabe / no responde</Value>
+            <Value column="name_en">No knowledge / no Answer</Value>
+            <Value column="name_es">No sabe / no Responde</Value>
           </Row>
         </InlineTable>
         <Level name="Witness Gunshots Last 3 Months" key_column="id" name_column="name_en">
@@ -4776,7 +4776,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -4785,13 +4785,13 @@
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">No apply</Value>
-            <Value column="name_es">No aplica</Value>
+            <Value column="name_en">No Apply</Value>
+            <Value column="name_es">No Aplica</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No knowledge / no answer</Value>
-            <Value column="name_es">No sabe / no responde</Value>
+            <Value column="name_en">No knowledge / no Answer</Value>
+            <Value column="name_es">No sabe / no Responde</Value>
           </Row>
         </InlineTable>
         <Level name="Carrying Goods or Money" key_column="id" name_column="name_en">
@@ -4809,7 +4809,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -4818,13 +4818,13 @@
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">No apply</Value>
-            <Value column="name_es">No aplica</Value>
+            <Value column="name_en">No Apply</Value>
+            <Value column="name_es">No Aplica</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No knowledge / no answer</Value>
-            <Value column="name_es">No sabe / no responde</Value>
+            <Value column="name_en">No knowledge / no Answer</Value>
+            <Value column="name_es">No sabe / no Responde</Value>
           </Row>
         </InlineTable>
         <Level name="Walking at night" key_column="id" name_column="name_en">
@@ -4842,7 +4842,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -4851,13 +4851,13 @@
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">No apply</Value>
-            <Value column="name_es">No aplica</Value>
+            <Value column="name_en">No Apply</Value>
+            <Value column="name_es">No Aplica</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No knowledge / no answer</Value>
-            <Value column="name_es">No sabe / no responde</Value>
+            <Value column="name_en">No knowledge / no Answer</Value>
+            <Value column="name_es">No sabe / no Responde</Value>
           </Row>
         </InlineTable>
         <Level name="Identify Municipal Preventive Police" key_column="id" name_column="name_en">
@@ -4875,7 +4875,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -4884,13 +4884,13 @@
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">No apply</Value>
-            <Value column="name_es">No aplica</Value>
+            <Value column="name_en">No Apply</Value>
+            <Value column="name_es">No Aplica</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No knowledge / no answer</Value>
-            <Value column="name_es">No sabe / no responde</Value>
+            <Value column="name_en">No knowledge / no Answer</Value>
+            <Value column="name_es">No sabe / no Responde</Value>
           </Row>
         </InlineTable>
         <Level name="Identify State Police" key_column="id" name_column="name_en">
@@ -4908,7 +4908,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -4917,13 +4917,13 @@
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">No apply</Value>
-            <Value column="name_es">No aplica</Value>
+            <Value column="name_en">No Apply</Value>
+            <Value column="name_es">No Aplica</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No knowledge / no answer</Value>
-            <Value column="name_es">No sabe / no responde</Value>
+            <Value column="name_en">No knowledge / no Answer</Value>
+            <Value column="name_es">No sabe / no Responde</Value>
           </Row>
         </InlineTable>
         <Level name="Identify Federal Police" key_column="id" name_column="name_en">
@@ -4941,7 +4941,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -4950,13 +4950,13 @@
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">No apply</Value>
-            <Value column="name_es">No aplica</Value>
+            <Value column="name_en">No Apply</Value>
+            <Value column="name_es">No Aplica</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No knowledge / no answer</Value>
-            <Value column="name_es">No sabe / no responde</Value>
+            <Value column="name_en">No knowledge / no Answer</Value>
+            <Value column="name_es">No sabe / no Responde</Value>
           </Row>
         </InlineTable>
         <Level name="Identify Gendarmerie Police" key_column="id" name_column="name_en">
@@ -4973,13 +4973,13 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">It was not declare as a possitive answer</Value>
-            <Value column="name_es">No se declaro como opcion afirmativa</Value>
+            <Value column="name_en">It was not Declare as a Possitive Answer</Value>
+            <Value column="name_es">No se Declaró como Opción Afirmativa</Value>
           </Row>
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
         </InlineTable>
         <Level name="Direct Figths Gangs Last 3 Months" key_column="id" name_column="name_en">
@@ -4996,13 +4996,13 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">It was not declare as a possitive answer</Value>
-            <Value column="name_es">No se declaro como opcion afirmativa</Value>
+            <Value column="name_en">It was not Declare as a Possitive Answer</Value>
+            <Value column="name_es">No se Declaró como Opción Afirmativa</Value>
           </Row>
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
         </InlineTable>
         <Level name="Police Abuses Last 3 Months" key_column="id" name_column="name_en">
@@ -5019,13 +5019,13 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">It was not declare as a possitive answer</Value>
-            <Value column="name_es">No se declaro como opcion afirmativa</Value>
+            <Value column="name_en">It was not Declare as a Possitive Answer</Value>
+            <Value column="name_es">No se Declaró como Opción Afirmativa</Value>
           </Row>
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
         </InlineTable>
         <Level name="Conflicts with Screams" key_column="id" name_column="name_en">
@@ -5042,13 +5042,13 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">It was not declare as a possitive answer</Value>
-            <Value column="name_es">No se declaro como opcion afirmativa</Value>
+            <Value column="name_en">It was not Declare as a Possitive Answer</Value>
+            <Value column="name_es">No se Declaró como Opción Afirmativa</Value>
           </Row>
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
         </InlineTable>
         <Level name="Conflicts with Hits" key_column="id" name_column="name_en">
@@ -5065,13 +5065,13 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">It was not declare as a possitive answer</Value>
-            <Value column="name_es">No se declaro como opcion afirmativa</Value>
+            <Value column="name_en">It was not Declare as a Possitive Answer</Value>
+            <Value column="name_es">No se Declaró como Opción Afirmativa</Value>
           </Row>
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
         </InlineTable>
         <Level name="Conflicts with Blunt Objects" key_column="id" name_column="name_en">
@@ -5088,13 +5088,13 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">It was not declare as a possitive answer</Value>
-            <Value column="name_es">No se declaro como opcion afirmativa</Value>
+            <Value column="name_en">It was not Declare as a Possitive Answer</Value>
+            <Value column="name_es">No se Declaró como Opción Afirmativa</Value>
           </Row>
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
         </InlineTable>
         <Level name="Conflicts with Sharp Objects" key_column="id" name_column="name_en">
@@ -5111,13 +5111,13 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">It was not declare as a possitive answer</Value>
-            <Value column="name_es">No se declaro como opcion afirmativa</Value>
+            <Value column="name_en">It was not Declare as a Possitive Answer</Value>
+            <Value column="name_es">No se Declaró como Opción Afirmativa</Value>
           </Row>
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
         </InlineTable>
         <Level name="Conflicts with Guns" key_column="id" name_column="name_en">
@@ -5134,17 +5134,17 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Very effective</Value>
+            <Value column="name_en">Very Effective</Value>
             <Value column="name_es">Muy Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Somewhat effective</Value>
+            <Value column="name_en">Somewhat Effective</Value>
             <Value column="name_es">Algo Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Not very effective</Value>
+            <Value column="name_en">Not very Effective</Value>
             <Value column="name_es">Poco Efectivo</Value>
           </Row>
           <Row>
@@ -5154,8 +5154,8 @@
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">Does not know / does not answer</Value>
-            <Value column="name_es">No Sabe / No Responde</Value>
+            <Value column="name_en">Does not know / does not Answer</Value>
+            <Value column="name_es">No sabe / No Responde</Value>
           </Row>
         </InlineTable>
         <Level name="City Government Efficiency" key_column="id" name_column="name_en">
@@ -5172,17 +5172,17 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Very effective</Value>
+            <Value column="name_en">Very Effective</Value>
             <Value column="name_es">Muy Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Somewhat effective</Value>
+            <Value column="name_en">Somewhat Effective</Value>
             <Value column="name_es">Algo Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Not very effective</Value>
+            <Value column="name_en">Not very Effective</Value>
             <Value column="name_es">Poco Efectivo</Value>
           </Row>
           <Row>
@@ -5192,8 +5192,8 @@
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">Does not know / does not answer</Value>
-            <Value column="name_es">No Sabe / No Responde</Value>
+            <Value column="name_en">Does not know / does not Answer</Value>
+            <Value column="name_es">No sabe / No Responde</Value>
           </Row>
         </InlineTable>
         <Level name="Perception of Preventive Police" key_column="id" name_column="name_en">
@@ -5210,17 +5210,17 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Very effective</Value>
+            <Value column="name_en">Very Effective</Value>
             <Value column="name_es">Muy Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Somewhat effective</Value>
+            <Value column="name_en">Somewhat Effective</Value>
             <Value column="name_es">Algo Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Not very effective</Value>
+            <Value column="name_en">Not very Effective</Value>
             <Value column="name_es">Poco Efectivo</Value>
           </Row>
           <Row>
@@ -5230,8 +5230,8 @@
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">Does not know / does not answer</Value>
-            <Value column="name_es">No Sabe / No Responde</Value>
+            <Value column="name_en">Does not know / does not Answer</Value>
+            <Value column="name_es">No sabe / No Responde</Value>
           </Row>
         </InlineTable>
         <Level name="Perception of State Police" key_column="id" name_column="name_en">
@@ -5248,17 +5248,17 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Very effective</Value>
+            <Value column="name_en">Very Effective</Value>
             <Value column="name_es">Muy Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Somewhat effective</Value>
+            <Value column="name_en">Somewhat Effective</Value>
             <Value column="name_es">Algo Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Not very effective</Value>
+            <Value column="name_en">Not very Effective</Value>
             <Value column="name_es">Poco Efectivo</Value>
           </Row>
           <Row>
@@ -5268,8 +5268,8 @@
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">Does not know / does not answer</Value>
-            <Value column="name_es">No Sabe / No Responde</Value>
+            <Value column="name_en">Does not know / does not Answer</Value>
+            <Value column="name_es">No sabe / No Responde</Value>
           </Row>
         </InlineTable>
         <Level name="Perception of Federal Police" key_column="id" name_column="name_en">
@@ -5286,17 +5286,17 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Very effective</Value>
+            <Value column="name_en">Very Effective</Value>
             <Value column="name_es">Muy Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Somewhat effective</Value>
+            <Value column="name_en">Somewhat Effective</Value>
             <Value column="name_es">Algo Efectivo</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Not very effective</Value>
+            <Value column="name_en">Not very Effective</Value>
             <Value column="name_es">Poco Efectivo</Value>
           </Row>
           <Row>
@@ -5306,8 +5306,8 @@
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">Does not know / does not answer</Value>
-            <Value column="name_es">No Sabe / No Responde</Value>
+            <Value column="name_en">Does not know / does not Answer</Value>
+            <Value column="name_es">No sabe / No Responde</Value>
           </Row>
         </InlineTable>
         <Level name="Perception of Gendarmerie Police" key_column="id" name_column="name_en">
