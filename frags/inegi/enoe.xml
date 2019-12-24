@@ -18,8 +18,8 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Has a job or a business</Value>
-            <Value column="name_es">Posee un trabajo o negocio</Value>
+            <Value column="name_en">Has a Job or a Business</Value>
+            <Value column="name_es">Posee un Trabajo o Negocio</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -40,8 +40,8 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Has search in another country or is preparing to travel overseas</Value>
-            <Value column="name_es">Busco en otro pais o se prepara para viajar al extranjero </Value>
+            <Value column="name_en">Has Search in another Country or is Preparing to Travel Overseas</Value>
+            <Value column="name_es">Busco en otro País o se Prepara para Viajar al Extranjero </Value>
           </Row>
         </InlineTable>
         <Level name="Job Overseas" key_column="id" name_column="name_en">
@@ -57,8 +57,8 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Search for a job inside the country</Value>
-            <Value column="name_es">Busco trabajo en el pais</Value>
+            <Value column="name_en">Searched for a Job inside the Country</Value>
+            <Value column="name_es">Buscó trabajo en el País</Value>
           </Row>
         </InlineTable>
         <Level name="Job Mexico" key_column="id" name_column="name_en">
@@ -74,8 +74,8 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Wants to start a new business</Value>
-            <Value column="name_es">Quiere empezar un nuevo negocio</Value>
+            <Value column="name_en">Wants to Start a new Business</Value>
+            <Value column="name_es">Quiere Empezar un nuevo Negocio</Value>
           </Row>
         </InlineTable>
         <Level name="Start Business" key_column="id" name_column="name_en">
@@ -91,8 +91,8 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Has not search for a job</Value>
-            <Value column="name_es">No ha tratado de buscar</Value>
+            <Value column="name_en">Has not Search for a Job</Value>
+            <Value column="name_es">No ha Tratado de Buscar</Value>
           </Row>
         </InlineTable>
         <Level name="No Search Job" key_column="id" name_column="name_en">
@@ -125,28 +125,28 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Up to 1 month</Value>
-            <Value column="name_es">Hasta un mes</Value>
+            <Value column="name_en">Up to 1 Month</Value>
+            <Value column="name_es">Hasta un Mes</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">From 1 to 2 months</Value>
-            <Value column="name_es">Más de 1 hasta 2 meses</Value>
+            <Value column="name_en">From 1 to 2 Months</Value>
+            <Value column="name_es">Más de 1 hasta 2 Meses</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">From 2 to 3 months</Value>
-            <Value column="name_es">Más de 2 hasta 3 meses</Value>
+            <Value column="name_en">From 2 to 3 Months</Value>
+            <Value column="name_es">Más de 2 hasta 3 Meses</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">More than 3 months</Value>
-            <Value column="name_es">Más de 3 meses</Value>
+            <Value column="name_en">More than 3 Months</Value>
+            <Value column="name_es">Más de 3 Meses</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No knowlegde how many months</Value>
-            <Value column="name_es">No sabe cuantos meses</Value>
+            <Value column="name_en">No knowlegde how many Months</Value>
+            <Value column="name_es">No sabe cuantos Meses</Value>
           </Row>
         </InlineTable>
         <Level name="Time Searching Job" key_column="id" name_column="name_en">
@@ -163,17 +163,17 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Monthly</Value>
-            <Value column="name_es">Cada mes</Value>
+            <Value column="name_es">Cada Mes</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Biweekly</Value>
-            <Value column="name_es">Cada 15 dias</Value>
+            <Value column="name_es">Cada 15 Dias</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
             <Value column="name_en">Weekly</Value>
-            <Value column="name_es">Cada semana</Value>
+            <Value column="name_es">Cada Semana</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
@@ -182,23 +182,23 @@
           </Row>
           <Row>
             <Value column="id">5</Value>
-            <Value column="name_en">Different payments periods</Value>
-            <Value column="name_es">Otro periodo de pago</Value>
+            <Value column="name_en">Different Payments Periods</Value>
+            <Value column="name_es">Otro Periodo de Pago</Value>
           </Row>
           <Row>
             <Value column="id">6</Value>
-            <Value column="name_en">Payment by piecework, given service or work done</Value>
-            <Value column="name_es">Le pagan por pieza producida o vendida,servicio u obra realizada</Value>
+            <Value column="name_en">Payment by Piecework, given Service or Work done</Value>
+            <Value column="name_es">Le Pagan por Pieza Producida o Vendida, Servicio u Obra Realizada</Value>
           </Row>
           <Row>
             <Value column="id">7</Value>
             <Value column="name_en">Not sure</Value>
-            <Value column="name_es">No supo estimar</Value>
+            <Value column="name_es">No supo Estimar</Value>
           </Row>
           <Row>
             <Value column="id">8</Value>
-            <Value column="name_en">Refused to answer</Value>
-            <Value column="name_es">Se negó a contestar esta pregunta</Value>
+            <Value column="name_en">Refused to Answer</Value>
+            <Value column="name_es">Se Negó a Contestar esta Pregunta</Value>
           </Row>
         </InlineTable>
         <Level name="Payment Frecuency" key_column="id" name_column="name_en">
@@ -219,38 +219,38 @@
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Same as the minimun wage</Value>
-            <Value column="name_es">Igual al salario mínimo</Value>
+            <Value column="name_en">Same as the Minimun Wage</Value>
+            <Value column="name_es">Igual al Salario Mínimo</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">More than 1 minimun wage, up to 2</Value>
-            <Value column="name_es">Más de 1 salario mínimo hasta 2</Value>
+            <Value column="name_en">More than 1 Minimun Wage, up to 2</Value>
+            <Value column="name_es">Más de 1 Salario Mínimo hasta 2</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">More than 2 minimun wage, up to 3</Value>
-            <Value column="name_es">Más de 2 salario mínimo hasta 3</Value>
+            <Value column="name_en">More than 2 Minimun Wage, up to 3</Value>
+            <Value column="name_es">Más de 2 Salarios Mínimos hasta 3</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
             <Value column="name_en">More than 3 minimun wage, up to 5</Value>
-            <Value column="name_es">Más de 3 salario mínimo hasta 5</Value>
+            <Value column="name_es">Más de 3 Salarios Mínimos hasta 5</Value>
           </Row>
           <Row>
             <Value column="id">6</Value>
-            <Value column="name_en">More than 5 minimun wage, up to 10</Value>
-            <Value column="name_es">Más de 5 salario mínimo hasta 10</Value>
+            <Value column="name_en">More than 5 Minimun Wage, up to 10</Value>
+            <Value column="name_es">Más de 5 Salarios Mínimos hasta 10</Value>
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">More than 10 minimun wage</Value>
-            <Value column="name_es">Más de 10 salarios mínimos</Value>
+            <Value column="name_en">More than 10 Minimun Wage</Value>
+            <Value column="name_es">Más de 10 Salarios Mínimos</Value>
           </Row>
           <Row>
             <Value column="id">8</Value>
-            <Value column="name_en">Do not want to provide information</Value>
-            <Value column="name_es">No quiso dar información</Value>
+            <Value column="name_en">Do not want to Provide Information</Value>
+            <Value column="name_es">No Quiso dar Información</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
@@ -271,38 +271,38 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Sell or make products</Value>
-            <Value column="name_es">Vender o hacer productos para la venta</Value>
+            <Value column="name_en">Sell or make Products</Value>
+            <Value column="name_es">Vender o hacer Productos para la Venta</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Services provider</Value>
-            <Value column="name_es">Prestar servicios</Value>
+            <Value column="name_en">Services Provider</Value>
+            <Value column="name_es">Prestar Servicios</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Working the soil and\/or raising livestock</Value>
-            <Value column="name_es">Trabajar su tierra o parcela y\/o crianza de animales</Value>
+            <Value column="name_en">Working the Soil and\/or Raising Livestock</Value>
+            <Value column="name_es">Trabajar su Tierra o Parcela y\/o Crianza de Animales</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">Work for tips, commission or piecework</Value>
-            <Value column="name_es">Trabajar por propinas, comisión o destajo</Value>
+            <Value column="name_en">Work for Tips, Commission or Piecework</Value>
+            <Value column="name_es">Trabajar por Propinas, Comisión o Destajo</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
-            <Value column="name_en">Work as a salaried employee</Value>
-            <Value column="name_es">Trabajar como asalariado</Value>
+            <Value column="name_en">Work as a Salaried Employee</Value>
+            <Value column="name_es">Trabajar como Asalariado</Value>
           </Row>
           <Row>
             <Value column="id">6</Value>
-            <Value column="name_en">Helps in some business, family lands or someone else lands</Value>
-            <Value column="name_es">Ayudar en algún negocio o en las tierras de un familiar o de otra persona</Value>
+            <Value column="name_en">Helps in some Business, Family Lands or someone else Lands</Value>
+            <Value column="name_es">Ayudar en algún Negocio o en las Tierras de un Familiar o de otra Persona</Value>
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">Does not have another job</Value>
-            <Value column="name_es">No tiene otro trabajo</Value>
+            <Value column="name_en">Does not have Another Job</Value>
+            <Value column="name_es">No tiene Otro Trabajo</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
@@ -378,8 +378,8 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">No apply</Value>
-            <Value column="name_es">No aplica</Value>
+            <Value column="name_en">No Apply</Value>
+            <Value column="name_es">No Aplica</Value>
           </Row>
           <Row>
             <Value column="id">1</Value>
@@ -388,8 +388,8 @@
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Has not search for a job</Value>
-            <Value column="name_es">Población no económicamente activa</Value>
+            <Value column="name_en">Has not Search for a Job</Value>
+            <Value column="name_es">Población no Económicamente Activa</Value>
           </Row>
         </InlineTable>
         <Level name="Economically Active Population" key_column="id" name_column="name_en">
@@ -406,18 +406,18 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">No apply</Value>
-            <Value column="name_es">No aplica</Value>
+            <Value column="name_en">No Apply</Value>
+            <Value column="name_es">No Aplica</Value>
           </Row>
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Working Population</Value>
-            <Value column="name_es">Población ocupada</Value>
+            <Value column="name_es">Población Ocupada</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Non Working Population</Value>
-            <Value column="name_es">Población desocupada</Value>
+            <Value column="name_es">Población Desocupada</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
@@ -427,7 +427,7 @@
           <Row>
             <Value column="id">4</Value>
             <Value column="name_en">Non Available</Value>
-            <Value column="name_es">No disponibles</Value>
+            <Value column="name_es">No Disponibles</Value>
           </Row>
         </InlineTable>
         <Level name="Population Classification" key_column="id" name_column="name_en">
@@ -444,43 +444,43 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">No apply</Value>
-            <Value column="name_es">No aplica</Value>
+            <Value column="name_en">No Apply</Value>
+            <Value column="name_es">No Aplica</Value>
           </Row>
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Working full</Value>
-            <Value column="name_es">Ocupado pleno</Value>
+            <Value column="name_es">Ocupado Pleno</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Working without payment</Value>
-            <Value column="name_es">Ocupado sin pago</Value>
+            <Value column="name_en">Working without Payment</Value>
+            <Value column="name_es">Ocupado sin Pago</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Working absent with work relationship</Value>
-            <Value column="name_es">Ocupado ausente con nexo laboral</Value>
+            <Value column="name_en">Working Absent with Work Relationship</Value>
+            <Value column="name_es">Ocupado Ausente con Nexo Laboral</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">Working absent with guaranteed return</Value>
-            <Value column="name_es">Ocupado ausente con retorno asegurado</Value>
+            <Value column="name_en">Working Absent with Guaranteed Return</Value>
+            <Value column="name_es">Ocupado Ausente con Retorno Asegurado</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
-            <Value column="name_en">Non working starters</Value>
-            <Value column="name_es">Desocupados iniciadores</Value>
+            <Value column="name_en">Non Working Starters</Value>
+            <Value column="name_es">Desocupados Iniciadores</Value>
           </Row>
           <Row>
             <Value column="id">6</Value>
-            <Value column="name_en">Non working with searching</Value>
-            <Value column="name_es">Desocupados con búsqueda</Value>
+            <Value column="name_en">Non Working with Wearching</Value>
+            <Value column="name_es">Desocupados con Búsqueda</Value>
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">Unemployed absent without income and without employment relationship</Value>
-            <Value column="name_es">Desocupados ausentes sin ingreso y sin nexo laboral</Value>
+            <Value column="name_en">Unemployed Absent without Income and without Employment Relationship</Value>
+            <Value column="name_es">Desocupados Ausentes sin Ingreso y sin Nexo Laboral</Value>
           </Row>
         </InlineTable>
         <Level name="Population Sub Classification" key_column="id" name_column="name_en">
@@ -497,13 +497,13 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">No apply</Value>
-            <Value column="name_es">No aplica</Value>
+            <Value column="name_en">No Apply</Value>
+            <Value column="name_es">No Aplica</Value>
           </Row>
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Does work over 48 hours, and makes less than 1 minimum wage</Value>
-            <Value column="name_es">Si trabaja más de 48 hrs, y gana menos de 1 salario mínimo</Value>
+            <Value column="name_en">Does Work over 48 Hours, and makes less than 1 Minimum Wage</Value>
+            <Value column="name_es">Si Trabaja más de 48 hrs, y Gana menos de 1 Salario Mínimo</Value>
           </Row>
         </InlineTable>
         <Level name="Population Works 48 Less 1" key_column="id" name_column="name_en">
@@ -520,33 +520,33 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">No apply</Value>
-            <Value column="name_es">No aplica</Value>
+            <Value column="name_en">No Apply</Value>
+            <Value column="name_es">No Aplica</Value>
           </Row>
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Without children</Value>
-            <Value column="name_es">Sin hijos</Value>
+            <Value column="name_en">Without Children</Value>
+            <Value column="name_es">Sin Hijos</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">From 1 to 2 children</Value>
-            <Value column="name_es">De 1 a 2 hijos</Value>
+            <Value column="name_en">From 1 to 2 Children</Value>
+            <Value column="name_es">De 1 a 2 Hijos</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">From 3 to 5 children</Value>
-            <Value column="name_es">De 3 a 5 hijos</Value>
+            <Value column="name_en">From 3 to 5 Children</Value>
+            <Value column="name_es">De 3 a 5 Hijos</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">From 6 and more children</Value>
-            <Value column="name_es">De 6 hijos y más</Value>
+            <Value column="name_en">From 6 and more Children</Value>
+            <Value column="name_es">De 6 Hijos y más</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
             <Value column="name_en">Not Specified</Value>
-            <Value column="name_es">No especificado</Value>
+            <Value column="name_es">No Especificado</Value>
           </Row>
         </InlineTable>
         <Level name="Female Population Older 15 With Children" key_column="id" name_column="name_en">
