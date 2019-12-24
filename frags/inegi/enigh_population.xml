@@ -261,8 +261,8 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="IMSS Prospera" foreign_key="inst_5">
-      <Hierarchy name="IMSS Prospera" primary_key="id">
+    <Dimension name="IMSS\-Prospera" foreign_key="inst_5">
+      <Hierarchy name="IMSS\-Prospera" primary_key="id">
         <InlineTable alias="dim_inline_inst_5">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -273,14 +273,14 @@
             <Value column="name_es">IMSS-Prospera</Value>
           </Row>
         </InlineTable>
-        <Level name="IMSS-Prospera" key_column="id" name_column="name_en">
-          <Property name="IMSS-Prospera ES" column="name_es" caption_set="es" />
+        <Level name="IMSS\-Prospera" key_column="id" name_column="name_en">
+          <Property name="IMSS\-Prospera ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Pemex Defense or Marine" foreign_key="inst_4">
-      <Hierarchy name="Pemex Defense or Marine" primary_key="id">
+    <Dimension name="Pemex\, Defense or Marine" foreign_key="inst_4">
+      <Hierarchy name="Pemex\, Defense or Marine" primary_key="id">
         <InlineTable alias="dim_inline_inst_4">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -291,8 +291,8 @@
             <Value column="name_es">Pemex, Defensa o Marina</Value>
           </Row>
         </InlineTable>
-        <Level name="Pemex, Defense or Marine" key_column="id" name_column="name_en">
-          <Property name="Pemex, Defense or Marine ES" column="name_es" caption_set="es" />
+        <Level name="Pemex\, Defense or Marine" key_column="id" name_column="name_en">
+          <Property name="Pemex\, Defense or Marine ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
