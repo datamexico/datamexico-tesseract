@@ -499,7 +499,6 @@
         </Level>
       </Hierarchy>
     </SharedDimension> 
-
 <Cube name="anuies_enrollment">
     
       <Annotation name="topic">Education</Annotation>
@@ -5337,6 +5336,140 @@
         <Annotation name="details">Number of houses</Annotation>
     </Measure>
 
+
+  </Cube>
+<Cube name="inegi_gdp">
+    
+      <Annotation name="topic">Economy</Annotation>
+      <Annotation name="subtopic">GDP</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/app/indicadores/?tm=0&t=10200034</Annotation>
+    
+    <Table name="inegi_gdp" primary_key="quarter_id" />
+
+    <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
+
+
+    <Measure name="Agriculture, Animal Production, Forestry, Fishing and Hunting" column="farming" aggregator="sum" >
+
+        <Annotation name="details">Total GDP of Agriculture, Animal Production, Forestry, Fishing and Hunting</Annotation>
+
+    </Measure>
+
+    <Measure name="Mining, Quarrying, and Oil and Gas Extraction" column="mining" aggregator="sum" >
+
+        <Annotation name="details">Total GDP of Mining, Quarrying, and Oil and Gas Extraction</Annotation>
+
+    </Measure>
+
+    <Measure name="Generation, Transmission, Distribution and Commercialization of Electric Power, Water and Natural Gas Supply" column="energy_transmission" aggregator="sum" >
+
+        <Annotation name="details">Total GDP of Generation, Transmission, Distribution and Commercialization of Electric Power, Water and Natural Gas Supply</Annotation>
+
+    </Measure>
+
+    <Measure name="Construction" column="construction" aggregator="sum" >
+
+        <Annotation name="details">Total GDP of Construction</Annotation>
+
+    </Measure>
+
+    <Measure name="Manufacturing" column="manufacturing" aggregator="sum" >
+
+        <Annotation name="details">Total GDP of Manufacturing</Annotation>
+
+    </Measure>
+
+    <Measure name="Wholesale Trade" column="wholesale_trade" aggregator="sum" >
+
+        <Annotation name="details">Total GDP of Wholesale Trade</Annotation>
+
+    </Measure>
+
+    <Measure name="Retail Trade" column="retail_trade" aggregator="sum" >
+
+        <Annotation name="details">Total GDP of Retail Trade</Annotation>
+
+    </Measure>
+
+    <Measure name="Transportation and Warehousing" column="transportation_warehousing" aggregator="sum" >
+
+        <Annotation name="details">Total GDP of Transportation and Warehousing</Annotation>
+
+    </Measure>
+
+    <Measure name="Information" column="information" aggregator="sum" >
+
+        <Annotation name="details">Total GDP of Information</Annotation>
+
+    </Measure>
+
+    <Measure name="Finance and Insurance" column="finance_insurance" aggregator="sum" >
+
+        <Annotation name="details">Total GDP of Finance and Insurance</Annotation>
+
+    </Measure>
+
+    <Measure name="Real Estate and Rental and Leasing" column="real_state" aggregator="sum" >
+
+        <Annotation name="details">Total GDP of Real Estate and Rental and Leasing</Annotation>
+
+    </Measure>
+
+    <Measure name="Professional, Scientific, and Technical Services" column="professional_services" aggregator="sum" >
+
+        <Annotation name="details">Total GDP of Professional, Scientific, and Technical Services</Annotation>
+
+    </Measure>
+
+    <Measure name="Management of Companies and Enterprises" column="management_companies" aggregator="sum" >
+
+        <Annotation name="details">Total GDP of Management of Companies and Enterprises</Annotation>
+
+    </Measure>
+
+    <Measure name="Administrative and Support and Waste Management and Remediation Services" column="administrative_support_services" aggregator="sum" >
+
+        <Annotation name="details">Total GDP of Administrative and Support and Waste Management and Remediation Services</Annotation>
+
+    </Measure>
+
+    <Measure name="Educational Services" column="educational_services" aggregator="sum" >
+
+        <Annotation name="details">Total GDP of Educational Services</Annotation>
+
+    </Measure>
+
+    <Measure name="Health Care and Social Assistance" column="health_care" aggregator="sum" >
+
+        <Annotation name="details">Total GDP of Health Care and Social Assistance</Annotation>
+
+    </Measure>
+
+    <Measure name="Arts, Entertainment, and Recreation" column="arts" aggregator="sum" >
+
+        <Annotation name="details">Total GDP of Arts, Entertainment, and Recreation</Annotation>
+
+    </Measure>
+
+    <Measure name="Accommodation and Food Services" column="accomodation_food_services" aggregator="sum" >
+
+        <Annotation name="details">Total GDP of Accommodation and Food Services</Annotation>
+
+    </Measure>
+
+    <Measure name="Other Services (Except Public Administration)" column="other_services_no_government" aggregator="sum" >
+
+        <Annotation name="details">Total GDP of Other Services (Except Public Administration)</Annotation>
+
+    </Measure>
+
+    <Measure name="Legislative, Governmental, and Legal Activities, as well as International and Extraterritorial Organizations" column="government_activities" aggregator="sum" >
+
+        <Annotation name="details">Total GDP of Legislative, Governmental, and Legal Activities, as well as International and Extraterritorial Organizations</Annotation>
+        
+    </Measure>
 
   </Cube>
 <Cube name="inegi_general_mortality">
