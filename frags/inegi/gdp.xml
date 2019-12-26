@@ -5,7 +5,7 @@
       <Annotation name="subtopic">GDP</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/app/indicadores/?tm=0&t=10200034</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/app/indicadores/</Annotation>
     
     <Table name="inegi_gdp" primary_key="quarter_id" />
 
@@ -129,7 +129,7 @@
     <Measure name="Legislative, Governmental, and Legal Activities, as well as International and Extraterritorial Organizations" column="government_activities" aggregator="sum" >
 
         <Annotation name="details">Total GDP of Legislative, Governmental, and Legal Activities, as well as International and Extraterritorial Organizations</Annotation>
-        
+
     </Measure>
 
   </Cube>
