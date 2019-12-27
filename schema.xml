@@ -498,7 +498,7 @@
           <Property name="Confidence ES" column="name_es" caption_set="es"/>
         </Level>
       </Hierarchy>
-    </SharedDimension> 
+    </SharedDimension>
 <Cube name="anuies_enrollment">
     
       <Annotation name="topic">Education</Annotation>
@@ -741,7 +741,7 @@
         <Annotation name="details">Population</Annotation>
       
     </Measure>
-    <Measure name="Illiterate 15+ Years" column="population_illiterate" aggregator="avg">
+    <Measure name="Illiterate 15+ Years" column="illiterate_population" aggregator="avg">
       
         <Annotation name="details">Illiterate 15\+ Years</Annotation>
       
@@ -821,7 +821,7 @@
         <Annotation name="details">Population</Annotation>
       
     </Measure>
-    <Measure name="Illiterate 15+ Years" column="population_illiterate" aggregator="avg">
+    <Measure name="Illiterate 15+ Years" column="illiterate_population" aggregator="avg">
       
         <Annotation name="details">Illiterate 15\+ Years</Annotation>
       
@@ -5468,7 +5468,7 @@
     <Measure name="Legislative, Governmental, and Legal Activities, as well as International and Extraterritorial Organizations" column="government_activities" aggregator="sum" >
 
         <Annotation name="details">Total GDP of Legislative, Governmental, and Legal Activities, as well as International and Extraterritorial Organizations</Annotation>
-        
+
     </Measure>
 
   </Cube>

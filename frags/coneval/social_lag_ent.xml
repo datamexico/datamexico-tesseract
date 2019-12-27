@@ -18,7 +18,7 @@
         <Annotation name="details">Population</Annotation>
       
     </Measure>
-    <Measure name="Illiterate 15+ Years" column="population_illiterate" aggregator="avg">
+    <Measure name="Illiterate 15+ Years" column="illiterate_population" aggregator="avg">
       
         <Annotation name="details">Illiterate 15\+ Years</Annotation>
       
