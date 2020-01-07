@@ -9,6 +9,7 @@
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
         <Property name="CVE State" column="cve_ent" />
         <Property name="State ES" column="ent_name" caption_set="es"/>
+        <Property name="State ISO3" column="ent_iso3" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -19,6 +20,7 @@
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
         <Property name="CVE State" column="cve_ent" />
         <Property name="State ES" column="ent_name" caption_set="es"/>
+        <Property name="State ISO3" column="ent_iso3" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -43,6 +45,7 @@
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
         <Property name="CVE State" column="cve_ent" />
         <Property name="State ES" column="ent_name" caption_set="es"/>
+        <Property name="State ISO3" column="ent_iso3" caption_set="es"/>
       </Level>
       <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
         <Property name="CVE Municipality" column="cve_mun" />
@@ -81,6 +84,7 @@
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
         <Property name="CVE State" column="cve_ent" />
         <Property name="State ES" column="ent_name" caption_set="es"/>
+        <Property name="State ISO3" column="ent_iso3" caption_set="es"/>
       </Level>
       <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
         <Property name="CVE Municipality" column="cve_mun" />
@@ -499,6 +503,7 @@
         </Level>
       </Hierarchy>
     </SharedDimension>
+
 <Cube name="anuies_enrollment">
     
       <Annotation name="topic">Education</Annotation>
