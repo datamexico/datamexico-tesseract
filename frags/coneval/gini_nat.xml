@@ -1,0 +1,21 @@
+<Schema name="datamexico" default_locale="en">
+  <Cube name="coneval_gini_nat">
+    
+      <Annotation name="topic">Housing and Living</Annotation>
+      <Annotation name="subtopic">Income</Annotation>
+      <Annotation name="source_name">Consejo Nacional de Evaluación de la Política de Desarrollo Social (CONEVAL)</Annotation>
+      <Annotation name="source_name_en">National Council for the Evaluation of Social Development Policy (CONEVAL)</Annotation>
+      <Annotation name="source_link">https://www.coneval.org.mx/Medicion/Paginas/Cohesion_Social.aspx</Annotation>
+    
+    <Table name="coneval_gini_nat" primary_key="ent_id" />
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Measure name="GINI" column="gini" aggregator="avg">
+      
+        <Annotation name="details">GINI</Annotation>
+      
+    </Measure>
+
+  </Cube>
+</Schema>
