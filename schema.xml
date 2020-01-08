@@ -246,6 +246,16 @@
     </Hierarchy>
   </SharedDimension>
 
+  <SharedDimension name="Age Group 10">
+    <Hierarchy name="Age Group" primary_key="age">
+      <Table name="dim_shared_age_10" />
+      <Level name="Age Range" key_column="age_range_id" name_column="name_en" key_type="nontext">
+        <Property name="name_es" column="name_es" caption_set="es"/>
+      </Level>
+      <Level name="Age" key_column="age" key_type="nontext" />
+    </Hierarchy>
+  </SharedDimension>
+
   <SharedDimension name="Year" type="time">
     <Hierarchy name="Year">
       <Level name="Year" key_column="year" />
@@ -502,7 +512,7 @@
           <Property name="Confidence ES" column="name_es" caption_set="es"/>
         </Level>
       </Hierarchy>
-    </SharedDimension>
+    </SharedDimension> 
 
 <Cube name="anuies_enrollment">
     
@@ -7083,7 +7093,7 @@
     <DimensionUsage foreign_key="academic_degree" source="Academic Degree" name="Academic Degree" />
     <DimensionUsage foreign_key="dhsersal1" source="Social Security" name="Social Security" />
     <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
-    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
+    <DimensionUsage foreign_key="age" source="Age Group 10" name="Age Group" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 

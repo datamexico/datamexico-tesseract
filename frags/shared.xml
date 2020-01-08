@@ -246,6 +246,16 @@
     </Hierarchy>
   </SharedDimension>
 
+  <SharedDimension name="Age Group 10">
+    <Hierarchy name="Age Group" primary_key="age">
+      <Table name="dim_shared_age_10" />
+      <Level name="Age Range" key_column="age_range_id" name_column="name_en" key_type="nontext">
+        <Property name="name_es" column="name_es" caption_set="es"/>
+      </Level>
+      <Level name="Age" key_column="age" key_type="nontext" />
+    </Hierarchy>
+  </SharedDimension>
+
   <SharedDimension name="Year" type="time">
     <Hierarchy name="Year">
       <Level name="Year" key_column="year" />
