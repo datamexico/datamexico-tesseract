@@ -512,7 +512,7 @@
           <Property name="Confidence ES" column="name_es" caption_set="es"/>
         </Level>
       </Hierarchy>
-    </SharedDimension> 
+    </SharedDimension>
 
 <Cube name="anuies_enrollment">
     
@@ -666,8 +666,25 @@
       <Annotation name="source_link">https://www.coneval.org.mx/Medicion/Paginas/Cohesion_Social.aspx</Annotation>
     
     <Table name="coneval_gini_nat" primary_key="ent_id" />
-    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Dimension name="Geography" foreign_key="ent_id">
+      <Hierarchy name="Geography" primary_key="id">
+        <InlineTable alias="dim_inline_nation">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">México</Value>
+            <Value column="name_es">México</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Geography" key_column="id" name_column="name_en">
+          <Property name="Geography ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
 
     <Measure name="GINI" column="gini" aggregator="avg">
       
