@@ -610,7 +610,7 @@
       <Annotation name="subtopic">Income</Annotation>
       <Annotation name="source_name">Consejo Nacional de Evaluación de la Política de Desarrollo Social (CONEVAL)</Annotation>
       <Annotation name="source_name_en">National Council for the Evaluation of Social Development Policy (CONEVAL)</Annotation>
-      <Annotation name="source_link">https://www.coneval.org.mx/Paginas/principal.aspx</Annotation>
+      <Annotation name="source_link">https://www.coneval.org.mx/Medicion/Paginas/Cohesion_Social.aspx</Annotation>
     
     <Table name="coneval_gini_mun" primary_key="mun_id" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
