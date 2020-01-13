@@ -7,9 +7,9 @@
         <Property name="Nation ES" column="nation_name" caption_set="es"/>
       </Level>
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-        <Property name="State ISO3" column="ent_iso3" caption_set="es"/>
         <Property name="CVE State" column="cve_ent" />
         <Property name="State ES" column="ent_name" caption_set="es"/>
+        <Property name="State ISO3" column="ent_iso3" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -18,9 +18,9 @@
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography_ent" />
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-        <Property name="State ISO3" column="ent_iso3" caption_set="es"/>
         <Property name="CVE State" column="cve_ent" />
         <Property name="State ES" column="ent_name" caption_set="es"/>
+        <Property name="State ISO3" column="ent_iso3" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -43,9 +43,9 @@
         <Property name="Nation ES" column="nation_name" caption_set="es"/>
       </Level>
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-        <Property name="State ISO3" column="ent_iso3" caption_set="es"/>
         <Property name="CVE State" column="cve_ent" />
         <Property name="State ES" column="ent_name" caption_set="es"/>
+        <Property name="State ISO3" column="ent_iso3" caption_set="es"/>
       </Level>
       <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
         <Property name="CVE Municipality" column="cve_mun" />
@@ -82,9 +82,9 @@
         <Property name="Nation ES" column="nation_name" caption_set="es"/>
       </Level>
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-        <Property name="State ISO3" column="ent_iso3" caption_set="es"/>
         <Property name="CVE State" column="cve_ent" />
         <Property name="State ES" column="ent_name" caption_set="es"/>
+        <Property name="State ISO3" column="ent_iso3" caption_set="es"/>
       </Level>
       <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
         <Property name="CVE Municipality" column="cve_mun" />
