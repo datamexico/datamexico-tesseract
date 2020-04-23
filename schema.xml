@@ -1032,6 +1032,7 @@
       </Hierarchy>
     </Dimension>
 
+    <!--
     <Dimension name="Ingress Date" foreign_key="ingress_date" type="time">
       <Hierarchy name="Ingress Date" primary_key="date_id">
         <Table name="dim_date_covid" />
@@ -1079,6 +1080,7 @@
         </Level>
       </Hierarchy>
     </Dimension>
+    -->
 
     <Dimension name="Covid Result" foreign_key="covid_positive">
       <Hierarchy name="Covid Result" primary_key="id">
@@ -1907,6 +1909,7 @@
 
     <DimensionUsage foreign_key="country_nationality" source="Country" name="Country Nationality" />
 
+    <!--
     <Dimension name="Country Origin" foreign_key="country_origin">
       <Hierarchy name="Country Origin" primary_key="iso3">
         <Table name="dim_shared_country"/>
@@ -1920,6 +1923,7 @@
         </Level>
       </Hierarchy>
     </Dimension>
+    -->
     
     <Measure name="Cases" column="id" aggregator="count">
       
