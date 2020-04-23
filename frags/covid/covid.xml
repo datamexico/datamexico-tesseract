@@ -1,0 +1,250 @@
+<Schema name="datamexico" default_locale="en">
+  <Cube name="gobmx_covid">
+    
+      <Annotation name="topic">Health</Annotation>
+      <Annotation name="subtopic">Pandemic</Annotation>
+      <Annotation name="source_name">Gobierno de México</Annotation>
+      <Annotation name="source_name_en">Mexico Government</Annotation>
+      <Annotation name="source_link">https://www.gob.mx/</Annotation>
+    
+    <Table name="gobmx_covid" primary_key="patient_residence_mun_id" />
+
+    <DimensionUsage foreign_key="updated_date" source="Covid Date Day" name="Updated Date" />
+    <DimensionUsage foreign_key="ingress_date" source="Covid Date Day" name="Ingress Date" />
+    <DimensionUsage foreign_key="symptoms_date" source="Covid Date Day" name="Symptoms Date" />
+    <DimensionUsage foreign_key="death_date" source="Covid Date Day" name="Death Date" />
+
+    <Dimension name="Covid Result" foreign_key="covid_positive">
+      <Hierarchy name="Covid Result" primary_key="id">
+        <InlineTable alias="dim_inline_covid_result">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Positive SARS-CoV-2</Value>
+            <Value column="name_es">Positivo SARS-CoV-2</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Non Positive SARS-CoV-2</Value>
+            <Value column="name_es">No positivo SARS-CoV-2</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Pending Result </Value>
+            <Value column="name_es">Resultado pendiente</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Covid Result" key_column="id" name_column="name_en">
+          <Property name="Covid Result ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Origin" foreign_key="origin">
+      <Hierarchy name="Origin" primary_key="id">
+        <InlineTable alias="dim_inline_origin">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">USMER</Value>
+            <Value column="name_es">USMER</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Outside USMER</Value>
+            <Value column="name_es">Fuera de USMER</Value>
+          </Row>
+          <Row>
+            <Value column="id">99</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No Especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Origin" key_column="id" name_column="name_en">
+          <Property name="Origin ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Health Institution Attended" foreign_key="type_health_institution_attended">
+      <Hierarchy name="Health Institution Attended" primary_key="id">
+        <InlineTable alias="dim_inline_health_institution">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Red Cross</Value>
+            <Value column="name_es">Cruz Roja</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">DIF</Value>
+            <Value column="name_es">DIF</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">State</Value>
+            <Value column="name_es">Estatal</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">IMSS</Value>
+            <Value column="name_es">IMSS</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">IMSS-Bienestar</Value>
+            <Value column="name_es">IMSS-Bienestar</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">ISSSTE</Value>
+            <Value column="name_es">ISSSTE</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Municipal</Value>
+            <Value column="name_es">Municipal</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">PEMEX</Value>
+            <Value column="name_es">PEMEX</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Provate</Value>
+            <Value column="name_es">Privada</Value>
+          </Row>
+          <Row>
+            <Value column="id">10</Value>
+            <Value column="name_en">SEDENA</Value>
+            <Value column="name_es">SEDENA</Value>
+          </Row>
+          <Row>
+            <Value column="id">11</Value>
+            <Value column="name_en">SEMAR</Value>
+            <Value column="name_es">SEMAR</Value>
+          </Row>
+          <Row>
+            <Value column="id">12</Value>
+            <Value column="name_en">SSA</Value>
+            <Value column="name_es">SSA</Value>
+          </Row>
+          <Row>
+            <Value column="id">13</Value>
+            <Value column="name_en">University</Value>
+            <Value column="name_es">Universitario</Value>
+          </Row>
+          <Row>
+            <Value column="id">99</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No Especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Health Institution Attended" key_column="id" name_column="name_en">
+          <Property name="Health Institution Attended ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Nationality" foreign_key="nationality">
+      <Hierarchy name="Nationality" primary_key="id">
+        <InlineTable alias="dim_inline_nationality">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Mexican</Value>
+            <Value column="name_es">Mexicana</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Foreign</Value>
+            <Value column="name_es">Extranjera</Value>
+          </Row>
+          <Row>
+            <Value column="id">99</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No Especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Nationality" key_column="id" name_column="name_en">
+          <Property name="Nationality ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Patient Type" foreign_key="patient_type">
+      <Hierarchy name="Patient Type" primary_key="id">
+        <InlineTable alias="dim_inline_patient_type">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Ambulatory</Value>
+            <Value column="name_es">Ambuatorio</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Hospitalized</Value>
+            <Value column="name_es">Hospitalizado</Value>
+          </Row>
+          <Row>
+            <Value column="id">99</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No Especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Patient Type" key_column="id" name_column="name_en">
+          <Property name="Patient Type ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <DimensionUsage foreign_key="intubated" source="Binary Answer" name="Intubated Patient" />
+    <DimensionUsage foreign_key="pneumonia_diagnose" source="Binary Answer" name="Pneumonia Diagnose" />
+    <DimensionUsage foreign_key="speaks_indigenous_language" source="Binary Answer" name="Speaks Indigenous Language" />
+    <DimensionUsage foreign_key="diabetes_diagnose" source="Binary Answer" name="Diabetes Diagnose" />
+    <DimensionUsage foreign_key="COPD_diagnose" source="Binary Answer" name="COPD Diagnose" />
+    <DimensionUsage foreign_key="asthma_diagnose" source="Binary Answer" name="Asthma Diagnose" />
+    <DimensionUsage foreign_key="inmunosupresion_diagnose" source="Binary Answer" name="Inmunosupresion Diagnose" />
+    <DimensionUsage foreign_key="hypertension_diagnose" source="Binary Answer" name="Hypertension Diagnose" />
+    <DimensionUsage foreign_key="diagnosis_another_disease" source="Binary Answer" name="Diagnosis of Another Disease" />
+    <DimensionUsage foreign_key="cardiovascular_diagnose" source="Binary Answer" name="Cardiovascular Diagnose" />
+    <DimensionUsage foreign_key="obesity_diagnose" source="Binary Answer" name="Obesity Diagnose" />
+    <DimensionUsage foreign_key="chronic_kidney_failure_diagnose" source="Binary Answer" name="Chronic Kidney Failure Diagnose" />
+    <DimensionUsage foreign_key="smoking_diagnose" source="Binary Answer" name="Smoking Diagnose" />
+    <DimensionUsage foreign_key="contact_another_covid_case" source="Binary Answer" name="Contact with Another Covid Case" />
+    <DimensionUsage foreign_key="migrant" source="Binary Answer" name="Migrant" />
+    <DimensionUsage foreign_key="required_ICU" source="Binary Answer" name="Required ICU" />
+
+
+    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
+
+    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
+
+    <DimensionUsage foreign_key="patient_origin_ent_id" source="Geography State" name="Patient Origin State" />
+    <DimensionUsage foreign_key="health_institution_attended_ent" source="Geography State" name="State Patient Attended" />
+    <DimensionUsage foreign_key="patient_residence_mun_id" source="Geography Municipality" name="Municipality Patient Residence" />
+
+    <DimensionUsage foreign_key="country_nationality" source="Country" name="Country Nationality" />
+    <DimensionUsage foreign_key="country_origin" source="Country" name="Country Origin" />
+
+
+
+    <Measure name="Cases" column="id" aggregator="count">
+      
+        <Annotation name="details">Number of Cases</Annotation>
+      
+    </Measure>
+
+  </Cube>
+</Schema>

@@ -514,4 +514,58 @@
       </Hierarchy>
     </SharedDimension> 
 
+    <SharedDimension name="Binary Answer">
+      <Hierarchy name="Binary Answer">
+        <InlineTable alias="dim_inline_binary">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Yes</Value>
+                <Value column="name_es">Si</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">No</Value>
+                <Value column="name_es">No</Value>
+            </Row>
+            <Row>
+                <Value column="id">97</Value>
+                <Value column="name_en">Does not Apply</Value>
+                <Value column="name_es">No Aplica</Value>
+            </Row>
+            <Row>
+                <Value column="id">98</Value>
+                <Value column="name_en">It is Ignored</Value>
+                <Value column="name_es">Se Ignora</Value>
+            </Row>
+            <Row>
+                <Value column="id">99</Value>
+                <Value column="name_en">Not Specified</Value>
+                <Value column="name_es">No Especificado</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Binary Answer" key_column="id" name_column="name_en">
+          <Property name="Binary Answer ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </SharedDimension>
+
+    <SharedDimension name="Covid Date Day" type="time">
+    <Hierarchy name="Date" primary_key="date_id">
+      <Table name="dim_date_covid" />
+      <Level name="Year" key_column="year" />
+      <Level name="Quarter" key_column="quarter_id" name_column="quarter">
+        <Property name="Quarter ES" column="quarter" caption_set="es" />
+      </Level>
+      <Level name="Month" key_column="month_id" name_column="month">
+        <Property name="Month ES" column="month" caption_set="es" />
+      </Level>
+      <Level name="Date" key_column="date_id" name_column="date">
+        <Property name="Date ES" column="date" caption_set="es" />
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
 </Schema>
