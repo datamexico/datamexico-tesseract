@@ -962,19 +962,12 @@
     
     <Table name="gobmx_covid" primary_key="patient_residence_mun_id" />
 
-    <Dimension name="Updated Date" foreign_key="updated_date" type="time">
-      <Hierarchy name="Updated Date" primary_key="date_id">
+    <Dimension foreign_key="updated_date" source="Date" name="Updated Date">
+      <Hierarchy name="Date" primary_key="date_id">
         <Table name="dim_date_covid" />
-        <Level name="Year Covid" key_column="year" />
-        <Level name="Quarter Covid" key_column="quarter_id" name_column="quarter">
-          <Property name="Quarter Covid ES" column="quarter" caption_set="es" />
-        </Level>
-        <Level name="Month Covid" key_column="month_id" name_column="month">
-          <Property name="Month Covid ES" column="month" caption_set="es" />
-        </Level>
-        <Level name="Date Covid" key_column="date_id" name_column="date">
-          <Property name="Date Covid ES" column="date" caption_set="es" />
-        </Level>
+        <Level name="Year" key_column="year" />
+        <Level name="Quarter" key_column="quarter" />
+        <Level name="Month" key_column="date_id" name_column="month" />
       </Hierarchy>
     </Dimension>
     
