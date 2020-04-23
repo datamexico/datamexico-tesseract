@@ -1017,7 +1017,7 @@
     <Table name="gobmx_covid" primary_key="patient_residence_mun_id" />
 
     <Dimension name="Updated Date" foreign_key="updated_date" type="time">
-      <Hierarchy name="Date" primary_key="date_id">
+      <Hierarchy name="Updated Date" primary_key="date_id">
         <Table name="dim_date_covid" />
         <Level name="Year" key_column="year" />
         <Level name="Quarter" key_column="quarter_id" name_column="quarter">
@@ -1033,7 +1033,7 @@
     </Dimension>
 
     <Dimension name="Ingress Date" foreign_key="ingress_date" type="time">
-      <Hierarchy name="Date" primary_key="date_id">
+      <Hierarchy name="Ingress Date" primary_key="date_id">
         <Table name="dim_date_covid" />
         <Level name="Year" key_column="year" />
         <Level name="Quarter" key_column="quarter_id" name_column="quarter">
@@ -1049,7 +1049,7 @@
     </Dimension>
 
     <Dimension name="Symptoms Date" foreign_key="symptoms_date" type="time">
-      <Hierarchy name="Date" primary_key="date_id">
+      <Hierarchy name="Symptoms Date" primary_key="date_id">
         <Table name="dim_date_covid" />
         <Level name="Year" key_column="year" />
         <Level name="Quarter" key_column="quarter_id" name_column="quarter">
@@ -1065,7 +1065,7 @@
     </Dimension>
 
     <Dimension name="Death Date" foreign_key="death_date" type="time">
-      <Hierarchy name="Date" primary_key="date_id">
+      <Hierarchy name="Death Date" primary_key="date_id">
         <Table name="dim_date_covid" />
         <Level name="Year" key_column="year" />
         <Level name="Quarter" key_column="quarter_id" name_column="quarter">
@@ -1276,7 +1276,7 @@
     </Dimension>
 
     <Dimension name="Intubated Patient" foreign_key="intubated">
-      <Hierarchy name="Binary Answer" primary_key="id">
+      <Hierarchy name="Intubated Patient" primary_key="id">
         <InlineTable alias="dim_inline_binary">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -1352,7 +1352,7 @@
     </Dimension>
 
     <Dimension name="Speaks Indigenous Language" foreign_key="speaks_indigenous_language">
-      <Hierarchy name="Binary Answer" primary_key="id">
+      <Hierarchy name="Speaks Indigenous Language" primary_key="id">
         <InlineTable alias="dim_inline_binary">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -1693,8 +1693,8 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Smoking Diagnose" foreign_key="smoking_diagnose">
-      <Hierarchy name="Smoking Diagnose" primary_key="id">
+    <Dimension name="Diabetes Diagnose" foreign_key="diabetes_diagnose">
+      <Hierarchy name="Diabetes Diagnose" primary_key="id">
         <InlineTable alias="dim_inline_binary">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -1727,6 +1727,44 @@
         </InlineTable>
         <Level name="Diabetes Diagnose" key_column="id" name_column="name_en">
           <Property name="Diabetes Diagnose ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Smoking Diagnose" foreign_key="smoking_diagnose">
+      <Hierarchy name="Smoking Diagnose" primary_key="id">
+        <InlineTable alias="dim_inline_binary">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Yes</Value>
+                <Value column="name_es">Si</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">No</Value>
+                <Value column="name_es">No</Value>
+            </Row>
+            <Row>
+                <Value column="id">97</Value>
+                <Value column="name_en">Does not Apply</Value>
+                <Value column="name_es">No Aplica</Value>
+            </Row>
+            <Row>
+                <Value column="id">98</Value>
+                <Value column="name_en">It is Ignored</Value>
+                <Value column="name_es">Se Ignora</Value>
+            </Row>
+            <Row>
+                <Value column="id">99</Value>
+                <Value column="name_en">Not Specified</Value>
+                <Value column="name_es">No Especificado</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Smoking Diagnose" key_column="id" name_column="name_en">
+          <Property name="Smoking Diagnose ES" column="name_es" caption_set="es"/>
         </Level>
       </Hierarchy>
     </Dimension>
