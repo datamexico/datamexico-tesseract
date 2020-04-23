@@ -970,6 +970,34 @@
         <Level name="Month" key_column="date_id" name_column="month" />
       </Hierarchy>
     </Dimension>
+
+    <Dimension name="Covid Result" foreign_key="covid_positive">
+      <Hierarchy name="Covid Result" primary_key="id">
+        <InlineTable alias="dim_inline_covid_result">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Positive SARS-CoV-2</Value>
+            <Value column="name_es">Positivo SARS-CoV-2</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Non Positive SARS-CoV-2</Value>
+            <Value column="name_es">No positivo SARS-CoV-2</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Pending Result </Value>
+            <Value column="name_es">Resultado pendiente</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Covid Result" key_column="id" name_column="name_en">
+          <Property name="Covid Result ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
     
     <Measure name="Cases" column="id" aggregator="count">
       
