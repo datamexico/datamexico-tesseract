@@ -1852,7 +1852,7 @@
     <DimensionUsage foreign_key="patient_origin_ent_id" source="Geography State" name="Patient Origin State" />
 
     <Dimension name="State Patient Attended" foreign_key="health_institution_attended_ent" type="geo">
-      <Hierarchy name="Geography" primary_key="ent_id">
+      <Hierarchy name="State Patient Attended" primary_key="ent_id">
         <Table name="dim_shared_geography_ent" />
         <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
           <Property name="Nation ES" column="nation_name" caption_set="es"/>
@@ -1869,8 +1869,8 @@
 
     <DimensionUsage foreign_key="country_nationality" source="Country" name="Country Nationality" />
 
-    <Dimension name="Country" foreign_key="country_origin">
-      <Hierarchy name="Country" primary_key="iso3">
+    <Dimension name="Country Origin" foreign_key="country_origin">
+      <Hierarchy name="Country Origin" primary_key="iso3">
         <Table name="dim_shared_country"/>
         <Level name="Continent" key_column="continent_id" name_column="continent" key_type="text">
           <Property name="Continent ES" column="continent_es" caption_set="es"/>
