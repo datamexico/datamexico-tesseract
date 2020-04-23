@@ -1279,7 +1279,7 @@
 
     <Dimension name="Intubated Patient" foreign_key="intubated">
       <Hierarchy name="Intubated Patient" primary_key="id">
-        <InlineTable alias="dim_inline_binary">
+        <InlineTable alias="dim_inline_intubated">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
@@ -1317,7 +1317,7 @@
 
     <Dimension name="Pneumonia Diagnose" foreign_key="pneumonia_diagnose">
       <Hierarchy name="Pneumonia Diagnose" primary_key="id">
-        <InlineTable alias="dim_inline_binary">
+        <InlineTable alias="dim_inline_pneumonia">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
@@ -1355,7 +1355,7 @@
 
     <Dimension name="Speaks Indigenous Language" foreign_key="speaks_indigenous_language">
       <Hierarchy name="Speaks Indigenous Language" primary_key="id">
-        <InlineTable alias="dim_inline_binary">
+        <InlineTable alias="dim_inline_indigenous_language">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
@@ -1393,7 +1393,7 @@
 
     <Dimension name="COPD Diagnose" foreign_key="COPD_diagnose">
       <Hierarchy name="COPD Diagnose" primary_key="id">
-        <InlineTable alias="dim_inline_binary">
+        <InlineTable alias="dim_inline_COPD">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
@@ -1431,7 +1431,7 @@
 
     <Dimension name="Asthma Diagnose" foreign_key="asthma_diagnose">
       <Hierarchy name="Asthma Diagnose" primary_key="id">
-        <InlineTable alias="dim_inline_binary">
+        <InlineTable alias="dim_inline_asthma">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
@@ -1469,7 +1469,7 @@
 
     <Dimension name="Inmunosupresion Diagnose" foreign_key="inmunosupresion_diagnose">
       <Hierarchy name="Inmunosupresion Diagnose" primary_key="id">
-        <InlineTable alias="dim_inline_binary">
+        <InlineTable alias="dim_inline_inmunosupresion">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
@@ -1507,7 +1507,7 @@
 
     <Dimension name="Hypertension Diagnose" foreign_key="hypertension_diagnose">
       <Hierarchy name="Hypertension Diagnose" primary_key="id">
-        <InlineTable alias="dim_inline_binary">
+        <InlineTable alias="dim_inline_hypertension">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
@@ -1545,7 +1545,7 @@
 
     <Dimension name="Diagnosis of Another Disease" foreign_key="diagnosis_another_disease">
       <Hierarchy name="Diagnosis of Another Disease" primary_key="id">
-        <InlineTable alias="dim_inline_binary">
+        <InlineTable alias="dim_inline_another_disease">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
@@ -1583,7 +1583,7 @@
 
     <Dimension name="Cardiovascular Diagnose" foreign_key="cardiovascular_diagnose">
       <Hierarchy name="Cardiovascular Diagnose" primary_key="id">
-        <InlineTable alias="dim_inline_binary">
+        <InlineTable alias="dim_inline_cardiovascular">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
@@ -1621,7 +1621,7 @@
 
     <Dimension name="Obesity Diagnose" foreign_key="obesity_diagnose">
       <Hierarchy name="Obesity Diagnose" primary_key="id">
-        <InlineTable alias="dim_inline_binary">
+        <InlineTable alias="dim_inline_obesity">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
@@ -1659,7 +1659,7 @@
 
     <Dimension name="Chronic Kidney Failure Diagnose" foreign_key="chronic_kidney_failure_diagnose">
       <Hierarchy name="Chronic Kidney Failure Diagnose" primary_key="id">
-        <InlineTable alias="dim_inline_binary">
+        <InlineTable alias="dim_inline_kidney_failure">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
@@ -1697,7 +1697,7 @@
 
     <Dimension name="Diabetes Diagnose" foreign_key="diabetes_diagnose">
       <Hierarchy name="Diabetes Diagnose" primary_key="id">
-        <InlineTable alias="dim_inline_binary">
+        <InlineTable alias="dim_inline_diabetes">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
@@ -1735,7 +1735,7 @@
 
     <Dimension name="Smoking Diagnose" foreign_key="smoking_diagnose">
       <Hierarchy name="Smoking Diagnose" primary_key="id">
-        <InlineTable alias="dim_inline_binary">
+        <InlineTable alias="dim_inline_smoking">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
@@ -1773,7 +1773,7 @@
 
     <Dimension name="Contact with Another Covid Case" foreign_key="contact_another_covid_case">
       <Hierarchy name="Contact with Another Covid Case" primary_key="id">
-        <InlineTable alias="dim_inline_binary">
+        <InlineTable alias="dim_inline_contact_another_case">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
@@ -1811,7 +1811,7 @@
 
     <Dimension name="Migrant" foreign_key="migrant">
       <Hierarchy name="Migrant" primary_key="id">
-        <InlineTable alias="dim_inline_binary">
+        <InlineTable alias="dim_inline_migrant">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
@@ -1849,7 +1849,7 @@
 
     <Dimension name="Required ICU" foreign_key="required_ICU">
       <Hierarchy name="Required ICU" primary_key="id">
-        <InlineTable alias="dim_inline_binary">
+        <InlineTable alias="dim_inline_ICU">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
@@ -1894,13 +1894,13 @@
     <Dimension name="State Patient Attended" foreign_key="health_institution_attended_ent" type="geo">
       <Hierarchy name="State Patient Attended" primary_key="ent_id">
         <Table name="dim_shared_geography_ent" />
-        <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
-          <Property name="Nation ES" column="nation_name" caption_set="es"/>
+        <Level name="Nation Covid" key_column="nation_id" name_column="nation_name" key_type="text">
+          <Property name="Nation Covid ES" column="nation_name" caption_set="es"/>
         </Level>
-        <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-          <Property name="State ISO3" column="ent_iso3" caption_set="es"/>
-          <Property name="CVE State" column="cve_ent" />
-          <Property name="State ES" column="ent_name" caption_set="es"/>
+        <Level name="State Covid" key_column="ent_id" name_column="ent_name" key_type="nontext">
+          <Property name="State Covid ISO3" column="ent_iso3" caption_set="es"/>
+          <Property name="CVE State Covid" column="cve_ent" />
+          <Property name="State Covid ES" column="ent_name" caption_set="es"/>
         </Level>
       </Hierarchy>
     </Dimension>
