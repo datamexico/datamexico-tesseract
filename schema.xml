@@ -1851,6 +1851,20 @@
       </Hierarchy>
     </Dimension>
 
+    <Dimension name="Patient Origin State" foreign_key="patient_origin_ent_id" type="geo">
+      <Hierarchy name="Patient Origin State" primary_key="ent_id">
+        <Table name="dim_shared_geography_ent" />
+        <Level name="Nation Patient Origin" key_column="nation_id" name_column="nation_name" key_type="text">
+          <Property name="Nation Patient Origin ES" column="nation_name" caption_set="es"/>
+        </Level>
+        <Level name="State Patient Origin" key_column="ent_id" name_column="ent_name" key_type="nontext">
+          <Property name="State Patient Origin ISO3" column="ent_iso3" caption_set="es"/>
+          <Property name="CVE State Patient Origin" column="cve_ent" />
+          <Property name="State Patient Origin ES" column="ent_name" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
     <Dimension name="Country Origin" foreign_key="country_origin">
       <Hierarchy name="Country Origin" primary_key="iso3">
         <Table name="dim_shared_country"/>
@@ -1879,13 +1893,11 @@
       </Hierarchy>
     </Dimension>
 
+    <DimensionUsage foreign_key="patient_residence_mun_id" source="Geography Municipality" name="Municipality Patient Residence" />
+
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
 
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
-
-    <DimensionUsage foreign_key="patient_origin_ent_id" source="Geography State" name="Patient Origin State" />
-
-    <DimensionUsage foreign_key="patient_residence_mun_id" source="Geography Municipality" name="Municipality Patient Residence" />
     
     <Measure name="Cases" column="id" aggregator="count">
       
