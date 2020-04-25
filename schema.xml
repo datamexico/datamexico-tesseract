@@ -1840,9 +1840,9 @@
     <Dimension name="State Patient Attended" foreign_key="health_institution_attended_ent" type="geo">
       <Hierarchy name="State Patient Attended" primary_key="ent_id">
         <Table name="dim_shared_geography_ent" />
-        <Level name="Nation Patient Attended" key_column="nation_id" name_column="nation_name" key_type="text">
+        <!--<Level name="Nation Patient Attended" key_column="nation_id" name_column="nation_name" key_type="text">
           <Property name="Nation Patient Attended ES" column="nation_name" caption_set="es"/>
-        </Level>
+        </Level> -->
         <Level name="State Patient Attended" key_column="ent_id" name_column="ent_name" key_type="nontext">
           <Property name="State Patient Attended ISO3" column="ent_iso3" caption_set="es"/>
           <Property name="CVE State Patient Attended" column="cve_ent" />
