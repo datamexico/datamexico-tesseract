@@ -29,8 +29,32 @@
                         "unique_name": "Importer Continent ES"
                     },
                     {
-                        "current_name": "Importer.Country.Continent.Continent ES",
+                        "current_name": "Exporter.Country.Continent.Continent ES",
                         "unique_name": "Exporter Continent ES"
+                    },
+                    {
+                        "current_name": "Importer.Country.Country.ISO 2",
+                        "unique_name": "Importer Country ISO 2"
+                    },
+                    {
+                        "current_name": "Exporter.Country.Country.ISO 2",
+                        "unique_name": "Exporter Country ISO 2"
+                    },
+                    {
+                        "current_name": "Importer.Country.Country.OECD",
+                        "unique_name": "Importer Country OECD"
+                    },
+                    {
+                        "current_name": "Exporter.Country.Country.OECD",
+                        "unique_name": "Exporter Country OECD"
+                    },
+                    {
+                        "current_name": "Importer.Country.Country.Country ES",
+                        "unique_name": "Importer Country ES"
+                    },
+                    {
+                        "current_name": "Exporter.Country.Country.Country ES",
+                        "unique_name": "Exporter Country ES"
                     }
                 ]
             }
