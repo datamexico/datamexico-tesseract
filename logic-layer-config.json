@@ -23,7 +23,16 @@
                         "unique_name": "Importer Country"
                     }
                 ],
-                "properties": []
+                "properties": [
+                    {
+                        "current_name": "Importer.Country.Continent.Continent ES",
+                        "unique_name": "Importer Continent ES"
+                    },
+                    {
+                        "current_name": "Importer.Country.Continent.Continent ES",
+                        "unique_name": "Exporter Continent ES"
+                    }
+                ]
             }
         ]
     }
