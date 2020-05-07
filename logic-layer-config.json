@@ -1,0 +1,30 @@
+
+{
+    "aliases": {
+        "cubes": [
+            {
+                "name": "trade_i_baci_a_12",
+                "alternatives": ["BACI Annual Trade (HS12)"],
+                "levels": [
+                    {
+                        "current_name": "Exporter.Country.Continent",
+                        "unique_name": "Exporter Continent"
+                    },
+                    {
+                        "current_name": "Exporter.Country.Country",
+                        "unique_name": "Exporter Country"
+                    },
+                    {
+                        "current_name": "Importer.Country.Continent",
+                        "unique_name": "Importer Continent"
+                    },
+                    {
+                        "current_name": "Importer.Country.Country",
+                        "unique_name": "Importer Country"
+                    }
+                ],
+                "properties": []
+            }
+        ]
+    }
+}
