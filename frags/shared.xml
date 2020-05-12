@@ -10,6 +10,7 @@
         <Property name="State ISO3" column="ent_iso3" caption_set="es"/>
         <Property name="CVE State" column="cve_ent" />
         <Property name="State ES" column="ent_name" caption_set="es"/>
+        <Property name="State slug ES" column="ent_slug" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -21,6 +22,7 @@
         <Property name="State ISO3" column="ent_iso3" caption_set="es"/>
         <Property name="CVE State" column="cve_ent" />
         <Property name="State ES" column="ent_name" caption_set="es"/>
+        <Property name="State slug ES" column="ent_slug" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -32,6 +34,7 @@
         <Property name="CVE Municipality" column="cve_mun" />
         <Property name="CVE Municipality Full" column="cve_mun_full" />
         <Property name="Municipality ES" column="mun_name" caption_set="es"/>
+        <Property name="Municipality slug ES" column="mun_slug" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -46,11 +49,13 @@
         <Property name="State ISO3" column="ent_iso3" caption_set="es"/>
         <Property name="CVE State" column="cve_ent" />
         <Property name="State ES" column="ent_name" caption_set="es"/>
+        <Property name="State slug ES" column="ent_slug" caption_set="es"/>
       </Level>
       <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
         <Property name="CVE Municipality" column="cve_mun" />
         <Property name="CVE Municipality Full" column="cve_mun_full" />
         <Property name="Municipality ES" column="mun_name" caption_set="es"/>
+        <Property name="Municipality slug ES" column="mun_slug" caption_set="es"/>
       </Level>
     </Hierarchy>
 
