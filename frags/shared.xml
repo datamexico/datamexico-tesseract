@@ -90,16 +90,19 @@
         <Property name="State ISO3" column="ent_iso3" caption_set="es"/>
         <Property name="CVE State" column="cve_ent" />
         <Property name="State ES" column="ent_name" caption_set="es"/>
+        <Property name="State slug ES" column="ent_slug" caption_set="es"/>
       </Level>
       <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
         <Property name="CVE Municipality" column="cve_mun" />
         <Property name="CVE Municipality Full" column="cve_mun_full" />
         <Property name="Municipality ES" column="mun_name" caption_set="es"/>
+        <Property name="Municipality slug ES" column="mun_slug" caption_set="es"/>
       </Level>
       <Level name="Location" key_column="loc_id" name_column="loc_name" key_type="nontext">
         <Property name="CVE Location" column="cve_loc" />
         <Property name="CVE Location Full" column="cve_loc_full" />
         <Property name="Location ES" column="loc_name" caption_set="es"/>
+        <Property name="Location slug ES" column="loc_slug" caption_set="es"/>
       </Level>
     </Hierarchy>
     <Hierarchy name="Metro Area">
