@@ -110,11 +110,11 @@
         <Property name="State ISO3" column="ent_iso3"/>
         <Property name="CVE State" column="cve_ent"/>
 
-        <Property name="State slug ES" column="ent_slug" caption_set="es"/>
         <Property name="State ES" column="ent_name" caption_set="es"/>
+        <Property name="State slug ES" column="ent_slug" caption_set="es"/>
 
-        <Property name="State slug EN" column="ent_slug_en" caption_set="en"/>
         <Property name="State EN" column="ent_name_en" caption_set="en"/>
+        <Property name="State slug EN" column="ent_slug_en" caption_set="en"/>
       </Level>
       <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
         <Property name="CVE Municipality Full" column="cve_mun_full"/>
