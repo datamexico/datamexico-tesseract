@@ -9,12 +9,8 @@
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
         <Property name="State ISO3" column="ent_iso3"/>
         <Property name="CVE State" column="cve_ent"/>
-
-        <Property name="State slug ES" column="ent_slug" caption_set="es"/>
+        <Property name="State slug ES" column="ent_slug"/>
         <Property name="State ES" column="ent_name" caption_set="es"/>
-
-        <Property name="State slug EN" column="ent_slug_en" caption_set="en"/>
-        <Property name="State EN" column="ent_name_en" caption_set="en"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -25,12 +21,8 @@
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
         <Property name="State ISO3" column="ent_iso3"/>
         <Property name="CVE State" column="cve_ent"/>
-
-        <Property name="State slug ES" column="ent_slug" caption_set="es"/>
+        <Property name="State slug ES" column="ent_slug"/>
         <Property name="State ES" column="ent_name" caption_set="es"/>
-
-        <Property name="State slug EN" column="ent_slug_en" caption_set="en"/>
-        <Property name="State EN" column="ent_name_en" caption_set="en"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -41,12 +33,8 @@
       <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
         <Property name="CVE Municipality Full" column="cve_mun_full"/>
         <Property name="CVE Municipality" column="cve_mun"/>
-
-        <Property name="Municipality slug ES" column="mun_slug" caption_set="es"/>
+        <Property name="Municipality Slug" column="mun_slug"/>
         <Property name="Municipality ES" column="mun_name" caption_set="es"/>
-
-        <Property name="Municipality slug EN" column="mun_slug_en" caption_set="en"/>
-        <Property name="Municipality EN" column="mun_name_en" caption_set="en"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -60,22 +48,14 @@
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
         <Property name="State ISO3" column="ent_iso3"/>
         <Property name="CVE State" column="cve_ent"/>
-
-        <Property name="State slug ES" column="ent_slug" caption_set="es"/>
+        <Property name="State slug ES" column="ent_slug"/>
         <Property name="State ES" column="ent_name" caption_set="es"/>
-
-        <Property name="State slug EN" column="ent_slug_en" caption_set="en"/>
-        <Property name="State EN" column="ent_name_en" caption_set="en"/>
       </Level>
       <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
         <Property name="CVE Municipality Full" column="cve_mun_full"/>
         <Property name="CVE Municipality" column="cve_mun"/>
-
-        <Property name="Municipality slug ES" column="mun_slug" caption_set="es"/>
+        <Property name="Municipality Slug" column="mun_slug"/>
         <Property name="Municipality ES" column="mun_name" caption_set="es"/>
-
-        <Property name="Municipality slug EN" column="mun_slug_en" caption_set="en"/>
-        <Property name="Municipality EN" column="mun_name_en" caption_set="en"/>
       </Level>
     </Hierarchy>
 
@@ -109,32 +89,20 @@
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
         <Property name="State ISO3" column="ent_iso3"/>
         <Property name="CVE State" column="cve_ent"/>
-
-        <Property name="State slug ES" column="ent_slug" caption_set="es"/>
+        <Property name="State slug ES" column="ent_slug"/>
         <Property name="State ES" column="ent_name" caption_set="es"/>
-
-        <Property name="State slug EN" column="ent_slug_en" caption_set="en"/>
-        <Property name="State EN" column="ent_name_en" caption_set="en"/>
       </Level>
       <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
         <Property name="CVE Municipality Full" column="cve_mun_full"/>
         <Property name="CVE Municipality" column="cve_mun"/>
-
-        <Property name="Municipality slug ES" column="mun_slug" caption_set="es"/>
+        <Property name="Municipality Slug" column="mun_slug"/>
         <Property name="Municipality ES" column="mun_name" caption_set="es"/>
-
-        <Property name="Municipality slug EN" column="mun_slug_en" caption_set="en"/>
-        <Property name="Municipality EN" column="mun_name_en" caption_set="en"/>
       </Level>
       <Level name="Location" key_column="loc_id" name_column="loc_name" key_type="nontext">
         <Property name="CVE Location Full" column="cve_loc_full"/>
         <Property name="CVE Location" column="cve_loc"/>
-
-        <Property name="Location slug ES" column="loc_slug" caption_set="es"/> 
+        <Property name="Location Slug" column="loc_slug"/> 
         <Property name="Location ES" column="loc_name" caption_set="es"/> 
-
-        <Property name="Location slug EN" column="loc_slug_en" caption_set="en"/> 
-        <Property name="Location EN" column="loc_name_en" caption_set="en"/> 
       </Level>
     </Hierarchy>
     <Hierarchy name="Metro Area">

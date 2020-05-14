@@ -1,0 +1,26 @@
+<Schema name="datamexico" default_locale="en">
+    <Cube name="complexity_eci_a_hs12_hs6">
+        <Annotation name="source_name">OEC</Annotation>
+        <Annotation name="source_description">Observatory of Economic Complexity</Annotation>
+        <Annotation name="dataset_name">Economic Complexity Indicators</Annotation>
+        <Annotation name="dataset_link">https://pro.oec.world/en/resources/data/</Annotation>
+
+        <Table name="complexity_eci_a_hs12_hs6" primary_key="country_id" />
+
+        <DimensionUsage name="Country" source="Geography" foreign_key="country_id" />
+
+        <Dimension name="Year" foreign_key="year">
+            <Hierarchy name="Year">
+                <Level name="Year" key_column="year" />
+            </Hierarchy>
+        </Dimension>
+
+        <Dimension name="ECI Rank" foreign_key="eci_rank">
+            <Hierarchy name="ECI Rank">
+                <Level name="ECI Rank" key_column="eci_rank" />
+            </Hierarchy>
+        </Dimension>
+
+        <Measure name="ECI" column="eci" aggregator="avg" />
+    </Cube>
+</Schema>
