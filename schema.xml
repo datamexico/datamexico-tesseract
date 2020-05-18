@@ -2688,7 +2688,7 @@
 
         <Table name="complexity_eci_a_hs12_hs6" primary_key="country_id" />
 
-        <DimensionUsage name="Country" source="Geography" foreign_key="country_id" />
+        <DimensionUsage foreign_key="country_id" source="Country" name="Country" />
 
         <Dimension name="Year" foreign_key="year">
             <Hierarchy name="Year">
