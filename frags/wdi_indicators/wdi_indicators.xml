@@ -7,7 +7,7 @@
 
         <Table name="indicators_i_wdi_a" primary_key="geo_id" />
 
-        <DimensionUsage foreign_key="oec_country_id" source="Country" name="Country" />
+        <DimensionUsage foreign_key="geo_id" source="Country" name="Country" />
         <DimensionUsage foreign_key="indicator_id" source="Indicator" name="Indicator" />
 
         <Dimension name="Year" foreign_key="year">
