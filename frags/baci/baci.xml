@@ -7,9 +7,9 @@
 
         <Table name="trade_i_baci_a_12" primary_key="hs_master_id" />
 
-        <DimensionUsage name="HS Product" source="Product" foreign_key="hs_master_id" />
-        <DimensionUsage name="Exporter" source="Country" foreign_key="exporter" />
-        <DimensionUsage name="Importer" source="Country" foreign_key="importer" />
+        <DimensionUsage foreign_key="hs_master_id" source="Product" name="HS Product" />
+        <DimensionUsage foreign_key="exporter" source="Country" name="Exporter" />
+        <DimensionUsage foreign_key="importer" source="Country" name="Importer" />
 
         <Dimension name="Year" foreign_key="year">
             <Hierarchy name="Year">

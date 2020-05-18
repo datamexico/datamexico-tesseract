@@ -446,6 +446,32 @@
     </Hierarchy>
   </SharedDimension>
 
+  <SharedDimension name="Indicator">
+    <Hierarchy name="Indicator">
+        <Table name="dim_shared_indicators" />
+        <Level name="Indicator" key_column="indicator_id" name_column="indicator_name" key_type="text">
+            <Property name="Topic" column="topic" />
+            <Property name="Short Definition" column="short_definition" />
+            <Property name="Long Definition" column="long_definition" />
+            <Property name="Unit of Measure" column="unit_of_measure" />
+            <Property name="Periodicity" column="periodicity" />
+            <Property name="Base Period" column="base_period" />
+            <Property name="Other Notes" column="other_notes" />
+            <Property name="Aggregation Method" column="aggregation_method" />
+            <Property name="Limitations and Expectations" column="limitations_and_expectations" />
+            <Property name="Notes from Original Source" column="notes_from_original_source" />
+            <Property name="General Comments" column="general_comments" />
+            <Property name="Source" column="source" />
+            <Property name="Statistical Concept and Methodology" column="statistical_concept_and_methodology" />
+            <Property name="Development Relevance" column="development_relevance" />
+            <Property name="Related Source Links" column="related_source_links" />
+            <Property name="Other Web Links" column="other_web_links" />
+            <Property name="Related Indicators" column="related_indicators" />
+            <Property name="License Type" column="license_type" />
+        </Level>
+    </Hierarchy>
+  </SharedDimension>
+
   <SharedDimension name="Trust">
       <Hierarchy name="Trust">
         <InlineTable alias="dim_inline_envipe">

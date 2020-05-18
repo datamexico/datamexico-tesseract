@@ -446,6 +446,32 @@
     </Hierarchy>
   </SharedDimension>
 
+  <SharedDimension name="Indicator">
+    <Hierarchy name="Indicator">
+        <Table name="dim_shared_indicators" />
+        <Level name="Indicator" key_column="indicator_id" name_column="indicator_name" key_type="text">
+            <Property name="Topic" column="topic" />
+            <Property name="Short Definition" column="short_definition" />
+            <Property name="Long Definition" column="long_definition" />
+            <Property name="Unit of Measure" column="unit_of_measure" />
+            <Property name="Periodicity" column="periodicity" />
+            <Property name="Base Period" column="base_period" />
+            <Property name="Other Notes" column="other_notes" />
+            <Property name="Aggregation Method" column="aggregation_method" />
+            <Property name="Limitations and Expectations" column="limitations_and_expectations" />
+            <Property name="Notes from Original Source" column="notes_from_original_source" />
+            <Property name="General Comments" column="general_comments" />
+            <Property name="Source" column="source" />
+            <Property name="Statistical Concept and Methodology" column="statistical_concept_and_methodology" />
+            <Property name="Development Relevance" column="development_relevance" />
+            <Property name="Related Source Links" column="related_source_links" />
+            <Property name="Other Web Links" column="other_web_links" />
+            <Property name="Related Indicators" column="related_indicators" />
+            <Property name="License Type" column="license_type" />
+        </Level>
+    </Hierarchy>
+  </SharedDimension>
+
   <SharedDimension name="Trust">
       <Hierarchy name="Trust">
         <InlineTable alias="dim_inline_envipe">
@@ -630,9 +656,9 @@
 
         <Table name="trade_i_baci_a_12" primary_key="hs_master_id" />
 
-        <DimensionUsage name="HS Product" source="Product" foreign_key="hs_master_id" />
-        <DimensionUsage name="Exporter" source="Country" foreign_key="exporter" />
-        <DimensionUsage name="Importer" source="Country" foreign_key="importer" />
+        <DimensionUsage foreign_key="hs_master_id" source="Product" name="HS Product" />
+        <DimensionUsage foreign_key="exporter" source="Country" name="Exporter" />
+        <DimensionUsage foreign_key="importer" source="Country" name="Importer" />
 
         <Dimension name="Year" foreign_key="year">
             <Hierarchy name="Year">
@@ -8167,5 +8193,24 @@
     <Measure name="Import Plants" column="import_num_plants" aggregator="sum" />
     <Measure name="Export Plants" column="export_num_plants" aggregator="sum" />
   </Cube>
+<Cube name="indicators_i_wdi_a">
+        <Annotation name="source_name">World Development Indicators (WDI) and UN Department of Economic and Social Affairs, Population Division</Annotation>
+        <Annotation name="source_description">Development indicators from 1960-2019</Annotation>
+        <Annotation name="dataset_name">Development Indicators</Annotation>
+        <Annotation name="dataset_link">https://datacatalog.worldbank.org/dataset/world-development-indicators</Annotation>
+
+        <Table name="indicators_i_wdi_a" primary_key="geo_id" />
+
+        <DimensionUsage foreign_key="oec_country_id" source="Country" name="Country" />
+        <DimensionUsage foreign_key="indicator_id" source="Indicator" name="Indicator" />
+
+        <Dimension name="Year" foreign_key="year">
+            <Hierarchy name="Year">
+                <Level name="Year" key_column="year" />
+            </Hierarchy>
+        </Dimension>
+
+        <Measure name="Measure" column="measure" aggregator="sum" />
+    </Cube>
 
 </Schema>
