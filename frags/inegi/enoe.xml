@@ -378,7 +378,7 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">No Apply</Value>
+            <Value column="name_en">Does Not Apply</Value>
             <Value column="name_es">No Aplica</Value>
           </Row>
           <Row>
@@ -406,7 +406,7 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">No Apply</Value>
+            <Value column="name_en">Does Not Apply</Value>
             <Value column="name_es">No Aplica</Value>
           </Row>
           <Row>
@@ -444,7 +444,7 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">No Apply</Value>
+            <Value column="name_en">Does Not Apply</Value>
             <Value column="name_es">No Aplica</Value>
           </Row>
           <Row>
@@ -497,7 +497,7 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">No Apply</Value>
+            <Value column="name_en">Does Not Apply</Value>
             <Value column="name_es">No Aplica</Value>
           </Row>
           <Row>
@@ -520,7 +520,7 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">No Apply</Value>
+            <Value column="name_en">Does Not Apply</Value>
             <Value column="name_es">No Aplica</Value>
           </Row>
           <Row>
@@ -555,6 +555,521 @@
       </Hierarchy>
     </Dimension>
 
+    <Dimension name="Schooling Years" foreign_key="schooling_years">
+      <Hierarchy name="Schooling Years" primary_key="id">
+        <InlineTable alias="dim_inline_schooling_years">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Without Instruction and Does Not Apply</Value>
+            <Value column="name_es">Sin Instrucción y no Aplica</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">1 Years of Schooling</Value>
+            <Value column="name_es">1 Año de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">2 Years of Schooling</Value>
+            <Value column="name_es">2 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">3 Years of Schooling</Value>
+            <Value column="name_es">3 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">4 Years of Schooling</Value>
+            <Value column="name_es">4 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">5 Years of Schooling</Value>
+            <Value column="name_es">5 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">6 Years of Schooling</Value>
+            <Value column="name_es">6 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">7 Years of Schooling</Value>
+            <Value column="name_es">7 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">8 Years of Schooling</Value>
+            <Value column="name_es">8 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">9 Years of Schooling</Value>
+            <Value column="name_es">9 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">10</Value>
+            <Value column="name_en">10 Years of Schooling</Value>
+            <Value column="name_es">10 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">11</Value>
+            <Value column="name_en">11 Years of Schooling</Value>
+            <Value column="name_es">11 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">12</Value>
+            <Value column="name_en">12 Years of Schooling</Value>
+            <Value column="name_es">12 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">13</Value>
+            <Value column="name_en">13 Years of Schooling</Value>
+            <Value column="name_es">13 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">14</Value>
+            <Value column="name_en">14 Years of Schooling</Value>
+            <Value column="name_es">14 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">15</Value>
+            <Value column="name_en">15 Years of Schooling</Value>
+            <Value column="name_es">15 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">16</Value>
+            <Value column="name_en">16 Years of Schooling</Value>
+            <Value column="name_es">16 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">17</Value>
+            <Value column="name_en">17 Years of Schooling</Value>
+            <Value column="name_es">17 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">18</Value>
+            <Value column="name_en">18 Years of Schooling</Value>
+            <Value column="name_es">18 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">19</Value>
+            <Value column="name_en">19 Years of Schooling</Value>
+            <Value column="name_es">19 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">20</Value>
+            <Value column="name_en">20 Years of Schooling</Value>
+            <Value column="name_es">20 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">21</Value>
+            <Value column="name_en">21 Years of Schooling</Value>
+            <Value column="name_es">21 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">22</Value>
+            <Value column="name_en">22 Years of Schooling</Value>
+            <Value column="name_es">22 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">23</Value>
+            <Value column="name_en">23 Years of Schooling</Value>
+            <Value column="name_es">23 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">24</Value>
+            <Value column="name_en">24 Years of Schooling</Value>
+            <Value column="name_es">24 Años de Escolaridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">99</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No Especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Schooling Years" key_column="id" name_column="name_en">
+          <Property name="Schooling Years ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Instruction Level" foreign_key="instruction_level">
+      <Hierarchy name="Instruction Level" primary_key="id">
+        <InlineTable alias="dim_inline_approved_years">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">None</Value>
+            <Value column="name_es">Ninguno</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Preschool</Value>
+            <Value column="name_es">Preescolar</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Primary</Value>
+            <Value column="name_es">Primaria</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">High School</Value>
+            <Value column="name_es">Secundaria</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">High School or Baccalaureate</Value>
+            <Value column="name_es">Preparatoria o Bachillerato</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Normal</Value>
+            <Value column="name_es">Normal</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Technical Career</Value>
+            <Value column="name_es">Carrera Técnica</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Professional</Value>
+            <Value column="name_es">Profesional</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">Master Degree</Value>
+            <Value column="name_es">Maestría</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Doctorate</Value>
+            <Value column="name_es">Doctorado</Value>
+          </Row>
+          <Row>
+            <Value column="id">99</Value>
+            <Value column="name_en">Does Not Know Level</Value>
+            <Value column="name_es">No Sabe Nivel</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Instruction Level" key_column="id" name_column="name_en">
+          <Property name="Instruction Level ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Approved Years" foreign_key="approved_years">
+      <Hierarchy name="Approved Years" primary_key="id">
+        <InlineTable alias="dim_inline_instruction_level">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">No Approved Years</Value>
+            <Value column="name_es">Ningun Año Aprobado</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">1 Year Approved</Value>
+            <Value column="name_es">1 Año Aprobado</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">2 Years Approved</Value>
+            <Value column="name_es">2 Años Aprobados</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">3 Years Approved</Value>
+            <Value column="name_es">3 Años Aprobados</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">4 Years Approved</Value>
+            <Value column="name_es">4 Años Aprobados</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">5 Years Approved</Value>
+            <Value column="name_es">5 Años Aprobados</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">6 Years Approved</Value>
+            <Value column="name_es">6 Años Aprobados</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">7 Years Approved</Value>
+            <Value column="name_es">7 Años Aprobados</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">8 Years Approved</Value>
+            <Value column="name_es">8 Años Aprobados</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">9 Years Approved</Value>
+            <Value column="name_es">9 Años Aprobados</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Approved Years" key_column="id" name_column="name_en">
+          <Property name="Approved Years ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Work History" foreign_key="work_history">
+      <Hierarchy name="Work History" primary_key="id">
+        <InlineTable alias="dim_inline__48hrs_less_1">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Does Not Apply</Value>
+            <Value column="name_es">No Aplica</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">With experience</Value>
+            <Value column="name_es">Con Experiencia</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Without Experience</Value>
+            <Value column="name_es">Sin Experiencia</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Work History" key_column="id" name_column="name_en">
+          <Property name="Work History ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Unoccupied Condition" foreign_key="unoccupied_condition">
+      <Hierarchy name="Unoccupied Condition" primary_key="id">
+        <InlineTable alias="dim_inline_unoccupied_condition">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Does Not Apply</Value>
+            <Value column="name_es">No Aplica</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Lost or Terminated Previous Employment</Value>
+            <Value column="name_es">Perdió o Terminó su Empleo Anterior</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Dissatisfaction with Previous Job</Value>
+            <Value column="name_es">Insatisfacción con el empleo anterior</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Left or Closed Own Business</Value>
+            <Value column="name_es">Dejó o Cerró un Negocio Propio</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Other</Value>
+            <Value column="name_es">Otro</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Unoccupied Condition" key_column="id" name_column="name_en">
+          <Property name="Unoccupied Condition ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Classification Unemployment Duration" foreign_key="classification_duration_unemployment">
+      <Hierarchy name="Classification Unemployment Duration" primary_key="id">
+        <InlineTable alias="dim_inline_classification_duration_unemployment">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Does Not Apply</Value>
+            <Value column="name_es">No Aplica</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Up to 1 Month</Value>
+            <Value column="name_es">Hasta 1 Mes</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">More than 1 Month up to 3 Months</Value>
+            <Value column="name_es">Más de 1 Mes hasta 3 Meses</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">More than 3 Months to 6 Months</Value>
+            <Value column="name_es">Más de 3 Mes hasta 6 Meses</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">More than 6 Months up to 1 Year</Value>
+            <Value column="name_es">Más de 6 Meses hasta 1 Año</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">More than 1 Year</Value>
+            <Value column="name_es">Más de 1 Año</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No Especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Classification Unemployment Duration" key_column="id" name_column="name_en">
+          <Property name="Classification Unemployment Duration ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="underemployed population" foreign_key="underemployed_population">
+      <Hierarchy name="underemployed population" primary_key="id">
+        <InlineTable alias="dim_inline_underemployed_population">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Does Not Apply</Value>
+            <Value column="name_es">No Aplica</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Underemployed</Value>
+            <Value column="name_es">Si es Subocupado</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Not underemployed</Value>
+            <Value column="name_es">No es Subocupado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="underemployed population" key_column="id" name_column="name_en">
+          <Property name="underemployed population ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Underemployed Classification" foreign_key="underemployed_classification">
+      <Hierarchy name="Underemployed Classification" primary_key="id">
+        <InlineTable alias="dim_inline_unoccupied_condition">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Does Not Apply</Value>
+            <Value column="name_es">No Aplica</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">People with Labor Relations but Affected by Technical Unemployment</Value>
+            <Value column="name_es">Personas con Nexo Laboral pero Afectadas por Paro Técnico</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">People Affected by a Fall in the Pace of their Activity</Value>
+            <Value column="name_es">Personas Afectadas por una Caída en el Ritmo de su Actividad</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">People who Work less than 35 Hours for Market Reasons</Value>
+            <Value column="name_es">Personas que Laboran menos de 35 Horas por Razones de Mercado</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">People who Work more than 35 Hours than Usual for Market Reasons</Value>
+            <Value column="name_es">Personas que Laboran más de 35 Horas de lo Habitual por Razones de Mercado</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">People Looking to Increase their Workday to get more Income</Value>
+            <Value column="name_es">Personas que Buscan Aumentar su Jornada Laboral para Obtener más Ingreso</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Absent with Return in the Interview Week</Value>
+            <Value column="name_es">Ausentes con Retorno en la Semana de la Entrevista</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Underemployed Classification" key_column="id" name_column="name_en">
+          <Property name="Underemployed Classification ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Classification of Self Employed Population Unqualified Activities" foreign_key="classification_self_employed_unqualified_activities">
+      <Hierarchy name="Classification of Self Employed Population Unqualified Activities" primary_key="id">
+        <InlineTable alias="dim_inline_classification_self_employed_unqualified_activities">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Does Not Apply</Value>
+            <Value column="name_es">No Aplica</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Self-Employed in Non-Qualified Activities</Value>
+            <Value column="name_es">Cuenta Propia en Actividades no Calificadas</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Classification of Self Employed Population Unqualified Activities" key_column="id" name_column="name_en">
+          <Property name="Classification of Self Employed Population Unqualified Activities ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Classification of Formal and Informal Jobs of the First Activity" foreign_key="classification_formal_informal_jobs_first_activity">
+      <Hierarchy name="Classification of Formal and Informal Jobs of the First Activity" primary_key="id">
+        <InlineTable alias="dim_inline_classification_formal_informal_jobs_first_activity">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Does Not Apply</Value>
+            <Value column="name_es">No Aplica</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Informal Employment</Value>
+            <Value column="name_es">Empleo Informal</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Formal Employment</Value>
+            <Value column="name_es">Empleo Formal</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Classification of Formal and Informal Jobs of the First Activity" key_column="id" name_column="name_en">
+          <Property name="Classification of Formal and Informal Jobs of the First Activity ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
     <DimensionUsage foreign_key="income_id" source="Salary" name="Salary" />
     <DimensionUsage foreign_key="actual_healthcare_attention" source="Social Security" name="Social Security" />
     <DimensionUsage foreign_key="actual_job_industry_group_id" source="Industry 4 Digit" name="Industry Actual Job" />
@@ -571,6 +1086,9 @@
         <Annotation name="details">Value in number of days</Annotation>
     </Measure>
     <Measure name="Wage" column="actual_amount_pesos" aggregator="avg">
+        <Annotation name="details">Value in mexican pesos</Annotation>
+    </Measure>
+    <Measure name="Mensual Wage" column="mensual_wage" aggregator="avg">
         <Annotation name="details">Value in mexican pesos</Annotation>
     </Measure>
     <Measure name="Workforce" column="population" aggregator="sum">
