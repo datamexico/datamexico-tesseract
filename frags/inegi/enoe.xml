@@ -563,128 +563,128 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">0</Value>
-            <Value column="name_en">Without Instruction and Does Not Apply</Value>
-            <Value column="name_es">Sin Instrucción y no Aplica</Value>
+            <Value column="name_en">0 to 3 Years of Schooling</Value>
+            <Value column="name_es">0 a 3 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">1 Years of Schooling</Value>
-            <Value column="name_es">1 Año de Escolaridad</Value>
+            <Value column="name_en">0 to 3 Years of Schooling</Value>
+            <Value column="name_es">0 a 3 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">2 Years of Schooling</Value>
-            <Value column="name_es">2 Años de Escolaridad</Value>
+            <Value column="name_en">0 to 3 Years of Schooling</Value>
+            <Value column="name_es">0 a 3 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">3 Years of Schooling</Value>
-            <Value column="name_es">3 Años de Escolaridad</Value>
+            <Value column="name_en">0 to 3 Years of Schooling</Value>
+            <Value column="name_es">0 a 3 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">4 Years of Schooling</Value>
-            <Value column="name_es">4 Años de Escolaridad</Value>
+            <Value column="name_en">4 to 6 Years of Schooling</Value>
+            <Value column="name_es">4 a 6 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
-            <Value column="name_en">5 Years of Schooling</Value>
-            <Value column="name_es">5 Años de Escolaridad</Value>
+            <Value column="name_en">4 to 6 Years of Schooling</Value>
+            <Value column="name_es">4 a 6 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">6</Value>
-            <Value column="name_en">6 Years of Schooling</Value>
-            <Value column="name_es">6 Años de Escolaridad</Value>
+            <Value column="name_en">4 to 6 Years of Schooling</Value>
+            <Value column="name_es">4 a 6 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">7 Years of Schooling</Value>
-            <Value column="name_es">7 Años de Escolaridad</Value>
+            <Value column="name_en">7 to 9 Years of Schooling</Value>
+            <Value column="name_es">7 a 9 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">8</Value>
-            <Value column="name_en">8 Years of Schooling</Value>
-            <Value column="name_es">8 Años de Escolaridad</Value>
+            <Value column="name_en">7 to 9 Years of Schooling</Value>
+            <Value column="name_es">7 a 9 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">9 Years of Schooling</Value>
-            <Value column="name_es">9 Años de Escolaridad</Value>
+            <Value column="name_en">7 to 9 Years of Schooling</Value>
+            <Value column="name_es">7 a 9 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">10</Value>
-            <Value column="name_en">10 Years of Schooling</Value>
-            <Value column="name_es">10 Años de Escolaridad</Value>
+            <Value column="name_en">10 to 12 Years of Schooling</Value>
+            <Value column="name_es">10 a 12 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">11</Value>
-            <Value column="name_en">11 Years of Schooling</Value>
-            <Value column="name_es">11 Años de Escolaridad</Value>
+            <Value column="name_en">10 to 12 Years of Schooling</Value>
+            <Value column="name_es">10 a 12 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">12</Value>
-            <Value column="name_en">12 Years of Schooling</Value>
-            <Value column="name_es">12 Años de Escolaridad</Value>
+            <Value column="name_en">10 to 12 Years of Schooling</Value>
+            <Value column="name_es">10 a 12 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">13</Value>
-            <Value column="name_en">13 Years of Schooling</Value>
-            <Value column="name_es">13 Años de Escolaridad</Value>
+            <Value column="name_en">13 to 15 Years of Schooling</Value>
+            <Value column="name_es">13 a 15 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">14</Value>
-            <Value column="name_en">14 Years of Schooling</Value>
-            <Value column="name_es">14 Años de Escolaridad</Value>
+            <Value column="name_en">13 to 15 Years of Schooling</Value>
+            <Value column="name_es">13 a 15 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">15</Value>
-            <Value column="name_en">15 Years of Schooling</Value>
-            <Value column="name_es">15 Años de Escolaridad</Value>
+            <Value column="name_en">13 to 15 Years of Schooling</Value>
+            <Value column="name_es">13 a 15 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">16</Value>
-            <Value column="name_en">16 Years of Schooling</Value>
-            <Value column="name_es">16 Años de Escolaridad</Value>
+            <Value column="name_en">16 to 18 Years of Schooling</Value>
+            <Value column="name_es">16 a 18 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">17</Value>
-            <Value column="name_en">17 Years of Schooling</Value>
-            <Value column="name_es">17 Años de Escolaridad</Value>
+            <Value column="name_en">16 to 18 Years of Schooling</Value>
+            <Value column="name_es">16 a 18 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">18</Value>
-            <Value column="name_en">18 Years of Schooling</Value>
-            <Value column="name_es">18 Años de Escolaridad</Value>
+            <Value column="name_en">16 to 18 Years of Schooling</Value>
+            <Value column="name_es">16 a 18 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">19</Value>
-            <Value column="name_en">19 Years of Schooling</Value>
-            <Value column="name_es">19 Años de Escolaridad</Value>
+            <Value column="name_en">More than 18 Years of Schooling</Value>
+            <Value column="name_es">Más de 18 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">20</Value>
-            <Value column="name_en">20 Years of Schooling</Value>
-            <Value column="name_es">20 Años de Escolaridad</Value>
+            <Value column="name_en">More than 18 Years of Schooling</Value>
+            <Value column="name_es">Más de 18 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">21</Value>
-            <Value column="name_en">21 Years of Schooling</Value>
-            <Value column="name_es">21 Años de Escolaridad</Value>
+            <Value column="name_en">More than 18 Years of Schooling</Value>
+            <Value column="name_es">Más de 18 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">22</Value>
-            <Value column="name_en">22 Years of Schooling</Value>
-            <Value column="name_es">22 Años de Escolaridad</Value>
+            <Value column="name_en">More than 18 Years of Schooling</Value>
+            <Value column="name_es">Más de 18 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">23</Value>
-            <Value column="name_en">23 Years of Schooling</Value>
-            <Value column="name_es">23 Años de Escolaridad</Value>
+            <Value column="name_en">More than 18 Years of Schooling</Value>
+            <Value column="name_es">Más de 18 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">24</Value>
-            <Value column="name_en">24 Years of Schooling</Value>
-            <Value column="name_es">24 Años de Escolaridad</Value>
+            <Value column="name_en">More than 18 Years of Schooling</Value>
+            <Value column="name_es">Más de 18 Años de Escolaridad</Value>
           </Row>
           <Row>
             <Value column="id">99</Value>
