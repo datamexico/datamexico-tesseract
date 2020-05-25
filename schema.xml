@@ -389,14 +389,14 @@
         <Property name="Long HS2 ES" column="hs2_es" caption_set="es"/>-->
       </Level>
       <Level name="HS4" key_column="hs4_id" name_column="hs4_en_short" key_type="nontext">
-        <Property name="HS4 ES" column="hs4_es_short" caption_set="es"/>
         <Property name="Long HS4" column="hs4_en" caption_set="en"/>
         <Property name="Long HS4 ES" column="hs4_es" caption_set="es"/>
+        <Property name="HS4 ES" column="hs4_es_short" caption_set="es"/>
       </Level>
       <Level name="HS6" key_column="hs6_id" name_column="hs6_en_short" key_type="nontext">
-        <Property name="HS6 ES" column="hs6_es_short" caption_set="es"/>
         <Property name="Long HS6" column="hs6_en" caption_set="en"/>
         <Property name="Long HS6 ES" column="hs6_es" caption_set="es"/>
+        <Property name="HS6 ES" column="hs6_es_short" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -413,9 +413,9 @@
         <Property name="Long HS2 ES" column="hs2_es" caption_set="es"/>-->
       </Level>
       <Level name="HS4 4 Digit" key_column="hs4_id" name_column="hs4_en_short" key_type="nontext">
-        <Property name="HS4 4 Digit ES" column="hs4_es_short" caption_set="es"/>
         <Property name="Long HS4 4 Digit" column="hs4_en" caption_set="en"/>
         <Property name="Long HS4 4 Digit ES" column="hs4_es" caption_set="es"/>
+        <Property name="HS4 4 Digit ES" column="hs4_es_short" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -427,9 +427,9 @@
         <Property name="Chapter 2 Digit ES" column="chapter_es" caption_set="es"/>
       </Level>
       <Level name="HS2 2 Digit" key_column="hs2_id" name_column="hs2_en_short" key_type="nontext">
-        <Property name="HS2 2 Digit ES" column="hs2_es_short" caption_set="es"/>
         <Property name="Long HS2" column="hs2_en" caption_set="en"/>
         <Property name="Long HS2 ES" column="hs2_es" caption_set="es"/>
+        <Property name="HS2 2 Digit ES" column="hs2_es_short" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
