@@ -8553,7 +8553,7 @@
     <DimensionUsage foreign_key="iso3" source="Country" name="Country" />
     <DimensionUsage foreign_key="date_id" source="Date Day" name="Date" />
 
-    <Measure name="Retail Percent Change" column="retail_and_recreation_percent_change_from_baseline" aggregator="sum">
+    <Measure name="Retail Percent Change" column="retail_and_recreation_percent_change_from_baseline" aggregator="avg">
       
         <Annotation name="details">Mobility trends for places like restaurants, cafes, shopping</Annotation>
       
