@@ -8540,6 +8540,56 @@
       
     </Measure>
   </Cube>
+<Cube name="google_mobility">
+    
+    <Annotation name="topic">Health</Annotation>
+    <Annotation name="subtopic">Mobility</Annotation>
+    <Annotation name="source_name">COVID-19 Informes de Movilidad Comunitaria</Annotation>
+    <Annotation name="source_name_en">COVID-19 Community Mobility Reports</Annotation>
+    <Annotation name="source_link">https://www.google.com/covid19/mobility/index.html?hl=en</Annotation>
+
+    <Table name="google_mobility" primary_key="iso3" />
+
+    <DimensionUsage foreign_key="iso3" source="Country" name="Country" />
+    <DimensionUsage foreign_key="date_id" source="Date Day" name="Date" />
+
+    <Measure name="Retail Percent Change" column="retail_and_recreation_percent_change_from_baseline" aggregator="sum">
+      
+        <Annotation name="details">Mobility trends for places like restaurants, cafes, shopping</Annotation>
+      
+    </Measure>
+
+    <Measure name="Grocery and Pharmacy Percent Change" column="grocery_and_pharmacy_percent_change_from_baseline" aggregator="avg">
+      
+        <Annotation name="details">Mobility trends for places like grocery markets, food warehouses, drug stores</Annotation>
+      
+    </Measure>
+
+    <Measure name="Parks Percent Change" column="parks_percent_change_from_baseline" aggregator="avg">
+      
+        <Annotation name="details">Mobility trends for places like local parks</Annotation>
+      
+    </Measure>
+
+    <Measure name="Transit Stations Percent Change" column="transit_stations_percent_change_from_baseline" aggregator="avg">
+      
+        <Annotation name="details">Mobility trends for places like local public transport hubs</Annotation>
+      
+    </Measure>
+
+    <Measure name="Workplaces Percent Change" column="workplaces_percent_change_from_baseline" aggregator="avg">
+      
+        <Annotation name="details">Mobility trends for places of work</Annotation>
+      
+    </Measure>
+
+    <Measure name="Residential Percent Change" column="residential_percent_change_from_baseline" aggregator="avg">
+      
+        <Annotation name="details">Mobility trends for places of residence</Annotation>
+      
+    </Measure>
+
+  </Cube>
 <Cube name="trade_balance">
     <Table name="trade_balance_atlas" primary_key="mun_id" />
     <Dimension name="Geography" foreign_key="mun_id">
