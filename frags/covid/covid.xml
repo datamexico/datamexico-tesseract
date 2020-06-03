@@ -258,7 +258,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Ambulatory</Value>
-            <Value column="name_es">Ambuatorio</Value>
+            <Value column="name_es">Ambulatorio</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
