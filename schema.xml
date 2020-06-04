@@ -1894,6 +1894,29 @@
       </Hierarchy>
     </Dimension>
 
+    <Dimension name="Is Dead" foreign_key="is_dead">
+      <Hierarchy name="Is Dead" primary_key="id">
+        <InlineTable alias="dim_inline_is_dead">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">0</Value>
+                <Value column="name_en">No</Value>
+                <Value column="name_es">No</Value>
+            </Row>
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Yes</Value>
+                <Value column="name_es">Si</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Is Dead" key_column="id" name_column="name_en">
+          <Property name="Is Dead" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
     <Dimension name="State Patient Attended" foreign_key="health_institution_attended_ent" type="geo">
       <Hierarchy name="State Patient Attended" primary_key="ent_id">
         <Table name="dim_shared_geography_ent" />
