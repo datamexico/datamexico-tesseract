@@ -955,7 +955,7 @@
     <Measure name="Wage" column="actual_amount_pesos" aggregator="avg">
         <Annotation name="details">Value in mexican pesos</Annotation>
     </Measure>
-    <Measure name="Mensual Wage" column="mensual_wage" aggregator="avg">
+    <Measure name="Monthly Wage" column="mensual_wage" aggregator="avg">
         <Annotation name="details">Value in mexican pesos</Annotation>
     </Measure>
     <Measure name="Workforce" column="population" aggregator="sum">
