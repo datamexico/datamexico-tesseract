@@ -1023,7 +1023,7 @@
       <Hierarchy name="Updated Date" primary_key="date_id">
         <Table name="dim_date_covid" />
         <Level name="Updated Year" key_column="year">
-          <Property name="Updated Year ES" column="quarter" caption_set="es" />
+          <Property name="Updated Year ES" column="year" caption_set="es" />
         </Level>
         <Level name="Updated Quarter" key_column="quarter_id" name_column="quarter">
           <Property name="Updated Quarter ES" column="quarter" caption_set="es" />
@@ -1041,7 +1041,7 @@
       <Hierarchy name="Ingress Date" primary_key="date_id">
         <Table name="dim_date_covid" />
         <Level name="Ingress Year" key_column="year">
-          <Property name="Ingress Year ES" column="quarter" caption_set="es" />
+          <Property name="Ingress Year ES" column="year" caption_set="es" />
         </Level>
         <Level name="Ingress Quarter" key_column="quarter_id" name_column="quarter">
           <Property name="Ingress Quarter ES" column="quarter" caption_set="es" />
@@ -1059,7 +1059,7 @@
       <Hierarchy name="Symptoms Date" primary_key="date_id">
         <Table name="dim_date_covid" />
         <Level name="Symptoms Year" key_column="year">
-          <Property name="Symptoms Year ES" column="quarter" caption_set="es" />
+          <Property name="Symptoms Year ES" column="year" caption_set="es" />
         </Level>
         <Level name="Symptoms Quarter" key_column="quarter_id" name_column="quarter">
           <Property name="Symptoms Quarter ES" column="quarter" caption_set="es" />
@@ -1996,11 +1996,11 @@
     
     <Table name="gobmx_covid_stats" primary_key="ent_id" />
 
-    <Dimension name="Reported Date" foreign_key="date" type="time">
+    <Dimension name="Reported Date" foreign_key="date_id" type="time">
       <Hierarchy name="Reported Date" primary_key="date_id">
         <Table name="dim_date_covid" />
         <Level name="Reported Year" key_column="year">
-          <Property name="Reported Year ES" column="quarter" caption_set="es" />
+          <Property name="Reported Year ES" column="year" caption_set="es" />
         </Level>
         <Level name="Reported Quarter" key_column="quarter_id" name_column="quarter">
           <Property name="Reported Quarter ES" column="quarter" caption_set="es" />

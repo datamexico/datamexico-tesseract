@@ -9,11 +9,11 @@
     
     <Table name="gobmx_covid_stats" primary_key="ent_id" />
 
-    <Dimension name="Reported Date" foreign_key="date" type="time">
+    <Dimension name="Reported Date" foreign_key="date_id" type="time">
       <Hierarchy name="Reported Date" primary_key="date_id">
         <Table name="dim_date_covid" />
         <Level name="Reported Year" key_column="year">
-          <Property name="Reported Year ES" column="quarter" caption_set="es" />
+          <Property name="Reported Year ES" column="year" caption_set="es" />
         </Level>
         <Level name="Reported Quarter" key_column="quarter_id" name_column="quarter">
           <Property name="Reported Quarter ES" column="quarter" caption_set="es" />
