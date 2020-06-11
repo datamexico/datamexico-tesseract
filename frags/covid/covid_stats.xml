@@ -1,0 +1,32 @@
+<Schema name="datamexico" default_locale="en">
+  <Cube name="gobmx_covid_stats">
+    
+      <Annotation name="topic">Health</Annotation>
+      <Annotation name="subtopic">Pandemic</Annotation>
+      <Annotation name="source_name">Gobierno de México</Annotation>
+      <Annotation name="source_name_en">Mexico Government</Annotation>
+      <Annotation name="source_link">https://www.gob.mx/</Annotation>
+    
+    <Table name="gobmx_covid_stats" primary_key="ent_id" />
+
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="date" source="Date Day" name="Date" />
+
+    <Measure name="Daily Cases" column="daily_cases" aggregator="sum" />
+    <Measure name="Daily Deaths" column="daily_deaths" aggregator="sum" />
+    <Measure name="Days Between Ingress and Death" column="days_between_ingress_and_death" aggregator="avg" />
+    <Measure name="Accum Cases" column="accum_cases" aggregator="avg" />
+    <Measure name="Accum Deaths" column="accum_deaths" aggregator="avg" />
+    <Measure name="Rate Daily Cases" column="rate_daily_cases" aggregator="avg" />
+    <Measure name="Rate Accum Cases" column="rate_accum_cases" aggregator="avg" />
+    <Measure name="Rate Daily Deaths" column="rate_daily_deaths" aggregator="avg" />
+    <Measure name="Rate Accum Deaths" column="rate_accum_deaths" aggregator="avg" />
+    <Measure name="AVG 7 Days Daily Cases" column="avg_7_days_daily_cases" aggregator="avg" />
+    <Measure name="AVG 7 Days Accum Cases" column="avg_7_days_accum_cases" aggregator="avg" />
+    <Measure name="AVG 7 Days Daily Deaths" column="avg_7_days_daily_deaths" aggregator="avg" />
+    <Measure name="AVG 7 Days Accum Deaths" column="avg_7_days_accum_deaths" aggregator="avg" />
+    <Measure name="Cases Day" column="cases_day" aggregator="avg" />
+    <Measure name="Deaths Day" column="deaths_day" aggregator="avg" />
+
+  </Cube>
+</Schema>
