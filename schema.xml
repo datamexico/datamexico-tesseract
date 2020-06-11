@@ -2002,8 +2002,8 @@
     <Measure name="Daily Cases" column="daily_cases" aggregator="sum" />
     <Measure name="Daily Deaths" column="daily_deaths" aggregator="sum" />
     <Measure name="Days Between Ingress and Death" column="days_between_ingress_and_death" aggregator="avg" />
-    <Measure name="Accum Cases" column="accum_cases" aggregator="avg" />
-    <Measure name="Accum Deaths" column="accum_deaths" aggregator="avg" />
+    <Measure name="Accum Cases" column="accum_cases" aggregator="sum" />
+    <Measure name="Accum Deaths" column="accum_deaths" aggregator="sum" />
     <Measure name="Rate Daily Cases" column="rate_daily_cases" aggregator="avg" />
     <Measure name="Rate Accum Cases" column="rate_accum_cases" aggregator="avg" />
     <Measure name="Rate Daily Deaths" column="rate_daily_deaths" aggregator="avg" />
@@ -2012,8 +2012,8 @@
     <Measure name="AVG 7 Days Accum Cases" column="avg_7_days_accum_cases" aggregator="avg" />
     <Measure name="AVG 7 Days Daily Deaths" column="avg_7_days_daily_deaths" aggregator="avg" />
     <Measure name="AVG 7 Days Accum Deaths" column="avg_7_days_accum_deaths" aggregator="avg" />
-    <Measure name="Cases Day" column="cases_day" aggregator="avg" />
-    <Measure name="Deaths Day" column="deaths_day" aggregator="avg" />
+    <Measure name="Cases Day" column="cases_day" aggregator="sum" />
+    <Measure name="Deaths Day" column="deaths_day" aggregator="sum" />
 
   </Cube>
 <Cube name="sesnsp_crimes">
