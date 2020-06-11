@@ -1996,8 +1996,25 @@
     
     <Table name="gobmx_covid_stats" primary_key="ent_id" />
 
+    <Dimension name="Date" foreign_key="date" type="time">
+      <Hierarchy name="Date" primary_key="date_id">
+        <Table name="dim_date_covid" />
+        <Level name="Year" key_column="year">
+          <Property name="Year ES" column="quarter" caption_set="es" />
+        </Level>
+        <Level name="Quarter" key_column="quarter_id" name_column="quarter">
+          <Property name="Quarter ES" column="quarter" caption_set="es" />
+        </Level>
+        <Level name="Month" key_column="month_id" name_column="month">
+          <Property name="Month ES" column="month" caption_set="es" />
+        </Level>
+        <Level name="Date" key_column="date_id" name_column="date">
+          <Property name="Date ES" column="date" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
-    <DimensionUsage foreign_key="date" source="Date Day" name="Date" />
 
     <Measure name="Daily Cases" column="daily_cases" aggregator="sum" />
     <Measure name="Daily Deaths" column="daily_deaths" aggregator="sum" />
