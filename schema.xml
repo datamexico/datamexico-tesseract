@@ -2033,6 +2033,8 @@
     <Measure name="Days from 10 Deaths" column="day_from_10_deaths" aggregator="sum" />
     <Measure name="Cases Day" column="cases_day" aggregator="sum" />
     <Measure name="Deaths Day" column="deaths_day" aggregator="sum" />
+    <Measure name="Cases last 7 Days" column="cases_last_7_days" aggregator="sum" />
+    <Measure name="Deaths last 7 Days" column="deaths_last_7_days" aggregator="sum" />
 
   </Cube>
 <Cube name="sesnsp_crimes">
