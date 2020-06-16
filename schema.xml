@@ -2029,6 +2029,8 @@
     <Measure name="AVG 7 Days Accum Cases" column="avg_7_days_accum_cases" aggregator="avg" />
     <Measure name="AVG 7 Days Daily Deaths" column="avg_7_days_daily_deaths" aggregator="avg" />
     <Measure name="AVG 7 Days Accum Deaths" column="avg_7_days_accum_deaths" aggregator="avg" />
+    <Measure name="Days from 50 Cases" column="day_from_50_cases" aggregator="sum" />
+    <Measure name="Days from 10 Deaths" column="day_from_10_deaths" aggregator="sum" />
     <Measure name="Cases Day" column="cases_day" aggregator="sum" />
     <Measure name="Deaths Day" column="deaths_day" aggregator="sum" />
 
