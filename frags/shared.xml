@@ -309,6 +309,28 @@
     </Hierarchy>
   </SharedDimension>
 
+  <SharedDimension name="Reported Date">
+    <Hierarchy name="Time">
+        <Table name="dim_date_covid_stats" />
+
+        <Level name="Year" key_column="year">
+            <Annotation name="level">Year</Annotation>
+        </Level>
+        <Level name="Quarter" key_column="quarter" name_column="quarter_name">
+            <Annotation name="level">Quarter</Annotation>
+        </Level>
+        <Level name="Month" key_column="month" name_column="month_name">
+            <Annotation name="level">Month</Annotation>
+        </Level>
+        <Level name="Day" key_column="day">
+            <Annotation name="level">Day</Annotation>
+        </Level>
+        <Level name="Time" key_column="time_id" name_column="time_name">
+            <Annotation name="level">Time</Annotation>
+        </Level>
+    </Hierarchy>
+  </SharedDimension>
+
   <SharedDimension name="Social Lag Degree">
     <Hierarchy name="Social Lag Degree" primary_key="id">
       <InlineTable alias="dim_inline_social_lag_degree">

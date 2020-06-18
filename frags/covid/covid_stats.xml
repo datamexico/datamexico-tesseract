@@ -9,24 +9,7 @@
     
     <Table name="gobmx_covid_stats" primary_key="ent_id" />
 
-    <Dimension name="Reported Date" foreign_key="date_id" type="time">
-      <Hierarchy name="Reported Date" primary_key="date_id">
-        <Table name="dim_date_covid" />
-        <Level name="Reported Year" key_column="year">
-          <Property name="Reported Year ES" column="year" caption_set="es" />
-        </Level>
-        <Level name="Reported Quarter" key_column="quarter_id" name_column="quarter">
-          <Property name="Reported Quarter ES" column="quarter" caption_set="es" />
-        </Level>
-        <Level name="Reported Month" key_column="month_id" name_column="month">
-          <Property name="Reported Month ES" column="month" caption_set="es" />
-        </Level>
-        <Level name="Reported Date" key_column="date_id" name_column="date">
-          <Property name="Reported Date ES" column="date" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
+    <DimensionUsage name="Reported Date" source="Reported Date" foreign_key="time_id" />
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
 
     <Measure name="Daily Cases" column="daily_cases" aggregator="sum" />
