@@ -8763,7 +8763,7 @@
 
     <Dimension name="Population Age Range" foreign_key="age">
       <Hierarchy name="Population Age Range" primary_key="id">
-        <InlineTable alias="dim_inline_eco_stratum">
+        <InlineTable alias="dim_inline_population_age_range">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
