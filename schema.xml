@@ -8751,6 +8751,110 @@
     </Measure>
 
   </Cube>
+<Cube name="population_projection">
+    
+      <Annotation name="topic">Housing and Living</Annotation>
+      <Annotation name="subtopic">Population</Annotation>
+      <Annotation name="source_name">Gobierno de México</Annotation>
+      <Annotation name="source_name_en">Government of México</Annotation>
+      <Annotation name="source_link">https://datos.gob.mx/busca/dataset/proyecciones-de-la-poblacion-de-mexico-y-de-las-entidades-federativas-2016-2050</Annotation>
+    
+    <Table name="population_projection" primary_key="mun_id" />
+
+    <Dimension name="Age Group" foreign_key="age">
+      <Hierarchy name="Age Group" primary_key="id">
+        <InlineTable alias="dim_inline_eco_stratum">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">0 a 4 años/Value>
+            <Value column="name_es">0 to 4 years</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">5 a 9 años/Value>
+            <Value column="name_es">5 to 9 years</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">10 a 14 años/Value>
+            <Value column="name_es">10 to 14 years</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">15 a 19 años/Value>
+            <Value column="name_es">15 to 19 years</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">20 a 24 años/Value>
+            <Value column="name_es">20 to 24 years</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">25 a 29 años/Value>
+            <Value column="name_es">25 to 29 years</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">30 a 34 años/Value>
+            <Value column="name_es">30 to 34 years</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">35 a 39 años/Value>
+            <Value column="name_es">35 to 39 years</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">40 a 44 años/Value>
+            <Value column="name_es">40 to 44 years</Value>
+          </Row>
+          <Row>
+            <Value column="id">10</Value>
+            <Value column="name_en">45 a 49 años/Value>
+            <Value column="name_es">45 to 49 years</Value>
+          </Row>
+          <Row>
+            <Value column="id">11</Value>
+            <Value column="name_en">50 a 54 años/Value>
+            <Value column="name_es">50 to 54 years</Value>
+          </Row>
+          <Row>
+            <Value column="id">12</Value>
+            <Value column="name_en">55 a 59 años/Value>
+            <Value column="name_es">55 to 59 years</Value>
+          </Row>
+          <Row>
+            <Value column="id">13</Value>
+            <Value column="name_en">60 a 64 años/Value>
+            <Value column="name_es">60 to 64 years</Value>
+          </Row>
+          <Row>
+            <Value column="id">14</Value>
+            <Value column="name_en">65 o más años/Value>
+            <Value column="name_es">65 or more years</Value>
+          </Row>
+          
+        </InlineTable>
+        <Level name="Age Group" key_column="id" name_column="name_en">
+          <Property name="Age Group ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Measure name="Projected Population" column="population" aggregator="sum">
+      
+        <Annotation name="details">Projected Population</Annotation>
+      
+    </Measure>
+  </Cube>
 <Cube name="trade_balance">
     <Table name="trade_balance_atlas" primary_key="mun_id" />
     <Dimension name="Geography" foreign_key="mun_id">
