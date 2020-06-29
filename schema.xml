@@ -80,14 +80,11 @@
     </Hierarchy>
   </SharedDimension>
 
-  <SharedDimension name="Geography Metro Area" type="geo" >
+  <SharedDimension name="Geography Metro Area Lite" type="geo" >
       <Hierarchy name="Metro Area">
       <Table name="dim_shared_geography_zm" />
       <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext">
         <Property name="Metro Area ES" column="zm_name" caption_set="es"/>
-      </Level>
-      <Level name="Municipality MA" key_column="mun_id" name_column="mun_name" key_type="nontext">
-        <Property name="Municipality MA ES" column="mun_name" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -716,7 +713,7 @@
     <Table name="complexity_eci" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="ent_id" source="Geography State Lite" name="Geography State" />
-    <DimensionUsage foreign_key="zm_id" source="Geography Metro Area" name="Geography Metro Area" />
+    <DimensionUsage foreign_key="zm_id" source="Geography Metro Area Lite" name="Geography Metro Area" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality Lite" name="Geography Municipality" />
     <DimensionUsage foreign_key="time_id" source="Date Day" name="Date Day" />
 
