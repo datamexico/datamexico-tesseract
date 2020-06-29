@@ -80,6 +80,18 @@
     </Hierarchy>
   </SharedDimension>
 
+  <SharedDimension name="Geography Metro Area" type="geo" >
+      <Hierarchy name="Metro Area">
+      <Table name="dim_shared_geography_zm" />
+      <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext">
+        <Property name="Metro Area ES" column="zm_name" caption_set="es"/>
+      </Level>
+      <Level name="Municipality MA" key_column="mun_id" name_column="mun_name" key_type="nontext">
+        <Property name="Municipality MA ES" column="mun_name" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
   <SharedDimension name="Geography Location" type="geo" default_hierarchy="Geography">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography" />
@@ -693,6 +705,79 @@
         </Measure>
         <Measure name="Quantity" column="quantity" aggregator="sum" />
     </Cube>
+<Cube name="complexity_eci">
+    
+      <Annotation name="topic">Economy</Annotation>
+      <Annotation name="subtopic">Complexity</Annotation>
+      <Annotation name="source_name">Datawheel</Annotation>
+      <Annotation name="source_name_en">Datawheel</Annotation>
+      <Annotation name="source_link">https://www.datawheel.us/</Annotation>
+    
+    <Table name="complexity_eci" primary_key="mun_id" />
+
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography State" />
+    <DimensionUsage foreign_key="zm_id" source="Geography Metro Area" name="Geography Metro Area" />
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography Municipality" />
+    <DimensionUsage foreign_key="time_id" source="Date Day" name="Date Day" />
+
+    <Dimension name="Level" foreign_key="level">
+      <Hierarchy name="Level" primary_key="id">
+        <InlineTable alias="dim_inline_level">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">State</Value>
+            <Value column="name_es">Entidad Federativa</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Metro Area</Value>
+            <Value column="name_es">Área Metropolitana</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Municipality</Value>
+            <Value column="name_es">Municipio</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Level" key_column="id" name_column="name_en">
+          <Property name="Level ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Latest" foreign_key="latest">
+      <Hierarchy name="Latest" primary_key="id">
+        <InlineTable alias="dim_inline_latest">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Latest" key_column="id" name_column="name_en">
+          <Property name="Latest ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="ECI" column="eci" aggregator="avg">
+      
+        <Annotation name="details">ECI</Annotation>
+      
+    </Measure>
+
+  </Cube>
 <Cube name="coneval_gini_ent">
     
       <Annotation name="topic">Housing and Living</Annotation>
