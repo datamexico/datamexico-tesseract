@@ -8,7 +8,7 @@
       <Annotation name="source_link">https://www.inegi.org.mx/investigacion/etoe/default.html</Annotation>
     
 
-    <Table name="inegi_etoe" primary_key="ent_id" />
+    <Table name="inegi_etoe" primary_key="mun_id" />
 
     <Dimension name="Job Situation" foreign_key="has_job_or_business">
       <Hierarchy name="Job Situation" primary_key="id">
