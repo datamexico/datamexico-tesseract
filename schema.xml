@@ -6242,6 +6242,13 @@
     <Measure name="Workforce" column="population" aggregator="sum">
         <Annotation name="details">Number of people</Annotation>
     </Measure>
+    <Measure name="Monthly Wage Workforce" column="mensual_wage"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>population</weight_column>
+        </weighted_avg>
+      </aggregator>
+    </Measure>
 
   </Cube>
 <Cube name="inegi_ensu">
@@ -8098,6 +8105,13 @@
     </Measure>
     <Measure name="Workforce" column="population" aggregator="sum">
         <Annotation name="details">Number of people</Annotation>
+    </Measure>
+    <Measure name="Monthly Wage Workforce" column="mensual_wage"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>population</weight_column>
+        </weighted_avg>
+      </aggregator>
     </Measure>
 
   </Cube>
