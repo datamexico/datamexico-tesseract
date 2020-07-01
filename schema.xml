@@ -6227,27 +6227,40 @@
     <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
     <DimensionUsage foreign_key="actual_job_position" source="Occupation" name="Occupation Actual Job" />
 
-    <Measure name="Worked Hours Week" column="actual_job_hrs_worked_lastweek" aggregator="avg">
-        <Annotation name="details">Value in hours</Annotation>
-    </Measure>
-    <Measure name="Worked Days Week" column="actual_job_days_worked_lastweek" aggregator="avg">
-        <Annotation name="details">Value in number of days</Annotation>
-    </Measure>
-    <Measure name="Wage" column="actual_amount_pesos" aggregator="avg">
-        <Annotation name="details">Value in mexican pesos</Annotation>
-    </Measure>
-    <Measure name="Monthly Wage" column="mensual_wage" aggregator="avg">
-        <Annotation name="details">Value in mexican pesos</Annotation>
-    </Measure>
     <Measure name="Workforce" column="population" aggregator="sum">
-        <Annotation name="details">Number of people</Annotation>
+      <Annotation name="details">Number of people</Annotation>
     </Measure>
-    <Measure name="Monthly Wage Workforce" column="mensual_wage"  >
+    <Measure name="Worked Hours Week" column="actual_job_hrs_worked_lastweek"  >
       <aggregator>
         <weighted_avg>
           <weight_column>population</weight_column>
         </weighted_avg>
       </aggregator>
+      <Annotation name="details">Value in hours</Annotation>
+    </Measure>
+    <Measure name="Worked Days Week" column="actual_job_days_worked_lastweek"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>population</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Value in number of days</Annotation>
+    </Measure>
+    <Measure name="Wage" column="actual_amount_pesos"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>population</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Value in mexican pesos</Annotation>
+    </Measure>
+    <Measure name="Monthly Wage" column="mensual_wage"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>population</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Value in mexican pesos</Annotation>
     </Measure>
 
   </Cube>
@@ -8091,27 +8104,40 @@
     <DimensionUsage foreign_key="month_id" source="Date Month" name="Date Month" />
     <DimensionUsage foreign_key="actual_job_position" source="Occupation" name="Occupation Actual Job" />
 
-    <Measure name="Worked Hours Week" column="actual_job_hrs_worked_lastweek" aggregator="avg">
-        <Annotation name="details">Value in hours</Annotation>
-    </Measure>
-    <Measure name="Worked Days Week" column="actual_job_days_worked_lastweek" aggregator="avg">
-        <Annotation name="details">Value in number of days</Annotation>
-    </Measure>
-    <Measure name="Wage" column="actual_amount_pesos" aggregator="avg">
-        <Annotation name="details">Value in mexican pesos</Annotation>
-    </Measure>
-    <Measure name="Monthly Wage" column="mensual_wage" aggregator="avg">
-        <Annotation name="details">Value in mexican pesos</Annotation>
-    </Measure>
     <Measure name="Workforce" column="population" aggregator="sum">
-        <Annotation name="details">Number of people</Annotation>
+      <Annotation name="details">Number of people</Annotation>
     </Measure>
-    <Measure name="Monthly Wage Workforce" column="mensual_wage"  >
+    <Measure name="Worked Hours Week" column="actual_job_hrs_worked_lastweek"  >
       <aggregator>
         <weighted_avg>
           <weight_column>population</weight_column>
         </weighted_avg>
       </aggregator>
+      <Annotation name="details">Value in hours</Annotation>
+    </Measure>
+    <Measure name="Worked Days Week" column="actual_job_days_worked_lastweek"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>population</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Value in number of days</Annotation>
+    </Measure>
+    <Measure name="Wage" column="actual_amount_pesos"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>population</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Value in mexican pesos</Annotation>
+    </Measure>
+    <Measure name="Monthly Wage" column="mensual_wage"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>population</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Value in mexican pesos</Annotation>
     </Measure>
 
   </Cube>
