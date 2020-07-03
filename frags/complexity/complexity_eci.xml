@@ -16,7 +16,7 @@
 
     <Dimension name="Level" foreign_key="level">
       <Hierarchy name="Level">
-        <Level name="Level" key_column="level" </Level>
+        <Level name="Level" key_column="level" />
       </Hierarchy>
     </Dimension>
 
