@@ -15,30 +15,14 @@
     <DimensionUsage foreign_key="time_id" source="Date Day" name="Date Day" />
 
     <Dimension name="Level" foreign_key="level">
-      <Hierarchy name="Level" primary_key="id">
-        <InlineTable alias="dim_inline_level">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">State</Value>
-            <Value column="name_es">Entidad Federativa</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">Metro Area</Value>
-            <Value column="name_es">Área Metropolitana</Value>
-          </Row>
-          <Row>
-            <Value column="id">3</Value>
-            <Value column="name_en">Municipality</Value>
-            <Value column="name_es">Municipio</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Level" key_column="id" name_column="name_en">
-          <Property name="Level ES" column="name_es" caption_set="es" />
-        </Level>
+      <Hierarchy name="Level">
+        <Level name="Level" key_column="level" </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="ECI Ranking" foreign_key="eci_ranking">
+      <Hierarchy name="ECI Ranking">
+        <Level name="ECI Ranking" key_column="eci_ranking" />
       </Hierarchy>
     </Dimension>
 
