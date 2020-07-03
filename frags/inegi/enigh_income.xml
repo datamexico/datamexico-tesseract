@@ -1,0 +1,44 @@
+<Schema name="datamexico" default_locale="en">
+  <Cube name="inegi_enigh_income">
+    
+      <Annotation name="topic">Housing and Living</Annotation>
+      <Annotation name="subtopic">Income</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/temas/ingresoshog/default.html</Annotation>
+    
+
+    <Table name="inegi_enigh_income" primary_key="ent_id" />
+
+    <Dimension name="Geography State" type="geo" foreign_key="ent_id">
+      <Hierarchy name="Geography">
+      <Table name="dim_ent_enigh" />
+      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
+          <Property name="Nation ES" column="nation_name" caption_set="es"/>
+      </Level>
+      <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+          <Property name="State ISO3" column="ent_iso3"/>
+          <Property name="CVE State" column="cve_ent"/>
+          <Property name="State slug ES" column="ent_slug"/>
+          <Property name="State ES" column="ent_name" caption_set="es"/>
+      </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Decile" foreign_key="decile">
+      <Hierarchy name="Decile">
+        <Table name="inegi_enigh_income" />
+        <Level name="Decile" key_column="decile" />
+      </Hierarchy>
+    </Dimension>
+
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Measure name="Quarterly Income" column="value" aggregator="avg">
+      
+        <Annotation name="details">Quarterly Income</Annotation>
+      
+    </Measure>
+
+  </Cube>
+</Schema>

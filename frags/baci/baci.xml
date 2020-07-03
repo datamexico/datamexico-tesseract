@@ -1,0 +1,25 @@
+<Schema name="datamexico" default_locale="en">
+    <Cube name="trade_i_baci_a_12">
+        <Annotation name="source_name">BACI</Annotation>
+        <Annotation name="source_description">Product Trade by Year and Country (HS 6-digit depth)</Annotation>
+        <Annotation name="dataset_name">HS6 REV. 2012 (2012 - 2018)</Annotation>
+        <Annotation name="dataset_link">http://www.cepii.fr/CEPII/en/bdd_modele/presentation.asp?id=37</Annotation>
+
+        <Table name="trade_i_baci_a_12" primary_key="hs_master_id" />
+
+        <DimensionUsage foreign_key="hs_master_id" source="Product" name="HS Product" />
+        <DimensionUsage foreign_key="exporter" source="Country" name="Exporter" />
+        <DimensionUsage foreign_key="importer" source="Country" name="Importer" />
+
+        <Dimension name="Year" foreign_key="year">
+            <Hierarchy name="Year">
+                <Level name="Year" key_column="year" />
+            </Hierarchy>
+        </Dimension>
+
+        <Measure name="Trade Value" column="value" aggregator="sum">
+            <Annotation name="units_of_measurement">USD</Annotation>
+        </Measure>
+        <Measure name="Quantity" column="quantity" aggregator="sum" />
+    </Cube>
+</Schema>

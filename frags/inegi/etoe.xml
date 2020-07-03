@@ -1,14 +1,14 @@
 <Schema name="datamexico" default_locale="en">
-  <Cube name="inegi_enoe">
+  <Cube name="inegi_etoe">
     
       <Annotation name="topic">Economy</Annotation>
       <Annotation name="subtopic">Employment</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/programas/enoe/15ymas/</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/investigacion/etoe/default.html</Annotation>
     
 
-    <Table name="inegi_enoe" primary_key="mun_id" />
+    <Table name="inegi_etoe" primary_key="mun_id" />
 
     <Dimension name="Job Situation" foreign_key="has_job_or_business">
       <Hierarchy name="Job Situation" primary_key="id">
@@ -943,7 +943,7 @@
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
-    <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
+    <DimensionUsage foreign_key="month_id" source="Date Month" name="Date Month" />
     <DimensionUsage foreign_key="actual_job_position" source="Occupation" name="Occupation Actual Job" />
 
     <Measure name="Workforce" column="population" aggregator="sum">

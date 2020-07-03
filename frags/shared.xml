@@ -7,8 +7,9 @@
         <Property name="Nation ES" column="nation_name" caption_set="es"/>
       </Level>
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-        <Property name="State ISO3" column="ent_iso3" caption_set="es"/>
-        <Property name="CVE State" column="cve_ent" />
+        <Property name="State ISO3" column="ent_iso3"/>
+        <Property name="CVE State" column="cve_ent"/>
+        <Property name="State slug ES" column="ent_slug"/>
         <Property name="State ES" column="ent_name" caption_set="es"/>
       </Level>
     </Hierarchy>
@@ -18,8 +19,9 @@
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography_ent" />
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-        <Property name="State ISO3" column="ent_iso3" caption_set="es"/>
-        <Property name="CVE State" column="cve_ent" />
+        <Property name="State ISO3" column="ent_iso3"/>
+        <Property name="CVE State" column="cve_ent"/>
+        <Property name="State slug ES" column="ent_slug"/>
         <Property name="State ES" column="ent_name" caption_set="es"/>
       </Level>
     </Hierarchy>
@@ -29,8 +31,9 @@
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography_mun" />
       <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
-        <Property name="CVE Municipality" column="cve_mun" />
-        <Property name="CVE Municipality Full" column="cve_mun_full" />
+        <Property name="CVE Municipality Full" column="cve_mun_full"/>
+        <Property name="CVE Municipality" column="cve_mun"/>
+        <Property name="Municipality Slug" column="mun_slug"/>
         <Property name="Municipality ES" column="mun_name" caption_set="es"/>
       </Level>
     </Hierarchy>
@@ -43,13 +46,15 @@
         <Property name="Nation ES" column="nation_name" caption_set="es"/>
       </Level>
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-        <Property name="State ISO3" column="ent_iso3" caption_set="es"/>
-        <Property name="CVE State" column="cve_ent" />
+        <Property name="State ISO3" column="ent_iso3"/>
+        <Property name="CVE State" column="cve_ent"/>
+        <Property name="State slug ES" column="ent_slug"/>
         <Property name="State ES" column="ent_name" caption_set="es"/>
       </Level>
       <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
-        <Property name="CVE Municipality" column="cve_mun" />
-        <Property name="CVE Municipality Full" column="cve_mun_full" />
+        <Property name="CVE Municipality Full" column="cve_mun_full"/>
+        <Property name="CVE Municipality" column="cve_mun"/>
+        <Property name="Municipality Slug" column="mun_slug"/>
         <Property name="Municipality ES" column="mun_name" caption_set="es"/>
       </Level>
     </Hierarchy>
@@ -75,6 +80,15 @@
     </Hierarchy>
   </SharedDimension>
 
+  <SharedDimension name="Geography Metro Area Lite" type="geo" >
+      <Hierarchy name="Metro Area">
+      <Table name="dim_shared_geography_zm" />
+      <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext">
+        <Property name="Metro Area ES" column="zm_name" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
   <SharedDimension name="Geography Location" type="geo" default_hierarchy="Geography">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography" />
@@ -82,19 +96,22 @@
         <Property name="Nation ES" column="nation_name" caption_set="es"/>
       </Level>
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-        <Property name="State ISO3" column="ent_iso3" caption_set="es"/>
-        <Property name="CVE State" column="cve_ent" />
+        <Property name="State ISO3" column="ent_iso3"/>
+        <Property name="CVE State" column="cve_ent"/>
+        <Property name="State slug ES" column="ent_slug"/>
         <Property name="State ES" column="ent_name" caption_set="es"/>
       </Level>
       <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
-        <Property name="CVE Municipality" column="cve_mun" />
-        <Property name="CVE Municipality Full" column="cve_mun_full" />
+        <Property name="CVE Municipality Full" column="cve_mun_full"/>
+        <Property name="CVE Municipality" column="cve_mun"/>
+        <Property name="Municipality Slug" column="mun_slug"/>
         <Property name="Municipality ES" column="mun_name" caption_set="es"/>
       </Level>
       <Level name="Location" key_column="loc_id" name_column="loc_name" key_type="nontext">
-        <Property name="CVE Location" column="cve_loc" />
-        <Property name="CVE Location Full" column="cve_loc_full" />
-        <Property name="Location ES" column="loc_name" caption_set="es"/>
+        <Property name="CVE Location Full" column="cve_loc_full"/>
+        <Property name="CVE Location" column="cve_loc"/>
+        <Property name="Location Slug" column="loc_slug"/> 
+        <Property name="Location ES" column="loc_name" caption_set="es"/> 
       </Level>
     </Hierarchy>
     <Hierarchy name="Metro Area">
@@ -209,6 +226,33 @@
     </Hierarchy>
   </SharedDimension>
 
+    <SharedDimension name="Industry Group Lite">
+    <Hierarchy name="Industry Group" primary_key="industry_group_id">
+      <Table name="dim_shared_industry_group"/>
+      <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_en" key_type="nontext">
+        <Property name="Industry Group ES" column="industry_group_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+    <SharedDimension name="NAICS Industry Lite">
+    <Hierarchy name="NAICS Industry" primary_key="naics_industry_id">
+      <Table name="dim_shared_naics_industry"/>
+      <Level name="NAICS Industry" key_column="naics_industry_id" name_column="naics_industry_en" key_type="text">
+        <Property name="NAICS Industry ES" column="naics_industry_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="National Industry Lite">
+    <Hierarchy name="National Industry" primary_key="national_industry_id">
+      <Table name="dim_shared_national_industry"/>
+      <Level name="National Industry" key_column="national_industry_id" name_column="national_industry_en" key_type="text">
+        <Property name="National Industry ES" column="national_industry_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
   <SharedDimension name="Occupation">
     <Hierarchy name="Occupation" primary_key="occupation_id">
       <Table name="dim_shared_occupations_enoe"/>
@@ -301,6 +345,28 @@
     </Hierarchy>
   </SharedDimension>
 
+  <SharedDimension name="Reported Date">
+    <Hierarchy name="Time">
+        <Table name="dim_date_covid_stats" />
+
+        <Level name="Year" key_column="year">
+            <Annotation name="level">Year</Annotation>
+        </Level>
+        <Level name="Quarter" key_column="quarter" name_column="quarter_name">
+            <Annotation name="level">Quarter</Annotation>
+        </Level>
+        <Level name="Month" key_column="month" name_column="month_name">
+            <Annotation name="level">Month</Annotation>
+        </Level>
+        <Level name="Day" key_column="day">
+            <Annotation name="level">Day</Annotation>
+        </Level>
+        <Level name="Time" key_column="time_id" name_column="time_name">
+            <Annotation name="level">Time</Annotation>
+        </Level>
+    </Hierarchy>
+  </SharedDimension>
+
   <SharedDimension name="Social Lag Degree">
     <Hierarchy name="Social Lag Degree" primary_key="id">
       <InlineTable alias="dim_inline_social_lag_degree">
@@ -381,14 +447,14 @@
         <Property name="Long HS2 ES" column="hs2_es" caption_set="es"/>-->
       </Level>
       <Level name="HS4" key_column="hs4_id" name_column="hs4_en_short" key_type="nontext">
+        <Property name="Long HS4" column="hs4_en"/>
+        <Property name="Long HS4 ES" column="hs4_es"/>
         <Property name="HS4 ES" column="hs4_es_short" caption_set="es"/>
-        <Property name="Long HS4" column="hs4_en" caption_set="en"/>
-        <Property name="Long HS4 ES" column="hs4_es" caption_set="es"/>
       </Level>
       <Level name="HS6" key_column="hs6_id" name_column="hs6_en_short" key_type="nontext">
+        <Property name="Long HS6" column="hs6_en"/>
+        <Property name="Long HS6 ES" column="hs6_es"/>
         <Property name="HS6 ES" column="hs6_es_short" caption_set="es"/>
-        <Property name="Long HS6" column="hs6_en" caption_set="en"/>
-        <Property name="Long HS6 ES" column="hs6_es" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -405,9 +471,9 @@
         <Property name="Long HS2 ES" column="hs2_es" caption_set="es"/>-->
       </Level>
       <Level name="HS4 4 Digit" key_column="hs4_id" name_column="hs4_en_short" key_type="nontext">
+        <Property name="Long HS4 4 Digit" column="hs4_en"/>
+        <Property name="Long HS4 4 Digit ES" column="hs4_es"/>
         <Property name="HS4 4 Digit ES" column="hs4_es_short" caption_set="es"/>
-        <Property name="Long HS4 4 Digit" column="hs4_en" caption_set="en"/>
-        <Property name="Long HS4 4 Digit ES" column="hs4_es" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -419,9 +485,9 @@
         <Property name="Chapter 2 Digit ES" column="chapter_es" caption_set="es"/>
       </Level>
       <Level name="HS2 2 Digit" key_column="hs2_id" name_column="hs2_en_short" key_type="nontext">
+        <Property name="Long HS2" column="hs2_en"/>
+        <Property name="Long HS2 ES" column="hs2_es"/>
         <Property name="HS2 2 Digit ES" column="hs2_es_short" caption_set="es"/>
-        <Property name="Long HS2" column="hs2_en" caption_set="en"/>
-        <Property name="Long HS2 ES" column="hs2_es" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -435,6 +501,32 @@
       <Level name="Salary" key_column="id" name_column="name" key_type="nontext" >
         <Property name="Salary ES" column="name" caption_set="es"/>
       </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Indicator">
+    <Hierarchy name="Indicator">
+        <Table name="dim_shared_indicators" />
+        <Level name="Indicator" key_column="indicator_id" name_column="indicator_name" key_type="text">
+            <Property name="Topic" column="topic" />
+            <Property name="Short Definition" column="short_definition" />
+            <Property name="Long Definition" column="long_definition" />
+            <Property name="Unit of Measure" column="unit_of_measure" />
+            <Property name="Periodicity" column="periodicity" />
+            <Property name="Base Period" column="base_period" />
+            <Property name="Other Notes" column="other_notes" />
+            <Property name="Aggregation Method" column="aggregation_method" />
+            <Property name="Limitations and Expectations" column="limitations_and_expectations" />
+            <Property name="Notes from Original Source" column="notes_from_original_source" />
+            <Property name="General Comments" column="general_comments" />
+            <Property name="Source" column="source" />
+            <Property name="Statistical Concept and Methodology" column="statistical_concept_and_methodology" />
+            <Property name="Development Relevance" column="development_relevance" />
+            <Property name="Related Source Links" column="related_source_links" />
+            <Property name="Other Web Links" column="other_web_links" />
+            <Property name="Related Indicators" column="related_indicators" />
+            <Property name="License Type" column="license_type" />
+        </Level>
     </Hierarchy>
   </SharedDimension>
 

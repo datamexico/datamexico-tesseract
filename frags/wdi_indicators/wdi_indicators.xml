@@ -1,0 +1,21 @@
+<Schema name="datamexico" default_locale="en">
+    <Cube name="indicators_i_wdi_a">
+        <Annotation name="source_name">World Development Indicators (WDI) and UN Department of Economic and Social Affairs, Population Division</Annotation>
+        <Annotation name="source_description">Development indicators from 1960-2019</Annotation>
+        <Annotation name="dataset_name">Development Indicators</Annotation>
+        <Annotation name="dataset_link">https://datacatalog.worldbank.org/dataset/world-development-indicators</Annotation>
+
+        <Table name="indicators_i_wdi_a" primary_key="geo_id" />
+
+        <DimensionUsage foreign_key="geo_id" source="Country" name="Country" />
+        <DimensionUsage foreign_key="indicator_id" source="Indicator" name="Indicator" />
+
+        <Dimension name="Year" foreign_key="year">
+            <Hierarchy name="Year">
+                <Level name="Year" key_column="year" />
+            </Hierarchy>
+        </Dimension>
+
+        <Measure name="Measure" column="measure" aggregator="sum" />
+    </Cube>
+</Schema>
