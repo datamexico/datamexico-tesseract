@@ -38,6 +38,12 @@
       </Hierarchy>
     </Dimension>
 
+    <Dimension name="Level" foreign_key="level">
+      <Hierarchy name="Level">
+        <Level name="Level" key_column="level" />
+      </Hierarchy>
+    </Dimension>
+
     <DimensionUsage foreign_key="hs2_id" source="Product 2 Digit" name="Product 2 Digit" />
     <DimensionUsage foreign_key="hs4_id" source="Product 4 Digit" name="Product 4 Digit" />
     <DimensionUsage foreign_key="hs6_id" source="Product" name="Product" />
