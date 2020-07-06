@@ -4,8 +4,8 @@
     
     <Annotation name="topic">Health</Annotation>
     <Annotation name="subtopic">Pandemic</Annotation>
-    <Annotation name="source_name">General Direction of Epidemiology</Annotation>
-    <Annotation name="source_name_en">Dirección General de Epidemiología</Annotation>
+    <Annotation name="source_name">Dirección General de Epidemiología</Annotation>
+    <Annotation name="source_name_en">General Direction of Epidemiology</Annotation>
     <Annotation name="source_link">https://www.gob.mx/salud/documentos/datos-abiertos-152127</Annotation>
     
     <Table name="gobmx_covid" primary_key="patient_residence_mun_id" />
