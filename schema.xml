@@ -2220,6 +2220,57 @@
     <Measure name="Deaths last 7 Days" column="deaths_last_7_days" aggregator="sum" />
 
   </Cube>
+<Cube name="gobmx_covid_stats_nation">
+    
+    <Annotation name="topic">Health</Annotation>
+    <Annotation name="subtopic">Pandemic</Annotation>
+    <Annotation name="source_name">General Direction of Epidemiology</Annotation>
+    <Annotation name="source_name_en">Dirección General de Epidemiología</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/salud/documentos/datos-abiertos-152127</Annotation>
+
+    <Table name="gobmx_covid_stats_nation" primary_key="nation_id" />
+
+    <Dimension name="Geography Nation" foreign_key="nation_id">
+      <Hierarchy name="Geography Nation" primary_key="id">
+        <InlineTable alias="dim_inline_nation">
+          <ColumnDef name="id" key_type="text" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">mex</Value>
+            <Value column="name_en">Mexico</Value>
+            <Value column="name_es">México</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Geography Nation" key_column="id" name_column="name_en">
+          <Property name="Geography Nation ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <DimensionUsage name="Reported Date" source="Reported Date" foreign_key="time_id" />
+
+    <Measure name="Daily Cases" column="daily_cases" aggregator="sum" />
+    <Measure name="Daily Deaths" column="daily_deaths" aggregator="sum" />
+    <Measure name="Days Between Ingress and Death" column="days_between_ingress_and_death" aggregator="avg" />
+    <Measure name="Accum Cases" column="accum_cases" aggregator="sum" />
+    <Measure name="Accum Deaths" column="accum_deaths" aggregator="sum" />
+    <Measure name="Rate Daily Cases" column="rate_daily_cases" aggregator="avg" />
+    <Measure name="Rate Accum Cases" column="rate_accum_cases" aggregator="avg" />
+    <Measure name="Rate Daily Deaths" column="rate_daily_deaths" aggregator="avg" />
+    <Measure name="Rate Accum Deaths" column="rate_accum_deaths" aggregator="avg" />
+    <Measure name="AVG 7 Days Daily Cases" column="avg_7_days_daily_cases" aggregator="avg" />
+    <Measure name="AVG 7 Days Accum Cases" column="avg_7_days_accum_cases" aggregator="avg" />
+    <Measure name="AVG 7 Days Daily Deaths" column="avg_7_days_daily_deaths" aggregator="avg" />
+    <Measure name="AVG 7 Days Accum Deaths" column="avg_7_days_accum_deaths" aggregator="avg" />
+    <Measure name="Days from 50 Cases" column="day_from_50_cases" aggregator="sum" />
+    <Measure name="Days from 10 Deaths" column="day_from_10_deaths" aggregator="sum" />
+    <Measure name="Cases Day" column="cases_day" aggregator="sum" />
+    <Measure name="Deaths Day" column="deaths_day" aggregator="sum" />
+    <Measure name="Cases last 7 Days" column="cases_last_7_days" aggregator="sum" />
+    <Measure name="Deaths last 7 Days" column="deaths_last_7_days" aggregator="sum" />
+
+  </Cube>
 <Cube name="sesnsp_crimes">
     <Table name="sesnsp_crimes" primary_key="mun_id" />
 
