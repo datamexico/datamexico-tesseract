@@ -38,9 +38,9 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Level" foreign_key="level">
-      <Hierarchy name="Level">
-        <Level name="Level" key_column="level" />
+    <Dimension name="Level Name" foreign_key="level">
+      <Hierarchy name="Level Name">
+        <Level name="Level Name" key_column="level" />
       </Hierarchy>
     </Dimension>
 

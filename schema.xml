@@ -3042,8 +3042,8 @@
     
       <Annotation name="topic">Economy</Annotation>
       <Annotation name="subtopic">Foreign Direct Investment</Annotation>
-      <Annotation name="source_name">Gobierno de México</Annotation>
-      <Annotation name="source_name_en">Mexico Government</Annotation>
+      <Annotation name="source_name">Secretaría de Economía</Annotation>
+      <Annotation name="source_name_en">Secretary of Economy</Annotation>
       <Annotation name="source_link">https://www.gob.mx/</Annotation>
     
     <Table name="economy_fdi" primary_key="quarter_id" />
@@ -3133,9 +3133,9 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Level" foreign_key="level">
-      <Hierarchy name="Level">
-        <Level name="Level" key_column="level" />
+    <Dimension name="Level Name" foreign_key="level">
+      <Hierarchy name="Level Name">
+        <Level name="Level Name" key_column="level" />
       </Hierarchy>
     </Dimension>
 
