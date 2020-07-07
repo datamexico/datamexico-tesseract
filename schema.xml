@@ -3144,7 +3144,7 @@
     <Dimension name="Product Level" foreign_key="product_level">
       <Hierarchy name="Product Level" primary_key="product_level">
         <Table name="economy_foreign_trade_ent" />
-        <Level name="Product Level" key_column="Product Level" key_type="text" />
+        <Level name="Product Level" key_column="product_level" key_type="text" />
       </Hierarchy>
     </Dimension>
 
@@ -3217,7 +3217,7 @@
     <Dimension name="Product Level" foreign_key="product_level">
       <Hierarchy name="Product Level" primary_key="product_level">
         <Table name="economy_foreign_trade_mun" />
-        <Level name="Product Level" key_column="Product Level" key_type="text" />
+        <Level name="Product Level" key_column="product_level" key_type="text" />
       </Hierarchy>
     </Dimension>
 
