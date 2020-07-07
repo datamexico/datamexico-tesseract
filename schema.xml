@@ -3134,25 +3134,9 @@
     </Dimension>
 
     <Dimension name="Level" foreign_key="level">
-      <Hierarchy name="Level" primary_key="id">
-        <InlineTable alias="dim_inline_level">
-          <ColumnDef name="id" key_type="text" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">National</Value>
-            <Value column="name_en">National</Value>
-            <Value column="name_es">Nacional</Value>
-          </Row>
-          <Row>
-            <Value column="id">State</Value>
-            <Value column="name_en">State</Value>
-            <Value column="name_es">Entidad Federativa</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Level" key_column="id" name_column="name_en">
-          <Property name="Level ES" column="name_es" caption_set="es" />
-        </Level>
+      <Hierarchy name="Level" primary_key="level">
+        <Table name="economy_foreign_trade_ent" />
+        <Level name="Level" key_column="level" key_type="text" />
       </Hierarchy>
     </Dimension>
 
