@@ -41,7 +41,7 @@
     <Dimension name="Level" foreign_key="level">
       <Hierarchy name="Level" primary_key="level">
         <Table name="economy_foreign_trade_mun" />
-        <Level name="Level" key_column="level" key_type="text" />
+        <Level name="Level" key_column="level" key_type="nontext" />
       </Hierarchy>
     </Dimension>
 
