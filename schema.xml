@@ -2221,8 +2221,8 @@
 
     <Table name="gobmx_covid_stats_nation" primary_key="nation_id" />
 
-    <Dimension name="Geography Nation" foreign_key="nation_id">
-      <Hierarchy name="Geography Nation" primary_key="id">
+    <Dimension name="Nation" foreign_key="nation_id">
+      <Hierarchy name="Nation" primary_key="id">
         <InlineTable alias="dim_inline_nation">
           <ColumnDef name="id" key_type="text" />
           <ColumnDef name="name_en" key_type="text" />
@@ -2233,8 +2233,8 @@
             <Value column="name_es">México</Value>
           </Row>
         </InlineTable>
-        <Level name="Geography Nation" key_column="id" name_column="name_en">
-          <Property name="Geography Nation ES" column="name_es" caption_set="es" />
+        <Level name="Nation" key_column="id" name_column="name_en">
+          <Property name="Nation ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
