@@ -745,8 +745,9 @@
     <DimensionUsage foreign_key="time_id" source="Date Day" name="Date Day" />
 
     <Dimension name="Level" foreign_key="level">
-      <Hierarchy name="Level">
-        <Level name="Level" key_column="level" />
+      <Hierarchy name="Level" primary_key="level">
+        <Table name="complexity_eci" />
+        <Level name="Level" key_column="level" key_type="text" />
       </Hierarchy>
     </Dimension>
 
@@ -2152,40 +2153,6 @@
     </Measure>
 
   </Cube>
-<Cube name="gobmx_covid_stats">
-    
-    <Annotation name="topic">Health</Annotation>
-    <Annotation name="subtopic">Pandemic</Annotation>
-    <Annotation name="source_name">Dirección General de Epidemiología</Annotation>
-    <Annotation name="source_name_en">General Direction of Epidemiology</Annotation>
-    <Annotation name="source_link">https://www.gob.mx/salud/documentos/datos-abiertos-152127</Annotation>
-    
-    <Table name="gobmx_covid_stats" primary_key="ent_id" />
-
-    <DimensionUsage name="Reported Date" source="Reported Date" foreign_key="time_id" />
-    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
-
-    <Measure name="Daily Cases" column="daily_cases" aggregator="sum" />
-    <Measure name="Daily Deaths" column="daily_deaths" aggregator="sum" />
-    <Measure name="Days Between Ingress and Death" column="days_between_ingress_and_death" aggregator="avg" />
-    <Measure name="Accum Cases" column="accum_cases" aggregator="sum" />
-    <Measure name="Accum Deaths" column="accum_deaths" aggregator="sum" />
-    <Measure name="Rate Daily Cases" column="rate_daily_cases" aggregator="avg" />
-    <Measure name="Rate Accum Cases" column="rate_accum_cases" aggregator="avg" />
-    <Measure name="Rate Daily Deaths" column="rate_daily_deaths" aggregator="avg" />
-    <Measure name="Rate Accum Deaths" column="rate_accum_deaths" aggregator="avg" />
-    <Measure name="AVG 7 Days Daily Cases" column="avg_7_days_daily_cases" aggregator="avg" />
-    <Measure name="AVG 7 Days Accum Cases" column="avg_7_days_accum_cases" aggregator="avg" />
-    <Measure name="AVG 7 Days Daily Deaths" column="avg_7_days_daily_deaths" aggregator="avg" />
-    <Measure name="AVG 7 Days Accum Deaths" column="avg_7_days_accum_deaths" aggregator="avg" />
-    <Measure name="Days from 50 Cases" column="day_from_50_cases" aggregator="sum" />
-    <Measure name="Days from 10 Deaths" column="day_from_10_deaths" aggregator="sum" />
-    <Measure name="Cases Day" column="cases_day" aggregator="sum" />
-    <Measure name="Deaths Day" column="deaths_day" aggregator="sum" />
-    <Measure name="Cases last 7 Days" column="cases_last_7_days" aggregator="sum" />
-    <Measure name="Deaths last 7 Days" column="deaths_last_7_days" aggregator="sum" />
-
-  </Cube>
 <Cube name="gobmx_covid_stats_mun">
     
     <Annotation name="topic">Health</Annotation>
@@ -2196,28 +2163,52 @@
 
     <Table name="gobmx_covid_stats_mun" primary_key="mun_id" />
 
-    <DimensionUsage name="Reported Date" source="Reported Date" foreign_key="time_id" />
+    <DimensionUsage foreign_key="time_id" source="Reported Date" name="Reported Date" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
 
     <Measure name="Daily Cases" column="daily_cases" aggregator="sum" />
     <Measure name="Daily Deaths" column="daily_deaths" aggregator="sum" />
-    <Measure name="Days Between Ingress and Death" column="days_between_ingress_and_death" aggregator="avg" />
+    <Measure name="Daily Hospitalized" column="daily_hospitalized" aggregator="sum" />
+    <Measure name="Daily Suspect" column="daily_suspect" aggregator="sum" />
     <Measure name="Accum Cases" column="accum_cases" aggregator="sum" />
     <Measure name="Accum Deaths" column="accum_deaths" aggregator="sum" />
+    <Measure name="Accum Hospitalized" column="accum_hospitalized" aggregator="sum" />
+    <Measure name="Accum Suspect" column="accum_suspect" aggregator="sum" />
+    <Measure name="Days Between Ingress and Death" column="days_between_ingress_and_death" aggregator="avg" />
+    <Measure name="New Cases Report" column="new_cases_report" aggregator="sum" />
+    <Measure name="New Deaths Report" column="new_deaths_report" aggregator="sum" />
+    <Measure name="New Hospitalized Report" column="new_hospitalized_report" aggregator="sum" />
+    <Measure name="New Suspect Report" column="new_suspect_report" aggregator="sum" />
+    <Measure name="Accum Cases Report" column="accum_cases_report" aggregator="sum" />
+    <Measure name="Accum Deaths Report" column="accum_deaths_report" aggregator="sum" />
+    <Measure name="Accum Hospitalized Report" column="accum_hospitalized_report" aggregator="sum" />
+    <Measure name="Accum Suspect Report" column="accum_suspect_report" aggregator="sum" />
+    <Measure name="AVG 7 Days Daily Cases" column="avg7_daily_cases" aggregator="avg" />
+    <Measure name="AVG 7 Days Accum Cases" column="avg7_accum_cases" aggregator="avg" />
+    <Measure name="AVG 7 Days Daily Deaths" column="avg7_daily_deaths" aggregator="avg" />
+    <Measure name="AVG 7 Days Accum Deaths" column="avg7_accum_deaths" aggregator="avg" />
+    <Measure name="AVG 7 New Cases Report" column="avg7_new_cases_report" aggregator="avg" />
+    <Measure name="AVG 7 Accum Cases Report" column="avg7_accum_cases_report" aggregator="avg" />
+    <Measure name="AVG 7 New Deaths Report" column="avg7_new_deaths_report" aggregator="avg" />
+    <Measure name="AVG 7 Accum Deaths Report" column="avg7_accum_deaths_report" aggregator="avg" />
+    <Measure name="Last 7 Daily Cases" column="sum_last7_daily_cases" aggregator="avg" />
+    <Measure name="Last 7 Daily Deaths" column="sum_last7_daily_deaths" aggregator="avg" />
+    <Measure name="Last 7 Accum Cases" column="sum_last7_accum_cases" aggregator="avg" />
+    <Measure name="Last 7 Accum Deaths" column="sum_last7_accum_deaths" aggregator="avg" />
+    <Measure name="Last 7 New Cases Report" column="sum_last7_new_cases_report" aggregator="avg" />
+    <Measure name="Last 7 Accum Cases Report" column="sum_last7_accum_cases_report" aggregator="avg" />
+    <Measure name="Last 7 New Deaths Report" column="sum_last7_new_deaths_report" aggregator="avg" />
+    <Measure name="Last 7 Accum Deaths Report" column="sum_last7_accum_deaths_report" aggregator="avg" />
     <Measure name="Rate Daily Cases" column="rate_daily_cases" aggregator="avg" />
     <Measure name="Rate Accum Cases" column="rate_accum_cases" aggregator="avg" />
     <Measure name="Rate Daily Deaths" column="rate_daily_deaths" aggregator="avg" />
     <Measure name="Rate Accum Deaths" column="rate_accum_deaths" aggregator="avg" />
-    <Measure name="AVG 7 Days Daily Cases" column="avg_7_days_daily_cases" aggregator="avg" />
-    <Measure name="AVG 7 Days Accum Cases" column="avg_7_days_accum_cases" aggregator="avg" />
-    <Measure name="AVG 7 Days Daily Deaths" column="avg_7_days_daily_deaths" aggregator="avg" />
-    <Measure name="AVG 7 Days Accum Deaths" column="avg_7_days_accum_deaths" aggregator="avg" />
+    <Measure name="Rate New Cases Report" column="rate_new_cases_report" aggregator="avg" />
+    <Measure name="Rate Accum Cases Report" column="rate_accum_cases_report" aggregator="avg" />
+    <Measure name="Rate New Deaths Report" column="rate_new_deaths_report" aggregator="avg" />
+    <Measure name="Rate Accum Deaths Report" column="rate_accum_deaths_report" aggregator="avg" />
     <Measure name="Days from 50 Cases" column="day_from_50_cases" aggregator="sum" />
     <Measure name="Days from 10 Deaths" column="day_from_10_deaths" aggregator="sum" />
-    <Measure name="Cases Day" column="cases_day" aggregator="sum" />
-    <Measure name="Deaths Day" column="deaths_day" aggregator="sum" />
-    <Measure name="Cases last 7 Days" column="cases_last_7_days" aggregator="sum" />
-    <Measure name="Deaths last 7 Days" column="deaths_last_7_days" aggregator="sum" />
 
   </Cube>
 <Cube name="gobmx_covid_stats_nation">
@@ -2230,8 +2221,8 @@
 
     <Table name="gobmx_covid_stats_nation" primary_key="nation_id" />
 
-    <Dimension name="Geography Nation" foreign_key="nation_id">
-      <Hierarchy name="Geography Nation" primary_key="id">
+    <Dimension name="Nation" foreign_key="nation_id">
+      <Hierarchy name="Nation" primary_key="id">
         <InlineTable alias="dim_inline_nation">
           <ColumnDef name="id" key_type="text" />
           <ColumnDef name="name_en" key_type="text" />
@@ -2242,8 +2233,8 @@
             <Value column="name_es">México</Value>
           </Row>
         </InlineTable>
-        <Level name="Geography Nation" key_column="id" name_column="name_en">
-          <Property name="Geography Nation ES" column="name_es" caption_set="es" />
+        <Level name="Nation" key_column="id" name_column="name_en">
+          <Property name="Nation ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
@@ -2252,23 +2243,105 @@
 
     <Measure name="Daily Cases" column="daily_cases" aggregator="sum" />
     <Measure name="Daily Deaths" column="daily_deaths" aggregator="sum" />
-    <Measure name="Days Between Ingress and Death" column="days_between_ingress_and_death" aggregator="avg" />
+    <Measure name="Daily Hospitalized" column="daily_hospitalized" aggregator="sum" />
+    <Measure name="Daily Suspect" column="daily_suspect" aggregator="sum" />
     <Measure name="Accum Cases" column="accum_cases" aggregator="sum" />
     <Measure name="Accum Deaths" column="accum_deaths" aggregator="sum" />
+    <Measure name="Accum Hospitalized" column="accum_hospitalized" aggregator="sum" />
+    <Measure name="Accum Suspect" column="accum_suspect" aggregator="sum" />
+    <Measure name="Days Between Ingress and Death" column="days_between_ingress_and_death" aggregator="avg" />
+    <Measure name="New Cases Report" column="new_cases_report" aggregator="sum" />
+    <Measure name="New Deaths Report" column="new_deaths_report" aggregator="sum" />
+    <Measure name="New Hospitalized Report" column="new_hospitalized_report" aggregator="sum" />
+    <Measure name="New Suspect Report" column="new_suspect_report" aggregator="sum" />
+    <Measure name="Accum Cases Report" column="accum_cases_report" aggregator="sum" />
+    <Measure name="Accum Deaths Report" column="accum_deaths_report" aggregator="sum" />
+    <Measure name="Accum Hospitalized Report" column="accum_hospitalized_report" aggregator="sum" />
+    <Measure name="Accum Suspect Report" column="accum_suspect_report" aggregator="sum" />
+    <Measure name="AVG 7 Days Daily Cases" column="avg7_daily_cases" aggregator="avg" />
+    <Measure name="AVG 7 Days Accum Cases" column="avg7_accum_cases" aggregator="avg" />
+    <Measure name="AVG 7 Days Daily Deaths" column="avg7_daily_deaths" aggregator="avg" />
+    <Measure name="AVG 7 Days Accum Deaths" column="avg7_accum_deaths" aggregator="avg" />
+    <Measure name="AVG 7 New Cases Report" column="avg7_new_cases_report" aggregator="avg" />
+    <Measure name="AVG 7 Accum Cases Report" column="avg7_accum_cases_report" aggregator="avg" />
+    <Measure name="AVG 7 New Deaths Report" column="avg7_new_deaths_report" aggregator="avg" />
+    <Measure name="AVG 7 Accum Deaths Report" column="avg7_accum_deaths_report" aggregator="avg" />
+    <Measure name="Last 7 Daily Cases" column="sum_last7_daily_cases" aggregator="avg" />
+    <Measure name="Last 7 Daily Deaths" column="sum_last7_daily_deaths" aggregator="avg" />
+    <Measure name="Last 7 Accum Cases" column="sum_last7_accum_cases" aggregator="avg" />
+    <Measure name="Last 7 Accum Deaths" column="sum_last7_accum_deaths" aggregator="avg" />
+    <Measure name="Last 7 New Cases Report" column="sum_last7_new_cases_report" aggregator="avg" />
+    <Measure name="Last 7 Accum Cases Report" column="sum_last7_accum_cases_report" aggregator="avg" />
+    <Measure name="Last 7 New Deaths Report" column="sum_last7_new_deaths_report" aggregator="avg" />
+    <Measure name="Last 7 Accum Deaths Report" column="sum_last7_accum_deaths_report" aggregator="avg" />
     <Measure name="Rate Daily Cases" column="rate_daily_cases" aggregator="avg" />
     <Measure name="Rate Accum Cases" column="rate_accum_cases" aggregator="avg" />
     <Measure name="Rate Daily Deaths" column="rate_daily_deaths" aggregator="avg" />
     <Measure name="Rate Accum Deaths" column="rate_accum_deaths" aggregator="avg" />
-    <Measure name="AVG 7 Days Daily Cases" column="avg_7_days_daily_cases" aggregator="avg" />
-    <Measure name="AVG 7 Days Accum Cases" column="avg_7_days_accum_cases" aggregator="avg" />
-    <Measure name="AVG 7 Days Daily Deaths" column="avg_7_days_daily_deaths" aggregator="avg" />
-    <Measure name="AVG 7 Days Accum Deaths" column="avg_7_days_accum_deaths" aggregator="avg" />
+    <Measure name="Rate New Cases Report" column="rate_new_cases_report" aggregator="avg" />
+    <Measure name="Rate Accum Cases Report" column="rate_accum_cases_report" aggregator="avg" />
+    <Measure name="Rate New Deaths Report" column="rate_new_deaths_report" aggregator="avg" />
+    <Measure name="Rate Accum Deaths Report" column="rate_accum_deaths_report" aggregator="avg" />
     <Measure name="Days from 50 Cases" column="day_from_50_cases" aggregator="sum" />
     <Measure name="Days from 10 Deaths" column="day_from_10_deaths" aggregator="sum" />
-    <Measure name="Cases Day" column="cases_day" aggregator="sum" />
-    <Measure name="Deaths Day" column="deaths_day" aggregator="sum" />
-    <Measure name="Cases last 7 Days" column="cases_last_7_days" aggregator="sum" />
-    <Measure name="Deaths last 7 Days" column="deaths_last_7_days" aggregator="sum" />
+
+  </Cube>
+<Cube name="gobmx_covid_stats_state">
+    
+    <Annotation name="topic">Health</Annotation>
+    <Annotation name="subtopic">Pandemic</Annotation>
+    <Annotation name="source_name">Dirección General de Epidemiología</Annotation>
+    <Annotation name="source_name_en">General Direction of Epidemiology</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/salud/documentos/datos-abiertos-152127</Annotation>
+    
+    <Table name="gobmx_covid_stats_state" primary_key="ent_id" />
+
+    <DimensionUsage name="Reported Date" source="Reported Date" foreign_key="time_id" />
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+
+    <Measure name="Daily Cases" column="daily_cases" aggregator="sum" />
+    <Measure name="Daily Deaths" column="daily_deaths" aggregator="sum" />
+    <Measure name="Daily Hospitalized" column="daily_hospitalized" aggregator="sum" />
+    <Measure name="Daily Suspect" column="daily_suspect" aggregator="sum" />
+    <Measure name="Accum Cases" column="accum_cases" aggregator="sum" />
+    <Measure name="Accum Deaths" column="accum_deaths" aggregator="sum" />
+    <Measure name="Accum Hospitalized" column="accum_hospitalized" aggregator="sum" />
+    <Measure name="Accum Suspect" column="accum_suspect" aggregator="sum" />
+    <Measure name="Days Between Ingress and Death" column="days_between_ingress_and_death" aggregator="avg" />
+    <Measure name="New Cases Report" column="new_cases_report" aggregator="sum" />
+    <Measure name="New Deaths Report" column="new_deaths_report" aggregator="sum" />
+    <Measure name="New Hospitalized Report" column="new_hospitalized_report" aggregator="sum" />
+    <Measure name="New Suspect Report" column="new_suspect_report" aggregator="sum" />
+    <Measure name="Accum Cases Report" column="accum_cases_report" aggregator="sum" />
+    <Measure name="Accum Deaths Report" column="accum_deaths_report" aggregator="sum" />
+    <Measure name="Accum Hospitalized Report" column="accum_hospitalized_report" aggregator="sum" />
+    <Measure name="Accum Suspect Report" column="accum_suspect_report" aggregator="sum" />
+    <Measure name="AVG 7 Days Daily Cases" column="avg7_daily_cases" aggregator="avg" />
+    <Measure name="AVG 7 Days Accum Cases" column="avg7_accum_cases" aggregator="avg" />
+    <Measure name="AVG 7 Days Daily Deaths" column="avg7_daily_deaths" aggregator="avg" />
+    <Measure name="AVG 7 Days Accum Deaths" column="avg7_accum_deaths" aggregator="avg" />
+    <Measure name="AVG 7 New Cases Report" column="avg7_new_cases_report" aggregator="avg" />
+    <Measure name="AVG 7 Accum Cases Report" column="avg7_accum_cases_report" aggregator="avg" />
+    <Measure name="AVG 7 New Deaths Report" column="avg7_new_deaths_report" aggregator="avg" />
+    <Measure name="AVG 7 Accum Deaths Report" column="avg7_accum_deaths_report" aggregator="avg" />
+    <Measure name="Last 7 Daily Cases" column="sum_last7_daily_cases" aggregator="avg" />
+    <Measure name="Last 7 Daily Deaths" column="sum_last7_daily_deaths" aggregator="avg" />
+    <Measure name="Last 7 Accum Cases" column="sum_last7_accum_cases" aggregator="avg" />
+    <Measure name="Last 7 Accum Deaths" column="sum_last7_accum_deaths" aggregator="avg" />
+    <Measure name="Last 7 New Cases Report" column="sum_last7_new_cases_report" aggregator="avg" />
+    <Measure name="Last 7 Accum Cases Report" column="sum_last7_accum_cases_report" aggregator="avg" />
+    <Measure name="Last 7 New Deaths Report" column="sum_last7_new_deaths_report" aggregator="avg" />
+    <Measure name="Last 7 Accum Deaths Report" column="sum_last7_accum_deaths_report" aggregator="avg" />
+    <Measure name="Rate Daily Cases" column="rate_daily_cases" aggregator="avg" />
+    <Measure name="Rate Accum Cases" column="rate_accum_cases" aggregator="avg" />
+    <Measure name="Rate Daily Deaths" column="rate_daily_deaths" aggregator="avg" />
+    <Measure name="Rate Accum Deaths" column="rate_accum_deaths" aggregator="avg" />
+    <Measure name="Rate New Cases Report" column="rate_new_cases_report" aggregator="avg" />
+    <Measure name="Rate Accum Cases Report" column="rate_accum_cases_report" aggregator="avg" />
+    <Measure name="Rate New Deaths Report" column="rate_new_deaths_report" aggregator="avg" />
+    <Measure name="Rate Accum Deaths Report" column="rate_accum_deaths_report" aggregator="avg" />
+    <Measure name="Days from 50 Cases" column="day_from_50_cases" aggregator="sum" />
+    <Measure name="Days from 10 Deaths" column="day_from_10_deaths" aggregator="sum" />
 
   </Cube>
 <Cube name="sesnsp_crimes">
@@ -3042,8 +3115,8 @@
     
       <Annotation name="topic">Economy</Annotation>
       <Annotation name="subtopic">Foreign Direct Investment</Annotation>
-      <Annotation name="source_name">Gobierno de México</Annotation>
-      <Annotation name="source_name_en">Mexico Government</Annotation>
+      <Annotation name="source_name">Secretaría de Economía</Annotation>
+      <Annotation name="source_name_en">Secretary of Economy</Annotation>
       <Annotation name="source_link">https://www.gob.mx/</Annotation>
     
     <Table name="economy_fdi" primary_key="quarter_id" />
@@ -3133,6 +3206,20 @@
       </Hierarchy>
     </Dimension>
 
+    <Dimension name="Level" foreign_key="level">
+      <Hierarchy name="Level" primary_key="level">
+        <Table name="economy_foreign_trade_ent" />
+        <Level name="Level" key_column="level" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Product Level" foreign_key="product_level">
+      <Hierarchy name="Product Level" primary_key="product_level">
+        <Table name="economy_foreign_trade_ent" />
+        <Level name="Product Level" key_column="product_level" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
+
     <DimensionUsage foreign_key="hs2_id" source="Product 2 Digit" name="Product 2 Digit" />
     <DimensionUsage foreign_key="hs4_id" source="Product 4 Digit" name="Product 4 Digit" />
     <DimensionUsage foreign_key="hs6_id" source="Product" name="Product" />
@@ -3192,6 +3279,20 @@
       </Hierarchy>
     </Dimension>
 
+    <Dimension name="Level" foreign_key="level">
+      <Hierarchy name="Level" primary_key="level">
+        <Table name="economy_foreign_trade_mun" />
+        <Level name="Level" key_column="level" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Product Level" foreign_key="product_level">
+      <Hierarchy name="Product Level" primary_key="product_level">
+        <Table name="economy_foreign_trade_mun" />
+        <Level name="Product Level" key_column="product_level" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
+
     <DimensionUsage foreign_key="hs2_id" source="Product 2 Digit" name="Product 2 Digit" />
     <DimensionUsage foreign_key="hs4_id" source="Product 4 Digit" name="Product 4 Digit" />
     <DimensionUsage foreign_key="hs6_id" source="Product" name="Product" />
@@ -3209,6 +3310,299 @@
       
         <Annotation name="details">Number of Firms</Annotation>
       
+    </Measure>
+
+  </Cube>
+<Cube name="imss">
+    
+    <Annotation name="topic">Health</Annotation>
+    <Annotation name="subtopic">Social Security</Annotation>
+    <Annotation name="source_name">Instituto Mexicano del Seguro Social</Annotation>
+    <Annotation name="source_name_en">Mexican Social Security Institute</Annotation>
+    <Annotation name="source_link">http://datos.imss.gob.mx/group/asegurados</Annotation>
+    
+    <Table name="imss" primary_key="mun_id" />
+
+    <DimensionUsage foreign_key="month_id" source="Date Month" name="Date Month" />
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography Municipality" />
+
+    <Dimension name="Economic Sector" foreign_key="level_4_id">
+      <Hierarchy name="Economic Sector" primary_key="level_4_id">
+        <Table name="imss_economic_sector" />
+        <Level name="Economic Sector 1 digit" key_column="level_1_id" name_column="level_1_name" key_type="nontext" >
+          <Property name="Economic Sector 1 digit ES" column="level_1_name" caption_set="es"/>
+        </Level>
+        <Level name="Economic Sector 2 digit" key_column="level_2_id" name_column="level_2_name" key_type="nontext" >
+          <Property name="Economic Sector 2 digit ES" column="level_2_name" caption_set="es"/>
+        </Level>
+        <Level name="Economic Sector 4 digit" key_column="level_4_id" name_column="level_4_name" key_type="nontext" >
+          <Property name="Economic Sector 4 digit ES" column="level_4_name" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Age Range" foreign_key="age_range">
+        <Hierarchy name="Age Range" primary_key="id">
+
+        <InlineTable alias="dim_inline_age_range">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">0</Value>
+                <Value column="name_en">Age not available</Value>
+                <Value column="name_es">Edad no disponible</Value>
+            </Row>
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Less than 15 years old</Value>
+                <Value column="name_es">Menos de 15 años</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">15 to 20 years</Value>
+                <Value column="name_es">15 a 20 años</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">20 to 25 years</Value>
+                <Value column="name_es">20 a 25 años</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">25 to 30 years</Value>
+                <Value column="name_es">25 a 30 años</Value>
+            </Row>
+            <Row>
+                <Value column="id">5</Value>
+                <Value column="name_en">30 to 35 years</Value>
+                <Value column="name_es">30 a 35 años</Value>
+            </Row>
+            <Row>
+                <Value column="id">6</Value>
+                <Value column="name_en">35 to 40 years</Value>
+                <Value column="name_es">35 a 40 años</Value>
+            </Row>
+            <Row>
+                <Value column="id">7</Value>
+                <Value column="name_en">40 to 45 years</Value>
+                <Value column="name_es">40 a 45 años</Value>
+            </Row>
+            <Row>
+                <Value column="id">8</Value>
+                <Value column="name_en">45 to 50 years</Value>
+                <Value column="name_es">45 a 50 años</Value>
+            </Row>
+            <Row>
+                <Value column="id">9</Value>
+                <Value column="name_en">50 to 55 years</Value>
+                <Value column="name_es">50 a 55 años</Value>
+            </Row>
+            <Row>
+                <Value column="id">10</Value>
+                <Value column="name_en">55 to 60 years</Value>
+                <Value column="name_es">55 a 60 años</Value>
+            </Row>
+            <Row>
+                <Value column="id">11</Value>
+                <Value column="name_en">60 to 65 years</Value>
+                <Value column="name_es">60 a 65 años</Value>
+            </Row>
+            <Row>
+                <Value column="id">12</Value>
+                <Value column="name_en">65 to 70 years</Value>
+                <Value column="name_es">65 a 70 años</Value>
+            </Row>
+            <Row>
+                <Value column="id">13</Value>
+                <Value column="name_en">70 to 75 years</Value>
+                <Value column="name_es">70 a 75 años</Value>
+            </Row>
+            <Row>
+                <Value column="id">14</Value>
+                <Value column="name_en">75 or more years</Value>
+                <Value column="name_es">75 o más años de edad</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Age Range" key_column="id" name_column="name_en">
+          <Property name="Age Range ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="UMA Range" foreign_key="uma_range">
+        <Hierarchy name="UMA Range" primary_key="id">
+
+        <InlineTable alias="dim_inline_age_range">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">0</Value>
+                <Value column="name_en">Does not apply</Value>
+                <Value column="name_es">No aplica</Value>
+            </Row>
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Up to 1 time the UMA</Value>
+                <Value column="name_es">Hasta 1 vez la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Greater than 1 and up to 2 times the UMA</Value>
+                <Value column="name_es">Mayor a 1 y hasta 2 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Greater than 2 and up to 3 times the UMA</Value>
+                <Value column="name_es">Mayor a 2 y hasta 3 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">Greater than 3 and up to 4 times the UMA</Value>
+                <Value column="name_es">Mayor a 3 y hasta 4 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">5</Value>
+                <Value column="name_en">Greater than 4 and up to 5 times the UMA</Value>
+                <Value column="name_es">Mayor a 4 y hasta 5 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">6</Value>
+                <Value column="name_en">Greater than 5 and up to 6 times the UMA</Value>
+                <Value column="name_es">Mayor a 5 y hasta 6 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">7</Value>
+                <Value column="name_en">Greater than 6 and up to 7 times the UMA</Value>
+                <Value column="name_es">Mayor a 6 y hasta 7 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">8</Value>
+                <Value column="name_en">Greater than 7 and up to 8 times the UMA</Value>
+                <Value column="name_es">Mayor a 7 y hasta 8 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">9</Value>
+                <Value column="name_en">Greater than 8 and up to 9 times the UMA</Value>
+                <Value column="name_es">Mayor a 8 y hasta 9 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">10</Value>
+                <Value column="name_en">Greater than 9 and up to 10 times the UMA</Value>
+                <Value column="name_es">Mayor a 9 y hasta 10 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">11</Value>
+                <Value column="name_en">Greater than 10 and up to 11 times the UMA</Value>
+                <Value column="name_es">Mayor a 10 y hasta 11 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">12</Value>
+                <Value column="name_en">Greater than 11 and up to 12 times the UMA</Value>
+                <Value column="name_es">Mayor a 11 y hasta 12 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">13</Value>
+                <Value column="name_en">Greater than 12 and up to 13 times the UMA</Value>
+                <Value column="name_es">Mayor a 12 y hasta 13 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">14</Value>
+                <Value column="name_en">Greater than 13 and up to 14 times the UMA</Value>
+                <Value column="name_es">Mayor a 13 y hasta 14 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">15</Value>
+                <Value column="name_en">Greater than 14 and up to 15 times the UMA</Value>
+                <Value column="name_es">Mayor a 14 y hasta 15 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">16</Value>
+                <Value column="name_en">Greater than 15 and up to 16 times the UMA</Value>
+                <Value column="name_es">Mayor a 15 y hasta 16 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">17</Value>
+                <Value column="name_en">Greater than 16 and up to 17 times the UMA</Value>
+                <Value column="name_es">Mayor a 16 y hasta 17 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">18</Value>
+                <Value column="name_en">Greater than 17 and up to 18 times the UMA</Value>
+                <Value column="name_es">Mayor a 17 y hasta 18 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">19</Value>
+                <Value column="name_en">Greater than 18 and up to 19 times the UMA</Value>
+                <Value column="name_es">Mayor a 18 y hasta 19 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">20</Value>
+                <Value column="name_en">Greater than 19 and up to 20 times the UMA</Value>
+                <Value column="name_es">Mayor a 19 y hasta 20 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">21</Value>
+                <Value column="name_en">Greater than 20 and up to 21 times the UMA</Value>
+                <Value column="name_es">Mayor a 20 y hasta 21 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">22</Value>
+                <Value column="name_en">Greater than 21 and up to 22 times the UMA</Value>
+                <Value column="name_es">Mayor a 21 y hasta 22 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">23</Value>
+                <Value column="name_en">Greater than 22 and up to 23 times the UMA</Value>
+                <Value column="name_es">Mayor a 22 y hasta 23 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">24</Value>
+                <Value column="name_en">Greater than 23 and up to 24 times the UMA</Value>
+                <Value column="name_es">Mayor a 23 y hasta 24 veces la UMA</Value>
+            </Row>
+            <Row>
+                <Value column="id">25</Value>
+                <Value column="name_en">Greater than 24 and up to 25 times the UMA</Value>
+                <Value column="name_es">Mayor a 24 y hasta 25 veces la UMA</Value>
+            </Row>
+        </InlineTable>
+        <Level name="UMA Range" key_column="id" name_column="name_en">
+          <Property name="UMA Range ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Insured People" column="asegurados" aggregator="sum">
+        <Annotation name="details">Insured People</Annotation>
+    </Measure>
+    <Measure name="Non Workers" column="non_workers" aggregator="sum">
+        <Annotation name="details">Non Workers</Annotation>
+    </Measure>
+    <Measure name="Insured Employment" column="ta" aggregator="sum">
+        <Annotation name="details">Insured Employment</Annotation>
+    </Measure>
+    <Measure name="Temporary Urban Employment" column="teu" aggregator="sum">
+        <Annotation name="details">Temporary Urban Employment</Annotation>
+    </Measure>
+    <Measure name="Temporary Employment Field" column="tec" aggregator="sum">
+        <Annotation name="details">Temporary Employment of the Field</Annotation>
+    </Measure>
+    <Measure name="Permanent Urban Employment" column="tpu" aggregator="sum">
+        <Annotation name="details">Permanent Urban Employment</Annotation>
+    </Measure>
+    <Measure name="Permanent Employment Field" column="tpc" aggregator="sum">
+        <Annotation name="details">Permanent Employment Field</Annotation>
+    </Measure>
+
+    <Measure name="Salary" column="salary" >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>count</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Value in mexican pesos</Annotation>
     </Measure>
 
   </Cube>
@@ -6259,11 +6653,20 @@
       </Hierarchy>
     </Dimension>
 
+    <Dimension name="Age Group" foreign_key="age">
+      <Hierarchy name="Age Group" primary_key="age">
+        <Table name="dim_age_range_enoe" />
+        <Level name="Age Range" key_column="age_range_id" name_column="name_en" key_type="nontext">
+          <Property name="name_es" column="name_es" caption_set="es"/>
+        </Level>
+        <Level name="Age" key_column="age" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
+
     <DimensionUsage foreign_key="income_id" source="Salary" name="Salary" />
     <DimensionUsage foreign_key="actual_healthcare_attention" source="Social Security" name="Social Security" />
     <DimensionUsage foreign_key="actual_job_industry_group_id" source="Industry 4 Digit" name="Industry Actual Job" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
-    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
     <DimensionUsage foreign_key="actual_job_position" source="Occupation" name="Occupation Actual Job" />

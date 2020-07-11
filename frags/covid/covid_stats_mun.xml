@@ -9,28 +9,52 @@
 
     <Table name="gobmx_covid_stats_mun" primary_key="mun_id" />
 
-    <DimensionUsage name="Reported Date" source="Reported Date" foreign_key="time_id" />
+    <DimensionUsage foreign_key="time_id" source="Reported Date" name="Reported Date" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
 
     <Measure name="Daily Cases" column="daily_cases" aggregator="sum" />
     <Measure name="Daily Deaths" column="daily_deaths" aggregator="sum" />
-    <Measure name="Days Between Ingress and Death" column="days_between_ingress_and_death" aggregator="avg" />
+    <Measure name="Daily Hospitalized" column="daily_hospitalized" aggregator="sum" />
+    <Measure name="Daily Suspect" column="daily_suspect" aggregator="sum" />
     <Measure name="Accum Cases" column="accum_cases" aggregator="sum" />
     <Measure name="Accum Deaths" column="accum_deaths" aggregator="sum" />
+    <Measure name="Accum Hospitalized" column="accum_hospitalized" aggregator="sum" />
+    <Measure name="Accum Suspect" column="accum_suspect" aggregator="sum" />
+    <Measure name="Days Between Ingress and Death" column="days_between_ingress_and_death" aggregator="avg" />
+    <Measure name="New Cases Report" column="new_cases_report" aggregator="sum" />
+    <Measure name="New Deaths Report" column="new_deaths_report" aggregator="sum" />
+    <Measure name="New Hospitalized Report" column="new_hospitalized_report" aggregator="sum" />
+    <Measure name="New Suspect Report" column="new_suspect_report" aggregator="sum" />
+    <Measure name="Accum Cases Report" column="accum_cases_report" aggregator="sum" />
+    <Measure name="Accum Deaths Report" column="accum_deaths_report" aggregator="sum" />
+    <Measure name="Accum Hospitalized Report" column="accum_hospitalized_report" aggregator="sum" />
+    <Measure name="Accum Suspect Report" column="accum_suspect_report" aggregator="sum" />
+    <Measure name="AVG 7 Days Daily Cases" column="avg7_daily_cases" aggregator="avg" />
+    <Measure name="AVG 7 Days Accum Cases" column="avg7_accum_cases" aggregator="avg" />
+    <Measure name="AVG 7 Days Daily Deaths" column="avg7_daily_deaths" aggregator="avg" />
+    <Measure name="AVG 7 Days Accum Deaths" column="avg7_accum_deaths" aggregator="avg" />
+    <Measure name="AVG 7 New Cases Report" column="avg7_new_cases_report" aggregator="avg" />
+    <Measure name="AVG 7 Accum Cases Report" column="avg7_accum_cases_report" aggregator="avg" />
+    <Measure name="AVG 7 New Deaths Report" column="avg7_new_deaths_report" aggregator="avg" />
+    <Measure name="AVG 7 Accum Deaths Report" column="avg7_accum_deaths_report" aggregator="avg" />
+    <Measure name="Last 7 Daily Cases" column="sum_last7_daily_cases" aggregator="avg" />
+    <Measure name="Last 7 Daily Deaths" column="sum_last7_daily_deaths" aggregator="avg" />
+    <Measure name="Last 7 Accum Cases" column="sum_last7_accum_cases" aggregator="avg" />
+    <Measure name="Last 7 Accum Deaths" column="sum_last7_accum_deaths" aggregator="avg" />
+    <Measure name="Last 7 New Cases Report" column="sum_last7_new_cases_report" aggregator="avg" />
+    <Measure name="Last 7 Accum Cases Report" column="sum_last7_accum_cases_report" aggregator="avg" />
+    <Measure name="Last 7 New Deaths Report" column="sum_last7_new_deaths_report" aggregator="avg" />
+    <Measure name="Last 7 Accum Deaths Report" column="sum_last7_accum_deaths_report" aggregator="avg" />
     <Measure name="Rate Daily Cases" column="rate_daily_cases" aggregator="avg" />
     <Measure name="Rate Accum Cases" column="rate_accum_cases" aggregator="avg" />
     <Measure name="Rate Daily Deaths" column="rate_daily_deaths" aggregator="avg" />
     <Measure name="Rate Accum Deaths" column="rate_accum_deaths" aggregator="avg" />
-    <Measure name="AVG 7 Days Daily Cases" column="avg_7_days_daily_cases" aggregator="avg" />
-    <Measure name="AVG 7 Days Accum Cases" column="avg_7_days_accum_cases" aggregator="avg" />
-    <Measure name="AVG 7 Days Daily Deaths" column="avg_7_days_daily_deaths" aggregator="avg" />
-    <Measure name="AVG 7 Days Accum Deaths" column="avg_7_days_accum_deaths" aggregator="avg" />
+    <Measure name="Rate New Cases Report" column="rate_new_cases_report" aggregator="avg" />
+    <Measure name="Rate Accum Cases Report" column="rate_accum_cases_report" aggregator="avg" />
+    <Measure name="Rate New Deaths Report" column="rate_new_deaths_report" aggregator="avg" />
+    <Measure name="Rate Accum Deaths Report" column="rate_accum_deaths_report" aggregator="avg" />
     <Measure name="Days from 50 Cases" column="day_from_50_cases" aggregator="sum" />
     <Measure name="Days from 10 Deaths" column="day_from_10_deaths" aggregator="sum" />
-    <Measure name="Cases Day" column="cases_day" aggregator="sum" />
-    <Measure name="Deaths Day" column="deaths_day" aggregator="sum" />
-    <Measure name="Cases last 7 Days" column="cases_last_7_days" aggregator="sum" />
-    <Measure name="Deaths last 7 Days" column="deaths_last_7_days" aggregator="sum" />
 
   </Cube>
 </Schema>
