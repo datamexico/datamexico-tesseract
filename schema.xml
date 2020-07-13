@@ -2224,7 +2224,7 @@
     <Dimension name="Nation" foreign_key="nation_id">
       <Hierarchy name="Nation" primary_key="nation_id">
         <Table name="dim_geo_covid_nat" />
-        <Level name="Nation" key_column="nation_id" name_column="name_en" key_type="text">
+        <Level name="Nation" key_column="nation_id" name_column="name_es" key_type="text">
           <Property name="Nation ES" column="name_es" caption_set="es"/>
         </Level>
       </Hierarchy>
