@@ -3,9 +3,9 @@
     
       <Annotation name="topic">Economy</Annotation>
       <Annotation name="subtopic">Complexity</Annotation>
-      <Annotation name="source_name">Datawheel</Annotation>
-      <Annotation name="source_name_en">Datawheel</Annotation>
-      <Annotation name="source_link">https://www.datawheel.us/</Annotation>
+      <Annotation name="source_name">DataMéxico</Annotation>
+      <Annotation name="source_name_en">DataMéxico</Annotation>
+      <Annotation name="source_link">https://www.datamexico.org/</Annotation>
     
     <Table name="complexity_eci" primary_key="mun_id" />
 
