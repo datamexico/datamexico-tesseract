@@ -2346,7 +2346,7 @@
     <Table name="imss_credits" primary_key="ent_id" />
 
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality Lite" name="Geography" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
 
     <Dimension name="Level" foreign_key="level">
@@ -2411,8 +2411,6 @@
         </Level>
       </Hierarchy>
     </Dimension>
-
-    'age_range':    'UInt8', 
 
     <Dimension name="Age Range" foreign_key="age_range">
       <Hierarchy name="Age Range" primary_key="id">
