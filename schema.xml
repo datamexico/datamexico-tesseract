@@ -2345,14 +2345,14 @@
     
     <Table name="imss_credits" primary_key="ent_id" />
 
-    <DimensionUsage foreign_key="ent_id" source="Geography State" name="State" />
+    <DimensionUsage foreign_key="ent_id" source="Geography State Lite" name="State" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality Lite" name="Municipality" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
 
     <Dimension name="Level" foreign_key="level">
       <Hierarchy name="Level" primary_key="level">
         <Table name="imss_credits" />
-        <Level name="Level" key_column="level" key_type="nontext" />
+        <Level name="Level" key_column="level" key_type="text" />
       </Hierarchy>
     </Dimension>
 
