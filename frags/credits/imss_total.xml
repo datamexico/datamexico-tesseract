@@ -1,0 +1,159 @@
+<Schema name="datamexico" default_locale="en">
+  <Cube name="imss_credits">
+    
+      <Annotation name="topic">Economy</Annotation>
+      <Annotation name="subtopic">Foreign Trade</Annotation>
+      <Annotation name="source_name">Secretaría de Economía</Annotation>
+      <Annotation name="source_name_en">Secretary of Economy</Annotation>
+      <Annotation name="source_link">https://www.gob.mx/</Annotation>
+    
+    <Table name="imss_credits" primary_key="ent_id" />
+
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
+
+    <Dimension name="Level" foreign_key="level">
+      <Hierarchy name="Level" primary_key="level">
+        <Table name="imss_credits" />
+        <Level name="Level" key_column="level" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Person Type" foreign_key="person_type">
+      <Hierarchy name="Person Type" primary_key="id">
+        <InlineTable alias="dim_inline_person_type">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Physical Person</Value>
+            <Value column="name_es">Fisica</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Moral Person</Value>
+            <Value column="name_es">Moral</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Person Type" key_column="id" name_column="name_en">
+          <Property name="Person Type ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Company Size" foreign_key="company_size">
+      <Hierarchy name="Company Size" primary_key="id">
+        <InlineTable alias="dim_inline_company_size">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">From 1 to 10 people</Value>
+            <Value column="name_es">De 1 a 10 personas</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">From 11 to 20 people</Value>
+            <Value column="name_es">De 11 a 20 personas</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">From 21 to 50 people</Value>
+            <Value column="name_es">De 21 a 50 personas</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">More than 50 people</Value>
+            <Value column="name_es">Mas de 50 personas</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Company Size" key_column="id" name_column="name_en">
+          <Property name="Company Size ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    'age_range':    'UInt8', 
+
+    <Dimension name="Age Range" foreign_key="age_range">
+      <Hierarchy name="Age Range" primary_key="id">
+        <InlineTable alias="dim_inline_age_range">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">0 to 5 years</Value>
+            <Value column="name_es">0 a 5 años</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">5 to 9 years old</Value>
+            <Value column="name_es">5 a 9 años</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">10 to 19 years old</Value>
+            <Value column="name_es">10 a 19 años</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">20 to 29 years old</Value>
+            <Value column="name_es">20 a 29 años</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">30 to 39 years old</Value>
+            <Value column="name_es">30 a 39 años</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">40 to 49 years old</Value>
+            <Value column="name_es">40 a 49 años</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">50 to 59 years old</Value>
+            <Value column="name_es">50 a 59 años</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">60 or more years old</Value>
+            <Value column="name_es">60 y más años</Value>
+          </Row>
+          <Row>
+            <Value column="id">11</Value>
+            <Value column="name_en">19 years or younger</Value>
+            <Value column="name_es">19 años o menos</Value>
+          </Row>
+          <Row>
+            <Value column="id">12</Value>
+            <Value column="name_en">20 to 49 years old</Value>
+            <Value column="name_es">20 a 49 años</Value>
+          </Row>
+          <Row>
+            <Value column="id">13</Value>
+            <Value column="name_en">50 to 69 years old</Value>
+            <Value column="name_es">50 a 69 años</Value>
+          </Row>
+          <Row>
+            <Value column="id">14</Value>
+            <Value column="name_en">70 or more years old</Value>
+            <Value column="name_es">70 y más años</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Age Range" key_column="id" name_column="name_en">
+          <Property name="Age Range ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Credits" column="count" aggregator="sum">
+        <Annotation name="details">Number of Credits</Annotation>
+    </Measure>
+
+  </Cube>
+</Schema>

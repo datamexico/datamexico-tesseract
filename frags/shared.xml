@@ -604,6 +604,6 @@
           <Property name="Confidence ES" column="name_es" caption_set="es"/>
         </Level>
       </Hierarchy>
-    </SharedDimension> 
+    </SharedDimension>
 
 </Schema>
