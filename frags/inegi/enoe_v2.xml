@@ -8,10 +8,10 @@
       <Annotation name="source_link">https://www.inegi.org.mx/programas/enoe/15ymas/</Annotation>
     
 
-    <Table name="inegi_enoe_v2" primary_key="mun_id" />
+    <Table name="inegi_enoe_v2" primary_key="code" />
 
-    <Dimension name="Geography Municipality" type="geo" default_hierarchy="Geography">
-      <Hierarchy name="Geography">
+    <Dimension name="Geography Code" type="geo" default_hierarchy="Geography" foreign_key="code">
+      <Hierarchy name="Geography" primary_key="code">
         <Table name="dim_geo_inegi_enoe_v2" />
         <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
           <Property name="Nation ES" column="nation_name" caption_set="es"/>
