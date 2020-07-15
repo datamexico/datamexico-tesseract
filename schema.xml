@@ -6854,6 +6854,57 @@
     </Measure>
 
   </Cube>
+<Cube name="inegi_enoe_v2">
+    
+      <Annotation name="topic">Economy</Annotation>
+      <Annotation name="subtopic">Employment</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/programas/enoe/15ymas/</Annotation>
+    
+
+    <Table name="inegi_enoe_v2" primary_key="mun_id" />
+
+    <Dimension name="Geography Municipality" type="geo" default_hierarchy="Geography">
+      <Hierarchy name="Geography">
+        <Table name="dim_geo_inegi_enoe_v2" />
+        <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
+          <Property name="Nation ES" column="nation_name" caption_set="es"/>
+        </Level>
+        <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+          <Property name="State ISO3" column="ent_iso3"/>
+          <Property name="CVE State" column="cve_ent"/>
+          <Property name="State slug ES" column="ent_slug"/>
+          <Property name="State ES" column="ent_name" caption_set="es"/>
+        </Level>
+        <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
+          <Property name="CVE Municipality Full" column="cve_mun_full"/>
+          <Property name="CVE Municipality" column="cve_mun"/>
+          <Property name="Municipality Slug" column="mun_slug"/>
+          <Property name="Municipality ES" column="mun_name" caption_set="es"/>
+        </Level>
+        <Level name="Survey Code" key_column="code" name_column="code" key_type="nontext">
+          <Property name="Survey Code" column="code" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
+
+    <Measure name="Workforce" column="population" aggregator="sum">
+      <Annotation name="details">Number of people</Annotation>
+    </Measure>
+
+    <Measure name="Monthly Wage" column="mensual_wage"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>population</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Value in mexican pesos</Annotation>
+    </Measure>
+
+  </Cube>
 <Cube name="inegi_ensu">
     
       <Annotation name="topic">Safety</Annotation>
