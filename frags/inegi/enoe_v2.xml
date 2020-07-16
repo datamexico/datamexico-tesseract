@@ -1,5 +1,5 @@
 <Schema name="datamexico" default_locale="en">
-  <Cube name="inegi_enoe_v2">
+  <Cube name="inegi_enoe">
     
       <Annotation name="topic">Economy</Annotation>
       <Annotation name="subtopic">Employment</Annotation>
@@ -8,7 +8,7 @@
       <Annotation name="source_link">https://www.inegi.org.mx/programas/enoe/15ymas/</Annotation>
     
 
-    <Table name="inegi_enoe_v2" primary_key="code" />
+    <Table name="inegi_enoe" primary_key="code" />
 
     <Dimension name="Job Situation" foreign_key="has_job_or_business">
       <Hierarchy name="Job Situation" primary_key="id">
