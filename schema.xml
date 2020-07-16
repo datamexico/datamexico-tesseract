@@ -7300,12 +7300,9 @@
 
     <Measure name="Workforce MOE" column="population"  >
       <aggregator>
-        <weighted_average_moe>
+        <moe>
           <critical_value>1.645</critical_value>
-          <design_factor>4</design_factor>
-          <primary_weight>mensual_wage</primary_weight>
-          <secondary_weight_columns>workforce_is_wage</secondary_weight_columns>
-        </weighted_average_moe>
+        </moe>
       </aggregator>
     </Measure>
 
