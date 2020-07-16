@@ -3471,6 +3471,7 @@
 
     <DimensionUsage foreign_key="month_id" source="Date Month" name="Date Month" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography Municipality" />
+    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
 
     <Dimension name="Economic Sector" foreign_key="level_4_id">
       <Hierarchy name="Economic Sector" primary_key="level_4_id">
@@ -3572,6 +3573,204 @@
         </InlineTable>
         <Level name="Age Range" key_column="id" name_column="name_en">
           <Property name="Age Range ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Employer Registration Size" foreign_key="pattern_size">
+        <Hierarchy name="Employer Registration Size" primary_key="id">
+
+        <InlineTable alias="dim_inline_pattern_size">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">0</Value>
+                <Value column="name_en">Does not Apply</Value>
+                <Value column="name_es">No aplica</Value>
+            </Row>
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">1 Insured</Value>
+                <Value column="name_es">1 asegurado</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Between 2 and 5</Value>
+                <Value column="name_es">Entre 2 y 5 asegurado</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Between 6 and 50</Value>
+                <Value column="name_es">Entre 6 y 50 asegurados</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">Between 51 and 250</Value>
+                <Value column="name_es">Entre 51 y 250</Value>
+            </Row>
+            <Row>
+                <Value column="id">5</Value>
+                <Value column="name_en">Between 251 and 500</Value>
+                <Value column="name_es">Entre 251 y 500</Value>
+            </Row>
+            <Row>
+                <Value column="id">6</Value>
+                <Value column="name_en">Between 501 and 1000</Value>
+                <Value column="name_es">Entre 501 y 1000</Value>
+            </Row>
+            <Row>
+                <Value column="id">7</Value>
+                <Value column="name_en">More than 1000</Value>
+                <Value column="name_es">Más de 1000</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Employer Registration Size" key_column="id" name_column="name_en">
+          <Property name="Employer Registration Size ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Salary Range" foreign_key="salary_range">
+        <Hierarchy name="Salary Range" primary_key="id">
+
+        <InlineTable alias="dim_inline_salary_range">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+            <Row>
+                <Value column="id">0</Value>
+                <Value column="name_en">Does not Apply</Value>
+                <Value column="name_es">No aplica</Value>
+            </Row>
+            <Row>
+                <Value column="id">1</Value>
+                <Value column="name_en">Up to 1 Time the Minimum Wage</Value>
+                <Value column="name_es">Hasta 1 vez el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">2</Value>
+                <Value column="name_en">Greater than 1 and up to 2 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 1 y hasta 2 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">3</Value>
+                <Value column="name_en">Greater than 2 and up to 3 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 2 y hasta 3 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">4</Value>
+                <Value column="name_en">Greater than 3 and up to 4 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 3 y hasta 4 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">5</Value>
+                <Value column="name_en">Greater than 4 and up to 5 times the Minimum Wage</Value>
+                <Value column="name_es"Mayor a 4 y hasta 5 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">6</Value>
+                <Value column="name_en">Greater than 5 and up to 6 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 5 y hasta 6 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">7</Value>
+                <Value column="name_en">Greater than 6 and up to 7 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 6 y hasta 7 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">8</Value>
+                <Value column="name_en">Greater than 7 and up to 8 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 7 y hasta 8 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">9</Value>
+                <Value column="name_en">Greater than 8 and up to 9 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 8 y hasta 9 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">10</Value>
+                <Value column="name_en">Greater than 9 and up to 10 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 9 y hasta 10 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">11</Value>
+                <Value column="name_en">Greater than 10 and up to 11 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 10 y hasta 11 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">12</Value>
+                <Value column="name_en">Greater than 11 and up to 12 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 11 y hasta 12 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">13</Value>
+                <Value column="name_en">Greater than 12 and up to 13 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 12 y hasta 13 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">14</Value>
+                <Value column="name_en">Greater than 13 and up to 14 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 13 y hasta 14 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">15</Value>
+                <Value column="name_en">Greater than 14 and up to 15 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 14 y hasta 15 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">16</Value>
+                <Value column="name_en">Greater than 15 and up to 16 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 15 y hasta 16 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">17</Value>
+                <Value column="name_en">Greater than 16 and up to 17 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 16 y hasta 17 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">18</Value>
+                <Value column="name_en">Greater than 17 and up to 18 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 17 y hasta 18 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">19</Value>
+                <Value column="name_en">Greater than 18 and up to 19 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 18 y hasta 19 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">20</Value>
+                <Value column="name_en">Greater than 19 and up to 20 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 19 y hasta 20 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">21</Value>
+                <Value column="name_en">Greater than 20 and up to 21 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 20 y hasta 21 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">22</Value>
+                <Value column="name_en">Greater than 21 and up to 22 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 21 y hasta 22 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">23</Value>
+                <Value column="name_en">Greater than 22 and up to 23 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 22 y hasta 23 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">24</Value>
+                <Value column="name_en">Greater than 23 and up to 24 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 23 y hasta 24 veces el salario mínimo</Value>
+            </Row>
+            <Row>
+                <Value column="id">25</Value>
+                <Value column="name_en">Greater than 24 and up to 25 times the Minimum Wage</Value>
+                <Value column="name_es">Mayor a 24 y hasta 25 veces el salario mínimo</Value>
+            </Row>
+        </InlineTable>
+        <Level name="Salary Range" key_column="id" name_column="name_en">
+          <Property name="Salary Range ES" column="name_es" caption_set="es"/>
         </Level>
       </Hierarchy>
     </Dimension>
