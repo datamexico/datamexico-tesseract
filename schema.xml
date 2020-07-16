@@ -3666,7 +3666,7 @@
             <Row>
                 <Value column="id">5</Value>
                 <Value column="name_en">Greater than 4 and up to 5 times the Minimum Wage</Value>
-                <Value column="name_es"Mayor a 4 y hasta 5 veces el salario mínimo</Value>
+                <Value column="name_es">Mayor a 4 y hasta 5 veces el salario mínimo</Value>
             </Row>
             <Row>
                 <Value column="id">6</Value>
