@@ -427,7 +427,7 @@
     <Measure name="Worked Hours Week" column="actual_job_hrs_worked_lastweek"  >
       <aggregator>
         <weighted_avg>
-          <weight_column>population</weight_column>
+          <weight_column>workforce_is_wage</weight_column>
         </weighted_avg>
       </aggregator>
       <Annotation name="details">Value in hours</Annotation>
@@ -435,7 +435,7 @@
     <Measure name="Worked Days Week" column="actual_job_days_worked_lastweek"  >
       <aggregator>
         <weighted_avg>
-          <weight_column>population</weight_column>
+          <weight_column>workforce_is_wage</weight_column>
         </weighted_avg>
       </aggregator>
       <Annotation name="details">Value in number of days</Annotation>
@@ -444,10 +444,21 @@
     <Measure name="Monthly Wage" column="mensual_wage"  >
       <aggregator>
         <weighted_avg>
-          <weight_column>population</weight_column>
+          <weight_column>workforce_is_wage</weight_column>
         </weighted_avg>
       </aggregator>
       <Annotation name="details">Value in mexican pesos</Annotation>
+    </Measure>
+
+    <Measure name="Workforce MOE" column="population"  >
+      <aggregator>
+        <weighted_average_moe>
+          <critical_value>1.645</critical_value>
+          <design_factor>4</design_factor>
+          <primary_weight>mensual_wage</primary_weight>
+          <secondary_weight_columns>workforce_is_wage</secondary_weight_columns>
+        </weighted_average_moe>
+      </aggregator>
     </Measure>
 
   </Cube>
