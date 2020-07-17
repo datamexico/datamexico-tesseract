@@ -1,11 +1,11 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inea_adult_education_stats">
     
-      <Annotation name="topic">Education</Annotation>
-      <Annotation name="subtopic">Adults</Annotation>
-      <Annotation name="source_name">Instituto Nacional para la Educación de los Adultos (INEA)</Annotation>
-      <Annotation name="source_name_en">National Institute for Adult Education (INEA)</Annotation>
-      <Annotation name="source_link">https://www.gob.mx/inea</Annotation>
+    <Annotation name="topic">Education</Annotation>
+    <Annotation name="subtopic">Adults</Annotation>
+    <Annotation name="source_name">Instituto Nacional para la Educación de los Adultos (INEA)</Annotation>
+    <Annotation name="source_name_en">National Institute for Adult Education (INEA)</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/inea</Annotation>
     
     <Table name="inea_adult_education_stats" primary_key="ent_id" />
 

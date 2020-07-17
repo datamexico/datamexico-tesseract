@@ -1,11 +1,11 @@
 <Schema name="datamexico" default_locale="en"> 
   <Cube name="inegi_envipe">
     
-      <Annotation name="topic">Safety</Annotation>
-      <Annotation name="subtopic">Victimization and Perception</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/programas/envipe/2019/</Annotation>
+    <Annotation name="topic">Safety</Annotation>
+    <Annotation name="subtopic">Victimization and Perception</Annotation>
+    <Annotation name="source_name">Encuesta Nacional de Victimización y Percepción sobre Seguridad Pública (ENVIPE)</Annotation>
+    <Annotation name="source_name_en">National Survey of Victimization and Perception on Public Safety (ENVIPE)</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/programas/envipe/2019/</Annotation>
     
     <Table name="inegi_envipe" primary_key="mun_id" />
 

@@ -1,13 +1,12 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inegi_economic_census_sex">
     
-      <Annotation name="topic">Economy</Annotation>
-      <Annotation name="subtopic">Employment</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/app/saic/default.aspx</Annotation>
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Employment</Annotation>
+    <Annotation name="source_name">Censos Económicos</Annotation>
+    <Annotation name="source_name_en">Economic Censuses</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/app/saich/v2/</Annotation>
     
-
     <Table name="inegi_economic_census_sex" primary_key="mun_id" />
  
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />

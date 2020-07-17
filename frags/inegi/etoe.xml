@@ -1,12 +1,11 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inegi_etoe">
     
-      <Annotation name="topic">Economy</Annotation>
-      <Annotation name="subtopic">Employment</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/investigacion/etoe/default.html</Annotation>
-    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Employment</Annotation>
+    <Annotation name="source_name">Encuesta Telefónica de Ocupación y Empleo (ETOE)</Annotation>
+    <Annotation name="source_name_en">Telephone Survey of Occupation and Employment (ETOE)</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/investigacion/etoe/default.html</Annotation>
 
     <Table name="inegi_etoe" primary_key="mun_id" />
 

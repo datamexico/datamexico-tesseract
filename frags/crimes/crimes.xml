@@ -1,5 +1,12 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="sesnsp_crimes">
+
+    <Annotation name="topic">Safety</Annotation>
+    <Annotation name="subtopic">Victimization and Perception</Annotation>
+    <Annotation name="source_name">Secretariado Ejecutivo del Sistema Nacional de Seguridad Pública (SESNSP)</Annotation>
+    <Annotation name="source_name_en">Executive Secretariat of the National Public Security System (SESNSP)</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/sesnsp/acciones-y-programas/datos-abiertos-de-incidencia-delictiva?state=published</Annotation>
+
     <Table name="sesnsp_crimes" primary_key="mun_id" />
 
     <Dimension name="Type" foreign_key="crime_subtype_id">

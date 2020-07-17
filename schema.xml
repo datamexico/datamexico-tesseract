@@ -2341,7 +2341,7 @@
       <Annotation name="subtopic">Credits</Annotation>
       <Annotation name="source_name">Secretaría de Economía</Annotation>
       <Annotation name="source_name_en">Secretary of Economy</Annotation>
-      <Annotation name="source_link">https://www.gob.mx/</Annotation>
+      <Annotation name="source_link">https://www.gob.mx/se</Annotation>
     
     <Table name="imss_credits" primary_key="ent_id" />
 
@@ -2491,6 +2491,13 @@
 
   </Cube>
 <Cube name="sesnsp_crimes">
+
+    <Annotation name="topic">Safety</Annotation>
+    <Annotation name="subtopic">Victimization and Perception</Annotation>
+    <Annotation name="source_name">Secretariado Ejecutivo del Sistema Nacional de Seguridad Pública (SESNSP)</Annotation>
+    <Annotation name="source_name_en">Executive Secretariat of the National Public Security System (SESNSP)</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/sesnsp/acciones-y-programas/datos-abiertos-de-incidencia-delictiva?state=published</Annotation>
+
     <Table name="sesnsp_crimes" primary_key="mun_id" />
 
     <Dimension name="Type" foreign_key="crime_subtype_id">
@@ -2524,11 +2531,11 @@
   </Cube>
 <Cube name="inegi_envipe">
     
-      <Annotation name="topic">Safety</Annotation>
-      <Annotation name="subtopic">Victimization and Perception</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/programas/envipe/2019/</Annotation>
+    <Annotation name="topic">Safety</Annotation>
+    <Annotation name="subtopic">Victimization and Perception</Annotation>
+    <Annotation name="source_name">Encuesta Nacional de Victimización y Percepción sobre Seguridad Pública (ENVIPE)</Annotation>
+    <Annotation name="source_name_en">National Survey of Victimization and Perception on Public Safety (ENVIPE)</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/programas/envipe/2019/</Annotation>
     
     <Table name="inegi_envipe" primary_key="mun_id" />
 
@@ -3259,11 +3266,11 @@
     </Cube>
 <Cube name="economy_fdi">
     
-      <Annotation name="topic">Economy</Annotation>
-      <Annotation name="subtopic">Foreign Direct Investment</Annotation>
-      <Annotation name="source_name">Secretaría de Economía</Annotation>
-      <Annotation name="source_name_en">Secretary of Economy</Annotation>
-      <Annotation name="source_link">https://www.gob.mx/</Annotation>
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
     
     <Table name="economy_fdi" primary_key="quarter_id" />
 
@@ -3315,11 +3322,11 @@
   </Cube>
 <Cube name="economy_foreign_trade_ent">
     
-      <Annotation name="topic">Economy</Annotation>
-      <Annotation name="subtopic">Foreign Trade</Annotation>
-      <Annotation name="source_name">Secretaría de Economía</Annotation>
-      <Annotation name="source_name_en">Secretary of Economy</Annotation>
-      <Annotation name="source_link">https://www.gob.mx/</Annotation>
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Trade</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
     
     <Table name="economy_foreign_trade_ent" primary_key="ent_id" />
 
@@ -3388,11 +3395,11 @@
   </Cube>
 <Cube name="economy_foreign_trade_mun">
     
-      <Annotation name="topic">Economy</Annotation>
-      <Annotation name="subtopic">Foreign Trade</Annotation>
-      <Annotation name="source_name">Secretaría de Economía</Annotation>
-      <Annotation name="source_name_en">Secretary of Economy</Annotation>
-      <Annotation name="source_link">https://www.gob.mx/</Annotation>
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Trade</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
     
     <Table name="economy_foreign_trade_mun" primary_key="mun_id" />
 
@@ -3953,11 +3960,11 @@
   </Cube>
 <Cube name="inea_adult_education_origin">
     
-      <Annotation name="topic">Education</Annotation>
-      <Annotation name="subtopic">Adults</Annotation>
-      <Annotation name="source_name">Instituto Nacional para la Educación de los Adultos (INEA)</Annotation>
-      <Annotation name="source_name_en">National Institute for Adult Education (INEA)</Annotation>
-      <Annotation name="source_link">https://www.gob.mx/inea</Annotation>
+    <Annotation name="topic">Education</Annotation>
+    <Annotation name="subtopic">Adults</Annotation>
+    <Annotation name="source_name">Instituto Nacional para la Educación de los Adultos (INEA)</Annotation>
+    <Annotation name="source_name_en">National Institute for Adult Education (INEA)</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/inea</Annotation>
     
     <Table name="inea_adult_education_origin" primary_key="ent_id" />
 
@@ -4046,11 +4053,11 @@
   </Cube>
 <Cube name="inea_adult_education_stats">
     
-      <Annotation name="topic">Education</Annotation>
-      <Annotation name="subtopic">Adults</Annotation>
-      <Annotation name="source_name">Instituto Nacional para la Educación de los Adultos (INEA)</Annotation>
-      <Annotation name="source_name_en">National Institute for Adult Education (INEA)</Annotation>
-      <Annotation name="source_link">https://www.gob.mx/inea</Annotation>
+    <Annotation name="topic">Education</Annotation>
+    <Annotation name="subtopic">Adults</Annotation>
+    <Annotation name="source_name">Instituto Nacional para la Educación de los Adultos (INEA)</Annotation>
+    <Annotation name="source_name_en">National Institute for Adult Education (INEA)</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/inea</Annotation>
     
     <Table name="inea_adult_education_stats" primary_key="ent_id" />
 
@@ -4091,11 +4098,11 @@
   </Cube>
 <Cube name="inegi_denue">
     
-      <Annotation name="topic">Economy</Annotation>
-      <Annotation name="subtopic">Industries</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/temas/directorio/</Annotation>
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Industries</Annotation>
+    <Annotation name="source_name">Directorio Estadístico Nacional de Unidades Económicas (DENUE)</Annotation>
+    <Annotation name="source_name_en">National Statistical Directory of Economic Units (DENUE)</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/temas/directorio/</Annotation>
     
     <Table name="inegi_denue" primary_key="loc_id" />
 
@@ -4203,12 +4210,11 @@
   </Cube>
 <Cube name="inegi_economic_census">
     
-      <Annotation name="topic">Economy</Annotation>
-      <Annotation name="subtopic">Employment</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/app/saic/default.aspx</Annotation>
-    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Employment</Annotation>
+    <Annotation name="source_name">Censos Económicos</Annotation>
+    <Annotation name="source_name_en">Economic Censuses</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/app/saich/v2/</Annotation>
 
     <Table name="inegi_economic_census" primary_key="mun_id" />
 
@@ -4709,13 +4715,12 @@
   </Cube>
 <Cube name="inegi_economic_census_sex">
     
-      <Annotation name="topic">Economy</Annotation>
-      <Annotation name="subtopic">Employment</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/app/saic/default.aspx</Annotation>
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Employment</Annotation>
+    <Annotation name="source_name">Censos Económicos</Annotation>
+    <Annotation name="source_name_en">Economic Censuses</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/app/saich/v2/</Annotation>
     
-
     <Table name="inegi_economic_census_sex" primary_key="mun_id" />
  
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
@@ -4772,13 +4777,12 @@
   </Cube>
 <Cube name="inegi_enigh_household_income">
     
-      <Annotation name="topic">Housing and Living</Annotation>
-      <Annotation name="subtopic">Income</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/programas/enigh/nc/2018/</Annotation>
+    <Annotation name="topic">Housing and Living</Annotation>
+    <Annotation name="subtopic">Income</Annotation>
+    <Annotation name="source_name">Encuesta Nacional de Ingresos y Gastos de los Hogares (ENIGH)</Annotation>
+    <Annotation name="source_name_en">National Survey of Household Income and Expenses (ENIGH)</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/programas/enigh/nc/2018/</Annotation>
     
-
     <Table name="inegi_enigh_household_income" primary_key="mun_id" />
 
     <Dimension name="Number of Inhabitants" foreign_key="n_people_home">
@@ -4801,13 +4805,12 @@
   </Cube>
 <Cube name="inegi_enigh_income">
     
-      <Annotation name="topic">Housing and Living</Annotation>
-      <Annotation name="subtopic">Income</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/temas/ingresoshog/default.html</Annotation>
+    <Annotation name="topic">Housing and Living</Annotation>
+    <Annotation name="subtopic">Income</Annotation>
+    <Annotation name="source_name">Encuesta Nacional de Ingresos y Gastos de los Hogares (ENIGH)</Annotation>
+    <Annotation name="source_name_en">National Survey of Household Income and Expenses (ENIGH)</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/temas/ingresoshog/default.html</Annotation>
     
-
     <Table name="inegi_enigh_income" primary_key="ent_id" />
 
     <Dimension name="Geography State" type="geo" foreign_key="ent_id">
@@ -4843,12 +4846,11 @@
   </Cube>
 <Cube name="inegi_enigh_jobs">
     
-      <Annotation name="topic">Housing and Living</Annotation>
-      <Annotation name="subtopic">Income</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/programas/enigh/nc/2018/</Annotation>
-    
+    <Annotation name="topic">Housing and Living</Annotation>
+    <Annotation name="subtopic">Income</Annotation>
+    <Annotation name="source_name">Encuesta Nacional de Ingresos y Gastos de los Hogares (ENIGH)</Annotation>
+    <Annotation name="source_name_en">National Survey of Household Income and Expenses (ENIGH)</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/programas/enigh/nc/2018/</Annotation>
 
     <Table name="inegi_enigh_jobs" primary_key="mun_id" />
 
@@ -5161,13 +5163,12 @@
   </Cube>
 <Cube name="inegi_enigh_population">
     
-      <Annotation name="topic">Housing and Living</Annotation>
-      <Annotation name="subtopic">Income</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/programas/enigh/nc/2018/</Annotation>
+    <Annotation name="topic">Housing and Living</Annotation>
+    <Annotation name="subtopic">Income</Annotation>
+    <Annotation name="source_name">Encuesta Nacional de Ingresos y Gastos de los Hogares (ENIGH)</Annotation>
+    <Annotation name="source_name_en">National Survey of Household Income and Expenses (ENIGH)</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/programas/enigh/nc/2018/</Annotation>
     
-
     <Table name="inegi_enigh_population" primary_key="ent_id" />
 
     <Dimension name="Socioeconomic Status" foreign_key="eco_stratum">
@@ -6062,12 +6063,11 @@
   </Cube>
 <Cube name="inegi_enoe_legacy">
     
-      <Annotation name="topic">Economy</Annotation>
-      <Annotation name="subtopic">Employment</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/programas/enoe/15ymas/</Annotation>
-    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Employment</Annotation>
+    <Annotation name="source_name">Encuesta Nacional de Ocupación y Empleo (ENOE)</Annotation>
+    <Annotation name="source_name_en">National Survey of Occupation and Employment (ENOE)</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/programas/enoe/15ymas/</Annotation>
 
     <Table name="inegi_enoe_legacy" primary_key="mun_id" />
 
@@ -7055,12 +7055,11 @@
   </Cube>
 <Cube name="inegi_enoe">
     
-      <Annotation name="topic">Economy</Annotation>
-      <Annotation name="subtopic">Employment</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/programas/enoe/15ymas/</Annotation>
-    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Employment</Annotation>
+    <Annotation name="source_name">Encuesta Nacional de Ocupación y Empleo (ENOE)</Annotation>
+    <Annotation name="source_name_en">National Survey of Occupation and Employment (ENOE)</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/programas/enoe/15ymas/</Annotation>
 
     <Table name="inegi_enoe" primary_key="code" />
 
@@ -7510,8 +7509,8 @@
     
       <Annotation name="topic">Safety</Annotation>
       <Annotation name="subtopic">Crimes</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_name">Encuesta Nacional de Seguridad Pública Urbana (ENSU)</Annotation>
+      <Annotation name="source_name_en">National Urban Public Security Survey (ENSU)</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/programas/ensu/</Annotation>
     
 
@@ -8401,12 +8400,11 @@
   </Cube>
 <Cube name="inegi_etoe">
     
-      <Annotation name="topic">Economy</Annotation>
-      <Annotation name="subtopic">Employment</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/investigacion/etoe/default.html</Annotation>
-    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Employment</Annotation>
+    <Annotation name="source_name">Encuesta Telefónica de Ocupación y Empleo (ETOE)</Annotation>
+    <Annotation name="source_name_en">Telephone Survey of Occupation and Employment (ETOE)</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/investigacion/etoe/default.html</Annotation>
 
     <Table name="inegi_etoe" primary_key="mun_id" />
 
@@ -9445,8 +9443,8 @@
     
       <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Housing</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_name">Encuesta Intercensal</Annotation>
+      <Annotation name="source_name_en">Intercensal Survey</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/programas/intercensal/2015/</Annotation>
     
     <Table name="inegi_housing" />
@@ -10248,13 +10246,12 @@
   </Cube>
 <Cube name="inegi_suicides_over_mortality">
     
-      <Annotation name="topic">Health</Annotation>
-      <Annotation name="subtopic">Mortality</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/temas/mortalidad/default.html#Informacion_general</Annotation>
+    <Annotation name="topic">Health</Annotation>
+    <Annotation name="subtopic">Mortality</Annotation>
+    <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+    <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/temas/mortalidad/default.html#Informacion_general</Annotation>
     
-
     <Table name="inegi_suicides_over_mortality" primary_key="ent_id" />
 
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
@@ -10279,13 +10276,12 @@
   </Cube>
 <Cube name="inegi_population">
     
-      <Annotation name="topic">Housing and Living</Annotation>
-      <Annotation name="subtopic">Housing</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/programas/intercensal/2015/</Annotation>
+    <Annotation name="topic">Housing and Living</Annotation>
+    <Annotation name="subtopic">Housing</Annotation>
+    <Annotation name="source_name">Encuesta Intercensal</Annotation>
+    <Annotation name="source_name_en">Intercensal Survey</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/programas/intercensal/2015/</Annotation>
     
-
     <Table name="inegi_population" primary_key="loc_id" />
 
     <Dimension name="Related" foreign_key="parent">

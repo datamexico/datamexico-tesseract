@@ -5,7 +5,7 @@
       <Annotation name="subtopic">Credits</Annotation>
       <Annotation name="source_name">Secretaría de Economía</Annotation>
       <Annotation name="source_name_en">Secretary of Economy</Annotation>
-      <Annotation name="source_link">https://www.gob.mx/</Annotation>
+      <Annotation name="source_link">https://www.gob.mx/se</Annotation>
     
     <Table name="imss_credits" primary_key="ent_id" />
 

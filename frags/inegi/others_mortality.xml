@@ -1,13 +1,12 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inegi_suicides_over_mortality">
     
-      <Annotation name="topic">Health</Annotation>
-      <Annotation name="subtopic">Mortality</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/temas/mortalidad/default.html#Informacion_general</Annotation>
+    <Annotation name="topic">Health</Annotation>
+    <Annotation name="subtopic">Mortality</Annotation>
+    <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+    <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/temas/mortalidad/default.html#Informacion_general</Annotation>
     
-
     <Table name="inegi_suicides_over_mortality" primary_key="ent_id" />
 
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />

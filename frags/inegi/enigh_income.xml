@@ -1,13 +1,12 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inegi_enigh_income">
     
-      <Annotation name="topic">Housing and Living</Annotation>
-      <Annotation name="subtopic">Income</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/temas/ingresoshog/default.html</Annotation>
+    <Annotation name="topic">Housing and Living</Annotation>
+    <Annotation name="subtopic">Income</Annotation>
+    <Annotation name="source_name">Encuesta Nacional de Ingresos y Gastos de los Hogares (ENIGH)</Annotation>
+    <Annotation name="source_name_en">National Survey of Household Income and Expenses (ENIGH)</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/temas/ingresoshog/default.html</Annotation>
     
-
     <Table name="inegi_enigh_income" primary_key="ent_id" />
 
     <Dimension name="Geography State" type="geo" foreign_key="ent_id">

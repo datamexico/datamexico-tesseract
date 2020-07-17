@@ -3,8 +3,8 @@
     
       <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Housing</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_name">Encuesta Intercensal</Annotation>
+      <Annotation name="source_name_en">Intercensal Survey</Annotation>
       <Annotation name="source_link">https://www.inegi.org.mx/programas/intercensal/2015/</Annotation>
     
     <Table name="inegi_housing" />

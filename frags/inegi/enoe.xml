@@ -1,12 +1,11 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inegi_enoe_legacy">
     
-      <Annotation name="topic">Economy</Annotation>
-      <Annotation name="subtopic">Employment</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/programas/enoe/15ymas/</Annotation>
-    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Employment</Annotation>
+    <Annotation name="source_name">Encuesta Nacional de Ocupación y Empleo (ENOE)</Annotation>
+    <Annotation name="source_name_en">National Survey of Occupation and Employment (ENOE)</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/programas/enoe/15ymas/</Annotation>
 
     <Table name="inegi_enoe_legacy" primary_key="mun_id" />
 
