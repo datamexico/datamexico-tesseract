@@ -412,6 +412,10 @@
     <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
     <DimensionUsage foreign_key="actual_job_position" source="Occupation" name="Occupation Actual Job" />
 
+    <Measure name="Number of Records" column="code" aggregator="count">
+        <Annotation name="details">Number of Records</Annotation>
+    </Measure>
+
     <Measure name="Workforce" column="population" aggregator="sum">
       <Annotation name="details">Number of people</Annotation>
     </Measure>

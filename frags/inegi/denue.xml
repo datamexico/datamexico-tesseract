@@ -7,7 +7,7 @@
     <Annotation name="source_name_en">National Statistical Directory of Economic Units (DENUE)</Annotation>
     <Annotation name="source_link">https://www.inegi.org.mx/temas/directorio/</Annotation>
     
-    <Table name="inegi_denue" primary_key="loc_id" />
+    <Table name="inegi_denue" primary_key="mun_id" />
 
     <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
