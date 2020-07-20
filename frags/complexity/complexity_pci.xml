@@ -9,9 +9,7 @@
     
     <Table name="complexity_pci" primary_key="national_industry_id" />
 
-    <DimensionUsage foreign_key="industry_group_id" source="Industry Group Lite" name="Industry Group" />
-    <DimensionUsage foreign_key="naics_industry_id" source="NAICS Industry Lite" name="NAICS Industry" />
-    <DimensionUsage foreign_key="national_industry_id" source="National Industry Lite" name="National Industry" />
+    <DimensionUsage foreign_key="national_industry_id" source="Industry 6 Digit" name="National Industry" />
     <DimensionUsage foreign_key="time_id" source="Date Day" name="Date Day" />
 
     <Dimension name="Level" foreign_key="level">
