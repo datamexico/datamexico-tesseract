@@ -14,6 +14,13 @@
     <DimensionUsage foreign_key="national_industry_id" source="National Industry Lite" name="National Industry" />
     <DimensionUsage foreign_key="time_id" source="Date Day" name="Date Day" />
 
+    <Dimension name="Level" foreign_key="level">
+      <Hierarchy name="Level" primary_key="level">
+        <Table name="complexity_eci" />
+        <Level name="Level" key_column="level" key_type="text" />
+      </Hierarchy>
+    </Dimension>
+
     <Dimension name="PCI Ranking" foreign_key="pci_ranking">
       <Hierarchy name="PCI Ranking">
         <Level name="PCI Ranking" key_column="pci_ranking" />
