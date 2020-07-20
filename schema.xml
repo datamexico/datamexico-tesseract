@@ -3257,11 +3257,6 @@
     <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
     <DimensionUsage foreign_key="origin_id" source="Country" name="Origin" />
 
-    <Measure name="Count" column="count" aggregator="sum">
-      
-        <Annotation name="details">Investors</Annotation>
-      
-    </Measure>
     <Measure name="Investment (Million)" column="value_million" aggregator="sum">
       
         <Annotation name="details">Value Millions</Annotation>
