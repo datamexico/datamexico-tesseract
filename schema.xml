@@ -2578,22 +2578,22 @@
             <Row>
                 <Value column="id">1</Value>
                 <Value column="name_en">Lower Class</Value>
-                <Value column="name_es">Clase Baja</Value>
+                <Value column="name_es">Bajo</Value>
             </Row>
             <Row>
                 <Value column="id">2</Value>
                 <Value column="name_en">Lower Middle</Value>
-                <Value column="name_es">Clase Media Baja</Value>
+                <Value column="name_es">Medio bajo</Value>
             </Row>
             <Row>
                 <Value column="id">3</Value>
                 <Value column="name_en">Upper Middle</Value>
-                <Value column="name_es">Clase Media Alta</Value>
+                <Value column="name_es">Medio alto</Value>
             </Row>
             <Row>
                 <Value column="id">4</Value>
                 <Value column="name_en">Upper</Value>
-                <Value column="name_es">Clase Alta</Value>
+                <Value column="name_es">Alto</Value>
             </Row>
         </InlineTable>
         <Level name="Sociodemographic Stratum" key_column="id" name_column="name_en">
@@ -4104,7 +4104,7 @@
     <Annotation name="source_name_en">National Statistical Directory of Economic Units (DENUE)</Annotation>
     <Annotation name="source_link">https://www.inegi.org.mx/temas/directorio/</Annotation>
     
-    <Table name="inegi_denue" primary_key="loc_id" />
+    <Table name="inegi_denue" primary_key="mun_id" />
 
     <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
@@ -7465,6 +7465,10 @@
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
     <DimensionUsage foreign_key="actual_job_position" source="Occupation" name="Occupation Actual Job" />
+
+    <Measure name="Number of Records" column="code" aggregator="count">
+        <Annotation name="details">Number of Records</Annotation>
+    </Measure>
 
     <Measure name="Workforce" column="population" aggregator="sum">
       <Annotation name="details">Number of people</Annotation>

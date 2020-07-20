@@ -48,22 +48,22 @@
             <Row>
                 <Value column="id">1</Value>
                 <Value column="name_en">Lower Class</Value>
-                <Value column="name_es">Clase Baja</Value>
+                <Value column="name_es">Bajo</Value>
             </Row>
             <Row>
                 <Value column="id">2</Value>
                 <Value column="name_en">Lower Middle</Value>
-                <Value column="name_es">Clase Media Baja</Value>
+                <Value column="name_es">Medio bajo</Value>
             </Row>
             <Row>
                 <Value column="id">3</Value>
                 <Value column="name_en">Upper Middle</Value>
-                <Value column="name_es">Clase Media Alta</Value>
+                <Value column="name_es">Medio alto</Value>
             </Row>
             <Row>
                 <Value column="id">4</Value>
                 <Value column="name_en">Upper</Value>
-                <Value column="name_es">Clase Alta</Value>
+                <Value column="name_es">Alto</Value>
             </Row>
         </InlineTable>
         <Level name="Sociodemographic Stratum" key_column="id" name_column="name_en">
