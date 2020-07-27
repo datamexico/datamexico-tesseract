@@ -1,5 +1,5 @@
 <Schema name="datamexico" default_locale="en">
-  <Cube name="imss_credits">
+  <Cube name="households_credits">
     
     <Annotation name="topic">Economy</Annotation>
     <Annotation name="subtopic">Credits</Annotation>
@@ -7,7 +7,7 @@
     <Annotation name="source_name_en">Secretary of Economy</Annotation>
     <Annotation name="source_link">https://www.gob.mx/se</Annotation>
     
-    <Table name="imss_credits" primary_key="ent_id" />
+    <Table name="households_credits" primary_key="ent_id" />
 
     <DimensionUsage foreign_key="ent_id" source="Geography State Lite" name="Geography State" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality Lite" name="Geography Municipality" />
@@ -15,7 +15,7 @@
 
     <Dimension name="Level" foreign_key="level">
       <Hierarchy name="Level" primary_key="level">
-        <Table name="imss_credits" />
+        <Table name="households_credits" />
         <Level name="Level" key_column="level" key_type="text" />
       </Hierarchy>
     </Dimension>
@@ -39,39 +39,6 @@
         </InlineTable>
         <Level name="Person Type" key_column="id" name_column="name_en">
           <Property name="Person Type ES" column="name_es" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <Dimension name="Company Size" foreign_key="company_size">
-      <Hierarchy name="Company Size" primary_key="id">
-        <InlineTable alias="dim_inline_company_size">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">1</Value>
-            <Value column="name_en">From 1 to 10 people</Value>
-            <Value column="name_es">De 1 a 10 personas</Value>
-          </Row>
-          <Row>
-            <Value column="id">2</Value>
-            <Value column="name_en">From 11 to 20 people</Value>
-            <Value column="name_es">De 11 a 20 personas</Value>
-          </Row>
-          <Row>
-            <Value column="id">3</Value>
-            <Value column="name_en">From 21 to 50 people</Value>
-            <Value column="name_es">De 21 a 50 personas</Value>
-          </Row>
-          <Row>
-            <Value column="id">4</Value>
-            <Value column="name_en">More than 50 people</Value>
-            <Value column="name_es">Mas de 50 personas</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Company Size" key_column="id" name_column="name_en">
-          <Property name="Company Size ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
