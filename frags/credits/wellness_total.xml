@@ -9,7 +9,7 @@
 
     <Table name="wellness_credits" primary_key="ent_id" />
 
-    <DimensionUsage foreign_key="ent_id" source="Geography State Lite" name="Geography State" />
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography State" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
 
     <Dimension name="Person Type" foreign_key="person_type">
