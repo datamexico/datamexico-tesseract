@@ -2676,46 +2676,47 @@
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">20 to 29 years old</Value>
-            <Value column="name_es">20 a 29 años</Value>
-          </Row>
-          <Row>
-            <Value column="id">5</Value>
-            <Value column="name_en">30 to 39 years old</Value>
-            <Value column="name_es">30 a 39 años</Value>
-          </Row>
-          <Row>
-            <Value column="id">6</Value>
-            <Value column="name_en">40 to 49 years old</Value>
-            <Value column="name_es">40 a 49 años</Value>
-          </Row>
-          <Row>
-            <Value column="id">7</Value>
-            <Value column="name_en">50 to 59 years old</Value>
-            <Value column="name_es">50 a 59 años</Value>
-          </Row>
-          <Row>
-            <Value column="id">8</Value>
-            <Value column="name_en">60 or more years old</Value>
-            <Value column="name_es">60 y más años</Value>
-          </Row>
-          <Row>
-            <Value column="id">11</Value>
             <Value column="name_en">19 years or younger</Value>
             <Value column="name_es">19 años o menos</Value>
           </Row>
           <Row>
-            <Value column="id">12</Value>
+            <Value column="id">5</Value>
+            <Value column="name_en">20 to 29 years old</Value>
+            <Value column="name_es">20 a 29 años</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">30 to 39 years old</Value>
+            <Value column="name_es">30 a 39 años</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">40 to 49 years old</Value>
+            <Value column="name_es">40 a 49 años</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">50 to 59 years old</Value>
+            <Value column="name_es">50 a 59 años</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">60 or more years old</Value>
+            <Value column="name_es">60 y más años</Value>
+          </Row>
+
+          <Row>
+            <Value column="id">10</Value>
             <Value column="name_en">20 to 49 years old</Value>
             <Value column="name_es">20 a 49 años</Value>
           </Row>
           <Row>
-            <Value column="id">13</Value>
+            <Value column="id">11</Value>
             <Value column="name_en">50 to 69 years old</Value>
             <Value column="name_es">50 a 69 años</Value>
           </Row>
           <Row>
-            <Value column="id">14</Value>
+            <Value column="id">12</Value>
             <Value column="name_en">70 or more years old</Value>
             <Value column="name_es">70 y más años</Value>
           </Row>
