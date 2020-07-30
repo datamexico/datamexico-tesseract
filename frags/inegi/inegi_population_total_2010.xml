@@ -1,0 +1,21 @@
+<Schema name="datamexico" default_locale="en">
+  <Cube name="inegi_population_total_2010">
+
+      <Annotation name="topic">Housing and Living</Annotation>
+      <Annotation name="subtopic">Population</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/programas/ccpv/2010/default.html</Annotation>
+
+    <Table name="inegi_population_2010" primary_key="mun_id" />
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Measure name="Population" column="population" aggregator="sum">
+
+        <Annotation name="details">Number of people</Annotation>
+
+    </Measure>
+  </Cube>
+</Schema>
