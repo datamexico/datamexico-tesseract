@@ -1,13 +1,12 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inegi_enigh_population">
     
-      <Annotation name="topic">Housing and Living</Annotation>
-      <Annotation name="subtopic">Income</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/programas/enigh/nc/2018/</Annotation>
+    <Annotation name="topic">Housing and Living</Annotation>
+    <Annotation name="subtopic">Income</Annotation>
+    <Annotation name="source_name">Encuesta Nacional de Ingresos y Gastos de los Hogares (ENIGH)</Annotation>
+    <Annotation name="source_name_en">National Survey of Household Income and Expenses (ENIGH)</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/programas/enigh/nc/2018/</Annotation>
     
-
     <Table name="inegi_enigh_population" primary_key="ent_id" />
 
     <Dimension name="Socioeconomic Status" foreign_key="eco_stratum">
@@ -23,12 +22,12 @@
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Lower middle Class</Value>
+            <Value column="name_en">Lower Middle Class</Value>
             <Value column="name_es">Clase Media Baja</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Upper middle Class</Value>
+            <Value column="name_en">Upper Middle Class</Value>
             <Value column="name_es">Clase Media Alta</Value>
           </Row>
           <Row>
@@ -75,22 +74,22 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Pensioner or Retired</Value>
-            <Value column="name_es">Es pensionado o jubilado</Value>
+            <Value column="name_es">Es Pensionado o Jubilado</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Dedicated to house chores</Value>
-            <Value column="name_es">Se dedicó a los quehaceres del hogar</Value>
+            <Value column="name_en">Dedicated to House Chores</Value>
+            <Value column="name_es">Se Dedicó a los Quehaceres del Hogar</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Dedicated to studies</Value>
-            <Value column="name_es">Se dedicó a estudiar</Value>
+            <Value column="name_en">Dedicated to Studies</Value>
+            <Value column="name_es">Se Dedicó a Estudiar</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">Is a person with some physical or mental limitation that prevents work for a lifetime</Value>
-            <Value column="name_es">Es una persona con alguna limitación física o mental que le impide trabajar por el resto de su vida</Value>
+            <Value column="name_en">Is a Person with some Physical or Mental Limitation that Prevents Work for a Lifetime</Value>
+            <Value column="name_es">Es una Persona con alguna Limitación Física o Mental que le Impide trabajar por el Resto de su Vida</Value>
           </Row>
         </InlineTable>
         <Level name="Second Reason Not Economically Active" key_column="id" name_column="name_en">
@@ -107,33 +106,33 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Was looking for a job</Value>
-            <Value column="name_es">Estuvo buscando trabajo</Value>
+            <Value column="name_en">Was looking for a Job</Value>
+            <Value column="name_es">Estuvo Buscando Trabajo</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Pensioner or Retired</Value>
-            <Value column="name_es">Es pensionado o jubilado</Value>
+            <Value column="name_es">Es Pensionado o Jubilado</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Dedicated to house chores</Value>
-            <Value column="name_es">Se dedicó a los quehaceres del hogar</Value>
+            <Value column="name_en">Dedicated to House Chores</Value>
+            <Value column="name_es">Se Dedicó a los Quehaceres del Hogar</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">Dedicated to studies</Value>
-            <Value column="name_es">Se dedicó a estudiar</Value>
+            <Value column="name_en">Dedicated to Studies</Value>
+            <Value column="name_es">Se Dedicó a Estudiar</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
-            <Value column="name_en">Is a person with some physical or mental limitation that prevents work for a lifetime</Value>
-            <Value column="name_es">Es una persona con alguna limitación física o mental que le impide trabajar por el resto de su vida</Value>
+            <Value column="name_en">Is a Person with some Physical or Mental Limitation that Prevents Work for a Lifetime</Value>
+            <Value column="name_es">Es una Persona con alguna Limitación Física o Mental que le Impide trabajar por el Resto de su Vida</Value>
           </Row>
           <Row>
             <Value column="id">6</Value>
-            <Value column="name_en">Is in a situation different from the above</Value>
-            <Value column="name_es">Está en otra situación diferente a las anteriores</Value>
+            <Value column="name_en">Is in a Situation Different from the above</Value>
+            <Value column="name_es">Está en una Situación Diferente a las Anteriores</Value>
           </Row>
         </InlineTable>
         <Level name="First Reason Not Economically Active" key_column="id" name_column="name_en">
@@ -150,23 +149,23 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Strike or unemployment</Value>
-            <Value column="name_es">Huelga o paro laboral</Value>
+            <Value column="name_en">Strike or Unemployment</Value>
+            <Value column="name_es">Huelga o Paro Laboral</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Technical stop</Value>
-            <Value column="name_es">Paro técnico</Value>
+            <Value column="name_en">Technical Stop</Value>
+            <Value column="name_es">Paro Técnico</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Temporary suspension of their duties</Value>
-            <Value column="name_es">Suspensión temporal de sus funciones</Value>
+            <Value column="name_en">Temporary Suspension of their Duties</Value>
+            <Value column="name_es">Suspensión Temporal de sus Funciones</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">Assistance to training courses</Value>
-            <Value column="name_es">Asistencia a cursos de capacitación</Value>
+            <Value column="name_en">Assistance to Training Courses</Value>
+            <Value column="name_es">Asistencia a Cursos de Capacitación</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
@@ -175,43 +174,43 @@
           </Row>
           <Row>
             <Value column="id">6</Value>
-            <Value column="name_en">Permission, illness or settlement of personal matters</Value>
-            <Value column="name_es">Permiso, enfermedad o arreglo de asuntos personales</Value>
+            <Value column="name_en">Permission, Illness or Settlement of Personal Matters</Value>
+            <Value column="name_es">Permiso, Enfermedad o Arreglo de Asuntos Personales</Value>
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">Lack of vehicle or machine breakdown</Value>
-            <Value column="name_es">Falta de vehículo o descompostura de máquina</Value>
+            <Value column="name_en">Lack of Vehicle or Machine Breakdown</Value>
+            <Value column="name_es">Falta de Vehículo o Descompostura de Máquina</Value>
           </Row>
           <Row>
             <Value column="id">8</Value>
-            <Value column="name_en">Lack of raw materials, financing or customers</Value>
-            <Value column="name_es">Falta de materias primas, financiamiento o clientes</Value>
+            <Value column="name_en">Lack of Raw Materials, Financing or Customers</Value>
+            <Value column="name_es">Falta de Materias Primas, Financiamiento o Clientes</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">Bad weather or natural phenomenon</Value>
-            <Value column="name_es">Mal tiempo o fenómeno natural</Value>
+            <Value column="name_en">Bad Weather or Natural Phenomenon</Value>
+            <Value column="name_es">Mal tiempo o Fenómeno Natural</Value>
           </Row>
           <Row>
             <Value column="id">10</Value>
-            <Value column="name_en">Term of work or cultivation season</Value>
-            <Value column="name_es">Término de temporada de trabajo o cultivo</Value>
+            <Value column="name_en">Term of Work or Cultivation Season</Value>
+            <Value column="name_es">Término de Temporada de trabajo o Cultivo</Value>
           </Row>
           <Row>
             <Value column="id">11</Value>
-            <Value column="name_en">Start a new job or business</Value>
-            <Value column="name_es">Comenzará un trabajo o negocio nuevo</Value>
+            <Value column="name_en">Start a new Job or Business</Value>
+            <Value column="name_es">Comenzará un Trabajo o Negocio nuevo</Value>
           </Row>
           <Row>
             <Value column="id">12</Value>
-            <Value column="name_en">Another reason</Value>
-            <Value column="name_es">Otra razón</Value>
+            <Value column="name_en">Another Reason</Value>
+            <Value column="name_es">Otra Razón</Value>
           </Row>
           <Row>
             <Value column="id">13</Value>
             <Value column="name_en">None of the above</Value>
-            <Value column="name_es">Ninguna de las anteriores</Value>
+            <Value column="name_es">Ninguna de las Anteriores</Value>
           </Row>
         </InlineTable>
         <Level name="Job Absence" key_column="id" name_column="name_en">
@@ -228,13 +227,13 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Worked the past month</Value>
-            <Value column="name_es">Trabajó el mes pasado</Value>
+            <Value column="name_en">Worked the past Month</Value>
+            <Value column="name_es">Trabajó el Mes pasado</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Did not work the past month</Value>
-            <Value column="name_es">No trabajó el mes pasado</Value>
+            <Value column="name_en">Did not Work the past Month</Value>
+            <Value column="name_es">No trabajó el Mes pasado</Value>
           </Row>
         </InlineTable>
         <Level name="Work Last Month" key_column="id" name_column="name_en">
@@ -252,7 +251,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Another Option</Value>
-            <Value column="name_es">Otra Opcion</Value>
+            <Value column="name_es">Otra Opción</Value>
           </Row>
         </InlineTable>
         <Level name="Another Option" key_column="id" name_column="name_en">
@@ -261,8 +260,8 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="IMSS-Prospera" foreign_key="inst_5">
-      <Hierarchy name="IMSS-Prospera" primary_key="id">
+    <Dimension name="IMSS Prospera" foreign_key="inst_5">
+      <Hierarchy name="IMSS Prospera" primary_key="id">
         <InlineTable alias="dim_inline_inst_5">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -273,14 +272,14 @@
             <Value column="name_es">IMSS-Prospera</Value>
           </Row>
         </InlineTable>
-        <Level name="IMSS-Prospera" key_column="id" name_column="name_en">
-          <Property name="IMSS-Prospera ES" column="name_es" caption_set="es" />
+        <Level name="IMSS Prospera" key_column="id" name_column="name_en">
+          <Property name="IMSS Prospera ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Pemex, Defense or Marine" foreign_key="inst_4">
-      <Hierarchy name="Pemex, Defense or Marine" primary_key="id">
+    <Dimension name="Pemex Defense or Marine" foreign_key="inst_4">
+      <Hierarchy name="Pemex Defense or Marine" primary_key="id">
         <InlineTable alias="dim_inline_inst_4">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
@@ -291,8 +290,8 @@
             <Value column="name_es">Pemex, Defensa o Marina</Value>
           </Row>
         </InlineTable>
-        <Level name="Pemex, Defense or Marine" key_column="id" name_column="name_en">
-          <Property name="Pemex, Defense or Marine ES" column="name_es" caption_set="es" />
+        <Level name="Pemex Defense or Marine" key_column="id" name_column="name_en">
+          <Property name="Pemex Defense or Marine ES" column="name_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
@@ -306,7 +305,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">State ISSSTE</Value>
-            <Value column="name_es">ISSTE estatal</Value>
+            <Value column="name_es">ISSTE Estatal</Value>
           </Row>
         </InlineTable>
         <Level name="State ISSTE" key_column="id" name_column="name_en">
@@ -360,7 +359,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -383,7 +382,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -406,7 +405,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -429,7 +428,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -452,7 +451,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -475,27 +474,27 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Imposible get/obtain</Value>
-            <Value column="name_es">Imposible conseguirla</Value>
+            <Value column="name_es">Imposible Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Hard to get/obtain</Value>
-            <Value column="name_es">Difícil conseguirla</Value>
+            <Value column="name_es">Difícil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
             <Value column="name_en">Easy to get/obtain</Value>
-            <Value column="name_es">Fácil conseguirla</Value>
+            <Value column="name_es">Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
             <Value column="name_en">Very easy to get/obtain</Value>
-            <Value column="name_es">Muy fácil conseguirla</Value>
+            <Value column="name_es">Muy Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
             <Value column="name_en">No hard or easy get/obtain (spontaneous)</Value>
-            <Value column="name_es">Ni fácil ni difícil conseguirla (espontánea)</Value>
+            <Value column="name_es">Ni Fácil ni Difícil Conseguirla (espontánea)</Value>
           </Row>
         </InlineTable>
         <Level name="Near Children Support" key_column="id" name_column="name_en">
@@ -513,27 +512,27 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Imposible get/obtain</Value>
-            <Value column="name_es">Imposible conseguirla</Value>
+            <Value column="name_es">Imposible Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Hard to get/obtain</Value>
-            <Value column="name_es">Difícil conseguirla</Value>
+            <Value column="name_es">Difícil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
             <Value column="name_en">Easy to get/obtain</Value>
-            <Value column="name_es">Fácil conseguirla</Value>
+            <Value column="name_es">Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
             <Value column="name_en">Very easy to get/obtain</Value>
-            <Value column="name_es">Muy fácil conseguirla</Value>
+            <Value column="name_es">Muy Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
             <Value column="name_en">No hard or easy get/obtain (spontaneous)</Value>
-            <Value column="name_es">Ni fácil ni difícil conseguirla (espontánea)</Value>
+            <Value column="name_es">Ni Fácil ni Difícil Conseguirla (espontánea)</Value>
           </Row>
         </InlineTable>
         <Level name="Neighborhood Support" key_column="id" name_column="name_en">
@@ -551,27 +550,27 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Imposible get/obtain</Value>
-            <Value column="name_es">Imposible conseguirla</Value>
+            <Value column="name_es">Imposible Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Hard to get/obtain</Value>
-            <Value column="name_es">Difícil conseguirla</Value>
+            <Value column="name_es">Difícil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
             <Value column="name_en">Easy to get/obtain</Value>
-            <Value column="name_es">Fácil conseguirla</Value>
+            <Value column="name_es">Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
             <Value column="name_en">Very easy to get/obtain</Value>
-            <Value column="name_es">Muy fácil conseguirla</Value>
+            <Value column="name_es">Muy Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
             <Value column="name_en">No hard or easy get/obtain (spontaneous)</Value>
-            <Value column="name_es">Ni fácil ni difícil conseguirla (espontánea)</Value>
+            <Value column="name_es">Ni Fácil ni Difícil Conseguirla (espontánea)</Value>
           </Row>
         </InlineTable>
         <Level name="Near Doctor Support" key_column="id" name_column="name_en">
@@ -589,27 +588,27 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Imposible get/obtain</Value>
-            <Value column="name_es">Imposible conseguirla</Value>
+            <Value column="name_es">Imposible Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Hard to get/obtain</Value>
-            <Value column="name_es">Difícil conseguirla</Value>
+            <Value column="name_es">Difícil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
             <Value column="name_en">Easy to get/obtain</Value>
-            <Value column="name_es">Fácil conseguirla</Value>
+            <Value column="name_es">Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
             <Value column="name_en">Very easy to get/obtain</Value>
-            <Value column="name_es">Muy fácil conseguirla</Value>
+            <Value column="name_es">Muy Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
             <Value column="name_en">No hard or easy get/obtain (spontaneous)</Value>
-            <Value column="name_es">Ni fácil ni difícil conseguirla (espontánea)</Value>
+            <Value column="name_es">Ni Fácil ni Difícil Conseguirla (espontánea)</Value>
           </Row>
         </InlineTable>
         <Level name="Near Work Support" key_column="id" name_column="name_en">
@@ -627,27 +626,27 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Imposible get/obtain</Value>
-            <Value column="name_es">Imposible conseguirla</Value>
+            <Value column="name_es">Imposible Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Hard to get/obtain</Value>
-            <Value column="name_es">Difícil conseguirla</Value>
+            <Value column="name_es">Difícil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
             <Value column="name_en">Easy to get/obtain</Value>
-            <Value column="name_es">Fácil conseguirla</Value>
+            <Value column="name_es">Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
             <Value column="name_en">Very easy to get/obtain</Value>
-            <Value column="name_es">Muy fácil conseguirla</Value>
+            <Value column="name_es">Muy Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
             <Value column="name_en">No hard or easy get/obtain (spontaneous)</Value>
-            <Value column="name_es">Ni fácil ni difícil conseguirla (espontánea)</Value>
+            <Value column="name_es">Ni Fácil ni Difícil Conseguirla (espontánea)</Value>
           </Row>
         </InlineTable>
         <Level name="Near Sickness Support" key_column="id" name_column="name_en">
@@ -665,27 +664,27 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Imposible get/obtain</Value>
-            <Value column="name_es">Imposible conseguirla</Value>
+            <Value column="name_es">Imposible Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Hard to get/obtain</Value>
-            <Value column="name_es">Difícil conseguirla</Value>
+            <Value column="name_es">Difícil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
             <Value column="name_en">Easy to get/obtain</Value>
-            <Value column="name_es">Fácil conseguirla</Value>
+            <Value column="name_es">Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
             <Value column="name_en">Very easy to get/obtain</Value>
-            <Value column="name_es">Muy fácil conseguirla</Value>
+            <Value column="name_es">Muy Fácil Conseguirla</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
             <Value column="name_en">No hard or easy get/obtain (spontaneous)</Value>
-            <Value column="name_es">Ni fácil ni difícil conseguirla (espontánea)</Value>
+            <Value column="name_es">Ni Fácil ni Difícil Conseguirla (espontánea)</Value>
           </Row>
         </InlineTable>
         <Level name="Near Money Support" key_column="id" name_column="name_en">

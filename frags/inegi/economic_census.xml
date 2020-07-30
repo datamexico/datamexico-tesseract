@@ -1,12 +1,11 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inegi_economic_census">
     
-      <Annotation name="topic">Economy</Annotation>
-      <Annotation name="subtopic">Employment</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/app/saic/default.aspx</Annotation>
-    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Employment</Annotation>
+    <Annotation name="source_name">Censos Económicos</Annotation>
+    <Annotation name="source_name_en">Economic Censuses</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/app/saich/v2/</Annotation>
 
     <Table name="inegi_economic_census" primary_key="mun_id" />
 
@@ -99,21 +98,51 @@
         <Annotation name="details">Value in thousand hours</Annotation>
       
     </Measure>
-    <Measure name="Salaried Employees; Total" column="h010a" aggregator="sum">
+    <!--<Measure name="Salaried Employees; Total" column="h010a" aggregator="sum">
       
         <Annotation name="details">Total value of workforce</Annotation>
       
+    </Measure> -->
+
+    <Measure name="Salaried Employees; Total" column="h010a"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>h000a</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Total value of workforce</Annotation>
     </Measure>
-    <Measure name="Male Salaried Employees" column="h010b" aggregator="sum">
+
+    <!-- <Measure name="Male Salaried Employees" column="h010b" aggregator="sum">
       
         <Annotation name="details">Total value of workforce</Annotation>
       
+    </Measure> -->
+
+    <Measure name="Male Salaried Employees" column="h010b"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>h000b</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Total value of workforce</Annotation>
     </Measure>
-    <Measure name="Female Salaried Employees" column="h010c" aggregator="sum">
+
+    <!--<Measure name="Female Salaried Employees" column="h010c" aggregator="sum">
       
         <Annotation name="details">Total value of workforce</Annotation>
       
+    </Measure> -->
+
+    <Measure name="Female Salaried Employees" column="h010c"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>h000c</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Total value of workforce</Annotation>
     </Measure>
+
     <Measure name="Hours Worked by Salaried Employees" column="h010d" aggregator="sum">
       
         <Annotation name="details">Value in thousand hours</Annotation>

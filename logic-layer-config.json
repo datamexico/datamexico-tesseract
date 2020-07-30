@@ -1,0 +1,63 @@
+
+{
+    "aliases": {
+        "cubes": [
+            {
+                "name": "trade_i_baci_a_12",
+                "alternatives": ["BACI Annual Trade (HS12)"],
+                "levels": [
+                    {
+                        "current_name": "Exporter.Country.Continent",
+                        "unique_name": "Exporter Continent"
+                    },
+                    {
+                        "current_name": "Exporter.Country.Country",
+                        "unique_name": "Exporter Country"
+                    },
+                    {
+                        "current_name": "Importer.Country.Continent",
+                        "unique_name": "Importer Continent"
+                    },
+                    {
+                        "current_name": "Importer.Country.Country",
+                        "unique_name": "Importer Country"
+                    }
+                ],
+                "properties": [
+                    {
+                        "current_name": "Importer.Country.Continent.Continent ES",
+                        "unique_name": "Importer Continent ES"
+                    },
+                    {
+                        "current_name": "Exporter.Country.Continent.Continent ES",
+                        "unique_name": "Exporter Continent ES"
+                    },
+                    {
+                        "current_name": "Importer.Country.Country.ISO 2",
+                        "unique_name": "Importer Country ISO 2"
+                    },
+                    {
+                        "current_name": "Exporter.Country.Country.ISO 2",
+                        "unique_name": "Exporter Country ISO 2"
+                    },
+                    {
+                        "current_name": "Importer.Country.Country.OECD",
+                        "unique_name": "Importer Country OECD"
+                    },
+                    {
+                        "current_name": "Exporter.Country.Country.OECD",
+                        "unique_name": "Exporter Country OECD"
+                    },
+                    {
+                        "current_name": "Importer.Country.Country.Country ES",
+                        "unique_name": "Importer Country ES"
+                    },
+                    {
+                        "current_name": "Exporter.Country.Country.Country ES",
+                        "unique_name": "Exporter Country ES"
+                    }
+                ]
+            }
+        ]
+    }
+}

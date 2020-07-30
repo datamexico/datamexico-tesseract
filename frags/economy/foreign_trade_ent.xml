@@ -1,11 +1,11 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="economy_foreign_trade_ent">
     
-      <Annotation name="topic">Economy</Annotation>
-      <Annotation name="subtopic">Foreign Trade</Annotation>
-      <Annotation name="source_name">Gobierno de México</Annotation>
-      <Annotation name="source_name_en">Mexico Government</Annotation>
-      <Annotation name="source_link">https://www.gob.mx/</Annotation>
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Trade</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
     
     <Table name="economy_foreign_trade_ent" primary_key="ent_id" />
 
@@ -18,12 +18,12 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Imports</Value>
-            <Value column="name_es">Importaciones</Value>
+            <Value column="name_es">Compras internacionales</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Exports</Value>
-            <Value column="name_es">Exportaciones</Value>
+            <Value column="name_es">Ventas internacionales</Value>
           </Row>
         </InlineTable>
         <Level name="Flow" key_column="id" name_column="name_en">
@@ -35,6 +35,20 @@
     <Dimension name="Date Year" type="time" foreign_key="year">
       <Hierarchy name="Date Year">
         <Level name="Date Year" key_column="year" />
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Level" foreign_key="level">
+      <Hierarchy name="Level" primary_key="level">
+        <Table name="economy_foreign_trade_ent" />
+        <Level name="Level" key_column="level" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Product Level" foreign_key="product_level">
+      <Hierarchy name="Product Level" primary_key="product_level">
+        <Table name="economy_foreign_trade_ent" />
+        <Level name="Product Level" key_column="product_level" key_type="nontext" />
       </Hierarchy>
     </Dimension>
 

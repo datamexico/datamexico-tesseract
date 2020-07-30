@@ -1,0 +1,58 @@
+<Schema name="datamexico" default_locale="en">
+  <Cube name="complexity_pci">
+    
+      <Annotation name="topic">Economy</Annotation>
+      <Annotation name="subtopic">Complexity</Annotation>
+      <Annotation name="source_name">DataMéxico</Annotation>
+      <Annotation name="source_name_en">DataMéxico</Annotation>
+      <Annotation name="source_link">https://www.datamexico.org/</Annotation>
+    
+    <Table name="complexity_pci" primary_key="national_industry_id" />
+
+    <DimensionUsage foreign_key="national_industry_id" source="Industry 6 Digit" name="National Industry" />
+    <DimensionUsage foreign_key="time_id" source="Date Day" name="Date Day" />
+
+    <Dimension name="Level" foreign_key="level">
+      <Hierarchy name="Level" primary_key="level">
+        <Table name="complexity_eci" />
+        <Level name="Level" key_column="level" key_type="text" />
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="PCI Ranking" foreign_key="pci_ranking">
+      <Hierarchy name="PCI Ranking">
+        <Level name="PCI Ranking" key_column="pci_ranking" />
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Latest" foreign_key="latest">
+      <Hierarchy name="Latest" primary_key="id">
+        <InlineTable alias="dim_inline_latest">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Latest" key_column="id" name_column="name_en">
+          <Property name="Latest ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="PCI" column="pci" aggregator="avg">
+      
+        <Annotation name="details">PCI</Annotation>
+      
+    </Measure>
+
+  </Cube>
+</Schema>

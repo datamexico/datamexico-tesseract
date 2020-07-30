@@ -1,0 +1,28 @@
+<Schema name="datamexico" default_locale="en">
+  <Cube name="inegi_gdp">
+    
+      <Annotation name="topic">Economy</Annotation>
+      <Annotation name="subtopic">GDP</Annotation>
+      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/app/indicadores/</Annotation>
+    
+    <Table name="inegi_gdp" primary_key="quarter_id" />
+
+    <Dimension name="Sector" foreign_key="sector_id">
+        <Hierarchy name="Sector">
+            <Table name="inegi_gdp_names" />
+            <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
+                <Property name="Sector ES" column="sector_es" caption_set="es"/>
+            </Level>
+        </Hierarchy>
+    </Dimension>
+
+    <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
+
+    <Measure name="GDP" column="value" aggregator="sum" >
+        <Annotation name="details">Total GDP</Annotation>
+    </Measure>
+
+  </Cube>
+</Schema>

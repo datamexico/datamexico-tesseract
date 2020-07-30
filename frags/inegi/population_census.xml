@@ -1,13 +1,12 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inegi_population">
     
-      <Annotation name="topic">Housing and Living</Annotation>
-      <Annotation name="subtopic">Housing</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/programas/intercensal/2015/</Annotation>
+    <Annotation name="topic">Housing and Living</Annotation>
+    <Annotation name="subtopic">Housing</Annotation>
+    <Annotation name="source_name">Encuesta Intercensal</Annotation>
+    <Annotation name="source_name_en">Intercensal Survey</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/programas/intercensal/2015/</Annotation>
     
-
     <Table name="inegi_population" primary_key="loc_id" />
 
     <Dimension name="Related" foreign_key="parent">
@@ -478,7 +477,7 @@
     <DimensionUsage foreign_key="academic_degree" source="Academic Degree" name="Academic Degree" />
     <DimensionUsage foreign_key="dhsersal1" source="Social Security" name="Social Security" />
     <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
-    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
+    <DimensionUsage foreign_key="age" source="Age Group 10" name="Age Group" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 

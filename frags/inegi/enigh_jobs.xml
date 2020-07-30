@@ -1,12 +1,11 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="inegi_enigh_jobs">
     
-      <Annotation name="topic">Housing and Living</Annotation>
-      <Annotation name="subtopic">Income</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/programas/enigh/nc/2018/</Annotation>
-    
+    <Annotation name="topic">Housing and Living</Annotation>
+    <Annotation name="subtopic">Income</Annotation>
+    <Annotation name="source_name">Encuesta Nacional de Ingresos y Gastos de los Hogares (ENIGH)</Annotation>
+    <Annotation name="source_name_en">National Survey of Household Income and Expenses (ENIGH)</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/programas/enigh/nc/2018/</Annotation>
 
     <Table name="inegi_enigh_jobs" primary_key="mun_id" />
 
@@ -18,58 +17,58 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">just 1 person</Value>
-            <Value column="name_es">De 1 persona</Value>
+            <Value column="name_en">just 1 Person</Value>
+            <Value column="name_es">De 1 Persona</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">From 2 to 5 people</Value>
-            <Value column="name_es">De 2 a 5 personas</Value>
+            <Value column="name_en">From 2 to 5 People</Value>
+            <Value column="name_es">De 2 a 5 Personas</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">From 6 to 10 people</Value>
-            <Value column="name_es">De 6 a 10 personas</Value>
+            <Value column="name_en">From 6 to 10 People</Value>
+            <Value column="name_es">De 6 a 10 Personas</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">From 11 to 15 people</Value>
-            <Value column="name_es">De 11 a 15 personas</Value>
+            <Value column="name_en">From 11 to 15 People</Value>
+            <Value column="name_es">De 11 a 15 Personas</Value>
           </Row>
           <Row>
             <Value column="id">5</Value>
-            <Value column="name_en">From 16 to 20 people</Value>
-            <Value column="name_es">De 16 a 20 personas</Value>
+            <Value column="name_en">From 16 to 20 People</Value>
+            <Value column="name_es">De 16 a 20 Personas</Value>
           </Row>
           <Row>
             <Value column="id">6</Value>
-            <Value column="name_en">From 21 to 30 people</Value>
-            <Value column="name_es">De 21 a 30 personas</Value>
+            <Value column="name_en">From 21 to 30 People</Value>
+            <Value column="name_es">De 21 a 30 Personas</Value>
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">From 31 to 50 people</Value>
-            <Value column="name_es">De 31 a 50 personas</Value>
+            <Value column="name_en">From 31 to 50 People</Value>
+            <Value column="name_es">De 31 a 50 Personas</Value>
           </Row>
           <Row>
             <Value column="id">8</Value>
-            <Value column="name_en">From 51 to 100 people</Value>
-            <Value column="name_es">De 51 a 100 personas</Value>
+            <Value column="name_en">From 51 to 100 People</Value>
+            <Value column="name_es">De 51 a 100 Personas</Value>
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">From 101 to 250 people</Value>
-            <Value column="name_es">De 101 a 250 personas</Value>
+            <Value column="name_en">From 101 to 250 People</Value>
+            <Value column="name_es">De 101 a 250 Personas</Value>
           </Row>
           <Row>
             <Value column="id">10</Value>
-            <Value column="name_en">From 251 to 500 people</Value>
-            <Value column="name_es">De 251 a 500 personas</Value>
+            <Value column="name_en">From 251 to 500 People</Value>
+            <Value column="name_es">De 251 a 500 Personas</Value>
           </Row>
           <Row>
             <Value column="id">11</Value>
-            <Value column="name_en">From 501 and more people</Value>
-            <Value column="name_es">De 501 a más personas</Value>
+            <Value column="name_en">From 501 and more People</Value>
+            <Value column="name_es">De 501 a más Personas</Value>
           </Row>
           <Row>
             <Value column="id">12</Value>
@@ -90,23 +89,23 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Independent, personal or the familiar kind</Value>
-            <Value column="name_es">De tipo independiente, personal o familiar</Value>
+            <Value column="name_en">Independent, Personal or the Familiar Kind</Value>
+            <Value column="name_es">De Tipo Independiente, Personal o Familiar</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Company or enterprise from the private sector</Value>
-            <Value column="name_es">Una compañía o empresa del sector privado</Value>
+            <Value column="name_en">Company or Enterprise from the Private Sector</Value>
+            <Value column="name_es">Una Compañía o Empresa del Sector Privado</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Government institution</Value>
-            <Value column="name_es">Una institución de gobierno</Value>
+            <Value column="name_en">Government Institution</Value>
+            <Value column="name_es">Una Institución de Gobierno</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">Institution non related to the government</Value>
-            <Value column="name_es">Una institución no administrada por el gobierno</Value>
+            <Value column="name_en">Institution non Related to the Government</Value>
+            <Value column="name_es">Una Institución no Administrada por el Gobierno</Value>
           </Row>
         </InlineTable>
         <Level name="Kind of Business" key_column="id" name_column="name_en">
@@ -122,18 +121,18 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Does get a payment</Value>
-            <Value column="name_es">Recibe un pago</Value>
+            <Value column="name_en">Does get a Payment</Value>
+            <Value column="name_es">Recibe un Pago</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Worker without payment in a home business</Value>
-            <Value column="name_es">Es un trabajador(a) sin pago en un negocio del hogar</Value>
+            <Value column="name_en">Worker without Payment in a home Business</Value>
+            <Value column="name_es">Es un Trabajador(a) sin Pago en un Negocio del hogar</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Worker without payment in a non home business</Value>
-            <Value column="name_es">Es un trabajador(a) sin pago en un negocio que no es del hogar</Value>
+            <Value column="name_en">Worker without Payment in a non home Business</Value>
+            <Value column="name_es">Es un Trabajador(a) sin Pago en un Negocio que no es del hogar</Value>
           </Row>
         </InlineTable>
         <Level name="Payment mode" key_column="id" name_column="name_en">
@@ -150,7 +149,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -172,12 +171,12 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Main Job</Value>
-            <Value column="name_es">Trabajo principal</Value>
+            <Value column="name_es">Trabajo Principal</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
             <Value column="name_en">Secondary Job</Value>
-            <Value column="name_es">Trabajo secundario</Value>
+            <Value column="name_es">Trabajo Secundario</Value>
           </Row>
         </InlineTable>
         <Level name="Job ID" key_column="id" name_column="name_en">
@@ -194,7 +193,7 @@
           <Row>
             <Value column="id">1</Value>
             <Value column="name_en">Yes</Value>
-            <Value column="name_es">Si</Value>
+            <Value column="name_es">Sí</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
@@ -215,13 +214,13 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">It is temporal, or by specific work </Value>
-            <Value column="name_es">Es temporal o por obra determinada</Value>
+            <Value column="name_en">It is Temporal, or by Specific Work </Value>
+            <Value column="name_es">Es Temporal o por Obra Determinada</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Main workforce, employee or indefinitely time</Value>
-            <Value column="name_es">Es de base, planta o por tiempo indeterminado</Value>
+            <Value column="name_en">Main Workforce, Employee or Indefinitely time</Value>
+            <Value column="name_es">Es de Base, Planta o por tiempo Indeterminado</Value>
           </Row>
         </InlineTable>
         <Level name="Contract Type" key_column="id" name_column="name_en">
@@ -242,12 +241,12 @@
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Lower middle Class</Value>
+            <Value column="name_en">Lower Middle Class</Value>
             <Value column="name_es">Clase Media Baja</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Upper middle Class</Value>
+            <Value column="name_en">Upper Middle Class</Value>
             <Value column="name_es">Clase Media Alta</Value>
           </Row>
           <Row>
@@ -269,23 +268,23 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Independent, personal or familiar</Value>
-            <Value column="name_es">Independiente, personal o familiar</Value>
+            <Value column="name_en">Independent, Personal or Familiar</Value>
+            <Value column="name_es">Independiente, Personal o Familiar</Value>
           </Row>
           <Row>
             <Value column="id">2</Value>
-            <Value column="name_en">Company private sector</Value>
-            <Value column="name_es">Compañia o empresa del sector privado</Value>
+            <Value column="name_en">Company Private Sector</Value>
+            <Value column="name_es">Compañía o Empresa del Sector Privado</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
-            <Value column="name_en">Government institution</Value>
-            <Value column="name_es">Institución de gobierno</Value>
+            <Value column="name_en">Government Institution</Value>
+            <Value column="name_es">Institución de Gobierno</Value>
           </Row>
           <Row>
             <Value column="id">4</Value>
-            <Value column="name_en">No government institution</Value>
-            <Value column="name_es">Institución no administrada por el gobierno</Value>
+            <Value column="name_en">No Government Institution</Value>
+            <Value column="name_es">Institución no Administrada por el Gobierno</Value>
           </Row>
         </InlineTable>
         <Level name="Business Type" key_column="id" name_column="name_en">
