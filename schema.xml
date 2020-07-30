@@ -2472,9 +2472,43 @@
     
     <Table name="imss_credits" primary_key="ent_id" />
 
-    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography State" />
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality Lite" name="Geography Municipality" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
+
+    <Dimension name="Geography State" type="geo" foreign_key="ent_id">
+      <Hierarchy name="Geography">
+      <Table name="dim_shared_geography_ent" />
+      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
+          <Property name="Nation ES" column="nation_name" caption_set="es"/>
+      </Level>
+      <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+          <Property name="State ISO3" column="ent_iso3"/>
+          <Property name="CVE State" column="cve_ent"/>
+          <Property name="State slug ES" column="ent_slug"/>
+          <Property name="State ES" column="ent_name" caption_set="es"/>
+      </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Geography Municipality" type="geo" foreign_key="ent_id">
+      <Hierarchy name="Geography">
+        <Table name="dim_shared_geography_mun" />
+        <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
+          <Property name="Nation ES" column="nation_name" caption_set="es"/>
+        </Level>
+        <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+          <Property name="State ISO3" column="ent_iso3"/>
+          <Property name="CVE State" column="cve_ent"/>
+          <Property name="State slug ES" column="ent_slug"/>
+          <Property name="State ES" column="ent_name" caption_set="es"/>
+        </Level>
+        <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
+          <Property name="CVE Municipality Full" column="cve_mun_full"/>
+          <Property name="CVE Municipality" column="cve_mun"/>
+          <Property name="Municipality Slug" column="mun_slug"/>
+          <Property name="Municipality ES" column="mun_name" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
 
     <Dimension name="Level" foreign_key="level">
       <Hierarchy name="Level" primary_key="level">
