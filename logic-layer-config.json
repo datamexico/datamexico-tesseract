@@ -57,6 +57,90 @@
                         "unique_name": "Exporter Country ES"
                     }
                 ]
+            },
+            {
+                "name": "imss_credits",
+                "alternatives": ["IMSS credits"],
+                "levels": [
+                    {
+                        "current_name": "Geography State.Geography.Nation",
+                        "unique_name": "Geography Nation"
+                    },
+                    {
+                        "current_name": "Geography State.Geography.State",
+                        "unique_name": "Geography State"
+                    },
+                    {
+                        "current_name": "Geography Municipality.Geography.Nation",
+                        "unique_name": "Geography Municipality Nation"
+                    },
+                    {
+                        "current_name": "Geography Municipality.Geography.State",
+                        "unique_name": "Geography Municipality State"
+                    },
+                    {
+                        "current_name": "Geography Municipality.Geography.Municipality",
+                        "unique_name": "Geography Municipality"
+                    }
+                ],
+                "properties": [
+                    {
+                        "current_name": "Geography State.Geography.Nation.Nation ES",
+                        "unique_name": "Geography State Nation ES"
+                    },
+                    {
+                        "current_name": "Geography State.Geography.State.State ISO3",
+                        "unique_name": "Geography State ISO3"
+                    },
+                    {
+                        "current_name": "Geography State.Geography.State.CVE State",
+                        "unique_name": "Geography CVE State"
+                    },
+                    {
+                        "current_name": "Geography State.Geography.State.State slug ES",
+                        "unique_name": "Geography State slug ES"
+                    },
+                    {
+                        "current_name": "Geography State.Geography.State.State ES",
+                        "unique_name": "Geography State ES"
+                    },
+                    {
+                        "current_name": "Geography Municipality.Geography.Nation.Nation ES",
+                        "unique_name": "Geography Municipality Nation ES"
+                    },
+                    {
+                        "current_name": "Geography Municipality.Geography.State.State ISO3",
+                        "unique_name": "Geography Municipality State ISO3"
+                    },
+                    {
+                        "current_name": "Geography Municipality.Geography.State.CVE State",
+                        "unique_name": "Geography Municipality CVE State"
+                    },
+                    {
+                        "current_name": "Geography Municipality.Geography.State.State slug ES",
+                        "unique_name": "Geography Municipality State slug ES"
+                    },
+                    {
+                        "current_name": "Geography Municipality.Geography.State.State ES",
+                        "unique_name": "Geography Municipality State ES"
+                    },
+                    {
+                        "current_name": "Geography Municipality.Geography.Municipality.CVE Municipality Full",
+                        "unique_name": "Geography CVE Municipality Full"
+                    },
+                    {
+                        "current_name": "Geography Municipality.Geography.Municipality.CVE Municipality",
+                        "unique_name": "Geography CVE Municipality"
+                    },
+                    {
+                        "current_name": "Geography Municipality.Geography.Municipality.Municipality Slug",
+                        "unique_name": "Geography Municipality Slug"
+                    },
+                    {
+                        "current_name": "Geography Municipality.Geography.Municipality.Municipality ES",
+                        "unique_name": "Geography Municipality ES"
+                    }
+                ]
             }
         ]
     }
