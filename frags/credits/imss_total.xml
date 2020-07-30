@@ -26,7 +26,7 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Geography Municipality" type="geo" foreign_key="ent_id">
+    <Dimension name="Geography Municipality" type="geo" foreign_key="mun_id">
       <Hierarchy name="Geography">
         <Table name="dim_shared_geography_mun" />
         <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
