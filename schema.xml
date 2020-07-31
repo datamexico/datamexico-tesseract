@@ -2850,7 +2850,7 @@
 
     <Dimension name="Level" foreign_key="level">
       <Hierarchy name="Level" primary_key="level">
-        <Table name="households_credits" />
+        <Table name="wellness_weekly_credits" />
         <Level name="Level" key_column="level" key_type="text" />
       </Hierarchy>
     </Dimension>
