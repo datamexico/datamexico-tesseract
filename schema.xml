@@ -11297,10 +11297,17 @@
       </Hierarchy>
     </Dimension>
 
+    <Dimension name="Filtered Age" foreign_key="filtered_age">
+      <Hierarchy name="Filtered Age" primary_key="filtered_age">
+        <Table name="inegi_population" />
+        <Level name="Filtered Age" key_column="filtered_age" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
+
+    <DimensionUsage foreign_key="age" source="Age Group 10" name="Age Group" />
     <DimensionUsage foreign_key="academic_degree" source="Academic Degree" name="Academic Degree" />
     <DimensionUsage foreign_key="dhsersal1" source="Social Security" name="Social Security" />
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
-    <DimensionUsage foreign_key="age" source="Age Group 10" name="Age Group" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
