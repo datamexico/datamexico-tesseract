@@ -205,10 +205,10 @@
       <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
         <Property name="Sector ES" column="sector_es" caption_set="es"/>
       </Level>
-      <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="nontext">
+      <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="text">
         <Property name="Subsector ES" column="subsector_es" caption_set="es"/>
       </Level>
-      <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_en" key_type="nontext">
+      <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_en" key_type="text">
         <Property name="Industry Group ES" column="industry_group_es" caption_set="es"/>
       </Level>
     </Hierarchy>
