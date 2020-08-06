@@ -1200,7 +1200,7 @@
     
     <Table name="gobmx_covid" primary_key="patient_residence_mun_id" />
 
-    <Dimension name="Updated Date" foreign_key="updated_date" type="time">
+    <Dimension name="Updated Date" foreign_key="time_id" type="time">
       <Hierarchy name="Updated Date" primary_key="date_id">
         <Table name="dim_date_covid" />
         <Level name="Updated Year" key_column="year">
@@ -2153,6 +2153,8 @@
         </Level>
       </Hierarchy>
     </Dimension>
+
+    <DimensionUsage name="Updated Time" source="Reported Date" foreign_key="time_id" />
 
     <DimensionUsage foreign_key="patient_residence_mun_id" source="Geography Municipality" name="Municipality Patient Residence" />
 
