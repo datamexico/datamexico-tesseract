@@ -753,6 +753,15 @@
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality Lite" name="Geography Municipality" />
     <DimensionUsage foreign_key="time_id" source="Date Day" name="Date Day" />
 
+    <Dimension name="Nation" foreign_key="nation_id">
+      <Hierarchy name="Nation" primary_key="nation_id">
+        <Table name="dim_geo_covid_nat" />
+        <Level name="Nation" key_column="nation_id" name_column="name_es" key_type="text">
+          <Property name="Nation ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
     <Dimension name="Level" foreign_key="level">
       <Hierarchy name="Level" primary_key="level">
         <Table name="complexity_eci" />
