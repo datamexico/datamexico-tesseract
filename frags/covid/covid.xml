@@ -964,7 +964,7 @@
       </Hierarchy>
     </Dimension>
 
-    <DimensionUsage name="Updated Time" source="Reported Date" foreign_key="time_id" />
+    <DimensionUsage name="Reported Date" source="Reported Date" foreign_key="time_id" />
 
     <DimensionUsage foreign_key="patient_residence_mun_id" source="Geography Municipality" name="Municipality Patient Residence" />
 
