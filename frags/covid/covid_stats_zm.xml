@@ -1,0 +1,35 @@
+<Schema name="datamexico" default_locale="en">
+  <Cube name="gobmx_covid_stats_metroarea">
+    
+    <Annotation name="topic">Health</Annotation>
+    <Annotation name="subtopic">Pandemic</Annotation>
+    <Annotation name="source_name">Dirección General de Epidemiología</Annotation>
+    <Annotation name="source_name_en">General Direction of Epidemiology</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/salud/documentos/datos-abiertos-152127</Annotation>
+
+    <Table name="gobmx_covid_stats_metroarea" primary_key="zm_id" />
+
+    <DimensionUsage foreign_key="time_id" source="Reported Date" name="Reported Date" />
+    <DimensionUsage foreign_key="zm_id" source="Geography Metro Area Lite" name="Geography" />
+
+    <Measure name="Daily Cases" column="daily_cases" aggregator="sum" />
+    <Measure name="Daily Deaths" column="daily_deaths" aggregator="sum" />
+    <Measure name="Accum Cases" column="accum_cases" aggregator="sum" />
+    <Measure name="Accum Deaths" column="accum_deaths" aggregator="sum" />
+    <Measure name="AVG 7 Days Daily Cases" column="avg7_daily_cases" aggregator="avg" />
+    <Measure name="AVG 7 Days Accum Cases" column="avg7_accum_cases" aggregator="avg" />
+    <Measure name="AVG 7 Days Daily Deaths" column="avg7_daily_deaths" aggregator="avg" />
+    <Measure name="AVG 7 Days Accum Deaths" column="avg7_accum_deaths" aggregator="avg" />
+    <Measure name="Last 7 Daily Cases" column="sum_last7_daily_cases" aggregator="avg" />
+    <Measure name="Last 7 Daily Deaths" column="sum_last7_daily_deaths" aggregator="avg" />
+    <Measure name="Last 7 Accum Cases" column="sum_last7_accum_cases" aggregator="avg" />
+    <Measure name="Last 7 Accum Deaths" column="sum_last7_accum_deaths" aggregator="avg" />
+    <Measure name="Rate Daily Cases" column="rate_daily_cases" aggregator="avg" />
+    <Measure name="Rate Accum Cases" column="rate_accum_cases" aggregator="avg" />
+    <Measure name="Rate Daily Deaths" column="rate_daily_deaths" aggregator="avg" />
+    <Measure name="Rate Accum Deaths" column="rate_accum_deaths" aggregator="avg" />
+    <Measure name="Days from 50 Cases" column="day_from_50_cases" aggregator="sum" />
+    <Measure name="Days from 10 Deaths" column="day_from_10_deaths" aggregator="sum" />
+
+  </Cube>
+</Schema>
