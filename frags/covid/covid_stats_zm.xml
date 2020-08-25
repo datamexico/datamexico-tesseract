@@ -10,7 +10,15 @@
     <Table name="gobmx_covid_stats_metroarea" primary_key="zm_id" />
 
     <DimensionUsage foreign_key="time_id" source="Reported Date" name="Reported Date" />
-    <DimensionUsage foreign_key="zm_id" source="Geography Metro Area Lite" name="Geography" />
+
+    <Dimension name="Geography Metro Area Lite" type="geo" foreign_key="zm_id">
+        <Hierarchy name="Metro Area"  primary_key="zm_id">
+        <Table name="dim_conapo_metro_area_population" />
+        <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext">
+            <Property name="Metro Area ES" column="zm_name" caption_set="es"/>
+        </Level>
+        </Hierarchy>
+    </Dimension>
 
     <Measure name="Daily Cases" column="daily_cases" aggregator="sum" />
     <Measure name="Daily Deaths" column="daily_deaths" aggregator="sum" />
