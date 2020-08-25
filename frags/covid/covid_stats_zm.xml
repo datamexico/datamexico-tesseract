@@ -11,9 +11,9 @@
 
     <DimensionUsage foreign_key="time_id" source="Reported Date" name="Reported Date" />
 
-    <Dimension name="Geography Metro Area Lite" type="geo" foreign_key="zm_id">
+    <Dimension name="Metro Area" type="geo" foreign_key="zm_id">
         <Hierarchy name="Metro Area"  primary_key="zm_id">
-        <Table name="dim_conapo_metro_area_population" />
+        <Table name="dim_zm_covid" />
         <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext">
             <Property name="Metro Area ES" column="zm_name" caption_set="es"/>
         </Level>
