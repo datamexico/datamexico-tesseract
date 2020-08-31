@@ -13,7 +13,7 @@
     <Table name="conapo_metro_area_population" primary_key="mun_id" />
 
     <Dimension name="Geography Municipality" type="geo" default_hierarchy="Geography" foreign_key="mun_id">
-        <Hierarchy name="Geography" primary_key="industry_group_id">
+        <Hierarchy name="Geography" primary_key="mun_id">
             <Table name="dim_shared_geography_mun" />
             <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
                 <Property name="Nation ES" column="nation_name" caption_set="es"/>
