@@ -190,6 +190,42 @@
     </Hierarchy>
   </SharedDimension>
 
+  <SharedDimension name="FDI Industry 2 Digit">
+    <Hierarchy name="Industry" primary_key="sector_id">
+      <Table name="dim_shared_sector_fdi"/>
+      <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="nontext">
+        <Property name="Sector ES" column="sector_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="FDI Industry 3 Digit">
+    <Hierarchy name="Industry" primary_key="sector_id">
+      <Table name="dim_shared_subsector_fdi"/>
+      <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="nontext">
+        <Property name="Sector ES" column="sector_es" caption_set="es"/>
+      </Level>
+      <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="nontext">
+        <Property name="Subsector ES" column="subsector_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="FDI Industry 4 Digit">
+    <Hierarchy name="Industry" primary_key="industry_group_id">
+      <Table name="dim_shared_industry_group_fdi"/>
+      <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="nontext">
+        <Property name="Sector ES" column="sector_es" caption_set="es"/>
+      </Level>
+      <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="nontext">
+        <Property name="Subsector ES" column="subsector_es" caption_set="es"/>
+      </Level>
+      <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_en" key_type="nontext">
+        <Property name="Industry Group ES" column="industry_group_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
   <SharedDimension name="Industry 2 Digit">
     <Hierarchy name="Industry" primary_key="sector_id">
       <Table name="dim_shared_sector"/>
@@ -3915,7 +3951,7 @@
 
     <Dimension name="Industry 4 Digit" foreign_key="area_id">
       <Hierarchy name="Industry" primary_key="industry_group_id">
-        <Table name="dim_shared_industry_fdi"/>
+        <Table name="dim_shared_industry_fdi_legacy"/>
         <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
           <Property name="Sector ES" column="sector_es" caption_set="es"/>
         </Level>
@@ -3935,6 +3971,105 @@
     <Measure name="Investment (Million)" column="value_million" aggregator="sum">
       
         <Annotation name="details">Value Millions</Annotation>
+      
+    </Measure>
+
+  </Cube>
+<Cube name="fdi_6_rama">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_6_rama" primary_key="ent_id" />
+
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="industry_group_id" source="FDI Industry 4 Digit" name="FDI Industry 4 Digit" />
+
+    <Dimension name="Is Confidential" foreign_key="value_c">
+      <Hierarchy name="Is Confidential" primary_key="value_c">
+        <Table name="fdi_6_rama" />
+        <Level name="Is Confidential" key_column="value_c" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Investment" column="value" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
+      
+    </Measure>
+
+  </Cube>
+<Cube name="fdi_6_sector">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_6_sector" primary_key="ent_id" />
+
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="sector_id" source="FDI Industry 2 Digit" name="FDI Industry 2 Digit" />
+
+    <Dimension name="Is Confidential" foreign_key="value_c">
+      <Hierarchy name="Is Confidential" primary_key="value_c">
+        <Table name="fdi_6_sector" />
+        <Level name="Is Confidential" key_column="value_c" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Investment" column="value" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
+      
+    </Measure>
+
+  </Cube>
+<Cube name="fdi_6_subsector">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_6_subsector" primary_key="ent_id" />
+
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="subsector_id" source="FDI Industry 3 Digit" name="FDI Industry 3 Digit" />
+
+    <Dimension name="Is Confidential" foreign_key="value_c">
+      <Hierarchy name="Is Confidential" primary_key="value_c">
+        <Table name="fdi_6_subsector" />
+        <Level name="Is Confidential" key_column="value_c" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Investment" column="value" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
       
     </Measure>
 

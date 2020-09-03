@@ -1,0 +1,35 @@
+<Schema name="datamexico" default_locale="en">
+  <Cube name="fdi_6_sector">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_6_sector" primary_key="ent_id" />
+
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="sector_id" source="FDI Industry 2 Digit" name="FDI Industry 2 Digit" />
+
+    <Dimension name="Is Confidential" foreign_key="value_c">
+      <Hierarchy name="Is Confidential" primary_key="value_c">
+        <Table name="fdi_6_sector" />
+        <Level name="Is Confidential" key_column="value_c" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Investment" column="value" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
+      
+    </Measure>
+
+  </Cube>
+</Schema>
