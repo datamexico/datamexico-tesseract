@@ -1,5 +1,5 @@
 <Schema name="datamexico" default_locale="en">
-  <Cube name="fdi_6_rama">
+  <Cube name="fdi_6_industry_group">
     
     <Annotation name="topic">Economy</Annotation>
     <Annotation name="subtopic">Foreign Direct Investment</Annotation>
