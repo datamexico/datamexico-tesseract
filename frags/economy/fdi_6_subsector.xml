@@ -12,14 +12,13 @@
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
     <DimensionUsage foreign_key="subsector_id" source="FDI Industry 3 Digit" name="FDI Industry 3 Digit" />
 
-    <Dimension name="Is Confidential" foreign_key="value_c">
-      <Hierarchy name="Is Confidential" primary_key="value_c">
-        <Table name="fdi_6_subsector" />
-        <Level name="Is Confidential" key_column="value_c" key_type="nontext" />
-      </Hierarchy>
-    </Dimension>
-
     <Measure name="Investment" column="value" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Confidential Investment" column="value_c" aggregator="sum">
       
         <Annotation name="details">Value</Annotation>
       
