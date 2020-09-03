@@ -200,7 +200,7 @@
   </SharedDimension>
 
   <SharedDimension name="FDI Industry 3 Digit">
-    <Hierarchy name="Industry" primary_key="sector_id">
+    <Hierarchy name="Industry" primary_key="subsector_id">
       <Table name="dim_shared_subsector_fdi"/>
       <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
         <Property name="Sector ES" column="sector_es" caption_set="es"/>
