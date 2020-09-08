@@ -153,33 +153,9 @@
 
     <Dimension name="Approved Week" foreign_key="approved_week">
       <Hierarchy name="Approved Week" primary_key="id">
-        <InlineTable alias="dim_inline_approved_week">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">202017</Value>
-            <Value column="name_en">April 23-29</Value>
-            <Value column="name_es">Del 23 al 29 de abril</Value>
-          </Row>
-          <Row>
-            <Value column="id">202018</Value>
-            <Value column="name_en">April 30 to May 6</Value>
-            <Value column="name_es">Del 30 de abril al 6 de mayo</Value>
-          </Row>
-          <Row>
-            <Value column="id">202020</Value>
-            <Value column="name_en">May 14-20</Value>
-            <Value column="name_es">Del 14 al 20 de mayo</Value>
-          </Row>
-          <Row>
-            <Value column="id">202022</Value>
-            <Value column="name_en">From May 28 to June 3</Value>
-            <Value column="name_es">Del 28 de mayo al 3 de junio</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Approved Week" key_column="id" name_column="name_en">
-          <Property name="Approved Week ES" column="name_es" caption_set="es" />
+        <Table name="credits_weeks" />
+        <Level name="Approved Week" key_column="approved_week" name_column="approved_week_en">
+          <Property name="Approved Week ES" column="approved_week_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
