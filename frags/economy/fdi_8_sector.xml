@@ -1,0 +1,70 @@
+<Schema name="datamexico" default_locale="en">
+  <Cube name="fdi_8_sector_investment">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_8_sector_investment" primary_key="sector_id" />
+
+    <DimensionUsage foreign_key="sector_id" source="FDI Industry 2 Digit" name="FDI Industry 2 Digit" />
+    <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
+
+    <Measure name="Value Between Companies" column="value_between_companies" aggregator="sum">
+      
+        <Annotation name="details">Value Between Companies</Annotation>
+      
+    </Measure>
+
+    <Measure name="Value New Investments" column="value_new_investments" aggregator="sum">
+      
+        <Annotation name="details">Value New Investments</Annotation>
+      
+    </Measure>
+
+    <Measure name="Value Re Investments" column="value_re_investments" aggregator="sum">
+      
+        <Annotation name="details">Value Re Investments</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count Between Companies" column="count_between_companies" aggregator="sum">
+      
+        <Annotation name="details">Count Between Companies</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count New Investments" column="count_new_investments" aggregator="sum">
+      
+        <Annotation name="details">Count New Investments</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count Re Investments" column="count_re_investments" aggregator="sum">
+      
+        <Annotation name="details">Count Re Investments</Annotation>
+      
+    </Measure>
+
+    <Measure name="Confidential Value Between Companies" column="value_between_companies_c" aggregator="sum">
+      
+        <Annotation name="details">Confidential Value Between Companies</Annotation>
+      
+    </Measure>
+
+    <Measure name="Confidential Value New Investments" column="value_new_investments_c" aggregator="sum">
+      
+        <Annotation name="details">Confidential Value New Investments</Annotation>
+      
+    </Measure>
+
+    <Measure name="Confidential Value Re Investments" column="value_re_investments_c" aggregator="sum">
+      
+        <Annotation name="details">Confidential Value Re Investments</Annotation>
+      
+    </Measure>
+
+  </Cube>
+</Schema>
