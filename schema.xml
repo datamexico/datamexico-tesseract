@@ -3951,6 +3951,97 @@
     </Measure>
 
   </Cube>
+<Cube name="fdi_10_year_country">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_10_year_country" primary_key="year" />
+
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage foreign_key="country" source="Country" name="Country Origin" />
+
+    <Measure name="Investment" column="value_c" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
+      
+    </Measure>
+
+  </Cube>
+<Cube name="fdi_10_year_country_investment">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_10_year_country_investment" primary_key="year" />
+
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage foreign_key="country" source="Country" name="Country Origin" />
+
+    <Dimension name="Investment Type" foreign_key="investment_type">
+      <Hierarchy name="Investment Type" primary_key="investment_type">
+        <Table name="fdi_10_year_country_investment" />
+        <Level name="Investment Type" key_column="investment_type" key_type="text" />
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Investment" column="value_c" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
+      
+    </Measure>
+
+  </Cube>
+<Cube name="fdi_10_year_investment">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_10_year_investment" primary_key="year" />
+
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Dimension name="Investment Type" foreign_key="investment_type">
+      <Hierarchy name="Investment Type" primary_key="investment_type">
+        <Table name="fdi_10_year_investment" />
+        <Level name="Investment Type" key_column="investment_type" key_type="text" />
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Investment" column="value_c" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
+      
+    </Measure>
+
+  </Cube>
 <Cube name="fdi_2_state_investment">
     
     <Annotation name="topic">Economy</Annotation>
@@ -3964,39 +4055,22 @@
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
     <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
 
-    <Measure name="Count Between Companies" column="count_between_companies" aggregator="sum">
+    <Dimension name="Investment Type" foreign_key="investment_type">
+      <Hierarchy name="Investment Type" primary_key="investment_type">
+        <Table name="fdi_2" />
+        <Level name="Investment Type" key_column="investment_type" key_type="text" />
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Investment" column="value_c" aggregator="sum">
       
-        <Annotation name="details">Count Between Companies</Annotation>
+        <Annotation name="details">Value</Annotation>
       
     </Measure>
 
-    <Measure name="Count New Investments" column="count_new_investments" aggregator="sum">
+    <Measure name="Count" column="count" aggregator="sum">
       
-        <Annotation name="details">Count New Investments</Annotation>
-      
-    </Measure>
-
-    <Measure name="Count Re Investments" column="count_re_investments" aggregator="sum">
-      
-        <Annotation name="details">Count Re Investments</Annotation>
-      
-    </Measure>
-
-    <Measure name="Value Between Companies" column="value_between_companies_c" aggregator="sum">
-      
-        <Annotation name="details">Value Between Companies</Annotation>
-      
-    </Measure>
-
-    <Measure name="Value New Investments" column="value_new_investments_c" aggregator="sum">
-      
-        <Annotation name="details">Value New Investments</Annotation>
-      
-    </Measure>
-
-    <Measure name="Value Re Investments" column="value_re_investments_c" aggregator="sum">
-      
-        <Annotation name="details">Value Re Investments</Annotation>
+        <Annotation name="details">Count</Annotation>
       
     </Measure>
 
@@ -4364,6 +4438,120 @@
     <Measure name="Value Re Investments" column="value_re_investments_c" aggregator="sum">
       
         <Annotation name="details">Value Re Investments</Annotation>
+      
+    </Measure>
+
+  </Cube>
+<Cube name="fdi_9_quarter">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_9_quarter" primary_key="quarter_id" />
+
+    <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date Quarter" />
+
+    <Measure name="Investment" column="value_c" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
+      
+    </Measure>
+
+  </Cube>
+<Cube name="fdi_9_quarter_investment">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_9_quarter_investment" primary_key="quarter_id" />
+
+    <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date Quarter" />
+
+    <Dimension name="Investment Type" foreign_key="investment_type">
+      <Hierarchy name="Investment Type" primary_key="investment_type">
+        <Table name="fdi_9_quarter_investment" />
+        <Level name="Investment Type" key_column="investment_type" key_type="text" />
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Investment" column="value_c" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
+      
+    </Measure>
+
+  </Cube>
+<Cube name="fdi_9_year">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_9_year" primary_key="year" />
+
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Measure name="Investment" column="value_c" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
+      
+    </Measure>
+
+  </Cube>
+<Cube name="fdi_9_year_investment">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_9_year_investment" primary_key="year" />
+
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Dimension name="Investment Type" foreign_key="investment_type">
+      <Hierarchy name="Investment Type" primary_key="investment_type">
+        <Table name="fdi_9_year_investment" />
+        <Level name="Investment Type" key_column="investment_type" key_type="text" />
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Investment" column="value_c" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
       
     </Measure>
 

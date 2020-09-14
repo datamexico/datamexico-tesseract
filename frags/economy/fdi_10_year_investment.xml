@@ -1,5 +1,5 @@
 <Schema name="datamexico" default_locale="en">
-  <Cube name="fdi_10_year_country">
+  <Cube name="fdi_10_year_investment">
     
     <Annotation name="topic">Economy</Annotation>
     <Annotation name="subtopic">Foreign Direct Investment</Annotation>
@@ -7,13 +7,13 @@
     <Annotation name="source_name_en">Secretary of Economy</Annotation>
     <Annotation name="source_link">https://www.gob.mx/se</Annotation>
     
-    <Table name="fdi_10_year_country" primary_key="year" />
+    <Table name="fdi_10_year_investment" primary_key="year" />
 
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
     <Dimension name="Investment Type" foreign_key="investment_type">
       <Hierarchy name="Investment Type" primary_key="investment_type">
-        <Table name="fdi_2" />
+        <Table name="fdi_10_year_investment" />
         <Level name="Investment Type" key_column="investment_type" key_type="text" />
       </Hierarchy>
     </Dimension>
