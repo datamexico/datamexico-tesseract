@@ -3964,24 +3964,6 @@
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
     <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
 
-    <Measure name="Value Between Companies" column="value_between_companies" aggregator="sum">
-      
-        <Annotation name="details">Value Between Companies</Annotation>
-      
-    </Measure>
-
-    <Measure name="Value New Investments" column="value_new_investments" aggregator="sum">
-      
-        <Annotation name="details">Value New Investments</Annotation>
-      
-    </Measure>
-
-    <Measure name="Value Re Investments" column="value_re_investments" aggregator="sum">
-      
-        <Annotation name="details">Value Re Investments</Annotation>
-      
-    </Measure>
-
     <Measure name="Count Between Companies" column="count_between_companies" aggregator="sum">
       
         <Annotation name="details">Count Between Companies</Annotation>
@@ -4000,21 +3982,21 @@
       
     </Measure>
 
-    <Measure name="Confidential Value Between Companies" column="value_between_companies_c" aggregator="sum">
+    <Measure name="Value Between Companies" column="value_between_companies_c" aggregator="sum">
       
-        <Annotation name="details">Confidential Value Between Companies</Annotation>
-      
-    </Measure>
-
-    <Measure name="Confidential Value New Investments" column="value_new_investments_c" aggregator="sum">
-      
-        <Annotation name="details">Confidential Value New Investments</Annotation>
+        <Annotation name="details">Value Between Companies</Annotation>
       
     </Measure>
 
-    <Measure name="Confidential Value Re Investments" column="value_re_investments_c" aggregator="sum">
+    <Measure name="Value New Investments" column="value_new_investments_c" aggregator="sum">
       
-        <Annotation name="details">Confidential Value Re Investments</Annotation>
+        <Annotation name="details">Value New Investments</Annotation>
+      
+    </Measure>
+
+    <Measure name="Value Re Investments" column="value_re_investments_c" aggregator="sum">
+      
+        <Annotation name="details">Value Re Investments</Annotation>
       
     </Measure>
 
@@ -4033,13 +4015,7 @@
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
     <DimensionUsage foreign_key="country" source="Country" name="Country Origin" />
 
-    <Measure name="Investment" column="value" aggregator="sum">
-      
-        <Annotation name="details">Value</Annotation>
-      
-    </Measure>
-
-    <Measure name="Confidential Investment" column="value_c" aggregator="sum">
+    <Measure name="Investment" column="value_c" aggregator="sum">
       
         <Annotation name="details">Value</Annotation>
       
@@ -4073,13 +4049,7 @@
       </Hierarchy>
     </Dimension>
 
-    <Measure name="Investment" column="value" aggregator="sum">
-      
-        <Annotation name="details">Value</Annotation>
-      
-    </Measure>
-
-    <Measure name="Confidential Investment" column="value_c" aggregator="sum">
+    <Measure name="Investment" column="value_c" aggregator="sum">
       
         <Annotation name="details">Value</Annotation>
       
@@ -4105,13 +4075,7 @@
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
     <DimensionUsage foreign_key="industry_group_id" source="FDI Industry 4 Digit" name="FDI Industry 4 Digit" />
 
-    <Measure name="Investment" column="value" aggregator="sum">
-      
-        <Annotation name="details">Value</Annotation>
-      
-    </Measure>
-
-    <Measure name="Confidential Investment" column="value_c" aggregator="sum">
+    <Measure name="Investment" column="value_c" aggregator="sum">
       
         <Annotation name="details">Value</Annotation>
       
@@ -4137,13 +4101,7 @@
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
     <DimensionUsage foreign_key="sector_id" source="FDI Industry 2 Digit" name="FDI Industry 2 Digit" />
 
-    <Measure name="Investment" column="value" aggregator="sum">
-      
-        <Annotation name="details">Value</Annotation>
-      
-    </Measure>
-
-    <Measure name="Confidential Investment" column="value_c" aggregator="sum">
+    <Measure name="Investment" column="value_c" aggregator="sum">
       
         <Annotation name="details">Value</Annotation>
       
@@ -4169,13 +4127,7 @@
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
     <DimensionUsage foreign_key="subsector_id" source="FDI Industry 3 Digit" name="FDI Industry 3 Digit" />
 
-    <Measure name="Investment" column="value" aggregator="sum">
-      
-        <Annotation name="details">Value</Annotation>
-      
-    </Measure>
-
-    <Measure name="Confidential Investment" column="value_c" aggregator="sum">
+    <Measure name="Investment" column="value_c" aggregator="sum">
       
         <Annotation name="details">Value</Annotation>
       
@@ -4201,13 +4153,7 @@
     <DimensionUsage foreign_key="industry_group_id" source="FDI Industry 4 Digit" name="FDI Industry 4 Digit" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
-    <Measure name="Investment" column="value" aggregator="sum">
-      
-        <Annotation name="details">Value</Annotation>
-      
-    </Measure>
-
-    <Measure name="Confidential Investment" column="value_c" aggregator="sum">
+    <Measure name="Investment" column="value_c" aggregator="sum">
       
         <Annotation name="details">Value</Annotation>
       
@@ -4233,13 +4179,7 @@
     <DimensionUsage foreign_key="sector_id" source="FDI Industry 2 Digit" name="FDI Industry 2 Digit" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
-    <Measure name="Investment" column="value" aggregator="sum">
-      
-        <Annotation name="details">Value</Annotation>
-      
-    </Measure>
-
-    <Measure name="Confidential Investment" column="value_c" aggregator="sum">
+    <Measure name="Investment" column="value_c" aggregator="sum">
       
         <Annotation name="details">Value</Annotation>
       
@@ -4265,13 +4205,7 @@
     <DimensionUsage foreign_key="subsector_id" source="FDI Industry 3 Digit" name="FDI Industry 3 Digit" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
-    <Measure name="Investment" column="value" aggregator="sum">
-      
-        <Annotation name="details">Value</Annotation>
-      
-    </Measure>
-
-    <Measure name="Confidential Investment" column="value_c" aggregator="sum">
+    <Measure name="Investment" column="value_c" aggregator="sum">
       
         <Annotation name="details">Value</Annotation>
       
@@ -4297,24 +4231,6 @@
     <DimensionUsage foreign_key="industry_group_id" source="FDI Industry 4 Digit" name="FDI Industry 4 Digit" />
     <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
 
-    <Measure name="Value Between Companies" column="value_between_companies" aggregator="sum">
-      
-        <Annotation name="details">Value Between Companies</Annotation>
-      
-    </Measure>
-
-    <Measure name="Value New Investments" column="value_new_investments" aggregator="sum">
-      
-        <Annotation name="details">Value New Investments</Annotation>
-      
-    </Measure>
-
-    <Measure name="Value Re Investments" column="value_re_investments" aggregator="sum">
-      
-        <Annotation name="details">Value Re Investments</Annotation>
-      
-    </Measure>
-
     <Measure name="Count Between Companies" column="count_between_companies" aggregator="sum">
       
         <Annotation name="details">Count Between Companies</Annotation>
@@ -4333,21 +4249,21 @@
       
     </Measure>
 
-    <Measure name="Confidential Value Between Companies" column="value_between_companies_c" aggregator="sum">
+    <Measure name="Value Between Companies" column="value_between_companies_c" aggregator="sum">
       
-        <Annotation name="details">Confidential Value Between Companies</Annotation>
-      
-    </Measure>
-
-    <Measure name="Confidential Value New Investments" column="value_new_investments_c" aggregator="sum">
-      
-        <Annotation name="details">Confidential Value New Investments</Annotation>
+        <Annotation name="details">Value Between Companies</Annotation>
       
     </Measure>
 
-    <Measure name="Confidential Value Re Investments" column="value_re_investments_c" aggregator="sum">
+    <Measure name="Value New Investments" column="value_new_investments_c" aggregator="sum">
       
-        <Annotation name="details">Confidential Value Re Investments</Annotation>
+        <Annotation name="details">Value New Investments</Annotation>
+      
+    </Measure>
+
+    <Measure name="Value Re Investments" column="value_re_investments_c" aggregator="sum">
+      
+        <Annotation name="details">Value Re Investments</Annotation>
       
     </Measure>
 
@@ -4365,24 +4281,6 @@
     <DimensionUsage foreign_key="sector_id" source="FDI Industry 2 Digit" name="FDI Industry 2 Digit" />
     <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
 
-    <Measure name="Value Between Companies" column="value_between_companies" aggregator="sum">
-      
-        <Annotation name="details">Value Between Companies</Annotation>
-      
-    </Measure>
-
-    <Measure name="Value New Investments" column="value_new_investments" aggregator="sum">
-      
-        <Annotation name="details">Value New Investments</Annotation>
-      
-    </Measure>
-
-    <Measure name="Value Re Investments" column="value_re_investments" aggregator="sum">
-      
-        <Annotation name="details">Value Re Investments</Annotation>
-      
-    </Measure>
-
     <Measure name="Count Between Companies" column="count_between_companies" aggregator="sum">
       
         <Annotation name="details">Count Between Companies</Annotation>
@@ -4401,21 +4299,21 @@
       
     </Measure>
 
-    <Measure name="Confidential Value Between Companies" column="value_between_companies_c" aggregator="sum">
+    <Measure name="Value Between Companies" column="value_between_companies_c" aggregator="sum">
       
-        <Annotation name="details">Confidential Value Between Companies</Annotation>
-      
-    </Measure>
-
-    <Measure name="Confidential Value New Investments" column="value_new_investments_c" aggregator="sum">
-      
-        <Annotation name="details">Confidential Value New Investments</Annotation>
+        <Annotation name="details">Value Between Companies</Annotation>
       
     </Measure>
 
-    <Measure name="Confidential Value Re Investments" column="value_re_investments_c" aggregator="sum">
+    <Measure name="Value New Investments" column="value_new_investments_c" aggregator="sum">
       
-        <Annotation name="details">Confidential Value Re Investments</Annotation>
+        <Annotation name="details">Value New Investments</Annotation>
+      
+    </Measure>
+
+    <Measure name="Value Re Investments" column="value_re_investments_c" aggregator="sum">
+      
+        <Annotation name="details">Value Re Investments</Annotation>
       
     </Measure>
 
@@ -4433,24 +4331,6 @@
     <DimensionUsage foreign_key="subsector_id" source="FDI Industry 3 Digit" name="FDI Industry 3 Digit" />
     <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
 
-    <Measure name="Value Between Companies" column="value_between_companies" aggregator="sum">
-      
-        <Annotation name="details">Value Between Companies</Annotation>
-      
-    </Measure>
-
-    <Measure name="Value New Investments" column="value_new_investments" aggregator="sum">
-      
-        <Annotation name="details">Value New Investments</Annotation>
-      
-    </Measure>
-
-    <Measure name="Value Re Investments" column="value_re_investments" aggregator="sum">
-      
-        <Annotation name="details">Value Re Investments</Annotation>
-      
-    </Measure>
-
     <Measure name="Count Between Companies" column="count_between_companies" aggregator="sum">
       
         <Annotation name="details">Count Between Companies</Annotation>
@@ -4469,21 +4349,21 @@
       
     </Measure>
 
-    <Measure name="Confidential Value Between Companies" column="value_between_companies_c" aggregator="sum">
+    <Measure name="Value Between Companies" column="value_between_companies_c" aggregator="sum">
       
-        <Annotation name="details">Confidential Value Between Companies</Annotation>
-      
-    </Measure>
-
-    <Measure name="Confidential Value New Investments" column="value_new_investments_c" aggregator="sum">
-      
-        <Annotation name="details">Confidential Value New Investments</Annotation>
+        <Annotation name="details">Value Between Companies</Annotation>
       
     </Measure>
 
-    <Measure name="Confidential Value Re Investments" column="value_re_investments_c" aggregator="sum">
+    <Measure name="Value New Investments" column="value_new_investments_c" aggregator="sum">
       
-        <Annotation name="details">Confidential Value Re Investments</Annotation>
+        <Annotation name="details">Value New Investments</Annotation>
+      
+    </Measure>
+
+    <Measure name="Value Re Investments" column="value_re_investments_c" aggregator="sum">
+      
+        <Annotation name="details">Value Re Investments</Annotation>
       
     </Measure>
 

@@ -20,13 +20,7 @@
       </Hierarchy>
     </Dimension>
 
-    <Measure name="Investment" column="value" aggregator="sum">
-      
-        <Annotation name="details">Value</Annotation>
-      
-    </Measure>
-
-    <Measure name="Confidential Investment" column="value_c" aggregator="sum">
+    <Measure name="Investment" column="value_c" aggregator="sum">
       
         <Annotation name="details">Value</Annotation>
       

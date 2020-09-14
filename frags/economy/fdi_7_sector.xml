@@ -12,13 +12,7 @@
     <DimensionUsage foreign_key="sector_id" source="FDI Industry 2 Digit" name="FDI Industry 2 Digit" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
-    <Measure name="Investment" column="value" aggregator="sum">
-      
-        <Annotation name="details">Value</Annotation>
-      
-    </Measure>
-
-    <Measure name="Confidential Investment" column="value_c" aggregator="sum">
+    <Measure name="Investment" column="value_c" aggregator="sum">
       
         <Annotation name="details">Value</Annotation>
       
