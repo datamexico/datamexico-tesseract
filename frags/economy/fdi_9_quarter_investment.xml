@@ -1,5 +1,5 @@
 <Schema name="datamexico" default_locale="en">
-  <Cube name="fdi_2_state_investment">
+  <Cube name="fdi_9_quarter_investment">
     
     <Annotation name="topic">Economy</Annotation>
     <Annotation name="subtopic">Foreign Direct Investment</Annotation>
@@ -7,14 +7,13 @@
     <Annotation name="source_name_en">Secretary of Economy</Annotation>
     <Annotation name="source_link">https://www.gob.mx/se</Annotation>
     
-    <Table name="fdi_2" primary_key="ent_id" />
+    <Table name="fdi_9_quarter_investment" primary_key="quarter_id" />
 
-    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
-    <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
+    <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date Quarter" />
 
     <Dimension name="Investment Type" foreign_key="investment_type">
       <Hierarchy name="Investment Type" primary_key="investment_type">
-        <Table name="fdi_2" />
+        <Table name="fdi_9_quarter_investment" />
         <Level name="Investment Type" key_column="investment_type" key_type="text" />
       </Hierarchy>
     </Dimension>
