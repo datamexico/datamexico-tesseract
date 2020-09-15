@@ -651,6 +651,34 @@
       </Hierarchy>
     </SharedDimension>
 
+    <SharedDimension name="Investment Type">
+     <Hierarchy name="Investment Type" primary_key="id">
+        <InlineTable alias="dim_inline_investment_type">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Accounts between Companies</Value>
+            <Value column="name_es">Cuentas entre Compañías</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">New Investments</Value>
+            <Value column="name_es">Nuevas Inversiones</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Reinvestment of Profits</Value>
+            <Value column="name_es">Reinversión de Utilidades</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Investment Type" key_column="id" name_column="name_en">
+          <Property name="Investment Type ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </SharedDimension>
+
 <Cube name="anuies_enrollment">
     
       <Annotation name="topic">Education</Annotation>
@@ -3989,13 +4017,7 @@
 
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
     <DimensionUsage foreign_key="country" source="Country" name="Country Origin" />
-
-    <Dimension name="Investment Type" foreign_key="investment_type">
-      <Hierarchy name="Investment Type" primary_key="investment_type">
-        <Table name="fdi_10_year_country_investment" />
-        <Level name="Investment Type" key_column="investment_type" key_type="text" />
-      </Hierarchy>
-    </Dimension>
+    <DimensionUsage foreign_key="investment_type" source="Investment Type" name="Investment Type" />
 
     <Measure name="Investment" column="value_c" aggregator="sum">
       
@@ -4021,13 +4043,7 @@
     <Table name="fdi_10_year_investment" primary_key="year" />
 
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
-
-    <Dimension name="Investment Type" foreign_key="investment_type">
-      <Hierarchy name="Investment Type" primary_key="investment_type">
-        <Table name="fdi_10_year_investment" />
-        <Level name="Investment Type" key_column="investment_type" key_type="text" />
-      </Hierarchy>
-    </Dimension>
+    <DimensionUsage foreign_key="investment_type" source="Investment Type" name="Investment Type" />
 
     <Measure name="Investment" column="value_c" aggregator="sum">
       
@@ -4054,13 +4070,7 @@
 
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
     <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
-
-    <Dimension name="Investment Type" foreign_key="investment_type">
-      <Hierarchy name="Investment Type" primary_key="investment_type">
-        <Table name="fdi_2" />
-        <Level name="Investment Type" key_column="investment_type" key_type="text" />
-      </Hierarchy>
-    </Dimension>
+    <DimensionUsage foreign_key="investment_type" source="Investment Type" name="Investment Type" />
 
     <Measure name="Investment" column="value_c" aggregator="sum">
       
@@ -4478,13 +4488,7 @@
     <Table name="fdi_9_quarter_investment" primary_key="quarter_id" />
 
     <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date Quarter" />
-
-    <Dimension name="Investment Type" foreign_key="investment_type">
-      <Hierarchy name="Investment Type" primary_key="investment_type">
-        <Table name="fdi_9_quarter_investment" />
-        <Level name="Investment Type" key_column="investment_type" key_type="text" />
-      </Hierarchy>
-    </Dimension>
+    <DimensionUsage foreign_key="investment_type" source="Investment Type" name="Investment Type" />
 
     <Measure name="Investment" column="value_c" aggregator="sum">
       
@@ -4535,13 +4539,7 @@
     <Table name="fdi_9_year_investment" primary_key="year" />
 
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
-
-    <Dimension name="Investment Type" foreign_key="investment_type">
-      <Hierarchy name="Investment Type" primary_key="investment_type">
-        <Table name="fdi_9_year_investment" />
-        <Level name="Investment Type" key_column="investment_type" key_type="text" />
-      </Hierarchy>
-    </Dimension>
+    <DimensionUsage foreign_key="investment_type" source="Investment Type" name="Investment Type" />
 
     <Measure name="Investment" column="value_c" aggregator="sum">
       

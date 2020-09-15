@@ -10,13 +10,7 @@
     <Table name="fdi_10_year_investment" primary_key="year" />
 
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
-
-    <Dimension name="Investment Type" foreign_key="investment_type">
-      <Hierarchy name="Investment Type" primary_key="investment_type">
-        <Table name="fdi_10_year_investment" />
-        <Level name="Investment Type" key_column="investment_type" key_type="text" />
-      </Hierarchy>
-    </Dimension>
+    <DimensionUsage foreign_key="investment_type" source="Investment Type" name="Investment Type" />
 
     <Measure name="Investment" column="value_c" aggregator="sum">
       
