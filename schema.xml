@@ -13705,11 +13705,11 @@
     </Dimension>
 
     <Dimension name="Fiscal Resources Start Date" foreign_key="fiscal_resources_start_date" type="time">
-        <Hierarchy name="Fiscal Resources Start Date" primary_key="month_id">
+        <Hierarchy name="Fiscal Resources Start Date" primary_key="date_id">
         <Table name="dim_shared_date_month_day" />
         <Level name="Start Year" key_column="year" />
         <Level name="Start Quarter" key_column="quarter_id" name_column="quarter">
-            <Property name="Quarter ES" column="quarter" caption_set="es" />
+            <Property name="Start Quarter ES" column="quarter" caption_set="es" />
         </Level>
         <Level name="Start Month" key_column="month_id" name_column="month">
             <Property name="Start Month ES" column="month" caption_set="es" />
@@ -13721,11 +13721,11 @@
     </Dimension>
 
     <Dimension name="Fiscal Resources End Date" foreign_key="fiscal_resources_end_date" type="time">
-        <Hierarchy name="Fiscal Resources End Date" primary_key="month_id">
+        <Hierarchy name="Fiscal Resources End Date" primary_key="date_id">
         <Table name="dim_shared_date_month_day" />
         <Level name="End Year" key_column="year" />
         <Level name="End Quarter" key_column="quarter_id" name_column="quarter">
-            <Property name="Quarter ES" column="quarter" caption_set="es" />
+            <Property name="End Quarter ES" column="quarter" caption_set="es" />
         </Level>
         <Level name="End Month" key_column="month_id" name_column="month">
             <Property name="End Month ES" column="month" caption_set="es" />
