@@ -1,5 +1,5 @@
 <Schema name="datamexico" default_locale="en">
-    <Cube name="budget_opa">
+    <Cube name="opa_budget">
 
     <Annotation name="topic">Economy</Annotation>
     <Annotation name="subtopic">Budget</Annotation>
@@ -7,7 +7,7 @@
     <Annotation name="source_name_en">Budget Transparency</Annotation>
     <Annotation name="source_link">https://www.transparenciapresupuestaria.gob.mx/es/PTP/Obra_Publica_Abierta</Annotation>
 
-    <Table name="budget_opa" primary_key="id_investment_area" />
+    <Table name="opa_budget" primary_key="id_investment_area" />
 
     <Dimension name="Budget Cycle" foreign_key="budget_cycle">
         <Hierarchy name="Budget Cycle">

@@ -1,6 +1,3 @@
-            "mun_id":       "UInt32",
-            "year":         "UInt16"
-
 <Schema name="datamexico" default_locale="en">
   <Cube name="conapo_metro_area_population">
 
