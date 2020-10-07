@@ -10,7 +10,8 @@
     <Table name="fdi_year_industry_sector" primary_key="sector_id" />
 
     <DimensionUsage foreign_key="sector_id" source="FDI Industry 2 Digit" name="FDI Industry 2 Digit" />
-    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
+    <DimensionUsage foreign_key="investment_type" source="Investment Type" name="Investment Type" />
 
     <Measure name="Investment" column="value" aggregator="sum">
       
