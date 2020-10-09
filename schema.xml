@@ -199,6 +199,15 @@
     </Hierarchy>
   </SharedDimension>
 
+  <SharedDimension name="FDI Industry 3 Digit Lite">
+    <Hierarchy name="Industry" primary_key="subsector_id">
+      <Table name="dim_shared_subsector_fdi"/>
+      <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="nontext">
+        <Property name="Subsector ES" column="subsector_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
   <SharedDimension name="FDI Industry 3 Digit">
     <Hierarchy name="Industry" primary_key="subsector_id">
       <Table name="dim_shared_subsector_fdi"/>
@@ -207,6 +216,15 @@
       </Level>
       <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="nontext">
         <Property name="Subsector ES" column="subsector_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="FDI Industry 4 Digit Lite">
+    <Hierarchy name="Industry" primary_key="industry_group_id">
+      <Table name="dim_shared_industry_group_fdi"/>
+      <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_en" key_type="nontext">
+        <Property name="Industry Group ES" column="industry_group_es" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -4321,8 +4339,8 @@
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
     <DimensionUsage foreign_key="sector_id" source="FDI Industry 2 Digit" name="FDI Industry 2 Digit" />
-    <DimensionUsage foreign_key="subsector_id" source="FDI Industry 3 Digit" name="FDI Industry 3 Digit" />
-    <DimensionUsage foreign_key="industry_group_id" source="FDI Industry 4 Digit" name="FDI Industry 4 Digit" />
+    <DimensionUsage foreign_key="subsector_id" source="FDI Industry 3 Digit Lite" name="FDI Industry 3 Digit" />
+    <DimensionUsage foreign_key="industry_group_id" source="FDI Industry 4 Digit Lite" name="FDI Industry 4 Digit" />
 
     <Measure name="Investment" column="value_c" aggregator="sum">
       
