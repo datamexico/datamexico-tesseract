@@ -1,28 +1,30 @@
 <Schema name="datamexico" default_locale="en">
-  <Cube name="fdi_quarter_industry_subsector">
-    
+  <Cube name="fdi_year_industry_country">
+
     <Annotation name="topic">Economy</Annotation>
     <Annotation name="subtopic">Foreign Direct Investment</Annotation>
     <Annotation name="source_name">Secretaría de Economía</Annotation>
     <Annotation name="source_name_en">Secretary of Economy</Annotation>
     <Annotation name="source_link">https://www.gob.mx/se</Annotation>
-    
-    <Table name="fdi_quarter_industry_subsector" primary_key="subsector_id" />
 
-    <DimensionUsage foreign_key="subsector_id" source="FDI Industry 3 Digit" name="FDI Industry 3 Digit" />
-    <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
-    <DimensionUsage foreign_key="investment_type" source="Investment Type" name="Investment Type" />
+    <Table name="fdi_year_industry_country" primary_key="sector_id" />
+
+    <DimensionUsage foreign_key="sector_id" source="FDI Industry 2 Digit" name="FDI Industry 2 Digit" />
+    <DimensionUsage foreign_key="subsector_id" source="FDI Industry 3 Digit Lite" name="FDI Industry 3 Digit" />
+    <DimensionUsage foreign_key="industry_group_id" source="FDI Industry 4 Digit Lite" name="FDI Industry 4 Digit" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage foreign_key="country_id" source="Country" name="Country Origin" />
 
     <Measure name="Investment" column="value" aggregator="sum">
-      
+
         <Annotation name="details">Value</Annotation>
-      
+
     </Measure>
 
     <Measure name="Count" column="count" aggregator="sum">
-      
+
         <Annotation name="details">Count</Annotation>
-      
+
     </Measure>
 
   </Cube>
