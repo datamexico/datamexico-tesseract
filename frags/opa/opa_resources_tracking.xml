@@ -1,0 +1,245 @@
+<Schema name="datamexico" default_locale="en">
+    <Cube name="opa_resource_tracking">
+
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Budget</Annotation>
+    <Annotation name="source_name">Transparencia Presupuestaria</Annotation>
+    <Annotation name="source_name_en">Budget Transparency</Annotation>
+    <Annotation name="source_link">https://www.transparenciapresupuestaria.gob.mx/es/PTP/Obra_Publica_Abierta</Annotation>
+
+    <Table name="opa_resource_tracking" primary_key="mun_id" />
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="report_period" source="Date Quarter" name="Reported Period" />
+
+    <Dimension name="Category" foreign_key="category_id">
+      <Hierarchy name="Category" primary_key="id">
+
+        <InlineTable alias="dim_inline_category_id">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Action</Value>
+            <Value column="name_es">Acción</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Acquisition</Value>
+            <Value column="name_es">Adquisición</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Investment project</Value>
+            <Value column="name_es">Proyecto de inversión</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Category" key_column="id" name_column="name_en">
+          <Property name="Category ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Project Type" foreign_key="project_type_id">
+      <Hierarchy name="Project Type" primary_key="id">
+
+        <InlineTable alias="dim_inline_project_type_id">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">No type of project or program</Value>
+            <Value column="name_es">Sin tipo de proyecto o programa</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Economic Infrastructure Investment Project</Value>
+            <Value column="name_es">Proyecto de Inversión de Infraestructura Económica</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Social Infrastructure Investment Project</Value>
+            <Value column="name_es">Proyecto de Inversión de Infraestructura Social</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Government Infrastructure Investment Project</Value>
+            <Value column="name_es">Proyecto de Inversión de Infraestructura Gubernamental</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Property Investment Project</Value>
+            <Value column="name_es">Proyecto de Inversión de Inmuebles</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Other Investment Projects</Value>
+            <Value column="name_es">Otros Proyectos de Inversión</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Acquisition Investment Program</Value>
+            <Value column="name_es">Programa de Inversión de Adquisiciones</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Maintenance Investment Program</Value>
+            <Value column="name_es">Programa de Inversión de Mantenimiento</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">Grant Investment Program</Value>
+            <Value column="name_es">Programa de Inversión de Subsidios</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Uninformed</Value>
+            <Value column="name_es">No informado</Value>
+          </Row>
+          <Row>
+            <Value column="id">10</Value>
+            <Value column="name_en">Other Investment Programs</Value>
+            <Value column="name_es">Otros Programas de Inversión</Value>
+          </Row>
+          <Row>
+            <Value column="id">11</Value>
+            <Value column="name_en">Preinvestment Studies Program</Value>
+            <Value column="name_es">Programa de Estudios de Preinversión</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Project Type" key_column="id" name_column="name_en">
+          <Property name="Project Type ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Classification" foreign_key="classification_id">
+      <Hierarchy name="Classification" primary_key="id">
+
+        <InlineTable alias="dim_inline_classification_id">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Other projects</Value>
+            <Value column="name_es">Otros Proyectos</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Health</Value>
+            <Value column="name_es">Salud</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Education</Value>
+            <Value column="name_es">Educación</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Transport and Roads</Value>
+            <Value column="name_es">Transportes y Vialidades</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Water and Sanitation</Value>
+            <Value column="name_es">Agua y Saneamiento</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Urbanization</Value>
+            <Value column="name_es">Urbanización</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Culture and Tourism</Value>
+            <Value column="name_es">Cultura y Turismo</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Social care</Value>
+            <Value column="name_es">Asistencia Social</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">Sport</Value>
+            <Value column="name_es">Deporte</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Security</Value>
+            <Value column="name_es">Seguridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">10</Value>
+            <Value column="name_en">Living Place</Value>
+            <Value column="name_es">Vivienda</Value>
+          </Row>
+          <Row>
+            <Value column="id">11</Value>
+            <Value column="name_en">Communications</Value>
+            <Value column="name_es">Comunicaciones</Value>
+          </Row>
+          <Row>
+            <Value column="id">12</Value>
+            <Value column="name_en">PRODIM</Value>
+            <Value column="name_es">PRODIM</Value>
+          </Row>
+          <Row>
+            <Value column="id">13</Value>
+            <Value column="name_en">Indirect Expenses</Value>
+            <Value column="name_es">Gastos Indirectos</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Classification" key_column="id" name_column="name_en">
+          <Property name="Classification ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Status" foreign_key="status_id">
+      <Hierarchy name="Status" primary_key="id">
+
+        <InlineTable alias="dim_inline_status_id">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">In Action</Value>
+            <Value column="name_es">En Ejecución</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Finished</Value>
+            <Value column="name_es">Terminado</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Discontinued</Value>
+            <Value column="name_es">Suspendido</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Cancelled</Value>
+            <Value column="name_es">Cancelado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Status" key_column="id" name_column="name_en">
+          <Property name="Status ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Count" column="count" aggregator="sum" />
+    <Measure name="Global Approved Value" column="global_approved_value" aggregator="sum" />
+    <Measure name="Collected Amount" column="collected_amount" aggregator="sum" />
+    <Measure name="Committed Amount" column="committed_amount" aggregator="sum" />
+    <Measure name="Accrued Amount" column="accrued_amount" aggregator="sum" />
+    <Measure name="Exercised Amount" column="exercised_amount" aggregator="sum" />
+    <Measure name="Paid Amount" column="paid_amount" aggregator="sum" />
+
+    </Cube>
+</Schema>

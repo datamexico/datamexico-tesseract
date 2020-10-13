@@ -190,6 +190,60 @@
     </Hierarchy>
   </SharedDimension>
 
+  <SharedDimension name="FDI Industry 2 Digit">
+    <Hierarchy name="Industry" primary_key="sector_id">
+      <Table name="dim_shared_sector_fdi"/>
+      <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
+        <Property name="Sector ES" column="sector_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="FDI Industry 3 Digit Lite">
+    <Hierarchy name="Industry" primary_key="subsector_id">
+      <Table name="dim_shared_subsector_fdi"/>
+      <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="nontext">
+        <Property name="Subsector ES" column="subsector_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="FDI Industry 3 Digit">
+    <Hierarchy name="Industry" primary_key="subsector_id">
+      <Table name="dim_shared_subsector_fdi"/>
+      <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
+        <Property name="Sector ES" column="sector_es" caption_set="es"/>
+      </Level>
+      <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="nontext">
+        <Property name="Subsector ES" column="subsector_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="FDI Industry 4 Digit Lite">
+    <Hierarchy name="Industry" primary_key="industry_group_id">
+      <Table name="dim_shared_industry_group_fdi"/>
+      <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_en" key_type="nontext">
+        <Property name="Industry Group ES" column="industry_group_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="FDI Industry 4 Digit">
+    <Hierarchy name="Industry" primary_key="industry_group_id">
+      <Table name="dim_shared_industry_group_fdi"/>
+      <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
+        <Property name="Sector ES" column="sector_es" caption_set="es"/>
+      </Level>
+      <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="nontext">
+        <Property name="Subsector ES" column="subsector_es" caption_set="es"/>
+      </Level>
+      <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_en" key_type="nontext">
+        <Property name="Industry Group ES" column="industry_group_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
   <SharedDimension name="Industry 2 Digit">
     <Hierarchy name="Industry" primary_key="sector_id">
       <Table name="dim_shared_sector"/>
@@ -611,6 +665,34 @@
         </InlineTable>
         <Level name="Confidence" key_column="id" name_column="name_en">
           <Property name="Confidence ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </SharedDimension>
+
+    <SharedDimension name="Investment Type">
+     <Hierarchy name="Investment Type" primary_key="id">
+        <InlineTable alias="dim_inline_investment_type">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Accounts between Companies</Value>
+            <Value column="name_es">Cuentas entre Compañías</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">New Investments</Value>
+            <Value column="name_es">Nuevas Inversiones</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Reinvestment of Profits</Value>
+            <Value column="name_es">Reinversión de Utilidades</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Investment Type" key_column="id" name_column="name_en">
+          <Property name="Investment Type ES" column="name_es" caption_set="es"/>
         </Level>
       </Hierarchy>
     </SharedDimension>
@@ -3064,33 +3146,9 @@
 
     <Dimension name="Approved Week" foreign_key="approved_week">
       <Hierarchy name="Approved Week" primary_key="id">
-        <InlineTable alias="dim_inline_approved_week">
-          <ColumnDef name="id" key_type="nontext" />
-          <ColumnDef name="name_en" key_type="text" />
-          <ColumnDef name="name_es" key_type="text" />
-          <Row>
-            <Value column="id">202017</Value>
-            <Value column="name_en">April 23-29</Value>
-            <Value column="name_es">Del 23 al 29 de abril</Value>
-          </Row>
-          <Row>
-            <Value column="id">202018</Value>
-            <Value column="name_en">April 30 to May 6</Value>
-            <Value column="name_es">Del 30 de abril al 6 de mayo</Value>
-          </Row>
-          <Row>
-            <Value column="id">202020</Value>
-            <Value column="name_en">May 14-20</Value>
-            <Value column="name_es">Del 14 al 20 de mayo</Value>
-          </Row>
-          <Row>
-            <Value column="id">202022</Value>
-            <Value column="name_en">From May 28 to June 3</Value>
-            <Value column="name_es">Del 28 de mayo al 3 de junio</Value>
-          </Row>
-        </InlineTable>
-        <Level name="Approved Week" key_column="id" name_column="name_en">
-          <Property name="Approved Week ES" column="name_es" caption_set="es" />
+        <Table name="credits_weeks" />
+        <Level name="Approved Week" key_column="approved_week" name_column="approved_week_en">
+          <Property name="Approved Week ES" column="approved_week_es" caption_set="es" />
         </Level>
       </Hierarchy>
     </Dimension>
@@ -3915,7 +3973,7 @@
 
     <Dimension name="Industry 4 Digit" foreign_key="area_id">
       <Hierarchy name="Industry" primary_key="industry_group_id">
-        <Table name="dim_shared_industry_fdi"/>
+        <Table name="dim_shared_industry_fdi_legacy"/>
         <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
           <Property name="Sector ES" column="sector_es" caption_set="es"/>
         </Level>
@@ -3935,6 +3993,345 @@
     <Measure name="Investment (Million)" column="value_million" aggregator="sum">
       
         <Annotation name="details">Value Millions</Annotation>
+      
+    </Measure>
+
+  </Cube>
+<Cube name="fdi_10_year_country">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_10_year_country" primary_key="year" />
+
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage foreign_key="country" source="Country" name="Country Origin" />
+
+    <Measure name="Investment" column="value_c" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
+      
+    </Measure>
+
+  </Cube>
+<Cube name="fdi_10_year_country_investment">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_10_year_country_investment" primary_key="year" />
+
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage foreign_key="country" source="Country" name="Country Origin" />
+    <DimensionUsage foreign_key="investment_type" source="Investment Type" name="Investment Type" />
+
+    <Measure name="Investment" column="value_c" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
+      
+    </Measure>
+
+  </Cube>
+<Cube name="fdi_10_year_investment">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_10_year_investment" primary_key="year" />
+
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage foreign_key="investment_type" source="Investment Type" name="Investment Type" />
+
+    <Measure name="Investment" column="value_c" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
+      
+    </Measure>
+
+  </Cube>
+<Cube name="fdi_2_state_investment">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_2" primary_key="ent_id" />
+
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
+    <DimensionUsage foreign_key="investment_type" source="Investment Type" name="Investment Type" />
+
+    <Measure name="Investment" column="value_c" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
+      
+    </Measure>
+
+  </Cube>
+<Cube name="fdi_3_country_origin">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_3" primary_key="ent_id" />
+
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage foreign_key="country" source="Country" name="Country Origin" />
+
+    <Measure name="Investment" column="value_c" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
+      
+    </Measure>
+
+  </Cube>
+<Cube name="fdi_4_investment_type">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_4" primary_key="ent_id" />
+
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage foreign_key="country" source="Country" name="Country Origin" />
+
+    <Dimension name="Investment Type" foreign_key="investment_type">
+      <Hierarchy name="Investment Type" primary_key="investment_type">
+        <Table name="fdi_4" />
+        <Level name="Investment Type" key_column="investment_type" key_type="text" />
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Investment" column="value_c" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
+      
+    </Measure>
+
+  </Cube>
+<Cube name="fdi_quarter_industry">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_quarter_industry" primary_key="ent_id" />
+
+    <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
+    <DimensionUsage foreign_key="sector_id" source="FDI Industry 2 Digit" name="FDI Industry 2 Digit" />
+    <DimensionUsage foreign_key="subsector_id" source="FDI Industry 3 Digit Lite" name="FDI Industry 3 Digit" />
+    <DimensionUsage foreign_key="industry_group_id" source="FDI Industry 4 Digit Lite" name="FDI Industry 4 Digit" />
+
+    <Measure name="Investment" column="value_c" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
+      
+    </Measure>
+
+  </Cube>
+<Cube name="fdi_quarter_industry_investment">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_quarter_industry_investment" primary_key="industry_group_id" />
+
+    <DimensionUsage foreign_key="sector_id" source="FDI Industry 2 Digit" name="FDI Industry 2 Digit" />
+    <DimensionUsage foreign_key="subsector_id" source="FDI Industry 3 Digit Lite" name="FDI Industry 3 Digit" />
+    <DimensionUsage foreign_key="industry_group_id" source="FDI Industry 4 Digit Lite" name="FDI Industry 4 Digit" />
+    <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date" />
+    <DimensionUsage foreign_key="investment_type" source="Investment Type" name="Investment Type" />
+
+    <Measure name="Investment" column="value" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
+      
+    </Measure>
+
+  </Cube>
+<Cube name="fdi_year_industry">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_year_industry" primary_key="ent_id" />
+
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage foreign_key="sector_id" source="FDI Industry 2 Digit" name="FDI Industry 2 Digit" />
+    <DimensionUsage foreign_key="subsector_id" source="FDI Industry 3 Digit Lite" name="FDI Industry 3 Digit" />
+    <DimensionUsage foreign_key="industry_group_id" source="FDI Industry 4 Digit Lite" name="FDI Industry 4 Digit" />
+
+    <Measure name="Investment" column="value_c" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
+      
+    </Measure>
+
+  </Cube>
+<Cube name="fdi_year_industry_country">
+
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+
+    <Table name="fdi_year_industry_country" primary_key="sector_id" />
+
+    <DimensionUsage foreign_key="sector_id" source="FDI Industry 2 Digit" name="FDI Industry 2 Digit" />
+    <DimensionUsage foreign_key="subsector_id" source="FDI Industry 3 Digit Lite" name="FDI Industry 3 Digit" />
+    <DimensionUsage foreign_key="industry_group_id" source="FDI Industry 4 Digit Lite" name="FDI Industry 4 Digit" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage foreign_key="country_id" source="Country" name="Country Origin" />
+
+    <Measure name="Investment" column="value" aggregator="sum">
+
+        <Annotation name="details">Value</Annotation>
+
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+
+        <Annotation name="details">Count</Annotation>
+
+    </Measure>
+
+  </Cube>
+<Cube name="fdi_year_investment_industry">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_year_investment_industry" primary_key="ent_id" />
+
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage foreign_key="investment_type" source="Investment Type" name="Investment Type" />
+    <DimensionUsage foreign_key="sector_id" source="FDI Industry 2 Digit" name="FDI Industry 2 Digit" />
+    <DimensionUsage foreign_key="subsector_id" source="FDI Industry 3 Digit Lite" name="FDI Industry 3 Digit" />
+    <DimensionUsage foreign_key="industry_group_id" source="FDI Industry 4 Digit Lite" name="FDI Industry 4 Digit" />
+
+    <Measure name="Investment" column="value" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
+      
+    </Measure>
+
+  </Cube>
+<Cube name="fdi_year_state_industry">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="fdi_year_state_industry" primary_key="ent_id" />
+
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage foreign_key="sector_id" source="FDI Industry 2 Digit" name="FDI Industry 2 Digit" />
+    <DimensionUsage foreign_key="subsector_id" source="FDI Industry 3 Digit Lite" name="FDI Industry 3 Digit" />
+    <DimensionUsage foreign_key="industry_group_id" source="FDI Industry 4 Digit Lite" name="FDI Industry 4 Digit" />
+
+    <Measure name="Investment" column="value_c" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Count" column="count" aggregator="sum">
+      
+        <Annotation name="details">Count</Annotation>
       
     </Measure>
 
@@ -4836,6 +5233,1076 @@
     <Annotation name="source_link">https://www.inegi.org.mx/app/saich/v2/</Annotation>
 
     <Table name="inegi_economic_census" primary_key="mun_id" />
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
+
+    <Measure name="Economic Unit" column="ue" aggregator="sum" >
+      
+        <Annotation name="details">Number of units recording data</Annotation>
+      
+    </Measure>
+    <Measure name="Total Gross Production" column="a111a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Intermediate Consumption" column="a121a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Census Gross Value Added" column="a131a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Investment" column="a211a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Gross Fixed Capital Formation" column="a221a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Merchandising Margin" column="a511a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Expenses" column="a700a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Income" column="a800a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Employees Depends on the Economic Unit" column="h000a" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Total Male Employees Depends on the Economic Unit" column="h000b" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Total Female Employees Depends on the Economic Unit" column="h000c" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Hours Worked by Employees" column="h000d" aggregator="sum">
+      
+        <Annotation name="details">Value in thousand hours</Annotation>
+      
+    </Measure>
+    <Measure name="Total Employees with or without a Contract with the Economic Unit" column="h001a" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Total Male Employees with or without a Contract with the Economic Unit" column="h001b" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Total Female Employees with or without a Contract with the Economic Unit" column="h001c" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Hours Worked by Workforce" column="h001d" aggregator="sum">
+      
+        <Annotation name="details">Value in thousand hours</Annotation>
+      
+    </Measure>
+    <!--<Measure name="Salaried Employees; Total" column="h010a" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure> -->
+
+    <Measure name="Salaried Employees; Total" column="h010a"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>h000a</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Total value of workforce</Annotation>
+    </Measure>
+
+    <!-- <Measure name="Male Salaried Employees" column="h010b" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure> -->
+
+    <Measure name="Male Salaried Employees" column="h010b"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>h000b</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Total value of workforce</Annotation>
+    </Measure>
+
+    <!--<Measure name="Female Salaried Employees" column="h010c" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure> -->
+
+    <Measure name="Female Salaried Employees" column="h010c"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>h000c</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Total value of workforce</Annotation>
+    </Measure>
+
+    <Measure name="Hours Worked by Salaried Employees" column="h010d" aggregator="sum">
+      
+        <Annotation name="details">Value in thousand hours</Annotation>
+      
+    </Measure>
+    <Measure name="Total Owners; Family Members and other unpaid workers" column="h020a" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Total Male Owners; Family Members and other unpaid workers" column="h020b" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Total Female Owners; Family Members and other unpaid workers" column="h020c" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Hours Worked by Owners; Family Members and other unpaid workers" column="h020d" aggregator="sum">
+      
+        <Annotation name="details">Value in thousand hours</Annotation>
+      
+    </Measure>
+    <Measure name="Employees of Production; Sales and Services; Total" column="h101a" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Male Employees of Production; Sales and Services" column="h101b" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Female Employees of Production; Sales and Services" column="h101c" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Hours Worked by Production; Sales and Services Employees" column="h101d" aggregator="sum">
+      
+        <Annotation name="details">Value in thousand hours</Annotation>
+      
+    </Measure>
+    <Measure name="Administrative; Accounting and Management Employees; Total" column="h203a" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Female Administrative; Accounting and Management Employees" column="h203b" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Male Administrative; Accounting and Management Employees" column="h203c" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Hours Worked by Administrative; Accounting and Management Salaried Employees" column="h203d" aggregator="sum">
+      
+        <Annotation name="details">Value in thousand hours</Annotation>
+      
+    </Measure>
+    <Measure name="Employees not Dependent on the Economic Unit; Total" column="i000a" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Male Employees not Dependent on the Economic Unit" column="i000b" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Female Employees not Dependent on the Economic Unit" column="i000c" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Hours Worked by Employees not Dependent on the Economic Unit" column="i000d" aggregator="sum">
+      
+        <Annotation name="details">Value in thousand hours</Annotation>
+      
+    </Measure>
+    <Measure name="Employees Provided by Another Economic Unit; Total" column="i100a" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Male Employees Provided by Another Economic Unit" column="i100b" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Female Employees Provided by Another Economic Unit" column="i100c" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Hours Worked by Employees Provided by Another Economic Unit" column="i100d" aggregator="sum">
+      
+        <Annotation name="details">Value in thousand hours</Annotation>
+      
+    </Measure>
+    <Measure name="Total Independent Contractors" column="i200a" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Male Independent Contractors" column="i200b" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Female Independent Contractors" column="i200c" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Hours Worked by Independent Contractors" column="i200d" aggregator="sum">
+      
+        <Annotation name="details">Value in thousand hours</Annotation>
+      
+    </Measure>
+    <Measure name="Total Remuneration" column="j000a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Salary of Production; Sales and Services Employees" column="j010a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Salary of Administrative; Accounting and Management Salaried Employees" column="j203a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Employer Social Security Contributions" column="j300a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Other Social Benefits" column="j400a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Profit Sharing" column="j500a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Severance Pay" column="j600a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Expenses for Consumption of Goods and Services" column="k000a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Goods Acquired to Commercialize" column="k010a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Materials and Supplies Consumed for Provision of Services" column="k020a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Raw and Procesed Material that are Integrated into Production" column="k030a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Consumption of Fuels; Lubricants and Energy for the Operation of Machinery; Equipment and Vehicles" column="k040a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Electricity Consumption" column="k041a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Rent and Lease of Movable and Immovable Property" column="k050a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Professional; Scientific and Technical Services Hired" column="k060a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Maquila and Services for the Production of Goods by Contract" column="k070a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Consumption of Other Goods and Services" column="k090a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Freight out Expenses" column="k096a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Expenses for Consumption of Stationery and Office Supplies" column="k311a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Payments to Another Company that Hired and Provided Workers" column="k610a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Expenses in Independent Contractors" column="k620a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Advertising Expenses" column="k810a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Comunication Expenses" column="k820a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Expenses for Consumption of Containers and Packaging" column="k910a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Expenditures for Repair; Spare Parts and Maintenance of Fixed Assets" column="k950a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Water Consumption" column="k976a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Income for Supplying Goods and Services" column="m000a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Revenue from Commercialization of goods" column="m010a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Revenue from the Provision of Professional; Scientific and Technical Services" column="m020a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Revenue from Sales of Processed; Generated or Extracted Products" column="m030a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Revenue from Rental of Movable and Immovable Property" column="m050a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Other Revenue for Providing Goods and Services" column="m090a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Other Components of Production" column="m091a" aggregator="sum">
+      
+        <Annotation name="details">Total value of components</Annotation>
+      
+    </Measure>
+    <Measure name="Revenue from the Processing or Transformation of Raw Materials Owned by Third Parties" column="m700a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Value of Processed Products; Generated Goods and Extracted" column="o010a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Fixed Assets Produced for Own Use" column="o020a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Initial Inventory" column="p000a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Ending Inventory" column="p000b" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Stock Variation" column="p000c" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Initial Inventory of In-Process Products" column="p030a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Final Inventory of In-Process Products" column="p030b" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Variation of Inventories of In-Process Products" column="p030c" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Initial Inventory of Goods Purchased for Merchandising" column="p100a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Final Inventory of Goods Purchased for Merchandising" column="p100b" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Fixed Assets" column="q000a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Deprecation of Fixed Assets" column="q000b" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Purchases of Fixed Assets" column="q000c" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Sales of Fixed Assets" column="q000d" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Stock of Machinery and Production Equipment" column="q010a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Stock of Real Estate" column="q020a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Stock of Units and Transport Equipment" column="q030a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Stock of Computer Equipment and Peripherals" column="q400a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Stock of Furniture; office Equipment and Other Fixed Assets" column="q900a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+  </Cube>
+<Cube name="inegi_economic_census_2014_ent">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Employment</Annotation>
+    <Annotation name="source_name">Censos Económicos</Annotation>
+    <Annotation name="source_name_en">Economic Censuses</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/app/saich/v2/</Annotation>
+
+    <Table name="inegi_economic_census_ent" primary_key="ent_id" />
+
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
+
+    <Measure name="Economic Unit" column="ue" aggregator="sum" >
+      
+        <Annotation name="details">Number of units recording data</Annotation>
+      
+    </Measure>
+    <Measure name="Total Gross Production" column="a111a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Intermediate Consumption" column="a121a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Census Gross Value Added" column="a131a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Investment" column="a211a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Gross Fixed Capital Formation" column="a221a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Merchandising Margin" column="a511a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Expenses" column="a700a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Income" column="a800a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Employees Depends on the Economic Unit" column="h000a" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Total Male Employees Depends on the Economic Unit" column="h000b" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Total Female Employees Depends on the Economic Unit" column="h000c" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Hours Worked by Employees" column="h000d" aggregator="sum">
+      
+        <Annotation name="details">Value in thousand hours</Annotation>
+      
+    </Measure>
+    <Measure name="Total Employees with or without a Contract with the Economic Unit" column="h001a" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Total Male Employees with or without a Contract with the Economic Unit" column="h001b" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Total Female Employees with or without a Contract with the Economic Unit" column="h001c" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Hours Worked by Workforce" column="h001d" aggregator="sum">
+      
+        <Annotation name="details">Value in thousand hours</Annotation>
+      
+    </Measure>
+    <!--<Measure name="Salaried Employees; Total" column="h010a" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure> -->
+
+    <Measure name="Salaried Employees; Total" column="h010a"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>h000a</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Total value of workforce</Annotation>
+    </Measure>
+
+    <!-- <Measure name="Male Salaried Employees" column="h010b" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure> -->
+
+    <Measure name="Male Salaried Employees" column="h010b"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>h000b</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Total value of workforce</Annotation>
+    </Measure>
+
+    <!--<Measure name="Female Salaried Employees" column="h010c" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure> -->
+
+    <Measure name="Female Salaried Employees" column="h010c"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>h000c</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Total value of workforce</Annotation>
+    </Measure>
+
+    <Measure name="Hours Worked by Salaried Employees" column="h010d" aggregator="sum">
+      
+        <Annotation name="details">Value in thousand hours</Annotation>
+      
+    </Measure>
+    <Measure name="Total Owners; Family Members and other unpaid workers" column="h020a" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Total Male Owners; Family Members and other unpaid workers" column="h020b" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Total Female Owners; Family Members and other unpaid workers" column="h020c" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Hours Worked by Owners; Family Members and other unpaid workers" column="h020d" aggregator="sum">
+      
+        <Annotation name="details">Value in thousand hours</Annotation>
+      
+    </Measure>
+    <Measure name="Employees of Production; Sales and Services; Total" column="h101a" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Male Employees of Production; Sales and Services" column="h101b" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Female Employees of Production; Sales and Services" column="h101c" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Hours Worked by Production; Sales and Services Employees" column="h101d" aggregator="sum">
+      
+        <Annotation name="details">Value in thousand hours</Annotation>
+      
+    </Measure>
+    <Measure name="Administrative; Accounting and Management Employees; Total" column="h203a" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Female Administrative; Accounting and Management Employees" column="h203b" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Male Administrative; Accounting and Management Employees" column="h203c" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Hours Worked by Administrative; Accounting and Management Salaried Employees" column="h203d" aggregator="sum">
+      
+        <Annotation name="details">Value in thousand hours</Annotation>
+      
+    </Measure>
+    <Measure name="Employees not Dependent on the Economic Unit; Total" column="i000a" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Male Employees not Dependent on the Economic Unit" column="i000b" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Female Employees not Dependent on the Economic Unit" column="i000c" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Hours Worked by Employees not Dependent on the Economic Unit" column="i000d" aggregator="sum">
+      
+        <Annotation name="details">Value in thousand hours</Annotation>
+      
+    </Measure>
+    <Measure name="Employees Provided by Another Economic Unit; Total" column="i100a" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Male Employees Provided by Another Economic Unit" column="i100b" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Female Employees Provided by Another Economic Unit" column="i100c" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Hours Worked by Employees Provided by Another Economic Unit" column="i100d" aggregator="sum">
+      
+        <Annotation name="details">Value in thousand hours</Annotation>
+      
+    </Measure>
+    <Measure name="Total Independent Contractors" column="i200a" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Male Independent Contractors" column="i200b" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Female Independent Contractors" column="i200c" aggregator="sum">
+      
+        <Annotation name="details">Total value of workforce</Annotation>
+      
+    </Measure>
+    <Measure name="Hours Worked by Independent Contractors" column="i200d" aggregator="sum">
+      
+        <Annotation name="details">Value in thousand hours</Annotation>
+      
+    </Measure>
+    <Measure name="Total Remuneration" column="j000a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Salary of Production; Sales and Services Employees" column="j010a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Salary of Administrative; Accounting and Management Salaried Employees" column="j203a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Employer Social Security Contributions" column="j300a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Other Social Benefits" column="j400a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Profit Sharing" column="j500a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Severance Pay" column="j600a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Expenses for Consumption of Goods and Services" column="k000a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Goods Acquired to Commercialize" column="k010a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Materials and Supplies Consumed for Provision of Services" column="k020a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Raw and Procesed Material that are Integrated into Production" column="k030a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Consumption of Fuels; Lubricants and Energy for the Operation of Machinery; Equipment and Vehicles" column="k040a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Electricity Consumption" column="k041a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Rent and Lease of Movable and Immovable Property" column="k050a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Professional; Scientific and Technical Services Hired" column="k060a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Maquila and Services for the Production of Goods by Contract" column="k070a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Consumption of Other Goods and Services" column="k090a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Freight out Expenses" column="k096a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Expenses for Consumption of Stationery and Office Supplies" column="k311a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Payments to Another Company that Hired and Provided Workers" column="k610a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Expenses in Independent Contractors" column="k620a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Advertising Expenses" column="k810a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Comunication Expenses" column="k820a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Expenses for Consumption of Containers and Packaging" column="k910a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Expenditures for Repair; Spare Parts and Maintenance of Fixed Assets" column="k950a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Water Consumption" column="k976a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Income for Supplying Goods and Services" column="m000a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Revenue from Commercialization of goods" column="m010a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Revenue from the Provision of Professional; Scientific and Technical Services" column="m020a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Revenue from Sales of Processed; Generated or Extracted Products" column="m030a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Revenue from Rental of Movable and Immovable Property" column="m050a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Other Revenue for Providing Goods and Services" column="m090a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Other Components of Production" column="m091a" aggregator="sum">
+      
+        <Annotation name="details">Total value of components</Annotation>
+      
+    </Measure>
+    <Measure name="Revenue from the Processing or Transformation of Raw Materials Owned by Third Parties" column="m700a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Value of Processed Products; Generated Goods and Extracted" column="o010a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Fixed Assets Produced for Own Use" column="o020a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Initial Inventory" column="p000a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Ending Inventory" column="p000b" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Stock Variation" column="p000c" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Initial Inventory of In-Process Products" column="p030a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Final Inventory of In-Process Products" column="p030b" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Variation of Inventories of In-Process Products" column="p030c" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Initial Inventory of Goods Purchased for Merchandising" column="p100a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Final Inventory of Goods Purchased for Merchandising" column="p100b" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Fixed Assets" column="q000a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Deprecation of Fixed Assets" column="q000b" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Purchases of Fixed Assets" column="q000c" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Sales of Fixed Assets" column="q000d" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Stock of Machinery and Production Equipment" column="q010a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Stock of Real Estate" column="q020a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Stock of Units and Transport Equipment" column="q030a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Stock of Computer Equipment and Peripherals" column="q400a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+    <Measure name="Total Stock of Furniture; office Equipment and Other Fixed Assets" column="q900a" aggregator="sum">
+      
+        <Annotation name="details">Value in millions of mexican pesos</Annotation>
+      
+    </Measure>
+  </Cube>
+<Cube name="inegi_economic_census_2014_mun">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Employment</Annotation>
+    <Annotation name="source_name">Censos Económicos</Annotation>
+    <Annotation name="source_name_en">Economic Censuses</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/app/saich/v2/</Annotation>
+
+    <Table name="inegi_economic_census_mun" primary_key="mun_id" />
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
@@ -12072,6 +13539,421 @@
     </Measure>
 
   </Cube>
+<Cube name="opa_budget">
+
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Budget</Annotation>
+    <Annotation name="source_name">Transparencia Presupuestaria</Annotation>
+    <Annotation name="source_name_en">Budget Transparency</Annotation>
+    <Annotation name="source_link">https://www.transparenciapresupuestaria.gob.mx/es/PTP/Obra_Publica_Abierta</Annotation>
+
+    <Table name="opa_budget" primary_key="id_investment_area" />
+
+    <Dimension name="Budget Cycle" foreign_key="budget_cycle">
+        <Hierarchy name="Budget Cycle">
+            <Level name="Budget Cycle" key_column="budget_cycle" />
+        </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Fiscal Resources Start Date" foreign_key="fiscal_resources_start_date" type="time">
+        <Hierarchy name="Fiscal Resources Start Date" primary_key="date_id">
+        <Table name="dim_shared_date_month_day" />
+        <Level name="Start Year" key_column="year" />
+        <Level name="Start Quarter" key_column="quarter_id" name_column="quarter">
+            <Property name="Start Quarter ES" column="quarter" caption_set="es" />
+        </Level>
+        <Level name="Start Month" key_column="month_id" name_column="month">
+            <Property name="Start Month ES" column="month" caption_set="es" />
+        </Level>
+        <Level name="Start Date" key_column="date_id" name_column="date">
+          <Property name="Start Date ES" column="date" caption_set="es" />
+        </Level>
+        </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Fiscal Resources End Date" foreign_key="fiscal_resources_end_date" type="time">
+        <Hierarchy name="Fiscal Resources End Date" primary_key="date_id">
+        <Table name="dim_shared_date_month_day" />
+        <Level name="End Year" key_column="year" />
+        <Level name="End Quarter" key_column="quarter_id" name_column="quarter">
+            <Property name="End Quarter ES" column="quarter" caption_set="es" />
+        </Level>
+        <Level name="End Month" key_column="month_id" name_column="month">
+            <Property name="End Month ES" column="month" caption_set="es" />
+        </Level>
+        <Level name="End Date" key_column="date_id" name_column="date">
+          <Property name="End Date ES" column="date" caption_set="es" />
+        </Level>
+        </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Investment Area" foreign_key="id_investment_area">
+      <Hierarchy name="Investment Area">
+        <Table name="dim_opa_investment_area" />
+        <Level name="Investment Area" key_column="id_investment_area" name_column="investment_area" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Responsible Unit" foreign_key="id_responsible_unit">
+      <Hierarchy name="Investment Area">
+        <Table name="dim_opa_ur" />
+        <Level name="Responsible Unit" key_column="id_responsible_unit" name_column="responsible_unit" key_type="text" />
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Investment Type" foreign_key="id_investment_type">
+      <Hierarchy name="Investment Type" primary_key="id">
+
+        <InlineTable alias="dim_inline_company_size">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Economic Infrastructure Investment Project</Value>
+            <Value column="name_es">Proyecto de Inversión de Infraestructura Económica</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Property Investment Project</Value>
+            <Value column="name_es">Proyecto de Inversión de Inmuebles</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Other Investment Projects</Value>
+            <Value column="name_es">Otros Proyectos de Inversión</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Social Infrastructure Investment Project</Value>
+            <Value column="name_es">Proyecto de Inversión de Infraestructura Social</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Other Investment Programs</Value>
+            <Value column="name_es">Otros Programas de Inversión</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Preinvestment Studies Program</Value>
+            <Value column="name_es">Programa de Estudios de Preinversión</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Acquisition Investment Program</Value>
+            <Value column="name_es">Programa de Inversión de Adquisiciones</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">Government Infrastructure Investment Project</Value>
+            <Value column="name_es">Proyecto de Inversión de Infraestructura Gubernamental</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Maintenance Investment Program</Value>
+            <Value column="name_es">Programa de Inversión de Mantenimiento</Value>
+          </Row>
+          <Row>
+            <Value column="id">10</Value>
+            <Value column="name_en">Civil Protection Acquisition Program</Value>
+            <Value column="name_es">Programa de Adquisición de Protección Civil</Value>
+          </Row>
+          <Row>
+            <Value column="id">11</Value>
+            <Value column="name_en">Civil Protection Maintenance Program</Value>
+            <Value column="name_es">Programa de Mantenimiento de Protección Civil</Value>
+          </Row>
+          <Row>
+            <Value column="id">12</Value>
+            <Value column="name_en">Environmental Program</Value>
+            <Value column="name_es">Programa Ambiental</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Investment Type" key_column="id" name_column="name_en">
+          <Property name="Investment Type ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Status Operation" foreign_key="status_operation">
+      <Hierarchy name="Status Operation" primary_key="id">
+
+        <InlineTable alias="dim_inline_company_size">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Valid</Value>
+            <Value column="name_es">Vigente</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Fiscal Calendar Concluded, Operation Concluded</Value>
+            <Value column="name_es">Calendario Fiscal Concluido, Operación Concluida</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">In Process of Modification</Value>
+            <Value column="name_es">En Proceso de Modificación</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Status Operation" key_column="id" name_column="name_en">
+          <Property name="Status Operation ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Approved Amount" column="amount_approved" aggregator="sum" />
+    <Measure name="Modified Amount" column="modified_amount" aggregator="sum" />
+    <Measure name="Exercised Amount" column="amount_exercised" aggregator="sum" />
+    <Measure name="Physical Advance" column="physical_advance" aggregator="avg" />
+    <Measure name="Total Ivestment Amount" column="amount_total_inversion" aggregator="sum" />
+
+    </Cube>
+<Cube name="opa_resource_tracking">
+
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Budget</Annotation>
+    <Annotation name="source_name">Transparencia Presupuestaria</Annotation>
+    <Annotation name="source_name_en">Budget Transparency</Annotation>
+    <Annotation name="source_link">https://www.transparenciapresupuestaria.gob.mx/es/PTP/Obra_Publica_Abierta</Annotation>
+
+    <Table name="opa_resource_tracking" primary_key="mun_id" />
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="report_period" source="Date Quarter" name="Reported Period" />
+
+    <Dimension name="Category" foreign_key="category_id">
+      <Hierarchy name="Category" primary_key="id">
+
+        <InlineTable alias="dim_inline_category_id">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Action</Value>
+            <Value column="name_es">Acción</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Acquisition</Value>
+            <Value column="name_es">Adquisición</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Investment project</Value>
+            <Value column="name_es">Proyecto de inversión</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Category" key_column="id" name_column="name_en">
+          <Property name="Category ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Project Type" foreign_key="project_type_id">
+      <Hierarchy name="Project Type" primary_key="id">
+
+        <InlineTable alias="dim_inline_project_type_id">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">No type of project or program</Value>
+            <Value column="name_es">Sin tipo de proyecto o programa</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Economic Infrastructure Investment Project</Value>
+            <Value column="name_es">Proyecto de Inversión de Infraestructura Económica</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Social Infrastructure Investment Project</Value>
+            <Value column="name_es">Proyecto de Inversión de Infraestructura Social</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Government Infrastructure Investment Project</Value>
+            <Value column="name_es">Proyecto de Inversión de Infraestructura Gubernamental</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Property Investment Project</Value>
+            <Value column="name_es">Proyecto de Inversión de Inmuebles</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Other Investment Projects</Value>
+            <Value column="name_es">Otros Proyectos de Inversión</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Acquisition Investment Program</Value>
+            <Value column="name_es">Programa de Inversión de Adquisiciones</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Maintenance Investment Program</Value>
+            <Value column="name_es">Programa de Inversión de Mantenimiento</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">Grant Investment Program</Value>
+            <Value column="name_es">Programa de Inversión de Subsidios</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Uninformed</Value>
+            <Value column="name_es">No informado</Value>
+          </Row>
+          <Row>
+            <Value column="id">10</Value>
+            <Value column="name_en">Other Investment Programs</Value>
+            <Value column="name_es">Otros Programas de Inversión</Value>
+          </Row>
+          <Row>
+            <Value column="id">11</Value>
+            <Value column="name_en">Preinvestment Studies Program</Value>
+            <Value column="name_es">Programa de Estudios de Preinversión</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Project Type" key_column="id" name_column="name_en">
+          <Property name="Project Type ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Classification" foreign_key="classification_id">
+      <Hierarchy name="Classification" primary_key="id">
+
+        <InlineTable alias="dim_inline_classification_id">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Other projects</Value>
+            <Value column="name_es">Otros Proyectos</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Health</Value>
+            <Value column="name_es">Salud</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Education</Value>
+            <Value column="name_es">Educación</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Transport and Roads</Value>
+            <Value column="name_es">Transportes y Vialidades</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Water and Sanitation</Value>
+            <Value column="name_es">Agua y Saneamiento</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Urbanization</Value>
+            <Value column="name_es">Urbanización</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Culture and Tourism</Value>
+            <Value column="name_es">Cultura y Turismo</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Social care</Value>
+            <Value column="name_es">Asistencia Social</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">Sport</Value>
+            <Value column="name_es">Deporte</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Security</Value>
+            <Value column="name_es">Seguridad</Value>
+          </Row>
+          <Row>
+            <Value column="id">10</Value>
+            <Value column="name_en">Living Place</Value>
+            <Value column="name_es">Vivienda</Value>
+          </Row>
+          <Row>
+            <Value column="id">11</Value>
+            <Value column="name_en">Communications</Value>
+            <Value column="name_es">Comunicaciones</Value>
+          </Row>
+          <Row>
+            <Value column="id">12</Value>
+            <Value column="name_en">PRODIM</Value>
+            <Value column="name_es">PRODIM</Value>
+          </Row>
+          <Row>
+            <Value column="id">13</Value>
+            <Value column="name_en">Indirect Expenses</Value>
+            <Value column="name_es">Gastos Indirectos</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Classification" key_column="id" name_column="name_en">
+          <Property name="Classification ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Status" foreign_key="status_id">
+      <Hierarchy name="Status" primary_key="id">
+
+        <InlineTable alias="dim_inline_status_id">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">In Action</Value>
+            <Value column="name_es">En Ejecución</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Finished</Value>
+            <Value column="name_es">Terminado</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Discontinued</Value>
+            <Value column="name_es">Suspendido</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Cancelled</Value>
+            <Value column="name_es">Cancelado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Status" key_column="id" name_column="name_en">
+          <Property name="Status ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Count" column="count" aggregator="sum" />
+    <Measure name="Global Approved Value" column="global_approved_value" aggregator="sum" />
+    <Measure name="Collected Amount" column="collected_amount" aggregator="sum" />
+    <Measure name="Committed Amount" column="committed_amount" aggregator="sum" />
+    <Measure name="Accrued Amount" column="accrued_amount" aggregator="sum" />
+    <Measure name="Exercised Amount" column="exercised_amount" aggregator="sum" />
+    <Measure name="Paid Amount" column="paid_amount" aggregator="sum" />
+
+    </Cube>
 <Cube name="population_projection">
     
       <Annotation name="topic">Housing and Living</Annotation>
@@ -12175,44 +14057,6 @@
         <Annotation name="details">Projected Population</Annotation>
       
     </Measure>
-  </Cube>
-<Cube name="trade_balance">
-    <Table name="trade_balance_atlas" primary_key="mun_id" />
-    <Dimension name="Geography" foreign_key="mun_id">
-      <Hierarchy name="Geography" primary_key="mun_id">
-        <Table name="dim_shared_geography_mun" />
-
-        <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-          <Property name="CVE State" column="cve_ent" />
-        </Level>
-        <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
-          <Property name="CVE Municipality" column="cve_mun" />
-          <Property name="CVE Municipality Full" column="cve_mun_full" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <Dimension name="Product" foreign_key="product_id">
-      <Hierarchy name="Product" primary_key="product_id">
-        <Table name="dim_shared_product" />
-
-        <Level name="HS4" key_column="product_id" name_column="product_name" key_type="nontext">
-          <Property name="HS4 ES" column="product_name_es" caption_set="es"/>
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <Dimension name="Year" foreign_key="year">
-      <Hierarchy name="Year">
-        <Level name="Year" key_column="year" type="time" />
-      </Hierarchy>
-    </Dimension>
-
-    <Measure name="Exports" column="export_value" aggregator="sum" />
-    <Measure name="Imports" column="import_value" aggregator="sum" />
-    <Measure name="PCI" column="pci" aggregator="sum" />
-    <Measure name="Import Plants" column="import_num_plants" aggregator="sum" />
-    <Measure name="Export Plants" column="export_num_plants" aggregator="sum" />
   </Cube>
 <Cube name="indicators_i_wdi_a">
         <Annotation name="source_name">World Development Indicators (WDI) and UN Department of Economic and Social Affairs, Population Division</Annotation>

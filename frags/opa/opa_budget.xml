@@ -1,0 +1,174 @@
+<Schema name="datamexico" default_locale="en">
+    <Cube name="opa_budget">
+
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Budget</Annotation>
+    <Annotation name="source_name">Transparencia Presupuestaria</Annotation>
+    <Annotation name="source_name_en">Budget Transparency</Annotation>
+    <Annotation name="source_link">https://www.transparenciapresupuestaria.gob.mx/es/PTP/Obra_Publica_Abierta</Annotation>
+
+    <Table name="opa_budget" primary_key="id_investment_area" />
+
+    <Dimension name="Budget Cycle" foreign_key="budget_cycle">
+        <Hierarchy name="Budget Cycle">
+            <Level name="Budget Cycle" key_column="budget_cycle" />
+        </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Fiscal Resources Start Date" foreign_key="fiscal_resources_start_date" type="time">
+        <Hierarchy name="Fiscal Resources Start Date" primary_key="date_id">
+        <Table name="dim_shared_date_month_day" />
+        <Level name="Start Year" key_column="year" />
+        <Level name="Start Quarter" key_column="quarter_id" name_column="quarter">
+            <Property name="Start Quarter ES" column="quarter" caption_set="es" />
+        </Level>
+        <Level name="Start Month" key_column="month_id" name_column="month">
+            <Property name="Start Month ES" column="month" caption_set="es" />
+        </Level>
+        <Level name="Start Date" key_column="date_id" name_column="date">
+          <Property name="Start Date ES" column="date" caption_set="es" />
+        </Level>
+        </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Fiscal Resources End Date" foreign_key="fiscal_resources_end_date" type="time">
+        <Hierarchy name="Fiscal Resources End Date" primary_key="date_id">
+        <Table name="dim_shared_date_month_day" />
+        <Level name="End Year" key_column="year" />
+        <Level name="End Quarter" key_column="quarter_id" name_column="quarter">
+            <Property name="End Quarter ES" column="quarter" caption_set="es" />
+        </Level>
+        <Level name="End Month" key_column="month_id" name_column="month">
+            <Property name="End Month ES" column="month" caption_set="es" />
+        </Level>
+        <Level name="End Date" key_column="date_id" name_column="date">
+          <Property name="End Date ES" column="date" caption_set="es" />
+        </Level>
+        </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Investment Area" foreign_key="id_investment_area">
+      <Hierarchy name="Investment Area">
+        <Table name="dim_opa_investment_area" />
+        <Level name="Investment Area" key_column="id_investment_area" name_column="investment_area" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Responsible Unit" foreign_key="id_responsible_unit">
+      <Hierarchy name="Investment Area">
+        <Table name="dim_opa_ur" />
+        <Level name="Responsible Unit" key_column="id_responsible_unit" name_column="responsible_unit" key_type="text" />
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Investment Type" foreign_key="id_investment_type">
+      <Hierarchy name="Investment Type" primary_key="id">
+
+        <InlineTable alias="dim_inline_company_size">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Economic Infrastructure Investment Project</Value>
+            <Value column="name_es">Proyecto de Inversión de Infraestructura Económica</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Property Investment Project</Value>
+            <Value column="name_es">Proyecto de Inversión de Inmuebles</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Other Investment Projects</Value>
+            <Value column="name_es">Otros Proyectos de Inversión</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Social Infrastructure Investment Project</Value>
+            <Value column="name_es">Proyecto de Inversión de Infraestructura Social</Value>
+          </Row>
+          <Row>
+            <Value column="id">5</Value>
+            <Value column="name_en">Other Investment Programs</Value>
+            <Value column="name_es">Otros Programas de Inversión</Value>
+          </Row>
+          <Row>
+            <Value column="id">6</Value>
+            <Value column="name_en">Preinvestment Studies Program</Value>
+            <Value column="name_es">Programa de Estudios de Preinversión</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Acquisition Investment Program</Value>
+            <Value column="name_es">Programa de Inversión de Adquisiciones</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">Government Infrastructure Investment Project</Value>
+            <Value column="name_es">Proyecto de Inversión de Infraestructura Gubernamental</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Maintenance Investment Program</Value>
+            <Value column="name_es">Programa de Inversión de Mantenimiento</Value>
+          </Row>
+          <Row>
+            <Value column="id">10</Value>
+            <Value column="name_en">Civil Protection Acquisition Program</Value>
+            <Value column="name_es">Programa de Adquisición de Protección Civil</Value>
+          </Row>
+          <Row>
+            <Value column="id">11</Value>
+            <Value column="name_en">Civil Protection Maintenance Program</Value>
+            <Value column="name_es">Programa de Mantenimiento de Protección Civil</Value>
+          </Row>
+          <Row>
+            <Value column="id">12</Value>
+            <Value column="name_en">Environmental Program</Value>
+            <Value column="name_es">Programa Ambiental</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Investment Type" key_column="id" name_column="name_en">
+          <Property name="Investment Type ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Status Operation" foreign_key="status_operation">
+      <Hierarchy name="Status Operation" primary_key="id">
+
+        <InlineTable alias="dim_inline_company_size">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Valid</Value>
+            <Value column="name_es">Vigente</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Fiscal Calendar Concluded, Operation Concluded</Value>
+            <Value column="name_es">Calendario Fiscal Concluido, Operación Concluida</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">In Process of Modification</Value>
+            <Value column="name_es">En Proceso de Modificación</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Status Operation" key_column="id" name_column="name_en">
+          <Property name="Status Operation ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Approved Amount" column="amount_approved" aggregator="sum" />
+    <Measure name="Modified Amount" column="modified_amount" aggregator="sum" />
+    <Measure name="Exercised Amount" column="amount_exercised" aggregator="sum" />
+    <Measure name="Physical Advance" column="physical_advance" aggregator="avg" />
+    <Measure name="Total Ivestment Amount" column="amount_total_inversion" aggregator="sum" />
+
+    </Cube>
+</Schema>
