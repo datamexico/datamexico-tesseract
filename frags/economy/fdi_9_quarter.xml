@@ -1,0 +1,27 @@
+<Schema name="datamexico" default_locale="en">	
+  <Cube name="fdi_9_quarter">	
+
+    <Annotation name="topic">Economy</Annotation>	
+    <Annotation name="subtopic">Foreign Direct Investment</Annotation>	
+    <Annotation name="source_name">Secretaría de Economía</Annotation>	
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>	
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>	
+
+    <Table name="fdi_9_quarter" primary_key="quarter_id" />	
+
+    <DimensionUsage foreign_key="quarter_id" source="Date Quarter" name="Date Quarter" />	
+
+    <Measure name="Investment" column="value_c" aggregator="sum">	
+
+        <Annotation name="details">Value</Annotation>	
+
+    </Measure>	
+
+    <Measure name="Count" column="count" aggregator="sum">	
+
+        <Annotation name="details">Count</Annotation>	
+
+    </Measure>	
+
+  </Cube>	
+</Schema>
