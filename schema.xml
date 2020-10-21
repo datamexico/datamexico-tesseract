@@ -193,7 +193,7 @@
   <SharedDimension name="FDI Industry 2 Digit">
     <Hierarchy name="Industry" primary_key="sector_id">
       <Table name="dim_shared_sector_fdi"/>
-      <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="nontext">
+      <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
         <Property name="Sector ES" column="sector_es" caption_set="es"/>
       </Level>
     </Hierarchy>
@@ -211,7 +211,7 @@
   <SharedDimension name="FDI Industry 3 Digit">
     <Hierarchy name="Industry" primary_key="subsector_id">
       <Table name="dim_shared_subsector_fdi"/>
-      <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="nontext">
+      <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
         <Property name="Sector ES" column="sector_es" caption_set="es"/>
       </Level>
       <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="nontext">
@@ -232,7 +232,7 @@
   <SharedDimension name="FDI Industry 4 Digit">
     <Hierarchy name="Industry" primary_key="industry_group_id">
       <Table name="dim_shared_industry_group_fdi"/>
-      <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="nontext">
+      <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
         <Property name="Sector ES" column="sector_es" caption_set="es"/>
       </Level>
       <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="nontext">
@@ -3974,7 +3974,7 @@
     <Dimension name="Industry 4 Digit" foreign_key="area_id">
       <Hierarchy name="Industry" primary_key="industry_group_id">
         <Table name="dim_shared_industry_fdi_legacy"/>
-        <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="nontext">
+        <Level name="Sector" key_column="sector_id" name_column="sector_en" key_type="text">
           <Property name="Sector ES" column="sector_es" caption_set="es"/>
         </Level>
         <Level name="Subsector" key_column="subsector_id" name_column="subsector_en" key_type="nontext">
