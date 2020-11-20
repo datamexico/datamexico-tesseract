@@ -4718,11 +4718,6 @@
         <Annotation name="details">Trade Value</Annotation>
       
     </Measure>
-    <Measure name="Number of Firms" column="firms" aggregator="sum">
-      
-        <Annotation name="details">Number of Firms</Annotation>
-      
-    </Measure>
 
   </Cube>
 <Cube name="imss">
