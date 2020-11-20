@@ -1,5 +1,5 @@
 <Schema name="datamexico" default_locale="en">
-  <Cube name="foreign_trade_unanonymized_mun">
+  <Cube name="economy_foreign_trade_unanonymized_mun">
     
     <Annotation name="topic">Economy</Annotation>
     <Annotation name="subtopic">Foreign Trade</Annotation>
@@ -7,7 +7,7 @@
     <Annotation name="source_name_en">Secretary of Economy</Annotation>
     <Annotation name="source_link">https://www.gob.mx/se</Annotation>
     
-    <Table name="foreign_trade_unanonymized_mun" primary_key="mun_id" />
+    <Table name="economy_foreign_trade_unanonymized_mun" primary_key="mun_id" />
 
     <Dimension name="Flow" foreign_key="flow_id">
       <Hierarchy name="Flow" primary_key="id">
