@@ -1,4 +1,4 @@
-<Schema name="datamexico" default_locale="en">
+<Schema name="datamexico" default_locale="en" min_auth_level="1">
   <Cube name="anuies_enrollment">
     
       <Annotation name="topic">Education</Annotation>
