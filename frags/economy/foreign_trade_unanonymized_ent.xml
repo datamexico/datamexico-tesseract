@@ -40,14 +40,14 @@
 
     <Dimension name="Level" foreign_key="level">
       <Hierarchy name="Level" primary_key="level">
-        <Table name="foreign_trade_unanonymized_ent" />
+        <Table name="economy_foreign_trade_unanonymized_ent" />
         <Level name="Level" key_column="level" key_type="nontext" />
       </Hierarchy>
     </Dimension>
 
     <Dimension name="Product Level" foreign_key="product_level">
       <Hierarchy name="Product Level" primary_key="product_level">
-        <Table name="foreign_trade_unanonymized_ent" />
+        <Table name="economy_foreign_trade_unanonymized_ent" />
         <Level name="Product Level" key_column="product_level" key_type="nontext" />
       </Hierarchy>
     </Dimension>
