@@ -1,5 +1,5 @@
 <Schema name="datamexico" default_locale="en">
-  <Cube name="economy_foreign_trade_unanonymized_mun" min_auth_level=1>
+  <Cube name="economy_foreign_trade_unanonymized_mun" min_auth_level="1">
     
     <Annotation name="topic">Economy</Annotation>
     <Annotation name="subtopic">Foreign Trade</Annotation>
