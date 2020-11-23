@@ -697,7 +697,7 @@
       </Hierarchy>
     </SharedDimension>
 
-<Cube name="anuies_enrollment" min_auth_level="1">
+<Cube name="anuies_enrollment">
     
       <Annotation name="topic">Education</Annotation>
       <Annotation name="subtopic">Enrollment</Annotation>
