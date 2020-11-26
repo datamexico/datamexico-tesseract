@@ -4,11 +4,11 @@
 <Schema name="datamexico" default_locale="en">
   <Cube name="financing_census">
     
-      <Annotation name="topic">Economy</Annotation>
-      <Annotation name="subtopic">Financing</Annotation>
-      <Annotation name="source_name"></Annotation>
-      <Annotation name="source_name_en"></Annotation>
-      <Annotation name="source_link"></Annotation>
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Financing</Annotation>
+    <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
+    <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/programas/ce/2019/#Tabulados</Annotation>
     
     <Table name="financing_census" primary_key="quarter_id" />
 
