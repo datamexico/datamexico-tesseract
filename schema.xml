@@ -12320,6 +12320,127 @@
     </Measure>
 
   </Cube>
+<Cube name="financing_census">
+    
+      <Annotation name="topic">Economy</Annotation>
+      <Annotation name="subtopic">Financing</Annotation>
+      <Annotation name="source_name"></Annotation>
+      <Annotation name="source_name_en"></Annotation>
+      <Annotation name="source_link"></Annotation>
+    
+    <Table name="financing_census" primary_key="quarter_id" />
+
+    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="subsector_id" source="FDI Industry 3 Digit Lite" name="FDI Industry 3 Digit" />
+
+    <Dimension name="Funding Source" foreign_key="funding_source">
+      <Hierarchy name="Funding Source" primary_key="funding_source_id">
+        <Table name="dim_financing_source" />
+        <Level name="Funding Source" key_column="funding_source_id" name_column="funding_source_en">
+          <Property name="Funding Source ES" column="funding_source_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Uses of Financing" foreign_key="uses_of_financing">
+      <Hierarchy name="Uses of Financing" primary_key="uses_financing_id">
+        <Table name="dim_financing_uses" />
+        <Level name="Uses of Financing" key_column="uses_financing_id" name_column="uses_financing_en">
+          <Property name="Uses of Financing ES" column="uses_financing_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Age" foreign_key="age_id">
+      <Hierarchy name="Age">
+        <InlineTable alias="dim_inline_age">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Up to 2 years</Value>
+            <Value column="name_es">Hasta  2 años</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">From 3 to 5 years</Value>
+            <Value column="name_es">De 3 a 5 años</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">From 6 to 10 years</Value>
+            <Value column="name_es">De 6 a 10 años</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">More than 10 years</Value>
+            <Value column="name_es">Más de 10 años</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Age" key_column="id" name_column="name_en">
+          <Property name="Age ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Size" foreign_key="size_id">
+      <Hierarchy name="Size">
+        <InlineTable alias="dim_inline_size">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name">0 - 10</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name">11 - 50</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name">51 - 250</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name">251+</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Size" key_column="id" name_column="name">
+          <Property name="Size ES" column="name" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Filter Source Financing" foreign_key="filter_source_financing">
+        <Hierarchy name="Filter Source Financing">
+            <Level name="Filter Source Financing" key_column="filter_source_financing" />
+        </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Dataset Size" foreign_key="dataset_size">
+        <Hierarchy name="Dataset Size">
+            <Level name="Dataset Size" key_column="dataset_size" />
+        </Hierarchy>
+    </Dimension>
+
+    <Measure name="Economic Units" column="total_ue" aggregator="sum" >
+        <Annotation name="details">Total Economic Units</Annotation>
+    </Measure>
+
+    <Measure name="Economic Units with Financing" column="ue_with_financing" aggregator="sum" >
+        <Annotation name="details">Total Economic Units with Financing</Annotation>
+    </Measure>
+
+    <Measure name="Economic Units by uses of Financing" column="ue_by_uses_of_financing" aggregator="sum" >
+        <Annotation name="details">Total Economic Units by uses of Financing</Annotation>
+    </Measure>
+
+    <Measure name="Financed Economic Units" column="financed_ue" aggregator="sum" >
+        <Annotation name="details">Total Economic Units by uses of Financing</Annotation>
+    </Measure>
+
+  </Cube>
 <Cube name="inegi_gdp">
     
       <Annotation name="topic">Economy</Annotation>
