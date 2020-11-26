@@ -14,6 +14,7 @@
 
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
     <DimensionUsage foreign_key="subsector_id" source="FDI Industry 3 Digit Lite" name="FDI Industry 3 Digit" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
     <Dimension name="Funding Source" foreign_key="funding_source">
       <Hierarchy name="Funding Source" primary_key="funding_source_id">
