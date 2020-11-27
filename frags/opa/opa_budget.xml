@@ -55,7 +55,7 @@
     </Dimension>
 
     <Dimension name="Responsible Unit" foreign_key="id_responsible_unit">
-      <Hierarchy name="Investment Area">
+      <Hierarchy name="Responsible Unit">
         <Table name="dim_opa_ur" />
         <Level name="Responsible Unit" key_column="id_responsible_unit" name_column="responsible_unit" key_type="text" />
       </Hierarchy>
