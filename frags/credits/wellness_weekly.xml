@@ -152,7 +152,7 @@
     </Dimension>
 
     <Dimension name="Approved Week" foreign_key="approved_week">
-      <Hierarchy name="Approved Week" primary_key="id">
+      <Hierarchy name="Approved Week" primary_key="approved_week">
         <Table name="credits_weeks" />
         <Level name="Approved Week" key_column="approved_week" name_column="approved_week_en">
           <Property name="Approved Week ES" column="approved_week_es" caption_set="es" />
