@@ -10,7 +10,15 @@
     <Table name="wellness_credits" primary_key="ent_id" />
 
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography State" />
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality Lite" name="Geography Municipality" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
+
+    <Dimension name="Level" foreign_key="level">
+      <Hierarchy name="Level" primary_key="level">
+        <Table name="wellness_weekly_credits" />
+        <Level name="Level" key_column="level" key_type="text" />
+      </Hierarchy>
+    </Dimension>
 
     <Dimension name="Person Type" foreign_key="person_type">
       <Hierarchy name="Person Type" primary_key="id">
