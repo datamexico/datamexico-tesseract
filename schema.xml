@@ -4613,14 +4613,14 @@
     <Dimension name="Economic Sector" foreign_key="level_4_id">
       <Hierarchy name="Economic Sector" primary_key="level_4_id">
         <Table name="imss_economic_sector" />
-        <Level name="Economic Sector 1 digit" key_column="level_1_id" name_column="level_1_name" key_type="nontext" >
-          <Property name="Economic Sector 1 digit ES" column="level_1_name" caption_set="es"/>
+        <Level name="Economic Sector 1 digit" key_column="level_1_id" name_column="level_1_name_en" key_type="nontext" >
+          <Property name="Economic Sector 1 digit ES" column="level_1_name_es" caption_set="es"/>
         </Level>
-        <Level name="Economic Sector 2 digit" key_column="level_2_id" name_column="level_2_name" key_type="nontext" >
-          <Property name="Economic Sector 2 digit ES" column="level_2_name" caption_set="es"/>
+        <Level name="Economic Sector 2 digit" key_column="level_2_id" name_column="level_2_name_en" key_type="nontext" >
+          <Property name="Economic Sector 2 digit ES" column="level_2_name_es" caption_set="es"/>
         </Level>
-        <Level name="Economic Sector 4 digit" key_column="level_4_id" name_column="level_4_name" key_type="nontext" >
-          <Property name="Economic Sector 4 digit ES" column="level_4_name" caption_set="es"/>
+        <Level name="Economic Sector 4 digit" key_column="level_4_id" name_column="level_4_name_en" key_type="nontext" >
+          <Property name="Economic Sector 4 digit ES" column="level_4_name_es" caption_set="es"/>
         </Level>
       </Hierarchy>
     </Dimension>
