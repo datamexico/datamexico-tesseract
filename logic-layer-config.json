@@ -227,8 +227,8 @@
                 ]
             },
             {
-                "name": "wellness_weekly_credits",
-                "alternatives": ["Wellness Weekly Credits"],
+                "name": "wellness_credits",
+                "alternatives": ["Wellness Credits"],
                 "levels": [
                     {
                         "current_name": "Geography State.Geography.Nation",
