@@ -11,29 +11,30 @@
 
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage foreign_key="sector_id" source="Industry 2 Digit" name="Economic Sector" />
 
     <Measure name="Economic Unit" column="ue" aggregator="sum" >
-      
+
         <Annotation name="details">Number of units recording data</Annotation>
-      
+
     </Measure>
     <Measure name="Total Gross Production" column="a111a" aggregator="sum">
-      
+
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      
+
     </Measure>
     <Measure name="Intermediate Consumption" column="a121a" aggregator="sum">
-      
+
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      
+
     </Measure>
     <Measure name="Census Gross Value Added" column="a131a" aggregator="sum">
-      
+
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      
+
     </Measure>
     <Measure name="Total Investment" column="a211a" aggregator="sum">
-      
+
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
       
     </Measure>

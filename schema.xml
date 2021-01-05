@@ -7069,6 +7069,7 @@
 
     <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage foreign_key="sector_id" source="Industry 2 Digit" name="Economic Sector" />
 
     <Measure name="Economic Unit" column="ue" aggregator="sum" >
       
