@@ -9864,42 +9864,6 @@
       <Annotation name="details">Value in mexican pesos</Annotation>
     </Measure>
 
-    <Measure name="Workforce Monthly Data" column="population_monthly" aggregator="sum">
-      <Annotation name="details">Number of people</Annotation>
-    </Measure>
-    <Measure name="Worked Hours Week Monthly Data" column="actual_job_hrs_worked_lastweek"  >
-      <aggregator>
-        <weighted_avg>
-          <weight_column>population_monthly</weight_column>
-        </weighted_avg>
-      </aggregator>
-      <Annotation name="details">Value in hours</Annotation>
-    </Measure>
-    <Measure name="Worked Days Week Monthly Data" column="actual_job_days_worked_lastweek"  >
-      <aggregator>
-        <weighted_avg>
-          <weight_column>population_monthly</weight_column>
-        </weighted_avg>
-      </aggregator>
-      <Annotation name="details">Value in number of days</Annotation>
-    </Measure>
-    <Measure name="Wage Monthly Data" column="actual_amount_pesos"  >
-      <aggregator>
-        <weighted_avg>
-          <weight_column>population_monthly</weight_column>
-        </weighted_avg>
-      </aggregator>
-      <Annotation name="details">Value in mexican pesos</Annotation>
-    </Measure>
-    <Measure name="Monthly Wage Monthly Data" column="mensual_wage"  >
-      <aggregator>
-        <weighted_avg>
-          <weight_column>population_monthly</weight_column>
-        </weighted_avg>
-      </aggregator>
-      <Annotation name="details">Value in mexican pesos</Annotation>
-    </Measure>
-
   </Cube>
 <Cube name="inegi_enoe">
     
@@ -10349,6 +10313,44 @@
     </Measure>
 
     <Measure name="Workforce MOE" column="population"  >
+      <aggregator>
+        <moe>
+          <critical_value>1.645</critical_value>
+        </moe>
+      </aggregator>
+    </Measure>
+
+    <Measure name="Workforce Monthly Data" column="population_monthly" aggregator="sum">
+      <Annotation name="details">Number of people</Annotation>
+    </Measure>
+
+    <Measure name="Worked Hours Week Monthly Data" column="actual_job_hrs_worked_lastweek"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>workforce_is_wage_monthly</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Value in hours</Annotation>
+    </Measure>
+    <Measure name="Worked Days Week Monthly Data" column="actual_job_days_worked_lastweek"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>workforce_is_wage_monthly</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Value in number of days</Annotation>
+    </Measure>
+
+    <Measure name="Monthly Wage Monthly Data" column="mensual_wage"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>workforce_is_wage_monthly</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Value in mexican pesos</Annotation>
+    </Measure>
+
+    <Measure name="Workforce MOE Monthly Data" column="population_monthly"  >
       <aggregator>
         <moe>
           <critical_value>1.645</critical_value>
