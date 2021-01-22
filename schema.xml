@@ -7072,27 +7072,27 @@
     <DimensionUsage foreign_key="sector_id" source="Industry 2 Digit" name="Economic Sector" />
 
     <Measure name="Economic Unit" column="ue" aggregator="sum" >
-      
+
         <Annotation name="details">Number of units recording data</Annotation>
-      
+
     </Measure>
     <Measure name="Total Gross Production" column="a111a" aggregator="sum">
-      
+
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      
+
     </Measure>
     <Measure name="Intermediate Consumption" column="a121a" aggregator="sum">
-      
+
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      
+
     </Measure>
     <Measure name="Census Gross Value Added" column="a131a" aggregator="sum">
-      
+
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
-      
+
     </Measure>
     <Measure name="Total Investment" column="a211a" aggregator="sum">
-      
+
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
       
     </Measure>
@@ -9859,6 +9859,42 @@
       <aggregator>
         <weighted_avg>
           <weight_column>population</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Value in mexican pesos</Annotation>
+    </Measure>
+
+    <Measure name="Workforce Monthly Data" column="population_monthly" aggregator="sum">
+      <Annotation name="details">Number of people</Annotation>
+    </Measure>
+    <Measure name="Worked Hours Week Monthly Data" column="actual_job_hrs_worked_lastweek"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>population_monthly</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Value in hours</Annotation>
+    </Measure>
+    <Measure name="Worked Days Week Monthly Data" column="actual_job_days_worked_lastweek"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>population_monthly</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Value in number of days</Annotation>
+    </Measure>
+    <Measure name="Wage Monthly Data" column="actual_amount_pesos"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>population_monthly</weight_column>
+        </weighted_avg>
+      </aggregator>
+      <Annotation name="details">Value in mexican pesos</Annotation>
+    </Measure>
+    <Measure name="Monthly Wage Monthly Data" column="mensual_wage"  >
+      <aggregator>
+        <weighted_avg>
+          <weight_column>population_monthly</weight_column>
         </weighted_avg>
       </aggregator>
       <Annotation name="details">Value in mexican pesos</Annotation>
