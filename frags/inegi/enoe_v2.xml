@@ -401,7 +401,7 @@
           <Property name="Municipality Slug" column="mun_slug"/>
           <Property name="Municipality ES" column="mun_name" caption_set="es"/>
         </Level>
-        <Level name="Survey Code" key_column="code" name_column="code" key_type="nontext">
+        <Level name="Survey Code" key_column="code" name_column="code" key_type="text">
           <Property name="Survey Code" column="code" caption_set="es"/>
         </Level>
       </Hierarchy>
