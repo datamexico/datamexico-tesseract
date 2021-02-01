@@ -838,7 +838,7 @@
     <Dimension name="Nation" foreign_key="nation_id">
       <Hierarchy name="Nation" primary_key="nation_id">
         <Table name="dim_geo_covid_nat" />
-        <Level name="Nation" key_column="nation_id" name_column="name_es" key_type="text">
+        <Level name="Nation" key_column="nation_id" name_column="name_en" key_type="text">
           <Property name="Nation ES" column="name_es" caption_set="es"/>
         </Level>
       </Hierarchy>
@@ -2380,7 +2380,7 @@
     <Dimension name="Nation" foreign_key="nation_id">
       <Hierarchy name="Nation" primary_key="nation_id">
         <Table name="dim_geo_covid_nat" />
-        <Level name="Nation" key_column="nation_id" name_column="name_es" key_type="text">
+        <Level name="Nation" key_column="nation_id" name_column="name_en" key_type="text">
           <Property name="Nation ES" column="name_es" caption_set="es"/>
         </Level>
       </Hierarchy>
@@ -6942,6 +6942,60 @@
         <Annotation name="details">Value in millions of mexican pesos</Annotation>
       
     </Measure>
+  </Cube>
+<Cube name="indicators_economic_census">
+    
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Employment</Annotation>
+    <Annotation name="source_name">Censos Económicos</Annotation>
+    <Annotation name="source_name_en">Economic Censuses</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/programas/ce/2019/#Tabulados</Annotation>
+    
+    <Table name="indicators_economic_census" primary_key="indicator" />
+
+    <DimensionUsage foreign_key="sector_id" source="FDI Industry 2 Digit" name="FDI Industry 2 Digit" />
+    <DimensionUsage foreign_key="subsector_id" source="FDI Industry 3 Digit Lite" name="FDI Industry 3 Digit" />
+    <DimensionUsage foreign_key="ent_id" source="Geography State Lite" name="Geography" />
+
+    <Dimension name="Nation" foreign_key="nation_id">
+      <Hierarchy name="Nation" primary_key="nation_id">
+        <Table name="dim_geo_covid_nat" />
+        <Level name="Nation" key_column="nation_id" name_column="name_en" key_type="text">
+          <Property name="Nation ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Category" foreign_key="category">
+      <Hierarchy name="Category" primary_key="category_id">
+        <Table name="dim_categories" />
+        <Level name="Category" key_column="category_id" name_column="category_name_en" key_type="nontext">
+          <Property name="Category ES" column="category_name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Indicator" foreign_key="indicator">
+      <Hierarchy name="Indicator" primary_key="indicator_id">
+        <Table name="dim_indicators" />
+        <Level name="Indicator" key_column="indicator_id" name_column="indicator_name_en" key_type="nontext">
+          <Property name="Indicator ES" column="indicator_name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Value" column="value" aggregator="sum">
+      
+        <Annotation name="details">Value</Annotation>
+      
+    </Measure>
+
+    <Measure name="Percentage" column="percentage" aggregator="avg">
+      
+        <Annotation name="details">Percentage</Annotation>
+      
+    </Measure>
+
   </Cube>
 <Cube name="inegi_economic_census_mun_ue">
     
