@@ -7,7 +7,7 @@
     <Annotation name="source_name_en">Economic Censuses</Annotation>
     <Annotation name="source_link">https://www.inegi.org.mx/programas/ce/2019/#Tabulados</Annotation>
     
-    <Table name="indicators_economic_census" primary_key="indicator" />
+    <Table name="indicators_economic_census_2019" primary_key="indicator" />
 
     <DimensionUsage foreign_key="sector_id" source="FDI Industry 2 Digit" name="FDI Industry 2 Digit" />
     <DimensionUsage foreign_key="subsector_id" source="FDI Industry 3 Digit Lite" name="FDI Industry 3 Digit" />
