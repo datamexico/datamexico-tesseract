@@ -454,7 +454,7 @@
       </aggregator>
     </Measure>
 
-    <Measure name="Workforce Monthly Data" column="population_monthly" aggregator="sum">
+    <!-- <Measure name="Workforce Monthly Data" column="population_monthly" aggregator="sum">
       <Annotation name="details">Number of people</Annotation>
     </Measure>
 
@@ -490,7 +490,7 @@
           <critical_value>1.645</critical_value>
         </moe>
       </aggregator>
-    </Measure>
+    </Measure> -->
 
   </Cube>
 </Schema>
