@@ -6961,33 +6961,33 @@
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
     <Measure name="Economic Unit" column="UE" aggregator="sum" />
-    <Measure name="Economic Unit" column="total_personal_ocupado" aggregator="sum" />
-    <Measure name="Economic Unit" column="total_personal_ocupado_dependiente" aggregator="sum" />
-    <Measure name="Economic Unit" column="personal_ocupado_remunerado" aggregator="sum" />
-    <Measure name="Economic Unit" column="propietarios_familiares_otros_no_remunerados" aggregator="sum" />
-    <Measure name="Economic Unit" column="no_dependiente_razon_social" aggregator="sum" />
-    <Measure name="Economic Unit" column="remuneraciones" aggregator="sum" />
-    <Measure name="Economic Unit" column="gasto_consumo_bienes_servicios" aggregator="sum" />
-    <Measure name="Economic Unit" column="ingreso_suministro_bienes_servicios" aggregator="sum" />
-    <Measure name="Economic Unit" column="produccion_total_bruta" aggregator="sum" />
-    <Measure name="Economic Unit" column="consumo_intermedio" aggregator="sum" />
-    <Measure name="Economic Unit" column="valor_agregado_censal_bruto" aggregator="sum" />
-    <Measure name="Economic Unit" column="formacion_bruta_capital_fijo" aggregator="sum" />
-    <Measure name="Economic Unit" column="variacion_total_existencias" aggregator="sum" />
-    <Measure name="Economic Unit" column="activos_fijos" aggregator="sum" />
-    <Measure name="Economic Unit" column="depreciacion_activos_fijos" aggregator="sum" />
-    <Measure name="Economic Unit" column="participacion_remuneraciones_gastos_consumo_bienes_servicios" aggregator="sum" />
-    <Measure name="Economic Unit" column="valor_agregado_censal_bruto_produccion_bruta_total" aggregator="sum" />
-    <Measure name="Economic Unit" column="tasa_rentabilidad_promedio" aggregator="sum" />
-    <Measure name="Economic Unit" column="activos_fijos_produccion_bruta_total" aggregator="sum" />
-    <Measure name="Economic Unit" column="participacion_depreciacion_valor_Activos_fijos" aggregator="sum" />
-    <Measure name="Economic Unit" column="margen_bruto_operacion" aggregator="sum" />
-    <Measure name="Economic Unit" column="participacion_consumo_intermedio_produccion_bruta_total" aggregator="sum" />
-    <Measure name="Economic Unit" column="valor_agregado_total_activos_fijos" aggregator="sum" />
-    <Measure name="Economic Unit" column="valor_agregado_promedio_persona_ocupada" aggregator="sum" />
-    <Measure name="Economic Unit" column="produccion_bruta_total_personal_ocupado_total" aggregator="sum" />
-    <Measure name="Economic Unit" column="remuneracion_media_persona_remunerada" aggregator="sum" />
-    <Measure name="Economic Unit" column="valor_activos_fijos_persona_ocupada" aggregator="sum" />
+    <Measure name="Total Staff Occupied" column="total_personal_ocupado" aggregator="sum" />
+    <Measure name="Total Staff Occupied Dependent" column="total_personal_ocupado_dependiente" aggregator="sum" />
+    <Measure name="Paid Staff Occupied" column="personal_ocupado_remunerado" aggregator="sum" />
+    <Measure name="Unremunerated Family Owners and Others" column="propietarios_familiares_otros_no_remunerados" aggregator="sum" />
+    <Measure name="Not Dependent Business" column="no_dependiente_razon_social" aggregator="sum" />
+    <Measure name="Remunerations" column="remuneraciones" aggregator="sum" />
+    <Measure name="Expenditure Consumption Goods and Services" column="gasto_consumo_bienes_servicios" aggregator="sum" />
+    <Measure name="Income Supply Good and Services" column="ingreso_suministro_bienes_servicios" aggregator="sum" />
+    <Measure name="Total Gross Production" column="produccion_total_bruta" aggregator="sum" />
+    <Measure name="Intermediate Consumption" column="consumo_intermedio" aggregator="sum" />
+    <Measure name="Gross Census Value Added" column="valor_agregado_censal_bruto" aggregator="sum" />
+    <Measure name="Gross Gixed Capital Formation" column="formacion_bruta_capital_fijo" aggregator="sum" />
+    <Measure name="Total Stock Variation" column="variacion_total_existencias" aggregator="sum" />
+    <Measure name="Fixed Assets" column="activos_fijos" aggregator="sum" />
+    <Measure name="Fixed Assets Depreciation" column="depreciacion_activos_fijos" aggregator="sum" />
+    <Measure name="Participation Remunerations Consumptions Goods and Services" column="participacion_remuneraciones_gastos_consumo_bienes_servicios" aggregator="sum" />
+    <Measure name="Gross Census Value Added Total Gross Production" column="valor_agregado_censal_bruto_produccion_bruta_total" aggregator="sum" />
+    <Measure name="Average Rate of Return" column="tasa_rentabilidad_promedio" aggregator="sum" />
+    <Measure name="Total Gross Production Fixed Assets" column="activos_fijos_produccion_bruta_total" aggregator="sum" />
+    <Measure name="Participation Depreciation Value Fixed Assets" column="participacion_depreciacion_valor_Activos_fijos" aggregator="sum" />
+    <Measure name="Gross Operating Margin" column="margen_bruto_operacion" aggregator="sum" />
+    <Measure name="Total Gross Production Share of Intermediate Consumption " column="participacion_consumo_intermedio_produccion_bruta_total" aggregator="sum" />
+    <Measure name="Total Added Value Fixed Assets" column="valor_agregado_total_activos_fijos" aggregator="sum" />
+    <Measure name="Average Added Value Employed Person" column="valor_agregado_promedio_persona_ocupada" aggregator="sum" />
+    <Measure name="Total Gross Production Total Employed Personnel" column="produccion_bruta_total_personal_ocupado_total" aggregator="sum" />
+    <Measure name="Average Remuneration Paid Person" column="remuneracion_media_persona_remunerada" aggregator="sum" />
+    <Measure name="Value of Fixed Assets Employed Person" column="valor_activos_fijos_persona_ocupada" aggregator="sum" />
 
   </Cube>
 <Cube name="indicators_economic_census">
