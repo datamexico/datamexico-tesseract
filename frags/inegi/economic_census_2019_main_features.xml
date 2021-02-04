@@ -9,8 +9,8 @@
 
     <Table name="inegi_economic_census_main_features" primary_key="ent_id" />
 
-    <DimensionUsage foreign_key="ent_id" source="Geography State Lite" name="Geography" />
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality Lite" name="Geography" />
+    <DimensionUsage foreign_key="ent_id" source="Geography State Lite" name="Geography State" />
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality Lite" name="Geography Municipality" />
     <DimensionUsage foreign_key="sector_id" source="FDI Industry 2 Digit" name="FDI Industry 2 Digit" />
     <DimensionUsage foreign_key="subsector_id" source="FDI Industry 3 Digit Lite" name="FDI Industry 3 Digit" />
     <DimensionUsage foreign_key="rama_id" source="FDI Industry 4 Digit Lite" name="FDI Industry 4 Digit" />
