@@ -6960,6 +6960,39 @@
     <DimensionUsage foreign_key="rama_id" source="FDI Industry 4 Digit Lite" name="FDI Industry 4 Digit" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
+    <Dimension name="Level" foreign_key="level">
+      <Hierarchy name="Another Option" primary_key="id">
+        <InlineTable alias="dim_inline_inst_6">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">State-Sector</Value>
+            <Value column="name_es">Entidad-Sector</Value>
+          </Row>
+            <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">State-Subsector</Value>
+            <Value column="name_es">Entidad-Subsector</Value>
+          </Row>
+            <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">State-Industry</Value>
+            <Value column="name_es">Entidad-Rama</Value>
+          </Row>
+            <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Municipality-Sector</Value>
+            <Value column="name_es">Municipio-Sector</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Level" key_column="id" name_column="name_en">
+          <Property name="Level ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
     <Measure name="Economic Unit" column="UE" aggregator="sum" />
     <Measure name="Total Staff Occupied" column="total_personal_ocupado" aggregator="sum" />
     <Measure name="Total Staff Occupied Dependent" column="total_personal_ocupado_dependiente" aggregator="sum" />
