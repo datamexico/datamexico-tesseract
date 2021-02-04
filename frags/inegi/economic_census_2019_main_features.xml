@@ -17,8 +17,8 @@
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
     <Dimension name="Level" foreign_key="level">
-      <Hierarchy name="Another Option" primary_key="id">
-        <InlineTable alias="dim_inline_inst_6">
+      <Hierarchy name="Level" primary_key="id">
+        <InlineTable alias="dim_inline_level">
           <ColumnDef name="id" key_type="nontext" />
           <ColumnDef name="name_en" key_type="text" />
           <ColumnDef name="name_es" key_type="text" />
