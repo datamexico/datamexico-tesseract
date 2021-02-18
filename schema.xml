@@ -887,6 +887,63 @@
     </Measure>
 
   </Cube>
+<Cube name="complexity_eci_economic_census">
+    
+      <Annotation name="topic">Economy</Annotation>
+      <Annotation name="subtopic">Complexity</Annotation>
+      <Annotation name="source_name">DataMéxico</Annotation>
+      <Annotation name="source_name_en">DataMéxico</Annotation>
+      <Annotation name="source_link">https://www.datamexico.org/</Annotation>
+    
+    <Table name="complexity_eci_economic_census" primary_key="mun_id" />
+
+    <DimensionUsage foreign_key="ent_id" source="Geography State Lite" name="Geography State" />
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality Lite" name="Geography Municipality" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Dimension name="Level" foreign_key="level">
+      <Hierarchy name="Level" primary_key="level">
+        <Table name="complexity_eci_economic_census" />
+        <Level name="Level" key_column="level" key_type="text" />
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="ECI Ranking" foreign_key="eci_ranking">
+      <Hierarchy name="ECI Ranking">
+        <Level name="ECI Ranking" key_column="eci_ranking" />
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Latest" foreign_key="latest">
+      <Hierarchy name="Latest" primary_key="id">
+        <InlineTable alias="dim_inline_latest">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Latest" key_column="id" name_column="name_en">
+          <Property name="Latest ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="ECI" column="eci" aggregator="avg">
+      
+        <Annotation name="details">ECI</Annotation>
+      
+    </Measure>
+
+  </Cube>
 <Cube name="complexity_pci">
     
       <Annotation name="topic">Economy</Annotation>
