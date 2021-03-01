@@ -469,8 +469,8 @@
   </SharedDimension>
 
   <SharedDimension name="Career Fields">
-    <Hierarchy name="Career Fields" primary_key="code">
-      <Table name="dim_shared_careers_anuies" />
+    <Hierarchy name="Career Fields" primary_key="career_id">
+      <Table name="dim_anuies_careers" />
       <Level name="Area" key_column="area_id" name_column="area_en" key_type="nontext">
         <Property name="Area ES" column="area_es" caption_set="es"/>
       </Level>
@@ -480,15 +480,15 @@
       <Level name="Subfield" key_column="subfield_id" name_column="subfield_en" key_type="nontext">
         <Property name="Subfield ES" column="subfield_es" caption_set="es"/>
       </Level>
-      <Level name="Career" key_column="code" name_column="name_en" key_type="nontext">
-        <Property name="Career ES" column="name_es" caption_set="es"/>
+      <Level name="Career" key_column="career_id" name_column="career_name_en" key_type="nontext">
+        <Property name="Career ES" column="career_name_es" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
 
   <SharedDimension name="Campus">
     <Hierarchy name="Campus" primary_key="campus_id">
-      <Table name="dim_shared_work_centers"/>
+      <Table name="dim_anuies_institutions"/>
       <Level name="Institution" key_column="institution_id" name_column="institution_name" key_type="nontext">
         <Property name="Institution ES" column="institution_name" caption_set="es"/>
       </Level>
