@@ -383,9 +383,9 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Geography Code" type="geo" default_hierarchy="Geography" foreign_key="code">
-      <Hierarchy name="Geography" primary_key="code">
-        <Table name="dim_geo_inegi_enoe_v2" />
+    <Dimension name="Geography Code" type="geo" default_hierarchy="Geography" foreign_key="mun_id">
+      <Hierarchy name="Geography" primary_key="mun_id">
+        <Table name="dim_shared_geography_mun" />
         <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
           <Property name="Nation ES" column="nation_name" caption_set="es"/>
         </Level>
@@ -400,9 +400,6 @@
           <Property name="CVE Municipality" column="cve_mun"/>
           <Property name="Municipality Slug" column="mun_slug"/>
           <Property name="Municipality ES" column="mun_name" caption_set="es"/>
-        </Level>
-        <Level name="Survey Code" key_column="code" name_column="code" key_type="text">
-          <Property name="Survey Code" column="code" caption_set="es"/>
         </Level>
       </Hierarchy>
     </Dimension>
