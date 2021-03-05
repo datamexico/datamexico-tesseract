@@ -12220,7 +12220,7 @@
       <Annotation name="subtopic">GDP</Annotation>
       <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
       <Annotation name="source_name_en">National Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/app/indicadores/</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/temas/pib/default.html#Tabulados</Annotation>
     
     <Table name="inegi_gdp" primary_key="quarter_id" />
 
