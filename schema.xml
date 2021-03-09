@@ -502,7 +502,7 @@
     <Hierarchy name="Product" primary_key="hs6_id">
       <Table name="dim_shared_hs12_6digit" />
       <Level name="Chapter" key_column="chapter" name_column="chapter_es" key_type="nontext">
-        <Property name="Chapter EN" column="chapter_en" caption_set="es"/>
+        <Property name="Chapter EN" column="chapter_en" caption_set="en"/>
       </Level>
       <Level name="HS2" key_column="hs2_id" name_column="hs2_es_short" key_type="nontext">
         <Property name="HS2 EN" column="hs2_en_short" caption_set="es"/>
@@ -512,12 +512,12 @@
       <Level name="HS4" key_column="hs4_id" name_column="hs4_es_short" key_type="nontext">
         <Property name="Long HS4" column="hs4_en"/>
         <Property name="Long HS4 ES" column="hs4_es"/>
-        <Property name="HS4 EN" column="hs4_en_short" caption_set="es"/>
+        <Property name="HS4 EN" column="hs4_en_short" caption_set="en"/>
       </Level>
       <Level name="HS6" key_column="hs6_id" name_column="hs6_es_short" key_type="nontext">
         <Property name="Long HS6" column="hs6_en"/>
         <Property name="Long HS6 ES" column="hs6_es"/>
-        <Property name="HS6 EN" column="hs6_en_short" caption_set="es"/>
+        <Property name="HS6 EN" column="hs6_en_short" caption_set="en"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
