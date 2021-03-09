@@ -1,4 +1,4 @@
-<Schema name="datamexico">
+<Schema name="datamexico" default_locale="es">
 
   <SharedDimension name="Geography State" type="geo">
     <Hierarchy name="Geography">
