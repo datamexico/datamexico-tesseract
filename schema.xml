@@ -505,7 +505,7 @@
         <Property name="Chapter EN" column="chapter_en" caption_set="en"/>
       </Level>
       <Level name="HS2" key_column="hs2_id" name_column="hs2_es_short" key_type="nontext">
-        <Property name="HS2 EN" column="hs2_en_short" caption_set="es"/>
+        <Property name="HS2 EN" column="hs2_en_short" caption_set="en"/>
         <!--<Property name="Long HS2" column="hs2_en" caption_set="en"/>
         <Property name="Long HS2 ES" column="hs2_es" caption_set="es"/>-->
       </Level>
