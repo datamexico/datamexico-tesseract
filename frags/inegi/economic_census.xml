@@ -11,7 +11,28 @@
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
-    <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
+    <!-- <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" /> -->
+
+    <Dimension name="Industry 6 Digit" foreign_key="national_industry_id">
+        <Hierarchy name="Industry" primary_key="national_industry_id">
+        <Table name="dim_shared_industry_economic_census"/>
+        <Level name="Sector" key_column="sector_id" name_column="sector_es" key_type="text">
+            <Property name="Sector EN" column="sector_en" caption_set="en"/>
+        </Level>
+        <Level name="Subsector" key_column="subsector_id" name_column="subsector_es" key_type="text">
+            <Property name="Subsector EN" column="subsector_en" caption_set="en"/>
+        </Level>
+        <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_es" key_type="text">
+            <Property name="Industry Group EN" column="industry_group_en" caption_set="en"/>
+        </Level>
+        <Level name="NAICS Industry" key_column="naics_industry_id" name_column="naics_industry_es" key_type="text">
+            <Property name="NAICS Industry EN" column="naics_industry_en" caption_set="en"/>
+        </Level>
+        <Level name="National Industry" key_column="national_industry_id" name_column="national_industry_es" key_type="text">
+            <Property name="National Industry EN" column="national_industry_en" caption_set="en"/>
+        </Level>
+        </Hierarchy>
+    </Dimension>
 
     <Measure name="Economic Unit" column="ue" aggregator="sum" >
       

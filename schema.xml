@@ -501,23 +501,23 @@
   <SharedDimension name="Product">
     <Hierarchy name="Product" primary_key="hs6_id">
       <Table name="dim_shared_hs12_6digit" />
-      <Level name="Chapter" key_column="chapter" name_column="chapter_es" key_type="nontext">
-        <Property name="Chapter EN" column="chapter_en" caption_set="en"/>
+      <Level name="Chapter" key_column="chapter" name_column="chapter_en" key_type="nontext">
+        <Property name="Chapter ES" column="chapter_es" caption_set="es"/>
       </Level>
-      <Level name="HS2" key_column="hs2_id" name_column="hs2_es_short" key_type="nontext">
-        <Property name="HS2 EN" column="hs2_en_short" caption_set="en"/>
+      <Level name="HS2" key_column="hs2_id" name_column="hs2_en_short" key_type="nontext">
+        <Property name="HS2 ES" column="hs2_es_short" caption_set="es"/>
         <!--<Property name="Long HS2" column="hs2_en" caption_set="en"/>
         <Property name="Long HS2 ES" column="hs2_es" caption_set="es"/>-->
       </Level>
-      <Level name="HS4" key_column="hs4_id" name_column="hs4_es_short" key_type="nontext">
+      <Level name="HS4" key_column="hs4_id" name_column="hs4_en_short" key_type="nontext">
         <Property name="Long HS4" column="hs4_en"/>
         <Property name="Long HS4 ES" column="hs4_es"/>
-        <Property name="HS4 EN" column="hs4_en_short" caption_set="en"/>
+        <Property name="HS4 ES" column="hs4_es_short" caption_set="es"/>
       </Level>
-      <Level name="HS6" key_column="hs6_id" name_column="hs6_es_short" key_type="nontext">
+      <Level name="HS6" key_column="hs6_id" name_column="hs6_en_short" key_type="nontext">
         <Property name="Long HS6" column="hs6_en"/>
         <Property name="Long HS6 ES" column="hs6_es"/>
-        <Property name="HS6 EN" column="hs6_en_short" caption_set="en"/>
+        <Property name="HS6 ES" column="hs6_es_short" caption_set="es"/>
       </Level>
     </Hierarchy>
   </SharedDimension>
@@ -5501,7 +5501,28 @@
 
     <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
-    <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" />
+    <!-- <DimensionUsage source="Industry 6 Digit" name="Industry" foreign_key="national_industry_id" /> -->
+
+    <Dimension name="Industry 6 Digit" foreign_key="national_industry_id">
+        <Hierarchy name="Industry" primary_key="national_industry_id">
+        <Table name="dim_shared_industry_economic_census"/>
+        <Level name="Sector" key_column="sector_id" name_column="sector_es" key_type="text">
+            <Property name="Sector EN" column="sector_en" caption_set="en"/>
+        </Level>
+        <Level name="Subsector" key_column="subsector_id" name_column="subsector_es" key_type="text">
+            <Property name="Subsector EN" column="subsector_en" caption_set="en"/>
+        </Level>
+        <Level name="Industry Group" key_column="industry_group_id" name_column="industry_group_es" key_type="text">
+            <Property name="Industry Group EN" column="industry_group_en" caption_set="en"/>
+        </Level>
+        <Level name="NAICS Industry" key_column="naics_industry_id" name_column="naics_industry_es" key_type="text">
+            <Property name="NAICS Industry EN" column="naics_industry_en" caption_set="en"/>
+        </Level>
+        <Level name="National Industry" key_column="national_industry_id" name_column="national_industry_es" key_type="text">
+            <Property name="National Industry EN" column="national_industry_en" caption_set="en"/>
+        </Level>
+        </Hierarchy>
+    </Dimension>
 
     <Measure name="Economic Unit" column="ue" aggregator="sum" >
       
