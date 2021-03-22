@@ -13089,8 +13089,14 @@
       </Hierarchy>
     </Dimension>
 
+    <Dimension name="Year" foreign_key="year_decease">
+      <Hierarchy name="Year">
+        <Level name="Year" key_column="year_decease" type="time" />
+      </Hierarchy>
+    </Dimension>
+
     <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
-    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <!--<DimensionUsage foreign_key="year" source="Year" name="Year" /> -->
 
     <Measure name="Households" column="households" aggregator="sum">
       
