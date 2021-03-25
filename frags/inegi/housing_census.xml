@@ -545,7 +545,7 @@
 
     <Dimension name="Age" foreign_key="age">
       <Hierarchy name="Age" primary_key="id">
-        <Table name="dim_housing_group" />
+        <Table name="dim_housing_age_group" />
         <Level name="Group Age" key_column="group_id" name_column="group_name_en" key_type="nontext">
           <Property name="Group Age ES" column="group_name_es" caption_set="es"/>
         </Level>
