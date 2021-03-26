@@ -18,6 +18,543 @@
       </Hierarchy>
     </Dimension>
 
+    <Dimension name="Water Pump" foreign_key="water_pump">
+      <Hierarchy name="Water Pump" primary_key="id">
+
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No Especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Water Pump" key_column="id" name_column="name_en">
+          <Property name="Water Pump ES" column="name_es" caption_set="es"/>
+        </Level>
+
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Solar Heater" foreign_key="solar_heater">
+      <Hierarchy name="Solar Heater" primary_key="id">
+
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No Especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Solar Heater" key_column="id" name_column="name_en">
+          <Property name="Solar Heater ES" column="name_es" caption_set="es"/>
+        </Level>
+
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Air Conditioner" foreign_key="air_conditioner">
+      <Hierarchy name="Air Conditioner" primary_key="id">
+
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No Especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Air Conditioner" key_column="id" name_column="name_en">
+          <Property name="Air Conditioner ES" column="name_es" caption_set="es"/>
+        </Level>
+
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Solar Panel" foreign_key="solar_panel">
+      <Hierarchy name="Solar Panel" primary_key="id">
+
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No Especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Solar Panel" key_column="id" name_column="name_en">
+          <Property name="Solar Panel ES" column="name_es" caption_set="es"/>
+        </Level>
+
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Organic Trash" foreign_key="organic_trash">
+      <Hierarchy name="Organic Trash" primary_key="id">
+
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No Especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Organic Trash" key_column="id" name_column="name_en">
+          <Property name="Organic Trash ES" column="name_es" caption_set="es"/>
+        </Level>
+
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Oven" foreign_key="oven">
+      <Hierarchy name="Oven" primary_key="id">
+
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No Especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Oven" key_column="id" name_column="name_en">
+          <Property name="Oven ES" column="name_es" caption_set="es"/>
+        </Level>
+
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Motorcycle" foreign_key="motorcycle">
+      <Hierarchy name="Motorcycle" primary_key="id">
+
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No Especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Motorcycle" key_column="id" name_column="name_en">
+          <Property name="Motorcycle ES" column="name_es" caption_set="es"/>
+        </Level>
+
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Bicycle" foreign_key="bicycle">
+      <Hierarchy name="Bicycle" primary_key="id">
+
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No Especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Bicycle" key_column="id" name_column="name_en">
+          <Property name="Bicycle ES" column="name_es" caption_set="es"/>
+        </Level>
+
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="TV Service" foreign_key="tv_service">
+      <Hierarchy name="TV Service" primary_key="id">
+
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No Especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="TV Service" key_column="id" name_column="name_en">
+          <Property name="TV Service ES" column="name_es" caption_set="es"/>
+        </Level>
+
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Movie Service" foreign_key="movie_service">
+      <Hierarchy name="Movie Service" primary_key="id">
+
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No Especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Movie Service" key_column="id" name_column="name_en">
+          <Property name="Movie Service ES" column="name_es" caption_set="es"/>
+        </Level>
+
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Video Game Console" foreign_key="video_game_console">
+      <Hierarchy name="Video Game Console" primary_key="id">
+
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No Especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Video Game Console" key_column="id" name_column="name_en">
+          <Property name="Video Game Console ES" column="name_es" caption_set="es"/>
+        </Level>
+
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Title Deed" foreign_key="title_deed">
+      <Hierarchy name="Title Deed" primary_key="id">
+
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Of the Owner</Value>
+            <Value column="name_es">De la Dueña o Propietaria</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Of Another Person</Value>
+            <Value column="name_es">De Otra Persona</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Does Not Have</Value>
+            <Value column="name_es">No Tiene</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">Does not know</Value>
+            <Value column="name_es">No Sabe</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No Especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Title Deed" key_column="id" name_column="name_en">
+          <Property name="Title Deed ES" column="name_es" caption_set="es"/>
+        </Level>
+
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Sex" foreign_key="sex">
+      <Hierarchy name="Sex" primary_key="id">
+
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Male</Value>
+            <Value column="name_es">Hombre</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Female</Value>
+            <Value column="name_es">Mujer</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Sex" key_column="id" name_column="name_en">
+          <Property name="Sex ES" column="name_es" caption_set="es"/>
+        </Level>
+
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="National Financial Aid" foreign_key="national_financial_aid">
+      <Hierarchy name="National Financial Aid" primary_key="id">
+
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
+          </Row>
+          <Row>
+            <Value column="id">4</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="National Financial Aid" key_column="id" name_column="name_en">
+          <Property name="National Financial Aid ES" column="name_es" caption_set="es"/>
+        </Level>
+
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Retirement Financial Aid" foreign_key="retirement_financial_aid">
+      <Hierarchy name="Retirement Financial Aid" primary_key="id">
+
+        <InlineTable alias="dim_inline_housing_census">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Undefined</Value>
+            <Value column="name_es">Indefinido</Value>
+          </Row>
+          <Row>
+            <Value column="id">7</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Sí</Value>
+          </Row>
+          <Row>
+            <Value column="id">8</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Retirement Financial Aid" key_column="id" name_column="name_en">
+          <Property name="Retirement Financial Aid ES" column="name_es" caption_set="es"/>
+        </Level>
+
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Age" foreign_key="age">
+      <Hierarchy name="Age" primary_key="id">
+        <Table name="dim_housing_age_group" />
+        <Level name="Group Age" key_column="group_id" name_column="group_name_en" key_type="nontext">
+          <Property name="Group Age ES" column="group_name_es" caption_set="es"/>
+        </Level>
+        <Level name="Age" key_column="id" name_column="name_en" key_type="nontext">
+          <Property name="Age ES" column="name_es" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
     <Dimension name="Coverage" foreign_key="coverage">
       <Hierarchy name="Coverage" primary_key="id">
 
