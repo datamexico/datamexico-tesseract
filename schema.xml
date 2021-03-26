@@ -13219,6 +13219,161 @@
             <Value column="name_en">No Family Relationship</Value>
             <Value column="name_es">Sin parentesco</Value>
           </Row>
+          <Row>
+            <Value column="id">10</Value>
+            <Value column="name_en">Concubine or free union</Value>
+            <Value column="name_es">Concubina(o) o union libre</Value>
+          </Row>
+          <Row>
+            <Value column="id">11</Value>
+            <Value column="name_en">Lover</Value>
+            <Value column="name_es">Amante</Value>
+          </Row>
+          <Row>
+            <Value column="id">12</Value>
+            <Value column="name_en">Adopted child</Value>
+            <Value column="name_es">Hija(o) adoptiva(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">13</Value>
+            <Value column="name_en">Step child</Value>
+            <Value column="name_es">Hijastra(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">14</Value>
+            <Value column="name_en">Foster child</Value>
+            <Value column="name_es">Hija(o) de crianza</Value>
+          </Row>
+          <Row>
+            <Value column="id">15</Value>
+            <Value column="name_en">Stepparent</Value>
+            <Value column="name_es">Madrastra o padrastro</Value>
+          </Row>
+          <Row>
+            <Value column="id">16</Value>
+            <Value column="name_en">Sister/Brother</Value>
+            <Value column="name_es">Hermana(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">17</Value>
+            <Value column="name_en">Half sister/brother</Value>
+            <Value column="name_es">Media(o) hermana(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">18</Value>
+            <Value column="name_en">Stepsister/brother</Value>
+            <Value column="name_es">Hermanastra(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">19</Value>
+            <Value column="name_en">Grandparent</Value>
+            <Value column="name_es">Abuela(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">20</Value>
+            <Value column="name_en">Great-grandparent</Value>
+            <Value column="name_es">Bisabuela(o) o tatarabuela(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">21</Value>
+            <Value column="name_en">Step-grandchild</Value>
+            <Value column="name_es">Nietastra(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">22</Value>
+            <Value column="name_en">Grandchild's wife/husband</Value>
+            <Value column="name_es">Esposa(o) de nieto(a)</Value>
+          </Row>
+          <Row>
+            <Value column="id">23</Value>
+            <Value column="name_en">Great-grandchild</Value>
+            <Value column="name_es">Bisnieta(o) o tataranieta(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">24</Value>
+            <Value column="name_en">Ant/Uncle</Value>
+            <Value column="name_es">Tia(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">25</Value>
+            <Value column="name_en">Niece/Nephew</Value>
+            <Value column="name_es">Sobrina(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">26</Value>
+            <Value column="name_en">Great-niece/nephew</Value>
+            <Value column="name_es">Sobrina(o) nieta(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">27</Value>
+            <Value column="name_en">Cousin</Value>
+            <Value column="name_es">Prima(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">28</Value>
+            <Value column="name_en">Co-parent-in-law</Value>
+            <Value column="name_es">Consuegra(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">29</Value>
+            <Value column="name_en">Sister/Brother-in-law</Value>
+            <Value column="name_es">Cunada(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">30</Value>
+            <Value column="name_en">Co-Sister/Brother-in-law</Value>
+            <Value column="name_es">Concunad(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">31</Value>
+            <Value column="name_en">Godparent</Value>
+            <Value column="name_es">Madrina o padrino</Value>
+          </Row>
+          <Row>
+            <Value column="id">32</Value>
+            <Value column="name_en">Godchild</Value>
+            <Value column="name_es">Ahijada(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">33</Value>
+            <Value column="name_en">Co-father</Value>
+            <Value column="name_es">Comadre o compadre</Value>
+          </Row>
+          <Row>
+            <Value column="id">34</Value>
+            <Value column="name_en">Tutor</Value>
+            <Value column="name_es">Tutor(a)</Value>
+          </Row>
+          <Row>
+            <Value column="id">35</Value>
+            <Value column="name_en">Tutored</Value>
+            <Value column="name_es">Tutelada(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">36</Value>
+            <Value column="name_en">Domestic worker</Value>
+            <Value column="name_es">Trabajador(a) domestico(a)</Value>
+          </Row>
+          <Row>
+            <Value column="id">37</Value>
+            <Value column="name_en">Domestic worker wife/husband</Value>
+            <Value column="name_es">Esposa(o) de trabajador(a) domestico(a)</Value>
+          </Row>
+          <Row>
+            <Value column="id">38</Value>
+            <Value column="name_en">Domestic worker child</Value>
+            <Value column="name_es">Hija(o) de trabajador(a) domestico(a)</Value>
+          </Row>
+          <Row>
+            <Value column="id">39</Value>
+            <Value column="name_en">Other domestic worker relatives</Value>
+            <Value column="name_es">Otro pariente de trabajador(a) domestico(a)</Value>
+          </Row>
+          <Row>
+            <Value column="id">40</Value>
+            <Value column="name_en">Guest</Value>
+            <Value column="name_es">Huesped</Value>
+          </Row>
         </InlineTable>
         <Level name="Related" key_column="id" name_column="name_en">
           <Property name="Related ES" column="name_es" caption_set="es" />
