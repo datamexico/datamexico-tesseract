@@ -13196,7 +13196,7 @@
           </Row>
           <Row>
             <Value column="id">5</Value>
-            <Value column="name_en">Daughter/Son in Law</Value>
+            <Value column="name_en">Daughter(Son) in Law</Value>
             <Value column="name_es">Nuera o yerno</Value>
           </Row>
           <Row>
@@ -13206,7 +13206,7 @@
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">Mother/Father in Law</Value>
+            <Value column="name_en">Mother(Father) in Law</Value>
             <Value column="name_es">Suegra(o)</Value>
           </Row>
           <Row>
@@ -13251,17 +13251,17 @@
           </Row>
           <Row>
             <Value column="id">16</Value>
-            <Value column="name_en">Sister/Brother</Value>
+            <Value column="name_en">Sister(Brother)</Value>
             <Value column="name_es">Hermana(o)</Value>
           </Row>
           <Row>
             <Value column="id">17</Value>
-            <Value column="name_en">Half sister/brother</Value>
+            <Value column="name_en">Half sister(brother)</Value>
             <Value column="name_es">Media(o) hermana(o)</Value>
           </Row>
           <Row>
             <Value column="id">18</Value>
-            <Value column="name_en">Stepsister/brother</Value>
+            <Value column="name_en">Stepsister(brother)</Value>
             <Value column="name_es">Hermanastra(o)</Value>
           </Row>
           <Row>
@@ -13281,7 +13281,7 @@
           </Row>
           <Row>
             <Value column="id">22</Value>
-            <Value column="name_en">Grandchild's wife/husband</Value>
+            <Value column="name_en">Grandchild's wife(husband)</Value>
             <Value column="name_es">Esposa(o) de nieto(a)</Value>
           </Row>
           <Row>
@@ -13296,12 +13296,12 @@
           </Row>
           <Row>
             <Value column="id">25</Value>
-            <Value column="name_en">Niece/Nephew</Value>
+            <Value column="name_en">Niece(Nephew)</Value>
             <Value column="name_es">Sobrina(o)</Value>
           </Row>
           <Row>
             <Value column="id">26</Value>
-            <Value column="name_en">Great-niece/nephew</Value>
+            <Value column="name_en">Great-niece(nephew)</Value>
             <Value column="name_es">Sobrina(o) nieta(o)</Value>
           </Row>
           <Row>
@@ -13316,12 +13316,12 @@
           </Row>
           <Row>
             <Value column="id">29</Value>
-            <Value column="name_en">Sister/Brother-in-law</Value>
+            <Value column="name_en">Sister(Brother)-in-law</Value>
             <Value column="name_es">Cunada(o)</Value>
           </Row>
           <Row>
             <Value column="id">30</Value>
-            <Value column="name_en">Co-Sister/Brother-in-law</Value>
+            <Value column="name_en">Co-Sister(Brother)-in-law</Value>
             <Value column="name_es">Concunad(o)</Value>
           </Row>
           <Row>
@@ -13356,7 +13356,7 @@
           </Row>
           <Row>
             <Value column="id">37</Value>
-            <Value column="name_en">Domestic worker wife/husband</Value>
+            <Value column="name_en">Domestic worker wife(husband)</Value>
             <Value column="name_es">Esposa(o) de trabajador(a) domestico(a)</Value>
           </Row>
           <Row>
