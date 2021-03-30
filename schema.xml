@@ -1,4 +1,4 @@
-<Schema name="datamexico" default_locale="es">
+<Schema name="datamexico"  default_locale="es">
 
   <SharedDimension name="Geography State" type="geo">
     <Hierarchy name="Geography">
@@ -13790,7 +13790,7 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Geography Municipality" type="geo" default_hierarchy="Geography" foreign_key="mun_id">
+    <Dimension name="Geography" type="geo" default_hierarchy="Geography" foreign_key="mun_id">
       <Hierarchy name="Geography" primary_key="mun_id">
         <Table name="dim_shared_geography_mun_census" />
         <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
