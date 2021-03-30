@@ -42,7 +42,7 @@
           </Row>
           <Row>
             <Value column="id">5</Value>
-            <Value column="name_en">Daughter/Son in Law</Value>
+            <Value column="name_en">Daughter(Son) in Law</Value>
             <Value column="name_es">Nuera o yerno</Value>
           </Row>
           <Row>
@@ -52,7 +52,7 @@
           </Row>
           <Row>
             <Value column="id">7</Value>
-            <Value column="name_en">Mother/Father in Law</Value>
+            <Value column="name_en">Mother(Father) in Law</Value>
             <Value column="name_es">Suegra(o)</Value>
           </Row>
           <Row>
@@ -64,6 +64,161 @@
             <Value column="id">9</Value>
             <Value column="name_en">No Family Relationship</Value>
             <Value column="name_es">Sin parentesco</Value>
+          </Row>
+          <Row>
+            <Value column="id">10</Value>
+            <Value column="name_en">Concubine or free union</Value>
+            <Value column="name_es">Concubina(o) o union libre</Value>
+          </Row>
+          <Row>
+            <Value column="id">11</Value>
+            <Value column="name_en">Lover</Value>
+            <Value column="name_es">Amante</Value>
+          </Row>
+          <Row>
+            <Value column="id">12</Value>
+            <Value column="name_en">Adopted child</Value>
+            <Value column="name_es">Hija(o) adoptiva(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">13</Value>
+            <Value column="name_en">Step child</Value>
+            <Value column="name_es">Hijastra(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">14</Value>
+            <Value column="name_en">Foster child</Value>
+            <Value column="name_es">Hija(o) de crianza</Value>
+          </Row>
+          <Row>
+            <Value column="id">15</Value>
+            <Value column="name_en">Stepparent</Value>
+            <Value column="name_es">Madrastra o padrastro</Value>
+          </Row>
+          <Row>
+            <Value column="id">16</Value>
+            <Value column="name_en">Sister(Brother)</Value>
+            <Value column="name_es">Hermana(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">17</Value>
+            <Value column="name_en">Half sister(brother)</Value>
+            <Value column="name_es">Media(o) hermana(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">18</Value>
+            <Value column="name_en">Stepsister(brother)</Value>
+            <Value column="name_es">Hermanastra(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">19</Value>
+            <Value column="name_en">Grandparent</Value>
+            <Value column="name_es">Abuela(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">20</Value>
+            <Value column="name_en">Great-grandparent</Value>
+            <Value column="name_es">Bisabuela(o) o tatarabuela(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">21</Value>
+            <Value column="name_en">Step-grandchild</Value>
+            <Value column="name_es">Nietastra(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">22</Value>
+            <Value column="name_en">Grandchilds wife(husband)</Value>
+            <Value column="name_es">Esposa(o) de nieto(a)</Value>
+          </Row>
+          <Row>
+            <Value column="id">23</Value>
+            <Value column="name_en">Great-grandchild</Value>
+            <Value column="name_es">Bisnieta(o) o tataranieta(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">24</Value>
+            <Value column="name_en">Ant/Uncle</Value>
+            <Value column="name_es">Tia(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">25</Value>
+            <Value column="name_en">Niece(Nephew)</Value>
+            <Value column="name_es">Sobrina(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">26</Value>
+            <Value column="name_en">Great-niece(nephew)</Value>
+            <Value column="name_es">Sobrina(o) nieta(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">27</Value>
+            <Value column="name_en">Cousin</Value>
+            <Value column="name_es">Prima(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">28</Value>
+            <Value column="name_en">Co-parent-in-law</Value>
+            <Value column="name_es">Consuegra(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">29</Value>
+            <Value column="name_en">Sister(Brother)-in-law</Value>
+            <Value column="name_es">Cunada(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">30</Value>
+            <Value column="name_en">Co-Sister(Brother)-in-law</Value>
+            <Value column="name_es">Concunad(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">31</Value>
+            <Value column="name_en">Godparent</Value>
+            <Value column="name_es">Madrina o padrino</Value>
+          </Row>
+          <Row>
+            <Value column="id">32</Value>
+            <Value column="name_en">Godchild</Value>
+            <Value column="name_es">Ahijada(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">33</Value>
+            <Value column="name_en">Co-father</Value>
+            <Value column="name_es">Comadre o compadre</Value>
+          </Row>
+          <Row>
+            <Value column="id">34</Value>
+            <Value column="name_en">Tutor</Value>
+            <Value column="name_es">Tutor(a)</Value>
+          </Row>
+          <Row>
+            <Value column="id">35</Value>
+            <Value column="name_en">Tutored</Value>
+            <Value column="name_es">Tutelada(o)</Value>
+          </Row>
+          <Row>
+            <Value column="id">36</Value>
+            <Value column="name_en">Domestic worker</Value>
+            <Value column="name_es">Trabajador(a) domestico(a)</Value>
+          </Row>
+          <Row>
+            <Value column="id">37</Value>
+            <Value column="name_en">Domestic worker wife(husband)</Value>
+            <Value column="name_es">Esposa(o) de trabajador(a) domestico(a)</Value>
+          </Row>
+          <Row>
+            <Value column="id">38</Value>
+            <Value column="name_en">Domestic worker child</Value>
+            <Value column="name_es">Hija(o) de trabajador(a) domestico(a)</Value>
+          </Row>
+          <Row>
+            <Value column="id">39</Value>
+            <Value column="name_en">Other domestic worker relatives</Value>
+            <Value column="name_es">Otro pariente de trabajador(a) domestico(a)</Value>
+          </Row>
+          <Row>
+            <Value column="id">40</Value>
+            <Value column="name_en">Guest</Value>
+            <Value column="name_es">Huesped</Value>
           </Row>
         </InlineTable>
         <Level name="Related" key_column="id" name_column="name_en">
@@ -481,10 +636,51 @@
       </Hierarchy>
     </Dimension>
 
+    <Dimension name="Geography" type="geo" default_hierarchy="Geography" foreign_key="mun_id">
+      <Hierarchy name="Geography" primary_key="mun_id">
+        <Table name="dim_shared_geography_mun_census" />
+        <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
+          <Property name="Nation ES" column="nation_name" caption_set="es"/>
+        </Level>
+        <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+          <Property name="State ISO3" column="ent_iso3"/>
+          <Property name="CVE State" column="cve_ent"/>
+          <Property name="State slug ES" column="ent_slug"/>
+          <Property name="State ES" column="ent_name" caption_set="es"/>
+        </Level>
+        <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
+          <Property name="CVE Municipality Full" column="cve_mun_full"/>
+          <Property name="CVE Municipality" column="cve_mun"/>
+          <Property name="Municipality Slug" column="mun_slug"/>
+          <Property name="Municipality ES" column="mun_name" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+
+      <Hierarchy name="Metro Area">
+        <Table name="dim_shared_geography_zm" />
+        <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext">
+          <Property name="Metro Area ES" column="zm_name" caption_set="es"/>
+        </Level>
+        <Level name="Municipality MA" key_column="mun_id" name_column="mun_name" key_type="nontext">
+          <Property name="Municipality MA ES" column="mun_name" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="National Urban System">
+        <Table name="dim_shared_geography_sun" />
+        <Level name="National Urban System" key_column="sun_id" name_column="sun_name" key_type="text">
+          <Property name="National Urban System ES" column="sun_name" caption_set="es"/>
+        </Level>
+
+        <Level name="Municipality SUN" key_column="mun_id" name_column="mun_name" key_type="nontext">
+          <Property name="Municipality SUN ES" column="mun_name" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
     <DimensionUsage foreign_key="age" source="Age Group 10" name="Age Group" />
     <DimensionUsage foreign_key="academic_degree" source="Academic Degree" name="Academic Degree" />
     <DimensionUsage foreign_key="dhsersal1" source="Social Security" name="Social Security" />
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <!-- <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" /> -->
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
 
