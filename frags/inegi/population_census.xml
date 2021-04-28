@@ -844,7 +844,7 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Indigenous Dialect" foreign_key="indigenous_speaker">
+    <Dimension name="Indigenous Dialect" foreign_key="indigenous_language_id">
       <Hierarchy name="Indigenous Dialect" primary_key="id">
         <Table name="dim_inegi_qdialect" />
         <Level name="Indigenous Dialect" key_column="id" name_column="name_es" key_type="nontext"/>
