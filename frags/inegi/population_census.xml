@@ -878,7 +878,7 @@
     <!-- <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" /> -->
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
-    <DimensionUsage foreign_key="municipality_of_residency" source="Geography Municipality" name="Municipality of Residency" />
+    <!-- <DimensionUsage foreign_key="municipality_of_residency" source="Geography Municipality" name="Municipality of Residency" /> -->
     <DimensionUsage foreign_key="visual_impairment" source="Imperiment" name="Visual Imperiment"/>
     <DimensionUsage foreign_key="hearing_imperiment" source="Imperiment" name="Hearing Imperiment"/>
     <DimensionUsage foreign_key="walk_imperiment" source="Imperiment" name="Walk Imperiment"/>
