@@ -1,0 +1,23 @@
+<Schema name="datamexico" default_locale="en">
+  <Cube name="industrial_parks">
+    
+      <Annotation name="topic">Industrial Parks</Annotation>
+      <Annotation name="subtopic">Industrial Parks by Municipality</Annotation>
+      <Annotation name="source_name">Asociación Mexicana de Parques Industriales</Annotation>
+      <Annotation name="source_name_en">Mexican Association of Industrial Parks</Annotation>
+      <Annotation name="source_link">https://www.ampip.org.mx/</Annotation>
+    
+    <Table name="industrial_parks" primary_key="mun_id" />
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="park_id" source="Industrial Parks" name="Industrial Parks" />
+    <DimensionUsage foreign_key="park_type_id" source="Park Types" name="Park Types" />
+
+    <Measure name="Parks" column="count_parks" aggregator="sum">
+      
+        <Annotation name="details">Parks</Annotation>
+      
+    </Measure>
+
+  </Cube>
+</Schema>
