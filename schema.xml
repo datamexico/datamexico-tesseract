@@ -1,5 +1,23 @@
 <Schema name="datamexico" default_locale="es">
 
+  <SharedDimension name="Industrial Parks">
+    <Hierarchy name="Industrial Parks" primary_key="park_id">
+      <Table name="dim_names_industrial_parks"/>
+      <Level name="Industrial Parks" key_column="park_id" name_column="park_name" key_type="nontext">
+        <Property name="Industrial Parks ES" column="park_name" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+    <SharedDimension name="Park Types">
+    <Hierarchy name="Park Types">
+      <Table name="dim_types_industrial_parks" />
+      <Level name="Park Types" key_column="id" name_column="type_park_en" key_type="nontext">
+        <Property name="Park Types ES" column="type_park_es" caption_set="es" />
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
   <SharedDimension name="Geography State" type="geo">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography_ent" />
@@ -14703,5 +14721,27 @@
 
         <Measure name="Measure" column="measure" aggregator="sum" />
     </Cube>
+
+<Cube name="industrial_parks">
+    
+      <Annotation name="topic">Industrial Parks</Annotation>
+      <Annotation name="subtopic">Industrial Parks by Municipality</Annotation>
+      <Annotation name="source_name">Asociación Mexicana de Parques Industriales</Annotation>
+      <Annotation name="source_name_en">Mexican Association of Industrial Parks</Annotation>
+      <Annotation name="source_link">https://www.ampip.org.mx/</Annotation>
+    
+    <Table name="industrial_parks" primary_key="mun_id" />
+
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="park_id" source="Industrial Parks" name="Industrial Parks" />
+    <DimensionUsage foreign_key="park_type_id" source="Park Types" name="Park Types" />
+
+    <Measure name="Parks" column="count_parks" aggregator="sum">
+      
+        <Annotation name="details">Parks</Annotation>
+      
+    </Measure>
+
+  </Cube>
 
 </Schema>
