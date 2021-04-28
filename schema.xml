@@ -18,6 +18,92 @@
     </Hierarchy>
   </SharedDimension>
 
+  <SharedDimension name="Imperiment">
+    <Hierarchy name="Imperiment" primary_key="id">
+      <InlineTable alias="dim_inline_imperiment">
+        <ColumnDef name="id" key_type="nontext" />
+        <ColumnDef name="name_en" key_type="text" />
+        <ColumnDef name="name_es" key_type="text" />
+        <Row>
+          <Value column="id">1</Value>
+          <Value column="name_en">Has no difficulty</Value>
+          <Value column="name_es">No tiene dificultad</Value>
+        </Row>
+        <Row>
+          <Value column="id">2</Value>
+          <Value column="name_en">Does it with little difficulty</Value>
+          <Value column="name_es">Lo hace con poca dificultad</Value>
+        </Row>
+        <Row>
+          <Value column="id">3</Value>
+          <Value column="name_en">Does it with great difficulty</Value>
+          <Value column="name_es">Lo hace con mucha dificultad</Value>
+        </Row>
+        <Row>
+          <Value column="id">4</Value>
+          <Value column="name_en">Can not do it</Value>
+          <Value column="name_es">No puede hacerlo</Value>
+        </Row>
+        <Row>
+          <Value column="id">8</Value>
+          <Value column="name_en">Unknown degree of disability</Value>
+          <Value column="name_es">Desconoce el grado de discapacidad</Value>
+        </Row>
+        <Row>
+          <Value column="id">9</Value>
+          <Value column="name_en">Not Specified</Value>
+          <Value column="name_es">No Especificado</Value>
+        </Row>
+      </InlineTable>
+      <Level name="Imperiment" key_column="id" name_column="name_en">
+        <Property name="Imperiment ES" column="name_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
+  <SharedDimension name="Imperiment Cause">
+    <Hierarchy name="Imperiment Cause" primary_key="id">
+      <InlineTable alias="dim_inline_imperiment_cause">
+        <ColumnDef name="id" key_type="nontext" />
+        <ColumnDef name="name_en" key_type="text" />
+        <ColumnDef name="name_es" key_type="text" />
+        <Row>
+          <Value column="id">1</Value>
+          <Value column="name_en">Because he was born that way</Value>
+          <Value column="name_es">Porque nacio asi</Value>
+        </Row>
+        <Row>
+          <Value column="id">2</Value>
+          <Value column="name_en">Because of a disease</Value>
+          <Value column="name_es">Por una enfermedad</Value>
+        </Row>
+        <Row>
+          <Value column="id">3</Value>
+          <Value column="name_en">Because of an accident</Value>
+          <Value column="name_es">Por un accidente</Value>
+        </Row>
+        <Row>
+          <Value column="id">4</Value>
+          <Value column="name_en">Because of advanced age</Value>
+          <Value column="name_es">Por edad avanzada</Value>
+        </Row>
+        <Row>
+          <Value column="id">5</Value>
+          <Value column="name_en">Because of another cause</Value>
+          <Value column="name_es">Por otra causa</Value>
+        </Row>
+        <Row>
+          <Value column="id">9</Value>
+          <Value column="name_en">Not Specified</Value>
+          <Value column="name_es">No Especificado</Value>
+        </Row>
+      </InlineTable>
+      <Level name="Imperiment Cause" key_column="id" name_column="name_en">
+        <Property name="Imperiment Cause ES" column="name_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </SharedDimension>
+
   <SharedDimension name="Geography State" type="geo">
     <Hierarchy name="Geography">
       <Table name="dim_shared_geography_ent" />
@@ -13438,7 +13524,7 @@
     </Measure>
 
   </Cube>
-<Cube name="inegi_population">
+  <Cube name="inegi_population">
     
     <Annotation name="topic">Housing and Living</Annotation>
     <Annotation name="subtopic">Housing</Annotation>
@@ -14068,6 +14154,146 @@
       </Hierarchy>
     </Dimension>
 
+    <Dimension name="Afro Offspring" foreign_key="afro_offspring">
+      <Hierarchy name="Afro Offspring" primary_key="id">
+        <InlineTable alias="dim_inline_afro_offspring">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Si</Value>
+            <Value column="name_es">Yes</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No especificado</Value>
+            <Value column="name_es">Not Specified</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Afro Offspring" key_column="id" name_column="name_en">
+          <Property name="Afro Offspring ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Indigenous Speaker" foreign_key="indigenous_speaker">
+      <Hierarchy name="Indigenous Speaker" primary_key="id">
+        <InlineTable alias="dim_inline_afro_offspring">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Si</Value>
+            <Value column="name_es">Yes</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No especificado</Value>
+            <Value column="name_es">Not Specified</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Indigenous Speaker" key_column="id" name_column="name_en">
+          <Property name="Indigenous Speaker ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Indigenous Self Abscribing" foreign_key="indigenous_self_ascribing">
+      <Hierarchy name="Indigenous Self Abscribing" primary_key="id">
+        <InlineTable alias="dim_inline_indigenous_self_abscribing">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Si</Value>
+            <Value column="name_es">Yes</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No especificado</Value>
+            <Value column="name_es">Not Specified</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Indigenous Self Abscribing" key_column="id" name_column="name_en">
+          <Property name="Indigenous Self Abscribing ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="School Attendance" foreign_key="school_attendance">
+      <Hierarchy name="School Attendance" primary_key="id">
+        <InlineTable alias="dim_inline_school_attendance">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Si</Value>
+            <Value column="name_es">Yes</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No especificado</Value>
+            <Value column="name_es">Not Specified</Value>
+          </Row>
+        </InlineTable>
+        <Level name="School Attendance" key_column="id" name_column="name_en">
+          <Property name="School Attendance ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Literate" foreign_key="literate">
+      <Hierarchy name="Literate" primary_key="id">
+        <InlineTable alias="dim_inline_literate">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Si</Value>
+            <Value column="name_es">Yes</Value>
+          </Row>
+          <Row>
+            <Value column="id">3</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">9</Value>
+            <Value column="name_en">No especificado</Value>
+            <Value column="name_es">Not Specified</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Literate" key_column="id" name_column="name_en">
+          <Property name="Literate ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
     <Dimension name="Filtered Age" foreign_key="filtered_age">
       <Hierarchy name="Filtered Age" primary_key="filtered_age">
         <Table name="inegi_population" />
@@ -14116,12 +14342,82 @@
       </Hierarchy>
     </Dimension>
 
+    <Dimension name="Entity of Birth" foreign_key="state_of_birth">
+      <Hierarchy name="Entity of Birth" primary_key="id">
+        <Table name="dim_inegi_entity_country_nation" />
+        <Level name="Entity of Birth" key_column="id" name_column="name_en" key_type="nontext">
+          <Property name="Entity of Birth ES" column="name_es" caption_set="es" />
+        <Level/>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Entity of Residency" foreign_key="state_of_residency">
+      <Hierarchy name="Entity of Residency" primary_key="id">
+        <Table name="dim_inegi_entity_country_nation" />
+        <Level name="Entity of Residency" key_column="id" name_column="name_en" key_type="nontext">
+          <Property name="Entity of Residency ES" column="name_es" caption_set="es" />
+        <Level/>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Religion" foreign_key="religion">
+      <Hierarchy name="Religion" primary_key="id">
+        <Table name="dim_inegi_religion" />
+        <Level name="Religion" key_column="id" name_column="name_en" key_type="nontext">
+          <Property name="Religion ES" column="name_es" caption_set="es" />
+        <Level/>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Indigenous Dialect" foreign_key="indigenous_speaker">
+      <Hierarchy name="Indigenous Dialect" primary_key="id">
+        <Table name="dim_inegi_qdialect" />
+        <Level name="Indigenous Dialect" key_column="id" name_column="name_es" key_type="nontext"/>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Migration Cause" foreign_key="migration_cause">
+      <Hierarchy name="Migration Cause" primary_key="id">
+        <Table name="dim_inegi_migration_cause" />
+        <Level name="Migration Cause" key_column="id" name_column="name_es" key_type="nontext"/>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Children Born Alive" foreign_key="children_born_alive">
+      <Hierarchy name="Children Born Alive" primary_key="children_born_alive">
+        <Table name="inegi_population" />
+        <Level name="Children Born Alive" key_column="children_born_alive" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Decesaded Children" foreign_key="deceased_children">
+      <Hierarchy name="Decesaded Children" primary_key="deceased_children">
+        <Table name="inegi_population" />
+        <Level name="Decesaded Children" key_column="deceased_children" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
+
     <DimensionUsage foreign_key="age" source="Age Group 10" name="Age Group" />
     <DimensionUsage foreign_key="academic_degree" source="Academic Degree" name="Academic Degree" />
     <DimensionUsage foreign_key="dhsersal1" source="Social Security" name="Social Security" />
     <!-- <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" /> -->
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage foreign_key="municipality_of_residency" source="Geography Municipality" name="Municipality of Residency" />
+    <DimensionUsage foreign_key="visual_impairment" source="Imperiment" name="Visual Imperiment"/>
+    <DimensionUsage foreign_key="hearing_imperiment" source="Imperiment" name="Hearing Imperiment"/>
+    <DimensionUsage foreign_key="walk_imperiment" source="Imperiment" name="Walk Imperiment"/>
+    <DimensionUsage foreign_key="remembering_imperiment" source="Imperiment" name="Remembering Imperiment"/>
+    <DimensionUsage foreign_key="washing_imperiment" source="Imperiment" name="Washing Imperiment"/>
+    <DimensionUsage foreign_key="talk_imperiment" source="Imperiment" name="Talk Imperiment"/>
+    <DimensionUsage foreign_key="mental_imperiment" source="Imperiment" name="Mental Imperiment"/>
+    <DimensionUsage foreign_key="visual_imp_cause" source="Imperiment Cause" name="Visual Imperiment Cause"/>
+    <DimensionUsage foreign_key="hearing_imp_cause" source="Imperiment Cause" name="Hearing ImperimentCause"/>
+    <DimensionUsage foreign_key="walk_imp_cause" source="Imperiment Cause" name="Walk Imperiment Cause"/>
+    <DimensionUsage foreign_key="remembering_imp_cause" source="Imperiment Cause" name="Remembering Imperiment Cause"/>
+    <DimensionUsage foreign_key="washing_imp_caus" source="Imperiment Cause" name="Washing Imperiment Cause"/>
+    <DimensionUsage foreign_key="talk_imp_cause" source="Imperiment Cause" name="Talk Imperiment Cause"/>
+    <DimensionUsage foreign_key="mental_imp_cause" source="Imperiment Cause" name="Mental Imperiment Cause"/>
 
     <Measure name="Population" column="population" aggregator="sum">
       
