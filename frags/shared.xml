@@ -697,6 +697,24 @@
       </Hierarchy>
     </SharedDimension>
 
+    <SharedDimension name="Industrial Parks">
+      <Hierarchy name="Industrial Parks" primary_key="park_id">
+        <Table name="dim_names_industrial_parks"/>
+        <Level name="Industrial Parks" key_column="park_id" name_column="park_name" key_type="nontext">
+          <Property name="Industrial Parks ES" column="park_name" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </SharedDimension>
+
+      <SharedDimension name="Park Types">
+      <Hierarchy name="Park Types">
+        <Table name="dim_types_industrial_parks" />
+        <Level name="Park Types" key_column="park_type_id" name_column="type_park_en" key_type="nontext">
+          <Property name="Park Types ES" column="type_park_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </SharedDimension>
+
     <SharedDimension name="Imperiment">
      <Hierarchy name="Imperiment" primary_key="id">
         <InlineTable alias="dim_inline_imperiment">
