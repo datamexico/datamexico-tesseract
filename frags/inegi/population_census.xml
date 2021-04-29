@@ -776,7 +776,7 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Geography" type="geo" default_hierarchy="Geography" foreign_key="mun_id">
+    <!-- <Dimension name="Geography" type="geo" default_hierarchy="Geography" foreign_key="mun_id">
       <Hierarchy name="Geography" primary_key="mun_id">
         <Table name="dim_shared_geography_mun_census" />
         <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
@@ -815,14 +815,14 @@
           <Property name="Municipality SUN ES" column="mun_name" caption_set="es"/>
         </Level>
       </Hierarchy>
-    </Dimension>
+    </Dimension> -->
 
     <Dimension name="Entity of Birth" foreign_key="state_of_birth">
       <Hierarchy name="Entity of Birth" primary_key="id">
         <Table name="dim_inegi_entity_country_nation" />
         <Level name="Entity of Birth" key_column="id" name_column="name_en" key_type="nontext">
           <Property name="Entity of Birth ES" column="name_es" caption_set="es" />
-        <Level/>
+        </Level>
       </Hierarchy>
     </Dimension>
 
@@ -831,7 +831,7 @@
         <Table name="dim_inegi_entity_country_nation" />
         <Level name="Entity of Residency" key_column="id" name_column="name_en" key_type="nontext">
           <Property name="Entity of Residency ES" column="name_es" caption_set="es" />
-        <Level/>
+        </Level>
       </Hierarchy>
     </Dimension>
 
@@ -840,11 +840,11 @@
         <Table name="dim_inegi_religion" />
         <Level name="Religion" key_column="id" name_column="name_en" key_type="nontext">
           <Property name="Religion ES" column="name_es" caption_set="es" />
-        <Level/>
+        </Level>
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Indigenous Dialect" foreign_key="indigenous_speaker">
+    <Dimension name="Indigenous Dialect" foreign_key="indigenous_language_id">
       <Hierarchy name="Indigenous Dialect" primary_key="id">
         <Table name="dim_inegi_qdialect" />
         <Level name="Indigenous Dialect" key_column="id" name_column="name_es" key_type="nontext"/>
@@ -872,11 +872,137 @@
       </Hierarchy>
     </Dimension>
 
-    <DimensionUsage foreign_key="age" source="Age Group 10" name="Age Group" />
+    <Dimension name="Visual Imperiment" foreign_key="visual_impairment">
+      <Hierarchy name="Visual Imperiment" primary_key="id">
+        <Table name="dim_inegi_imperiment" />
+        <Level name="Visual Imperiment" key_column="id" key_type="nontext" >
+          <Property name="Visual Imperiment ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Hearing Imperiment" foreign_key="hearing_imperiment">
+      <Hierarchy name="Hearing Imperiment" primary_key="id">
+        <Table name="dim_inegi_imperiment" />
+        <Level name="Hearing Imperiment" key_column="id" key_type="nontext" >
+          <Property name="Hearing Imperiment ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Walk Imperiment" foreign_key="walk_imperiment">
+      <Hierarchy name="Walk Imperiment" primary_key="id">
+        <Table name="dim_inegi_imperiment" />
+        <Level name="Walk Imperiment" key_column="id" key_type="nontext" >
+          <Property name="Walk Imperiment ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Remembering Imperiment" foreign_key="remembering_imperiment">
+      <Hierarchy name="Remembering Imperiment" primary_key="id">
+        <Table name="dim_inegi_imperiment" />
+        <Level name="Remembering Imperiment" key_column="id" key_type="nontext" >
+          <Property name="Remembering Imperiment ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Washing Imperiment" foreign_key="washing_imperiment">
+      <Hierarchy name="Washing Imperiment" primary_key="id">
+        <Table name="dim_inegi_imperiment" />
+        <Level name="Washing Imperiment" key_column="id" key_type="nontext" >
+          <Property name="Washing Imperiment ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Talk Imperiment" foreign_key="talk_imperiment">
+      <Hierarchy name="Talk Imperiment" primary_key="id">
+        <Table name="dim_inegi_imperiment" />
+        <Level name="Talk Imperiment" key_column="id" key_type="nontext" >
+          <Property name="Talk Imperiment ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Mental Imperiment" foreign_key="mental_imperiment">
+      <Hierarchy name="Mental Imperiment" primary_key="id">
+        <Table name="dim_inegi_imperiment" />
+        <Level name="Mental Imperiment" key_column="id" key_type="nontext" >
+          <Property name="Mental Imperiment ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Visual Imperiment Cause" foreign_key="visual_imp_cause">
+      <Hierarchy name="Visual Imperiment Cause" primary_key="id">
+        <Table name="dim_inegi_imperiment_cause" />
+        <Level name="Visual Imperiment Cause" key_column="id" key_type="nontext" >
+          <Property name="Visual Imperiment Cause ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Hearing Imperiment Cause" foreign_key="hearing_imp_cause">
+      <Hierarchy name="Hearing Imperiment Cause" primary_key="id">
+        <Table name="dim_inegi_imperiment_cause" />
+        <Level name="Hearing Imperiment Cause" key_column="id" key_type="nontext" >
+          <Property name="Hearing Imperiment Cause ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Walk Imperiment Cause" foreign_key="walk_imp_cause">
+      <Hierarchy name="Walk Imperiment Cause" primary_key="id">
+        <Table name="dim_inegi_imperiment_cause" />
+        <Level name="Walk Imperiment Cause" key_column="id" key_type="nontext" >
+          <Property name="Walk Imperiment Cause ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Remembering Imperiment Cause" foreign_key="remembering_imp_cause">
+      <Hierarchy name="Remembering Imperiment Cause" primary_key="id">
+        <Table name="dim_inegi_imperiment_cause" />
+        <Level name="Remembering Imperiment Cause" key_column="id" key_type="nontext" >
+          <Property name="Remembering Imperiment Cause ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Washing Imperiment Cause" foreign_key="washing_imp_cause">
+      <Hierarchy name="Washing Imperiment Cause" primary_key="id">
+        <Table name="dim_inegi_imperiment_cause" />
+        <Level name="Washing Imperiment Cause" key_column="id" key_type="nontext" >
+          <Property name="Washing Imperiment Cause ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Talk Imperiment Cause" foreign_key="talk_imp_cause">
+      <Hierarchy name="Talk Imperiment Cause" primary_key="id">
+        <Table name="dim_inegi_imperiment_cause" />
+        <Level name="Talk Imperiment Cause" key_column="id" key_type="nontext" >
+          <Property name="Talk Imperiment Cause ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Mental Imperiment Cause" foreign_key="mental_imp_cause">
+      <Hierarchy name="Mental Imperiment Cause" primary_key="id">
+        <Table name="dim_inegi_imperiment_cause" />
+        <Level name="Mental Imperiment Cause" key_column="id" key_type="nontext" >
+          <Property name="Mental Imperiment Cause ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <!-- <DimensionUsage foreign_key="age" source="Age Group 10" name="Age Group" />
     <DimensionUsage foreign_key="academic_degree" source="Academic Degree" name="Academic Degree" />
     <DimensionUsage foreign_key="dhsersal1" source="Social Security" name="Social Security" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
-    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" /> -->
     <!-- <DimensionUsage foreign_key="municipality_of_residency" source="Geography Municipality" name="Municipality of Residency" /> -->
 
     <Measure name="Population" column="population" aggregator="sum">
