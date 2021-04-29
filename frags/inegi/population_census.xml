@@ -875,24 +875,9 @@
     <DimensionUsage foreign_key="age" source="Age Group 10" name="Age Group" />
     <DimensionUsage foreign_key="academic_degree" source="Academic Degree" name="Academic Degree" />
     <DimensionUsage foreign_key="dhsersal1" source="Social Security" name="Social Security" />
-    <!-- <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" /> -->
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
     <DimensionUsage foreign_key="municipality_of_residency" source="Geography Municipality" name="Municipality of Residency" />
-    <DimensionUsage foreign_key="visual_impairment" source="Imperiment" name="Visual Imperiment"/>
-    <DimensionUsage foreign_key="hearing_imperiment" source="Imperiment" name="Hearing Imperiment"/>
-    <DimensionUsage foreign_key="walk_imperiment" source="Imperiment" name="Walk Imperiment"/>
-    <DimensionUsage foreign_key="remembering_imperiment" source="Imperiment" name="Remembering Imperiment"/>
-    <DimensionUsage foreign_key="washing_imperiment" source="Imperiment" name="Washing Imperiment"/>
-    <DimensionUsage foreign_key="talk_imperiment" source="Imperiment" name="Talk Imperiment"/>
-    <DimensionUsage foreign_key="mental_imperiment" source="Imperiment" name="Mental Imperiment"/>
-    <DimensionUsage foreign_key="visual_imp_cause" source="Imperiment Cause" name="Visual Imperiment Cause"/>
-    <DimensionUsage foreign_key="hearing_imp_cause" source="Imperiment Cause" name="Hearing ImperimentCause"/>
-    <DimensionUsage foreign_key="walk_imp_cause" source="Imperiment Cause" name="Walk Imperiment Cause"/>
-    <DimensionUsage foreign_key="remembering_imp_cause" source="Imperiment Cause" name="Remembering Imperiment Cause"/>
-    <DimensionUsage foreign_key="washing_imp_caus" source="Imperiment Cause" name="Washing Imperiment Cause"/>
-    <DimensionUsage foreign_key="talk_imp_cause" source="Imperiment Cause" name="Talk Imperiment Cause"/>
-    <DimensionUsage foreign_key="mental_imp_cause" source="Imperiment Cause" name="Mental Imperiment Cause"/>
 
     <Measure name="Population" column="population" aggregator="sum">
       
