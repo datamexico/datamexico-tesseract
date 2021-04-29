@@ -14347,7 +14347,7 @@
         <Table name="dim_inegi_entity_country_nation" />
         <Level name="Entity of Birth" key_column="id" name_column="name_en" key_type="nontext">
           <Property name="Entity of Birth ES" column="name_es" caption_set="es" />
-        <Level/>
+        </Level>
       </Hierarchy>
     </Dimension>
 
@@ -14356,7 +14356,7 @@
         <Table name="dim_inegi_entity_country_nation" />
         <Level name="Entity of Residency" key_column="id" name_column="name_en" key_type="nontext">
           <Property name="Entity of Residency ES" column="name_es" caption_set="es" />
-        <Level/>
+        </Level>
       </Hierarchy>
     </Dimension>
 
@@ -14365,7 +14365,7 @@
         <Table name="dim_inegi_religion" />
         <Level name="Religion" key_column="id" name_column="name_en" key_type="nontext">
           <Property name="Religion ES" column="name_es" caption_set="es" />
-        <Level/>
+        </Level>
       </Hierarchy>
     </Dimension>
 
