@@ -14316,7 +14316,7 @@
     <DimensionUsage foreign_key="dhsersal1" source="Social Security" name="Social Security" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
     <DimensionUsage foreign_key="year" source="Year" name="Year" />
-    <DimensionUsage foreign_key="municipality_of_residency" source="Geography Municipality" name="Municipality of Residency" />
+    <!-- <DimensionUsage foreign_key="municipality_of_residency" source="Geography Municipality" name="Municipality of Residency" /> -->
 
     <Measure name="Population" column="population" aggregator="sum">
       
