@@ -9,8 +9,6 @@
     
     <Table name="imss_credits" primary_key="ent_id" />
 
-    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
-
     <Dimension name="Geography State" type="geo" foreign_key="ent_id">
       <Hierarchy name="Geography">
       <Table name="dim_shared_geography_ent" />
@@ -51,6 +49,34 @@
       <Hierarchy name="Level" primary_key="level">
         <Table name="imss_credits" />
         <Level name="Level" key_column="level" key_type="text" />
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Sex" foreign_key="sex">
+      <Hierarchy name="Sex" primary_key="id">
+        <InlineTable alias="dim_inline_sex">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No Especificado</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Male</Value>
+            <Value column="name_es">Hombre</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Female</Value>
+            <Value column="name_es">Mujer</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Sex" key_column="id" name_column="name_en">
+          <Property name="Sex ES" column="name_es" caption_set="es" />
+        </Level>
       </Hierarchy>
     </Dimension>
 
@@ -175,6 +201,11 @@
             <Value column="id">14</Value>
             <Value column="name_en">70 or more years old</Value>
             <Value column="name_es">70 y más años</Value>
+          </Row>
+          <Row>
+            <Value column="id">99</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No Especificado</Value>
           </Row>
         </InlineTable>
         <Level name="Age Range" key_column="id" name_column="name_en">
