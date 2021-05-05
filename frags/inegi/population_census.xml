@@ -138,7 +138,7 @@
           <Row>
             <Value column="id">24</Value>
             <Value column="name_en">Ant/Uncle</Value>
-            <Value column="name_es">Tia(o)</Value>
+            <Value column="name_es">Tía(o)</Value>
           </Row>
           <Row>
             <Value column="id">25</Value>
@@ -637,8 +637,8 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Si</Value>
-            <Value column="name_es">Yes</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
@@ -647,8 +647,8 @@
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No especificado</Value>
-            <Value column="name_es">Not Specified</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
           </Row>
         </InlineTable>
         <Level name="Afro Offspring" key_column="id" name_column="name_en">
@@ -665,8 +665,8 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Si</Value>
-            <Value column="name_es">Yes</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
@@ -675,8 +675,8 @@
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No especificado</Value>
-            <Value column="name_es">Not Specified</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
           </Row>
         </InlineTable>
         <Level name="Indigenous Speaker" key_column="id" name_column="name_en">
@@ -693,8 +693,8 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Si</Value>
-            <Value column="name_es">Yes</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
@@ -703,8 +703,8 @@
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No especificado</Value>
-            <Value column="name_es">Not Specified</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
           </Row>
         </InlineTable>
         <Level name="Indigenous Self Abscribing" key_column="id" name_column="name_en">
@@ -721,8 +721,8 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Si</Value>
-            <Value column="name_es">Yes</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
@@ -731,8 +731,8 @@
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No especificado</Value>
-            <Value column="name_es">Not Specified</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
           </Row>
         </InlineTable>
         <Level name="School Attendance" key_column="id" name_column="name_en">
@@ -749,8 +749,8 @@
           <ColumnDef name="name_es" key_type="text" />
           <Row>
             <Value column="id">1</Value>
-            <Value column="name_en">Si</Value>
-            <Value column="name_es">Yes</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Si</Value>
           </Row>
           <Row>
             <Value column="id">3</Value>
@@ -759,8 +759,8 @@
           </Row>
           <Row>
             <Value column="id">9</Value>
-            <Value column="name_en">No especificado</Value>
-            <Value column="name_es">Not Specified</Value>
+            <Value column="name_en">Not Specified</Value>
+            <Value column="name_es">No especificado</Value>
           </Row>
         </InlineTable>
         <Level name="Literate" key_column="id" name_column="name_en">
@@ -854,7 +854,9 @@
     <Dimension name="Migration Cause" foreign_key="migration_cause">
       <Hierarchy name="Migration Cause" primary_key="id">
         <Table name="dim_inegi_migration_cause" />
-        <Level name="Migration Cause" key_column="id" name_column="name_es" key_type="nontext"/>
+        <Level name="Migration Cause" key_column="id" name_column="name_en" key_type="nontext">
+          <Property name="Migration Cause ES" column="name_es" caption_set="es" />
+        </Level>
       </Hierarchy>
     </Dimension>
 
@@ -998,7 +1000,7 @@
       </Hierarchy>
     </Dimension>
 
-    <DimensionUsage foreign_key="age" source="Age Group 10" name="Age Group" />
+    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
     <DimensionUsage foreign_key="academic_degree" source="Academic Degree" name="Academic Degree" />
     <DimensionUsage foreign_key="dhsersal1" source="Social Security" name="Social Security" />
     <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
