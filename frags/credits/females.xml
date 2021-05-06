@@ -149,29 +149,6 @@
           </Level>
         </Hierarchy>
       </Dimension>
-
-      <Dimension name="Employee Range" foreign_key="employee_range">
-        <Hierarchy name="Employee Range" primary_key="id">
-          <InlineTable alias="dim_inline_employee_range">
-            <ColumnDef name="id" key_type="nontext" />
-            <ColumnDef name="name_en" key_type="text" />
-            <ColumnDef name="name_es" key_type="text" />
-            <Row>
-              <Value column="id">0</Value>
-              <Value column="name_en">Without Employees</Value>
-              <Value column="name_es">Sin Empleados</Value>
-            </Row>
-            <Row>
-              <Value column="id">1</Value>
-              <Value column="name_en">From 1 to 10 Employees</Value>
-              <Value column="name_es">De 1 a 10 Empleados</Value>
-            </Row>
-          </InlineTable>
-          <Level name="Employee Range" key_column="id" name_column="name_en">
-            <Property name="Employee Range ES" column="name_es" caption_set="es" />
-          </Level>
-        </Hierarchy>
-      </Dimension>
   
       <Measure name="Credits" column="count" aggregator="sum">
           <Annotation name="details">Number of Credits</Annotation>
