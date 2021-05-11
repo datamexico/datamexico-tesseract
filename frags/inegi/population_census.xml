@@ -778,7 +778,7 @@
 
     <Dimension name="Geography" type="geo" default_hierarchy="Geography" foreign_key="mun_id">
       <Hierarchy name="Geography" primary_key="mun_id">
-        <Table name="dim_shared_geography_mun_census" />
+        <Table name="dim_shared_geography_mun" />
         <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
           <Property name="Nation ES" column="nation_name" caption_set="es"/>
         </Level>
@@ -817,23 +817,57 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Entity of Birth" foreign_key="state_of_birth">
-      <Hierarchy name="Entity of Birth" primary_key="id">
-        <Table name="dim_inegi_entity_country_nation" />
-        <Level name="Entity of Birth" key_column="id" name_column="name_en" key_type="nontext">
-          <Property name="Entity of Birth ES" column="name_es" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
+  <Dimension name="Country of Residency 5 years ago" foreign_key="country_of_residency_5_years">
+    <Hierarchy name="Country of Residency 5 years ago" primary_key="iso3">
+      <Table name="dim_shared_country"/>
+      <Level name="Continent of Residency 5 years ago" key_column="continent_id" name_column="continent" key_type="text">
+        <Property name="Continent of Residency 5 years ago ES" column="continent_es" caption_set="es"/>
+      </Level>
+      <Level name="Country of Residency 5 years ago" key_column="iso3" name_column="country_name" key_type="text" >
+        <Property name="Country of Residency ISO 2" column="iso2" />
+        <Property name="Country of Residency OECD" column="oecd" />
+        <Property name="Country of Residency 5 years ago ES" column="country_name_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </Dimension>
 
-    <Dimension name="Entity of Residency" foreign_key="state_of_residency">
-      <Hierarchy name="Entity of Residency" primary_key="id">
-        <Table name="dim_inegi_entity_country_nation" />
-        <Level name="Entity of Residency" key_column="id" name_column="name_en" key_type="nontext">
-          <Property name="Entity of Residency ES" column="name_es" caption_set="es" />
-        </Level>
-      </Hierarchy>
-    </Dimension>
+  <Dimension name="Country of Birth" foreign_key="country_of_birth">
+    <Hierarchy name="Country of Birth" primary_key="iso3">
+      <Table name="dim_shared_country"/>
+      <Level name="Continent of Birth" key_column="continent_id" name_column="continent" key_type="text">
+        <Property name="Continent of Birth ES" column="continent_es" caption_set="es"/>
+      </Level>
+      <Level name="Country of Birth" key_column="iso3" name_column="country_name" key_type="text" >
+        <Property name="Country of Birth ISO 2" column="iso2" />
+        <Property name="Country of Birth OECD" column="oecd" />
+        <Property name="Country of Birth ES" column="country_name_es" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="Residency 5 years ago" foreign_key="state_of_residency_5_years">
+    <Hierarchy name="Residency 5 years ago" primary_key="ent_id">
+      <Table name="dim_shared_geography_ent" />
+      <Level name="Residency State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+        <Property name="Residency State ISO3" column="ent_iso3"/>
+        <Property name="CVE Residency State" column="cve_ent"/>
+        <Property name="Residency State slug ES" column="ent_slug"/>
+        <Property name="Residency State ES" column="ent_name" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="Entity of Birth" foreign_key="state_of_birth">
+    <Hierarchy name="Entity of Birth" primary_key="ent_id">
+      <Table name="dim_shared_geography_ent" />
+      <Level name="Birth State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+        <Property name="Birth State ISO3" column="ent_iso3"/>
+        <Property name="CVE Birth State" column="cve_ent"/>
+        <Property name="Birth State slug ES" column="ent_slug"/>
+        <Property name="Birth State ES" column="ent_name" caption_set="es"/>
+      </Level>
+    </Hierarchy>
+  </Dimension>
 
     <Dimension name="Religion" foreign_key="religion">
       <Hierarchy name="Religion" primary_key="id">
