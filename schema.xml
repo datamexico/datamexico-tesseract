@@ -5370,7 +5370,7 @@
   </Dimension>
 
   <Dimension name="Residency 5 years ago" foreign_key="state_of_residency_5_years">
-    <Hierarchy name="Residency 5 years ago">
+    <Hierarchy name="Residency 5 years ago" primary_key="ent_id">
       <Table name="dim_shared_geography_ent" />
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
         <Property name="State ISO3" column="ent_iso3"/>
@@ -5382,7 +5382,7 @@
   </Dimension>
 
   <Dimension name="Entity of Birth" foreign_key="state_of_birth">
-    <Hierarchy name="Entity of Birth">
+    <Hierarchy name="Entity of Birth" primary_key="ent_id">
       <Table name="dim_shared_geography_ent" />
       <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
         <Property name="State ISO3" column="ent_iso3"/>
