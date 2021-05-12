@@ -2131,6 +2131,7 @@
   </Cube>
 <Cube name="inegi_housing">
     
+
       <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Housing</Annotation>
       <Annotation name="source_name">Encuesta Intercensal</Annotation>
@@ -3456,25 +3457,14 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Age" foreign_key="age">
-      <Hierarchy name="Age" primary_key="id">
-        <Table name="dim_housing_age_group" />
-        <Level name="Group Age" key_column="group_id" name_column="group_name_en" key_type="nontext">
-          <Property name="Group Age ES" column="group_name_es" caption_set="es"/>
-        </Level>
-        <Level name="Age" key_column="id" name_column="name_en" key_type="nontext">
-          <Property name="Age ES" column="name_es" caption_set="es"/>
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
+    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
     <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
     <!--<DimensionUsage foreign_key="year" source="Year" name="Year" /> -->
 
     <Measure name="Households" column="households" aggregator="sum">
-      
+
         <Annotation name="details">Households</Annotation>
-      
+
     </Measure>
   </Cube>
 <Cube name="inegi_economic_census_sex">
