@@ -5293,6 +5293,29 @@
       </Hierarchy>
     </Dimension>
 
+    <Dimension name="Foreign Migrant" foreign_key="foreign_migrant">
+      <Hierarchy name="Foreign Migrant" primary_key="id">
+        <InlineTable alias="dim_inline_nationality">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">0</Value>
+            <Value column="name_en">No</Value>
+            <Value column="name_es">No</Value>
+          </Row>
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Yes</Value>
+            <Value column="name_es">Yes</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Foreign Migrant" key_column="id" name_column="name_en">
+          <Property name="Foreign Migrant ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
     <Dimension name="Filtered Age" foreign_key="filtered_age">
       <Hierarchy name="Filtered Age" primary_key="filtered_age">
         <Table name="inegi_population" />
