@@ -3,9 +3,9 @@
 
       <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Population</Annotation>
-      <Annotation name="source_name">Instituto Nacional de Estadística y Geografía (INEGI)</Annotation>
-      <Annotation name="source_name_en">Nacional Institute of Statistics and Geography (INEGI)</Annotation>
-      <Annotation name="source_link">https://www.inegi.org.mx/programas/ccpv/2010/default.html</Annotation>
+      <Annotation name="source_name">Censo Población y Vivienda (Principales resultados por localidad)</Annotation>
+      <Annotation name="source_name_en">Population and Housing Census (Main results by locality)</Annotation>
+      <Annotation name="source_link">https://www.inegi.org.mx/programas/ccpv/2020/#Microdatos</Annotation>
 
     <Table name="inegi_population_total" primary_key="mun_id" />
 

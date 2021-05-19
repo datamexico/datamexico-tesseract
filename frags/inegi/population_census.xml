@@ -3,9 +3,9 @@
     
     <Annotation name="topic">Housing and Living</Annotation>
     <Annotation name="subtopic">Housing</Annotation>
-    <Annotation name="source_name">Encuesta Intercensal</Annotation>
-    <Annotation name="source_name_en">Intercensal Survey</Annotation>
-    <Annotation name="source_link">https://www.inegi.org.mx/programas/intercensal/2015/</Annotation>
+    <Annotation name="source_name">Censo Población y Vivienda (Cuestionario ampliado)</Annotation>
+    <Annotation name="source_name_en">Population and Housing Census (Extended Questionnaire)</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/programas/ccpv/2020/#Microdatos</Annotation>
     
     <Table name="inegi_population" primary_key="mun_id" />
 
