@@ -986,7 +986,7 @@
     </Measure>
 
   </Cube>
-<Cube name="economy_foreign_trade_unanonymized_ent" min_auth_level="1">
+  <Cube name="economy_foreign_trade_unanonymized_ent" min_auth_level="1">
     
     <Annotation name="topic">Economy</Annotation>
     <Annotation name="subtopic">Foreign Trade</Annotation>
@@ -1025,13 +1025,6 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Level" foreign_key="level">
-      <Hierarchy name="Level" primary_key="level">
-        <Table name="economy_foreign_trade_unanonymized_ent" />
-        <Level name="Level" key_column="level" key_type="nontext" />
-      </Hierarchy>
-    </Dimension>
-
     <Dimension name="Product Level" foreign_key="product_level">
       <Hierarchy name="Product Level" primary_key="product_level">
         <Table name="economy_foreign_trade_unanonymized_ent" />
@@ -1043,7 +1036,7 @@
     <DimensionUsage foreign_key="hs4_id" source="Product 4 Digit" name="Product 4 Digit" />
     <DimensionUsage foreign_key="hs6_id" source="Product" name="Product" />
 
-    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="ent_id" source="Geography State Lite" name="Geography" />
     <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
     <DimensionUsage foreign_key="partner_country" source="Country" name="Country" />
 
@@ -1191,7 +1184,7 @@
     </Measure>
 
   </Cube>
-<Cube name="economy_foreign_trade_unanonymized_mun" min_auth_level="1">
+  <Cube name="economy_foreign_trade_unanonymized_mun" min_auth_level="1">
     
     <Annotation name="topic">Economy</Annotation>
     <Annotation name="subtopic">Foreign Trade</Annotation>
@@ -1230,13 +1223,6 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Level" foreign_key="level">
-      <Hierarchy name="Level" primary_key="level">
-        <Table name="economy_foreign_trade_unanonymized_mun" />
-        <Level name="Level" key_column="level" key_type="nontext" />
-      </Hierarchy>
-    </Dimension>
-
     <Dimension name="Product Level" foreign_key="product_level">
       <Hierarchy name="Product Level" primary_key="product_level">
         <Table name="economy_foreign_trade_unanonymized_mun" />
@@ -1248,13 +1234,84 @@
     <DimensionUsage foreign_key="hs4_id" source="Product 4 Digit" name="Product 4 Digit" />
     <DimensionUsage foreign_key="hs6_id" source="Product" name="Product" />
 
-    <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+    <DimensionUsage foreign_key="mun_id" source="Geography Municipality Lite" name="Geography" />
     <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
     <DimensionUsage foreign_key="partner_country" source="Country" name="Country" />
 
     <Measure name="Trade Value" column="value" aggregator="sum">
       
         <Annotation name="details">Trade Value</Annotation>
+      
+    </Measure>
+
+  </Cube>
+  <Cube name="economy_foreign_trade_unanonymized_nat">
+      
+    <Annotation name="topic">Economy</Annotation>
+    <Annotation name="subtopic">Foreign Trade</Annotation>
+    <Annotation name="source_name">Secretaría de Economía</Annotation>
+    <Annotation name="source_name_en">Secretary of Economy</Annotation>
+    <Annotation name="source_link">https://www.gob.mx/se</Annotation>
+    
+    <Table name="economy_foreign_trade_unanonymized_nat" primary_key="nat_id" />
+
+    <Dimension name="Flow" foreign_key="flow_id">
+      <Hierarchy name="Flow" primary_key="id">
+        <InlineTable alias="dim_inline_flow">
+          <ColumnDef name="id" key_type="nontext" />
+          <ColumnDef name="name_en" key_type="text" />
+          <ColumnDef name="name_es" key_type="text" />
+          <Row>
+            <Value column="id">1</Value>
+            <Value column="name_en">Imports</Value>
+            <Value column="name_es">Compras internacionales</Value>
+          </Row>
+          <Row>
+            <Value column="id">2</Value>
+            <Value column="name_en">Exports</Value>
+            <Value column="name_es">Ventas internacionales</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Flow" key_column="id" name_column="name_en">
+          <Property name="Flow ES" column="name_es" caption_set="es" />
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Nation" foreign_key="nat_id">
+      <Hierarchy name="Nation">
+        <Level name="Nation" key_column="nat_id" />
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Date Year" type="time" foreign_key="year">
+      <Hierarchy name="Date Year">
+        <Level name="Date Year" key_column="year" />
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension name="Product Level" foreign_key="product_level">
+      <Hierarchy name="Product Level" primary_key="product_level">
+        <Table name="economy_foreign_trade_unanonymized_nat" />
+        <Level name="Product Level" key_column="product_level" key_type="nontext" />
+      </Hierarchy>
+    </Dimension>
+
+    <DimensionUsage foreign_key="hs2_id" source="Product 2 Digit" name="Product 2 Digit" />
+    <DimensionUsage foreign_key="hs4_id" source="Product 4 Digit" name="Product 4 Digit" />
+    <DimensionUsage foreign_key="hs6_id" source="Product" name="Product" />
+
+    <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
+    <DimensionUsage foreign_key="partner_country" source="Country" name="Country" />
+
+    <Measure name="Trade Value" column="value" aggregator="sum">
+      
+        <Annotation name="details">Trade Value</Annotation>
+      
+    </Measure>
+    <Measure name="Number of Firms" column="firms" aggregator="sum">
+      
+        <Annotation name="details">Number of Firms</Annotation>
       
     </Measure>
 

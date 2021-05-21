@@ -38,13 +38,6 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Level" foreign_key="level">
-      <Hierarchy name="Level" primary_key="level">
-        <Table name="economy_foreign_trade_unanonymized_ent" />
-        <Level name="Level" key_column="level" key_type="nontext" />
-      </Hierarchy>
-    </Dimension>
-
     <Dimension name="Product Level" foreign_key="product_level">
       <Hierarchy name="Product Level" primary_key="product_level">
         <Table name="economy_foreign_trade_unanonymized_ent" />
@@ -56,7 +49,7 @@
     <DimensionUsage foreign_key="hs4_id" source="Product 4 Digit" name="Product 4 Digit" />
     <DimensionUsage foreign_key="hs6_id" source="Product" name="Product" />
 
-    <DimensionUsage foreign_key="ent_id" source="Geography State" name="Geography" />
+    <DimensionUsage foreign_key="ent_id" source="Geography State Lite" name="Geography" />
     <DimensionUsage foreign_key="month_id" source="Date Month" name="Date" />
     <DimensionUsage foreign_key="partner_country" source="Country" name="Country" />
 
