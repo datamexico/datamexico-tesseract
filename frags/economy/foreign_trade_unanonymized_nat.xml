@@ -1,5 +1,5 @@
 <Schema name="datamexico" default_locale="en">
-    <Cube name="economy_foreign_trade_unanonymized_nat">
+    <Cube name="economy_foreign_trade_unanonymized_nat" min_auth_level="1">
       
       <Annotation name="topic">Economy</Annotation>
       <Annotation name="subtopic">Foreign Trade</Annotation>
@@ -35,10 +35,10 @@
       <Dimension name="Nation" foreign_key="nat_id">
         <Hierarchy name="Nation" primary_key="nat_id">
           <InlineTable alias="dim_inline_nation">
-            <ColumnDef name="nat_id" key_type="nontext" />
+            <ColumnDef name="nat_id" key_type="text" />
             <ColumnDef name="nation" key_type="text" />
             <Row>
-              <Value column="nat_id">0</Value>
+              <Value column="nat_id">mex</Value>
               <Value column="nation">México</Value>
             </Row>
           </InlineTable>
