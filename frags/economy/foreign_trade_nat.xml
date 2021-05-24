@@ -32,9 +32,9 @@
         </Hierarchy>
       </Dimension>
 
-      <Dimension name="Nation" foreign_key="nat_id">
-        <Hierarchy name="Nation">
-          <Level name="Nation" key_column="nat_id" />
+      <Dimension name="Geography/Nation" foreign_key="nat_id">
+        <Hierarchy name="Geography/Nation">
+          <Level name="Geography/Nation" key_column="nat_id" />
         </Hierarchy>
       </Dimension>
   
