@@ -853,9 +853,18 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Geography/Nation" foreign_key="nat_id">
-      <Hierarchy name="Geography/Nation">
-        <Level name="Geography/Nation" key_column="nat_id" />
+    <Dimension name="Nation" foreign_key="nat_id">
+      <Hierarchy name="Nation" primary_key="nat_id">
+        <InlineTable alias="dim_inline_nation">
+          <ColumnDef name="nat_id" key_type="nontext" />
+          <ColumnDef name="nation" key_type="text" />
+          <Row>
+            <Value column="nat_id">0</Value>
+            <Value column="nation">México</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Nation" key_column="nat_id" name_column="nation">
+        </Level>
       </Hierarchy>
     </Dimension>
 
@@ -1278,9 +1287,18 @@
       </Hierarchy>
     </Dimension>
 
-    <Dimension name="Geography/Nation" foreign_key="nat_id">
-      <Hierarchy name="Geography/Nation">
-        <Level name="Geography/Nation" key_column="nat_id" />
+    <Dimension name="Nation" foreign_key="nat_id">
+      <Hierarchy name="Nation" primary_key="nat_id">
+        <InlineTable alias="dim_inline_nation">
+          <ColumnDef name="nat_id" key_type="nontext" />
+          <ColumnDef name="nation" key_type="text" />
+          <Row>
+            <Value column="nat_id">0</Value>
+            <Value column="nation">México</Value>
+          </Row>
+        </InlineTable>
+        <Level name="Nation" key_column="nat_id" name_column="nation">
+        </Level>
       </Hierarchy>
     </Dimension>
 
