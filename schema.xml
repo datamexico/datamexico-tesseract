@@ -1254,7 +1254,7 @@
     </Measure>
 
   </Cube>
-  <Cube name="economy_foreign_trade_unanonymized_nat">
+  <Cube name="economy_foreign_trade_unanonymized_nat" min_auth_level="1">
       
     <Annotation name="topic">Economy</Annotation>
     <Annotation name="subtopic">Foreign Trade</Annotation>
