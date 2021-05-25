@@ -42,7 +42,7 @@
               <Value column="nation">México</Value>
             </Row>
           </InlineTable>
-          <Level name="Nation" key_column="nat_id" name_column="nation">
+          <Level name="Nation" key_column="nat_id" name_column="nation" key_type="text">
           </Level>
         </Hierarchy>
       </Dimension>
