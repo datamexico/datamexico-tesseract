@@ -7,9 +7,24 @@
       <Annotation name="source_name_en">Secretary of Economy</Annotation>
       <Annotation name="source_link">https://www.gob.mx/se</Annotation>
       
-      <Table name="females_credits" primary_key="mun_id" />
+      <Table name="females_credits" primary_key="ent_id" />
   
       <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
+  
+      <Dimension name="Geography State" type="geo" foreign_key="ent_id">
+        <Hierarchy name="Geography">
+        <Table name="dim_shared_geography_ent" />
+        <Level name="Nation State" key_column="nation_id" name_column="nation_name" key_type="text">
+            <Property name="Nation State ES" column="nation_name" caption_set="es"/>
+        </Level>
+        <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+            <Property name="State ISO3" column="ent_iso3"/>
+            <Property name="CVE State" column="cve_ent"/>
+            <Property name="State slug ES" column="ent_slug"/>
+            <Property name="State ES" column="ent_name" caption_set="es"/>
+        </Level>
+        </Hierarchy>
+      </Dimension>
   
       <Dimension name="Geography Municipality" type="geo" foreign_key="mun_id">
         <Hierarchy name="Geography">
