@@ -15428,13 +15428,6 @@
         </Hierarchy>
       </Dimension>
   
-      <Dimension name="Level" foreign_key="level">
-        <Hierarchy name="Level" primary_key="level">
-          <Table name="females_credits" />
-          <Level name="Level" key_column="level" key_type="text" />
-        </Hierarchy>
-      </Dimension>
-  
       <Dimension name="Person Type" foreign_key="person_type">
         <Hierarchy name="Person Type" primary_key="id">
           <InlineTable alias="dim_inline_person_type">
