@@ -11,41 +11,46 @@
   
       <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
   
-      <Dimension name="Geography State" type="geo" foreign_key="ent_id">
-        <Hierarchy name="Geography">
-        <Table name="dim_shared_geography_ent" />
-        <Level name="Nation State" key_column="nation_id" name_column="nation_name" key_type="text">
-            <Property name="Nation State ES" column="nation_name" caption_set="es"/>
-        </Level>
-        <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-            <Property name="State ISO3" column="ent_iso3"/>
-            <Property name="CVE State" column="cve_ent"/>
-            <Property name="State slug ES" column="ent_slug"/>
-            <Property name="State ES" column="ent_name" caption_set="es"/>
-        </Level>
+      <Dimension name="Geography" type="geo" default_hierarchy="Geography" foreign_key="mun_id">
+        <Hierarchy name="Geography" primary_key="mun_id">
+            <Table name="dim_shared_geography_mun_census" />
+            <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
+                <Property name="Nation ES" column="nation_name" caption_set="es"/>
+            </Level>
+            <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+                <Property name="State ISO3" column="ent_iso3"/>
+                <Property name="CVE State" column="cve_ent"/>
+                <Property name="State slug ES" column="ent_slug"/>
+                <Property name="State ES" column="ent_name" caption_set="es"/>
+            </Level>
+            <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
+                <Property name="CVE Municipality Full" column="cve_mun_full"/>
+                <Property name="CVE Municipality" column="cve_mun"/>
+                <Property name="Municipality Slug" column="mun_slug"/>
+                <Property name="Municipality ES" column="mun_name" caption_set="es"/>
+            </Level>
         </Hierarchy>
-      </Dimension>
-  
-      <Dimension name="Geography Municipality" type="geo" foreign_key="mun_id">
-        <Hierarchy name="Geography">
-          <Table name="dim_shared_geography_mun" />
-          <Level name="Nation Municipality" key_column="nation_id" name_column="nation_name" key_type="text">
-            <Property name="Nation Municipality ES" column="nation_name" caption_set="es"/>
-          </Level>
-          <Level name="State Municipality" key_column="ent_id" name_column="ent_name" key_type="nontext">
-            <Property name="State Municipality ISO3" column="ent_iso3"/>
-            <Property name="CVE State Municipality" column="cve_ent"/>
-            <Property name="State Municipality slug ES" column="ent_slug"/>
-            <Property name="State Municipality ES" column="ent_name" caption_set="es"/>
-          </Level>
-          <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
-            <Property name="CVE Municipality Full" column="cve_mun_full"/>
-            <Property name="CVE Municipality" column="cve_mun"/>
-            <Property name="Municipality Slug" column="mun_slug"/>
-            <Property name="Municipality ES" column="mun_name" caption_set="es"/>
-          </Level>
+
+        <Hierarchy name="Metro Area">
+            <Table name="dim_shared_geography_zm" />
+            <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext">
+                <Property name="Metro Area ES" column="zm_name" caption_set="es"/>
+            </Level>
+            <Level name="Municipality MA" key_column="mun_id" name_column="mun_name" key_type="nontext">
+                <Property name="Municipality MA ES" column="mun_name" caption_set="es"/>
+            </Level>
         </Hierarchy>
-      </Dimension>
+        <Hierarchy name="National Urban System">
+            <Table name="dim_shared_geography_sun" />
+            <Level name="National Urban System" key_column="sun_id" name_column="sun_name" key_type="text">
+                <Property name="National Urban System ES" column="sun_name" caption_set="es"/>
+            </Level>
+
+            <Level name="Municipality SUN" key_column="mun_id" name_column="mun_name" key_type="nontext">
+                <Property name="Municipality SUN ES" column="mun_name" caption_set="es"/>
+            </Level>
+        </Hierarchy>
+    </Dimension>
   
       <Dimension name="Person Type" foreign_key="person_type">
         <Hierarchy name="Person Type" primary_key="id">
