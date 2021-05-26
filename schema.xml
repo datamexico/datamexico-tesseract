@@ -15382,7 +15382,7 @@
       <Annotation name="source_name_en">Secretary of Economy</Annotation>
       <Annotation name="source_link">https://www.gob.mx/se</Annotation>
       
-      <Table name="females_credits" primary_key="ent_id" />
+      <Table name="females_credits" primary_key="mun_id" />
   
       <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
   
