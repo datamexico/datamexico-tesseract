@@ -10839,7 +10839,7 @@
         <Annotation name="details">Population with Dirt Floor</Annotation>
       
     </Measure>
-    <Measure name="No Toilet" column="dirt_floor" aggregator="avg">
+    <Measure name="No Toilet" column="no_toilet" aggregator="avg">
       
         <Annotation name="details">Population with Dirt Base Floor</Annotation>
       
@@ -11061,7 +11061,7 @@
         <Annotation name="details">Population with Dirt Floor</Annotation>
       
     </Measure>
-    <Measure name="No Toilet" column="dirt_floor" aggregator="avg">
+    <Measure name="No Toilet" column="no_toilet" aggregator="avg">
       
         <Annotation name="details">Population with Dirt Base Floor</Annotation>
       
