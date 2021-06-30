@@ -1,0 +1,38 @@
+<Schema name="datamexico" default_locale="en">
+    <Cube name="inegi_housing_basic">
+      
+        <Annotation name="topic">Housing and Living</Annotation>
+        <Annotation name="subtopic">Housing</Annotation>
+        <Annotation name="source_name">Censo de Población y Vivienda 2020 - Cuestionario Básico </Annotation>
+        <Annotation name="source_name_en">Population and Housing Census 2020</Annotation>
+        <Annotation name="source_link">https://www.inegi.org.mx/programas/ccpv/2020/#Microdatos</Annotation>
+      
+      <Table name="inegi_housing_basic" />
+  
+      <Dimension name="Year" foreign_key="year">
+        <Hierarchy name="Year">
+          <Level name="Year" key_column="year" type="time" />
+        </Hierarchy>
+      </Dimension>
+  
+      <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+  
+      <Measure name="Private Homes Inhabitants" column="private_homes_inhab" aggregator="sum">
+          <Annotation name="details">Inhabitants</Annotation>
+      </Measure>
+
+      <Measure name="Fridge" column="fridge" aggregator="sum" />
+      <Measure name="Washing Machine" column="washing_machine" aggregator="sum" />
+      <Measure name="Oven" column="oven" aggregator="sum" />
+      <Measure name="Vehicle" column="vehicle" aggregator="sum" />
+      <Measure name="Motorcycle" column="motorcycle" aggregator="sum" />
+      <Measure name="Bicycle" column="bicycle" aggregator="sum" />
+      <Measure name="Computer" column="computer" aggregator="sum" />
+      <Measure name="Mobile Phone" column="mobile_phone" aggregator="sum" />
+      <Measure name="Internet" column="internet" aggregator="sum" />
+      <Measure name="TV Service" column="tv_service" aggregator="sum" />
+      <Measure name="Movie Service" column="movie_service" aggregator="sum" />
+      <Measure name="Video Game Console" column="video_game_console" aggregator="sum" />
+      
+    </Cube>
+  </Schema>

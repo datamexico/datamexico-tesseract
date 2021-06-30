@@ -1,0 +1,100 @@
+<Schema name="datamexico" default_locale="en">
+    <Cube name="inegi_housing_ranges_basic">
+      
+        <Annotation name="topic">Housing and Living</Annotation>
+        <Annotation name="subtopic">Housing</Annotation>
+        <Annotation name="source_name">Censo de Población y Vivienda 2020 - Cuestionario Básico </Annotation>
+        <Annotation name="source_name_en">Population and Housing Census 2020</Annotation>
+        <Annotation name="source_link">https://www.inegi.org.mx/programas/ccpv/2020/#Microdatos</Annotation>
+      
+      <Table name="inegi_housing_ranges_basic" />
+  
+      <Dimension name="Year" foreign_key="year">
+        <Hierarchy name="Year">
+          <Level name="Year" key_column="year" type="time" />
+        </Hierarchy>
+      </Dimension>
+
+      <Dimension name="Age Range" foreign_key="age_range">
+        <Hierarchy name="Age Range" primary_key="id">
+          <InlineTable alias="dim_inline_housing_census_basic">
+            <ColumnDef name="id" key_type="nontext" />
+            <ColumnDef name="age_range" key_type="text" />
+            <Row>
+              <Value column="id">0</Value>
+              <Value column="age_range">12 a 14 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">1</Value>
+              <Value column="age_range">15 a 19 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">2</Value>
+              <Value column="age_range">20 a 24 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">3</Value>
+              <Value column="age_range">25 a 29 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">4</Value>
+              <Value column="age_range">30 a 34 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">5</Value>
+              <Value column="age_range">35 a 39 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">6</Value>
+              <Value column="age_range">40 a 44 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">7</Value>
+              <Value column="age_range">45 a 49 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">8</Value>
+              <Value column="age_range">50 a 54 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">9</Value>
+              <Value column="age_range">55 a 59 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">10</Value>
+              <Value column="age_range">60 a 64 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">11</Value>
+              <Value column="age_range">65 a 69 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">12</Value>
+              <Value column="age_range">70 a 74 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">13</Value>
+              <Value column="age_range">75 a 79 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">14</Value>
+              <Value column="age_range">80 a 84 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">15</Value>
+              <Value column="age_range">85 o más años</Value>
+            </Row>
+          </InlineTable>
+          <Level name="Age Range" key_column="id" name_column="age_range" />
+        </Hierarchy>
+      </Dimension>
+  
+      <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+      <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
+
+      <Measure name="Households" column="households" aggregator="sum">
+        <Annotation name="details">Households</Annotation>
+      </Measure>
+      
+    </Cube>
+  </Schema>
