@@ -2261,7 +2261,82 @@
     </Measure>
 
   </Cube>
-<Cube name="inegi_housing">
+<Cube name="inegi_housing_basic">
+      
+        <Annotation name="topic">Housing and Living</Annotation>
+        <Annotation name="subtopic">Housing</Annotation>
+        <Annotation name="source_name">Censo de Población y Vivienda 2020 - Cuestionario Básico </Annotation>
+        <Annotation name="source_name_en">Population and Housing Census 2020</Annotation>
+        <Annotation name="source_link">https://www.inegi.org.mx/programas/ccpv/2020/#Microdatos</Annotation>
+      
+      <Table name="inegi_housing_basic" />
+  
+      <Dimension name="Year" foreign_key="year">
+        <Hierarchy name="Year">
+          <Level name="Year" key_column="year" type="time" />
+        </Hierarchy>
+      </Dimension>
+
+      <Dimension name="Geography" type="geo" default_hierarchy="Geography" foreign_key="mun_id">
+        <Hierarchy name="Geography" primary_key="mun_id">
+          <Table name="dim_shared_geography_mun" />
+          <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
+            <Property name="Nation ES" column="nation_name" caption_set="es"/>
+          </Level>
+          <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+            <Property name="State ISO3" column="ent_iso3"/>
+            <Property name="CVE State" column="cve_ent"/>
+            <Property name="State slug ES" column="ent_slug"/>
+            <Property name="State ES" column="ent_name" caption_set="es"/>
+          </Level>
+          <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
+            <Property name="CVE Municipality Full" column="cve_mun_full"/>
+            <Property name="CVE Municipality" column="cve_mun"/>
+            <Property name="Municipality Slug" column="mun_slug"/>
+            <Property name="Municipality ES" column="mun_name" caption_set="es"/>
+          </Level>
+        </Hierarchy>
+  
+        <Hierarchy name="Metro Area">
+          <Table name="dim_shared_geography_zm" />
+          <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext">
+            <Property name="Metro Area ES" column="zm_name" caption_set="es"/>
+          </Level>
+          <Level name="Municipality MA" key_column="mun_id" name_column="mun_name" key_type="nontext">
+            <Property name="Municipality MA ES" column="mun_name" caption_set="es"/>
+          </Level>
+        </Hierarchy>
+        <Hierarchy name="National Urban System">
+          <Table name="dim_shared_geography_sun" />
+          <Level name="National Urban System" key_column="sun_id" name_column="sun_name" key_type="text">
+            <Property name="National Urban System ES" column="sun_name" caption_set="es"/>
+          </Level>
+  
+          <Level name="Municipality SUN" key_column="mun_id" name_column="mun_name" key_type="nontext">
+            <Property name="Municipality SUN ES" column="mun_name" caption_set="es"/>
+          </Level>
+        </Hierarchy>
+      </Dimension>
+  
+      <Measure name="Private Homes Inhabitants" column="private_homes_inhab" aggregator="sum">
+          <Annotation name="details">Inhabitants</Annotation>
+      </Measure>
+
+      <Measure name="Fridge" column="fridge" aggregator="sum" />
+      <Measure name="Washing Machine" column="washing_machine" aggregator="sum" />
+      <Measure name="Oven" column="oven" aggregator="sum" />
+      <Measure name="Vehicle" column="vehicle" aggregator="sum" />
+      <Measure name="Motorcycle" column="motorcycle" aggregator="sum" />
+      <Measure name="Bicycle" column="bicycle" aggregator="sum" />
+      <Measure name="Computer" column="computer" aggregator="sum" />
+      <Measure name="Mobile Phone" column="mobile_phone" aggregator="sum" />
+      <Measure name="Internet" column="internet" aggregator="sum" />
+      <Measure name="TV Service" column="tv_service" aggregator="sum" />
+      <Measure name="Movie Service" column="movie_service" aggregator="sum" />
+      <Measure name="Video Game Console" column="video_game_console" aggregator="sum" />
+      
+    </Cube>
+  <Cube name="inegi_housing">
     
       <Annotation name="topic">Housing and Living</Annotation>
       <Annotation name="subtopic">Housing</Annotation>
@@ -3588,6 +3663,7 @@
       </Hierarchy>
     </Dimension>
 
+
     <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
     <DimensionUsage foreign_key="loc_id" source="Geography Location" name="Geography" />
     <!--<DimensionUsage foreign_key="year" source="Year" name="Year" /> -->
@@ -4643,109 +4719,6 @@
     </Measure>
 
   </Cube>
-
-<Schema name="datamexico" default_locale="en">
-  <Cube name="population_basic_quest_by_age">
-
-    <Annotation name="topic">Population</Annotation>
-    <Annotation name="subtopic">Population</Annotation>
-    <Annotation name="source_name">Censo Población y Vivienda (Cuestionario basico con desagregación por rango etario)</Annotation>
-    <Annotation name="source_name_en">Population and Housing Census (Basic questionnaire with disaggregation by age range)</Annotation>
-
-    <Table name="inegi_population_basic_quest_by_age" primary_key="mun_id" />
-
-    <Dimension name="Geography" type="geo" default_hierarchy="Geography" foreign_key="mun_id">
-      <Hierarchy name="Geography" primary_key="mun_id">
-        <Table name="dim_shared_geography_mun" />
-        <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
-          <Property name="Nation ES" column="nation_name" caption_set="es"/>
-        </Level>
-        <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-          <Property name="State ISO3" column="ent_iso3"/>
-          <Property name="CVE State" column="cve_ent"/>
-          <Property name="State slug ES" column="ent_slug"/>
-          <Property name="State ES" column="ent_name" caption_set="es"/>
-        </Level>
-        <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
-          <Property name="CVE Municipality Full" column="cve_mun_full"/>
-          <Property name="CVE Municipality" column="cve_mun"/>
-          <Property name="Municipality Slug" column="mun_slug"/>
-          <Property name="Municipality ES" column="mun_name" caption_set="es"/>
-        </Level>
-      </Hierarchy>
-
-      <Hierarchy name="Metro Area">
-        <Table name="dim_shared_geography_zm" />
-        <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext">
-          <Property name="Metro Area ES" column="zm_name" caption_set="es"/>
-        </Level>
-        <Level name="Municipality MA" key_column="mun_id" name_column="mun_name" key_type="nontext">
-          <Property name="Municipality MA ES" column="mun_name" caption_set="es"/>
-        </Level>
-      </Hierarchy>
-      <Hierarchy name="National Urban System">
-        <Table name="dim_shared_geography_sun" />
-        <Level name="National Urban System" key_column="sun_id" name_column="sun_name" key_type="text">
-          <Property name="National Urban System ES" column="sun_name" caption_set="es"/>
-        </Level>
-
-        <Level name="Municipality SUN" key_column="mun_id" name_column="mun_name" key_type="nontext">
-          <Property name="Municipality SUN ES" column="mun_name" caption_set="es"/>
-        </Level>
-      </Hierarchy>
-    </Dimension>
-
-    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
-    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
-    <DimensionUsage foreign_key="year" source="Year" name="Year" />
-
-    <Measure name="Population" column="total_population" aggregator="sum">
-        <Annotation name="details">Population</Annotation>
-    </Measure>
-
-    <Measure name="Afro-descendant Population" column="afro_desc_population" aggregator="sum">
-        <Annotation name="details">Afro-descendant Population</Annotation>
-    </Measure>
-
-    <Measure name="Analfabet Population" column="analfabet_population" aggregator="sum">  
-        <Annotation name="details">Analfabet Population</Annotation>  
-    </Measure>
-
-    <Measure name="Disabled Population" column="total_disabled_population" aggregator="sum">  
-        <Annotation name="details">Disabled Population</Annotation>  
-    </Measure>
-
-    <Measure name="Visually Impaired Population" column="watch_imperiment" aggregator="sum">  
-        <Annotation name="details">Visually Impaired Population</Annotation>  
-    </Measure>
-
-    <Measure name="Hearing Impaired Population" column="hear_imperiment" aggregator="sum">  
-        <Annotation name="details">Hearing Impaired Population</Annotation>  
-    </Measure>
-
-    <Measure name="Walking Impaired Population" column="walk_imperiment" aggregator="sum">  
-        <Annotation name="details">Walking Impaired Population</Annotation>  
-    </Measure>
-
-    <Measure name="Memory Impaired Population" column="remember_imperiment" aggregator="sum">  
-        <Annotation name="details">Memory Impaired Population</Annotation>  
-    </Measure>
-
-    <Measure name="Motor Impaired Population" column="motor_imperiment" aggregator="sum">  
-        <Annotation name="details">Motor Impaired Population</Annotation>  
-    </Measure>
-
-    <Measure name="Talking Impaired Population" column="talk_imperiment" aggregator="sum">  
-        <Annotation name="details">Talking Impaired Population</Annotation>  
-    </Measure>
-
-    <Measure name="Mental Impaired Population" column="mental_imperiment" aggregator="sum">  
-        <Annotation name="details">Mental Impaired Population</Annotation>  
-    </Measure>
-
-  </Cube>
-</Schema>
-
 <Cube name="inegi_population">
     
     <Annotation name="topic">Housing and Living</Annotation>
@@ -5816,6 +5789,105 @@
         <Annotation name="details">Number of people</Annotation>
       
     </Measure>
+  </Cube>
+<Cube name="population_basic_quest_by_age">
+
+    <Annotation name="topic">Population</Annotation>
+    <Annotation name="subtopic">Population</Annotation>
+    <Annotation name="source_name">Censo Población y Vivienda (Cuestionario basico con desagregación por rango etario)</Annotation>
+    <Annotation name="source_name_en">Population and Housing Census (Basic questionnaire with disaggregation by age range)</Annotation>
+
+    <Table name="inegi_population_basic_quest_by_age" primary_key="mun_id" />
+
+    <Dimension name="Geography" type="geo" default_hierarchy="Geography" foreign_key="mun_id">
+      <Hierarchy name="Geography" primary_key="mun_id">
+        <Table name="dim_shared_geography_mun" />
+        <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
+          <Property name="Nation ES" column="nation_name" caption_set="es"/>
+        </Level>
+        <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+          <Property name="State ISO3" column="ent_iso3"/>
+          <Property name="CVE State" column="cve_ent"/>
+          <Property name="State slug ES" column="ent_slug"/>
+          <Property name="State ES" column="ent_name" caption_set="es"/>
+        </Level>
+        <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
+          <Property name="CVE Municipality Full" column="cve_mun_full"/>
+          <Property name="CVE Municipality" column="cve_mun"/>
+          <Property name="Municipality Slug" column="mun_slug"/>
+          <Property name="Municipality ES" column="mun_name" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+
+      <Hierarchy name="Metro Area">
+        <Table name="dim_shared_geography_zm" />
+        <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext">
+          <Property name="Metro Area ES" column="zm_name" caption_set="es"/>
+        </Level>
+        <Level name="Municipality MA" key_column="mun_id" name_column="mun_name" key_type="nontext">
+          <Property name="Municipality MA ES" column="mun_name" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="National Urban System">
+        <Table name="dim_shared_geography_sun" />
+        <Level name="National Urban System" key_column="sun_id" name_column="sun_name" key_type="text">
+          <Property name="National Urban System ES" column="sun_name" caption_set="es"/>
+        </Level>
+
+        <Level name="Municipality SUN" key_column="mun_id" name_column="mun_name" key_type="nontext">
+          <Property name="Municipality SUN ES" column="mun_name" caption_set="es"/>
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <DimensionUsage foreign_key="age" source="Age Group" name="Age Group" />
+    <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
+    <DimensionUsage foreign_key="year" source="Year" name="Year" />
+
+    <Measure name="Population" column="total_population" aggregator="sum">
+        <Annotation name="details">Population</Annotation>
+    </Measure>
+
+    <Measure name="Afro-descendant Population" column="afro_desc_population" aggregator="sum">
+        <Annotation name="details">Afro-descendant Population</Annotation>
+    </Measure>
+
+    <Measure name="Analfabet Population" column="analfabet_population" aggregator="sum">  
+        <Annotation name="details">Analfabet Population</Annotation>  
+    </Measure>
+
+    <Measure name="Disabled Population" column="total_disabled_population" aggregator="sum">  
+        <Annotation name="details">Disabled Population</Annotation>  
+    </Measure>
+
+    <Measure name="Visually Impaired Population" column="watch_imperiment" aggregator="sum">  
+        <Annotation name="details">Visually Impaired Population</Annotation>  
+    </Measure>
+
+    <Measure name="Hearing Impaired Population" column="hear_imperiment" aggregator="sum">  
+        <Annotation name="details">Hearing Impaired Population</Annotation>  
+    </Measure>
+
+    <Measure name="Walking Impaired Population" column="walk_imperiment" aggregator="sum">  
+        <Annotation name="details">Walking Impaired Population</Annotation>  
+    </Measure>
+
+    <Measure name="Memory Impaired Population" column="remember_imperiment" aggregator="sum">  
+        <Annotation name="details">Memory Impaired Population</Annotation>  
+    </Measure>
+
+    <Measure name="Motor Impaired Population" column="motor_imperiment" aggregator="sum">  
+        <Annotation name="details">Motor Impaired Population</Annotation>  
+    </Measure>
+
+    <Measure name="Talking Impaired Population" column="talk_imperiment" aggregator="sum">  
+        <Annotation name="details">Talking Impaired Population</Annotation>  
+    </Measure>
+
+    <Measure name="Mental Impaired Population" column="mental_imperiment" aggregator="sum">  
+        <Annotation name="details">Mental Impaired Population</Annotation>  
+    </Measure>
+
   </Cube>
 <Cube name="inegi_gdp">
     
@@ -8828,7 +8900,149 @@
     <Measure name="Number of Employees UCI" column="upper" aggregator="sum" visible="false" />
 
   </Cube>
-<Cube name="inegi_suicides_over_mortality">
+<Cube name="inegi_housing_ranges_basic">
+      
+        <Annotation name="topic">Housing and Living</Annotation>
+        <Annotation name="subtopic">Housing</Annotation>
+        <Annotation name="source_name">Censo de Población y Vivienda 2020 - Cuestionario Básico </Annotation>
+        <Annotation name="source_name_en">Population and Housing Census 2020</Annotation>
+        <Annotation name="source_link">https://www.inegi.org.mx/programas/ccpv/2020/#Microdatos</Annotation>
+      
+      <Table name="inegi_housing_ranges_basic" />
+  
+      <Dimension name="Year" foreign_key="year">
+        <Hierarchy name="Year">
+          <Level name="Year" key_column="year" type="time" />
+        </Hierarchy>
+      </Dimension>
+
+      <Dimension name="Geography" type="geo" default_hierarchy="Geography" foreign_key="mun_id">
+        <Hierarchy name="Geography" primary_key="mun_id">
+          <Table name="dim_shared_geography_mun" />
+          <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
+            <Property name="Nation ES" column="nation_name" caption_set="es"/>
+          </Level>
+          <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
+            <Property name="State ISO3" column="ent_iso3"/>
+            <Property name="CVE State" column="cve_ent"/>
+            <Property name="State slug ES" column="ent_slug"/>
+            <Property name="State ES" column="ent_name" caption_set="es"/>
+          </Level>
+          <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
+            <Property name="CVE Municipality Full" column="cve_mun_full"/>
+            <Property name="CVE Municipality" column="cve_mun"/>
+            <Property name="Municipality Slug" column="mun_slug"/>
+            <Property name="Municipality ES" column="mun_name" caption_set="es"/>
+          </Level>
+        </Hierarchy>
+  
+        <Hierarchy name="Metro Area">
+          <Table name="dim_shared_geography_zm" />
+          <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext">
+            <Property name="Metro Area ES" column="zm_name" caption_set="es"/>
+          </Level>
+          <Level name="Municipality MA" key_column="mun_id" name_column="mun_name" key_type="nontext">
+            <Property name="Municipality MA ES" column="mun_name" caption_set="es"/>
+          </Level>
+        </Hierarchy>
+        <Hierarchy name="National Urban System">
+          <Table name="dim_shared_geography_sun" />
+          <Level name="National Urban System" key_column="sun_id" name_column="sun_name" key_type="text">
+            <Property name="National Urban System ES" column="sun_name" caption_set="es"/>
+          </Level>
+  
+          <Level name="Municipality SUN" key_column="mun_id" name_column="mun_name" key_type="nontext">
+            <Property name="Municipality SUN ES" column="mun_name" caption_set="es"/>
+          </Level>
+        </Hierarchy>
+      </Dimension>
+
+      <Dimension name="Age Range" foreign_key="age_range">
+        <Hierarchy name="Age Range" primary_key="age_range">
+          <InlineTable alias="dim_inline_housing_census_basic">
+            <ColumnDef name="id" key_type="nontext" />
+            <ColumnDef name="age_range" key_type="text" />
+            <Row>
+              <Value column="id">0</Value>
+              <Value column="age_range">12 a 14 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">1</Value>
+              <Value column="age_range">15 a 19 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">2</Value>
+              <Value column="age_range">20 a 24 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">3</Value>
+              <Value column="age_range">25 a 29 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">4</Value>
+              <Value column="age_range">30 a 34 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">5</Value>
+              <Value column="age_range">35 a 39 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">6</Value>
+              <Value column="age_range">40 a 44 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">7</Value>
+              <Value column="age_range">45 a 49 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">8</Value>
+              <Value column="age_range">50 a 54 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">9</Value>
+              <Value column="age_range">55 a 59 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">10</Value>
+              <Value column="age_range">60 a 64 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">11</Value>
+              <Value column="age_range">65 a 69 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">12</Value>
+              <Value column="age_range">70 a 74 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">13</Value>
+              <Value column="age_range">75 a 79 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">14</Value>
+              <Value column="age_range">80 a 84 años</Value>
+            </Row>
+            <Row>
+              <Value column="id">15</Value>
+              <Value column="age_range">85 o más años</Value>
+            </Row>
+            <Row>
+              <Value column="id">99</Value>
+              <Value column="age_range">No Especificado</Value>
+            </Row>
+          </InlineTable>
+          <Level name="Age Range" key_column="id" name_column="age_range" />
+        </Hierarchy>
+      </Dimension>
+  
+      <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
+
+      <Measure name="Households" column="households" aggregator="sum">
+        <Annotation name="details">Households</Annotation>
+      </Measure>
+      
+    </Cube>
+  <Cube name="inegi_suicides_over_mortality">
     
     <Annotation name="topic">Health</Annotation>
     <Annotation name="subtopic">Mortality</Annotation>
@@ -11611,223 +11825,6 @@
 
     <Measure name="Value" column="value" aggregator="sum" />
   </Cube>
-  <Cube name="inegi_housing_basic">
-      
-    <Annotation name="topic">Housing and Living</Annotation>
-    <Annotation name="subtopic">Housing</Annotation>
-    <Annotation name="source_name">Censo de Población y Vivienda 2020 - Cuestionario Básico </Annotation>
-    <Annotation name="source_name_en">Population and Housing Census 2020</Annotation>
-    <Annotation name="source_link">https://www.inegi.org.mx/programas/ccpv/2020/#Microdatos</Annotation>
-  
-  <Table name="inegi_housing_basic" />
-
-  <Dimension name="Year" foreign_key="year">
-    <Hierarchy name="Year">
-      <Level name="Year" key_column="year" type="time" />
-    </Hierarchy>
-  </Dimension>
-
-  <Dimension name="Geography" type="geo" default_hierarchy="Geography" foreign_key="mun_id">
-    <Hierarchy name="Geography" primary_key="mun_id">
-      <Table name="dim_shared_geography_mun" />
-      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
-        <Property name="Nation ES" column="nation_name" caption_set="es"/>
-      </Level>
-      <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-        <Property name="State ISO3" column="ent_iso3"/>
-        <Property name="CVE State" column="cve_ent"/>
-        <Property name="State slug ES" column="ent_slug"/>
-        <Property name="State ES" column="ent_name" caption_set="es"/>
-      </Level>
-      <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
-        <Property name="CVE Municipality Full" column="cve_mun_full"/>
-        <Property name="CVE Municipality" column="cve_mun"/>
-        <Property name="Municipality Slug" column="mun_slug"/>
-        <Property name="Municipality ES" column="mun_name" caption_set="es"/>
-      </Level>
-    </Hierarchy>
-
-    <Hierarchy name="Metro Area">
-      <Table name="dim_shared_geography_zm" />
-      <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext">
-        <Property name="Metro Area ES" column="zm_name" caption_set="es"/>
-      </Level>
-      <Level name="Municipality MA" key_column="mun_id" name_column="mun_name" key_type="nontext">
-        <Property name="Municipality MA ES" column="mun_name" caption_set="es"/>
-      </Level>
-    </Hierarchy>
-    <Hierarchy name="National Urban System">
-      <Table name="dim_shared_geography_sun" />
-      <Level name="National Urban System" key_column="sun_id" name_column="sun_name" key_type="text">
-        <Property name="National Urban System ES" column="sun_name" caption_set="es"/>
-      </Level>
-
-      <Level name="Municipality SUN" key_column="mun_id" name_column="mun_name" key_type="nontext">
-        <Property name="Municipality SUN ES" column="mun_name" caption_set="es"/>
-      </Level>
-    </Hierarchy>
-  </Dimension>
-
-  <Measure name="Private Homes Inhabitants" column="private_homes_inhab" aggregator="sum">
-      <Annotation name="details">Inhabitants</Annotation>
-  </Measure>
-
-  <Measure name="Fridge" column="fridge" aggregator="sum" />
-  <Measure name="Washing Machine" column="washing_machine" aggregator="sum" />
-  <Measure name="Oven" column="oven" aggregator="sum" />
-  <Measure name="Vehicle" column="vehicle" aggregator="sum" />
-  <Measure name="Motorcycle" column="motorcycle" aggregator="sum" />
-  <Measure name="Bicycle" column="bicycle" aggregator="sum" />
-  <Measure name="Computer" column="computer" aggregator="sum" />
-  <Measure name="Mobile Phone" column="mobile_phone" aggregator="sum" />
-  <Measure name="Internet" column="internet" aggregator="sum" />
-  <Measure name="TV Service" column="tv_service" aggregator="sum" />
-  <Measure name="Movie Service" column="movie_service" aggregator="sum" />
-  <Measure name="Video Game Console" column="video_game_console" aggregator="sum" />
-  
-</Cube>
-  <Cube name="inegi_housing_ranges_basic">
-      
-    <Annotation name="topic">Housing and Living</Annotation>
-    <Annotation name="subtopic">Housing</Annotation>
-    <Annotation name="source_name">Censo de Población y Vivienda 2020 - Cuestionario Básico </Annotation>
-    <Annotation name="source_name_en">Population and Housing Census 2020</Annotation>
-    <Annotation name="source_link">https://www.inegi.org.mx/programas/ccpv/2020/#Microdatos</Annotation>
-  
-  <Table name="inegi_housing_ranges_basic" />
-
-  <Dimension name="Year" foreign_key="year">
-    <Hierarchy name="Year">
-      <Level name="Year" key_column="year" type="time" />
-    </Hierarchy>
-  </Dimension>
-
-  <Dimension name="Geography" type="geo" default_hierarchy="Geography" foreign_key="mun_id">
-    <Hierarchy name="Geography" primary_key="mun_id">
-      <Table name="dim_shared_geography_mun" />
-      <Level name="Nation" key_column="nation_id" name_column="nation_name" key_type="text">
-        <Property name="Nation ES" column="nation_name" caption_set="es"/>
-      </Level>
-      <Level name="State" key_column="ent_id" name_column="ent_name" key_type="nontext">
-        <Property name="State ISO3" column="ent_iso3"/>
-        <Property name="CVE State" column="cve_ent"/>
-        <Property name="State slug ES" column="ent_slug"/>
-        <Property name="State ES" column="ent_name" caption_set="es"/>
-      </Level>
-      <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
-        <Property name="CVE Municipality Full" column="cve_mun_full"/>
-        <Property name="CVE Municipality" column="cve_mun"/>
-        <Property name="Municipality Slug" column="mun_slug"/>
-        <Property name="Municipality ES" column="mun_name" caption_set="es"/>
-      </Level>
-    </Hierarchy>
-
-    <Hierarchy name="Metro Area">
-      <Table name="dim_shared_geography_zm" />
-      <Level name="Metro Area" key_column="zm_id" name_column="zm_name" key_type="nontext">
-        <Property name="Metro Area ES" column="zm_name" caption_set="es"/>
-      </Level>
-      <Level name="Municipality MA" key_column="mun_id" name_column="mun_name" key_type="nontext">
-        <Property name="Municipality MA ES" column="mun_name" caption_set="es"/>
-      </Level>
-    </Hierarchy>
-    <Hierarchy name="National Urban System">
-      <Table name="dim_shared_geography_sun" />
-      <Level name="National Urban System" key_column="sun_id" name_column="sun_name" key_type="text">
-        <Property name="National Urban System ES" column="sun_name" caption_set="es"/>
-      </Level>
-
-      <Level name="Municipality SUN" key_column="mun_id" name_column="mun_name" key_type="nontext">
-        <Property name="Municipality SUN ES" column="mun_name" caption_set="es"/>
-      </Level>
-    </Hierarchy>
-  </Dimension>
-
-  <Dimension name="Age Range" foreign_key="age_range">
-    <Hierarchy name="Age Range" primary_key="age_range">
-      <InlineTable alias="dim_inline_housing_census_basic">
-        <ColumnDef name="id" key_type="nontext" />
-        <ColumnDef name="age_range" key_type="text" />
-        <Row>
-          <Value column="id">0</Value>
-          <Value column="age_range">12 a 14 años</Value>
-        </Row>
-        <Row>
-          <Value column="id">1</Value>
-          <Value column="age_range">15 a 19 años</Value>
-        </Row>
-        <Row>
-          <Value column="id">2</Value>
-          <Value column="age_range">20 a 24 años</Value>
-        </Row>
-        <Row>
-          <Value column="id">3</Value>
-          <Value column="age_range">25 a 29 años</Value>
-        </Row>
-        <Row>
-          <Value column="id">4</Value>
-          <Value column="age_range">30 a 34 años</Value>
-        </Row>
-        <Row>
-          <Value column="id">5</Value>
-          <Value column="age_range">35 a 39 años</Value>
-        </Row>
-        <Row>
-          <Value column="id">6</Value>
-          <Value column="age_range">40 a 44 años</Value>
-        </Row>
-        <Row>
-          <Value column="id">7</Value>
-          <Value column="age_range">45 a 49 años</Value>
-        </Row>
-        <Row>
-          <Value column="id">8</Value>
-          <Value column="age_range">50 a 54 años</Value>
-        </Row>
-        <Row>
-          <Value column="id">9</Value>
-          <Value column="age_range">55 a 59 años</Value>
-        </Row>
-        <Row>
-          <Value column="id">10</Value>
-          <Value column="age_range">60 a 64 años</Value>
-        </Row>
-        <Row>
-          <Value column="id">11</Value>
-          <Value column="age_range">65 a 69 años</Value>
-        </Row>
-        <Row>
-          <Value column="id">12</Value>
-          <Value column="age_range">70 a 74 años</Value>
-        </Row>
-        <Row>
-          <Value column="id">13</Value>
-          <Value column="age_range">75 a 79 años</Value>
-        </Row>
-        <Row>
-          <Value column="id">14</Value>
-          <Value column="age_range">80 a 84 años</Value>
-        </Row>
-        <Row>
-          <Value column="id">15</Value>
-          <Value column="age_range">85 o más años</Value>
-        </Row>
-        <Row>
-          <Value column="id">99</Value>
-          <Value column="age_range">No Especificado</Value>
-        </Row>
-      </InlineTable>
-      <Level name="Age Range" key_column="id" name_column="age_range" />
-    </Hierarchy>
-  </Dimension>
-
-  <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
-
-  <Measure name="Households" column="households" aggregator="sum">
-    <Annotation name="details">Households</Annotation>
-  </Measure>
-  
-</Cube>
 <Cube name="inegi_envipe">
     
     <Annotation name="topic">Safety</Annotation>
