@@ -14,8 +14,27 @@
           <Level name="Year" key_column="year" type="time" />
         </Hierarchy>
       </Dimension>
-  
-      <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
+
+      <Dimension name="Geography Municipality" type="geo" foreign_key="mun_id">
+        <Hierarchy name="Geography">
+          <Table name="dim_shared_geography_mun" />
+          <Level name="Nation Municipality" key_column="nation_id" name_column="nation_name" key_type="text">
+            <Property name="Nation Municipality ES" column="nation_name" caption_set="es"/>
+          </Level>
+          <Level name="State Municipality" key_column="ent_id" name_column="ent_name" key_type="nontext">
+            <Property name="State Municipality ISO3" column="ent_iso3"/>
+            <Property name="CVE State Municipality" column="cve_ent"/>
+            <Property name="State Municipality slug ES" column="ent_slug"/>
+            <Property name="State Municipality ES" column="ent_name" caption_set="es"/>
+          </Level>
+          <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
+            <Property name="CVE Municipality Full" column="cve_mun_full"/>
+            <Property name="CVE Municipality" column="cve_mun"/>
+            <Property name="Municipality Slug" column="mun_slug"/>
+            <Property name="Municipality ES" column="mun_name" caption_set="es"/>
+          </Level>
+        </Hierarchy>
+      </Dimension>
   
       <Measure name="Private Homes Inhabitants" column="private_homes_inhab" aggregator="sum">
           <Annotation name="details">Inhabitants</Annotation>

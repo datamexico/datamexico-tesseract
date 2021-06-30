@@ -15,6 +15,27 @@
         </Hierarchy>
       </Dimension>
 
+      <Dimension name="Geography Municipality" type="geo" foreign_key="mun_id">
+        <Hierarchy name="Geography">
+          <Table name="dim_shared_geography_mun" />
+          <Level name="Nation Municipality" key_column="nation_id" name_column="nation_name" key_type="text">
+            <Property name="Nation Municipality ES" column="nation_name" caption_set="es"/>
+          </Level>
+          <Level name="State Municipality" key_column="ent_id" name_column="ent_name" key_type="nontext">
+            <Property name="State Municipality ISO3" column="ent_iso3"/>
+            <Property name="CVE State Municipality" column="cve_ent"/>
+            <Property name="State Municipality slug ES" column="ent_slug"/>
+            <Property name="State Municipality ES" column="ent_name" caption_set="es"/>
+          </Level>
+          <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
+            <Property name="CVE Municipality Full" column="cve_mun_full"/>
+            <Property name="CVE Municipality" column="cve_mun"/>
+            <Property name="Municipality Slug" column="mun_slug"/>
+            <Property name="Municipality ES" column="mun_name" caption_set="es"/>
+          </Level>
+        </Hierarchy>
+      </Dimension>
+
       <Dimension name="Age Range" foreign_key="age_range">
         <Hierarchy name="Age Range" primary_key="id">
           <InlineTable alias="dim_inline_housing_census_basic">
@@ -89,7 +110,6 @@
         </Hierarchy>
       </Dimension>
   
-      <DimensionUsage foreign_key="mun_id" source="Geography Municipality" name="Geography" />
       <DimensionUsage foreign_key="sex" source="Sex" name="Sex" />
 
       <Measure name="Households" column="households" aggregator="sum">
