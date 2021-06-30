@@ -11601,7 +11601,7 @@
   </Dimension>
 
   <Dimension name="Age Range" foreign_key="age_range">
-    <Hierarchy name="Age Range" primary_key="id">
+    <Hierarchy name="Age Range" primary_key="age_range">
       <InlineTable alias="dim_inline_housing_census_basic">
         <ColumnDef name="id" key_type="nontext" />
         <ColumnDef name="age_range" key_type="text" />
