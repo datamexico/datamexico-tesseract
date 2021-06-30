@@ -1,0 +1,57 @@
+<Schema name="datamexico" default_locale="en">
+    <Cube name="inegi_housing_basic">
+      
+        <Annotation name="topic">Housing and Living</Annotation>
+        <Annotation name="subtopic">Housing</Annotation>
+        <Annotation name="source_name">Censo de Población y Vivienda 2020 - Cuestionario Básico </Annotation>
+        <Annotation name="source_name_en">Population and Housing Census 2020</Annotation>
+        <Annotation name="source_link">https://www.inegi.org.mx/programas/ccpv/2020/#Microdatos</Annotation>
+      
+      <Table name="inegi_housing_basic" />
+  
+      <Dimension name="Year" foreign_key="year">
+        <Hierarchy name="Year">
+          <Level name="Year" key_column="year" type="time" />
+        </Hierarchy>
+      </Dimension>
+
+      <Dimension name="Geography Municipality" type="geo" foreign_key="mun_id">
+        <Hierarchy name="Geography">
+          <Table name="dim_shared_geography_mun" />
+          <Level name="Nation Municipality" key_column="nation_id" name_column="nation_name" key_type="text">
+            <Property name="Nation Municipality ES" column="nation_name" caption_set="es"/>
+          </Level>
+          <Level name="State Municipality" key_column="ent_id" name_column="ent_name" key_type="nontext">
+            <Property name="State Municipality ISO3" column="ent_iso3"/>
+            <Property name="CVE State Municipality" column="cve_ent"/>
+            <Property name="State Municipality slug ES" column="ent_slug"/>
+            <Property name="State Municipality ES" column="ent_name" caption_set="es"/>
+          </Level>
+          <Level name="Municipality" key_column="mun_id" name_column="mun_name" key_type="nontext">
+            <Property name="CVE Municipality Full" column="cve_mun_full"/>
+            <Property name="CVE Municipality" column="cve_mun"/>
+            <Property name="Municipality Slug" column="mun_slug"/>
+            <Property name="Municipality ES" column="mun_name" caption_set="es"/>
+          </Level>
+        </Hierarchy>
+      </Dimension>
+  
+      <Measure name="Private Homes Inhabitants" column="private_homes_inhab" aggregator="sum">
+          <Annotation name="details">Inhabitants</Annotation>
+      </Measure>
+
+      <Measure name="Fridge" column="fridge" aggregator="sum" />
+      <Measure name="Washing Machine" column="washing_machine" aggregator="sum" />
+      <Measure name="Oven" column="oven" aggregator="sum" />
+      <Measure name="Vehicle" column="vehicle" aggregator="sum" />
+      <Measure name="Motorcycle" column="motorcycle" aggregator="sum" />
+      <Measure name="Bicycle" column="bicycle" aggregator="sum" />
+      <Measure name="Computer" column="computer" aggregator="sum" />
+      <Measure name="Mobile Phone" column="mobile_phone" aggregator="sum" />
+      <Measure name="Internet" column="internet" aggregator="sum" />
+      <Measure name="TV Service" column="tv_service" aggregator="sum" />
+      <Measure name="Movie Service" column="movie_service" aggregator="sum" />
+      <Measure name="Video Game Console" column="video_game_console" aggregator="sum" />
+      
+    </Cube>
+  </Schema>
