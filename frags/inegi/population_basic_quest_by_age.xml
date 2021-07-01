@@ -3,7 +3,7 @@
 
     <Annotation name="topic">Population</Annotation>
     <Annotation name="subtopic">Population</Annotation>
-    <Annotation name="source_name">Censo Población y Vivienda (Cuestionario basico con desagregación por rango etario)</Annotation>
+    <Annotation name="source_name">Censo de Población y Vivienda 2020 - Cuestionario Básico</Annotation>
     <Annotation name="source_name_en">Population and Housing Census (Basic questionnaire with disaggregation by age range)</Annotation>
 
     <Table name="inegi_population_basic_quest_by_age" primary_key="mun_id" />

@@ -3,7 +3,7 @@
       
         <Annotation name="topic">Housing and Living</Annotation>
         <Annotation name="subtopic">Housing</Annotation>
-        <Annotation name="source_name">Censo de Población y Vivienda 2020 - Cuestionario Básico </Annotation>
+        <Annotation name="source_name">Censo de Población y Vivienda 2020 - Cuestionario Básico</Annotation>
         <Annotation name="source_name_en">Population and Housing Census 2020</Annotation>
         <Annotation name="source_link">https://www.inegi.org.mx/programas/ccpv/2020/#Microdatos</Annotation>
       
@@ -127,7 +127,7 @@
             </Row>
             <Row>
               <Value column="id">99</Value>
-              <Value column="age_range">No Especificado</Value>
+              <Value column="age_range">No especificado</Value>
             </Row>
           </InlineTable>
           <Level name="Age Range" key_column="id" name_column="age_range" />
