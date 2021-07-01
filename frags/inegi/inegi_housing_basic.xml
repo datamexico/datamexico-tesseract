@@ -4,7 +4,7 @@
         <Annotation name="topic">Housing and Living</Annotation>
         <Annotation name="subtopic">Housing</Annotation>
         <Annotation name="source_name">Censo de Población y Vivienda 2020 - Cuestionario Básico</Annotation>
-        <Annotation name="source_name_en">Population and Housing Census 2020</Annotation>
+        <Annotation name="source_name_en">Population and Housing Census 2020 - Basic Questionnaire</Annotation>
         <Annotation name="source_link">https://www.inegi.org.mx/programas/ccpv/2020/#Microdatos</Annotation>
       
       <Table name="inegi_housing_basic" />

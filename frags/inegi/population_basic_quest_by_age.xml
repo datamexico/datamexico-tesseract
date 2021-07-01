@@ -4,7 +4,8 @@
     <Annotation name="topic">Population</Annotation>
     <Annotation name="subtopic">Population</Annotation>
     <Annotation name="source_name">Censo de Población y Vivienda 2020 - Cuestionario Básico</Annotation>
-    <Annotation name="source_name_en">Population and Housing Census (Basic questionnaire with disaggregation by age range)</Annotation>
+    <Annotation name="source_name_en">Population and Housing Census 2020 - Basic Questionnaire</Annotation>
+    <Annotation name="source_link">https://www.inegi.org.mx/programas/ccpv/2020/#Microdatos</Annotation>
 
     <Table name="inegi_population_basic_quest_by_age" primary_key="mun_id" />
 
