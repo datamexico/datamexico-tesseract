@@ -787,11 +787,6 @@
           <Annotation name="details">Trade Value</Annotation>
         
       </Measure>
-      <Measure name="Number of Firms" column="firms" aggregator="sum">
-        
-          <Annotation name="details">Number of Firms</Annotation>
-        
-      </Measure>
   
     </Cube>
   <Cube name="fdi_10_year_country">
@@ -957,11 +952,6 @@
     <Measure name="Trade Value" column="value" aggregator="sum">
       
         <Annotation name="details">Trade Value</Annotation>
-      
-    </Measure>
-    <Measure name="Number of Firms" column="firms" aggregator="sum">
-      
-        <Annotation name="details">Number of Firms</Annotation>
       
     </Measure>
 
@@ -1412,11 +1402,6 @@
         <Annotation name="details">Trade Value</Annotation>
       
     </Measure>
-    <Measure name="Number of Firms" column="firms" aggregator="sum">
-      
-        <Annotation name="details">Number of Firms</Annotation>
-      
-    </Measure>
 
   </Cube>
 <Cube name="fdi_3_country_origin">
@@ -1597,11 +1582,6 @@
       <Measure name="Trade Value" column="value" aggregator="sum">
         
           <Annotation name="details">Trade Value</Annotation>
-        
-      </Measure>
-      <Measure name="Number of Firms" column="firms" aggregator="sum">
-        
-          <Annotation name="details">Number of Firms</Annotation>
         
       </Measure>
   
